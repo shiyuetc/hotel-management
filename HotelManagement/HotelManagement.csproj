@@ -56,6 +56,36 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Enums\Display.cs" />
+    <Compile Include="View\UcHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UcHistory.Designer.cs">
+      <DependentUpon>UcHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UcSale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UcSale.Designer.cs">
+      <DependentUpon>UcSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UcCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UcCustomer.Designer.cs">
+      <DependentUpon>UcCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UcEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UcEmployee.Designer.cs">
+      <DependentUpon>UcEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UcReserve.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UcReserve.Designer.cs">
+      <DependentUpon>UcReserve.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UcBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -80,6 +110,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\UcHistory.resx">
+      <DependentUpon>UcHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UcSale.resx">
+      <DependentUpon>UcSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UcCustomer.resx">
+      <DependentUpon>UcCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UcEmployee.resx">
+      <DependentUpon>UcEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UcReserve.resx">
+      <DependentUpon>UcReserve.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\UcBase.resx">
       <DependentUpon>UcBase.cs</DependentUpon>
     </EmbeddedResource>
