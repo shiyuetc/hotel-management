@@ -1,0 +1,209 @@
+﻿namespace HotelManagement
+{
+    partial class FmBase
+    {
+        /// <summary>
+        /// 必要なデザイナー変数です。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// 使用中のリソースをすべてクリーンアップします。
+        /// </summary>
+        /// <param name="disposing">マネージド リソースを破棄する場合は true を指定し、その他の場合は false を指定します。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows フォーム デザイナーで生成されたコード
+
+        /// <summary>
+        /// デザイナー サポートに必要なメソッドです。このメソッドの内容を
+        /// コード エディターで変更しないでください。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.TitleLabel = new System.Windows.Forms.Label();
+            this.MenuBarPanel = new System.Windows.Forms.Panel();
+            this.UcLodgingButton = new System.Windows.Forms.Button();
+            this.UcReserveButton = new System.Windows.Forms.Button();
+            this.UcSaleButton = new System.Windows.Forms.Button();
+            this.UcEmployeeButton = new System.Windows.Forms.Button();
+            this.UcCustomerButton = new System.Windows.Forms.Button();
+            this.LogoutButton = new System.Windows.Forms.Button();
+            this.UcPanel = new System.Windows.Forms.Panel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.LoginInfoLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DisplayUcNameLabel = new System.Windows.Forms.Label();
+            this.MenuBarPanel.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // TitleLabel
+            // 
+            this.TitleLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.TitleLabel.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+            this.TitleLabel.Location = new System.Drawing.Point(6, 5);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(198, 46);
+            this.TitleLabel.TabIndex = 0;
+            this.TitleLabel.Text = "ホテル宿泊管理";
+            this.TitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // MenuBarPanel
+            // 
+            this.MenuBarPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MenuBarPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.MenuBarPanel.Controls.Add(this.LogoutButton);
+            this.MenuBarPanel.Controls.Add(this.UcCustomerButton);
+            this.MenuBarPanel.Controls.Add(this.UcEmployeeButton);
+            this.MenuBarPanel.Controls.Add(this.UcSaleButton);
+            this.MenuBarPanel.Controls.Add(this.UcLodgingButton);
+            this.MenuBarPanel.Controls.Add(this.UcReserveButton);
+            this.MenuBarPanel.Enabled = false;
+            this.MenuBarPanel.Location = new System.Drawing.Point(207, 5);
+            this.MenuBarPanel.Name = "MenuBarPanel";
+            this.MenuBarPanel.Size = new System.Drawing.Size(732, 70);
+            this.MenuBarPanel.TabIndex = 1;
+            // 
+            // UcLodgingButton
+            // 
+            this.UcLodgingButton.Location = new System.Drawing.Point(78, 5);
+            this.UcLodgingButton.Name = "UcLodgingButton";
+            this.UcLodgingButton.Size = new System.Drawing.Size(74, 58);
+            this.UcLodgingButton.TabIndex = 1;
+            this.UcLodgingButton.Text = "宿泊履歴\r\n[開発中]";
+            this.UcLodgingButton.UseVisualStyleBackColor = true;
+            // 
+            // UcReserveButton
+            // 
+            this.UcReserveButton.Location = new System.Drawing.Point(4, 5);
+            this.UcReserveButton.Name = "UcReserveButton";
+            this.UcReserveButton.Size = new System.Drawing.Size(74, 58);
+            this.UcReserveButton.TabIndex = 0;
+            this.UcReserveButton.Text = "予約管理\r\n[開発中]";
+            this.UcReserveButton.UseVisualStyleBackColor = true;
+            // 
+            // UcSaleButton
+            // 
+            this.UcSaleButton.Location = new System.Drawing.Point(152, 5);
+            this.UcSaleButton.Name = "UcSaleButton";
+            this.UcSaleButton.Size = new System.Drawing.Size(74, 58);
+            this.UcSaleButton.TabIndex = 2;
+            this.UcSaleButton.Text = "売上確認\r\n[開発中]";
+            this.UcSaleButton.UseVisualStyleBackColor = true;
+            // 
+            // UcEmployeeButton
+            // 
+            this.UcEmployeeButton.Location = new System.Drawing.Point(226, 5);
+            this.UcEmployeeButton.Name = "UcEmployeeButton";
+            this.UcEmployeeButton.Size = new System.Drawing.Size(74, 58);
+            this.UcEmployeeButton.TabIndex = 3;
+            this.UcEmployeeButton.Text = "従業員管理\r\n[開発中]";
+            this.UcEmployeeButton.UseVisualStyleBackColor = true;
+            // 
+            // UcCustomerButton
+            // 
+            this.UcCustomerButton.Location = new System.Drawing.Point(300, 5);
+            this.UcCustomerButton.Name = "UcCustomerButton";
+            this.UcCustomerButton.Size = new System.Drawing.Size(74, 58);
+            this.UcCustomerButton.TabIndex = 4;
+            this.UcCustomerButton.Text = "顧客管理\r\n[開発中]";
+            this.UcCustomerButton.UseVisualStyleBackColor = true;
+            // 
+            // LogoutButton
+            // 
+            this.LogoutButton.Location = new System.Drawing.Point(374, 5);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(74, 58);
+            this.LogoutButton.TabIndex = 5;
+            this.LogoutButton.Text = "ログアウト\r\n[開発中]";
+            this.LogoutButton.UseVisualStyleBackColor = true;
+            // 
+            // UcPanel
+            // 
+            this.UcPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.UcPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.UcPanel.Location = new System.Drawing.Point(6, 78);
+            this.UcPanel.Name = "UcPanel";
+            this.UcPanel.Size = new System.Drawing.Size(933, 538);
+            this.UcPanel.TabIndex = 2;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.LoginInfoLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 619);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(944, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // LoginInfoLabel
+            // 
+            this.LoginInfoLabel.Name = "LoginInfoLabel";
+            this.LoginInfoLabel.Size = new System.Drawing.Size(133, 17);
+            this.LoginInfoLabel.Text = "ユーザー情報：ログインなし";
+            // 
+            // DisplayUcNameLabel
+            // 
+            this.DisplayUcNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DisplayUcNameLabel.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+            this.DisplayUcNameLabel.Location = new System.Drawing.Point(6, 54);
+            this.DisplayUcNameLabel.Name = "DisplayUcNameLabel";
+            this.DisplayUcNameLabel.Size = new System.Drawing.Size(198, 21);
+            this.DisplayUcNameLabel.TabIndex = 1;
+            this.DisplayUcNameLabel.Text = "表示画面名";
+            this.DisplayUcNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FmBase
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(944, 641);
+            this.Controls.Add(this.DisplayUcNameLabel);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.UcPanel);
+            this.Controls.Add(this.MenuBarPanel);
+            this.Controls.Add(this.TitleLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(960, 680);
+            this.MinimumSize = new System.Drawing.Size(960, 680);
+            this.Name = "FmBase";
+            this.Text = "ホテル宿泊管理システム";
+            this.Load += new System.EventHandler(this.FmBase_Load);
+            this.MenuBarPanel.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label TitleLabel;
+        private System.Windows.Forms.Panel MenuBarPanel;
+        private System.Windows.Forms.Button UcLodgingButton;
+        private System.Windows.Forms.Button UcReserveButton;
+        private System.Windows.Forms.Button LogoutButton;
+        private System.Windows.Forms.Button UcCustomerButton;
+        private System.Windows.Forms.Button UcEmployeeButton;
+        private System.Windows.Forms.Button UcSaleButton;
+        private System.Windows.Forms.Panel UcPanel;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel LoginInfoLabel;
+        private System.Windows.Forms.Label DisplayUcNameLabel;
+    }
+}
+
