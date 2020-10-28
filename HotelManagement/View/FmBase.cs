@@ -1,17 +1,12 @@
 ﻿using HotelManagement.Enums;
+using HotelManagement.Extensions;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace HotelManagement.View
 {
     public partial class FmBase : Form
     {
-        Dictionary<string, Display> ScreenDictionary = new Dictionary<string, Display>()
-        {
-            { "ログイン", Display.Login }
-        };
-
         public FmBase()
         {
             InitializeComponent();
@@ -33,6 +28,7 @@ namespace HotelManagement.View
             uc.Dock = DockStyle.Fill;
             this.UcPanel.Controls.Clear();
             this.UcPanel.Controls.Add(uc);
+            this.DisplayNameLabel.Text = sc.GetDisplayName();
         }
     }
 }

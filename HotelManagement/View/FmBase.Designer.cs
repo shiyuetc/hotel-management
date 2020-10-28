@@ -39,7 +39,7 @@
             this.UcPanel = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.LoginInfoLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.DisplayUcNameLabel = new System.Windows.Forms.Label();
+            this.DisplayNameLabel = new System.Windows.Forms.Label();
             this.MenuBarPanel.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -160,23 +160,23 @@
             this.LoginInfoLabel.Size = new System.Drawing.Size(133, 17);
             this.LoginInfoLabel.Text = "ユーザー情報：ログインなし";
             // 
-            // DisplayUcNameLabel
+            // DisplayNameLabel
             // 
-            this.DisplayUcNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.DisplayUcNameLabel.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-            this.DisplayUcNameLabel.Location = new System.Drawing.Point(6, 54);
-            this.DisplayUcNameLabel.Name = "DisplayUcNameLabel";
-            this.DisplayUcNameLabel.Size = new System.Drawing.Size(198, 21);
-            this.DisplayUcNameLabel.TabIndex = 1;
-            this.DisplayUcNameLabel.Text = "表示画面名";
-            this.DisplayUcNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DisplayNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DisplayNameLabel.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+            this.DisplayNameLabel.Location = new System.Drawing.Point(6, 54);
+            this.DisplayNameLabel.Name = "DisplayNameLabel";
+            this.DisplayNameLabel.Size = new System.Drawing.Size(198, 21);
+            this.DisplayNameLabel.TabIndex = 1;
+            this.DisplayNameLabel.Text = "表示画面名";
+            this.DisplayNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 641);
-            this.Controls.Add(this.DisplayUcNameLabel);
+            this.Controls.Add(this.DisplayNameLabel);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.UcPanel);
             this.Controls.Add(this.MenuBarPanel);
@@ -209,7 +209,7 @@
         private System.Windows.Forms.Panel UcPanel;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel LoginInfoLabel;
-        private System.Windows.Forms.Label DisplayUcNameLabel;
+        private System.Windows.Forms.Label DisplayNameLabel;
     }
 }
 
