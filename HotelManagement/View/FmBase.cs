@@ -42,13 +42,13 @@ namespace HotelManagement.View
             }
         }
 
-        private void MoveDisplay(Display sc)
+        private void MoveDisplay(Display display)
         {
-            UcBase uc = (UcBase)Activator.CreateInstance(Type.GetType($"HotelManagement.View.Uc{sc}"));
+            UcBase uc = (UcBase)Activator.CreateInstance(Type.GetType($"HotelManagement.View.Uc{display}"));
             uc.Dock = DockStyle.Fill;
             this.UcPanel.Controls.Clear();
             this.UcPanel.Controls.Add(uc);
-            this.DisplayNameLabel.Text = sc.GetDisplayName();
+            this.DisplayNameLabel.Text = display.GetDisplayName();
         }
     }
 }

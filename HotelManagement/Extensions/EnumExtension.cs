@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HotelManagement.Enums;
+using System;
+using System.Reflection;
 
 namespace HotelManagement.Extensions
 {
@@ -14,11 +16,9 @@ namespace HotelManagement.Extensions
 
     public static class EnumExtension
     {
-        public static string GetDisplayName(this Enum value)
+        public static string GetDisplayName(this Display value)
         {
-            Type type = value.GetType();
-
-            System.Reflection.FieldInfo fieldInfo = type.GetField(value.ToString());
+            FieldInfo fieldInfo = value.GetType().GetField(value.ToString());
 
             if (fieldInfo == null) return null;
 
