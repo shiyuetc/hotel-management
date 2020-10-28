@@ -5,18 +5,34 @@ using System.Windows.Forms;
 
 namespace HotelManagement.View
 {
-    public partial class FmBase : Form
+    /// <summary>
+    /// メインフォームのクラス
+    /// </summary>
+    public partial class FmMain : Form
     {
-        public FmBase()
+        /// <summary>
+        /// FmMainを初期化します。
+        /// </summary>
+        public FmMain()
         {
             InitializeComponent();
         }
 
-        private void FmBase_Load(object sender, EventArgs e)
+        /// <summary>
+        /// FmMainのロードイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FmMain_Load(object sender, EventArgs e)
         {
             this.MoveDisplay(Display.Login);
         }
 
+        /// <summary>
+        /// メニューボタンのクリックイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItems_Click(object sender, EventArgs e)
         {
             switch(((Button)sender).Name)
@@ -42,6 +58,10 @@ namespace HotelManagement.View
             }
         }
 
+        /// <summary>
+        /// 画面を遷移します。
+        /// </summary>
+        /// <param name="display">Display列挙体</param>
         private void MoveDisplay(Display display)
         {
             UcBase uc = (UcBase)Activator.CreateInstance(Type.GetType($"HotelManagement.View.Uc{display}"));

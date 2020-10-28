@@ -3,6 +3,9 @@ using HotelManagement.Extensions;
 
 namespace HotelManagement.Enums
 {
+    /// <summary>
+    /// 画面を表す列挙体
+    /// </summary>
     public enum Display
     {
         [DisplayName("ログイン")]

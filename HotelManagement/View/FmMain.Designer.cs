@@ -1,6 +1,6 @@
 ﻿namespace HotelManagement.View
 {
-    partial class FmBase
+    partial class FmMain
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -186,7 +186,7 @@
             this.MinimumSize = new System.Drawing.Size(960, 680);
             this.Name = "FmBase";
             this.Text = "ホテル宿泊管理システム";
-            this.Load += new System.EventHandler(this.FmBase_Load);
+            this.Load += new System.EventHandler(this.FmMain_Load);
             this.MenuBarPanel.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
