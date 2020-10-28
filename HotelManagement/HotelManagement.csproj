@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\EnumExtension.cs" />
     <Compile Include="View\FmBase.cs">
       <SubType>Form</SubType>
     </Compile>
