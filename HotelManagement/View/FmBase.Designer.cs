@@ -34,7 +34,7 @@
             this.UcCustomerButton = new System.Windows.Forms.Button();
             this.UcEmployeeButton = new System.Windows.Forms.Button();
             this.UcSaleButton = new System.Windows.Forms.Button();
-            this.UcLodgingButton = new System.Windows.Forms.Button();
+            this.UcHistoryButton = new System.Windows.Forms.Button();
             this.UcReserveButton = new System.Windows.Forms.Button();
             this.UcPanel = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -64,9 +64,8 @@
             this.MenuBarPanel.Controls.Add(this.UcCustomerButton);
             this.MenuBarPanel.Controls.Add(this.UcEmployeeButton);
             this.MenuBarPanel.Controls.Add(this.UcSaleButton);
-            this.MenuBarPanel.Controls.Add(this.UcLodgingButton);
+            this.MenuBarPanel.Controls.Add(this.UcHistoryButton);
             this.MenuBarPanel.Controls.Add(this.UcReserveButton);
-            this.MenuBarPanel.Enabled = false;
             this.MenuBarPanel.Location = new System.Drawing.Point(207, 5);
             this.MenuBarPanel.Name = "MenuBarPanel";
             this.MenuBarPanel.Size = new System.Drawing.Size(732, 70);
@@ -112,15 +111,15 @@
             this.UcSaleButton.UseVisualStyleBackColor = true;
             this.UcSaleButton.Click += new System.EventHandler(this.MenuItems_Click);
             // 
-            // UcLodgingButton
+            // UcHistoryButton
             // 
-            this.UcLodgingButton.Location = new System.Drawing.Point(78, 5);
-            this.UcLodgingButton.Name = "UcLodgingButton";
-            this.UcLodgingButton.Size = new System.Drawing.Size(74, 58);
-            this.UcLodgingButton.TabIndex = 1;
-            this.UcLodgingButton.Text = "宿泊履歴\r\n[開発中]";
-            this.UcLodgingButton.UseVisualStyleBackColor = true;
-            this.UcLodgingButton.Click += new System.EventHandler(this.MenuItems_Click);
+            this.UcHistoryButton.Location = new System.Drawing.Point(78, 5);
+            this.UcHistoryButton.Name = "UcHistoryButton";
+            this.UcHistoryButton.Size = new System.Drawing.Size(74, 58);
+            this.UcHistoryButton.TabIndex = 1;
+            this.UcHistoryButton.Text = "宿泊履歴\r\n[開発中]";
+            this.UcHistoryButton.UseVisualStyleBackColor = true;
+            this.UcHistoryButton.Click += new System.EventHandler(this.MenuItems_Click);
             // 
             // UcReserveButton
             // 
@@ -200,7 +199,7 @@
 
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.Panel MenuBarPanel;
-        private System.Windows.Forms.Button UcLodgingButton;
+        private System.Windows.Forms.Button UcHistoryButton;
         private System.Windows.Forms.Button UcReserveButton;
         private System.Windows.Forms.Button LogoutButton;
         private System.Windows.Forms.Button UcCustomerButton;

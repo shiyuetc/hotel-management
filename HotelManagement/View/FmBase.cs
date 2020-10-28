@@ -19,7 +19,27 @@ namespace HotelManagement.View
 
         private void MenuItems_Click(object sender, EventArgs e)
         {
+            switch(((Button)sender).Name)
+            {
+                case "UcReserveButton":
+                    this.MoveDisplay(Display.Reserve);
+                    break;
+                case "UcHistoryButton":
+                    this.MoveDisplay(Display.History);
+                    break;
+                case "UcSaleButton":
+                    this.MoveDisplay(Display.Sale);
+                    break;
+                case "UcEmployeeButton":
+                    this.MoveDisplay(Display.Employee);
+                    break;
+                case "UcCustomerButton":
+                    this.MoveDisplay(Display.Customer);
+                    break;
+                case "LogoutButton":
 
+                    break;
+            }
         }
 
         private void MoveDisplay(Display sc)
