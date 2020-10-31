@@ -46,12 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\EnumExtension.cs" />
-    <Compile Include="View\FmBase.cs">
+    <Compile Include="CustomControls\TickDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\TickDate.Designer.cs">
+      <DependentUpon>TickDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Const\Constants.cs" />
+    <Compile Include="Extensions\DisplayExtension.cs" />
+    <Compile Include="Functions\Messages.cs" />
+    <Compile Include="View\FmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FmBase.Designer.cs">
-      <DependentUpon>FmBase.cs</DependentUpon>
+    <Compile Include="View\FmMain.Designer.cs">
+      <DependentUpon>FmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,8 +106,11 @@
     <Compile Include="View\UcLogin.Designer.cs">
       <DependentUpon>UcLogin.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\FmBase.resx">
-      <DependentUpon>FmBase.cs</DependentUpon>
+    <EmbeddedResource Include="CustomControls\TickDate.resx">
+      <DependentUpon>TickDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FmMain.resx">
+      <DependentUpon>FmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -144,5 +155,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
