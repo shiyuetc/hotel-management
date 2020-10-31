@@ -40,10 +40,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 16F);
-            this.label1.Location = new System.Drawing.Point(315, 207);
+            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 18F);
+            this.label1.Location = new System.Drawing.Point(315, 205);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 22);
+            this.label1.Size = new System.Drawing.Size(116, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "従業員ID：";
             // 
@@ -58,7 +58,7 @@
             // PasswordTextBox
             // 
             this.PasswordTextBox.Font = new System.Drawing.Font("MS UI Gothic", 18F);
-            this.PasswordTextBox.Location = new System.Drawing.Point(319, 297);
+            this.PasswordTextBox.Location = new System.Drawing.Point(319, 303);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(300, 31);
@@ -67,22 +67,23 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 16F);
-            this.label2.Location = new System.Drawing.Point(315, 272);
+            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 18F);
+            this.label2.Location = new System.Drawing.Point(315, 276);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 22);
+            this.label2.Size = new System.Drawing.Size(115, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "パスワード：";
             // 
             // LoginButton
             // 
             this.LoginButton.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-            this.LoginButton.Location = new System.Drawing.Point(433, 334);
+            this.LoginButton.Location = new System.Drawing.Point(433, 340);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(90, 31);
             this.LoginButton.TabIndex = 4;
             this.LoginButton.Text = "ログイン";
             this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // label3
             // 
@@ -97,12 +98,13 @@
             // ExitButton
             // 
             this.ExitButton.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-            this.ExitButton.Location = new System.Drawing.Point(529, 334);
+            this.ExitButton.Location = new System.Drawing.Point(529, 340);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(90, 31);
             this.ExitButton.TabIndex = 6;
             this.ExitButton.Text = "終了";
             this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // UcLogin
             // 
