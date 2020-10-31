@@ -40,6 +40,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.LoginInfoLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.DisplayNameLabel = new System.Windows.Forms.Label();
+            this.tickDate1 = new HotelManagement.CustomControls.TickDate();
             this.MenuBarPanel.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +69,7 @@
             this.MenuBarPanel.Controls.Add(this.UcReserveButton);
             this.MenuBarPanel.Location = new System.Drawing.Point(207, 5);
             this.MenuBarPanel.Name = "MenuBarPanel";
-            this.MenuBarPanel.Size = new System.Drawing.Size(732, 70);
+            this.MenuBarPanel.Size = new System.Drawing.Size(549, 70);
             this.MenuBarPanel.TabIndex = 1;
             // 
             // LogoutButton
@@ -170,11 +171,19 @@
             this.DisplayNameLabel.Text = "表示画面名";
             this.DisplayNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // FmBase
+            // tickDate1
+            // 
+            this.tickDate1.Location = new System.Drawing.Point(756, 2);
+            this.tickDate1.Name = "tickDate1";
+            this.tickDate1.Size = new System.Drawing.Size(185, 75);
+            this.tickDate1.TabIndex = 4;
+            // 
+            // FmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 641);
+            this.Controls.Add(this.tickDate1);
             this.Controls.Add(this.DisplayNameLabel);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.UcPanel);
@@ -184,7 +193,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(960, 680);
             this.MinimumSize = new System.Drawing.Size(960, 680);
-            this.Name = "FmBase";
+            this.Name = "FmMain";
             this.Text = "ホテル宿泊管理システム";
             this.Load += new System.EventHandler(this.FmMain_Load);
             this.MenuBarPanel.ResumeLayout(false);
@@ -209,6 +218,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel LoginInfoLabel;
         private System.Windows.Forms.Label DisplayNameLabel;
+        private CustomControls.TickDate tickDate1;
     }
 }
 

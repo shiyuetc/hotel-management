@@ -1,5 +1,6 @@
 ﻿using HotelManagement.Enums;
 using HotelManagement.Extensions;
+using HotelManagement.Functions;
 using System;
 using System.Windows.Forms;
 
@@ -53,7 +54,10 @@ namespace HotelManagement.View
                     this.MoveDisplay(Display.Customer);
                     break;
                 case "LogoutButton":
-
+                    if(Messages.ShowConfirm("ログアウトしますか？"))
+                    {
+                        this.MoveDisplay(Display.Login);
+                    }
                     break;
             }
         }
