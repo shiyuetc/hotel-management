@@ -44,7 +44,7 @@ map:{
     #
     #       java, csharp, scala
     #
-    ; targetLanguage = java
+    ; targetLanguage = csharp
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -75,7 +75,7 @@ map:{
     #      --> com.example.dbflute.basic.dbflute.exbhv
     #      --> com.example.dbflute.basic.dbflute.exentity
     #
-    ; packageBase = com.example.dbflute.basic.dbflute
+    ; packageBase = Dbflute
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -106,7 +106,7 @@ map:{
     #     [app-solution]/source/[app-project(top-namespace)]/[part-namespace]/...
     #     [app-solution]/source/[app-project(top-namespace)]/Resources/...
     #
-    #; generateOutputDirectory = ../src/main/java
+    ; generateOutputDirectory = ../../src
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -129,7 +129,7 @@ map:{
     #      e.g. If the table name is 'ORDER_DETAIL', the class name is 'OrderDetail'.
     #      e.g. If the table name is 'OrderDetail', the class name is 'Orderdetail'.
     #
-    #; isTableNameCamelCase = false
+    ; isTableNameCamelCase = true
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -144,7 +144,7 @@ map:{
     #      e.g. If the column name is 'ORDER_DETAIL_ID', the class name is 'OrderDetailId'.
     #      e.g. If the column name is 'OrderDetailId',  the class name is 'Orderdetailid'.
     #
-    #; isColumnNameCamelCase = false
+    ; isColumnNameCamelCase = true
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -212,7 +212,7 @@ map:{
     #    e.g. Aaa --> Directory: source/Bbb/DBFlute/AllCommon
     #
     #; outputPackageAdjustmentMap = map:{
-    #    ; flatDirectoryPackage = Aaa.Bbb.DBFlute
+        ; flatDirectoryPackage = Dbflute
     #    ; omitDirectoryPackage = Aaa
     #}
     # - - - - - - - - - -/
