@@ -1,18 +1,18 @@
 Directory for DBFlute client
 
-manage.bat(sh) => 21 (jdbc):
+jdbc.bat, jdbc.sh:
 A execution command of JDBC task
 which gets your schema info and saves it to SchemaXML
 located to the "schema" directory.
 This task should be executed after ReplaceSchema task
 and before other tasks(e.g. Generate, Document task).
 
-manage.bat(sh) => 22 (doc):
+doc.bat, doc.sh:
 A execution command of Document task
 which creates documents, for example, SchemaHTML, HistoryHTML
 to the "output/doc" directory.
 
-manage.bat(sh) => 23 (generate):
+generate.bat, generate.sh:
 A execution command of Generate task
 which generates classes corresponding your tables,
 for example, entities, condition-beans to specified
@@ -31,28 +31,26 @@ exentity  : extended entities
 For example, if a table called "MEMBER" exists,
 you can use these classes like this:
 /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-memberBhv.selectEntity(cb -> {
-    cb.query().setMemberId_Equal(3);
-}).alwaysPresent(member -> {
-    ... = member.getMemberName();
-});
-// memberBhv      : Behavior (instance)
-// MemberCB(cb)   : ConditionBean
-// Member(member) : Entity
+MemberCB cb = new MemberCB();
+cb.query().setMemberId_Equal(3);
+Member member = memberBhv.selectEntity(cb); 
+// MemberCB  : ConditionBean
+// memberBhv : Behavior (instance)
+// Member    : Entity
 - - - - - - - - - -/
 
-manage.bat(sh) => 24 (sql2entity):
+sql2entity.bat, sql2entity.sh:
 A execution command of Sql2Entity task
 which generates classes corresponding your outside-SQL files,
 for example, entities, parameter-beans to specified
 directories by DBFlute properties on "dfprop" directory.
 
-manage.bat(sh) => 0 (replace-schema):
+replace-schema.bat, replace-schema.sh:
 A execution command of ReplaceSchema task
 which creates your tables and loads data by
 resources located to the "playsql" directory.
 
-manage.bat(sh) => 25 (outside-sql-test):
+outside-sql-test.bat, outside-sql-test.sh:
 A execution command of OutsideSqlTest task
 which executes outside-SQL files and you can check
 whether the SQLs have correct formats.

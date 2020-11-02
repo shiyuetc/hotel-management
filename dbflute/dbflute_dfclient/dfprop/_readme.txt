@@ -3,34 +3,33 @@ Directory for DBFlute properties
 Required (Basic) Properties:
 o basicInfoMap.dfprop
 o databaseInfoMap.dfprop
+At first, you should set these properties
+before executions of DBFlute tasks.
 
-Properties for additional information:
+Properties for additional informations:
 o additionalForeignKeyMap.dfprop
 o additionalPrimaryKeyMap.dfprop
-o additionalUniqueKeyMap.dfprop (manual making)
-o additionalTableMap.dfprop (manual making)
+o additionalUniqueKeyMap.dfprop
+o additionalTableMap.dfprop
 
 Properties for implementation environments:
+o commonColumnMap.dfprop
 o classificationDefinitionMap.dfprop
 o classificationDeploymentMap.dfprop
-o commonColumnMap.dfprop
-o conditionBeanMap.dfprop
+o optimisticLockDefinitionMap.dfprop
+o outsideSqlDefinitionMap.dfprop
+o sequenceDefinitionMap.dfprop
 o dependencyInjectionMap.dfprop
 o littleAdjustmentMap.dfprop
-o outsideSqlMap.dfprop
-o sequenceMap.dfprop
+o includeQueryMap.dfprop
+o typeMappingMap.dfprop
 
 Properties for ReplaceSchema:
-o replaceSchemaMap.dfprop
+o replaceSchemaDefinitionMap.dfprop
 
 Properties for documents:
-o documentMap.dfprop
+o documentDefinitionMap.dfprop
 
 Properties for non-functional adjustments:
-o sourceCopyright.dfprop
-o infraMap.dfprop (manual making)
-
-Properties for plug-ins:
-o freeGenMap.dfprop (manual making)
-o lastafluteMap.dfprop (manual making)
-o simpleDtoMap.dfprop (manual making)
+o allClassCopyright.dfprop
+o refreshDefinitionMap.dfprop
