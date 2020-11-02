@@ -90,7 +90,7 @@
     <Compile Include="Const\Constants.cs" />
     <Compile Include="Extensions\DisplayExtension.cs" />
     <Compile Include="Functions\Messages.cs" />
-    <Compile Include="ModelQuillInjector.cs" />
+    <Compile Include="Common\ModelQuillInjector.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="View\FmMain.cs">
       <SubType>Form</SubType>
@@ -204,5 +204,6 @@
       <Name>Dbflute</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
