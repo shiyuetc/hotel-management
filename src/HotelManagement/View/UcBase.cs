@@ -7,10 +7,14 @@ namespace HotelManagement.View
     {
         protected readonly FmMain Main = null;
 
+        public UcBase()
+        {
+
+        }
+
         public UcBase(FmMain main = null)
         {
             InitializeComponent();
-
             this.Main = main;
         }
     }
