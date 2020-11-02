@@ -68,8 +68,8 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        protected override ConditionValue getCValueLoginId() {
-            return _myCQ.LoginId;
+        protected override ConditionValue getCValueLoginName() {
+            return _myCQ.LoginName;
         }
 
 

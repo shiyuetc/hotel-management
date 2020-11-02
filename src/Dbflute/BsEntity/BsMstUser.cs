@@ -22,7 +22,7 @@ namespace Dbflute.ExEntity {
     ///     id
     /// 
     /// [column]
-    ///     id, login_id, name, password, update_time, update_user, version_no
+    ///     id, login_name, name, password, update_time, update_user, version_no
     /// 
     /// [sequence]
     ///     
@@ -59,8 +59,8 @@ namespace Dbflute.ExEntity {
         /// <summary>id: {PK, ID, NotNull, serial(10)}</summary>
         protected int? _id;
 
-        /// <summary>login_id: {UQ, NotNull, varchar(20)}</summary>
-        protected String _loginId;
+        /// <summary>login_name: {UQ, NotNull, varchar(20)}</summary>
+        protected String _loginName;
 
         /// <summary>name: {NotNull, varchar(40)}</summary>
         protected String _name;
@@ -171,7 +171,7 @@ namespace Dbflute.ExEntity {
             String c = ", ";
             StringBuilder sb = new StringBuilder();
             sb.Append(c).Append(this.Id);
-            sb.Append(c).Append(this.LoginId);
+            sb.Append(c).Append(this.LoginName);
             sb.Append(c).Append(this.Name);
             sb.Append(c).Append(this.Password);
             sb.Append(c).Append(this.UpdateTime);
@@ -201,13 +201,13 @@ namespace Dbflute.ExEntity {
             }
         }
 
-        /// <summary>login_id: {UQ, NotNull, varchar(20)}</summary>
-        [Seasar.Dao.Attrs.Column("login_id")]
-        public String LoginId {
-            get { return _loginId; }
+        /// <summary>login_name: {UQ, NotNull, varchar(20)}</summary>
+        [Seasar.Dao.Attrs.Column("login_name")]
+        public String LoginName {
+            get { return _loginName; }
             set {
-                __modifiedProperties.AddPropertyName("LoginId");
-                _loginId = value;
+                __modifiedProperties.AddPropertyName("LoginName");
+                _loginName = value;
             }
         }
 

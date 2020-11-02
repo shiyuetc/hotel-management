@@ -33,23 +33,23 @@ namespace Dbflute.CBean.CQ.BS {
         protected void regId(ConditionKey k, Object v) { regQ(k, v, getCValueId(), "id"); }
         protected abstract ConditionValue getCValueId();
 
-        public void SetLoginId_Equal(String v) { DoSetLoginId_Equal(fRES(v)); }
-        protected void DoSetLoginId_Equal(String v) { regLoginId(CK_EQ, v); }
-        public void SetLoginId_NotEqual(String v) { DoSetLoginId_NotEqual(fRES(v)); }
-        protected void DoSetLoginId_NotEqual(String v) { regLoginId(CK_NES, v); }
-        public void SetLoginId_GreaterThan(String v) { regLoginId(CK_GT, fRES(v)); }
-        public void SetLoginId_LessThan(String v) { regLoginId(CK_LT, fRES(v)); }
-        public void SetLoginId_GreaterEqual(String v) { regLoginId(CK_GE, fRES(v)); }
-        public void SetLoginId_LessEqual(String v) { regLoginId(CK_LE, fRES(v)); }
-        public void SetLoginId_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValueLoginId(), "login_id"); }
-        public void SetLoginId_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValueLoginId(), "login_id"); }
-        public void SetLoginId_PrefixSearch(String v) { SetLoginId_LikeSearch(v, cLSOP()); }
-        public void SetLoginId_LikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_LS, fRES(v), getCValueLoginId(), "login_id", option); }
-        public void SetLoginId_NotLikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_NLS, fRES(v), getCValueLoginId(), "login_id", option); }
-        protected void regLoginId(ConditionKey k, Object v) { regQ(k, v, getCValueLoginId(), "login_id"); }
-        protected abstract ConditionValue getCValueLoginId();
+        public void SetLoginName_Equal(String v) { DoSetLoginName_Equal(fRES(v)); }
+        protected void DoSetLoginName_Equal(String v) { regLoginName(CK_EQ, v); }
+        public void SetLoginName_NotEqual(String v) { DoSetLoginName_NotEqual(fRES(v)); }
+        protected void DoSetLoginName_NotEqual(String v) { regLoginName(CK_NES, v); }
+        public void SetLoginName_GreaterThan(String v) { regLoginName(CK_GT, fRES(v)); }
+        public void SetLoginName_LessThan(String v) { regLoginName(CK_LT, fRES(v)); }
+        public void SetLoginName_GreaterEqual(String v) { regLoginName(CK_GE, fRES(v)); }
+        public void SetLoginName_LessEqual(String v) { regLoginName(CK_LE, fRES(v)); }
+        public void SetLoginName_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValueLoginName(), "login_name"); }
+        public void SetLoginName_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValueLoginName(), "login_name"); }
+        public void SetLoginName_PrefixSearch(String v) { SetLoginName_LikeSearch(v, cLSOP()); }
+        public void SetLoginName_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValueLoginName(), "login_name", option); }
+        public void SetLoginName_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValueLoginName(), "login_name", option); }
+        protected void regLoginName(ConditionKey k, Object v) { regQ(k, v, getCValueLoginName(), "login_name"); }
+        protected abstract ConditionValue getCValueLoginName();
 
         public void SetName_Equal(String v) { DoSetName_Equal(fRES(v)); }
         protected void DoSetName_Equal(String v) { regName(CK_EQ, v); }

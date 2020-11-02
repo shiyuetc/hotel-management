@@ -7,7 +7,7 @@
             default="nextval('mst_user_id_seq'::regclass)"
             javaType="int?" name="id" pkName="mst_user_pkey"
             primaryKey="true" required="true" size="10" type="INTEGER"/>
-        <column dbType="varchar" javaType="String" name="login_id"
+        <column dbType="varchar" javaType="String" name="login_name"
             required="true" size="20" type="VARCHAR"/>
         <column dbType="varchar" javaType="String" name="name"
             required="true" size="40" type="VARCHAR"/>
@@ -19,8 +19,8 @@
             required="true" size="100" type="VARCHAR"/>
         <column dbType="int8" javaType="long?" name="version_no"
             required="true" size="19" type="BIGINT"/>
-        <unique name="mst_user_login_id_key">
-            <unique-column name="login_id" position="1"/>
+        <unique name="mst_user_login_name_key">
+            <unique-column name="login_name" position="1"/>
         </unique>
     </table>
     <sequenceGroup>
