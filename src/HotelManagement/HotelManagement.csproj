@@ -81,6 +81,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Const\Message.cs" />
     <Compile Include="CustomControls\TickDate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -89,9 +90,9 @@
     </Compile>
     <Compile Include="Const\Constants.cs" />
     <Compile Include="Extensions\DisplayExtension.cs" />
-    <Compile Include="Functions\Messages.cs" />
+    <Compile Include="Common\Messages.cs" />
     <Compile Include="Common\ModelQuillInjector.cs" />
-    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="View\FmMain.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -119,6 +119,7 @@
             this.Controls.Add(this.EmployeeIDTextBox);
             this.Controls.Add(this.label1);
             this.Name = "UcLogin";
+            this.Size = new System.Drawing.Size(933, 538);
             this.ResumeLayout(false);
             this.PerformLayout();
 

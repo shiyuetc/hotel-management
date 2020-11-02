@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace HotelManagement.Functions
+namespace HotelManagement.Common
 {
     /// <summary>
     /// 表示メッセージの制御を行うクラス
