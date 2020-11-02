@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{57187724-8A05-4D1A-9E00-BDF733C3AD39}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dbflute</RootNamespace>
+    <AssemblyName>Dbflute</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\s2container.net-1.4.1\lib\net4.0\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Gallio">
+      <HintPath>..\s2container.net-1.4.1\lib\net4.0\Gallio.dll</HintPath>
+    </Reference>
+    <Reference Include="Gallio.MbUnit2Adapter">
+      <HintPath>..\s2container.net-1.4.1\lib\net4.0\Gallio.MbUnit2Adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\s2container.net-1.4.1\lib\net4.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit">
+      <HintPath>..\s2container.net-1.4.1\lib\net4.0\MbUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="Seasar">
+      <HintPath>..\s2container.net-1.4.1\build\net4.0\Seasar.dll</HintPath>
+    </Reference>
+    <Reference Include="Seasar.Dao">
+      <HintPath>..\s2container.net-1.4.1\build\net4.0\Seasar.Dao.dll</HintPath>
+    </Reference>
+    <Reference Include="Seasar.Dxo">
+      <HintPath>..\s2container.net-1.4.1\build\net4.0\Seasar.Dxo.dll</HintPath>
+    </Reference>
+    <Reference Include="Seasar.DynamicProxy">
+      <HintPath>..\s2container.net-1.4.1\build\net4.0\Seasar.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Seasar.Quill">
+      <HintPath>..\s2container.net-1.4.1\build\net4.0\Seasar.Quill.dll</HintPath>
+    </Reference>
+    <Reference Include="Seasar.Unit">
+      <HintPath>..\s2container.net-1.4.1\build\net4.0\Seasar.Unit.dll</HintPath>
+    </Reference>
+    <Reference Include="Seasar.Windows">
+      <HintPath>..\s2container.net-1.4.1\build\net4.0\Seasar.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllCommon\AccessContext.cs" />
+    <Compile Include="AllCommon\Ado\CursorHandler.cs" />
+    <Compile Include="AllCommon\Ado\LatestSqlProvider.cs" />
+    <Compile Include="AllCommon\Ado\SqlLogHandler.cs" />
+    <Compile Include="AllCommon\Ado\SqlResultHandler.cs" />
+    <Compile Include="AllCommon\Ado\SqlResultInfo.cs" />
+    <Compile Include="AllCommon\Ado\StatementConfig.cs" />
+    <Compile Include="AllCommon\Annotation\OutsideSql.cs" />
+    <Compile Include="AllCommon\BehaviorSelector.cs" />
+    <Compile Include="AllCommon\Bhv\AbstractBehaviorReadable.cs" />
+    <Compile Include="AllCommon\Bhv\AbstractBehaviorWritable.cs" />
+    <Compile Include="AllCommon\Bhv\BehaviorReadable.cs" />
+    <Compile Include="AllCommon\Bhv\BehaviorWritable.cs" />
+    <Compile Include="AllCommon\Bhv\Load\LoadReferrerOption.cs" />
+    <Compile Include="AllCommon\Bhv\Setup\ConditionBeanSetupper.cs" />
+    <Compile Include="AllCommon\Bhv\Setup\EntityListSetupper.cs" />
+    <Compile Include="AllCommon\CacheBehaviorSelector.cs" />
+    <Compile Include="AllCommon\CacheDaoSelector.cs" />
+    <Compile Include="AllCommon\CallbackContext.cs" />
+    <Compile Include="AllCommon\CBean\AbstractConditionBean.cs" />
+    <Compile Include="AllCommon\CBean\AbstractConditionQuery.cs" />
+    <Compile Include="AllCommon\CBean\CHelper\HpFixedConditionQueryResolver.cs" />
+    <Compile Include="AllCommon\CBean\CKey\ConditionKey.cs" />
+    <Compile Include="AllCommon\CBean\CKey\ConditionKeyEqual.cs" />
+    <Compile Include="AllCommon\CBean\CKey\ConditionKeyGreaterEqual.cs" />
+    <Compile Include="AllCommon\CBean\CKey\ConditionKeyGreaterThan.cs" />
+    <Compile Include="AllCommon\CBean\CKey\ConditionKeyInScope.cs" />
+    <Compile Include="AllCommon\CBean\CKey\ConditionKeyIsNotNull.cs" />
+    <Compile Include="AllCommon\CBean\CKey\ConditionKeyIsNull.cs" />
+    <Compile Include="AllCommon\CBean\CKey\ConditionKeyLessEqual.cs" />
+    <Compile Include="AllCommon\CBean\CKey\ConditionKeyLessThan.cs" />
+    <Compile Include="AllCommon\CBean\CKey\ConditionKeyLikeSearch.cs" />
+    <Compile Include="AllCommon\CBean\CKey\ConditionKeyNotEqual.cs" />
+    <Compile Include="AllCommon\CBean\CKey\ConditionKeyNotEqualStandard.cs" />
+    <Compile Include="AllCommon\CBean\CKey\ConditionKeyNotEqualTradition.cs" />
+    <Compile Include="AllCommon\CBean\CKey\ConditionKeyNotInScope.cs" />
+    <Compile Include="AllCommon\CBean\CKey\ConditionKeyNotLikeSearch.cs" />
+    <Compile Include="AllCommon\CBean\CKey\ConditionKeyPrefixSearch.cs" />
+    <Compile Include="AllCommon\CBean\ConditionBean.cs" />
+    <Compile Include="AllCommon\CBean\ConditionBeanContext.cs" />
+    <Compile Include="AllCommon\CBean\ConditionQuery.cs" />
+    <Compile Include="AllCommon\CBean\COption\ConditionOption.cs" />
+    <Compile Include="AllCommon\CBean\COption\DateFromToOption.cs" />
+    <Compile Include="AllCommon\CBean\COption\FromToOption.cs" />
+    <Compile Include="AllCommon\CBean\COption\LikeSearchOption.cs" />
+    <Compile Include="AllCommon\CBean\COption\SimpleStringOption.cs" />
+    <Compile Include="AllCommon\CBean\CValue\ConditionValue.cs" />
+    <Compile Include="AllCommon\CBean\FetchNarrowingBean.cs" />
+    <Compile Include="AllCommon\CBean\FetchNarrowingBeanContext.cs" />
+    <Compile Include="AllCommon\CBean\Grouping\GroupingOption.cs" />
+    <Compile Include="AllCommon\CBean\Grouping\GroupingRowEndDeterminer.cs" />
+    <Compile Include="AllCommon\CBean\Grouping\GroupingRowResource.cs" />
+    <Compile Include="AllCommon\CBean\Grouping\GroupingRowSetupper.cs" />
+    <Compile Include="AllCommon\CBean\ListResultBean.cs" />
+    <Compile Include="AllCommon\CBean\MapParameterBean.cs" />
+    <Compile Include="AllCommon\CBean\Mapping\EntityDtoMapper.cs" />
+    <Compile Include="AllCommon\CBean\OrderByBean.cs" />
+    <Compile Include="AllCommon\CBean\OrQuery.cs" />
+    <Compile Include="AllCommon\CBean\OutsideSql\Executor\OutsideSqlBasicExecutor.cs" />
+    <Compile Include="AllCommon\CBean\OutsideSql\Executor\OutsideSqlCursorExecutor.cs" />
+    <Compile Include="AllCommon\CBean\OutsideSql\Executor\OutsideSqlEntityExecutor.cs" />
+    <Compile Include="AllCommon\CBean\OutsideSql\Executor\OutsideSqlPagingExecutor.cs" />
+    <Compile Include="AllCommon\CBean\OutsideSql\OutsideSqlContext.cs" />
+    <Compile Include="AllCommon\CBean\OutsideSql\OutsideSqlDao.cs" />
+    <Compile Include="AllCommon\CBean\OutsideSql\OutsideSqlOption.cs" />
+    <Compile Include="AllCommon\CBean\OutsideSql\ProcedurePmb.cs" />
+    <Compile Include="AllCommon\CBean\PageNavi\Group\PageGroupBean.cs" />
+    <Compile Include="AllCommon\CBean\PageNavi\Group\PageGroupOption.cs" />
+    <Compile Include="AllCommon\CBean\PageNavi\PageNumberLink.cs" />
+    <Compile Include="AllCommon\CBean\PageNavi\PageNumberLinkSetupper.cs" />
+    <Compile Include="AllCommon\CBean\PageNavi\Range\PageRangeBean.cs" />
+    <Compile Include="AllCommon\CBean\PageNavi\Range\PageRangeOption.cs" />
+    <Compile Include="AllCommon\CBean\PagingBean.cs" />
+    <Compile Include="AllCommon\CBean\PagingHandler.cs" />
+    <Compile Include="AllCommon\CBean\PagingInvoker.cs" />
+    <Compile Include="AllCommon\CBean\PagingResultBean.cs" />
+    <Compile Include="AllCommon\CBean\ResultBeanBuilder.cs" />
+    <Compile Include="AllCommon\CBean\ScalarQuery.cs" />
+    <Compile Include="AllCommon\CBean\SClause\AbstractSqlClause.cs" />
+    <Compile Include="AllCommon\CBean\SClause\OrderByClause.cs" />
+    <Compile Include="AllCommon\CBean\SClause\OrderByElement.cs" />
+    <Compile Include="AllCommon\CBean\SClause\SqlClause.cs" />
+    <Compile Include="AllCommon\CBean\SClause\SqlClauseDb2.cs" />
+    <Compile Include="AllCommon\CBean\SClause\SqlClauseDefault.cs" />
+    <Compile Include="AllCommon\CBean\SClause\SqlClauseDerby.cs" />
+    <Compile Include="AllCommon\CBean\SClause\SqlClauseFirebird.cs" />
+    <Compile Include="AllCommon\CBean\SClause\SqlClauseH2.cs" />
+    <Compile Include="AllCommon\CBean\SClause\SqlClauseInterbase.cs" />
+    <Compile Include="AllCommon\CBean\SClause\SqlClauseMsAccess.cs" />
+    <Compile Include="AllCommon\CBean\SClause\SqlClauseMySql.cs" />
+    <Compile Include="AllCommon\CBean\SClause\SqlClauseOracle.cs" />
+    <Compile Include="AllCommon\CBean\SClause\SqlClausePostgreSql.cs" />
+    <Compile Include="AllCommon\CBean\SClause\SqlClauseSqlite.cs" />
+    <Compile Include="AllCommon\CBean\SClause\SqlClauseSqlServer.cs" />
+    <Compile Include="AllCommon\CBean\SelectResource.cs" />
+    <Compile Include="AllCommon\CBean\SimplePagingBean.cs" />
+    <Compile Include="AllCommon\CBean\SpecifyQuery.cs" />
+    <Compile Include="AllCommon\CBean\SubQuery.cs" />
+    <Compile Include="AllCommon\CBean\UnionQuery.cs" />
+    <Compile Include="AllCommon\DaoReadable.cs" />
+    <Compile Include="AllCommon\DaoSelector.cs" />
+    <Compile Include="AllCommon\DaoWritable.cs" />
+    <Compile Include="AllCommon\DBFluteConfig.cs" />
+    <Compile Include="AllCommon\Dbm\AbstractDBMeta.cs" />
+    <Compile Include="AllCommon\Dbm\DBMeta.cs" />
+    <Compile Include="AllCommon\Dbm\DBMetaInstanceHandler.cs" />
+    <Compile Include="AllCommon\Dbm\Info\ColumnInfo.cs" />
+    <Compile Include="AllCommon\Dbm\Info\ForeignInfo.cs" />
+    <Compile Include="AllCommon\Dbm\Info\ReferrerInfo.cs" />
+    <Compile Include="AllCommon\Dbm\Info\RelationInfo.cs" />
+    <Compile Include="AllCommon\Dbm\Info\UniqueInfo.cs" />
+    <Compile Include="AllCommon\Entity.cs" />
+    <Compile Include="AllCommon\EntityDefinedCommonColumn.cs" />
+    <Compile Include="AllCommon\Exp\BatchEntityAlreadyUpdatedException.cs" />
+    <Compile Include="AllCommon\Exp\BindVariableCommentNotFoundPropertyException.cs" />
+    <Compile Include="AllCommon\Exp\BindVariableParameterNullValueException.cs" />
+    <Compile Include="AllCommon\Exp\DangerousResultSizeException.cs" />
+    <Compile Include="AllCommon\Exp\EmbeddedValueCommentNotFoundPropertyException.cs" />
+    <Compile Include="AllCommon\Exp\EmbeddedValueParameterNullValueException.cs" />
+    <Compile Include="AllCommon\Exp\EndCommentNotFoundException.cs" />
+    <Compile Include="AllCommon\Exp\EntityAlreadyDeletedException.cs" />
+    <Compile Include="AllCommon\Exp\EntityAlreadyExistsException.cs" />
+    <Compile Include="AllCommon\Exp\EntityAlreadyUpdatedException.cs" />
+    <Compile Include="AllCommon\Exp\EntityDuplicatedException.cs" />
+    <Compile Include="AllCommon\Exp\IfCommentConditionNotFoundException.cs" />
+    <Compile Include="AllCommon\Exp\IfCommentNotBooleanResultException.cs" />
+    <Compile Include="AllCommon\Exp\IfCommentWrongExpressionException.cs" />
+    <Compile Include="AllCommon\Exp\InvalidQueryRegisteredException.cs" />
+    <Compile Include="AllCommon\Exp\OutsideSqlNotFoundException.cs" />
+    <Compile Include="AllCommon\Exp\RequiredOptionNotFoundException.cs" />
+    <Compile Include="AllCommon\Exp\SelectEntityConditionNotFoundException.cs" />
+    <Compile Include="AllCommon\Exp\SQLFailureException.cs" />
+    <Compile Include="AllCommon\Helper\MapListString.cs" />
+    <Compile Include="AllCommon\Helper\MapListStringImpl.cs" />
+    <Compile Include="AllCommon\Helper\MapStringBuilder.cs" />
+    <Compile Include="AllCommon\Helper\MapStringBuilderImpl.cs" />
+    <Compile Include="AllCommon\InternalMapContext.cs" />
+    <Compile Include="AllCommon\JavaLike\JavaBasic.cs" />
+    <Compile Include="AllCommon\JavaLike\JavaCollection.cs" />
+    <Compile Include="AllCommon\JavaLike\JavaException.cs" />
+    <Compile Include="AllCommon\JavaLike\JavaReflection.cs" />
+    <Compile Include="AllCommon\QLog.cs" />
+    <Compile Include="AllCommon\S2Dao\ContextStack.cs" />
+    <Compile Include="AllCommon\S2Dao\FetchNarrowingResultSetFactory.cs" />
+    <Compile Include="AllCommon\S2Dao\FetchNarrowingResultSetWrapper.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\RsHandler\InternalAbstractBeanMetaDataResultSetHandler.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\RsHandler\InternalBeanArrayMetaDataResultSetHandler.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\RsHandler\InternalBeanGenericListMetaDataResultSetHandler.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\RsHandler\InternalBeanListMetaDataResultSetHandler.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlCommand\InternalAbstractAutoStaticCommand.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlCommand\InternalDeleteAutoStaticCommand.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlCommand\InternalDeleteQueryAutoDynamicCommand.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlCommand\InternalInsertAutoDynamicCommand.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlCommand\InternalProcedureCommand.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlCommand\InternalUpdateAutoDynamicCommand.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlCommand\InternalUpdateDynamicCommand.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlCommand\InternalUpdateModifiedOnlyCommand.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlCommand\InternalUpdateQueryAutoDynamicCommand.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlHandler\InternalAbstractAutoHandler.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlHandler\InternalBasicHandler.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlHandler\InternalBasicSelectHandler.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlHandler\InternalBasicUpdateHandler.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlHandler\InternalCommandContextHandler.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlHandler\InternalDeleteAutoHandler.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlHandler\InternalInsertAutoHandler.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlHandler\InternalProcedureHandler.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlHandler\InternalUpdateAutoHandler.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlLog\InternalSqlLog.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlLog\InternalSqlLogRegistry.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlLog\InternalSqlLogRegistryLocator.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlParser\InternalCommandContextCreator.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlParser\InternalSqlParser.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\SqlParser\InternalSqlTokenizer.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\Util\InternalBindVariableUtil.cs" />
+    <Compile Include="AllCommon\S2Dao\Internal\ValueType\Plugin\AnsiStringType.cs" />
+    <Compile Include="AllCommon\S2Dao\S2DaoInterceptor.cs" />
+    <Compile Include="AllCommon\S2Dao\S2DaoMetaDataExtension.cs" />
+    <Compile Include="AllCommon\S2Dao\S2DaoMetaDataFactoryImpl.cs" />
+    <Compile Include="AllCommon\S2Dao\S2DaoSelectDynamicCommand.cs" />
+    <Compile Include="AllCommon\S2Dao\S2DaoSetting.cs" />
+    <Compile Include="AllCommon\S2Dao\SqlLogRegistryLatestSqlProvider.cs" />
+    <Compile Include="AllCommon\S2Dao\TxSetting.cs" />
+    <Compile Include="AllCommon\Util\DfCollectionUtil.cs" />
+    <Compile Include="AllCommon\Util\DfStringUtil.cs" />
+    <Compile Include="AllCommon\Util\DfSystemUtil.cs" />
+    <Compile Include="AllCommon\Util\SimpleAssertUtil.cs" />
+    <Compile Include="AllCommon\Util\SimpleStringUtil.cs" />
+    <Compile Include="AllCommon\Util\SimpleSystemUtil.cs" />
+    <Compile Include="AllCommon\Util\TraceViewUtil.cs" />
+    <Compile Include="AllCommon\XLog.cs" />
+    <Compile Include="BsBhv\BsUSERBhv.cs" />
+    <Compile Include="BsDao\BsUSERDao.cs" />
+    <Compile Include="BsEntity\BsUSER.cs" />
+    <Compile Include="BsEntity\Dbm\USERDbm.cs" />
+    <Compile Include="CBean\BS\BsUSERCB.cs" />
+    <Compile Include="CBean\CQ\BS\AbstractBsUSERCQ.cs" />
+    <Compile Include="CBean\CQ\BS\BsUSERCQ.cs" />
+    <Compile Include="CBean\CQ\Ciq\USERCIQ.cs" />
+    <Compile Include="CBean\CQ\USERCQ.cs" />
+    <Compile Include="CBean\Nss\USERNss.cs" />
+    <Compile Include="CBean\USERCB.cs" />
+    <Compile Include="ExBhv\USERBhv.cs" />
+    <Compile Include="ExDao\USERDao.cs" />
+    <Compile Include="ExEntity\USER.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
