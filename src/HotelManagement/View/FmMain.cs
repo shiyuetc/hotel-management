@@ -1,6 +1,7 @@
-﻿using HotelManagement.Enums;
+﻿using Dbflute.ExEntity;
+using HotelManagement.Common;
+using HotelManagement.Enums;
 using HotelManagement.Extensions;
-using HotelManagement.Functions;
 using System;
 using System.Windows.Forms;
 
@@ -26,7 +27,7 @@ namespace HotelManagement.View
         /// <param name="e"></param>
         private void FmMain_Load(object sender, EventArgs e)
         {
-            this.MoveDisplay(Display.Login);
+            this.SetLogout();
         }
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace HotelManagement.View
                 case "LogoutButton":
                     if(Messages.ShowConfirm("ログアウトしますか？"))
                     {
-                        this.MoveDisplay(Display.Login);
+                        this.SetLogout();
                     }
                     break;
             }
@@ -76,9 +77,18 @@ namespace HotelManagement.View
             this.DisplayNameLabel.Text = display.GetDisplayName();
         }
 
-        public void Login()
+        public void SetLoginUser(MstUser mstUser)
         {
-            this.LoginInfoLabel.Text = $"ユーザー情報：ログインあり";
+            this.MenuBarPanel.Enabled = true;
+            this.LoginInfoLabel.Text = $"ユーザー情報：{mstUser.Name}";
+            this.MoveDisplay(Display.Reserve);
+        }
+
+        public void SetLogout()
+        {
+            this.MenuBarPanel.Enabled = false;
+            this.LoginInfoLabel.Text = "ユーザー情報：ログインなし";
+            this.MoveDisplay(Display.Login);
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmMain));
             this.TitleLabel = new System.Windows.Forms.Label();
             this.MenuBarPanel = new System.Windows.Forms.Panel();
             this.LogoutButton = new System.Windows.Forms.Button();
@@ -67,6 +68,7 @@
             this.MenuBarPanel.Controls.Add(this.UcSaleButton);
             this.MenuBarPanel.Controls.Add(this.UcHistoryButton);
             this.MenuBarPanel.Controls.Add(this.UcReserveButton);
+            this.MenuBarPanel.Enabled = false;
             this.MenuBarPanel.Location = new System.Drawing.Point(207, 5);
             this.MenuBarPanel.Name = "MenuBarPanel";
             this.MenuBarPanel.Size = new System.Drawing.Size(549, 70);
@@ -74,11 +76,14 @@
             // 
             // LogoutButton
             // 
+            this.LogoutButton.Image = ((System.Drawing.Image)(resources.GetObject("LogoutButton.Image")));
             this.LogoutButton.Location = new System.Drawing.Point(374, 5);
             this.LogoutButton.Name = "LogoutButton";
             this.LogoutButton.Size = new System.Drawing.Size(74, 58);
             this.LogoutButton.TabIndex = 5;
-            this.LogoutButton.Text = "ログアウト\r\n[開発中]";
+            this.LogoutButton.Text = "ログアウト\r\n";
+            this.LogoutButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.LogoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.LogoutButton.UseVisualStyleBackColor = true;
             this.LogoutButton.Click += new System.EventHandler(this.MenuItems_Click);
             // 

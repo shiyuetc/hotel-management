@@ -1,5 +1,5 @@
-﻿
-using HotelManagement.Functions;
+﻿using HotelManagement.Common;
+using HotelManagement.Models;
 using System.Windows.Forms;
 
 namespace HotelManagement.View
@@ -24,7 +24,7 @@ namespace HotelManagement.View
         /// <param name="e"></param>
         private void LoginButton_Click(object sender, System.EventArgs e)
         {
-            if(this.EmployeeIDTextBox.TextLength == 0)
+            if (this.EmployeeIDTextBox.TextLength == 0)
             {
                 Messages.ShowError("{0}が入力されていません。", "従業員ID");
                 return;
@@ -36,15 +36,17 @@ namespace HotelManagement.View
                 return;
             }
 
-            if(this.EmployeeIDTextBox.Text == "user" && this.PasswordTextBox.Text == "password")
-            {
+            var vm = new ModelQuillInjector<LoginModel>();
+            var user = vm.Model.Login(this.EmployeeIDTextBox.Text, this.PasswordTextBox.Text);
 
-                this.Main.Login();
-            }
-            else
+            if (user == null)
             {
                 Messages.ShowError("ログインに失敗しました。");
                 return;
+            }
+            else
+            {
+                this.Main.SetLoginUser(user);
             }
         }
 
