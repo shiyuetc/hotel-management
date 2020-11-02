@@ -4,7 +4,7 @@ namespace HotelManagement.View
 {
     public partial class UcReserve : UcBase
     {
-        public UcReserve()
+        public UcReserve(FmMain main) : base(main)
         {
             InitializeComponent();
         }

@@ -4,7 +4,7 @@ namespace HotelManagement.View
 {
     public partial class UcCustomer : UcBase
     {
-        public UcCustomer()
+        public UcCustomer(FmMain main) : base(main)
         {
             InitializeComponent();
         }

@@ -4,7 +4,7 @@ namespace HotelManagement.View
 {
     public partial class UcHistory : UcBase
     {
-        public UcHistory()
+        public UcHistory(FmMain main) : base(main)
         {
             InitializeComponent();
         }

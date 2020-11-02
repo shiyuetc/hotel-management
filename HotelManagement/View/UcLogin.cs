@@ -12,7 +12,7 @@ namespace HotelManagement.View
         /// <summary>
         /// UcLoginを初期化します。
         /// </summary>
-        public UcLogin()
+        public UcLogin(FmMain main) : base(main)
         {
             InitializeComponent();
         }

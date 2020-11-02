@@ -68,9 +68,10 @@ namespace HotelManagement.View
         /// <param name="display">Display列挙体</param>
         private void MoveDisplay(Display display)
         {
-            UcBase uc = (UcBase)Activator.CreateInstance(Type.GetType($"{this.GetType().Namespace}.Uc{display}"));
-            uc.Dock = DockStyle.Fill;
             this.UcPanel.Controls.Clear();
+            UcBase uc = (UcBase)Activator.CreateInstance(
+                Type.GetType($"{this.GetType().Namespace}.Uc{display}"), this);
+            uc.Dock = DockStyle.Fill;
             this.UcPanel.Controls.Add(uc);
             this.DisplayNameLabel.Text = display.GetDisplayName();
         }

@@ -4,9 +4,13 @@ namespace HotelManagement.View
 {
     public partial class UcBase : UserControl
     {
-        public UcBase()
+        protected readonly FmMain Main = null;
+
+        public UcBase(FmMain main = null)
         {
             InitializeComponent();
+
+            this.Main = main;
         }
 
     }
