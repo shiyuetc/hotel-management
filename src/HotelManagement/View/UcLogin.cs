@@ -38,7 +38,8 @@ namespace HotelManagement.View
 
             if(this.EmployeeIDTextBox.Text == "user" && this.PasswordTextBox.Text == "password")
             {
-                
+
+                this.Main.Login();
             }
             else
             {

@@ -75,5 +75,10 @@ namespace HotelManagement.View
             this.UcPanel.Controls.Add(uc);
             this.DisplayNameLabel.Text = display.GetDisplayName();
         }
+
+        public void Login()
+        {
+            this.LoginInfoLabel.Text = $"ユーザー情報：ログインあり";
+        }
     }
 }
