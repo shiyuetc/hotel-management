@@ -4,6 +4,6 @@ using System.Collections.Generic;
 
 namespace Dbflute.ExEntity {
 
-    partial class USER {
+    partial class MstUser {
     }
 }

@@ -13,17 +13,17 @@ using Dbflute.CBean.CQ;
 namespace Dbflute.CBean.CQ.Ciq {
 
     [System.Serializable]
-    public class USERCIQ : AbstractBsUSERCQ {
+    public class MstUserCIQ : AbstractBsMstUserCQ {
 
         // ===============================================================================
         //                                                                       Attribute
         //                                                                       =========
-        protected BsUSERCQ _myCQ;
+        protected BsMstUserCQ _myCQ;
 
         // ===============================================================================
         //                                                                     Constructor
         //                                                                     ===========
-        public USERCIQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel, BsUSERCQ myCQ)
+        public MstUserCIQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel, BsMstUserCQ myCQ)
             : base(childQuery, sqlClause, aliasName, nestLevel) {
             _myCQ = myCQ;
             _foreignPropertyName = _myCQ.xgetForeignPropertyName();// Accept foreign property name.
@@ -63,42 +63,47 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        protected override ConditionValue getCValueID() {
-            return _myCQ.ID;
+        protected override ConditionValue getCValueId() {
+            return _myCQ.Id;
         }
 
 
-        protected override ConditionValue getCValueNAME() {
-            return _myCQ.NAME;
+        protected override ConditionValue getCValueName() {
+            return _myCQ.Name;
         }
 
 
-        protected override ConditionValue getCValueUPDATE_DATETIME() {
-            return _myCQ.UPDATE_DATETIME;
+        protected override ConditionValue getCValuePassword() {
+            return _myCQ.Password;
         }
 
 
-        protected override ConditionValue getCValueUPDATE_USER() {
-            return _myCQ.UPDATE_USER;
+        protected override ConditionValue getCValueUpdateTime() {
+            return _myCQ.UpdateTime;
         }
 
 
-        protected override ConditionValue getCValueVERSION_NO() {
-            return _myCQ.VERSION_NO;
+        protected override ConditionValue getCValueUpdateUser() {
+            return _myCQ.UpdateUser;
+        }
+
+
+        protected override ConditionValue getCValueVersionNo() {
+            return _myCQ.VersionNo;
         }
 
 
         // ===================================================================================
         //                                                                     Scalar SubQuery
         //                                                                     ===============
-        public override String keepScalarSubQuery(USERCQ subQuery) {
+        public override String keepScalarSubQuery(MstUserCQ subQuery) {
             throw new UnsupportedOperationException("ScalarSubQuery at inline() is unsupported! Sorry!");
         }
 
         // ===============================================================================
         //                                                         Myself InScope SubQuery
         //                                                         =======================
-        public override String keepMyselfInScopeSubQuery(USERCQ subQuery) {
+        public override String keepMyselfInScopeSubQuery(MstUserCQ subQuery) {
             throw new UnsupportedOperationException("MyselfInScopeSubQuery at inline() is unsupported! Sorry!");
         }
     }

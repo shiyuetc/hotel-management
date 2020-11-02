@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SSDTUnitTestPath Condition="'$(SSDTUnitTestPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB</SSDTUnitTestPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SSDTPath Condition="'$(SSDTPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\130</SSDTPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -268,21 +277,40 @@
     <Compile Include="AllCommon\Util\SimpleSystemUtil.cs" />
     <Compile Include="AllCommon\Util\TraceViewUtil.cs" />
     <Compile Include="AllCommon\XLog.cs" />
-    <Compile Include="BsBhv\BsUSERBhv.cs" />
-    <Compile Include="BsDao\BsUSERDao.cs" />
-    <Compile Include="BsEntity\BsUSER.cs" />
-    <Compile Include="BsEntity\Dbm\USERDbm.cs" />
-    <Compile Include="CBean\BS\BsUSERCB.cs" />
-    <Compile Include="CBean\CQ\BS\AbstractBsUSERCQ.cs" />
-    <Compile Include="CBean\CQ\BS\BsUSERCQ.cs" />
-    <Compile Include="CBean\CQ\Ciq\USERCIQ.cs" />
-    <Compile Include="CBean\CQ\USERCQ.cs" />
-    <Compile Include="CBean\Nss\USERNss.cs" />
-    <Compile Include="CBean\USERCB.cs" />
-    <Compile Include="ExBhv\USERBhv.cs" />
-    <Compile Include="ExDao\USERDao.cs" />
-    <Compile Include="ExEntity\USER.cs" />
+    <Compile Include="BsBhv\BsMstUserBhv.cs" />
+    <Compile Include="BsDao\BsMstUserDao.cs" />
+    <Compile Include="BsEntity\BsMstUser.cs" />
+    <Compile Include="BsEntity\Dbm\MstUserDbm.cs" />
+    <Compile Include="CBean\BS\BsMstUserCB.cs" />
+    <Compile Include="CBean\CQ\BS\AbstractBsMstUserCQ.cs" />
+    <Compile Include="CBean\CQ\BS\BsMstUserCQ.cs" />
+    <Compile Include="CBean\CQ\Ciq\MstUserCIQ.cs" />
+    <Compile Include="CBean\CQ\MstUserCQ.cs" />
+    <Compile Include="CBean\MstUserCB.cs" />
+    <Compile Include="CBean\Nss\MstUserNss.cs" />
+    <Compile Include="ExBhv\MstUserBhv.cs" />
+    <Compile Include="ExDao\MstUserDao.cs" />
+    <Compile Include="ExEntity\MstUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup Condition="$(VisualStudioVersion) == '16.0'">
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTesting, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>
+  </PropertyGroup>
+  <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' == ''" />
 </Project>

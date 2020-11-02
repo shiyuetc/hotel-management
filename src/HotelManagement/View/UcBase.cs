@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Seasar.Quill;
+using System.Windows.Forms;
 
 namespace HotelManagement.View
 {
@@ -12,6 +13,5 @@ namespace HotelManagement.View
 
             this.Main = main;
         }
-
     }
 }

@@ -16,22 +16,22 @@ using Dbflute.BsEntity.Dbm;
 namespace Dbflute.ExEntity {
 
     /// <summary>
-    /// The entity of USER as TABLE. (partial class for auto-generation)
+    /// The entity of mst_user as TABLE. (partial class for auto-generation)
     /// <![CDATA[
     /// [primary-key]
-    ///     ID
+    ///     id
     /// 
     /// [column]
-    ///     ID, NAME, UPDATE_DATETIME, UPDATE_USER, VERSION_NO
+    ///     id, name, password, update_time, update_user, version_no
     /// 
     /// [sequence]
     ///     
     /// 
     /// [identity]
-    ///     
+    ///     id
     /// 
     /// [version-no]
-    ///     VERSION_NO
+    ///     version_no
     /// 
     /// [foreign-table]
     ///     
@@ -47,29 +47,32 @@ namespace Dbflute.ExEntity {
     /// ]]>
     /// Author: DBFlute(AutoGenerator)
     /// </summary>
-    [Seasar.Dao.Attrs.Table("USER")]
-    [Seasar.Dao.Attrs.VersionNoProperty("VERSION_NO")]
+    [Seasar.Dao.Attrs.Table("mst_user")]
+    [Seasar.Dao.Attrs.VersionNoProperty("VersionNo")]
     [System.Serializable]
-    public partial class USER : Entity {
+    public partial class MstUser : Entity {
 
         // ===============================================================================
         //                                                                       Attribute
         //                                                                       =========
         #region Attribute
-        /// <summary>ID: {PK, NotNull, INTEGER(10)}</summary>
-        protected int? _iD;
+        /// <summary>id: {PK, ID, NotNull, serial(10)}</summary>
+        protected int? _id;
 
-        /// <summary>NAME: {NotNull, VARCHAR(20)}</summary>
-        protected String _nAME;
+        /// <summary>name: {NotNull, varchar(20)}</summary>
+        protected String _name;
 
-        /// <summary>UPDATE_DATETIME: {NotNull, TIMESTAMP(26, 6)}</summary>
-        protected DateTime? _uPDATE_DATETIME;
+        /// <summary>password: {NotNull, varchar(255)}</summary>
+        protected String _password;
 
-        /// <summary>UPDATE_USER: {NotNull, VARCHAR(200)}</summary>
-        protected String _uPDATE_USER;
+        /// <summary>update_time: {NotNull, timestamp(26, 3)}</summary>
+        protected DateTime? _updateTime;
 
-        /// <summary>VERSION_NO: {NotNull, BIGINT(19)}</summary>
-        protected long? _vERSION_NO;
+        /// <summary>update_user: {NotNull, varchar(200)}</summary>
+        protected String _updateUser;
+
+        /// <summary>version_no: {NotNull, int8(19)}</summary>
+        protected long? _versionNo;
 
         protected EntityModifiedProperties __modifiedProperties = new EntityModifiedProperties();
         #endregion
@@ -77,8 +80,8 @@ namespace Dbflute.ExEntity {
         // ===============================================================================
         //                                                                      Table Name
         //                                                                      ==========
-        public String TableDbName { get { return "USER"; } }
-        public String TablePropertyName { get { return "USER"; } }
+        public String TableDbName { get { return "mst_user"; } }
+        public String TablePropertyName { get { return "MstUser"; } }
 
         // ===============================================================================
         //                                                                          DBMeta
@@ -102,7 +105,7 @@ namespace Dbflute.ExEntity {
         //                                                                   =============
         public virtual bool HasPrimaryKeyValue {
             get {
-                if (_iD == null) { return false; }
+                if (_id == null) { return false; }
                 return true;
             }
         }
@@ -123,9 +126,9 @@ namespace Dbflute.ExEntity {
         //                                                                  ==============
         #region Basic Override
         public override bool Equals(Object other) {
-            if (other == null || !(other is USER)) { return false; }
-            USER otherEntity = (USER)other;
-            if (!xSV(this.ID, otherEntity.ID)) { return false; }
+            if (other == null || !(other is MstUser)) { return false; }
+            MstUser otherEntity = (MstUser)other;
+            if (!xSV(this.Id, otherEntity.Id)) { return false; }
             return true;
         }
         protected bool xSV(Object value1, Object value2) { // isSameValue()
@@ -136,7 +139,7 @@ namespace Dbflute.ExEntity {
 
         public override int GetHashCode() {
             int result = 17;
-            result = xCH(result, _iD);
+            result = xCH(result, _id);
             return result;
         }
         protected int xCH(int result, Object value) { // calculateHashcode()
@@ -145,7 +148,7 @@ namespace Dbflute.ExEntity {
         }
 
         public override String ToString() {
-            return "USER:" + BuildColumnString() + BuildRelationString();
+            return "MstUser:" + BuildColumnString() + BuildRelationString();
         }
 
         public virtual String ToStringWithRelation() {
@@ -164,11 +167,12 @@ namespace Dbflute.ExEntity {
         protected virtual String BuildColumnString() {
             String c = ", ";
             StringBuilder sb = new StringBuilder();
-            sb.Append(c).Append(this.ID);
-            sb.Append(c).Append(this.NAME);
-            sb.Append(c).Append(this.UPDATE_DATETIME);
-            sb.Append(c).Append(this.UPDATE_USER);
-            sb.Append(c).Append(this.VERSION_NO);
+            sb.Append(c).Append(this.Id);
+            sb.Append(c).Append(this.Name);
+            sb.Append(c).Append(this.Password);
+            sb.Append(c).Append(this.UpdateTime);
+            sb.Append(c).Append(this.UpdateUser);
+            sb.Append(c).Append(this.VersionNo);
             if (sb.Length > 0) { sb.Remove(0, c.Length); }
             sb.Insert(0, "{").Append("}");
             return sb.ToString();
@@ -182,53 +186,64 @@ namespace Dbflute.ExEntity {
         //                                                                        Accessor
         //                                                                        ========
         #region Accessor
-        /// <summary>ID: {PK, NotNull, INTEGER(10)}</summary>
-        [Seasar.Dao.Attrs.Column("ID")]
-        public int? ID {
-            get { return _iD; }
+        /// <summary>id: {PK, ID, NotNull, serial(10)}</summary>
+        [Seasar.Dao.Attrs.ID("identity")]
+        [Seasar.Dao.Attrs.Column("id")]
+        public int? Id {
+            get { return _id; }
             set {
-                __modifiedProperties.AddPropertyName("ID");
-                _iD = value;
+                __modifiedProperties.AddPropertyName("Id");
+                _id = value;
             }
         }
 
-        /// <summary>NAME: {NotNull, VARCHAR(20)}</summary>
-        [Seasar.Dao.Attrs.Column("NAME")]
-        public String NAME {
-            get { return _nAME; }
+        /// <summary>name: {NotNull, varchar(20)}</summary>
+        [Seasar.Dao.Attrs.Column("name")]
+        public String Name {
+            get { return _name; }
             set {
-                __modifiedProperties.AddPropertyName("NAME");
-                _nAME = value;
+                __modifiedProperties.AddPropertyName("Name");
+                _name = value;
             }
         }
 
-        /// <summary>UPDATE_DATETIME: {NotNull, TIMESTAMP(26, 6)}</summary>
-        [Seasar.Dao.Attrs.Column("UPDATE_DATETIME")]
-        public DateTime? UPDATE_DATETIME {
-            get { return _uPDATE_DATETIME; }
+        /// <summary>password: {NotNull, varchar(255)}</summary>
+        [Seasar.Dao.Attrs.Column("password")]
+        public String Password {
+            get { return _password; }
             set {
-                __modifiedProperties.AddPropertyName("UPDATE_DATETIME");
-                _uPDATE_DATETIME = value;
+                __modifiedProperties.AddPropertyName("Password");
+                _password = value;
             }
         }
 
-        /// <summary>UPDATE_USER: {NotNull, VARCHAR(200)}</summary>
-        [Seasar.Dao.Attrs.Column("UPDATE_USER")]
-        public String UPDATE_USER {
-            get { return _uPDATE_USER; }
+        /// <summary>update_time: {NotNull, timestamp(26, 3)}</summary>
+        [Seasar.Dao.Attrs.Column("update_time")]
+        public DateTime? UpdateTime {
+            get { return _updateTime; }
             set {
-                __modifiedProperties.AddPropertyName("UPDATE_USER");
-                _uPDATE_USER = value;
+                __modifiedProperties.AddPropertyName("UpdateTime");
+                _updateTime = value;
             }
         }
 
-        /// <summary>VERSION_NO: {NotNull, BIGINT(19)}</summary>
-        [Seasar.Dao.Attrs.Column("VERSION_NO")]
-        public long? VERSION_NO {
-            get { return _vERSION_NO; }
+        /// <summary>update_user: {NotNull, varchar(200)}</summary>
+        [Seasar.Dao.Attrs.Column("update_user")]
+        public String UpdateUser {
+            get { return _updateUser; }
             set {
-                __modifiedProperties.AddPropertyName("VERSION_NO");
-                _vERSION_NO = value;
+                __modifiedProperties.AddPropertyName("UpdateUser");
+                _updateUser = value;
+            }
+        }
+
+        /// <summary>version_no: {NotNull, int8(19)}</summary>
+        [Seasar.Dao.Attrs.Column("version_no")]
+        public long? VersionNo {
+            get { return _versionNo; }
+            set {
+                __modifiedProperties.AddPropertyName("VersionNo");
+                _versionNo = value;
             }
         }
 

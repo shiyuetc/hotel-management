@@ -21,7 +21,7 @@ using Dbflute.CBean;
 namespace Dbflute.ExBhv {
 
     [Implementation]
-    public partial class USERBhv : Dbflute.AllCommon.Bhv.AbstractBehaviorWritable {
+    public partial class MstUserBhv : Dbflute.AllCommon.Bhv.AbstractBehaviorWritable {
 
         // ===============================================================================
         //                                                                      Definition
@@ -32,12 +32,12 @@ namespace Dbflute.ExBhv {
         // ===============================================================================
         //                                                                       Attribute
         //                                                                       =========
-        protected USERDao _dao;
+        protected MstUserDao _dao;
 
         // ===============================================================================
         //                                                                     Constructor
         //                                                                     ===========
-        public USERBhv() {
+        public MstUserBhv() {
         }
         
         // ===============================================================================
@@ -48,13 +48,13 @@ namespace Dbflute.ExBhv {
         // ===============================================================================
         //                                                                      Table Name
         //                                                                      ==========
-        public override String TableDbName { get { return "USER"; } }
+        public override String TableDbName { get { return "mst_user"; } }
 
         // ===============================================================================
         //                                                                          DBMeta
         //                                                                          ======
-        public override DBMeta DBMeta { get { return USERDbm.GetInstance(); } }
-        public USERDbm MyDBMeta { get { return USERDbm.GetInstance(); } }
+        public override DBMeta DBMeta { get { return MstUserDbm.GetInstance(); } }
+        public MstUserDbm MyDBMeta { get { return MstUserDbm.GetInstance(); } }
 
         // ===============================================================================
         //                                                                    New Instance
@@ -62,15 +62,15 @@ namespace Dbflute.ExBhv {
         #region New Instance
         public override Entity NewEntity() { return NewMyEntity(); }
         public override ConditionBean NewConditionBean() { return NewMyConditionBean(); }
-        public virtual USER NewMyEntity() { return new USER(); }
-        public virtual USERCB NewMyConditionBean() { return new USERCB(); }
+        public virtual MstUser NewMyEntity() { return new MstUser(); }
+        public virtual MstUserCB NewMyConditionBean() { return new MstUserCB(); }
         #endregion
 
         // ===============================================================================
         //                                                                    Count Select
         //                                                                    ============
         #region Count Select
-        public virtual int SelectCount(USERCB cb) {
+        public virtual int SelectCount(MstUserCB cb) {
             AssertConditionBeanNotNull(cb);
             return this.DelegateSelectCount(cb);
         }
@@ -84,13 +84,13 @@ namespace Dbflute.ExBhv {
         //                                                                   Entity Select
         //                                                                   =============
         #region Entity Select
-        public virtual USER SelectEntity(USERCB cb) {
+        public virtual MstUser SelectEntity(MstUserCB cb) {
             AssertConditionBeanNotNull(cb);
             if (!cb.HasWhereClause() && cb.FetchSize != 1) { // if no condition for one
                 throwSelectEntityConditionNotFoundException(cb);
             }
             int preSafetyMaxResultSize = xcheckSafetyResultAsOne(cb);
-            IList<USER> ls = null;
+            IList<MstUser> ls = null;
             try {
                 ls = this.DelegateSelectList(cb);
             } catch (DangerousResultSizeException e) {
@@ -101,16 +101,16 @@ namespace Dbflute.ExBhv {
             }
             if (ls.Count == 0) { return null; }
             AssertEntitySelectedAsOne(ls, cb);
-            return (USER)ls[0];
+            return (MstUser)ls[0];
         }
 
         protected override Entity DoReadEntity(ConditionBean cb) {
             return SelectEntity(Downcast(cb));
         }
 
-        public virtual USER SelectEntityWithDeletedCheck(USERCB cb) {
+        public virtual MstUser SelectEntityWithDeletedCheck(MstUserCB cb) {
             AssertConditionBeanNotNull(cb);
-            USER entity = SelectEntity(cb);
+            MstUser entity = SelectEntity(cb);
             AssertEntityNotDeleted(entity, cb);
             return entity;
         }
@@ -119,18 +119,18 @@ namespace Dbflute.ExBhv {
             return SelectEntityWithDeletedCheck(Downcast(cb));
         }
 
-        public virtual USER SelectByPKValue(int? iD) {
-            return SelectEntity(BuildPKCB(iD));
+        public virtual MstUser SelectByPKValue(int? id) {
+            return SelectEntity(BuildPKCB(id));
         }
 
-        public virtual USER SelectByPKValueWithDeletedCheck(int? iD) {
-            return SelectEntityWithDeletedCheck(BuildPKCB(iD));
+        public virtual MstUser SelectByPKValueWithDeletedCheck(int? id) {
+            return SelectEntityWithDeletedCheck(BuildPKCB(id));
         }
 
-        private USERCB BuildPKCB(int? iD) {
-            AssertObjectNotNull("iD", iD);
-            USERCB cb = NewMyConditionBean();
-            cb.Query().SetID_Equal(iD);
+        private MstUserCB BuildPKCB(int? id) {
+            AssertObjectNotNull("id", id);
+            MstUserCB cb = NewMyConditionBean();
+            cb.Query().SetId_Equal(id);
             return cb;            
         }
         #endregion
@@ -139,9 +139,9 @@ namespace Dbflute.ExBhv {
         //                                                                     List Select
         //                                                                     ===========
         #region List Select
-        public virtual ListResultBean<USER> SelectList(USERCB cb) {
+        public virtual ListResultBean<MstUser> SelectList(MstUserCB cb) {
             AssertConditionBeanNotNull(cb);
-            return new ResultBeanBuilder<USER>(TableDbName).BuildListResultBean(cb, this.DelegateSelectList(cb));
+            return new ResultBeanBuilder<MstUser>(TableDbName).BuildListResultBean(cb, this.DelegateSelectList(cb));
         }
         #endregion
 
@@ -149,18 +149,18 @@ namespace Dbflute.ExBhv {
         //                                                                     Page Select
         //                                                                     ===========
         #region Page Select
-        public virtual PagingResultBean<USER> SelectPage(USERCB cb) {
+        public virtual PagingResultBean<MstUser> SelectPage(MstUserCB cb) {
             AssertConditionBeanNotNull(cb);
-            PagingInvoker<USER> invoker = new PagingInvoker<USER>(TableDbName);
+            PagingInvoker<MstUser> invoker = new PagingInvoker<MstUser>(TableDbName);
             return invoker.InvokePaging(new InternalSelectPagingHandler(this, cb));
         }
 
-        private class InternalSelectPagingHandler : PagingHandler<USER> {
-            protected USERBhv _bhv; protected USERCB _cb;
-            public InternalSelectPagingHandler(USERBhv bhv, USERCB cb) { _bhv = bhv; _cb = cb; }
+        private class InternalSelectPagingHandler : PagingHandler<MstUser> {
+            protected MstUserBhv _bhv; protected MstUserCB _cb;
+            public InternalSelectPagingHandler(MstUserBhv bhv, MstUserCB cb) { _bhv = bhv; _cb = cb; }
             public PagingBean PagingBean { get { return _cb; } }
             public int Count() { return _bhv.SelectCount(_cb); }
-            public IList<USER> Paging() { return _bhv.SelectList(_cb); }
+            public IList<MstUser> Paging() { return _bhv.SelectList(_cb); }
         }
         #endregion
 
@@ -181,7 +181,7 @@ namespace Dbflute.ExBhv {
         //                                                                   Entity Update
         //                                                                   =============
         #region Basic Entity Update
-        public virtual void Insert(USER entity) {
+        public virtual void Insert(MstUser entity) {
             AssertEntityNotNull(entity);
             this.DelegateInsert(entity);
         }
@@ -190,7 +190,7 @@ namespace Dbflute.ExBhv {
             Insert(Downcast(entity));
         }
 
-        public virtual void Update(USER entity) {
+        public virtual void Update(MstUser entity) {
             AssertEntityNotNull(entity);
             AssertEntityHasVersionNoValue(entity);
             AssertEntityHasUpdateDateValue(entity);
@@ -202,81 +202,81 @@ namespace Dbflute.ExBhv {
             Update(Downcast(entity));
         }
 
-        public virtual void UpdateNonstrict(USER entity) {
+        public virtual void UpdateNonstrict(MstUser entity) {
             AssertEntityNotNull(entity);
             int updatedCount = this.DelegateUpdateNonstrict(entity);
             AssertUpdatedEntity(entity, updatedCount);
         }
 
-        public void InsertOrUpdate(USER entity) {
-            HelpInsertOrUpdateInternally<USER, USERCB>(entity, new MyInternalInsertOrUpdateCallback(this));
+        public void InsertOrUpdate(MstUser entity) {
+            HelpInsertOrUpdateInternally<MstUser, MstUserCB>(entity, new MyInternalInsertOrUpdateCallback(this));
         }
-        protected class MyInternalInsertOrUpdateCallback : InternalInsertOrUpdateCallback<USER, USERCB> {
-            protected USERBhv _bhv;
-            public MyInternalInsertOrUpdateCallback(USERBhv bhv) { _bhv = bhv; }
-            public void CallbackInsert(USER entity) { _bhv.Insert(entity); }
-            public void CallbackUpdate(USER entity) { _bhv.Update(entity); }
-            public USERCB CallbackNewMyConditionBean() { return _bhv.NewMyConditionBean(); }
-            public void CallbackSetupPrimaryKeyCondition(USERCB cb, USER entity) {
-                cb.Query().SetID_Equal(entity.ID);
+        protected class MyInternalInsertOrUpdateCallback : InternalInsertOrUpdateCallback<MstUser, MstUserCB> {
+            protected MstUserBhv _bhv;
+            public MyInternalInsertOrUpdateCallback(MstUserBhv bhv) { _bhv = bhv; }
+            public void CallbackInsert(MstUser entity) { _bhv.Insert(entity); }
+            public void CallbackUpdate(MstUser entity) { _bhv.Update(entity); }
+            public MstUserCB CallbackNewMyConditionBean() { return _bhv.NewMyConditionBean(); }
+            public void CallbackSetupPrimaryKeyCondition(MstUserCB cb, MstUser entity) {
+                cb.Query().SetId_Equal(entity.Id);
             }
-            public int CallbackSelectCount(USERCB cb) { return _bhv.SelectCount(cb); }
+            public int CallbackSelectCount(MstUserCB cb) { return _bhv.SelectCount(cb); }
         }
 
-        public void InsertOrUpdateNonstrict(USER entity) {
-            HelpInsertOrUpdateInternally<USER>(entity, new MyInternalInsertOrUpdateNonstrictCallback(this));
+        public void InsertOrUpdateNonstrict(MstUser entity) {
+            HelpInsertOrUpdateInternally<MstUser>(entity, new MyInternalInsertOrUpdateNonstrictCallback(this));
         }
-        protected class MyInternalInsertOrUpdateNonstrictCallback : InternalInsertOrUpdateNonstrictCallback<USER> {
-            protected USERBhv _bhv;
-            public MyInternalInsertOrUpdateNonstrictCallback(USERBhv bhv) { _bhv = bhv; }
-            public void CallbackInsert(USER entity) { _bhv.Insert(entity); }
-            public void CallbackUpdateNonstrict(USER entity) { _bhv.UpdateNonstrict(entity); }
+        protected class MyInternalInsertOrUpdateNonstrictCallback : InternalInsertOrUpdateNonstrictCallback<MstUser> {
+            protected MstUserBhv _bhv;
+            public MyInternalInsertOrUpdateNonstrictCallback(MstUserBhv bhv) { _bhv = bhv; }
+            public void CallbackInsert(MstUser entity) { _bhv.Insert(entity); }
+            public void CallbackUpdateNonstrict(MstUser entity) { _bhv.UpdateNonstrict(entity); }
         }
 
-        public virtual void Delete(USER entity) {
-            HelpDeleteInternally<USER>(entity, new MyInternalDeleteCallback(this));
+        public virtual void Delete(MstUser entity) {
+            HelpDeleteInternally<MstUser>(entity, new MyInternalDeleteCallback(this));
         }
 
         protected override void DoRemove(Entity entity) {
             Remove(Downcast(entity));
         }
 
-        protected class MyInternalDeleteCallback : InternalDeleteCallback<USER> {
-            protected USERBhv _bhv;
-            public MyInternalDeleteCallback(USERBhv bhv) { _bhv = bhv; }
-            public int CallbackDelegateDelete(USER entity) { return _bhv.DelegateDelete(entity); }
+        protected class MyInternalDeleteCallback : InternalDeleteCallback<MstUser> {
+            protected MstUserBhv _bhv;
+            public MyInternalDeleteCallback(MstUserBhv bhv) { _bhv = bhv; }
+            public int CallbackDelegateDelete(MstUser entity) { return _bhv.DelegateDelete(entity); }
         }
 
-        public virtual void DeleteNonstrict(USER entity) {
-            HelpDeleteNonstrictInternally<USER>(entity, new MyInternalDeleteNonstrictCallback(this));
+        public virtual void DeleteNonstrict(MstUser entity) {
+            HelpDeleteNonstrictInternally<MstUser>(entity, new MyInternalDeleteNonstrictCallback(this));
         }
-        protected class MyInternalDeleteNonstrictCallback : InternalDeleteNonstrictCallback<USER> {
-            protected USERBhv _bhv;
-            public MyInternalDeleteNonstrictCallback(USERBhv bhv) { _bhv = bhv; }
-            public int CallbackDelegateDeleteNonstrict(USER entity) { return _bhv.DelegateDeleteNonstrict(entity); }
+        protected class MyInternalDeleteNonstrictCallback : InternalDeleteNonstrictCallback<MstUser> {
+            protected MstUserBhv _bhv;
+            public MyInternalDeleteNonstrictCallback(MstUserBhv bhv) { _bhv = bhv; }
+            public int CallbackDelegateDeleteNonstrict(MstUser entity) { return _bhv.DelegateDeleteNonstrict(entity); }
         }
 
-        public virtual void DeleteNonstrictIgnoreDeleted(USER entity) {
-            HelpDeleteNonstrictIgnoreDeletedInternally<USER>(entity, new MyInternalDeleteNonstrictIgnoreDeletedCallback(this));
+        public virtual void DeleteNonstrictIgnoreDeleted(MstUser entity) {
+            HelpDeleteNonstrictIgnoreDeletedInternally<MstUser>(entity, new MyInternalDeleteNonstrictIgnoreDeletedCallback(this));
         }
-        protected class MyInternalDeleteNonstrictIgnoreDeletedCallback : InternalDeleteNonstrictIgnoreDeletedCallback<USER> {
-            protected USERBhv _bhv;
-            public MyInternalDeleteNonstrictIgnoreDeletedCallback(USERBhv bhv) { _bhv = bhv; }
-            public int CallbackDelegateDeleteNonstrict(USER entity) { return _bhv.DelegateDeleteNonstrict(entity); }
+        protected class MyInternalDeleteNonstrictIgnoreDeletedCallback : InternalDeleteNonstrictIgnoreDeletedCallback<MstUser> {
+            protected MstUserBhv _bhv;
+            public MyInternalDeleteNonstrictIgnoreDeletedCallback(MstUserBhv bhv) { _bhv = bhv; }
+            public int CallbackDelegateDeleteNonstrict(MstUser entity) { return _bhv.DelegateDeleteNonstrict(entity); }
         }
         #endregion
 
         // ===============================================================================
         //                                                                    Query Update
         //                                                                    ============
-        public int QueryUpdate(USER uSER, USERCB cb) {
-            AssertObjectNotNull("uSER", uSER); AssertConditionBeanNotNull(cb);
-            SetupCommonColumnOfUpdateIfNeeds(uSER);
-            FilterEntityOfUpdate(uSER); AssertEntityOfUpdate(uSER);
-            return this.Dao.UpdateByQuery(cb, uSER);
+        public int QueryUpdate(MstUser mstUser, MstUserCB cb) {
+            AssertObjectNotNull("mstUser", mstUser); AssertConditionBeanNotNull(cb);
+            SetupCommonColumnOfUpdateIfNeeds(mstUser);
+            FilterEntityOfUpdate(mstUser); AssertEntityOfUpdate(mstUser);
+            return this.Dao.UpdateByQuery(cb, mstUser);
         }
 
-        public int QueryDelete(USERCB cb) {
+        public int QueryDelete(MstUserCB cb) {
             AssertConditionBeanNotNull(cb);
             return this.Dao.DeleteByQuery(cb);
         }
@@ -285,7 +285,7 @@ namespace Dbflute.ExBhv {
         //                                                            Optimistic Lock Info
         //                                                            ====================
         protected override bool HasVersionNoValue(Entity entity) {
-            return Downcast(entity).VERSION_NO != null;
+            return Downcast(entity).VersionNo != null;
         }
 
         protected override bool HasUpdateDateValue(Entity entity) {
@@ -296,34 +296,34 @@ namespace Dbflute.ExBhv {
         //                                                                 Delegate Method
         //                                                                 ===============
         #region Delegate Method
-        protected int DelegateSelectCount(USERCB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectCount(cb); }
-        protected IList<USER> DelegateSelectList(USERCB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectList(cb); }
+        protected int DelegateSelectCount(MstUserCB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectCount(cb); }
+        protected IList<MstUser> DelegateSelectList(MstUserCB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectList(cb); }
 
-        protected int DelegateInsert(USER e) { if (!ProcessBeforeInsert(e)) { return 1; } return this.Dao.Insert(e); }
-        protected int DelegateUpdate(USER e)
+        protected int DelegateInsert(MstUser e) { if (!ProcessBeforeInsert(e)) { return 1; } return this.Dao.Insert(e); }
+        protected int DelegateUpdate(MstUser e)
         { if (!ProcessBeforeUpdate(e)) { return 1; } return this.Dao.UpdateModifiedOnly(e); }
-        protected int DelegateUpdateNonstrict(USER e)
+        protected int DelegateUpdateNonstrict(MstUser e)
         { if (!ProcessBeforeUpdate(e)) { return 1; } return this.Dao.UpdateNonstrictModifiedOnly(e); }
-        protected int DelegateDelete(USER e)
+        protected int DelegateDelete(MstUser e)
         { if (!ProcessBeforeDelete(e)) { return 1; } return this.Dao.Delete(e); }
-        protected int DelegateDeleteNonstrict(USER e)
+        protected int DelegateDeleteNonstrict(MstUser e)
         { if (!ProcessBeforeDelete(e)) { return 1; } return this.Dao.DeleteNonstrict(e); }
         #endregion
 
         // ===============================================================================
         //                                                                 Downcast Helper
         //                                                                 ===============
-        protected USER Downcast(Entity entity) {
-            return (USER)entity;
+        protected MstUser Downcast(Entity entity) {
+            return (MstUser)entity;
         }
 
-        protected USERCB Downcast(ConditionBean cb) {
-            return (USERCB)cb;
+        protected MstUserCB Downcast(ConditionBean cb) {
+            return (MstUserCB)cb;
         }
 
         // ===============================================================================
         //                                                                        Accessor
         //                                                                        ========
-        public virtual USERDao Dao { get { return _dao; } set { _dao = value; } }
+        public virtual MstUserDao Dao { get { return _dao; } set { _dao = value; } }
     }
 }

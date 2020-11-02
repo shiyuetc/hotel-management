@@ -1,0 +1,140 @@
+map:{
+    ; 2020/11/02 23:23:35 = map:{
+        ; diffDate = 2020/11/02 23:23:35
+        ; tableDiff = map:{
+            ; mst_user = map:{
+                ; tableName = mst_user
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; update_user = map:{
+                        ; columnName = update_user
+                        ; diffType = ADD
+                    }
+                    ; Update_user = map:{
+                        ; columnName = Update_user
+                        ; diffType = DELETE
+                    }
+                }
+            }
+        }
+    }
+    ; 2020/11/02 23:17:24 = map:{
+        ; diffDate = 2020/11/02 23:17:24
+        ; tableDiff = map:{
+            ; mst_user = map:{
+                ; tableName = mst_user
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; password = map:{
+                        ; columnName = password
+                        ; diffType = ADD
+                    }
+                    ; Update_user = map:{
+                        ; columnName = Update_user
+                        ; diffType = ADD
+                    }
+                    ; version_no = map:{
+                        ; columnName = version_no
+                        ; diffType = ADD
+                    }
+                    ; password_re = map:{
+                        ; columnName = password_re
+                        ; diffType = DELETE
+                    }
+                    ; UpdateUser = map:{
+                        ; columnName = UpdateUser
+                        ; diffType = DELETE
+                    }
+                    ; VersionNo = map:{
+                        ; columnName = VersionNo
+                        ; diffType = DELETE
+                    }
+                }
+            }
+        }
+    }
+    ; 2020/11/02 23:10:25 = map:{
+        ; diffDate = 2020/11/02 23:10:25
+        ; tableDiff = map:{
+            ; mst_user = map:{
+                ; tableName = mst_user
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; password_re = map:{
+                        ; columnName = password_re
+                        ; diffType = ADD
+                    }
+                    ; update_time = map:{
+                        ; columnName = update_time
+                        ; diffType = ADD
+                    }
+                    ; UpdateUser = map:{
+                        ; columnName = UpdateUser
+                        ; diffType = ADD
+                    }
+                    ; VersionNo = map:{
+                        ; columnName = VersionNo
+                        ; diffType = ADD
+                    }
+                    ; update_date_time = map:{
+                        ; columnName = update_date_time
+                        ; diffType = DELETE
+                    }
+                    ; update_user = map:{
+                        ; columnName = update_user
+                        ; diffType = DELETE
+                    }
+                    ; version_no = map:{
+                        ; columnName = version_no
+                        ; diffType = DELETE
+                    }
+                }
+            }
+        }
+    }
+    ; 2020/11/02 20:13:19 = map:{
+        ; diffDate = 2020/11/02 20:13:19
+        ; tableDiff = map:{
+            ; mst_user = map:{
+                ; tableName = mst_user
+                ; diffType = ADD
+            }
+            ; MST_USER = map:{
+                ; tableName = MST_USER
+                ; diffType = DELETE
+            }
+        }
+        ; sequenceDiff = map:{
+            ; hotel_management.public.mst_user_id_seq = map:{
+                ; sequenceName = hotel_management.public.mst_user_id_seq
+                ; diffType = ADD
+            }
+        }
+    }
+    ; 2020/11/02 18:22:31 = map:{
+        ; diffDate = 2020/11/02 18:22:31
+        ; tableDiff = map:{
+            ; MST_USER = map:{
+                ; tableName = MST_USER
+                ; diffType = ADD
+            }
+            ; MSTUSER = map:{
+                ; tableName = MSTUSER
+                ; diffType = DELETE
+            }
+        }
+    }
+    ; 2020/11/02 17:46:08 = map:{
+        ; diffDate = 2020/11/02 17:46:08
+        ; tableDiff = map:{
+            ; MSTUSER = map:{
+                ; tableName = MSTUSER
+                ; diffType = ADD
+            }
+            ; USER = map:{
+                ; tableName = USER
+                ; diffType = DELETE
+            }
+        }
+    }
+}

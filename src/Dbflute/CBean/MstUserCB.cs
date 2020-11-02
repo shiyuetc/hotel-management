@@ -5,6 +5,6 @@ using System.Collections;
 namespace Dbflute.CBean {
 
     [System.Serializable]
-    public class USERCB : Dbflute.CBean.BS.BsUSERCB {
+    public class MstUserCB : Dbflute.CBean.BS.BsMstUserCB {
     }
 }

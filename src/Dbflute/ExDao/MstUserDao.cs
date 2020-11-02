@@ -4,6 +4,6 @@ using System.Collections.Generic;
 
 namespace Dbflute.ExDao {
 
-    partial interface USERDao {
+    partial interface MstUserDao {
     }
 }

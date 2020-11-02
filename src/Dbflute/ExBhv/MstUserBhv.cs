@@ -4,6 +4,6 @@ using System.Collections.Generic;
 
 namespace Dbflute.ExBhv {
 
-    partial class USERBhv {
+    partial class MstUserBhv {
     }
 }

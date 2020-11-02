@@ -25,19 +25,19 @@ namespace Dbflute.AllCommon.Dbm {
         static DBMetaInstanceHandler() {
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
-                tmpMap.put("USER", "Dbflute.BsEntity.Dbm.USERDbm");
+                tmpMap.put("mst_user", "Dbflute.BsEntity.Dbm.MstUserDbm");
                 _tableDbNameClassNameMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
 
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
-                tmpMap.put("USER".ToLower(), "USER");
+                tmpMap.put("mst_user".ToLower(), "mstUser");
                 _tableDbNamePropertyNameKeyToLowerMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
 
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
-                tmpMap.put("USER".ToLower(), "USER");
+                tmpMap.put("MstUser".ToLower(), "mst_user");
                 _tablePropertyNameDbNameKeyToLowerMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
         }
