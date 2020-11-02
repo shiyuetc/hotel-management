@@ -129,7 +129,7 @@ map:{
     #      e.g. If the table name is 'ORDER_DETAIL', the class name is 'OrderDetail'.
     #      e.g. If the table name is 'OrderDetail', the class name is 'Orderdetail'.
     #
-    ; isTableNameCamelCase = true
+    #; isTableNameCamelCase = true
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -144,7 +144,7 @@ map:{
     #      e.g. If the column name is 'ORDER_DETAIL_ID', the class name is 'OrderDetailId'.
     #      e.g. If the column name is 'OrderDetailId',  the class name is 'Orderdetailid'.
     #
-    ; isColumnNameCamelCase = true
+    #; isColumnNameCamelCase = true
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
