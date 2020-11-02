@@ -36,7 +36,7 @@ map:{
     #    mysql, postgresql, oracle, db2, sqlserver,
     #    h2, derby, (sqlite, firebird, msaccess)
     #
-    ; database = @database@
+    ; database = h2
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -46,7 +46,7 @@ map:{
     #
     #       java, csharp, scala
     #
-    ; targetLanguage = @targetLanguage@
+    ; targetLanguage = csharp
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -56,7 +56,7 @@ map:{
     #
     #       spring, guice, seasar, cdi, lasta_di
     #
-    ; targetContainer = @targetContainer@
+    ; targetContainer = seasar
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -76,7 +76,7 @@ map:{
     #      --> org.docksidestage.dbflute.exbhv
     #      --> org.docksidestage.dbflute.exentity
     #
-    ; packageBase = @packageBase@
+    ; packageBase = Dbflute
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -107,7 +107,7 @@ map:{
     #     [app-solution]/source/[app-project(top-namespace)]/[part-namespace]/...
     #     [app-solution]/source/[app-project(top-namespace)]/Resources/...
     #
-    #; generateOutputDirectory = ../src/main/java
+    #; generateOutputDirectory = ../../src
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -130,7 +130,7 @@ map:{
     #      e.g. If the table name is 'ORDER_DETAIL', the class name is 'OrderDetail'.
     #      e.g. If the table name is 'OrderDetail', the class name is 'Orderdetail'.
     #
-    #; isTableNameCamelCase = false
+    #; isTableNameCamelCase = true
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -145,7 +145,7 @@ map:{
     #      e.g. If the column name is 'ORDER_DETAIL_ID', the class name is 'OrderDetailId'.
     #      e.g. If the column name is 'OrderDetailId',  the class name is 'Orderdetailid'.
     #
-    #; isColumnNameCamelCase = false
+    #; isColumnNameCamelCase = true
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
