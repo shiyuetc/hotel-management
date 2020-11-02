@@ -1,4 +1,41 @@
 map:{
+    ; 2020/11/03 00:02:36 = map:{
+        ; diffDate = 2020/11/03 00:02:36
+        ; tableDiff = map:{
+            ; mst_user = map:{
+                ; tableName = mst_user
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; login_id = map:{
+                        ; columnName = login_id
+                        ; diffType = ADD
+                    }
+                    ; name = map:{
+                        ; columnName = name
+                        ; diffType = CHANGE
+                        ; columnSizeDiff = map:{
+                            ; next = 40
+                            ; previous = 20
+                        }
+                    }
+                    ; update_user = map:{
+                        ; columnName = update_user
+                        ; diffType = CHANGE
+                        ; columnSizeDiff = map:{
+                            ; next = 100
+                            ; previous = 200
+                        }
+                    }
+                }
+                ; uniqueKeyDiff = map:{
+                    ; mst_user_login_id_key = map:{
+                        ; constraintName = mst_user_login_id_key
+                        ; diffType = ADD
+                    }
+                }
+            }
+        }
+    }
     ; 2020/11/02 23:23:35 = map:{
         ; diffDate = 2020/11/02 23:23:35
         ; tableDiff = map:{

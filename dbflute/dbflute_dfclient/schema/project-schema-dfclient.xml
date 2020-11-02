@@ -7,16 +7,21 @@
             default="nextval('mst_user_id_seq'::regclass)"
             javaType="int?" name="id" pkName="mst_user_pkey"
             primaryKey="true" required="true" size="10" type="INTEGER"/>
-        <column dbType="varchar" javaType="String" name="name"
+        <column dbType="varchar" javaType="String" name="login_id"
             required="true" size="20" type="VARCHAR"/>
+        <column dbType="varchar" javaType="String" name="name"
+            required="true" size="40" type="VARCHAR"/>
         <column dbType="varchar" javaType="String" name="password"
             required="true" size="255" type="VARCHAR"/>
         <column dbType="timestamp" javaType="DateTime?"
             name="update_time" required="true" size="26, 3" type="TIMESTAMP"/>
         <column dbType="varchar" javaType="String" name="update_user"
-            required="true" size="200" type="VARCHAR"/>
+            required="true" size="100" type="VARCHAR"/>
         <column dbType="int8" javaType="long?" name="version_no"
             required="true" size="19" type="BIGINT"/>
+        <unique name="mst_user_login_id_key">
+            <unique-column name="login_id" position="1"/>
+        </unique>
     </table>
     <sequenceGroup>
         <sequence incrementSize="1" name="mst_user_id_seq" schema="hotel_management.public"/>

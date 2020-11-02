@@ -33,6 +33,24 @@ namespace Dbflute.CBean.CQ.BS {
         protected void regId(ConditionKey k, Object v) { regQ(k, v, getCValueId(), "id"); }
         protected abstract ConditionValue getCValueId();
 
+        public void SetLoginId_Equal(String v) { DoSetLoginId_Equal(fRES(v)); }
+        protected void DoSetLoginId_Equal(String v) { regLoginId(CK_EQ, v); }
+        public void SetLoginId_NotEqual(String v) { DoSetLoginId_NotEqual(fRES(v)); }
+        protected void DoSetLoginId_NotEqual(String v) { regLoginId(CK_NES, v); }
+        public void SetLoginId_GreaterThan(String v) { regLoginId(CK_GT, fRES(v)); }
+        public void SetLoginId_LessThan(String v) { regLoginId(CK_LT, fRES(v)); }
+        public void SetLoginId_GreaterEqual(String v) { regLoginId(CK_GE, fRES(v)); }
+        public void SetLoginId_LessEqual(String v) { regLoginId(CK_LE, fRES(v)); }
+        public void SetLoginId_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValueLoginId(), "login_id"); }
+        public void SetLoginId_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValueLoginId(), "login_id"); }
+        public void SetLoginId_PrefixSearch(String v) { SetLoginId_LikeSearch(v, cLSOP()); }
+        public void SetLoginId_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValueLoginId(), "login_id", option); }
+        public void SetLoginId_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValueLoginId(), "login_id", option); }
+        protected void regLoginId(ConditionKey k, Object v) { regQ(k, v, getCValueLoginId(), "login_id"); }
+        protected abstract ConditionValue getCValueLoginId();
+
         public void SetName_Equal(String v) { DoSetName_Equal(fRES(v)); }
         protected void DoSetName_Equal(String v) { regName(CK_EQ, v); }
         public void SetName_NotEqual(String v) { DoSetName_NotEqual(fRES(v)); }

@@ -22,7 +22,7 @@ namespace Dbflute.ExEntity {
     ///     id
     /// 
     /// [column]
-    ///     id, name, password, update_time, update_user, version_no
+    ///     id, login_id, name, password, update_time, update_user, version_no
     /// 
     /// [sequence]
     ///     
@@ -59,7 +59,10 @@ namespace Dbflute.ExEntity {
         /// <summary>id: {PK, ID, NotNull, serial(10)}</summary>
         protected int? _id;
 
-        /// <summary>name: {NotNull, varchar(20)}</summary>
+        /// <summary>login_id: {UQ, NotNull, varchar(20)}</summary>
+        protected String _loginId;
+
+        /// <summary>name: {NotNull, varchar(40)}</summary>
         protected String _name;
 
         /// <summary>password: {NotNull, varchar(255)}</summary>
@@ -68,7 +71,7 @@ namespace Dbflute.ExEntity {
         /// <summary>update_time: {NotNull, timestamp(26, 3)}</summary>
         protected DateTime? _updateTime;
 
-        /// <summary>update_user: {NotNull, varchar(200)}</summary>
+        /// <summary>update_user: {NotNull, varchar(100)}</summary>
         protected String _updateUser;
 
         /// <summary>version_no: {NotNull, int8(19)}</summary>
@@ -168,6 +171,7 @@ namespace Dbflute.ExEntity {
             String c = ", ";
             StringBuilder sb = new StringBuilder();
             sb.Append(c).Append(this.Id);
+            sb.Append(c).Append(this.LoginId);
             sb.Append(c).Append(this.Name);
             sb.Append(c).Append(this.Password);
             sb.Append(c).Append(this.UpdateTime);
@@ -197,7 +201,17 @@ namespace Dbflute.ExEntity {
             }
         }
 
-        /// <summary>name: {NotNull, varchar(20)}</summary>
+        /// <summary>login_id: {UQ, NotNull, varchar(20)}</summary>
+        [Seasar.Dao.Attrs.Column("login_id")]
+        public String LoginId {
+            get { return _loginId; }
+            set {
+                __modifiedProperties.AddPropertyName("LoginId");
+                _loginId = value;
+            }
+        }
+
+        /// <summary>name: {NotNull, varchar(40)}</summary>
         [Seasar.Dao.Attrs.Column("name")]
         public String Name {
             get { return _name; }
@@ -227,7 +241,7 @@ namespace Dbflute.ExEntity {
             }
         }
 
-        /// <summary>update_user: {NotNull, varchar(200)}</summary>
+        /// <summary>update_user: {NotNull, varchar(100)}</summary>
         [Seasar.Dao.Attrs.Column("update_user")]
         public String UpdateUser {
             get { return _updateUser; }

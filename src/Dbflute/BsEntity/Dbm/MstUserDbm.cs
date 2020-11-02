@@ -39,6 +39,7 @@ namespace Dbflute.BsEntity.Dbm {
         //                                                                     Column Info
         //                                                                     ===========
         protected ColumnInfo _columnId;
+        protected ColumnInfo _columnLoginId;
         protected ColumnInfo _columnName;
         protected ColumnInfo _columnPassword;
         protected ColumnInfo _columnUpdateTime;
@@ -46,6 +47,7 @@ namespace Dbflute.BsEntity.Dbm {
         protected ColumnInfo _columnVersionNo;
 
         public ColumnInfo ColumnId { get { return _columnId; } }
+        public ColumnInfo ColumnLoginId { get { return _columnLoginId; } }
         public ColumnInfo ColumnName { get { return _columnName; } }
         public ColumnInfo ColumnPassword { get { return _columnPassword; } }
         public ColumnInfo ColumnUpdateTime { get { return _columnUpdateTime; } }
@@ -54,16 +56,18 @@ namespace Dbflute.BsEntity.Dbm {
 
         protected void InitializeColumnInfo() {
             _columnId = cci("id", "id", null, null, true, "Id", typeof(int?), true, "serial", 10, 0, false, OptimisticLockType.NONE, null, null, null);
-            _columnName = cci("name", "name", null, null, true, "Name", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
+            _columnLoginId = cci("login_id", "login_id", null, null, true, "LoginId", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
+            _columnName = cci("name", "name", null, null, true, "Name", typeof(String), false, "varchar", 40, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnPassword = cci("password", "password", null, null, true, "Password", typeof(String), false, "varchar", 255, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnUpdateTime = cci("update_time", "update_time", null, null, true, "UpdateTime", typeof(DateTime?), false, "timestamp", 26, 3, false, OptimisticLockType.NONE, null, null, null);
-            _columnUpdateUser = cci("update_user", "update_user", null, null, true, "UpdateUser", typeof(String), false, "varchar", 200, 0, false, OptimisticLockType.NONE, null, null, null);
+            _columnUpdateUser = cci("update_user", "update_user", null, null, true, "UpdateUser", typeof(String), false, "varchar", 100, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnVersionNo = cci("version_no", "version_no", null, null, true, "VersionNo", typeof(long?), false, "int8", 19, 0, false, OptimisticLockType.VERSION_NO, null, null, null);
         }
 
         protected void InitializeColumnInfoList() {
             _columnInfoList = new ArrayList<ColumnInfo>();
             _columnInfoList.add(ColumnId);
+            _columnInfoList.add(ColumnLoginId);
             _columnInfoList.add(ColumnName);
             _columnInfoList.add(ColumnPassword);
             _columnInfoList.add(ColumnUpdateTime);
@@ -119,6 +123,7 @@ namespace Dbflute.BsEntity.Dbm {
         //                                    Column DB-Name
         //                                    --------------
         public static readonly String DB_NAME_id = "id";
+        public static readonly String DB_NAME_login_id = "login_id";
         public static readonly String DB_NAME_name = "name";
         public static readonly String DB_NAME_password = "password";
         public static readonly String DB_NAME_update_time = "update_time";
@@ -129,6 +134,7 @@ namespace Dbflute.BsEntity.Dbm {
         //                              Column Property-Name
         //                              --------------------
         public static readonly String PROPERTY_NAME_id = "Id";
+        public static readonly String PROPERTY_NAME_login_id = "LoginId";
         public static readonly String PROPERTY_NAME_name = "Name";
         public static readonly String PROPERTY_NAME_password = "Password";
         public static readonly String PROPERTY_NAME_update_time = "UpdateTime";
@@ -153,6 +159,7 @@ namespace Dbflute.BsEntity.Dbm {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_DB_NAME.ToLower(), TABLE_PROPERTY_NAME);
                 map.put(DB_NAME_id.ToLower(), PROPERTY_NAME_id);
+                map.put(DB_NAME_login_id.ToLower(), PROPERTY_NAME_login_id);
                 map.put(DB_NAME_name.ToLower(), PROPERTY_NAME_name);
                 map.put(DB_NAME_password.ToLower(), PROPERTY_NAME_password);
                 map.put(DB_NAME_update_time.ToLower(), PROPERTY_NAME_update_time);
@@ -165,6 +172,7 @@ namespace Dbflute.BsEntity.Dbm {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_PROPERTY_NAME.ToLower(), TABLE_DB_NAME);
                 map.put(PROPERTY_NAME_id.ToLower(), DB_NAME_id);
+                map.put(PROPERTY_NAME_login_id.ToLower(), DB_NAME_login_id);
                 map.put(PROPERTY_NAME_name.ToLower(), DB_NAME_name);
                 map.put(PROPERTY_NAME_password.ToLower(), DB_NAME_password);
                 map.put(PROPERTY_NAME_update_time.ToLower(), DB_NAME_update_time);
@@ -212,6 +220,7 @@ namespace Dbflute.BsEntity.Dbm {
 
         protected void InitializeEntityPropertySetupper() {
             RegisterEntityPropertySetupper("id", "Id", new EntityPropertyIdSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("login_id", "LoginId", new EntityPropertyLoginIdSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("name", "Name", new EntityPropertyNameSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("password", "Password", new EntityPropertyPasswordSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("update_time", "UpdateTime", new EntityPropertyUpdateTimeSetupper(), _entityPropertySetupperMap);
@@ -230,6 +239,9 @@ namespace Dbflute.BsEntity.Dbm {
 
         public class EntityPropertyIdSetupper : EntityPropertySetupper<MstUser> {
             public void Setup(MstUser entity, Object value) { entity.Id = (value != null) ? (int?)value : null; }
+        }
+        public class EntityPropertyLoginIdSetupper : EntityPropertySetupper<MstUser> {
+            public void Setup(MstUser entity, Object value) { entity.LoginId = (value != null) ? (String)value : null; }
         }
         public class EntityPropertyNameSetupper : EntityPropertySetupper<MstUser> {
             public void Setup(MstUser entity, Object value) { entity.Name = (value != null) ? (String)value : null; }
