@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="LogoutButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAU1JREFUWEft
-        lD1uwkAQhU1HE8qcgWNYQhT+lVykpc8RUlEiKk5BwyEAiZYuJ0iRcyQz5BkNy67xbLwWhZ/0SfZ4Zt7T
-        WnbURnmex1mW/XTIAavb6ZkC6AYhmnvDfP8BaGaH2X4DPHhtYQNQn3nkJsEDfKPfRfAApqHJEMArwEEO
-        0vWeeMftjahuM5XoAtjES3gZhVuhdJUwcnEfIE3TpQZeUi+k+y3WXFTXG7gPwEWjSQWdxLGqqlfssvYI
-        ug/A0El8YJf1uSDICSywyi+AVrwEy77IfIbyRag3oQvAn2ENSmzCn+GpKIopSlcJIxf6AOYgfwllWb7g
-        9kbCyMX/AzRJGLkYAgwB/APw9SOEkQvvAF3hFYD/fG2xmUp0AbSyGEo21DL66wwkiynzSX/POVrCyjQn
-        43Ucx2M8Di9hfiYylPsTjDdJkkxQciiKfgFO7RctvppQ8AAAAABJRU5ErkJggg==
-</value>
-  </data>
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>14, 13</value>
   </metadata>
