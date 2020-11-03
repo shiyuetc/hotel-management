@@ -24,18 +24,20 @@ namespace HotelManagement.View
         /// <param name="e"></param>
         private void LoginButton_Click(object sender, System.EventArgs e)
         {
-            if (this.EmployeeIDTextBox.TextLength == 0)
+            // 入力チェック
+            if (string.IsNullOrEmpty(this.EmployeeIDTextBox.Text))
             {
                 Messages.ShowError("{0}が入力されていません。", "従業員ID");
                 return;
             }
 
-            if (this.PasswordTextBox.TextLength == 0)
+            if (string.IsNullOrEmpty(this.PasswordTextBox.Text))
             {
                 Messages.ShowError("{0}が入力されていません。", "パスワード");
                 return;
             }
-
+            
+            // ログインを試行
             var vm = new ModelQuillInjector<LoginModel>();
             var user = vm.Model.Login(this.EmployeeIDTextBox.Text, this.PasswordTextBox.Text);
 
