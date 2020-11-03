@@ -13,6 +13,7 @@ namespace HotelManagement.Models
         public MstEmployee Login(string id, string password)
         {
             var mstEmployeeCB = new MstEmployeeCB();
+            mstEmployeeCB.SetupSelect_KbnRank();
             mstEmployeeCB.Query().SetEmployeeNo_Equal(id);
             mstEmployeeCB.Query().SetPassword_Equal(password);
             return MstEmployeeBhv.SelectEntity(mstEmployeeCB);
