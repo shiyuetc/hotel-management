@@ -8,7 +8,7 @@ namespace HotelManagement.Enums
     /// </summary>
     public enum Display
     {
-        [DisplayName("ログイン")]
+        [DisplayName("ログアウト")]
         Login,
 
         [DisplayName("予約管理")]

@@ -21,13 +21,13 @@ namespace HotelManagement.View
         /// </summary>
         private readonly List<MenuButton> MenuButtons = new List<MenuButton>()
         {
-            new MenuButton(Display.Reserve, "予約管理\r\n[開発中]"),
-            new MenuButton(Display.History, "宿泊履歴\r\n[開発中]"),
-            new MenuButton(Display.Sale, "売上管理\r\n[開発中]"),
-            new MenuButton(Display.Employee, "従業員管理\r\n[開発中]"),
-            new MenuButton(Display.Customer, "顧客管理\r\n[開発中]"),
-            new MenuButton(Display.Room, "客室管理\r\n[開発中]"),
-            new MenuButton(Display.Login, "ログアウト")
+            new MenuButton(Display.Reserve, "\r\n[開発中]"),
+            new MenuButton(Display.History, "\r\n[開発中]"),
+            new MenuButton(Display.Sale, "\r\n[開発中]"),
+            new MenuButton(Display.Employee, "\r\n[開発中]"),
+            new MenuButton(Display.Customer, "\r\n[開発中]"),
+            new MenuButton(Display.Room, "\r\n[開発中]"),
+            new MenuButton(Display.Login)
         };
 
         /// <summary>
