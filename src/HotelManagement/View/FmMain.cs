@@ -115,24 +115,30 @@ namespace HotelManagement.View
             this.EnableMenuButtons.Clear();
             if (mstEmployee.KbnRank.Code.EqualsAny(Constants.Rank.SystemMaintenancer, Constants.Rank.AssistantManager))
             {
-                this.EnableMenuButtons.Add(this.MenuBar.GetMenuButton(Display.Reserve));
-                this.EnableMenuButtons.Add(this.MenuBar.GetMenuButton(Display.History));
-                this.EnableMenuButtons.Add(this.MenuBar.GetMenuButton(Display.Sale));
-                this.EnableMenuButtons.Add(this.MenuBar.GetMenuButton(Display.Employee));
-                this.EnableMenuButtons.Add(this.MenuBar.GetMenuButton(Display.Customer));
-                this.EnableMenuButtons.Add(this.MenuBar.GetMenuButton(Display.Room));
+                this.EnableMenuButtons.AddRange(new MenuButton[] {
+                    this.MenuBar.GetMenuButton(Display.Reserve),
+                    this.MenuBar.GetMenuButton(Display.History),
+                    this.MenuBar.GetMenuButton(Display.Sale),
+                    this.MenuBar.GetMenuButton(Display.Employee),
+                    this.MenuBar.GetMenuButton(Display.Customer),
+                    this.MenuBar.GetMenuButton(Display.Room)
+                });
             }
             else if (mstEmployee.KbnRank.Code.Equals(Constants.Rank.FinancialController))
             {
-                this.EnableMenuButtons.Add(this.MenuBar.GetMenuButton(Display.History));
-                this.EnableMenuButtons.Add(this.MenuBar.GetMenuButton(Display.Sale));
-                this.EnableMenuButtons.Add(this.MenuBar.GetMenuButton(Display.Employee));
-                this.EnableMenuButtons.Add(this.MenuBar.GetMenuButton(Display.Customer));
+                this.EnableMenuButtons.AddRange(new MenuButton[] {
+                    this.MenuBar.GetMenuButton(Display.History),
+                    this.MenuBar.GetMenuButton(Display.Sale),
+                    this.MenuBar.GetMenuButton(Display.Employee),
+                    this.MenuBar.GetMenuButton(Display.Customer)
+                });
             }
             else if (mstEmployee.KbnRank.Code.Equals(Constants.Rank.FrontClerk))
             {
-                this.EnableMenuButtons.Add(this.MenuBar.GetMenuButton(Display.Reserve));
-                this.EnableMenuButtons.Add(this.MenuBar.GetMenuButton(Display.History));
+                this.EnableMenuButtons.AddRange(new MenuButton[] {
+                    this.MenuBar.GetMenuButton(Display.Reserve),
+                    this.MenuBar.GetMenuButton(Display.History)
+                });
             }
             this.EnableMenuButtons.Add(this.MenuBar.GetMenuButton(Display.Login));
             this.EnableMenuButtons.SetEnabled(true);
