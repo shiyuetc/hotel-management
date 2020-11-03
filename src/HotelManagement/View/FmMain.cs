@@ -77,10 +77,10 @@ namespace HotelManagement.View
             this.DisplayNameLabel.Text = display.GetDisplayName();
         }
 
-        public void SetLoginUser(MstUser mstUser)
+        public void SetLoginUser(MstEmployee mstEmployee)
         {
             this.MenuBarPanel.Enabled = true;
-            this.LoginInfoLabel.Text = $"ユーザー情報：{mstUser.Name}";
+            this.LoginInfoLabel.Text = $"ユーザー情報：{mstEmployee.Name}";
             this.MoveDisplay(Display.Reserve);
         }
 

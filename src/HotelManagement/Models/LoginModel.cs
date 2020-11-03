@@ -5,18 +5,17 @@ using Seasar.Quill.Attrs;
 
 namespace HotelManagement.Models
 {
-
     [Implementation]
     public class LoginModel
     {
-        protected MstUserBhv MstUserBhv;
+        protected MstEmployeeBhv MstEmployeeBhv;
 
-        public MstUser Login(string id, string password)
+        public MstEmployee Login(string id, string password)
         {
-            var mstUserCB = new MstUserCB();
-            mstUserCB.Query().SetLoginId_Equal(id);
-            mstUserCB.Query().SetPassword_Equal(password);
-            return MstUserBhv.SelectEntity(mstUserCB);
+            var mstEmployeeCB = new MstEmployeeCB();
+            mstEmployeeCB.Query().SetEmployeeNo_Equal(id);
+            mstEmployeeCB.Query().SetPassword_Equal(password);
+            return MstEmployeeBhv.SelectEntity(mstEmployeeCB);
         }
     }
 }

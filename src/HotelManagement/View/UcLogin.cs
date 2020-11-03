@@ -48,6 +48,7 @@ namespace HotelManagement.View
             }
             else
             {
+                // ログインが成功した場合はログイン情報を保持
                 this.Main.SetLoginUser(user);
             }
         }
