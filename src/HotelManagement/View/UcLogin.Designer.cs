@@ -41,7 +41,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 18F);
-            this.label1.Location = new System.Drawing.Point(315, 205);
+            this.label1.Location = new System.Drawing.Point(310, 205);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 24);
             this.label1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // EmployeeIDTextBox
             // 
             this.EmployeeIDTextBox.Font = new System.Drawing.Font("MS UI Gothic", 18F);
-            this.EmployeeIDTextBox.Location = new System.Drawing.Point(319, 232);
+            this.EmployeeIDTextBox.Location = new System.Drawing.Point(314, 232);
             this.EmployeeIDTextBox.Name = "EmployeeIDTextBox";
             this.EmployeeIDTextBox.Size = new System.Drawing.Size(300, 31);
             this.EmployeeIDTextBox.TabIndex = 1;
@@ -58,7 +58,7 @@
             // PasswordTextBox
             // 
             this.PasswordTextBox.Font = new System.Drawing.Font("MS UI Gothic", 18F);
-            this.PasswordTextBox.Location = new System.Drawing.Point(319, 303);
+            this.PasswordTextBox.Location = new System.Drawing.Point(314, 303);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(300, 31);
@@ -68,7 +68,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 18F);
-            this.label2.Location = new System.Drawing.Point(315, 276);
+            this.label2.Location = new System.Drawing.Point(310, 276);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 24);
             this.label2.TabIndex = 2;
@@ -77,7 +77,7 @@
             // LoginButton
             // 
             this.LoginButton.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-            this.LoginButton.Location = new System.Drawing.Point(433, 340);
+            this.LoginButton.Location = new System.Drawing.Point(428, 340);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(90, 31);
             this.LoginButton.TabIndex = 4;
@@ -98,7 +98,7 @@
             // ExitButton
             // 
             this.ExitButton.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-            this.ExitButton.Location = new System.Drawing.Point(529, 340);
+            this.ExitButton.Location = new System.Drawing.Point(524, 340);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(90, 31);
             this.ExitButton.TabIndex = 6;
@@ -119,7 +119,7 @@
             this.Controls.Add(this.EmployeeIDTextBox);
             this.Controls.Add(this.label1);
             this.Name = "UcLogin";
-            this.Size = new System.Drawing.Size(933, 538);
+            this.Size = new System.Drawing.Size(929, 534);
             this.ResumeLayout(false);
             this.PerformLayout();
 

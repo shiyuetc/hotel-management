@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // UcBase
+            // UcCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "UcBase";
-            this.Size = new System.Drawing.Size(933, 538);
+            this.Name = "UcCustomer";
+            this.Size = new System.Drawing.Size(929, 534);
             this.ResumeLayout(false);
 
         }

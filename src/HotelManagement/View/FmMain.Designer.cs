@@ -68,7 +68,6 @@
             this.MenuBarPanel.Controls.Add(this.UcSaleButton);
             this.MenuBarPanel.Controls.Add(this.UcHistoryButton);
             this.MenuBarPanel.Controls.Add(this.UcReserveButton);
-            this.MenuBarPanel.Enabled = false;
             this.MenuBarPanel.Location = new System.Drawing.Point(207, 5);
             this.MenuBarPanel.Name = "MenuBarPanel";
             this.MenuBarPanel.Size = new System.Drawing.Size(549, 70);
@@ -76,10 +75,11 @@
             // 
             // LogoutButton
             // 
+            this.LogoutButton.Enabled = false;
             this.LogoutButton.Image = ((System.Drawing.Image)(resources.GetObject("LogoutButton.Image")));
-            this.LogoutButton.Location = new System.Drawing.Point(374, 5);
+            this.LogoutButton.Location = new System.Drawing.Point(372, 2);
             this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Size = new System.Drawing.Size(74, 58);
+            this.LogoutButton.Size = new System.Drawing.Size(74, 63);
             this.LogoutButton.TabIndex = 5;
             this.LogoutButton.Text = "ログアウト\r\n";
             this.LogoutButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -89,9 +89,10 @@
             // 
             // UcCustomerButton
             // 
-            this.UcCustomerButton.Location = new System.Drawing.Point(300, 5);
+            this.UcCustomerButton.Enabled = false;
+            this.UcCustomerButton.Location = new System.Drawing.Point(298, 2);
             this.UcCustomerButton.Name = "UcCustomerButton";
-            this.UcCustomerButton.Size = new System.Drawing.Size(74, 58);
+            this.UcCustomerButton.Size = new System.Drawing.Size(74, 63);
             this.UcCustomerButton.TabIndex = 4;
             this.UcCustomerButton.Text = "顧客管理\r\n[開発中]";
             this.UcCustomerButton.UseVisualStyleBackColor = true;
@@ -99,9 +100,10 @@
             // 
             // UcEmployeeButton
             // 
-            this.UcEmployeeButton.Location = new System.Drawing.Point(226, 5);
+            this.UcEmployeeButton.Enabled = false;
+            this.UcEmployeeButton.Location = new System.Drawing.Point(224, 2);
             this.UcEmployeeButton.Name = "UcEmployeeButton";
-            this.UcEmployeeButton.Size = new System.Drawing.Size(74, 58);
+            this.UcEmployeeButton.Size = new System.Drawing.Size(74, 63);
             this.UcEmployeeButton.TabIndex = 3;
             this.UcEmployeeButton.Text = "従業員管理\r\n[開発中]";
             this.UcEmployeeButton.UseVisualStyleBackColor = true;
@@ -109,9 +111,10 @@
             // 
             // UcSaleButton
             // 
-            this.UcSaleButton.Location = new System.Drawing.Point(152, 5);
+            this.UcSaleButton.Enabled = false;
+            this.UcSaleButton.Location = new System.Drawing.Point(150, 2);
             this.UcSaleButton.Name = "UcSaleButton";
-            this.UcSaleButton.Size = new System.Drawing.Size(74, 58);
+            this.UcSaleButton.Size = new System.Drawing.Size(74, 63);
             this.UcSaleButton.TabIndex = 2;
             this.UcSaleButton.Text = "売上確認\r\n[開発中]";
             this.UcSaleButton.UseVisualStyleBackColor = true;
@@ -119,9 +122,10 @@
             // 
             // UcHistoryButton
             // 
-            this.UcHistoryButton.Location = new System.Drawing.Point(78, 5);
+            this.UcHistoryButton.Enabled = false;
+            this.UcHistoryButton.Location = new System.Drawing.Point(76, 2);
             this.UcHistoryButton.Name = "UcHistoryButton";
-            this.UcHistoryButton.Size = new System.Drawing.Size(74, 58);
+            this.UcHistoryButton.Size = new System.Drawing.Size(74, 63);
             this.UcHistoryButton.TabIndex = 1;
             this.UcHistoryButton.Text = "宿泊履歴\r\n[開発中]";
             this.UcHistoryButton.UseVisualStyleBackColor = true;
@@ -129,9 +133,10 @@
             // 
             // UcReserveButton
             // 
-            this.UcReserveButton.Location = new System.Drawing.Point(4, 5);
+            this.UcReserveButton.Enabled = false;
+            this.UcReserveButton.Location = new System.Drawing.Point(2, 2);
             this.UcReserveButton.Name = "UcReserveButton";
-            this.UcReserveButton.Size = new System.Drawing.Size(74, 58);
+            this.UcReserveButton.Size = new System.Drawing.Size(74, 63);
             this.UcReserveButton.TabIndex = 0;
             this.UcReserveButton.Text = "予約管理\r\n[開発中]";
             this.UcReserveButton.UseVisualStyleBackColor = true;
@@ -142,6 +147,7 @@
             this.UcPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.UcPanel.BackColor = System.Drawing.SystemColors.Control;
             this.UcPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.UcPanel.Location = new System.Drawing.Point(6, 78);
             this.UcPanel.Name = "UcPanel";
