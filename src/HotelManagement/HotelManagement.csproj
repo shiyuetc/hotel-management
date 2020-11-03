@@ -123,7 +123,17 @@
   <ItemGroup>
     <Compile Include="Common\AppState.cs" />
     <Compile Include="Common\BcryptUtil.cs" />
+    <Compile Include="Common\ResourceUtil.cs" />
     <Compile Include="Const\Message.cs" />
+    <Compile Include="CustomControls\MenuBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\MenuBar.Designer.cs">
+      <DependentUpon>MenuBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\MenuButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CustomControls\TickDate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -151,6 +161,12 @@
     </Compile>
     <Compile Include="View\UcHistory.Designer.cs">
       <DependentUpon>UcHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UcRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UcRoom.Designer.cs">
+      <DependentUpon>UcRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UcSale.cs">
       <SubType>UserControl</SubType>
@@ -188,6 +204,9 @@
     <Compile Include="View\UcLogin.Designer.cs">
       <DependentUpon>UcLogin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomControls\MenuBar.resx">
+      <DependentUpon>MenuBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\TickDate.resx">
       <DependentUpon>TickDate.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,9 +221,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\UcHistory.resx">
       <DependentUpon>UcHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UcRoom.resx">
+      <DependentUpon>UcRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UcSale.resx">
       <DependentUpon>UcSale.cs</DependentUpon>
@@ -249,6 +272,16 @@
       <Name>Dbflute</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Images\icon_login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Images\icon_customer.png" />
+    <EmbeddedResource Include="Resources\Images\icon_employee.png" />
+    <EmbeddedResource Include="Resources\Images\icon_history.png" />
+    <EmbeddedResource Include="Resources\Images\icon_reserve.png" />
+    <EmbeddedResource Include="Resources\Images\icon_room.png" />
+    <EmbeddedResource Include="Resources\Images\icon_sale.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
