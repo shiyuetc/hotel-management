@@ -33,15 +33,52 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\s2container.net-1.4.1\lib\net4.0\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Gallio">
+      <HintPath>..\s2container.net-1.4.1\lib\net4.0\Gallio.dll</HintPath>
+    </Reference>
+    <Reference Include="Gallio.MbUnit2Adapter">
+      <HintPath>..\s2container.net-1.4.1\lib\net4.0\Gallio.MbUnit2Adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\s2container.net-1.4.1\lib\net4.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit">
+      <HintPath>..\s2container.net-1.4.1\lib\net4.0\MbUnit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Npgsql, Version=4.1.5.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\packages\Npgsql.4.1.5\lib\net461\Npgsql.dll</HintPath>
     </Reference>
+    <Reference Include="Seasar, Version=1.4.1.0, Culture=neutral, PublicKeyToken=1d0d0c484d50ca62, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\s2container.net-1.4.1\build\net4.0\Seasar.dll</HintPath>
+    </Reference>
+    <Reference Include="Seasar.Dao, Version=1.4.1.0, Culture=neutral, PublicKeyToken=73a7c921d802e17e, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\s2container.net-1.4.1\build\net4.0\Seasar.Dao.dll</HintPath>
+    </Reference>
+    <Reference Include="Seasar.Dxo">
+      <HintPath>..\s2container.net-1.4.1\build\net4.0\Seasar.Dxo.dll</HintPath>
+    </Reference>
+    <Reference Include="Seasar.DynamicProxy, Version=1.4.1.0, Culture=neutral, PublicKeyToken=1d0d0c484d50ca62, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\s2container.net-1.4.1\build\net4.0\Seasar.DynamicProxy.dll</HintPath>
+    </Reference>
     <Reference Include="Seasar.Quill, Version=1.4.1.0, Culture=neutral, PublicKeyToken=1d0d0c484d50ca62, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\s2container.net-1.4.1\build\net4.0\Seasar.Quill.dll</HintPath>
+    </Reference>
+    <Reference Include="Seasar.Unit">
+      <HintPath>..\s2container.net-1.4.1\build\net4.0\Seasar.Unit.dll</HintPath>
+    </Reference>
+    <Reference Include="Seasar.Windows">
+      <HintPath>..\s2container.net-1.4.1\build\net4.0\Seasar.Windows.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -81,6 +118,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\AppState.cs" />
     <Compile Include="Const\Message.cs" />
     <Compile Include="CustomControls\TickDate.cs">
       <SubType>UserControl</SubType>
@@ -92,6 +130,7 @@
     <Compile Include="Extensions\DisplayExtension.cs" />
     <Compile Include="Common\Messages.cs" />
     <Compile Include="Common\ModelQuillInjector.cs" />
+    <Compile Include="Extensions\ListExtension.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="View\FmMain.cs">
