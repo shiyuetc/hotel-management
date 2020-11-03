@@ -1,10 +1,10 @@
 
-CREATE TABLE "mst_user" (
+-- MstEmployee
+CREATE TABLE "mst_employee" (
     "id" SERIAL NOT NULL PRIMARY KEY,
-    "login_name" VARCHAR(20) UNIQUE NOT NULL,
-    "name" VARCHAR(40) NOT NULL,
+    "employee_no" VARCHAR(20) UNIQUE NOT NULL,
+    "name" VARCHAR(50) NOT NULL,
     "password" VARCHAR(255) NOT NULL,
-    "update_time" TIMESTAMP(3) NOT NULL,
-    "update_user" VARCHAR(100) NOT NULL,
-    "version_no" BIGINT NOT NULL
+    "join_date_time" TIMESTAMP(3) NOT NULL,
+    "leave_date_time" TIMESTAMP(3) NOT NULL
 )
