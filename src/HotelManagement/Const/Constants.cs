@@ -9,7 +9,7 @@ namespace HotelManagement.Const
         /// <summary>
         /// DayOfWeek列挙体に対応した日本語
         /// </summary>
-        public static char[] WeekNames = { '日', '月', '火', '水', '木', '金', '土' };
+        public static readonly char[] WeekNames = { '日', '月', '火', '水', '木', '金', '土' };
 
         /// <summary>
         /// 従業員の職位を表す構造体
