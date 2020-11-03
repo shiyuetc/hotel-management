@@ -94,6 +94,7 @@
             this.UcCustomerButton.Name = "UcCustomerButton";
             this.UcCustomerButton.Size = new System.Drawing.Size(74, 63);
             this.UcCustomerButton.TabIndex = 4;
+            this.UcCustomerButton.Tag = "Customer";
             this.UcCustomerButton.Text = "顧客管理\r\n[開発中]";
             this.UcCustomerButton.UseVisualStyleBackColor = true;
             this.UcCustomerButton.Click += new System.EventHandler(this.MenuItems_Click);
@@ -105,6 +106,7 @@
             this.UcEmployeeButton.Name = "UcEmployeeButton";
             this.UcEmployeeButton.Size = new System.Drawing.Size(74, 63);
             this.UcEmployeeButton.TabIndex = 3;
+            this.UcEmployeeButton.Tag = "Employee";
             this.UcEmployeeButton.Text = "従業員管理\r\n[開発中]";
             this.UcEmployeeButton.UseVisualStyleBackColor = true;
             this.UcEmployeeButton.Click += new System.EventHandler(this.MenuItems_Click);
@@ -116,6 +118,7 @@
             this.UcSaleButton.Name = "UcSaleButton";
             this.UcSaleButton.Size = new System.Drawing.Size(74, 63);
             this.UcSaleButton.TabIndex = 2;
+            this.UcSaleButton.Tag = "Sale";
             this.UcSaleButton.Text = "売上確認\r\n[開発中]";
             this.UcSaleButton.UseVisualStyleBackColor = true;
             this.UcSaleButton.Click += new System.EventHandler(this.MenuItems_Click);
@@ -127,6 +130,7 @@
             this.UcHistoryButton.Name = "UcHistoryButton";
             this.UcHistoryButton.Size = new System.Drawing.Size(74, 63);
             this.UcHistoryButton.TabIndex = 1;
+            this.UcHistoryButton.Tag = "History";
             this.UcHistoryButton.Text = "宿泊履歴\r\n[開発中]";
             this.UcHistoryButton.UseVisualStyleBackColor = true;
             this.UcHistoryButton.Click += new System.EventHandler(this.MenuItems_Click);
@@ -138,6 +142,7 @@
             this.UcReserveButton.Name = "UcReserveButton";
             this.UcReserveButton.Size = new System.Drawing.Size(74, 63);
             this.UcReserveButton.TabIndex = 0;
+            this.UcReserveButton.Tag = "Reserve";
             this.UcReserveButton.Text = "予約管理\r\n[開発中]";
             this.UcReserveButton.UseVisualStyleBackColor = true;
             this.UcReserveButton.Click += new System.EventHandler(this.MenuItems_Click);
