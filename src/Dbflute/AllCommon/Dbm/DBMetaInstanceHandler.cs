@@ -25,19 +25,25 @@ namespace Dbflute.AllCommon.Dbm {
         static DBMetaInstanceHandler() {
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
-                tmpMap.put("mst_user", "Dbflute.BsEntity.Dbm.MstUserDbm");
+                tmpMap.put("kbn_rank", "Dbflute.BsEntity.Dbm.KbnRankDbm");
+                tmpMap.put("mst_customer", "Dbflute.BsEntity.Dbm.MstCustomerDbm");
+                tmpMap.put("mst_employee", "Dbflute.BsEntity.Dbm.MstEmployeeDbm");
                 _tableDbNameClassNameMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
 
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
-                tmpMap.put("mst_user".ToLower(), "mstUser");
+                tmpMap.put("kbn_rank".ToLower(), "kbnRank");
+                tmpMap.put("mst_customer".ToLower(), "mstCustomer");
+                tmpMap.put("mst_employee".ToLower(), "mstEmployee");
                 _tableDbNamePropertyNameKeyToLowerMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
 
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
-                tmpMap.put("MstUser".ToLower(), "mst_user");
+                tmpMap.put("KbnRank".ToLower(), "kbn_rank");
+                tmpMap.put("MstCustomer".ToLower(), "mst_customer");
+                tmpMap.put("MstEmployee".ToLower(), "mst_employee");
                 _tablePropertyNameDbNameKeyToLowerMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
         }

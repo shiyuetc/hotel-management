@@ -2,8 +2,8 @@
 using System;
 using System.Collections.Generic;
 
-namespace Dbflute.ExBhv {
+namespace Dbflute.ExDao {
 
-    partial class MstUserBhv {
+    partial interface KbnRankDao {
     }
 }

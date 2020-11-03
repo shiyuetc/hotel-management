@@ -39,7 +39,7 @@ namespace Dbflute.AllCommon.CBean {
         //                                                                     ===========
         public AbstractConditionBean() {
             DBMeta dbmeta = DBMetaInstanceHandler.FindDBMeta(TableDbName);
-            _sqlClause = new SqlClauseH2(dbmeta.TableSqlName);
+            _sqlClause = new SqlClausePostgreSql(dbmeta.TableSqlName);
         }
 
         // ===============================================================================

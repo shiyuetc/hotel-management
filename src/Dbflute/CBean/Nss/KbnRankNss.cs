@@ -4,10 +4,10 @@ using Dbflute.CBean.CQ;
 
 namespace Dbflute.CBean.Nss {
 
-    public class MstUserNss {
+    public class KbnRankNss {
 
-        protected MstUserCQ _query;
-        public MstUserNss(MstUserCQ query) { _query = query; }
+        protected KbnRankCQ _query;
+        public KbnRankNss(KbnRankCQ query) { _query = query; }
         public bool HasConditionQuery { get { return _query != null; } }
 
         // ===============================================================================

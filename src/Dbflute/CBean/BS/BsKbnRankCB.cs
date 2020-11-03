@@ -14,45 +14,45 @@ using Dbflute.CBean.Nss;
 namespace Dbflute.CBean.BS {
 
     [System.Serializable]
-    public class BsMstUserCB : AbstractConditionBean {
+    public class BsKbnRankCB : AbstractConditionBean {
 
         // ===============================================================================
         //                                                                       Attribute
         //                                                                       =========
-        protected MstUserCQ _conditionQuery;
+        protected KbnRankCQ _conditionQuery;
 
         // ===============================================================================
         //                                                                      Table Name
         //                                                                      ==========
-        public override String TableDbName { get { return "mst_user"; } }
+        public override String TableDbName { get { return "kbn_rank"; } }
 
         // ===============================================================================
         //                                                             PrimaryKey Handling
         //                                                             ===================
-        public void AcceptPrimaryKey(int? id) {
-            assertObjectNotNull("id", id);
-            BsMstUserCB cb = this;
-            cb.Query().SetId_Equal(id);
+        public void AcceptPrimaryKey(String code) {
+            assertObjectNotNull("code", code);
+            BsKbnRankCB cb = this;
+            cb.Query().SetCode_Equal(code);
         }
 
         public override ConditionBean AddOrderBy_PK_Asc() {
-            Query().AddOrderBy_Id_Asc();
+            Query().AddOrderBy_Code_Asc();
             return this;
         }
 
         public override ConditionBean AddOrderBy_PK_Desc() {
-            Query().AddOrderBy_Id_Desc();
+            Query().AddOrderBy_Code_Desc();
             return this;
         }
 
         // ===============================================================================
         //                                                                           Query
         //                                                                           =====
-        public MstUserCQ Query() {
+        public KbnRankCQ Query() {
             return this.ConditionQuery;
         }
 
-        public MstUserCQ ConditionQuery {
+        public KbnRankCQ ConditionQuery {
             get {
                 if (_conditionQuery == null) {
                     _conditionQuery = CreateLocalCQ();
@@ -61,12 +61,12 @@ namespace Dbflute.CBean.BS {
             }
         }
 
-        protected virtual MstUserCQ CreateLocalCQ() {
+        protected virtual KbnRankCQ CreateLocalCQ() {
             return xcreateCQ(null, this.SqlClause, this.SqlClause.getBasePointAliasName(), 0);
         }
 
-        protected virtual MstUserCQ xcreateCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel) {
-            return new MstUserCQ(childQuery, sqlClause, aliasName, nestLevel);
+        protected virtual KbnRankCQ xcreateCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel) {
+            return new KbnRankCQ(childQuery, sqlClause, aliasName, nestLevel);
         }
 
         public override ConditionQuery LocalCQ {
@@ -76,16 +76,16 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                                           Union
         //                                                                           =====
-	    public virtual void Union(UnionQuery<MstUserCB> unionQuery) {
-            MstUserCB cb = new MstUserCB();
+	    public virtual void Union(UnionQuery<KbnRankCB> unionQuery) {
+            KbnRankCB cb = new KbnRankCB();
             cb.xsetupForUnion(this); xsyncUQ(cb); unionQuery.Invoke(cb);
-		    MstUserCQ cq = cb.Query(); Query().xsetUnionQuery(cq);
+		    KbnRankCQ cq = cb.Query(); Query().xsetUnionQuery(cq);
         }
 
-	    public virtual void UnionAll(UnionQuery<MstUserCB> unionQuery) {
-            MstUserCB cb = new MstUserCB();
+	    public virtual void UnionAll(UnionQuery<KbnRankCB> unionQuery) {
+            KbnRankCB cb = new KbnRankCB();
             cb.xsetupForUnion(this); xsyncUQ(cb); unionQuery.Invoke(cb);
-		    MstUserCQ cq = cb.Query(); Query().xsetUnionAllQuery(cq);
+		    KbnRankCQ cq = cb.Query(); Query().xsetUnionAllQuery(cq);
 	    }
 
         public override bool HasUnionQueryOrUnionAllQuery() {
@@ -100,33 +100,33 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                                         Specify
         //                                                                         =======
-        protected MstUserCBSpecification _specification;
-        public MstUserCBSpecification Specify() {
-            if (_specification == null) { _specification = new MstUserCBSpecification(this, new MySpQyCall(this), _forDerivedReferrer, _forScalarSelect, _forScalarCondition, _forColumnQuery); }
+        protected KbnRankCBSpecification _specification;
+        public KbnRankCBSpecification Specify() {
+            if (_specification == null) { _specification = new KbnRankCBSpecification(this, new MySpQyCall(this), _forDerivedReferrer, _forScalarSelect, _forScalarCondition, _forColumnQuery); }
             return _specification;
         }
         protected bool HasSpecifiedColumn { get {
             return _specification != null && _specification.IsAlreadySpecifiedRequiredColumn;
         }}
-        protected class MySpQyCall : HpSpQyCall<MstUserCQ> {
-			protected BsMstUserCB _myCB;
-			public MySpQyCall(BsMstUserCB myCB) { _myCB = myCB; }
-    		public bool has() { return true; } public MstUserCQ qy() { return _myCB.Query(); }
+        protected class MySpQyCall : HpSpQyCall<KbnRankCQ> {
+			protected BsKbnRankCB _myCB;
+			public MySpQyCall(BsKbnRankCB myCB) { _myCB = myCB; }
+    		public bool has() { return true; } public KbnRankCQ qy() { return _myCB.Query(); }
     	}
 
         // [DBFlute-0.8.9.18]
         // ===============================================================================
         //                                                                     ColumnQuery
         //                                                                     ===========
-        public HpColQyOperand<MstUserCB> ColumnQuery(SpecifyQuery<MstUserCB> leftSpecifyQuery) {
-            return new HpColQyOperand<MstUserCB>(delegate(SpecifyQuery<MstUserCB> rightSp, String operand) {
+        public HpColQyOperand<KbnRankCB> ColumnQuery(SpecifyQuery<KbnRankCB> leftSpecifyQuery) {
+            return new HpColQyOperand<KbnRankCB>(delegate(SpecifyQuery<KbnRankCB> rightSp, String operand) {
                 xcolqy(xcreateColumnQueryCB(), xcreateColumnQueryCB(), leftSpecifyQuery, rightSp, operand);
             });
         }
 
-        protected MstUserCB xcreateColumnQueryCB() {
-            MstUserCB cb = new MstUserCB();
-            cb.xsetupForColumnQuery((MstUserCB)this);
+        protected KbnRankCB xcreateColumnQueryCB() {
+            KbnRankCB cb = new KbnRankCB();
+            cb.xsetupForColumnQuery((KbnRankCB)this);
             return cb;
         }
 
@@ -134,47 +134,48 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                                    OrScopeQuery
         //                                                                    ============
-        public void OrScopeQuery(OrQuery<MstUserCB> orQuery) {
-            xorQ((MstUserCB)this, orQuery);
+        public void OrScopeQuery(OrQuery<KbnRankCB> orQuery) {
+            xorQ((KbnRankCB)this, orQuery);
         }
 
         // ===============================================================================
         //                                                                    Purpose Type
         //                                                                    ============
-        public void xsetupForColumnQuery(MstUserCB mainCB) {
+        public void xsetupForColumnQuery(KbnRankCB mainCB) {
             xinheritSubQueryInfo(mainCB.LocalCQ);
             //xchangePurposeSqlClause(HpCBPurpose.COLUMN_QUERY);
             _forColumnQuery = true; // old style
 
             // inherits a parent query to synchronize real name
             // (and also for suppressing query check) 
-            Specify().xsetSyncQyCall(new MstUserCBColQySpQyCall(mainCB));
+            Specify().xsetSyncQyCall(new KbnRankCBColQySpQyCall(mainCB));
         }
     }
 
-    public class MstUserCBColQySpQyCall : HpSpQyCall<MstUserCQ> {
-        protected MstUserCB _mainCB;
-        public MstUserCBColQySpQyCall(MstUserCB mainCB) {
+    public class KbnRankCBColQySpQyCall : HpSpQyCall<KbnRankCQ> {
+        protected KbnRankCB _mainCB;
+        public KbnRankCBColQySpQyCall(KbnRankCB mainCB) {
             _mainCB = mainCB;
         }
         public bool has() { return true; } 
-        public MstUserCQ qy() { return _mainCB.Query(); } 
+        public KbnRankCQ qy() { return _mainCB.Query(); } 
     }
 
-    public class MstUserCBSpecification : AbstractSpecification<MstUserCQ> {
-        public MstUserCBSpecification(ConditionBean baseCB, HpSpQyCall<MstUserCQ> qyCall
+    public class KbnRankCBSpecification : AbstractSpecification<KbnRankCQ> {
+        public KbnRankCBSpecification(ConditionBean baseCB, HpSpQyCall<KbnRankCQ> qyCall
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
-        public void ColumnId() { doColumn("id"); }
-        public void ColumnLoginName() { doColumn("login_name"); }
-        public void ColumnName() { doColumn("name"); }
-        public void ColumnPassword() { doColumn("password"); }
-        public void ColumnUpdateTime() { doColumn("update_time"); }
-        public void ColumnUpdateUser() { doColumn("update_user"); }
-        public void ColumnVersionNo() { doColumn("version_no"); }
+        public void ColumnCode() { doColumn("code"); }
+        public void ColumnEnglishName() { doColumn("english_name"); }
+        public void ColumnJapaneseName() { doColumn("japanese_name"); }
         protected override void doSpecifyRequiredColumn() {
-            ColumnId(); // PK
+            ColumnCode(); // PK
         }
-        protected override String getTableDbName() { return "mst_user"; }
+        protected override String getTableDbName() { return "kbn_rank"; }
+        public RAFunction<MstEmployeeCB, KbnRankCQ> DerivedMstEmployeeList() {
+            if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
+            return new RAFunction<MstEmployeeCB, KbnRankCQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<MstEmployeeCB> subQuery, KbnRankCQ cq, String aliasName)
+                { cq.xsderiveMstEmployeeList(function, subQuery, aliasName); });
+        }
     }
 }

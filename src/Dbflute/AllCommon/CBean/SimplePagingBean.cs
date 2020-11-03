@@ -22,7 +22,7 @@ namespace Dbflute.AllCommon.CBean {
         //                                                                     Constructor
         //                                                                     ===========
         public SimplePagingBean() {
-            _sqlClause = new SqlClauseH2("dummy");
+            _sqlClause = new SqlClausePostgreSql("dummy");
         }
 
         // ===============================================================================

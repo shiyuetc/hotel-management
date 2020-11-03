@@ -10,7 +10,7 @@ using Dbflute.CBean.CQ.BS;
 namespace Dbflute.CBean.CQ {
 
     [System.Serializable]
-    public class MstUserCQ : BsMstUserCQ {
+    public class MstCustomerCQ : BsMstCustomerCQ {
 
         // ===============================================================================
         //                                                                     Constructor
@@ -23,7 +23,7 @@ namespace Dbflute.CBean.CQ {
         /// <param name="sqlClause">SQL clause instance. (NotNull)</param>
         /// <param name="aliasName">My alias name. (NotNull)</param>
         /// <param name="nestLevel">Nest level.</param>
-        public MstUserCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel)
+        public MstCustomerCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel)
             : base(childQuery, sqlClause, aliasName, nestLevel) {}
 
         // ===============================================================================

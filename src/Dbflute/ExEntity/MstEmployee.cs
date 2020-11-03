@@ -2,8 +2,8 @@
 using System;
 using System.Collections.Generic;
 
-namespace Dbflute.ExDao {
+namespace Dbflute.ExEntity {
 
-    partial interface MstUserDao {
+    partial class MstEmployee {
     }
 }

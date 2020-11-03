@@ -13,17 +13,17 @@ using Dbflute.CBean.CQ;
 namespace Dbflute.CBean.CQ.Ciq {
 
     [System.Serializable]
-    public class MstUserCIQ : AbstractBsMstUserCQ {
+    public class KbnRankCIQ : AbstractBsKbnRankCQ {
 
         // ===============================================================================
         //                                                                       Attribute
         //                                                                       =========
-        protected BsMstUserCQ _myCQ;
+        protected BsKbnRankCQ _myCQ;
 
         // ===============================================================================
         //                                                                     Constructor
         //                                                                     ===========
-        public MstUserCIQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel, BsMstUserCQ myCQ)
+        public KbnRankCIQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel, BsKbnRankCQ myCQ)
             : base(childQuery, sqlClause, aliasName, nestLevel) {
             _myCQ = myCQ;
             _foreignPropertyName = _myCQ.xgetForeignPropertyName();// Accept foreign property name.
@@ -63,52 +63,59 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        protected override ConditionValue getCValueId() {
-            return _myCQ.Id;
+        protected override ConditionValue getCValueCode() {
+            return _myCQ.Code;
         }
 
 
-        protected override ConditionValue getCValueLoginName() {
-            return _myCQ.LoginName;
+        public override String keepCode_ExistsSubQuery_MstEmployeeList(MstEmployeeCQ subQuery) {
+            throw new SystemException("ExistsSubQuery at inline() is unsupported! Sorry!");
+            // _myCQ.keepCode_ExistsSubQuery_MstEmployeeList(subQuery);
+        }
+
+        public override String keepCode_NotExistsSubQuery_MstEmployeeList(MstEmployeeCQ subQuery) {
+            throw new SystemException("NotExistsSubQuery at inline() is unsupported! Sorry!");
+            // _myCQ.keepCode_NotExistsSubQuery_MstEmployeeList(subQuery);
+        }
+
+        public override String keepCode_InScopeSubQuery_MstEmployeeList(MstEmployeeCQ subQuery) {
+            return _myCQ.keepCode_InScopeSubQuery_MstEmployeeList(subQuery);
+        }
+
+        public override String keepCode_NotInScopeSubQuery_MstEmployeeList(MstEmployeeCQ subQuery) {
+            return _myCQ.keepCode_NotInScopeSubQuery_MstEmployeeList(subQuery);
+        }
+        public override String keepCode_SpecifyDerivedReferrer_MstEmployeeList(MstEmployeeCQ subQuery) {
+            throw new UnsupportedOperationException("(Specify)DerivedReferrer at inline() is unsupported! Sorry!");
+        }
+        public override String keepCode_QueryDerivedReferrer_MstEmployeeList(MstEmployeeCQ subQuery) {
+            throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
+        }
+        public override String keepCode_QueryDerivedReferrer_MstEmployeeListParameter(Object parameterValue) {
+            throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
+        }
+
+        protected override ConditionValue getCValueEnglishName() {
+            return _myCQ.EnglishName;
         }
 
 
-        protected override ConditionValue getCValueName() {
-            return _myCQ.Name;
-        }
-
-
-        protected override ConditionValue getCValuePassword() {
-            return _myCQ.Password;
-        }
-
-
-        protected override ConditionValue getCValueUpdateTime() {
-            return _myCQ.UpdateTime;
-        }
-
-
-        protected override ConditionValue getCValueUpdateUser() {
-            return _myCQ.UpdateUser;
-        }
-
-
-        protected override ConditionValue getCValueVersionNo() {
-            return _myCQ.VersionNo;
+        protected override ConditionValue getCValueJapaneseName() {
+            return _myCQ.JapaneseName;
         }
 
 
         // ===================================================================================
         //                                                                     Scalar SubQuery
         //                                                                     ===============
-        public override String keepScalarSubQuery(MstUserCQ subQuery) {
+        public override String keepScalarSubQuery(KbnRankCQ subQuery) {
             throw new UnsupportedOperationException("ScalarSubQuery at inline() is unsupported! Sorry!");
         }
 
         // ===============================================================================
         //                                                         Myself InScope SubQuery
         //                                                         =======================
-        public override String keepMyselfInScopeSubQuery(MstUserCQ subQuery) {
+        public override String keepMyselfInScopeSubQuery(KbnRankCQ subQuery) {
             throw new UnsupportedOperationException("MyselfInScopeSubQuery at inline() is unsupported! Sorry!");
         }
     }

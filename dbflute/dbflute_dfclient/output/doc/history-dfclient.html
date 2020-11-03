@@ -112,17 +112,92 @@ p.tablecount {
 </head>
 
 <body>
-<h1>History for dfclient (h2)</h1>
+<h1>History for dfclient (postgresql)</h1>
 <div class="navilinkarea">
 <p class="sisterlink"><a href="./schema-dfclient.html">to SchemaHTML</a></p>
 </div>
 
 <div class="section">
+	<h2><span class="dt">Diff Date: </span>2020/11/03 13:36:44</h2>
+	<p class="tablecount"><span class="dt">table count: </span>1&nbsp;-&gt;&nbsp;3</p>
+
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li><a href="./schema-dfclient.html#kbn_rank">kbn_rank</a></li>
+		<li><a href="./schema-dfclient.html#mst_customer">mst_customer</a></li>
+		<li><a href="./schema-dfclient.html#mst_employee">mst_employee</a></li>
+	</ul>
+	<h3>Delete Table</h3>
+	<ul class="table-content">
+		<li>mst_user</li>
+	</ul>
+	<h3>Add Sequence</h3>
+	<ul class="table-content">
+		<li>hotel_management.public.mst_employee_id_seq</li>
+		<li>hotel_management.public.mst_customer_id_seq</li>
+	</ul>
+	<h3>Delete Sequence</h3>
+	<ul class="table-content">
+		<li>hotel_management.public.mst_user_id_seq</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2020/11/03 00:38:01</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>mst_user</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>login_name</li>
+			</ul>
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>login_id</li>
+			</ul>
+			<h5>Add UQ</h5>
+			<ul class="column-content">
+				<li>mst_user_login_name_key</li>
+			</ul>
+			<h5>Delete UQ</h5>
+			<ul class="column-content">
+				<li>mst_user_login_id_key</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2020/11/03 00:02:36</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>mst_user</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>login_id</li>
+			</ul>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>name</dt>
+				<dd><span>Size</span>20&nbsp;-&gt;&nbsp;40</dd>
+				<dt>update_user</dt>
+				<dd><span>Size</span>200&nbsp;-&gt;&nbsp;100</dd>
+			</dl>
+			<h5>Add UQ</h5>
+			<ul class="column-content">
+				<li>mst_user_login_id_key</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="section">
 	<h2><span class="dt">Diff Date: </span>2020/11/02 23:23:35</h2>
 
 	<h3>Change Table</h3>
 	<div class="table-content">
-		<h4><a href="./schema-dfclient.html#mst_user">mst_user</a></h4>
+		<h4>mst_user</h4>
 		<div class="change-table-content">
 			<h5>Add Column</h5>
 			<ul class="column-content">

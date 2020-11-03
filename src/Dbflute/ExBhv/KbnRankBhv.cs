@@ -2,8 +2,8 @@
 using System;
 using System.Collections.Generic;
 
-namespace Dbflute.ExEntity {
+namespace Dbflute.ExBhv {
 
-    partial class MstUser {
+    partial class KbnRankBhv {
     }
 }

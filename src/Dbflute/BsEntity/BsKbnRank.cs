@@ -16,66 +16,53 @@ using Dbflute.BsEntity.Dbm;
 namespace Dbflute.ExEntity {
 
     /// <summary>
-    /// The entity of mst_user as TABLE. (partial class for auto-generation)
+    /// The entity of kbn_rank as TABLE. (partial class for auto-generation)
     /// <![CDATA[
     /// [primary-key]
-    ///     id
+    ///     code
     /// 
     /// [column]
-    ///     id, login_name, name, password, update_time, update_user, version_no
+    ///     code, english_name, japanese_name
     /// 
     /// [sequence]
     ///     
     /// 
     /// [identity]
-    ///     id
+    ///     
     /// 
     /// [version-no]
-    ///     version_no
+    ///     
     /// 
     /// [foreign-table]
     ///     
     /// 
     /// [referrer-table]
-    ///     
+    ///     mst_employee
     /// 
     /// [foreign-property]
     ///     
     /// 
     /// [referrer-property]
-    ///     
+    ///     mstEmployeeList
     /// ]]>
     /// Author: DBFlute(AutoGenerator)
     /// </summary>
-    [Seasar.Dao.Attrs.Table("mst_user")]
-    [Seasar.Dao.Attrs.VersionNoProperty("VersionNo")]
+    [Seasar.Dao.Attrs.Table("kbn_rank")]
     [System.Serializable]
-    public partial class MstUser : Entity {
+    public partial class KbnRank : Entity {
 
         // ===============================================================================
         //                                                                       Attribute
         //                                                                       =========
         #region Attribute
-        /// <summary>id: {PK, ID, NotNull, serial(10)}</summary>
-        protected int? _id;
+        /// <summary>code: {PK, NotNull, varchar(3)}</summary>
+        protected String _code;
 
-        /// <summary>login_name: {UQ, NotNull, varchar(20)}</summary>
-        protected String _loginName;
+        /// <summary>english_name: {NotNull, varchar(20)}</summary>
+        protected String _englishName;
 
-        /// <summary>name: {NotNull, varchar(40)}</summary>
-        protected String _name;
-
-        /// <summary>password: {NotNull, varchar(255)}</summary>
-        protected String _password;
-
-        /// <summary>update_time: {NotNull, timestamp(26, 3)}</summary>
-        protected DateTime? _updateTime;
-
-        /// <summary>update_user: {NotNull, varchar(100)}</summary>
-        protected String _updateUser;
-
-        /// <summary>version_no: {NotNull, int8(19)}</summary>
-        protected long? _versionNo;
+        /// <summary>japanese_name: {NotNull, varchar(20)}</summary>
+        protected String _japaneseName;
 
         protected EntityModifiedProperties __modifiedProperties = new EntityModifiedProperties();
         #endregion
@@ -83,8 +70,8 @@ namespace Dbflute.ExEntity {
         // ===============================================================================
         //                                                                      Table Name
         //                                                                      ==========
-        public String TableDbName { get { return "mst_user"; } }
-        public String TablePropertyName { get { return "MstUser"; } }
+        public String TableDbName { get { return "kbn_rank"; } }
+        public String TablePropertyName { get { return "KbnRank"; } }
 
         // ===============================================================================
         //                                                                          DBMeta
@@ -101,6 +88,14 @@ namespace Dbflute.ExEntity {
         //                                                               Referrer Property
         //                                                               =================
         #region Referrer Property
+        protected IList<MstEmployee> _mstEmployeeList;
+
+        /// <summary>mst_employee as 'MstEmployeeList'.</summary>
+        public IList<MstEmployee> MstEmployeeList {
+            get { if (_mstEmployeeList == null) { _mstEmployeeList = new List<MstEmployee>(); } return _mstEmployeeList; }
+            set { _mstEmployeeList = value; }
+        }
+
         #endregion
 
         // ===============================================================================
@@ -108,7 +103,7 @@ namespace Dbflute.ExEntity {
         //                                                                   =============
         public virtual bool HasPrimaryKeyValue {
             get {
-                if (_id == null) { return false; }
+                if (_code == null) { return false; }
                 return true;
             }
         }
@@ -129,9 +124,9 @@ namespace Dbflute.ExEntity {
         //                                                                  ==============
         #region Basic Override
         public override bool Equals(Object other) {
-            if (other == null || !(other is MstUser)) { return false; }
-            MstUser otherEntity = (MstUser)other;
-            if (!xSV(this.Id, otherEntity.Id)) { return false; }
+            if (other == null || !(other is KbnRank)) { return false; }
+            KbnRank otherEntity = (KbnRank)other;
+            if (!xSV(this.Code, otherEntity.Code)) { return false; }
             return true;
         }
         protected bool xSV(Object value1, Object value2) { // isSameValue()
@@ -142,7 +137,7 @@ namespace Dbflute.ExEntity {
 
         public override int GetHashCode() {
             int result = 17;
-            result = xCH(result, _id);
+            result = xCH(result, _code);
             return result;
         }
         protected int xCH(int result, Object value) { // calculateHashcode()
@@ -151,13 +146,19 @@ namespace Dbflute.ExEntity {
         }
 
         public override String ToString() {
-            return "MstUser:" + BuildColumnString() + BuildRelationString();
+            return "KbnRank:" + BuildColumnString() + BuildRelationString();
         }
 
         public virtual String ToStringWithRelation() {
             StringBuilder sb = new StringBuilder();
             sb.Append(ToString());
+            String l = "\n  ";
+            if (_mstEmployeeList != null) { foreach (Entity e in _mstEmployeeList)
+            { if (e != null) { sb.Append(l).Append(xbRDS(e, "MstEmployeeList")); } } }
             return sb.ToString();
+        }
+        protected String xbRDS(Entity e, String name) { // buildRelationDisplayString()
+            return e.BuildDisplayString(name, true, true);
         }
 
         public virtual String BuildDisplayString(String name, bool column, bool relation) {
@@ -170,19 +171,20 @@ namespace Dbflute.ExEntity {
         protected virtual String BuildColumnString() {
             String c = ", ";
             StringBuilder sb = new StringBuilder();
-            sb.Append(c).Append(this.Id);
-            sb.Append(c).Append(this.LoginName);
-            sb.Append(c).Append(this.Name);
-            sb.Append(c).Append(this.Password);
-            sb.Append(c).Append(this.UpdateTime);
-            sb.Append(c).Append(this.UpdateUser);
-            sb.Append(c).Append(this.VersionNo);
+            sb.Append(c).Append(this.Code);
+            sb.Append(c).Append(this.EnglishName);
+            sb.Append(c).Append(this.JapaneseName);
             if (sb.Length > 0) { sb.Remove(0, c.Length); }
             sb.Insert(0, "{").Append("}");
             return sb.ToString();
         }
         protected virtual String BuildRelationString() {
-            return "";
+            StringBuilder sb = new StringBuilder();
+            String c = ",";
+            if (_mstEmployeeList != null && _mstEmployeeList.Count > 0)
+            { sb.Append(c).Append("MstEmployeeList"); }
+            if (sb.Length > 0) { sb.Remove(0, c.Length).Insert(0, "(").Append(")"); }
+            return sb.ToString();
         }
         #endregion
 
@@ -190,74 +192,33 @@ namespace Dbflute.ExEntity {
         //                                                                        Accessor
         //                                                                        ========
         #region Accessor
-        /// <summary>id: {PK, ID, NotNull, serial(10)}</summary>
-        [Seasar.Dao.Attrs.ID("identity")]
-        [Seasar.Dao.Attrs.Column("id")]
-        public int? Id {
-            get { return _id; }
+        /// <summary>code: {PK, NotNull, varchar(3)}</summary>
+        [Seasar.Dao.Attrs.Column("code")]
+        public String Code {
+            get { return _code; }
             set {
-                __modifiedProperties.AddPropertyName("Id");
-                _id = value;
+                __modifiedProperties.AddPropertyName("Code");
+                _code = value;
             }
         }
 
-        /// <summary>login_name: {UQ, NotNull, varchar(20)}</summary>
-        [Seasar.Dao.Attrs.Column("login_name")]
-        public String LoginName {
-            get { return _loginName; }
+        /// <summary>english_name: {NotNull, varchar(20)}</summary>
+        [Seasar.Dao.Attrs.Column("english_name")]
+        public String EnglishName {
+            get { return _englishName; }
             set {
-                __modifiedProperties.AddPropertyName("LoginName");
-                _loginName = value;
+                __modifiedProperties.AddPropertyName("EnglishName");
+                _englishName = value;
             }
         }
 
-        /// <summary>name: {NotNull, varchar(40)}</summary>
-        [Seasar.Dao.Attrs.Column("name")]
-        public String Name {
-            get { return _name; }
+        /// <summary>japanese_name: {NotNull, varchar(20)}</summary>
+        [Seasar.Dao.Attrs.Column("japanese_name")]
+        public String JapaneseName {
+            get { return _japaneseName; }
             set {
-                __modifiedProperties.AddPropertyName("Name");
-                _name = value;
-            }
-        }
-
-        /// <summary>password: {NotNull, varchar(255)}</summary>
-        [Seasar.Dao.Attrs.Column("password")]
-        public String Password {
-            get { return _password; }
-            set {
-                __modifiedProperties.AddPropertyName("Password");
-                _password = value;
-            }
-        }
-
-        /// <summary>update_time: {NotNull, timestamp(26, 3)}</summary>
-        [Seasar.Dao.Attrs.Column("update_time")]
-        public DateTime? UpdateTime {
-            get { return _updateTime; }
-            set {
-                __modifiedProperties.AddPropertyName("UpdateTime");
-                _updateTime = value;
-            }
-        }
-
-        /// <summary>update_user: {NotNull, varchar(100)}</summary>
-        [Seasar.Dao.Attrs.Column("update_user")]
-        public String UpdateUser {
-            get { return _updateUser; }
-            set {
-                __modifiedProperties.AddPropertyName("UpdateUser");
-                _updateUser = value;
-            }
-        }
-
-        /// <summary>version_no: {NotNull, int8(19)}</summary>
-        [Seasar.Dao.Attrs.Column("version_no")]
-        public long? VersionNo {
-            get { return _versionNo; }
-            set {
-                __modifiedProperties.AddPropertyName("VersionNo");
-                _versionNo = value;
+                __modifiedProperties.AddPropertyName("JapaneseName");
+                _japaneseName = value;
             }
         }
 

@@ -1,4 +1,43 @@
 map:{
+    ; 2020/11/03 13:36:44 = map:{
+        ; diffDate = 2020/11/03 13:36:44
+        ; tableCount = map:{
+            ; next = 3
+            ; previous = 1
+        }
+        ; tableDiff = map:{
+            ; kbn_rank = map:{
+                ; tableName = kbn_rank
+                ; diffType = ADD
+            }
+            ; mst_customer = map:{
+                ; tableName = mst_customer
+                ; diffType = ADD
+            }
+            ; mst_employee = map:{
+                ; tableName = mst_employee
+                ; diffType = ADD
+            }
+            ; mst_user = map:{
+                ; tableName = mst_user
+                ; diffType = DELETE
+            }
+        }
+        ; sequenceDiff = map:{
+            ; hotel_management.public.mst_employee_id_seq = map:{
+                ; sequenceName = hotel_management.public.mst_employee_id_seq
+                ; diffType = ADD
+            }
+            ; hotel_management.public.mst_customer_id_seq = map:{
+                ; sequenceName = hotel_management.public.mst_customer_id_seq
+                ; diffType = ADD
+            }
+            ; hotel_management.public.mst_user_id_seq = map:{
+                ; sequenceName = hotel_management.public.mst_user_id_seq
+                ; diffType = DELETE
+            }
+        }
+    }
     ; 2020/11/03 00:38:01 = map:{
         ; diffDate = 2020/11/03 00:38:01
         ; tableDiff = map:{
