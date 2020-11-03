@@ -14,3 +14,9 @@ CREATE TABLE "mst_employee" (
     "join_date_time" TIMESTAMP(3) NOT NULL,
     "leave_date_time" TIMESTAMP(3) NOT NULL
 )
+
+-- MstCustomer
+CREATE TABLE "mst_customer" (
+    "id" SERIAL NOT NULL PRIMARY KEY,
+    "name" VARCHAR(50) NOT NULL,
+)
