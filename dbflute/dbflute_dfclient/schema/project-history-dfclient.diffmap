@@ -1,4 +1,27 @@
 map:{
+    ; 2020/11/03 21:32:09 = map:{
+        ; diffDate = 2020/11/03 21:32:09
+        ; tableCount = map:{
+            ; next = 5
+            ; previous = 3
+        }
+        ; tableDiff = map:{
+            ; kbn_room_type = map:{
+                ; tableName = kbn_room_type
+                ; diffType = ADD
+            }
+            ; mst_room = map:{
+                ; tableName = mst_room
+                ; diffType = ADD
+            }
+        }
+        ; sequenceDiff = map:{
+            ; hotel_management.public.mst_room_id_seq = map:{
+                ; sequenceName = hotel_management.public.mst_room_id_seq
+                ; diffType = ADD
+            }
+        }
+    }
     ; 2020/11/03 13:36:44 = map:{
         ; diffDate = 2020/11/03 13:36:44
         ; tableCount = map:{

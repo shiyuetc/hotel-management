@@ -11,6 +11,19 @@
         <column dbType="varchar" javaType="String" name="japanese_name"
             required="true" size="20" type="VARCHAR"/>
     </table>
+    <table name="kbn_room_type" schema="hotel_management.public" type="TABLE">
+        <column dbType="varchar" javaType="String" name="code"
+            pkName="kbn_room_type_pkey" primaryKey="true"
+            required="true" size="3" type="VARCHAR"/>
+        <column dbType="varchar" javaType="String" name="name"
+            required="true" size="20" type="VARCHAR"/>
+        <column dbType="int4" default="0" javaType="int?" name="price"
+            size="10" type="INTEGER"/>
+        <column dbType="int4" default="1" javaType="int?"
+            name="capacity" size="10" type="INTEGER"/>
+        <column dbType="varchar" javaType="String" name="description"
+            required="true" size="255" type="VARCHAR"/>
+    </table>
     <table name="mst_customer" schema="hotel_management.public" type="TABLE">
         <column autoIncrement="true" dbType="serial"
             default="nextval('mst_customer_id_seq'::regclass)"
@@ -43,9 +56,25 @@
             <unique-column name="employee_no" position="1"/>
         </unique>
     </table>
+    <table name="mst_room" schema="hotel_management.public" type="TABLE">
+        <column autoIncrement="true" dbType="serial"
+            default="nextval('mst_room_id_seq'::regclass)"
+            javaType="int?" name="id" pkName="mst_room_pkey"
+            primaryKey="true" required="true" size="10" type="INTEGER"/>
+        <column dbType="varchar" javaType="String" name="room_no"
+            required="true" size="10" type="VARCHAR"/>
+        <column dbType="varchar" javaType="String" name="room_type_code"
+            required="true" size="3" type="VARCHAR"/>
+        <column dbType="bool" javaType="bool?" name="can_smoke" size="1" type="BIT"/>
+        <unique name="mst_room_room_no_key">
+            <unique-column name="room_no" position="1"/>
+        </unique>
+    </table>
     <sequenceGroup>
         <sequence incrementSize="1" maximumValue="9223372036854775807"
             minimumValue="1" name="mst_employee_id_seq" schema="hotel_management.public"/>
+        <sequence incrementSize="1" maximumValue="9223372036854775807"
+            minimumValue="1" name="mst_room_id_seq" schema="hotel_management.public"/>
         <sequence incrementSize="1" maximumValue="9223372036854775807"
             minimumValue="1" name="mst_customer_id_seq" schema="hotel_management.public"/>
     </sequenceGroup>

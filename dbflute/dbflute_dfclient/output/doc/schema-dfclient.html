@@ -299,6 +299,14 @@ dl.procedurelist dd.column pre {
 	</tr>
 	<tr>
 		<td class="rownumcell">2</td>
+		<td><a href="#kbn_room_type" title="type=TABLE, primaryKey={code}, nameLength=13, columnCount=5">kbn_room_type</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="subcell">KbnRoomType</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
 		<td><a href="#mst_customer" title="type=TABLE, primaryKey={id}, nameLength=12, columnCount=2">mst_customer</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
@@ -306,12 +314,20 @@ dl.procedurelist dd.column pre {
 		<td class="subcell">MstCustomer</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">3</td>
+		<td class="rownumcell">4</td>
 		<td><a href="#mst_employee" title="type=TABLE, primaryKey={id}, nameLength=12, columnCount=7">mst_employee</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#kbn_rank" title="mst_employee_rank_code_fkey">kbn_rank</a></td>
 		<td class="relcell">&nbsp;</td>
 		<td class="subcell">MstEmployee</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">5</td>
+		<td><a href="#mst_room" title="type=TABLE, primaryKey={id}, nameLength=8, columnCount=4">mst_room</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="subcell">MstRoom</td>
 	</tr>
 	</tbody>
 </table>
@@ -384,6 +400,115 @@ kbn_rank
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
 		<td class="subcell">japaneseName</td>
+		<td class="subcell">String</td>
+	</tr>
+</table>
+  <h2 id="kbn_room_type" title="type=TABLE, primaryKey={code}, nameLength=13, columnCount=5">
+kbn_room_type
+</h2>
+<table summary="Columns in kbn_room_type">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>Default</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="kbn_room_type_pkey">o</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="kbn_room_type_code">code</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 3 </td>
+		<td class="defvalcell"> &nbsp;</td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">code</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="kbn_room_type_name">name</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 20 </td>
+		<td class="defvalcell"> &nbsp;</td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">name</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td id="kbn_room_type_price">price</td>
+		<td class="typecell">int4</td>
+		<td class="sizecell"> 10 </td>
+		<td class="defvalcell"> 0</td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">price</td>
+		<td class="subcell">int?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">4</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td id="kbn_room_type_capacity">capacity</td>
+		<td class="typecell">int4</td>
+		<td class="sizecell"> 10 </td>
+		<td class="defvalcell"> 1</td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">capacity</td>
+		<td class="subcell">int?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">5</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="kbn_room_type_description">description</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 255 </td>
+		<td class="defvalcell"> &nbsp;</td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">description</td>
 		<td class="subcell">String</td>
 	</tr>
 </table>
@@ -575,6 +700,93 @@ mst_employee
 		<td class="relcell"> &nbsp;</td>
 		<td class="subcell">leaveDate</td>
 		<td class="subcell">DateTime?</td>
+	</tr>
+</table>
+  <h2 id="mst_room" title="type=TABLE, primaryKey={id}, nameLength=8, columnCount=4">
+mst_room
+</h2>
+<table summary="Columns in mst_room">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="mst_room_pkey :: sequence=mst_room_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst_room_id">id</td>
+		<td class="typecell">serial</td>
+		<td class="sizecell"> 10 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">id</td>
+		<td class="subcell">int?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell" title="mst_room_room_no_key(room_no)">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst_room_room_no">room_no</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 10 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">roomNo</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst_room_room_type_code">room_type_code</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 3 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">roomTypeCode</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">4</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td id="mst_room_can_smoke">can_smoke</td>
+		<td class="typecell">bool</td>
+		<td class="sizecell"> 1 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">canSmoke</td>
+		<td class="subcell">bool?</td>
 	</tr>
 </table>
 

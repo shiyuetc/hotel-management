@@ -26,24 +26,30 @@ namespace Dbflute.AllCommon.Dbm {
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
                 tmpMap.put("kbn_rank", "Dbflute.BsEntity.Dbm.KbnRankDbm");
+                tmpMap.put("kbn_room_type", "Dbflute.BsEntity.Dbm.KbnRoomTypeDbm");
                 tmpMap.put("mst_customer", "Dbflute.BsEntity.Dbm.MstCustomerDbm");
                 tmpMap.put("mst_employee", "Dbflute.BsEntity.Dbm.MstEmployeeDbm");
+                tmpMap.put("mst_room", "Dbflute.BsEntity.Dbm.MstRoomDbm");
                 _tableDbNameClassNameMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
 
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
                 tmpMap.put("kbn_rank".ToLower(), "kbnRank");
+                tmpMap.put("kbn_room_type".ToLower(), "kbnRoomType");
                 tmpMap.put("mst_customer".ToLower(), "mstCustomer");
                 tmpMap.put("mst_employee".ToLower(), "mstEmployee");
+                tmpMap.put("mst_room".ToLower(), "mstRoom");
                 _tableDbNamePropertyNameKeyToLowerMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
 
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
                 tmpMap.put("KbnRank".ToLower(), "kbn_rank");
+                tmpMap.put("KbnRoomType".ToLower(), "kbn_room_type");
                 tmpMap.put("MstCustomer".ToLower(), "mst_customer");
                 tmpMap.put("MstEmployee".ToLower(), "mst_employee");
+                tmpMap.put("MstRoom".ToLower(), "mst_room");
                 _tablePropertyNameDbNameKeyToLowerMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
         }
