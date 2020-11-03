@@ -78,7 +78,7 @@ namespace HotelManagement.View
         /// <summary>
         /// ログイン情報を設定します。
         /// </summary>
-        /// <param name="mstEmployee"></param>
+        /// <param name="mstEmployee">設定する従業員</param>
         private void SetLoginInfomation(MstEmployee mstEmployee)
         {
             AppState.LoginEmployee = mstEmployee;
