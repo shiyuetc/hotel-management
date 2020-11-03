@@ -1,3 +1,8 @@
+-- KbnRank
+CREATE TABLE "kbn_rank" (
+    "code" VARCHAR(3) NOT NULL PRIMARY KEY,
+    "name" VARCHAR(20) NOT NULL
+)
 
 -- MstEmployee
 CREATE TABLE "mst_employee" (
