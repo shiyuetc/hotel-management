@@ -10,6 +10,7 @@ CREATE TABLE "mst_employee" (
     "employee_no" VARCHAR(20) UNIQUE NOT NULL,
     "name" VARCHAR(50) NOT NULL,
     "password" VARCHAR(255) NOT NULL,
+    "rank_code" VARCHAR(3) NOT NULL,
     "join_date_time" TIMESTAMP(3) NOT NULL,
     "leave_date_time" TIMESTAMP(3) NOT NULL
 )
