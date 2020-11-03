@@ -25,5 +25,8 @@ namespace HotelManagement.Enums
 
         [DisplayName("顧客管理")]
         Customer,
+
+        [DisplayName("客室管理")]
+        Room,
     }
 }
