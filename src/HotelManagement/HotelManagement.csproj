@@ -92,6 +92,7 @@
     <Compile Include="Extensions\DisplayExtension.cs" />
     <Compile Include="Common\Messages.cs" />
     <Compile Include="Common\ModelQuillInjector.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="View\FmMain.cs">
       <SubType>Form</SubType>
