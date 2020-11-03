@@ -146,6 +146,7 @@
     <Compile Include="Common\ModelQuillInjector.cs" />
     <Compile Include="Extensions\ListExtension.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="View\FmMain.cs">
       <SubType>Form</SubType>
