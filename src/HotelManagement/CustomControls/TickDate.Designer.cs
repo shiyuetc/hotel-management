@@ -40,7 +40,7 @@
             this.DayOfWeekLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DayOfWeekLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DayOfWeekLabel.Font = new System.Drawing.Font("MS UI Gothic", 16F);
-            this.DayOfWeekLabel.Location = new System.Drawing.Point(3, 46);
+            this.DayOfWeekLabel.Location = new System.Drawing.Point(0, 43);
             this.DayOfWeekLabel.Name = "DayOfWeekLabel";
             this.DayOfWeekLabel.Size = new System.Drawing.Size(64, 27);
             this.DayOfWeekLabel.TabIndex = 9;
@@ -52,7 +52,7 @@
             this.TimeLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.TimeLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TimeLabel.Font = new System.Drawing.Font("MS UI Gothic", 16F);
-            this.TimeLabel.Location = new System.Drawing.Point(70, 46);
+            this.TimeLabel.Location = new System.Drawing.Point(67, 43);
             this.TimeLabel.Name = "TimeLabel";
             this.TimeLabel.Size = new System.Drawing.Size(113, 27);
             this.TimeLabel.TabIndex = 8;
@@ -64,7 +64,7 @@
             this.DateLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DateLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DateLabel.Font = new System.Drawing.Font("MS UI Gothic", 16F);
-            this.DateLabel.Location = new System.Drawing.Point(3, 3);
+            this.DateLabel.Location = new System.Drawing.Point(0, 0);
             this.DateLabel.Name = "DateLabel";
             this.DateLabel.Size = new System.Drawing.Size(180, 40);
             this.DateLabel.TabIndex = 7;
@@ -85,7 +85,7 @@
             this.Controls.Add(this.TimeLabel);
             this.Controls.Add(this.DateLabel);
             this.Name = "TickDate";
-            this.Size = new System.Drawing.Size(185, 75);
+            this.Size = new System.Drawing.Size(180, 70);
             this.ResumeLayout(false);
 
         }
