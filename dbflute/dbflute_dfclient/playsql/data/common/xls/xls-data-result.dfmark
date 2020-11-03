@@ -1,0 +1,13 @@
+
+* * * * * * * * * *
+*                 *
+* Xls Data Result *
+*                 *
+* * * * * * * * * *
+data-directory: playsql/data/common/xls
+
+[10-kbn.xls]
+  kbn_rank (4)
+
+[20-mst.xls]
+  mst_employee (1)
