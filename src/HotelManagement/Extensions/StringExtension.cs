@@ -1,4 +1,6 @@
 ﻿
+using System.Linq;
+
 namespace HotelManagement.Extensions
 {
     /// <summary>
@@ -14,14 +16,7 @@ namespace HotelManagement.Extensions
         /// <returns>等しい文字列が存在すればtrueを返す。</returns>
         public static bool EqualsAny(this string value, params string[] parameters)
         {
-            foreach(string parameter in parameters)
-            {
-                if(value == parameter)
-                {
-                    return true;
-                }
-            }
-            return false;
+            return parameters.Contains(value);
         }
     }
 }
