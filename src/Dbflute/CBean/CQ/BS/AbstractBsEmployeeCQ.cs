@@ -20,14 +20,14 @@ namespace Dbflute.CBean.CQ.BS {
         public override String getTableDbName() { return "employee"; }
         public override String getTableSqlName() { return "employee"; }
 
-        public void SetId_Equal(int? v) { regId(CK_EQ, v); }
-        public void SetId_NotEqual(int? v) { regId(CK_NES, v); }
-        public void SetId_GreaterThan(int? v) { regId(CK_GT, v); }
-        public void SetId_LessThan(int? v) { regId(CK_LT, v); }
-        public void SetId_GreaterEqual(int? v) { regId(CK_GE, v); }
-        public void SetId_LessEqual(int? v) { regId(CK_LE, v); }
-        public void SetId_InScope(IList<int?> ls) { regINS<int?>(CK_INS, cTL<int?>(ls), getCValueId(), "id"); }
-        public void SetId_NotInScope(IList<int?> ls) { regINS<int?>(CK_NINS, cTL<int?>(ls), getCValueId(), "id"); }
+        public void SetId_Equal(long? v) { regId(CK_EQ, v); }
+        public void SetId_NotEqual(long? v) { regId(CK_NES, v); }
+        public void SetId_GreaterThan(long? v) { regId(CK_GT, v); }
+        public void SetId_LessThan(long? v) { regId(CK_LT, v); }
+        public void SetId_GreaterEqual(long? v) { regId(CK_GE, v); }
+        public void SetId_LessEqual(long? v) { regId(CK_LE, v); }
+        public void SetId_InScope(IList<long?> ls) { regINS<long?>(CK_INS, cTL<long?>(ls), getCValueId(), "id"); }
+        public void SetId_NotInScope(IList<long?> ls) { regINS<long?>(CK_NINS, cTL<long?>(ls), getCValueId(), "id"); }
         public void SetId_IsNull() { regId(CK_ISN, DUMMY_OBJECT); }
         public void SetId_IsNotNull() { regId(CK_ISNN, DUMMY_OBJECT); }
         protected void regId(ConditionKey k, Object v) { regQ(k, v, getCValueId(), "id"); }

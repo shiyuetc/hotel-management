@@ -119,15 +119,15 @@ namespace Dbflute.ExBhv {
             return SelectEntityWithDeletedCheck(Downcast(cb));
         }
 
-        public virtual Room SelectByPKValue(int? id) {
+        public virtual Room SelectByPKValue(long? id) {
             return SelectEntity(BuildPKCB(id));
         }
 
-        public virtual Room SelectByPKValueWithDeletedCheck(int? id) {
+        public virtual Room SelectByPKValueWithDeletedCheck(long? id) {
             return SelectEntityWithDeletedCheck(BuildPKCB(id));
         }
 
-        private RoomCB BuildPKCB(int? id) {
+        private RoomCB BuildPKCB(long? id) {
             AssertObjectNotNull("id", id);
             RoomCB cb = NewMyConditionBean();
             cb.Query().SetId_Equal(id);
@@ -167,7 +167,7 @@ namespace Dbflute.ExBhv {
         // ===============================================================================
         //                                                                        Sequence
         //                                                                        ========
-        public int? SelectNextVal() {
+        public long? SelectNextVal() {
             return DelegateSelectNextVal();
         }
         protected override void SetupNextValueToPrimaryKey(Entity entity) {// Very Internal
@@ -275,7 +275,7 @@ namespace Dbflute.ExBhv {
         #region Delegate Method
         protected int DelegateSelectCount(RoomCB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectCount(cb); }
         protected IList<Room> DelegateSelectList(RoomCB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectList(cb); }
-        protected int? DelegateSelectNextVal() { return this.Dao.SelectNextVal(); }
+        protected long? DelegateSelectNextVal() { return this.Dao.SelectNextVal(); }
 
         protected int DelegateInsert(Room e) { if (!ProcessBeforeInsert(e)) { return 1; } return this.Dao.Insert(e); }
         protected int DelegateUpdate(Room e)

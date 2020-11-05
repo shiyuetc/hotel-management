@@ -55,8 +55,8 @@ namespace Dbflute.ExEntity {
         //                                                                       Attribute
         //                                                                       =========
         #region Attribute
-        /// <summary>id: {PK, ID, NotNull, serial(10)}</summary>
-        protected int? _id;
+        /// <summary>id: {PK, ID, NotNull, bigserial(19)}</summary>
+        protected long? _id;
 
         /// <summary>room_no: {UQ, NotNull, varchar(10)}</summary>
         protected String _roomNo;
@@ -177,10 +177,10 @@ namespace Dbflute.ExEntity {
         //                                                                        Accessor
         //                                                                        ========
         #region Accessor
-        /// <summary>id: {PK, ID, NotNull, serial(10)}</summary>
+        /// <summary>id: {PK, ID, NotNull, bigserial(19)}</summary>
         [Seasar.Dao.Attrs.ID("identity")]
         [Seasar.Dao.Attrs.Column("id")]
-        public int? Id {
+        public long? Id {
             get { return _id; }
             set {
                 __modifiedProperties.AddPropertyName("Id");

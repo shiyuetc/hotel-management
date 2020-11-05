@@ -1,4 +1,63 @@
 map:{
+    ; 2020/11/06 08:28:23 = map:{
+        ; diffDate = 2020/11/06 08:28:23
+        ; tableDiff = map:{
+            ; customer = map:{
+                ; tableName = customer
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; id = map:{
+                        ; columnName = id
+                        ; diffType = CHANGE
+                        ; dbTypeDiff = map:{
+                            ; next = bigserial
+                            ; previous = serial
+                        }
+                        ; columnSizeDiff = map:{
+                            ; next = 19
+                            ; previous = 10
+                        }
+                    }
+                }
+            }
+            ; employee = map:{
+                ; tableName = employee
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; id = map:{
+                        ; columnName = id
+                        ; diffType = CHANGE
+                        ; dbTypeDiff = map:{
+                            ; next = bigserial
+                            ; previous = serial
+                        }
+                        ; columnSizeDiff = map:{
+                            ; next = 19
+                            ; previous = 10
+                        }
+                    }
+                }
+            }
+            ; room = map:{
+                ; tableName = room
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; id = map:{
+                        ; columnName = id
+                        ; diffType = CHANGE
+                        ; dbTypeDiff = map:{
+                            ; next = bigserial
+                            ; previous = serial
+                        }
+                        ; columnSizeDiff = map:{
+                            ; next = 19
+                            ; previous = 10
+                        }
+                    }
+                }
+            }
+        }
+    }
     ; 2020/11/06 08:24:57 = map:{
         ; diffDate = 2020/11/06 08:24:57
         ; tableDiff = map:{

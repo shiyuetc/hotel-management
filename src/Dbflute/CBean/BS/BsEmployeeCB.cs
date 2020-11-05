@@ -29,7 +29,7 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                             PrimaryKey Handling
         //                                                             ===================
-        public void AcceptPrimaryKey(int? id) {
+        public void AcceptPrimaryKey(long? id) {
             assertObjectNotNull("id", id);
             BsEmployeeCB cb = this;
             cb.Query().SetId_Equal(id);

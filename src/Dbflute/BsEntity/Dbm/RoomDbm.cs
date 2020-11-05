@@ -49,7 +49,7 @@ namespace Dbflute.BsEntity.Dbm {
         public ColumnInfo ColumnCanSmoke { get { return _columnCanSmoke; } }
 
         protected void InitializeColumnInfo() {
-            _columnId = cci("id", "id", null, null, true, "Id", typeof(int?), true, "serial", 10, 0, false, OptimisticLockType.NONE, null, null, null);
+            _columnId = cci("id", "id", null, null, true, "Id", typeof(long?), true, "bigserial", 19, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnRoomNo = cci("room_no", "room_no", null, null, true, "RoomNo", typeof(String), false, "varchar", 10, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnRoomTypeCode = cci("room_type_code", "room_type_code", null, null, true, "RoomTypeCode", typeof(String), false, "varchar", 3, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnCanSmoke = cci("can_smoke", "can_smoke", null, null, false, "CanSmoke", typeof(bool?), false, "bool", 1, 0, false, OptimisticLockType.NONE, null, null, null);
@@ -213,7 +213,7 @@ namespace Dbflute.BsEntity.Dbm {
         }
 
         public class EntityPropertyIdSetupper : EntityPropertySetupper<Room> {
-            public void Setup(Room entity, Object value) { entity.Id = (value != null) ? (int?)value : null; }
+            public void Setup(Room entity, Object value) { entity.Id = (value != null) ? (long?)value : null; }
         }
         public class EntityPropertyRoomNoSetupper : EntityPropertySetupper<Room> {
             public void Setup(Room entity, Object value) { entity.RoomNo = (value != null) ? (String)value : null; }

@@ -16,7 +16,7 @@ CREATE TABLE "room_type" (
 
 -- Employee
 CREATE TABLE "employee" (
-    "id" SERIAL NOT NULL PRIMARY KEY,
+    "id" BIGSERIAL NOT NULL PRIMARY KEY,
     "employee_no" VARCHAR(10) UNIQUE NOT NULL,
     "password" VARCHAR(255) NOT NULL,
     "rank_code" VARCHAR(3) NOT NULL,
@@ -29,14 +29,14 @@ CREATE TABLE "employee" (
 
 -- Customer
 CREATE TABLE "customer" (
-    "id" SERIAL NOT NULL PRIMARY KEY,
+    "id" BIGSERIAL NOT NULL PRIMARY KEY,
     "last_name" VARCHAR(20) NOT NULL,
     "first_name" VARCHAR(20) NOT NULL
 );
 
 -- Room
 CREATE TABLE "room" (
-    "id" SERIAL NOT NULL PRIMARY KEY,
+    "id" BIGSERIAL NOT NULL PRIMARY KEY,
     "room_no" VARCHAR(10) UNIQUE NOT NULL,
     "room_type_code" VARCHAR(3) NOT NULL,
     "can_smoke" BOOLEAN

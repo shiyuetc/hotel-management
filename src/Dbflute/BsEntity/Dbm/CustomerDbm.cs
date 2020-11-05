@@ -47,7 +47,7 @@ namespace Dbflute.BsEntity.Dbm {
         public ColumnInfo ColumnFirstName { get { return _columnFirstName; } }
 
         protected void InitializeColumnInfo() {
-            _columnId = cci("id", "id", null, null, true, "Id", typeof(int?), true, "serial", 10, 0, false, OptimisticLockType.NONE, null, null, null);
+            _columnId = cci("id", "id", null, null, true, "Id", typeof(long?), true, "bigserial", 19, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnLastName = cci("last_name", "last_name", null, null, true, "LastName", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnFirstName = cci("first_name", "first_name", null, null, true, "FirstName", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
         }
@@ -204,7 +204,7 @@ namespace Dbflute.BsEntity.Dbm {
         }
 
         public class EntityPropertyIdSetupper : EntityPropertySetupper<Customer> {
-            public void Setup(Customer entity, Object value) { entity.Id = (value != null) ? (int?)value : null; }
+            public void Setup(Customer entity, Object value) { entity.Id = (value != null) ? (long?)value : null; }
         }
         public class EntityPropertyLastNameSetupper : EntityPropertySetupper<Customer> {
             public void Setup(Customer entity, Object value) { entity.LastName = (value != null) ? (String)value : null; }

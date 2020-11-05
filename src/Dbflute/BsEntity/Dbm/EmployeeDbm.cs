@@ -57,7 +57,7 @@ namespace Dbflute.BsEntity.Dbm {
         public ColumnInfo ColumnLeaveDate { get { return _columnLeaveDate; } }
 
         protected void InitializeColumnInfo() {
-            _columnId = cci("id", "id", null, null, true, "Id", typeof(int?), true, "serial", 10, 0, false, OptimisticLockType.NONE, null, null, null);
+            _columnId = cci("id", "id", null, null, true, "Id", typeof(long?), true, "bigserial", 19, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnEmployeeNo = cci("employee_no", "employee_no", null, null, true, "EmployeeNo", typeof(String), false, "varchar", 10, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnPassword = cci("password", "password", null, null, true, "Password", typeof(String), false, "varchar", 255, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnRankCode = cci("rank_code", "rank_code", null, null, true, "RankCode", typeof(String), false, "varchar", 3, 0, false, OptimisticLockType.NONE, null, "rank", null);
@@ -255,7 +255,7 @@ namespace Dbflute.BsEntity.Dbm {
         }
 
         public class EntityPropertyIdSetupper : EntityPropertySetupper<Employee> {
-            public void Setup(Employee entity, Object value) { entity.Id = (value != null) ? (int?)value : null; }
+            public void Setup(Employee entity, Object value) { entity.Id = (value != null) ? (long?)value : null; }
         }
         public class EntityPropertyEmployeeNoSetupper : EntityPropertySetupper<Employee> {
             public void Setup(Employee entity, Object value) { entity.EmployeeNo = (value != null) ? (String)value : null; }

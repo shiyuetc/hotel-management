@@ -119,15 +119,15 @@ namespace Dbflute.ExBhv {
             return SelectEntityWithDeletedCheck(Downcast(cb));
         }
 
-        public virtual Employee SelectByPKValue(int? id) {
+        public virtual Employee SelectByPKValue(long? id) {
             return SelectEntity(BuildPKCB(id));
         }
 
-        public virtual Employee SelectByPKValueWithDeletedCheck(int? id) {
+        public virtual Employee SelectByPKValueWithDeletedCheck(long? id) {
             return SelectEntityWithDeletedCheck(BuildPKCB(id));
         }
 
-        private EmployeeCB BuildPKCB(int? id) {
+        private EmployeeCB BuildPKCB(long? id) {
             AssertObjectNotNull("id", id);
             EmployeeCB cb = NewMyConditionBean();
             cb.Query().SetId_Equal(id);
@@ -167,7 +167,7 @@ namespace Dbflute.ExBhv {
         // ===============================================================================
         //                                                                        Sequence
         //                                                                        ========
-        public int? SelectNextVal() {
+        public long? SelectNextVal() {
             return DelegateSelectNextVal();
         }
         protected override void SetupNextValueToPrimaryKey(Entity entity) {// Very Internal
@@ -281,7 +281,7 @@ namespace Dbflute.ExBhv {
         #region Delegate Method
         protected int DelegateSelectCount(EmployeeCB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectCount(cb); }
         protected IList<Employee> DelegateSelectList(EmployeeCB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectList(cb); }
-        protected int? DelegateSelectNextVal() { return this.Dao.SelectNextVal(); }
+        protected long? DelegateSelectNextVal() { return this.Dao.SelectNextVal(); }
 
         protected int DelegateInsert(Employee e) { if (!ProcessBeforeInsert(e)) { return 1; } return this.Dao.Insert(e); }
         protected int DelegateUpdate(Employee e)
