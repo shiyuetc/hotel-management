@@ -9,14 +9,14 @@ namespace HotelManagement.Models
     [Implementation]
     public class EmployeeModel
     {
-        protected MstEmployeeBhv MstEmployeeBhv;
+        protected EmployeeBhv EmployeeBhv;
 
-        public MstEmployee[] GetEmployeeList()
+        public Employee[] GetEmployeeList()
         {
-            var mstEmployeeCB = new MstEmployeeCB();
-            mstEmployeeCB.SetupSelect_KbnRank();
-            var selectList = MstEmployeeBhv.SelectList(mstEmployeeCB);
-            var employees = selectList.Count > 0 ? selectList.ToArray() : new MstEmployee[0];
+            var employeeCB = new EmployeeCB();
+            employeeCB.SetupSelect_Rank();
+            var selectList = EmployeeBhv.SelectList(employeeCB);
+            var employees = selectList.Count > 0 ? selectList.ToArray() : new Employee[0];
             return employees;
         }
     }

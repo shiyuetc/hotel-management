@@ -76,26 +76,26 @@ namespace HotelManagement.View
         /// <summary>
         /// ログイン情報を設定します。
         /// </summary>
-        /// <param name="mstEmployee">設定する従業員</param>
-        private void SetLoginInfomation(MstEmployee mstEmployee)
+        /// <param name="employee">設定する従業員</param>
+        private void SetLoginInfomation(Employee employee)
         {
-            AppState.LoginEmployee = mstEmployee;
+            AppState.LoginEmployee = employee;
             this.LoginInfoLabel.Text = "ユーザー情報：" +
-                (mstEmployee == null ? "ログインなし" : $"{mstEmployee.LastName} {mstEmployee.FirstName}｜" +
-                $"職位：{mstEmployee.KbnRank.JapaneseName}({mstEmployee.KbnRank.EnglishName})");
+                (employee == null ? "ログインなし" : $"{employee.LastName} {employee.FirstName}｜" +
+                $"職位：{employee.Rank.JapaneseName}({employee.Rank.EnglishName})");
         }
 
         /// <summary>
         /// ログイン処理を実行します。
         /// </summary>
-        /// <param name="mstEmployee">ログインした従業員</param>
-        public void SetLoginUser(MstEmployee mstEmployee)
+        /// <param name="employee">ログインした従業員</param>
+        public void SetLoginUser(Employee employee)
         {
             // 操作できる画面を有効化
-            this.MenuBar.SetEnabled(true, Constants.Permissions[mstEmployee.KbnRank.Code]);
+            this.MenuBar.SetEnabled(true, Constants.Permissions[employee.Rank.Code]);
 
             // ログイン情報を設定
-            this.SetLoginInfomation(mstEmployee);
+            this.SetLoginInfomation(employee);
 
             // 権限内の一番初めの画面に遷移
             this.MoveDisplay(this.MenuBar.GetEnableButtonFirst().Display);
@@ -107,7 +107,7 @@ namespace HotelManagement.View
         public void SetLogout()
         {
             // 操作できる画面を無効化
-            this.MenuBar.SetEnabled(false, Constants.Permissions[AppState.LoginEmployee.KbnRank.Code]);
+            this.MenuBar.SetEnabled(false, Constants.Permissions[AppState.LoginEmployee.Rank.Code]);
 
             // ログイン情報を破棄
             this.SetLoginInfomation(null);

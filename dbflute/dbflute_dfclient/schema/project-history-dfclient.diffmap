@@ -1,4 +1,116 @@
 map:{
+    ; 2020/11/05 23:20:28 = map:{
+        ; diffDate = 2020/11/05 23:20:28
+        ; tableDiff = map:{
+            ; customer = map:{
+                ; tableName = customer
+                ; diffType = ADD
+            }
+            ; employee = map:{
+                ; tableName = employee
+                ; diffType = ADD
+            }
+            ; rank = map:{
+                ; tableName = rank
+                ; diffType = ADD
+            }
+            ; room = map:{
+                ; tableName = room
+                ; diffType = ADD
+            }
+            ; room_type = map:{
+                ; tableName = room_type
+                ; diffType = ADD
+            }
+            ; kbn_rank = map:{
+                ; tableName = kbn_rank
+                ; diffType = DELETE
+            }
+            ; kbn_room_type = map:{
+                ; tableName = kbn_room_type
+                ; diffType = DELETE
+            }
+            ; mst_customer = map:{
+                ; tableName = mst_customer
+                ; diffType = DELETE
+            }
+            ; mst_employee = map:{
+                ; tableName = mst_employee
+                ; diffType = DELETE
+            }
+            ; mst_room = map:{
+                ; tableName = mst_room
+                ; diffType = DELETE
+            }
+        }
+        ; sequenceDiff = map:{
+            ; hotel_management.public.employee_id_seq = map:{
+                ; sequenceName = hotel_management.public.employee_id_seq
+                ; diffType = ADD
+            }
+            ; hotel_management.public.customer_id_seq = map:{
+                ; sequenceName = hotel_management.public.customer_id_seq
+                ; diffType = ADD
+            }
+            ; hotel_management.public.room_id_seq = map:{
+                ; sequenceName = hotel_management.public.room_id_seq
+                ; diffType = ADD
+            }
+            ; hotel_management.public.mst_employee_id_seq = map:{
+                ; sequenceName = hotel_management.public.mst_employee_id_seq
+                ; diffType = DELETE
+            }
+            ; hotel_management.public.mst_room_id_seq = map:{
+                ; sequenceName = hotel_management.public.mst_room_id_seq
+                ; diffType = DELETE
+            }
+            ; hotel_management.public.mst_customer_id_seq = map:{
+                ; sequenceName = hotel_management.public.mst_customer_id_seq
+                ; diffType = DELETE
+            }
+        }
+    }
+    ; 2020/11/03 23:19:36 = map:{
+        ; diffDate = 2020/11/03 23:19:36
+        ; tableDiff = map:{
+            ; mst_customer = map:{
+                ; tableName = mst_customer
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; last_name = map:{
+                        ; columnName = last_name
+                        ; diffType = ADD
+                    }
+                    ; first_name = map:{
+                        ; columnName = first_name
+                        ; diffType = ADD
+                    }
+                    ; name = map:{
+                        ; columnName = name
+                        ; diffType = DELETE
+                    }
+                }
+            }
+            ; mst_employee = map:{
+                ; tableName = mst_employee
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; last_name = map:{
+                        ; columnName = last_name
+                        ; diffType = ADD
+                    }
+                    ; first_name = map:{
+                        ; columnName = first_name
+                        ; diffType = ADD
+                    }
+                    ; name = map:{
+                        ; columnName = name
+                        ; diffType = DELETE
+                    }
+                }
+            }
+        }
+    }
     ; 2020/11/03 21:32:09 = map:{
         ; diffDate = 2020/11/03 21:32:09
         ; tableCount = map:{

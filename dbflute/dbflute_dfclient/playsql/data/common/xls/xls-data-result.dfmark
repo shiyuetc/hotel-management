@@ -7,7 +7,8 @@
 data-directory: playsql/data/common/xls
 
 [10-kbn.xls]
-  kbn_rank (4)
+  rank (4)
+  room_type (10)
 
 [20-mst.xls]
-  mst_employee (1)
+  employee (4)

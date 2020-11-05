@@ -9,14 +9,14 @@ namespace HotelManagement.Models
     [Implementation]
     public class LoginModel
     {
-        protected MstEmployeeBhv MstEmployeeBhv;
+        protected EmployeeBhv EmployeeBhv;
 
-        public MstEmployee Login(string id, string password)
+        public Employee Login(string id, string password)
         {
-            var mstEmployeeCB = new MstEmployeeCB();
-            mstEmployeeCB.SetupSelect_KbnRank();
-            mstEmployeeCB.Query().SetEmployeeNo_Equal(id);
-            var employee = MstEmployeeBhv.SelectEntity(mstEmployeeCB);
+            var employeeCB = new EmployeeCB();
+            employeeCB.SetupSelect_Rank();
+            employeeCB.Query().SetEmployeeNo_Equal(id);
+            var employee = EmployeeBhv.SelectEntity(employeeCB);
 
             if(employee != null && BcryptUtil.Verify(password, employee.Password))
             {
