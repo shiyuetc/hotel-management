@@ -39,9 +39,9 @@
         </unique>
     </table>
     <table name="rank" schema="hotel_management.public" type="TABLE">
-        <column dbType="varchar" javaType="String" name="code"
+        <column dbType="bpchar" javaType="String" name="code"
             pkName="rank_pkey" primaryKey="true" required="true"
-            size="3" type="VARCHAR"/>
+            size="3" type="CHAR"/>
         <column dbType="varchar" javaType="String" name="english_name"
             required="true" size="20" type="VARCHAR"/>
         <column dbType="varchar" javaType="String" name="japanese_name"
@@ -62,9 +62,9 @@
         </unique>
     </table>
     <table name="room_type" schema="hotel_management.public" type="TABLE">
-        <column dbType="varchar" javaType="String" name="code"
+        <column dbType="bpchar" javaType="String" name="code"
             pkName="room_type_pkey" primaryKey="true" required="true"
-            size="3" type="VARCHAR"/>
+            size="3" type="CHAR"/>
         <column dbType="varchar" javaType="String" name="name"
             required="true" size="20" type="VARCHAR"/>
         <column dbType="int4" default="0" javaType="int?" name="price"

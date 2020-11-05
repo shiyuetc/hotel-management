@@ -55,7 +55,7 @@ namespace Dbflute.ExEntity {
         //                                                                       Attribute
         //                                                                       =========
         #region Attribute
-        /// <summary>code: {PK, NotNull, varchar(3)}</summary>
+        /// <summary>code: {PK, NotNull, bpchar(3)}</summary>
         protected String _code;
 
         /// <summary>name: {NotNull, varchar(20)}</summary>
@@ -181,7 +181,7 @@ namespace Dbflute.ExEntity {
         //                                                                        Accessor
         //                                                                        ========
         #region Accessor
-        /// <summary>code: {PK, NotNull, varchar(3)}</summary>
+        /// <summary>code: {PK, NotNull, bpchar(3)}</summary>
         [Seasar.Dao.Attrs.Column("code")]
         public String Code {
             get { return _code; }

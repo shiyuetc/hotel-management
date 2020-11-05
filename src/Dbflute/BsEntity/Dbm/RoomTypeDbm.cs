@@ -51,7 +51,7 @@ namespace Dbflute.BsEntity.Dbm {
         public ColumnInfo ColumnDescription { get { return _columnDescription; } }
 
         protected void InitializeColumnInfo() {
-            _columnCode = cci("code", "code", null, null, true, "Code", typeof(String), true, "varchar", 3, 0, false, OptimisticLockType.NONE, null, null, null);
+            _columnCode = cci("code", "code", null, null, true, "Code", typeof(String), true, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnName = cci("name", "name", null, null, true, "Name", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnPrice = cci("price", "price", null, null, false, "Price", typeof(int?), false, "int4", 10, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnCapacity = cci("capacity", "capacity", null, null, false, "Capacity", typeof(int?), false, "int4", 10, 0, false, OptimisticLockType.NONE, null, null, null);

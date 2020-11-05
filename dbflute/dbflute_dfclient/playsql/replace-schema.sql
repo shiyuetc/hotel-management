@@ -1,13 +1,13 @@
 -- Rank
 CREATE TABLE "rank" (
-    "code" VARCHAR(3) NOT NULL PRIMARY KEY,
+    "code" CHAR(3) NOT NULL PRIMARY KEY,
     "english_name" VARCHAR(20) NOT NULL,
     "japanese_name" VARCHAR(20) NOT NULL
 );
 
 -- RoomType
 CREATE TABLE "room_type" (
-    "code" VARCHAR(3) NOT NULL PRIMARY KEY,
+    "code" CHAR(3) NOT NULL PRIMARY KEY,
     "name" VARCHAR(20) NOT NULL,
     "price" INTEGER DEFAULT 0,
     "capacity" INTEGER DEFAULT 1,

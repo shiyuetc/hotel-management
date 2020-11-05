@@ -47,7 +47,7 @@ namespace Dbflute.BsEntity.Dbm {
         public ColumnInfo ColumnJapaneseName { get { return _columnJapaneseName; } }
 
         protected void InitializeColumnInfo() {
-            _columnCode = cci("code", "code", null, null, true, "Code", typeof(String), true, "varchar", 3, 0, false, OptimisticLockType.NONE, null, null, "employeeList");
+            _columnCode = cci("code", "code", null, null, true, "Code", typeof(String), true, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, null, "employeeList");
             _columnEnglishName = cci("english_name", "english_name", null, null, true, "EnglishName", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnJapaneseName = cci("japanese_name", "japanese_name", null, null, true, "JapaneseName", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
         }
