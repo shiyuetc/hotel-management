@@ -5,7 +5,6 @@ using HotelManagement.CustomControls;
 using HotelManagement.Enums;
 using HotelManagement.Extensions;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace HotelManagement.View
