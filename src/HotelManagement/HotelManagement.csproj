@@ -141,6 +141,7 @@
       <DependentUpon>TickDate.cs</DependentUpon>
     </Compile>
     <Compile Include="Const\Constants.cs" />
+    <Compile Include="Extensions\DictionaryExtension.cs" />
     <Compile Include="Extensions\DisplayExtension.cs" />
     <Compile Include="Common\Messages.cs" />
     <Compile Include="Common\ModelQuillInjector.cs" />
