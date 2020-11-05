@@ -1,4 +1,7 @@
 ﻿
+using HotelManagement.Enums;
+using System.Collections.Generic;
+
 namespace HotelManagement.Const
 {
     /// <summary>
@@ -10,6 +13,51 @@ namespace HotelManagement.Const
         /// DayOfWeek列挙体に対応した日本語
         /// </summary>
         public static readonly char[] WeekNames = { '日', '月', '火', '水', '木', '金', '土' };
+
+        /// <summary>
+        /// 従業員の権限に対応した操作できるメニューボタン
+        /// </summary>
+        public static Dictionary<string, Display[]> Permissions = new Dictionary<string, Display[]>()
+        {
+            { 
+                Rank.SystemMaintenancer, 
+                new Display[] { 
+                    Display.Reserve,
+                    Display.History,
+                    Display.Sale,
+                    Display.Employee,
+                    Display.Customer,
+                    Display.Room
+                } 
+            },
+            {
+                Rank.AssistantManager,
+                new Display[] {
+                    Display.Reserve,
+                    Display.History,
+                    Display.Sale,
+                    Display.Employee,
+                    Display.Customer,
+                    Display.Room
+                }
+            },
+            {
+                Rank.FinancialController,
+                new Display[] {
+                    Display.History,
+                    Display.Sale,
+                    Display.Employee,
+                    Display.Customer
+                }
+            },
+            {
+                Rank.FrontClerk,
+                new Display[] {
+                    Display.Reserve,
+                    Display.History
+                }
+            }
+        };
 
         /// <summary>
         /// 従業員の職位を表す構造体
