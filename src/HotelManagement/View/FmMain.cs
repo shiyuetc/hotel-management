@@ -6,7 +6,6 @@ using HotelManagement.Enums;
 using HotelManagement.Extensions;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace HotelManagement.View
@@ -16,25 +15,6 @@ namespace HotelManagement.View
     /// </summary>
     public partial class FmMain : Form
     {
-        /// <summary>
-        /// メニューバーに表示されるメニューボタン
-        /// </summary>
-        private readonly List<MenuButton> MenuButtons = new List<MenuButton>()
-        {
-            new MenuButton(Display.Reserve, "\r\n[開発中]"),
-            new MenuButton(Display.History, "\r\n[開発中]"),
-            new MenuButton(Display.Sale, "\r\n[開発中]"),
-            new MenuButton(Display.Employee, "\r\n[開発中]"),
-            new MenuButton(Display.Customer, "\r\n[開発中]"),
-            new MenuButton(Display.Room, "\r\n[開発中]"),
-            new MenuButton(Display.Login)
-        };
-
-        /// <summary>
-        /// ログインした従業員の権限に対応した操作できるメニューボタン
-        /// </summary>
-        private List<MenuButton> EnableMenuButtons = new List<MenuButton>();
-
         /// <summary>
         /// FmMainを初期化します。
         /// </summary>
@@ -51,7 +31,7 @@ namespace HotelManagement.View
         private void FmMain_Load(object sender, EventArgs e)
         {
             // メニューボタンを初期化
-            this.MenuBar.SetMenuButtons(this.MenuButtons, MenuItems_Click);
+            this.MenuBar.InitMenuButtons(MenuItems_Click);
 
             // ログイン画面に遷移
             this.MoveDisplay(Display.Login);
@@ -101,7 +81,7 @@ namespace HotelManagement.View
         {
             AppState.LoginEmployee = mstEmployee;
             this.LoginInfoLabel.Text = "ユーザー情報：" +
-                (mstEmployee == null ? "ログインなし" : $"{ mstEmployee.Name}｜" +
+                (mstEmployee == null ? "ログインなし" : $"{mstEmployee.LastName} {mstEmployee.FirstName}｜" +
                 $"職位：{mstEmployee.KbnRank.JapaneseName}({mstEmployee.KbnRank.EnglishName})");
         }
 
@@ -111,43 +91,14 @@ namespace HotelManagement.View
         /// <param name="mstEmployee">ログインした従業員</param>
         public void SetLoginUser(MstEmployee mstEmployee)
         {
-            // ログインした従業員の権限によって操作できる画面を分岐
-            this.EnableMenuButtons.Clear();
-            if (mstEmployee.KbnRank.Code.EqualsAny(Constants.Rank.SystemMaintenancer, Constants.Rank.AssistantManager))
-            {
-                this.EnableMenuButtons.AddRange(new MenuButton[] {
-                    this.MenuBar.GetMenuButton(Display.Reserve),
-                    this.MenuBar.GetMenuButton(Display.History),
-                    this.MenuBar.GetMenuButton(Display.Sale),
-                    this.MenuBar.GetMenuButton(Display.Employee),
-                    this.MenuBar.GetMenuButton(Display.Customer),
-                    this.MenuBar.GetMenuButton(Display.Room)
-                });
-            }
-            else if (mstEmployee.KbnRank.Code.Equals(Constants.Rank.FinancialController))
-            {
-                this.EnableMenuButtons.AddRange(new MenuButton[] {
-                    this.MenuBar.GetMenuButton(Display.History),
-                    this.MenuBar.GetMenuButton(Display.Sale),
-                    this.MenuBar.GetMenuButton(Display.Employee),
-                    this.MenuBar.GetMenuButton(Display.Customer)
-                });
-            }
-            else if (mstEmployee.KbnRank.Code.Equals(Constants.Rank.FrontClerk))
-            {
-                this.EnableMenuButtons.AddRange(new MenuButton[] {
-                    this.MenuBar.GetMenuButton(Display.Reserve),
-                    this.MenuBar.GetMenuButton(Display.History)
-                });
-            }
-            this.EnableMenuButtons.Add(this.MenuBar.GetMenuButton(Display.Login));
-            this.EnableMenuButtons.SetEnabled(true);
+            // 操作できる画面を有効化
+            this.MenuBar.SetEnabled(true, Constants.Permissions[mstEmployee.KbnRank.Code]);
 
             // ログイン情報を設定
             this.SetLoginInfomation(mstEmployee);
 
             // 権限内の一番初めの画面に遷移
-            this.MoveDisplay(this.EnableMenuButtons[0].Display);
+            this.MoveDisplay(this.MenuBar.GetEnableButtonFirst().Display);
         }
 
         /// <summary>
@@ -155,8 +106,8 @@ namespace HotelManagement.View
         /// </summary>
         public void SetLogout()
         {
-            // 操作できる画面を無効化する
-            this.EnableMenuButtons.SetEnabled(false);
+            // 操作できる画面を無効化
+            this.MenuBar.SetEnabled(false, Constants.Permissions[AppState.LoginEmployee.KbnRank.Code]);
 
             // ログイン情報を破棄
             this.SetLoginInfomation(null);

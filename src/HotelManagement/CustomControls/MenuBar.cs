@@ -1,4 +1,5 @@
 ﻿using HotelManagement.Enums;
+using HotelManagement.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -8,29 +9,42 @@ namespace HotelManagement.CustomControls
 {
     public partial class MenuBar : UserControl
     {
+        private readonly Dictionary<Display, MenuButton> MenuButtons = new Dictionary<Display, MenuButton>();
+
         public MenuBar()
         {
             InitializeComponent();
         }
 
-        public void SetMenuButtons(List<MenuButton> menuButtons, Action<object, EventArgs> clickEvent)
+        public void InitMenuButtons(Action<object, EventArgs> clickEvent)
         {
-            this.MenuBarPanel.Controls.Clear();
-            for (int i = 0; i < menuButtons.Count; i++)
+            Display[] displays = (Display[])Enum.GetValues(typeof(Display));
+            for (int i = 0; i < displays.Length; i++)
             {
-                menuButtons[i].Location = new Point(2 + (menuButtons[i].Width * i), 2);
-                menuButtons[i].Click += new EventHandler(clickEvent);
+                var menuButton = new MenuButton(displays[i]);
+                menuButton.Location = new Point(2 + (menuButton.Width * i), 2);
+                menuButton.Click += new EventHandler(clickEvent);
+                this.MenuButtons.Add(displays[i], menuButton);
             }
-            this.MenuBarPanel.Controls.AddRange(menuButtons.ToArray());
+            this.MenuBarPanel.Controls.AddRange(this.MenuButtons.GetValueArray());
         }
 
-        public MenuButton GetMenuButton(Display display)
+        public void SetEnabled(bool enabled, Display[] displays)
         {
-            foreach(Control control in this.MenuBarPanel.Controls)
+            foreach(Display display in displays)
             {
-                if(control is MenuButton && ((MenuButton)control).Display == display)
+                this.MenuButtons[display].Enabled = enabled;
+            }
+            this.MenuButtons[Display.Login].Enabled = enabled;
+        }
+
+        public MenuButton GetEnableButtonFirst()
+        {
+            foreach (Display display in Enum.GetValues(typeof(Display)))
+            {
+                if(this.MenuButtons[display].Enabled)
                 {
-                    return (MenuButton)control;
+                    return this.MenuButtons[display];
                 }
             }
             return null;
