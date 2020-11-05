@@ -8,9 +8,6 @@ namespace HotelManagement.Enums
     /// </summary>
     public enum Display
     {
-        [DisplayName("ログアウト")]
-        Login,
-
         [DisplayName("予約管理")]
         Reserve,
 
@@ -28,5 +25,8 @@ namespace HotelManagement.Enums
 
         [DisplayName("客室管理")]
         Room,
+
+        [DisplayName("ログアウト")]
+        Login,
     }
 }
