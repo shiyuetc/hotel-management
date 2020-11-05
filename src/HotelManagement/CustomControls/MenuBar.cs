@@ -7,15 +7,28 @@ using System.Windows.Forms;
 
 namespace HotelManagement.CustomControls
 {
+    /// <summary>
+    /// メニューバーを表すクラス
+    /// </summary>
     public partial class MenuBar : UserControl
     {
+        /// <summary>
+        /// 表示するメニューボタンを保持する
+        /// </summary>
         private readonly Dictionary<Display, MenuButton> MenuButtons = new Dictionary<Display, MenuButton>();
 
+        /// <summary>
+        /// MenuBarを初期化します。
+        /// </summary>
         public MenuBar()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// メニューボタンを初期化します。
+        /// </summary>
+        /// <param name="clickEvent">メニューボタンクリック時のイベント</param>
         public void InitMenuButtons(Action<object, EventArgs> clickEvent)
         {
             Display[] displays = (Display[])Enum.GetValues(typeof(Display));
@@ -28,7 +41,12 @@ namespace HotelManagement.CustomControls
             }
             this.MenuBarPanel.Controls.AddRange(this.MenuButtons.GetValueArray());
         }
-
+        
+        /// <summary>
+        /// メニューボタンの活性を変更します。
+        /// </summary>
+        /// <param name="enabled">有効/無効</param>
+        /// <param name="displays">変更するメニューボタン</param>
         public void SetEnabled(bool enabled, Display[] displays)
         {
             foreach(Display display in displays)
@@ -38,6 +56,10 @@ namespace HotelManagement.CustomControls
             this.MenuButtons[Display.Login].Enabled = enabled;
         }
 
+        /// <summary>
+        /// 1つめの有効化されているボタンを取得します。
+        /// </summary>
+        /// <returns>1つめの有効化されているボタンを返す</returns>
         public MenuButton GetEnableButtonFirst()
         {
             foreach (Display display in Enum.GetValues(typeof(Display)))
