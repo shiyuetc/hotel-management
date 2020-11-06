@@ -22,7 +22,7 @@ namespace Dbflute.ExEntity {
     ///     id
     /// 
     /// [column]
-    ///     id, last_name, first_name
+    ///     id, campany_name, last_name, first_name
     /// 
     /// [sequence]
     ///     customer_id_seq
@@ -57,6 +57,9 @@ namespace Dbflute.ExEntity {
         #region Attribute
         /// <summary>id: {PK, ID, NotNull, bigserial(19)}</summary>
         protected long? _id;
+
+        /// <summary>campany_name: {varchar(100)}</summary>
+        protected String _campanyName;
 
         /// <summary>last_name: {NotNull, varchar(20)}</summary>
         protected String _lastName;
@@ -158,6 +161,7 @@ namespace Dbflute.ExEntity {
             String c = ", ";
             StringBuilder sb = new StringBuilder();
             sb.Append(c).Append(this.Id);
+            sb.Append(c).Append(this.CampanyName);
             sb.Append(c).Append(this.LastName);
             sb.Append(c).Append(this.FirstName);
             if (sb.Length > 0) { sb.Remove(0, c.Length); }
@@ -181,6 +185,16 @@ namespace Dbflute.ExEntity {
             set {
                 __modifiedProperties.AddPropertyName("Id");
                 _id = value;
+            }
+        }
+
+        /// <summary>campany_name: {varchar(100)}</summary>
+        [Seasar.Dao.Attrs.Column("campany_name")]
+        public String CampanyName {
+            get { return _campanyName; }
+            set {
+                __modifiedProperties.AddPropertyName("CampanyName");
+                _campanyName = value;
             }
         }
 

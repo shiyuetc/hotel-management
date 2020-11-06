@@ -166,6 +166,7 @@ namespace Dbflute.CBean.BS {
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
         public void ColumnId() { doColumn("id"); }
+        public void ColumnCampanyName() { doColumn("campany_name"); }
         public void ColumnLastName() { doColumn("last_name"); }
         public void ColumnFirstName() { doColumn("first_name"); }
         protected override void doSpecifyRequiredColumn() {

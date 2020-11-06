@@ -39,15 +39,18 @@ namespace Dbflute.BsEntity.Dbm {
         //                                                                     Column Info
         //                                                                     ===========
         protected ColumnInfo _columnId;
+        protected ColumnInfo _columnCampanyName;
         protected ColumnInfo _columnLastName;
         protected ColumnInfo _columnFirstName;
 
         public ColumnInfo ColumnId { get { return _columnId; } }
+        public ColumnInfo ColumnCampanyName { get { return _columnCampanyName; } }
         public ColumnInfo ColumnLastName { get { return _columnLastName; } }
         public ColumnInfo ColumnFirstName { get { return _columnFirstName; } }
 
         protected void InitializeColumnInfo() {
             _columnId = cci("id", "id", null, null, true, "Id", typeof(long?), true, "bigserial", 19, 0, false, OptimisticLockType.NONE, null, null, null);
+            _columnCampanyName = cci("campany_name", "campany_name", null, null, false, "CampanyName", typeof(String), false, "varchar", 100, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnLastName = cci("last_name", "last_name", null, null, true, "LastName", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnFirstName = cci("first_name", "first_name", null, null, true, "FirstName", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
         }
@@ -55,6 +58,7 @@ namespace Dbflute.BsEntity.Dbm {
         protected void InitializeColumnInfoList() {
             _columnInfoList = new ArrayList<ColumnInfo>();
             _columnInfoList.add(ColumnId);
+            _columnInfoList.add(ColumnCampanyName);
             _columnInfoList.add(ColumnLastName);
             _columnInfoList.add(ColumnFirstName);
         }
@@ -109,6 +113,7 @@ namespace Dbflute.BsEntity.Dbm {
         //                                    Column DB-Name
         //                                    --------------
         public static readonly String DB_NAME_id = "id";
+        public static readonly String DB_NAME_campany_name = "campany_name";
         public static readonly String DB_NAME_last_name = "last_name";
         public static readonly String DB_NAME_first_name = "first_name";
 
@@ -116,6 +121,7 @@ namespace Dbflute.BsEntity.Dbm {
         //                              Column Property-Name
         //                              --------------------
         public static readonly String PROPERTY_NAME_id = "Id";
+        public static readonly String PROPERTY_NAME_campany_name = "CampanyName";
         public static readonly String PROPERTY_NAME_last_name = "LastName";
         public static readonly String PROPERTY_NAME_first_name = "FirstName";
 
@@ -137,6 +143,7 @@ namespace Dbflute.BsEntity.Dbm {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_DB_NAME.ToLower(), TABLE_PROPERTY_NAME);
                 map.put(DB_NAME_id.ToLower(), PROPERTY_NAME_id);
+                map.put(DB_NAME_campany_name.ToLower(), PROPERTY_NAME_campany_name);
                 map.put(DB_NAME_last_name.ToLower(), PROPERTY_NAME_last_name);
                 map.put(DB_NAME_first_name.ToLower(), PROPERTY_NAME_first_name);
                 _dbNamePropertyNameKeyToLowerMap = map;
@@ -146,6 +153,7 @@ namespace Dbflute.BsEntity.Dbm {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_PROPERTY_NAME.ToLower(), TABLE_DB_NAME);
                 map.put(PROPERTY_NAME_id.ToLower(), DB_NAME_id);
+                map.put(PROPERTY_NAME_campany_name.ToLower(), DB_NAME_campany_name);
                 map.put(PROPERTY_NAME_last_name.ToLower(), DB_NAME_last_name);
                 map.put(PROPERTY_NAME_first_name.ToLower(), DB_NAME_first_name);
                 _propertyNameDbNameKeyToLowerMap = map;
@@ -190,6 +198,7 @@ namespace Dbflute.BsEntity.Dbm {
 
         protected void InitializeEntityPropertySetupper() {
             RegisterEntityPropertySetupper("id", "Id", new EntityPropertyIdSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("campany_name", "CampanyName", new EntityPropertyCampanyNameSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("last_name", "LastName", new EntityPropertyLastNameSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("first_name", "FirstName", new EntityPropertyFirstNameSetupper(), _entityPropertySetupperMap);
         }
@@ -205,6 +214,9 @@ namespace Dbflute.BsEntity.Dbm {
 
         public class EntityPropertyIdSetupper : EntityPropertySetupper<Customer> {
             public void Setup(Customer entity, Object value) { entity.Id = (value != null) ? (long?)value : null; }
+        }
+        public class EntityPropertyCampanyNameSetupper : EntityPropertySetupper<Customer> {
+            public void Setup(Customer entity, Object value) { entity.CampanyName = (value != null) ? (String)value : null; }
         }
         public class EntityPropertyLastNameSetupper : EntityPropertySetupper<Customer> {
             public void Setup(Customer entity, Object value) { entity.LastName = (value != null) ? (String)value : null; }

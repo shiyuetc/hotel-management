@@ -44,6 +44,16 @@ namespace Dbflute.CBean.CQ.BS {
         public BsCustomerCQ AddOrderBy_Id_Asc() { regOBA("id");return this; }
         public BsCustomerCQ AddOrderBy_Id_Desc() { regOBD("id");return this; }
 
+        protected ConditionValue _campanyName;
+        public ConditionValue CampanyName {
+            get { if (_campanyName == null) { _campanyName = new ConditionValue(); } return _campanyName; }
+        }
+        protected override ConditionValue getCValueCampanyName() { return this.CampanyName; }
+
+
+        public BsCustomerCQ AddOrderBy_CampanyName_Asc() { regOBA("campany_name");return this; }
+        public BsCustomerCQ AddOrderBy_CampanyName_Desc() { regOBD("campany_name");return this; }
+
         protected ConditionValue _lastName;
         public ConditionValue LastName {
             get { if (_lastName == null) { _lastName = new ConditionValue(); } return _lastName; }

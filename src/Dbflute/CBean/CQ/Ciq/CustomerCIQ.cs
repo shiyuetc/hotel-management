@@ -68,6 +68,11 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
+        protected override ConditionValue getCValueCampanyName() {
+            return _myCQ.CampanyName;
+        }
+
+
         protected override ConditionValue getCValueLastName() {
             return _myCQ.LastName;
         }

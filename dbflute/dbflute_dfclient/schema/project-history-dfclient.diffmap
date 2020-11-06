@@ -1,4 +1,19 @@
 map:{
+    ; 2020/11/06 19:29:43 = map:{
+        ; diffDate = 2020/11/06 19:29:43
+        ; tableDiff = map:{
+            ; customer = map:{
+                ; tableName = customer
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; campany_name = map:{
+                        ; columnName = campany_name
+                        ; diffType = ADD
+                    }
+                }
+            }
+        }
+    }
     ; 2020/11/06 08:28:23 = map:{
         ; diffDate = 2020/11/06 08:28:23
         ; tableDiff = map:{

@@ -33,6 +33,26 @@ namespace Dbflute.CBean.CQ.BS {
         protected void regId(ConditionKey k, Object v) { regQ(k, v, getCValueId(), "id"); }
         protected abstract ConditionValue getCValueId();
 
+        public void SetCampanyName_Equal(String v) { DoSetCampanyName_Equal(fRES(v)); }
+        protected void DoSetCampanyName_Equal(String v) { regCampanyName(CK_EQ, v); }
+        public void SetCampanyName_NotEqual(String v) { DoSetCampanyName_NotEqual(fRES(v)); }
+        protected void DoSetCampanyName_NotEqual(String v) { regCampanyName(CK_NES, v); }
+        public void SetCampanyName_GreaterThan(String v) { regCampanyName(CK_GT, fRES(v)); }
+        public void SetCampanyName_LessThan(String v) { regCampanyName(CK_LT, fRES(v)); }
+        public void SetCampanyName_GreaterEqual(String v) { regCampanyName(CK_GE, fRES(v)); }
+        public void SetCampanyName_LessEqual(String v) { regCampanyName(CK_LE, fRES(v)); }
+        public void SetCampanyName_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValueCampanyName(), "campany_name"); }
+        public void SetCampanyName_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValueCampanyName(), "campany_name"); }
+        public void SetCampanyName_PrefixSearch(String v) { SetCampanyName_LikeSearch(v, cLSOP()); }
+        public void SetCampanyName_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValueCampanyName(), "campany_name", option); }
+        public void SetCampanyName_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValueCampanyName(), "campany_name", option); }
+        public void SetCampanyName_IsNull() { regCampanyName(CK_ISN, DUMMY_OBJECT); }
+        public void SetCampanyName_IsNotNull() { regCampanyName(CK_ISNN, DUMMY_OBJECT); }
+        protected void regCampanyName(ConditionKey k, Object v) { regQ(k, v, getCValueCampanyName(), "campany_name"); }
+        protected abstract ConditionValue getCValueCampanyName();
+
         public void SetLastName_Equal(String v) { DoSetLastName_Equal(fRES(v)); }
         protected void DoSetLastName_Equal(String v) { regLastName(CK_EQ, v); }
         public void SetLastName_NotEqual(String v) { DoSetLastName_NotEqual(fRES(v)); }

@@ -7,6 +7,8 @@
             default="nextval('customer_id_seq'::regclass)"
             javaType="long?" name="id" pkName="customer_pkey"
             primaryKey="true" required="true" size="19" type="BIGINT"/>
+        <column dbType="varchar" javaType="String" name="campany_name"
+            size="100" type="VARCHAR"/>
         <column dbType="varchar" javaType="String" name="last_name"
             required="true" size="20" type="VARCHAR"/>
         <column dbType="varchar" javaType="String" name="first_name"
