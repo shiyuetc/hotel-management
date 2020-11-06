@@ -12,3 +12,4 @@ data-directory: playsql/data/common/xls
 
 [20-mst.xls]
   employee (4)
+  room (21)
