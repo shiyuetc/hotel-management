@@ -80,7 +80,7 @@ namespace HotelManagement.View
         {
             AppState.LoginEmployee = employee;
             this.LoginInfoLabel.Text = "ユーザー情報：" +
-                (employee == null ? "ログインなし" : $"{employee.LastName} {employee.FirstName}｜" +
+                (employee == null ? "ログインなし" : $"{employee.FullName}｜" +
                 $"職位：{employee.Rank.JapaneseName}({employee.Rank.EnglishName})");
         }
 
