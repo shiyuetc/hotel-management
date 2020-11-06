@@ -78,6 +78,14 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
+        public override String keepRoomTypeCode_InScopeSubQuery_RoomType(RoomTypeCQ subQuery) {
+            return _myCQ.keepRoomTypeCode_InScopeSubQuery_RoomType(subQuery);
+        }
+
+        public override String keepRoomTypeCode_NotInScopeSubQuery_RoomType(RoomTypeCQ subQuery) {
+            return _myCQ.keepRoomTypeCode_NotInScopeSubQuery_RoomType(subQuery);
+        }
+
         protected override ConditionValue getCValueCanSmoke() {
             return _myCQ.CanSmoke;
         }

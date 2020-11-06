@@ -34,13 +34,13 @@ namespace Dbflute.ExEntity {
     ///     
     /// 
     /// [foreign-table]
-    ///     
+    ///     room_type
     /// 
     /// [referrer-table]
     ///     
     /// 
     /// [foreign-property]
-    ///     
+    ///     roomType
     /// 
     /// [referrer-property]
     ///     
@@ -58,10 +58,10 @@ namespace Dbflute.ExEntity {
         /// <summary>id: {PK, ID, NotNull, bigserial(19)}</summary>
         protected long? _id;
 
-        /// <summary>room_no: {UQ, NotNull, varchar(10)}</summary>
+        /// <summary>room_no: {UQ, NotNull, bpchar(3)}</summary>
         protected String _roomNo;
 
-        /// <summary>room_type_code: {NotNull, bpchar(3)}</summary>
+        /// <summary>room_type_code: {NotNull, bpchar(3), FK to room_type}</summary>
         protected String _roomTypeCode;
 
         /// <summary>can_smoke: {bool(1)}</summary>
@@ -85,6 +85,15 @@ namespace Dbflute.ExEntity {
         //                                                                Foreign Property
         //                                                                ================
         #region Foreign Property
+        protected RoomType _roomType;
+
+        /// <summary>room_type as 'RoomType'.</summary>
+        [Seasar.Dao.Attrs.Relno(0), Seasar.Dao.Attrs.Relkeys("room_type_code:code")]
+        public RoomType RoomType {
+            get { return _roomType; }
+            set { _roomType = value; }
+        }
+
         #endregion
 
         // ===============================================================================
@@ -147,7 +156,13 @@ namespace Dbflute.ExEntity {
         public virtual String ToStringWithRelation() {
             StringBuilder sb = new StringBuilder();
             sb.Append(ToString());
+            String l = "\n  ";
+            if (_roomType != null)
+            { sb.Append(l).Append(xbRDS(_roomType, "RoomType")); }
             return sb.ToString();
+        }
+        protected String xbRDS(Entity e, String name) { // buildRelationDisplayString()
+            return e.BuildDisplayString(name, true, true);
         }
 
         public virtual String BuildDisplayString(String name, bool column, bool relation) {
@@ -169,7 +184,11 @@ namespace Dbflute.ExEntity {
             return sb.ToString();
         }
         protected virtual String BuildRelationString() {
-            return "";
+            StringBuilder sb = new StringBuilder();
+            String c = ",";
+            if (_roomType != null) { sb.Append(c).Append("RoomType"); }
+            if (sb.Length > 0) { sb.Remove(0, c.Length).Insert(0, "(").Append(")"); }
+            return sb.ToString();
         }
         #endregion
 
@@ -188,7 +207,7 @@ namespace Dbflute.ExEntity {
             }
         }
 
-        /// <summary>room_no: {UQ, NotNull, varchar(10)}</summary>
+        /// <summary>room_no: {UQ, NotNull, bpchar(3)}</summary>
         [Seasar.Dao.Attrs.Column("room_no")]
         public String RoomNo {
             get { return _roomNo; }
@@ -198,7 +217,7 @@ namespace Dbflute.ExEntity {
             }
         }
 
-        /// <summary>room_type_code: {NotNull, bpchar(3)}</summary>
+        /// <summary>room_type_code: {NotNull, bpchar(3), FK to room_type}</summary>
         [Seasar.Dao.Attrs.Column("room_type_code")]
         public String RoomTypeCode {
             get { return _roomTypeCode; }

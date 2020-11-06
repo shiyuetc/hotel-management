@@ -51,7 +51,7 @@ namespace Dbflute.BsEntity.Dbm {
         public ColumnInfo ColumnDescription { get { return _columnDescription; } }
 
         protected void InitializeColumnInfo() {
-            _columnCode = cci("code", "code", null, null, true, "Code", typeof(String), true, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, null, null);
+            _columnCode = cci("code", "code", null, null, true, "Code", typeof(String), true, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, null, "roomList");
             _columnName = cci("name", "name", null, null, true, "Name", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnPrice = cci("price", "price", null, null, false, "Price", typeof(int?), false, "int4", 10, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnCapacity = cci("capacity", "capacity", null, null, false, "Capacity", typeof(int?), false, "int4", 10, 0, false, OptimisticLockType.NONE, null, null, null);
@@ -91,6 +91,11 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                  Referrer Element
         //                                  ----------------
+        public ReferrerInfo ReferrerRoomList { get {
+            Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
+            map.put(ColumnCode, RoomDbm.GetInstance().ColumnRoomTypeCode);
+            return cri("RoomList", this, RoomDbm.GetInstance(), map, false);
+        }}
 
         // ===============================================================================
         //                                                                    Various Info
@@ -132,6 +137,7 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                     Referrer Name
         //                                     -------------
+        public static readonly String REFERRER_PROPERTY_NAME_RoomList = "RoomList";
 
         // -------------------------------------------------
         //                               DB-Property Mapping

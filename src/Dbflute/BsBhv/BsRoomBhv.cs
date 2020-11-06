@@ -185,6 +185,12 @@ namespace Dbflute.ExBhv {
         //                                                                Pull out Foreign
         //                                                                ================
         #region Pullout Foreign
+        public IList<RoomType> PulloutRoomType(IList<Room> roomList) {
+            return HelpPulloutInternally<Room, RoomType>(roomList, new MyInternalPulloutRoomTypeCallback());
+        }
+        protected class MyInternalPulloutRoomTypeCallback : InternalPulloutCallback<Room, RoomType> {
+            public RoomType getFr(Room entity) { return entity.RoomType; }
+        }
         #endregion
 
 

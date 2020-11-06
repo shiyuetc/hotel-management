@@ -35,6 +35,59 @@ namespace Dbflute.CBean.CQ.BS {
         { regLSQ(CK_LS, fRES(v), getCValueCode(), "code", option); }
         public void SetCode_NotLikeSearch(String v, LikeSearchOption option)
         { regLSQ(CK_NLS, fRES(v), getCValueCode(), "code", option); }
+        public void ExistsRoomList(SubQuery<RoomCB> subQuery) {
+            assertObjectNotNull("subQuery<RoomCB>", subQuery);
+            RoomCB cb = new RoomCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepCode_ExistsSubQuery_RoomList(cb.Query());
+            registerExistsSubQuery(cb.Query(), "code", "room_type_code", subQueryPropertyName);
+        }
+        public abstract String keepCode_ExistsSubQuery_RoomList(RoomCQ subQuery);
+        public void NotExistsRoomList(SubQuery<RoomCB> subQuery) {
+            assertObjectNotNull("subQuery<RoomCB>", subQuery);
+            RoomCB cb = new RoomCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepCode_NotExistsSubQuery_RoomList(cb.Query());
+            registerNotExistsSubQuery(cb.Query(), "code", "room_type_code", subQueryPropertyName);
+        }
+        public abstract String keepCode_NotExistsSubQuery_RoomList(RoomCQ subQuery);
+        public void InScopeRoomList(SubQuery<RoomCB> subQuery) {
+            assertObjectNotNull("subQuery<RoomCB>", subQuery);
+            RoomCB cb = new RoomCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepCode_InScopeSubQuery_RoomList(cb.Query());
+            registerInScopeSubQuery(cb.Query(), "code", "room_type_code", subQueryPropertyName);
+        }
+        public abstract String keepCode_InScopeSubQuery_RoomList(RoomCQ subQuery);
+        public void NotInScopeRoomList(SubQuery<RoomCB> subQuery) {
+            assertObjectNotNull("subQuery<RoomCB>", subQuery);
+            RoomCB cb = new RoomCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepCode_NotInScopeSubQuery_RoomList(cb.Query());
+            registerNotInScopeSubQuery(cb.Query(), "code", "room_type_code", subQueryPropertyName);
+        }
+        public abstract String keepCode_NotInScopeSubQuery_RoomList(RoomCQ subQuery);
+        public void xsderiveRoomList(String function, SubQuery<RoomCB> subQuery, String aliasName) {
+            assertObjectNotNull("subQuery<RoomCB>", subQuery);
+            RoomCB cb = new RoomCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepCode_SpecifyDerivedReferrer_RoomList(cb.Query());
+            registerSpecifyDerivedReferrer(function, cb.Query(), "code", "room_type_code", subQueryPropertyName, aliasName);
+        }
+        abstract public String keepCode_SpecifyDerivedReferrer_RoomList(RoomCQ subQuery);
+
+        public QDRFunction<RoomCB> DerivedRoomList() {
+            return xcreateQDRFunctionRoomList();
+        }
+        protected QDRFunction<RoomCB> xcreateQDRFunctionRoomList() {
+            return new QDRFunction<RoomCB>(delegate(String function, SubQuery<RoomCB> subQuery, String operand, Object value) {
+                xqderiveRoomList(function, subQuery, operand, value);
+            });
+        }
+        public void xqderiveRoomList(String function, SubQuery<RoomCB> subQuery, String operand, Object value) {
+            assertObjectNotNull("subQuery<RoomCB>", subQuery);
+            RoomCB cb = new RoomCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepCode_QueryDerivedReferrer_RoomList(cb.Query()); // for saving query-value.
+            String parameterPropertyName = keepCode_QueryDerivedReferrer_RoomListParameter(value);
+            registerQueryDerivedReferrer(function, cb.Query(), "code", "room_type_code", subQueryPropertyName, operand, value, parameterPropertyName);
+        }
+        public abstract String keepCode_QueryDerivedReferrer_RoomList(RoomCQ subQuery);
+        public abstract String keepCode_QueryDerivedReferrer_RoomListParameter(Object parameterValue);
         public void SetCode_IsNull() { regCode(CK_ISN, DUMMY_OBJECT); }
         public void SetCode_IsNotNull() { regCode(CK_ISNN, DUMMY_OBJECT); }
         protected void regCode(ConditionKey k, Object v) { regQ(k, v, getCValueCode(), "code"); }

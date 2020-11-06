@@ -68,6 +68,33 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
+        public override String keepCode_ExistsSubQuery_RoomList(RoomCQ subQuery) {
+            throw new SystemException("ExistsSubQuery at inline() is unsupported! Sorry!");
+            // _myCQ.keepCode_ExistsSubQuery_RoomList(subQuery);
+        }
+
+        public override String keepCode_NotExistsSubQuery_RoomList(RoomCQ subQuery) {
+            throw new SystemException("NotExistsSubQuery at inline() is unsupported! Sorry!");
+            // _myCQ.keepCode_NotExistsSubQuery_RoomList(subQuery);
+        }
+
+        public override String keepCode_InScopeSubQuery_RoomList(RoomCQ subQuery) {
+            return _myCQ.keepCode_InScopeSubQuery_RoomList(subQuery);
+        }
+
+        public override String keepCode_NotInScopeSubQuery_RoomList(RoomCQ subQuery) {
+            return _myCQ.keepCode_NotInScopeSubQuery_RoomList(subQuery);
+        }
+        public override String keepCode_SpecifyDerivedReferrer_RoomList(RoomCQ subQuery) {
+            throw new UnsupportedOperationException("(Specify)DerivedReferrer at inline() is unsupported! Sorry!");
+        }
+        public override String keepCode_QueryDerivedReferrer_RoomList(RoomCQ subQuery) {
+            throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
+        }
+        public override String keepCode_QueryDerivedReferrer_RoomListParameter(Object parameterValue) {
+            throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
+        }
+
         protected override ConditionValue getCValueName() {
             return _myCQ.Name;
         }

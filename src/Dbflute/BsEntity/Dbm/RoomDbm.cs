@@ -50,8 +50,8 @@ namespace Dbflute.BsEntity.Dbm {
 
         protected void InitializeColumnInfo() {
             _columnId = cci("id", "id", null, null, true, "Id", typeof(long?), true, "bigserial", 19, 0, false, OptimisticLockType.NONE, null, null, null);
-            _columnRoomNo = cci("room_no", "room_no", null, null, true, "RoomNo", typeof(String), false, "varchar", 10, 0, false, OptimisticLockType.NONE, null, null, null);
-            _columnRoomTypeCode = cci("room_type_code", "room_type_code", null, null, true, "RoomTypeCode", typeof(String), false, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, null, null);
+            _columnRoomNo = cci("room_no", "room_no", null, null, true, "RoomNo", typeof(String), false, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, null, null);
+            _columnRoomTypeCode = cci("room_type_code", "room_type_code", null, null, true, "RoomTypeCode", typeof(String), false, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, "roomType", null);
             _columnCanSmoke = cci("can_smoke", "can_smoke", null, null, false, "CanSmoke", typeof(bool?), false, "bool", 1, 0, false, OptimisticLockType.NONE, null, null, null);
         }
 
@@ -82,6 +82,11 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                   Foreign Element
         //                                   ---------------
+        public ForeignInfo ForeignRoomType { get {
+            Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
+            map.put(ColumnRoomTypeCode, RoomTypeDbm.GetInstance().ColumnCode);
+            return cfi("RoomType", this, RoomTypeDbm.GetInstance(), map, 0, false, false);
+        }}
 
 
         // -------------------------------------------------
@@ -128,6 +133,7 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                      Foreign Name
         //                                      ------------
+        public static readonly String FOREIGN_PROPERTY_NAME_RoomType = "RoomType";
         // -------------------------------------------------
         //                                     Referrer Name
         //                                     -------------

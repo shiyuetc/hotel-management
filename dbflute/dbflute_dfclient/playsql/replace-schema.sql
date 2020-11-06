@@ -41,7 +41,8 @@ CREATE TABLE "customer" (
 -- Room:客室マスタ
 CREATE TABLE "room" (
     "id" BIGSERIAL NOT NULL PRIMARY KEY,
-    "room_no" VARCHAR(10) UNIQUE NOT NULL,
+    "room_no" CHAR(3) UNIQUE NOT NULL,
     "room_type_code" CHAR(3) NOT NULL,
-    "can_smoke" BOOLEAN
+    "can_smoke" BOOLEAN,
+    FOREIGN KEY ("room_type_code") REFERENCES "room_type"("code")
 );

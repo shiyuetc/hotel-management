@@ -66,6 +66,20 @@ namespace Dbflute.CBean.CQ.BS {
         { regLSQ(CK_LS, fRES(v), getCValueRoomTypeCode(), "room_type_code", option); }
         public void SetRoomTypeCode_NotLikeSearch(String v, LikeSearchOption option)
         { regLSQ(CK_NLS, fRES(v), getCValueRoomTypeCode(), "room_type_code", option); }
+        public void InScopeRoomType(SubQuery<RoomTypeCB> subQuery) {
+            assertObjectNotNull("subQuery<RoomTypeCB>", subQuery);
+            RoomTypeCB cb = new RoomTypeCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepRoomTypeCode_InScopeSubQuery_RoomType(cb.Query());
+            registerInScopeSubQuery(cb.Query(), "room_type_code", "code", subQueryPropertyName);
+        }
+        public abstract String keepRoomTypeCode_InScopeSubQuery_RoomType(RoomTypeCQ subQuery);
+        public void NotInScopeRoomType(SubQuery<RoomTypeCB> subQuery) {
+            assertObjectNotNull("subQuery<RoomTypeCB>", subQuery);
+            RoomTypeCB cb = new RoomTypeCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepRoomTypeCode_NotInScopeSubQuery_RoomType(cb.Query());
+            registerNotInScopeSubQuery(cb.Query(), "room_type_code", "code", subQueryPropertyName);
+        }
+        public abstract String keepRoomTypeCode_NotInScopeSubQuery_RoomType(RoomTypeCQ subQuery);
         protected void regRoomTypeCode(ConditionKey k, Object v) { regQ(k, v, getCValueRoomTypeCode(), "room_type_code"); }
         protected abstract ConditionValue getCValueRoomTypeCode();
 

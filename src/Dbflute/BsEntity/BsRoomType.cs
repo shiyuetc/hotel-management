@@ -37,13 +37,13 @@ namespace Dbflute.ExEntity {
     ///     
     /// 
     /// [referrer-table]
-    ///     
+    ///     room
     /// 
     /// [foreign-property]
     ///     
     /// 
     /// [referrer-property]
-    ///     
+    ///     roomList
     /// ]]>
     /// Author: DBFlute(AutoGenerator)
     /// </summary>
@@ -94,6 +94,14 @@ namespace Dbflute.ExEntity {
         //                                                               Referrer Property
         //                                                               =================
         #region Referrer Property
+        protected IList<Room> _roomList;
+
+        /// <summary>room as 'RoomList'.</summary>
+        public IList<Room> RoomList {
+            get { if (_roomList == null) { _roomList = new List<Room>(); } return _roomList; }
+            set { _roomList = value; }
+        }
+
         #endregion
 
         // ===============================================================================
@@ -150,7 +158,13 @@ namespace Dbflute.ExEntity {
         public virtual String ToStringWithRelation() {
             StringBuilder sb = new StringBuilder();
             sb.Append(ToString());
+            String l = "\n  ";
+            if (_roomList != null) { foreach (Entity e in _roomList)
+            { if (e != null) { sb.Append(l).Append(xbRDS(e, "RoomList")); } } }
             return sb.ToString();
+        }
+        protected String xbRDS(Entity e, String name) { // buildRelationDisplayString()
+            return e.BuildDisplayString(name, true, true);
         }
 
         public virtual String BuildDisplayString(String name, bool column, bool relation) {
@@ -173,7 +187,12 @@ namespace Dbflute.ExEntity {
             return sb.ToString();
         }
         protected virtual String BuildRelationString() {
-            return "";
+            StringBuilder sb = new StringBuilder();
+            String c = ",";
+            if (_roomList != null && _roomList.Count > 0)
+            { sb.Append(c).Append("RoomList"); }
+            if (sb.Length > 0) { sb.Remove(0, c.Length).Insert(0, "(").Append(")"); }
+            return sb.ToString();
         }
         #endregion
 

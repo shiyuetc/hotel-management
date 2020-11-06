@@ -95,6 +95,20 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                                    Setup Select
         //                                                                    ============
+        protected RoomTypeNss _nssRoomType;
+        public RoomTypeNss NssRoomType { get {
+            if (_nssRoomType == null) { _nssRoomType = new RoomTypeNss(null); }
+            return _nssRoomType;
+        }}
+        public RoomTypeNss SetupSelect_RoomType() {
+            if (HasSpecifiedColumn) { // if reverse call
+                Specify().ColumnRoomTypeCode();
+            }
+            doSetupSelect(delegate { return Query().QueryRoomType(); });
+            if (_nssRoomType == null || !_nssRoomType.HasConditionQuery)
+            { _nssRoomType = new RoomTypeNss(Query().QueryRoomType()); }
+            return _nssRoomType;
+        }
 
         // [DBFlute-0.7.4]
         // ===============================================================================
@@ -162,6 +176,7 @@ namespace Dbflute.CBean.BS {
     }
 
     public class RoomCBSpecification : AbstractSpecification<RoomCQ> {
+        protected RoomTypeCBSpecification _roomType;
         public RoomCBSpecification(ConditionBean baseCB, HpSpQyCall<RoomCQ> qyCall
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
@@ -171,7 +186,26 @@ namespace Dbflute.CBean.BS {
         public void ColumnCanSmoke() { doColumn("can_smoke"); }
         protected override void doSpecifyRequiredColumn() {
             ColumnId(); // PK
+            if (qyCall().qy().hasConditionQueryRoomType()
+                    || qyCall().qy().xgetReferrerQuery() is RoomTypeCQ) {
+                ColumnRoomTypeCode(); // FK or one-to-one referrer
+            }
         }
         protected override String getTableDbName() { return "room"; }
+        public RoomTypeCBSpecification SpecifyRoomType() {
+            assertForeign("roomType");
+            if (_roomType == null) {
+                _roomType = new RoomTypeCBSpecification(_baseCB, new RoomTypeSpQyCall(_qyCall), _forDerivedReferrer, _forScalarSelect, _forScalarCondition, _forColumnQuery);
+                if (xhasSyncQyCall()) // inherits it
+                { _roomType.xsetSyncQyCall(new RoomTypeSpQyCall(xsyncQyCall())); }
+            }
+            return _roomType;
+        }
+		public class RoomTypeSpQyCall : HpSpQyCall<RoomTypeCQ> {
+		    protected HpSpQyCall<RoomCQ> _qyCall;
+		    public RoomTypeSpQyCall(HpSpQyCall<RoomCQ> myQyCall) { _qyCall = myQyCall; }
+		    public bool has() { return _qyCall.has() && _qyCall.qy().hasConditionQueryRoomType(); }
+			public RoomTypeCQ qy() { return _qyCall.qy().QueryRoomType(); }
+		}
     }
 }

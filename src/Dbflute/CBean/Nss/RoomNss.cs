@@ -13,6 +13,11 @@ namespace Dbflute.CBean.Nss {
         // ===============================================================================
         //                                                       With Nested Foreign Table
         //                                                       =========================
+        public RoomTypeNss WithRoomType() {
+            _query.doNss(delegate() { return _query.QueryRoomType(); });
+            return new RoomTypeNss(_query.QueryRoomType());
+        }
+
 
         // ===============================================================================
         //                                                      With Nested Referrer Table

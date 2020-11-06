@@ -174,5 +174,10 @@ namespace Dbflute.CBean.BS {
             ColumnCode(); // PK
         }
         protected override String getTableDbName() { return "room_type"; }
+        public RAFunction<RoomCB, RoomTypeCQ> DerivedRoomList() {
+            if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
+            return new RAFunction<RoomCB, RoomTypeCQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<RoomCB> subQuery, RoomTypeCQ cq, String aliasName)
+                { cq.xsderiveRoomList(function, subQuery, aliasName); });
+        }
     }
 }

@@ -1,4 +1,33 @@
 map:{
+    ; 2020/11/07 01:03:19 = map:{
+        ; diffDate = 2020/11/07 01:03:19
+        ; tableDiff = map:{
+            ; room = map:{
+                ; tableName = room
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; room_no = map:{
+                        ; columnName = room_no
+                        ; diffType = CHANGE
+                        ; dbTypeDiff = map:{
+                            ; next = bpchar
+                            ; previous = varchar
+                        }
+                        ; columnSizeDiff = map:{
+                            ; next = 3
+                            ; previous = 10
+                        }
+                    }
+                }
+                ; foreignKeyDiff = map:{
+                    ; room_room_type_code_fkey = map:{
+                        ; constraintName = room_room_type_code_fkey
+                        ; diffType = ADD
+                    }
+                }
+            }
+        }
+    }
     ; 2020/11/07 00:11:59 = map:{
         ; diffDate = 2020/11/07 00:11:59
         ; tableDiff = map:{

@@ -58,11 +58,14 @@
             default="nextval('room_id_seq'::regclass)" javaType="long?"
             name="id" pkName="room_pkey" primaryKey="true"
             required="true" size="19" type="BIGINT"/>
-        <column dbType="varchar" javaType="String" name="room_no"
-            required="true" size="10" type="VARCHAR"/>
+        <column dbType="bpchar" javaType="String" name="room_no"
+            required="true" size="3" type="CHAR"/>
         <column dbType="bpchar" javaType="String" name="room_type_code"
             required="true" size="3" type="CHAR"/>
         <column dbType="bool" javaType="bool?" name="can_smoke" size="1" type="BIT"/>
+        <foreign-key foreignSchema="public" foreignTable="room_type" name="room_room_type_code_fkey">
+            <reference foreign="code" local="room_type_code"/>
+        </foreign-key>
         <unique name="room_room_no_key">
             <unique-column name="room_no" position="1"/>
         </unique>

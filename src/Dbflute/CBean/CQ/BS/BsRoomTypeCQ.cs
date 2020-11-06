@@ -41,6 +41,61 @@ namespace Dbflute.CBean.CQ.BS {
         protected override ConditionValue getCValueCode() { return this.Code; }
 
 
+        protected Map<String, RoomCQ> _code_ExistsSubQuery_RoomListMap;
+        public Map<String, RoomCQ> Code_ExistsSubQuery_RoomList { get { return _code_ExistsSubQuery_RoomListMap; }}
+        public override String keepCode_ExistsSubQuery_RoomList(RoomCQ subQuery) {
+            if (_code_ExistsSubQuery_RoomListMap == null) { _code_ExistsSubQuery_RoomListMap = new LinkedHashMap<String, RoomCQ>(); }
+            String key = "subQueryMapKey" + (_code_ExistsSubQuery_RoomListMap.size() + 1);
+            _code_ExistsSubQuery_RoomListMap.put(key, subQuery); return "Code_ExistsSubQuery_RoomList." + key;
+        }
+
+        protected Map<String, RoomCQ> _code_NotExistsSubQuery_RoomListMap;
+        public Map<String, RoomCQ> Code_NotExistsSubQuery_RoomList { get { return _code_NotExistsSubQuery_RoomListMap; }}
+        public override String keepCode_NotExistsSubQuery_RoomList(RoomCQ subQuery) {
+            if (_code_NotExistsSubQuery_RoomListMap == null) { _code_NotExistsSubQuery_RoomListMap = new LinkedHashMap<String, RoomCQ>(); }
+            String key = "subQueryMapKey" + (_code_NotExistsSubQuery_RoomListMap.size() + 1);
+            _code_NotExistsSubQuery_RoomListMap.put(key, subQuery); return "Code_NotExistsSubQuery_RoomList." + key;
+        }
+
+        protected Map<String, RoomCQ> _code_InScopeSubQuery_RoomListMap;
+        public Map<String, RoomCQ> Code_InScopeSubQuery_RoomList { get { return _code_InScopeSubQuery_RoomListMap; }}
+        public override String keepCode_InScopeSubQuery_RoomList(RoomCQ subQuery) {
+            if (_code_InScopeSubQuery_RoomListMap == null) { _code_InScopeSubQuery_RoomListMap = new LinkedHashMap<String, RoomCQ>(); }
+            String key = "subQueryMapKey" + (_code_InScopeSubQuery_RoomListMap.size() + 1);
+            _code_InScopeSubQuery_RoomListMap.put(key, subQuery); return "Code_InScopeSubQuery_RoomList." + key;
+        }
+
+        protected Map<String, RoomCQ> _code_NotInScopeSubQuery_RoomListMap;
+        public Map<String, RoomCQ> Code_NotInScopeSubQuery_RoomList { get { return _code_NotInScopeSubQuery_RoomListMap; }}
+        public override String keepCode_NotInScopeSubQuery_RoomList(RoomCQ subQuery) {
+            if (_code_NotInScopeSubQuery_RoomListMap == null) { _code_NotInScopeSubQuery_RoomListMap = new LinkedHashMap<String, RoomCQ>(); }
+            String key = "subQueryMapKey" + (_code_NotInScopeSubQuery_RoomListMap.size() + 1);
+            _code_NotInScopeSubQuery_RoomListMap.put(key, subQuery); return "Code_NotInScopeSubQuery_RoomList." + key;
+        }
+
+        protected Map<String, RoomCQ> _code_SpecifyDerivedReferrer_RoomListMap;
+        public Map<String, RoomCQ> Code_SpecifyDerivedReferrer_RoomList { get { return _code_SpecifyDerivedReferrer_RoomListMap; }}
+        public override String keepCode_SpecifyDerivedReferrer_RoomList(RoomCQ subQuery) {
+            if (_code_SpecifyDerivedReferrer_RoomListMap == null) { _code_SpecifyDerivedReferrer_RoomListMap = new LinkedHashMap<String, RoomCQ>(); }
+            String key = "subQueryMapKey" + (_code_SpecifyDerivedReferrer_RoomListMap.size() + 1);
+           _code_SpecifyDerivedReferrer_RoomListMap.put(key, subQuery); return "Code_SpecifyDerivedReferrer_RoomList." + key;
+        }
+
+        protected Map<String, RoomCQ> _code_QueryDerivedReferrer_RoomListMap;
+        public Map<String, RoomCQ> Code_QueryDerivedReferrer_RoomList { get { return _code_QueryDerivedReferrer_RoomListMap; } }
+        public override String keepCode_QueryDerivedReferrer_RoomList(RoomCQ subQuery) {
+            if (_code_QueryDerivedReferrer_RoomListMap == null) { _code_QueryDerivedReferrer_RoomListMap = new LinkedHashMap<String, RoomCQ>(); }
+            String key = "subQueryMapKey" + (_code_QueryDerivedReferrer_RoomListMap.size() + 1);
+            _code_QueryDerivedReferrer_RoomListMap.put(key, subQuery); return "Code_QueryDerivedReferrer_RoomList." + key;
+        }
+        protected Map<String, Object> _code_QueryDerivedReferrer_RoomListParameterMap;
+        public Map<String, Object> Code_QueryDerivedReferrer_RoomListParameter { get { return _code_QueryDerivedReferrer_RoomListParameterMap; } }
+        public override String keepCode_QueryDerivedReferrer_RoomListParameter(Object parameterValue) {
+            if (_code_QueryDerivedReferrer_RoomListParameterMap == null) { _code_QueryDerivedReferrer_RoomListParameterMap = new LinkedHashMap<String, Object>(); }
+            String key = "subQueryParameterKey" + (_code_QueryDerivedReferrer_RoomListParameterMap.size() + 1);
+            _code_QueryDerivedReferrer_RoomListParameterMap.put(key, parameterValue); return "Code_QueryDerivedReferrer_RoomListParameter." + key;
+        }
+
         public BsRoomTypeCQ AddOrderBy_Code_Asc() { regOBA("code");return this; }
         public BsRoomTypeCQ AddOrderBy_Code_Desc() { regOBD("code");return this; }
 

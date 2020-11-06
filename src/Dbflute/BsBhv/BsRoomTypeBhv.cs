@@ -168,6 +168,38 @@ namespace Dbflute.ExBhv {
         //                                                                   Load Referrer
         //                                                                   =============
         #region Load Referrer
+        public virtual void LoadRoomList(RoomType roomType, ConditionBeanSetupper<RoomCB> conditionBeanSetupper) {
+            AssertObjectNotNull("roomType", roomType); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
+            LoadRoomList(xnewLRLs<RoomType>(roomType), conditionBeanSetupper);
+        }
+        public virtual void LoadRoomList(IList<RoomType> roomTypeList, ConditionBeanSetupper<RoomCB> conditionBeanSetupper) {
+            AssertObjectNotNull("roomTypeList", roomTypeList); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
+            LoadRoomList(roomTypeList, new LoadReferrerOption<RoomCB, Room>().xinit(conditionBeanSetupper));
+        }
+        public virtual void LoadRoomList(RoomType roomType, LoadReferrerOption<RoomCB, Room> loadReferrerOption) {
+            AssertObjectNotNull("roomType", roomType); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
+            LoadRoomList(xnewLRLs<RoomType>(roomType), loadReferrerOption);
+        }
+        public virtual void LoadRoomList(IList<RoomType> roomTypeList, LoadReferrerOption<RoomCB, Room> loadReferrerOption) {
+            AssertObjectNotNull("roomTypeList", roomTypeList); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
+            if (roomTypeList.Count == 0) { return; }
+            RoomBhv referrerBhv = xgetBSFLR().Select<RoomBhv>();
+            HelpLoadReferrerInternally<RoomType, String, RoomCB, Room>
+                    (roomTypeList, loadReferrerOption, new MyInternalLoadRoomListCallback(referrerBhv));
+        }
+        protected class MyInternalLoadRoomListCallback : InternalLoadReferrerCallback<RoomType, String, RoomCB, Room> {
+            protected RoomBhv referrerBhv;
+            public MyInternalLoadRoomListCallback(RoomBhv referrerBhv) { this.referrerBhv = referrerBhv; }
+            public String getPKVal(RoomType e) { return e.Code; }
+            public void setRfLs(RoomType e, IList<Room> ls) { e.RoomList = ls; }
+            public RoomCB newMyCB() { return referrerBhv.NewMyConditionBean(); }
+            public void qyFKIn(RoomCB cb, IList<String> ls) { cb.Query().SetRoomTypeCode_InScope(ls); }
+            public void qyOdFKAsc(RoomCB cb) { cb.Query().AddOrderBy_RoomTypeCode_Asc(); }
+            public void spFKCol(RoomCB cb) { cb.Specify().ColumnRoomTypeCode(); }
+            public IList<Room> selRfLs(RoomCB cb) { return referrerBhv.SelectList(cb); }
+            public String getFKVal(Room e) { return e.RoomTypeCode; }
+            public void setlcEt(Room re, RoomType be) { re.RoomType = be; }
+        }
         #endregion
 
         // ===============================================================================
