@@ -61,7 +61,7 @@ namespace Dbflute.ExEntity {
         /// <summary>room_no: {UQ, NotNull, varchar(10)}</summary>
         protected String _roomNo;
 
-        /// <summary>room_type_code: {NotNull, varchar(3)}</summary>
+        /// <summary>room_type_code: {NotNull, bpchar(3)}</summary>
         protected String _roomTypeCode;
 
         /// <summary>can_smoke: {bool(1)}</summary>
@@ -198,7 +198,7 @@ namespace Dbflute.ExEntity {
             }
         }
 
-        /// <summary>room_type_code: {NotNull, varchar(3)}</summary>
+        /// <summary>room_type_code: {NotNull, bpchar(3)}</summary>
         [Seasar.Dao.Attrs.Column("room_type_code")]
         public String RoomTypeCode {
             get { return _roomTypeCode; }

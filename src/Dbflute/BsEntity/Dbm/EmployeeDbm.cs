@@ -68,7 +68,7 @@ namespace Dbflute.BsEntity.Dbm {
             _columnRubyName = cci("ruby_name", "ruby_name", null, null, true, "RubyName", typeof(String), false, "varchar", 50, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnEmail = cci("email", "email", null, null, false, "Email", typeof(String), false, "varchar", 255, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnPassword = cci("password", "password", null, null, true, "Password", typeof(String), false, "varchar", 255, 0, false, OptimisticLockType.NONE, null, null, null);
-            _columnRankCode = cci("rank_code", "rank_code", null, null, true, "RankCode", typeof(String), false, "varchar", 3, 0, false, OptimisticLockType.NONE, null, "rank", null);
+            _columnRankCode = cci("rank_code", "rank_code", null, null, true, "RankCode", typeof(String), false, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, "rank", null);
             _columnEntryDate = cci("entry_date", "entry_date", null, null, true, "EntryDate", typeof(DateTime?), false, "timestamp", 26, 3, false, OptimisticLockType.NONE, null, null, null);
             _columnLeaveDate = cci("leave_date", "leave_date", null, null, false, "LeaveDate", typeof(DateTime?), false, "timestamp", 26, 3, false, OptimisticLockType.NONE, null, null, null);
         }

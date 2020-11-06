@@ -31,8 +31,8 @@
             size="255" type="VARCHAR"/>
         <column dbType="varchar" javaType="String" name="password"
             required="true" size="255" type="VARCHAR"/>
-        <column dbType="varchar" javaType="String" name="rank_code"
-            required="true" size="3" type="VARCHAR"/>
+        <column dbType="bpchar" javaType="String" name="rank_code"
+            required="true" size="3" type="CHAR"/>
         <column dbType="timestamp" javaType="DateTime?"
             name="entry_date" required="true" size="26, 3" type="TIMESTAMP"/>
         <column dbType="timestamp" javaType="DateTime?"
@@ -60,8 +60,8 @@
             required="true" size="19" type="BIGINT"/>
         <column dbType="varchar" javaType="String" name="room_no"
             required="true" size="10" type="VARCHAR"/>
-        <column dbType="varchar" javaType="String" name="room_type_code"
-            required="true" size="3" type="VARCHAR"/>
+        <column dbType="bpchar" javaType="String" name="room_type_code"
+            required="true" size="3" type="CHAR"/>
         <column dbType="bool" javaType="bool?" name="can_smoke" size="1" type="BIT"/>
         <unique name="room_room_no_key">
             <unique-column name="room_no" position="1"/>

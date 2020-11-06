@@ -76,7 +76,7 @@ namespace Dbflute.ExEntity {
         /// <summary>password: {NotNull, varchar(255)}</summary>
         protected String _password;
 
-        /// <summary>rank_code: {NotNull, varchar(3), FK to rank}</summary>
+        /// <summary>rank_code: {NotNull, bpchar(3), FK to rank}</summary>
         protected String _rankCode;
 
         /// <summary>entry_date: {NotNull, timestamp(26, 3)}</summary>
@@ -291,7 +291,7 @@ namespace Dbflute.ExEntity {
             }
         }
 
-        /// <summary>rank_code: {NotNull, varchar(3), FK to rank}</summary>
+        /// <summary>rank_code: {NotNull, bpchar(3), FK to rank}</summary>
         [Seasar.Dao.Attrs.Column("rank_code")]
         public String RankCode {
             get { return _rankCode; }

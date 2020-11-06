@@ -24,7 +24,7 @@ CREATE TABLE "employee" (
     "ruby_name"  VARCHAR(50) NOT NULL,
     "email" VARCHAR(255),
     "password" VARCHAR(255) NOT NULL,
-    "rank_code" VARCHAR(3) NOT NULL,
+    "rank_code" CHAR(3) NOT NULL,
     "entry_date" TIMESTAMP(3) NOT NULL,
     "leave_date" TIMESTAMP(3),
     FOREIGN KEY ("rank_code") REFERENCES "rank"("code")
@@ -42,6 +42,6 @@ CREATE TABLE "customer" (
 CREATE TABLE "room" (
     "id" BIGSERIAL NOT NULL PRIMARY KEY,
     "room_no" VARCHAR(10) UNIQUE NOT NULL,
-    "room_type_code" VARCHAR(3) NOT NULL,
+    "room_type_code" CHAR(3) NOT NULL,
     "can_smoke" BOOLEAN
 );

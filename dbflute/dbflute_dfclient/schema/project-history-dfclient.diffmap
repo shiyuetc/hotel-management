@@ -1,4 +1,37 @@
 map:{
+    ; 2020/11/07 00:11:59 = map:{
+        ; diffDate = 2020/11/07 00:11:59
+        ; tableDiff = map:{
+            ; employee = map:{
+                ; tableName = employee
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; rank_code = map:{
+                        ; columnName = rank_code
+                        ; diffType = CHANGE
+                        ; dbTypeDiff = map:{
+                            ; next = bpchar
+                            ; previous = varchar
+                        }
+                    }
+                }
+            }
+            ; room = map:{
+                ; tableName = room
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; room_type_code = map:{
+                        ; columnName = room_type_code
+                        ; diffType = CHANGE
+                        ; dbTypeDiff = map:{
+                            ; next = bpchar
+                            ; previous = varchar
+                        }
+                    }
+                }
+            }
+        }
+    }
     ; 2020/11/06 22:05:43 = map:{
         ; diffDate = 2020/11/06 22:05:43
         ; tableDiff = map:{
