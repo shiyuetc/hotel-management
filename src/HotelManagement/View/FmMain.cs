@@ -90,11 +90,11 @@ namespace HotelManagement.View
         /// <param name="employee">ログインした従業員</param>
         public void SetLoginUser(Employee employee)
         {
-            // 操作できる画面を有効化
-            this.MenuBar.SetEnabled(true, Constants.Permissions[employee.Rank.Code]);
-
             // ログイン情報を設定
             this.SetLoginInfomation(employee);
+
+            // 操作できる画面を有効化
+            this.MenuBar.SetEnabled(true);
 
             // 権限内の一番初めの画面に遷移
             this.MoveDisplay(this.MenuBar.GetEnableButtonFirst().Display);
@@ -106,7 +106,7 @@ namespace HotelManagement.View
         public void SetLogout()
         {
             // 操作できる画面を無効化
-            this.MenuBar.SetEnabled(false, Constants.Permissions[AppState.LoginEmployee.Rank.Code]);
+            this.MenuBar.SetEnabled(false);
 
             // ログイン情報を破棄
             this.SetLoginInfomation(null);

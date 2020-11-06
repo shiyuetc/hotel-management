@@ -1,4 +1,6 @@
-﻿using HotelManagement.Enums;
+﻿using HotelManagement.Common;
+using HotelManagement.Const;
+using HotelManagement.Enums;
 using HotelManagement.Extensions;
 using System;
 using System.Collections.Generic;
@@ -46,10 +48,10 @@ namespace HotelManagement.CustomControls
         /// メニューボタンの活性を変更します。
         /// </summary>
         /// <param name="enabled">有効/無効</param>
-        /// <param name="displays">変更するメニューボタン</param>
-        public void SetEnabled(bool enabled, Display[] displays)
+        public void SetEnabled(bool enabled)
         {
-            foreach(Display display in displays)
+            var displays = Constants.Permissions[AppState.LoginEmployee.Rank.Code];
+            foreach (Display display in displays)
             {
                 this.MenuButtons[display].Enabled = enabled;
             }
