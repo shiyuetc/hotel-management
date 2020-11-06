@@ -182,10 +182,12 @@ namespace Dbflute.CBean.BS {
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
         public void ColumnId() { doColumn("id"); }
         public void ColumnEmployeeNo() { doColumn("employee_no"); }
-        public void ColumnPassword() { doColumn("password"); }
-        public void ColumnRankCode() { doColumn("rank_code"); }
         public void ColumnLastName() { doColumn("last_name"); }
         public void ColumnFirstName() { doColumn("first_name"); }
+        public void ColumnRubyName() { doColumn("ruby_name"); }
+        public void ColumnEmail() { doColumn("email"); }
+        public void ColumnPassword() { doColumn("password"); }
+        public void ColumnRankCode() { doColumn("rank_code"); }
         public void ColumnEntryDate() { doColumn("entry_date"); }
         public void ColumnLeaveDate() { doColumn("leave_date"); }
         protected override void doSpecifyRequiredColumn() {

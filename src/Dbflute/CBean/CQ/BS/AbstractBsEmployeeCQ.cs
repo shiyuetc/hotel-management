@@ -51,6 +51,80 @@ namespace Dbflute.CBean.CQ.BS {
         protected void regEmployeeNo(ConditionKey k, Object v) { regQ(k, v, getCValueEmployeeNo(), "employee_no"); }
         protected abstract ConditionValue getCValueEmployeeNo();
 
+        public void SetLastName_Equal(String v) { DoSetLastName_Equal(fRES(v)); }
+        protected void DoSetLastName_Equal(String v) { regLastName(CK_EQ, v); }
+        public void SetLastName_NotEqual(String v) { DoSetLastName_NotEqual(fRES(v)); }
+        protected void DoSetLastName_NotEqual(String v) { regLastName(CK_NES, v); }
+        public void SetLastName_GreaterThan(String v) { regLastName(CK_GT, fRES(v)); }
+        public void SetLastName_LessThan(String v) { regLastName(CK_LT, fRES(v)); }
+        public void SetLastName_GreaterEqual(String v) { regLastName(CK_GE, fRES(v)); }
+        public void SetLastName_LessEqual(String v) { regLastName(CK_LE, fRES(v)); }
+        public void SetLastName_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValueLastName(), "last_name"); }
+        public void SetLastName_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValueLastName(), "last_name"); }
+        public void SetLastName_PrefixSearch(String v) { SetLastName_LikeSearch(v, cLSOP()); }
+        public void SetLastName_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValueLastName(), "last_name", option); }
+        public void SetLastName_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValueLastName(), "last_name", option); }
+        protected void regLastName(ConditionKey k, Object v) { regQ(k, v, getCValueLastName(), "last_name"); }
+        protected abstract ConditionValue getCValueLastName();
+
+        public void SetFirstName_Equal(String v) { DoSetFirstName_Equal(fRES(v)); }
+        protected void DoSetFirstName_Equal(String v) { regFirstName(CK_EQ, v); }
+        public void SetFirstName_NotEqual(String v) { DoSetFirstName_NotEqual(fRES(v)); }
+        protected void DoSetFirstName_NotEqual(String v) { regFirstName(CK_NES, v); }
+        public void SetFirstName_GreaterThan(String v) { regFirstName(CK_GT, fRES(v)); }
+        public void SetFirstName_LessThan(String v) { regFirstName(CK_LT, fRES(v)); }
+        public void SetFirstName_GreaterEqual(String v) { regFirstName(CK_GE, fRES(v)); }
+        public void SetFirstName_LessEqual(String v) { regFirstName(CK_LE, fRES(v)); }
+        public void SetFirstName_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValueFirstName(), "first_name"); }
+        public void SetFirstName_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValueFirstName(), "first_name"); }
+        public void SetFirstName_PrefixSearch(String v) { SetFirstName_LikeSearch(v, cLSOP()); }
+        public void SetFirstName_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValueFirstName(), "first_name", option); }
+        public void SetFirstName_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValueFirstName(), "first_name", option); }
+        protected void regFirstName(ConditionKey k, Object v) { regQ(k, v, getCValueFirstName(), "first_name"); }
+        protected abstract ConditionValue getCValueFirstName();
+
+        public void SetRubyName_Equal(String v) { DoSetRubyName_Equal(fRES(v)); }
+        protected void DoSetRubyName_Equal(String v) { regRubyName(CK_EQ, v); }
+        public void SetRubyName_NotEqual(String v) { DoSetRubyName_NotEqual(fRES(v)); }
+        protected void DoSetRubyName_NotEqual(String v) { regRubyName(CK_NES, v); }
+        public void SetRubyName_GreaterThan(String v) { regRubyName(CK_GT, fRES(v)); }
+        public void SetRubyName_LessThan(String v) { regRubyName(CK_LT, fRES(v)); }
+        public void SetRubyName_GreaterEqual(String v) { regRubyName(CK_GE, fRES(v)); }
+        public void SetRubyName_LessEqual(String v) { regRubyName(CK_LE, fRES(v)); }
+        public void SetRubyName_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValueRubyName(), "ruby_name"); }
+        public void SetRubyName_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValueRubyName(), "ruby_name"); }
+        public void SetRubyName_PrefixSearch(String v) { SetRubyName_LikeSearch(v, cLSOP()); }
+        public void SetRubyName_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValueRubyName(), "ruby_name", option); }
+        public void SetRubyName_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValueRubyName(), "ruby_name", option); }
+        protected void regRubyName(ConditionKey k, Object v) { regQ(k, v, getCValueRubyName(), "ruby_name"); }
+        protected abstract ConditionValue getCValueRubyName();
+
+        public void SetEmail_Equal(String v) { DoSetEmail_Equal(fRES(v)); }
+        protected void DoSetEmail_Equal(String v) { regEmail(CK_EQ, v); }
+        public void SetEmail_NotEqual(String v) { DoSetEmail_NotEqual(fRES(v)); }
+        protected void DoSetEmail_NotEqual(String v) { regEmail(CK_NES, v); }
+        public void SetEmail_GreaterThan(String v) { regEmail(CK_GT, fRES(v)); }
+        public void SetEmail_LessThan(String v) { regEmail(CK_LT, fRES(v)); }
+        public void SetEmail_GreaterEqual(String v) { regEmail(CK_GE, fRES(v)); }
+        public void SetEmail_LessEqual(String v) { regEmail(CK_LE, fRES(v)); }
+        public void SetEmail_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValueEmail(), "email"); }
+        public void SetEmail_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValueEmail(), "email"); }
+        public void SetEmail_PrefixSearch(String v) { SetEmail_LikeSearch(v, cLSOP()); }
+        public void SetEmail_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValueEmail(), "email", option); }
+        public void SetEmail_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValueEmail(), "email", option); }
+        public void SetEmail_IsNull() { regEmail(CK_ISN, DUMMY_OBJECT); }
+        public void SetEmail_IsNotNull() { regEmail(CK_ISNN, DUMMY_OBJECT); }
+        protected void regEmail(ConditionKey k, Object v) { regQ(k, v, getCValueEmail(), "email"); }
+        protected abstract ConditionValue getCValueEmail();
+
         public void SetPassword_Equal(String v) { DoSetPassword_Equal(fRES(v)); }
         protected void DoSetPassword_Equal(String v) { regPassword(CK_EQ, v); }
         public void SetPassword_NotEqual(String v) { DoSetPassword_NotEqual(fRES(v)); }
@@ -100,42 +174,6 @@ namespace Dbflute.CBean.CQ.BS {
         public abstract String keepRankCode_NotInScopeSubQuery_Rank(RankCQ subQuery);
         protected void regRankCode(ConditionKey k, Object v) { regQ(k, v, getCValueRankCode(), "rank_code"); }
         protected abstract ConditionValue getCValueRankCode();
-
-        public void SetLastName_Equal(String v) { DoSetLastName_Equal(fRES(v)); }
-        protected void DoSetLastName_Equal(String v) { regLastName(CK_EQ, v); }
-        public void SetLastName_NotEqual(String v) { DoSetLastName_NotEqual(fRES(v)); }
-        protected void DoSetLastName_NotEqual(String v) { regLastName(CK_NES, v); }
-        public void SetLastName_GreaterThan(String v) { regLastName(CK_GT, fRES(v)); }
-        public void SetLastName_LessThan(String v) { regLastName(CK_LT, fRES(v)); }
-        public void SetLastName_GreaterEqual(String v) { regLastName(CK_GE, fRES(v)); }
-        public void SetLastName_LessEqual(String v) { regLastName(CK_LE, fRES(v)); }
-        public void SetLastName_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValueLastName(), "last_name"); }
-        public void SetLastName_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValueLastName(), "last_name"); }
-        public void SetLastName_PrefixSearch(String v) { SetLastName_LikeSearch(v, cLSOP()); }
-        public void SetLastName_LikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_LS, fRES(v), getCValueLastName(), "last_name", option); }
-        public void SetLastName_NotLikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_NLS, fRES(v), getCValueLastName(), "last_name", option); }
-        protected void regLastName(ConditionKey k, Object v) { regQ(k, v, getCValueLastName(), "last_name"); }
-        protected abstract ConditionValue getCValueLastName();
-
-        public void SetFirstName_Equal(String v) { DoSetFirstName_Equal(fRES(v)); }
-        protected void DoSetFirstName_Equal(String v) { regFirstName(CK_EQ, v); }
-        public void SetFirstName_NotEqual(String v) { DoSetFirstName_NotEqual(fRES(v)); }
-        protected void DoSetFirstName_NotEqual(String v) { regFirstName(CK_NES, v); }
-        public void SetFirstName_GreaterThan(String v) { regFirstName(CK_GT, fRES(v)); }
-        public void SetFirstName_LessThan(String v) { regFirstName(CK_LT, fRES(v)); }
-        public void SetFirstName_GreaterEqual(String v) { regFirstName(CK_GE, fRES(v)); }
-        public void SetFirstName_LessEqual(String v) { regFirstName(CK_LE, fRES(v)); }
-        public void SetFirstName_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValueFirstName(), "first_name"); }
-        public void SetFirstName_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValueFirstName(), "first_name"); }
-        public void SetFirstName_PrefixSearch(String v) { SetFirstName_LikeSearch(v, cLSOP()); }
-        public void SetFirstName_LikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_LS, fRES(v), getCValueFirstName(), "first_name", option); }
-        public void SetFirstName_NotLikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_NLS, fRES(v), getCValueFirstName(), "first_name", option); }
-        protected void regFirstName(ConditionKey k, Object v) { regQ(k, v, getCValueFirstName(), "first_name"); }
-        protected abstract ConditionValue getCValueFirstName();
 
         public void SetEntryDate_Equal(DateTime? v) { regEntryDate(CK_EQ, v); }
         public void SetEntryDate_GreaterThan(DateTime? v) { regEntryDate(CK_GT, v); }

@@ -54,6 +54,46 @@ namespace Dbflute.CBean.CQ.BS {
         public BsEmployeeCQ AddOrderBy_EmployeeNo_Asc() { regOBA("employee_no");return this; }
         public BsEmployeeCQ AddOrderBy_EmployeeNo_Desc() { regOBD("employee_no");return this; }
 
+        protected ConditionValue _lastName;
+        public ConditionValue LastName {
+            get { if (_lastName == null) { _lastName = new ConditionValue(); } return _lastName; }
+        }
+        protected override ConditionValue getCValueLastName() { return this.LastName; }
+
+
+        public BsEmployeeCQ AddOrderBy_LastName_Asc() { regOBA("last_name");return this; }
+        public BsEmployeeCQ AddOrderBy_LastName_Desc() { regOBD("last_name");return this; }
+
+        protected ConditionValue _firstName;
+        public ConditionValue FirstName {
+            get { if (_firstName == null) { _firstName = new ConditionValue(); } return _firstName; }
+        }
+        protected override ConditionValue getCValueFirstName() { return this.FirstName; }
+
+
+        public BsEmployeeCQ AddOrderBy_FirstName_Asc() { regOBA("first_name");return this; }
+        public BsEmployeeCQ AddOrderBy_FirstName_Desc() { regOBD("first_name");return this; }
+
+        protected ConditionValue _rubyName;
+        public ConditionValue RubyName {
+            get { if (_rubyName == null) { _rubyName = new ConditionValue(); } return _rubyName; }
+        }
+        protected override ConditionValue getCValueRubyName() { return this.RubyName; }
+
+
+        public BsEmployeeCQ AddOrderBy_RubyName_Asc() { regOBA("ruby_name");return this; }
+        public BsEmployeeCQ AddOrderBy_RubyName_Desc() { regOBD("ruby_name");return this; }
+
+        protected ConditionValue _email;
+        public ConditionValue Email {
+            get { if (_email == null) { _email = new ConditionValue(); } return _email; }
+        }
+        protected override ConditionValue getCValueEmail() { return this.Email; }
+
+
+        public BsEmployeeCQ AddOrderBy_Email_Asc() { regOBA("email");return this; }
+        public BsEmployeeCQ AddOrderBy_Email_Desc() { regOBD("email");return this; }
+
         protected ConditionValue _password;
         public ConditionValue Password {
             get { if (_password == null) { _password = new ConditionValue(); } return _password; }
@@ -89,26 +129,6 @@ namespace Dbflute.CBean.CQ.BS {
 
         public BsEmployeeCQ AddOrderBy_RankCode_Asc() { regOBA("rank_code");return this; }
         public BsEmployeeCQ AddOrderBy_RankCode_Desc() { regOBD("rank_code");return this; }
-
-        protected ConditionValue _lastName;
-        public ConditionValue LastName {
-            get { if (_lastName == null) { _lastName = new ConditionValue(); } return _lastName; }
-        }
-        protected override ConditionValue getCValueLastName() { return this.LastName; }
-
-
-        public BsEmployeeCQ AddOrderBy_LastName_Asc() { regOBA("last_name");return this; }
-        public BsEmployeeCQ AddOrderBy_LastName_Desc() { regOBD("last_name");return this; }
-
-        protected ConditionValue _firstName;
-        public ConditionValue FirstName {
-            get { if (_firstName == null) { _firstName = new ConditionValue(); } return _firstName; }
-        }
-        protected override ConditionValue getCValueFirstName() { return this.FirstName; }
-
-
-        public BsEmployeeCQ AddOrderBy_FirstName_Asc() { regOBA("first_name");return this; }
-        public BsEmployeeCQ AddOrderBy_FirstName_Desc() { regOBD("first_name");return this; }
 
         protected ConditionValue _entryDate;
         public ConditionValue EntryDate {

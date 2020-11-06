@@ -40,29 +40,35 @@ namespace Dbflute.BsEntity.Dbm {
         //                                                                     ===========
         protected ColumnInfo _columnId;
         protected ColumnInfo _columnEmployeeNo;
-        protected ColumnInfo _columnPassword;
-        protected ColumnInfo _columnRankCode;
         protected ColumnInfo _columnLastName;
         protected ColumnInfo _columnFirstName;
+        protected ColumnInfo _columnRubyName;
+        protected ColumnInfo _columnEmail;
+        protected ColumnInfo _columnPassword;
+        protected ColumnInfo _columnRankCode;
         protected ColumnInfo _columnEntryDate;
         protected ColumnInfo _columnLeaveDate;
 
         public ColumnInfo ColumnId { get { return _columnId; } }
         public ColumnInfo ColumnEmployeeNo { get { return _columnEmployeeNo; } }
-        public ColumnInfo ColumnPassword { get { return _columnPassword; } }
-        public ColumnInfo ColumnRankCode { get { return _columnRankCode; } }
         public ColumnInfo ColumnLastName { get { return _columnLastName; } }
         public ColumnInfo ColumnFirstName { get { return _columnFirstName; } }
+        public ColumnInfo ColumnRubyName { get { return _columnRubyName; } }
+        public ColumnInfo ColumnEmail { get { return _columnEmail; } }
+        public ColumnInfo ColumnPassword { get { return _columnPassword; } }
+        public ColumnInfo ColumnRankCode { get { return _columnRankCode; } }
         public ColumnInfo ColumnEntryDate { get { return _columnEntryDate; } }
         public ColumnInfo ColumnLeaveDate { get { return _columnLeaveDate; } }
 
         protected void InitializeColumnInfo() {
             _columnId = cci("id", "id", null, null, true, "Id", typeof(long?), true, "bigserial", 19, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnEmployeeNo = cci("employee_no", "employee_no", null, null, true, "EmployeeNo", typeof(String), false, "varchar", 10, 0, false, OptimisticLockType.NONE, null, null, null);
-            _columnPassword = cci("password", "password", null, null, true, "Password", typeof(String), false, "varchar", 255, 0, false, OptimisticLockType.NONE, null, null, null);
-            _columnRankCode = cci("rank_code", "rank_code", null, null, true, "RankCode", typeof(String), false, "varchar", 3, 0, false, OptimisticLockType.NONE, null, "rank", null);
             _columnLastName = cci("last_name", "last_name", null, null, true, "LastName", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnFirstName = cci("first_name", "first_name", null, null, true, "FirstName", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
+            _columnRubyName = cci("ruby_name", "ruby_name", null, null, true, "RubyName", typeof(String), false, "varchar", 50, 0, false, OptimisticLockType.NONE, null, null, null);
+            _columnEmail = cci("email", "email", null, null, false, "Email", typeof(String), false, "varchar", 255, 0, false, OptimisticLockType.NONE, null, null, null);
+            _columnPassword = cci("password", "password", null, null, true, "Password", typeof(String), false, "varchar", 255, 0, false, OptimisticLockType.NONE, null, null, null);
+            _columnRankCode = cci("rank_code", "rank_code", null, null, true, "RankCode", typeof(String), false, "varchar", 3, 0, false, OptimisticLockType.NONE, null, "rank", null);
             _columnEntryDate = cci("entry_date", "entry_date", null, null, true, "EntryDate", typeof(DateTime?), false, "timestamp", 26, 3, false, OptimisticLockType.NONE, null, null, null);
             _columnLeaveDate = cci("leave_date", "leave_date", null, null, false, "LeaveDate", typeof(DateTime?), false, "timestamp", 26, 3, false, OptimisticLockType.NONE, null, null, null);
         }
@@ -71,10 +77,12 @@ namespace Dbflute.BsEntity.Dbm {
             _columnInfoList = new ArrayList<ColumnInfo>();
             _columnInfoList.add(ColumnId);
             _columnInfoList.add(ColumnEmployeeNo);
-            _columnInfoList.add(ColumnPassword);
-            _columnInfoList.add(ColumnRankCode);
             _columnInfoList.add(ColumnLastName);
             _columnInfoList.add(ColumnFirstName);
+            _columnInfoList.add(ColumnRubyName);
+            _columnInfoList.add(ColumnEmail);
+            _columnInfoList.add(ColumnPassword);
+            _columnInfoList.add(ColumnRankCode);
             _columnInfoList.add(ColumnEntryDate);
             _columnInfoList.add(ColumnLeaveDate);
         }
@@ -135,10 +143,12 @@ namespace Dbflute.BsEntity.Dbm {
         //                                    --------------
         public static readonly String DB_NAME_id = "id";
         public static readonly String DB_NAME_employee_no = "employee_no";
-        public static readonly String DB_NAME_password = "password";
-        public static readonly String DB_NAME_rank_code = "rank_code";
         public static readonly String DB_NAME_last_name = "last_name";
         public static readonly String DB_NAME_first_name = "first_name";
+        public static readonly String DB_NAME_ruby_name = "ruby_name";
+        public static readonly String DB_NAME_email = "email";
+        public static readonly String DB_NAME_password = "password";
+        public static readonly String DB_NAME_rank_code = "rank_code";
         public static readonly String DB_NAME_entry_date = "entry_date";
         public static readonly String DB_NAME_leave_date = "leave_date";
 
@@ -147,10 +157,12 @@ namespace Dbflute.BsEntity.Dbm {
         //                              --------------------
         public static readonly String PROPERTY_NAME_id = "Id";
         public static readonly String PROPERTY_NAME_employee_no = "EmployeeNo";
-        public static readonly String PROPERTY_NAME_password = "Password";
-        public static readonly String PROPERTY_NAME_rank_code = "RankCode";
         public static readonly String PROPERTY_NAME_last_name = "LastName";
         public static readonly String PROPERTY_NAME_first_name = "FirstName";
+        public static readonly String PROPERTY_NAME_ruby_name = "RubyName";
+        public static readonly String PROPERTY_NAME_email = "Email";
+        public static readonly String PROPERTY_NAME_password = "Password";
+        public static readonly String PROPERTY_NAME_rank_code = "RankCode";
         public static readonly String PROPERTY_NAME_entry_date = "EntryDate";
         public static readonly String PROPERTY_NAME_leave_date = "LeaveDate";
 
@@ -174,10 +186,12 @@ namespace Dbflute.BsEntity.Dbm {
                 map.put(TABLE_DB_NAME.ToLower(), TABLE_PROPERTY_NAME);
                 map.put(DB_NAME_id.ToLower(), PROPERTY_NAME_id);
                 map.put(DB_NAME_employee_no.ToLower(), PROPERTY_NAME_employee_no);
-                map.put(DB_NAME_password.ToLower(), PROPERTY_NAME_password);
-                map.put(DB_NAME_rank_code.ToLower(), PROPERTY_NAME_rank_code);
                 map.put(DB_NAME_last_name.ToLower(), PROPERTY_NAME_last_name);
                 map.put(DB_NAME_first_name.ToLower(), PROPERTY_NAME_first_name);
+                map.put(DB_NAME_ruby_name.ToLower(), PROPERTY_NAME_ruby_name);
+                map.put(DB_NAME_email.ToLower(), PROPERTY_NAME_email);
+                map.put(DB_NAME_password.ToLower(), PROPERTY_NAME_password);
+                map.put(DB_NAME_rank_code.ToLower(), PROPERTY_NAME_rank_code);
                 map.put(DB_NAME_entry_date.ToLower(), PROPERTY_NAME_entry_date);
                 map.put(DB_NAME_leave_date.ToLower(), PROPERTY_NAME_leave_date);
                 _dbNamePropertyNameKeyToLowerMap = map;
@@ -188,10 +202,12 @@ namespace Dbflute.BsEntity.Dbm {
                 map.put(TABLE_PROPERTY_NAME.ToLower(), TABLE_DB_NAME);
                 map.put(PROPERTY_NAME_id.ToLower(), DB_NAME_id);
                 map.put(PROPERTY_NAME_employee_no.ToLower(), DB_NAME_employee_no);
-                map.put(PROPERTY_NAME_password.ToLower(), DB_NAME_password);
-                map.put(PROPERTY_NAME_rank_code.ToLower(), DB_NAME_rank_code);
                 map.put(PROPERTY_NAME_last_name.ToLower(), DB_NAME_last_name);
                 map.put(PROPERTY_NAME_first_name.ToLower(), DB_NAME_first_name);
+                map.put(PROPERTY_NAME_ruby_name.ToLower(), DB_NAME_ruby_name);
+                map.put(PROPERTY_NAME_email.ToLower(), DB_NAME_email);
+                map.put(PROPERTY_NAME_password.ToLower(), DB_NAME_password);
+                map.put(PROPERTY_NAME_rank_code.ToLower(), DB_NAME_rank_code);
                 map.put(PROPERTY_NAME_entry_date.ToLower(), DB_NAME_entry_date);
                 map.put(PROPERTY_NAME_leave_date.ToLower(), DB_NAME_leave_date);
                 _propertyNameDbNameKeyToLowerMap = map;
@@ -237,10 +253,12 @@ namespace Dbflute.BsEntity.Dbm {
         protected void InitializeEntityPropertySetupper() {
             RegisterEntityPropertySetupper("id", "Id", new EntityPropertyIdSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("employee_no", "EmployeeNo", new EntityPropertyEmployeeNoSetupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("password", "Password", new EntityPropertyPasswordSetupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("rank_code", "RankCode", new EntityPropertyRankCodeSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("last_name", "LastName", new EntityPropertyLastNameSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("first_name", "FirstName", new EntityPropertyFirstNameSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("ruby_name", "RubyName", new EntityPropertyRubyNameSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("email", "Email", new EntityPropertyEmailSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("password", "Password", new EntityPropertyPasswordSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("rank_code", "RankCode", new EntityPropertyRankCodeSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("entry_date", "EntryDate", new EntityPropertyEntryDateSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("leave_date", "LeaveDate", new EntityPropertyLeaveDateSetupper(), _entityPropertySetupperMap);
         }
@@ -260,17 +278,23 @@ namespace Dbflute.BsEntity.Dbm {
         public class EntityPropertyEmployeeNoSetupper : EntityPropertySetupper<Employee> {
             public void Setup(Employee entity, Object value) { entity.EmployeeNo = (value != null) ? (String)value : null; }
         }
-        public class EntityPropertyPasswordSetupper : EntityPropertySetupper<Employee> {
-            public void Setup(Employee entity, Object value) { entity.Password = (value != null) ? (String)value : null; }
-        }
-        public class EntityPropertyRankCodeSetupper : EntityPropertySetupper<Employee> {
-            public void Setup(Employee entity, Object value) { entity.RankCode = (value != null) ? (String)value : null; }
-        }
         public class EntityPropertyLastNameSetupper : EntityPropertySetupper<Employee> {
             public void Setup(Employee entity, Object value) { entity.LastName = (value != null) ? (String)value : null; }
         }
         public class EntityPropertyFirstNameSetupper : EntityPropertySetupper<Employee> {
             public void Setup(Employee entity, Object value) { entity.FirstName = (value != null) ? (String)value : null; }
+        }
+        public class EntityPropertyRubyNameSetupper : EntityPropertySetupper<Employee> {
+            public void Setup(Employee entity, Object value) { entity.RubyName = (value != null) ? (String)value : null; }
+        }
+        public class EntityPropertyEmailSetupper : EntityPropertySetupper<Employee> {
+            public void Setup(Employee entity, Object value) { entity.Email = (value != null) ? (String)value : null; }
+        }
+        public class EntityPropertyPasswordSetupper : EntityPropertySetupper<Employee> {
+            public void Setup(Employee entity, Object value) { entity.Password = (value != null) ? (String)value : null; }
+        }
+        public class EntityPropertyRankCodeSetupper : EntityPropertySetupper<Employee> {
+            public void Setup(Employee entity, Object value) { entity.RankCode = (value != null) ? (String)value : null; }
         }
         public class EntityPropertyEntryDateSetupper : EntityPropertySetupper<Employee> {
             public void Setup(Employee entity, Object value) { entity.EntryDate = (value != null) ? (DateTime?)value : null; }

@@ -73,6 +73,26 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
+        protected override ConditionValue getCValueLastName() {
+            return _myCQ.LastName;
+        }
+
+
+        protected override ConditionValue getCValueFirstName() {
+            return _myCQ.FirstName;
+        }
+
+
+        protected override ConditionValue getCValueRubyName() {
+            return _myCQ.RubyName;
+        }
+
+
+        protected override ConditionValue getCValueEmail() {
+            return _myCQ.Email;
+        }
+
+
         protected override ConditionValue getCValuePassword() {
             return _myCQ.Password;
         }
@@ -90,16 +110,6 @@ namespace Dbflute.CBean.CQ.Ciq {
         public override String keepRankCode_NotInScopeSubQuery_Rank(RankCQ subQuery) {
             return _myCQ.keepRankCode_NotInScopeSubQuery_Rank(subQuery);
         }
-
-        protected override ConditionValue getCValueLastName() {
-            return _myCQ.LastName;
-        }
-
-
-        protected override ConditionValue getCValueFirstName() {
-            return _myCQ.FirstName;
-        }
-
 
         protected override ConditionValue getCValueEntryDate() {
             return _myCQ.EntryDate;

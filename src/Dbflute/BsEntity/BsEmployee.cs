@@ -22,7 +22,7 @@ namespace Dbflute.ExEntity {
     ///     id
     /// 
     /// [column]
-    ///     id, employee_no, password, rank_code, last_name, first_name, entry_date, leave_date
+    ///     id, employee_no, last_name, first_name, ruby_name, email, password, rank_code, entry_date, leave_date
     /// 
     /// [sequence]
     ///     employee_id_seq
@@ -61,17 +61,23 @@ namespace Dbflute.ExEntity {
         /// <summary>employee_no: {UQ, NotNull, varchar(10)}</summary>
         protected String _employeeNo;
 
-        /// <summary>password: {NotNull, varchar(255)}</summary>
-        protected String _password;
-
-        /// <summary>rank_code: {NotNull, varchar(3), FK to rank}</summary>
-        protected String _rankCode;
-
         /// <summary>last_name: {NotNull, varchar(20)}</summary>
         protected String _lastName;
 
         /// <summary>first_name: {NotNull, varchar(20)}</summary>
         protected String _firstName;
+
+        /// <summary>ruby_name: {NotNull, varchar(50)}</summary>
+        protected String _rubyName;
+
+        /// <summary>email: {varchar(255)}</summary>
+        protected String _email;
+
+        /// <summary>password: {NotNull, varchar(255)}</summary>
+        protected String _password;
+
+        /// <summary>rank_code: {NotNull, varchar(3), FK to rank}</summary>
+        protected String _rankCode;
 
         /// <summary>entry_date: {NotNull, timestamp(26, 3)}</summary>
         protected DateTime? _entryDate;
@@ -189,10 +195,12 @@ namespace Dbflute.ExEntity {
             StringBuilder sb = new StringBuilder();
             sb.Append(c).Append(this.Id);
             sb.Append(c).Append(this.EmployeeNo);
-            sb.Append(c).Append(this.Password);
-            sb.Append(c).Append(this.RankCode);
             sb.Append(c).Append(this.LastName);
             sb.Append(c).Append(this.FirstName);
+            sb.Append(c).Append(this.RubyName);
+            sb.Append(c).Append(this.Email);
+            sb.Append(c).Append(this.Password);
+            sb.Append(c).Append(this.RankCode);
             sb.Append(c).Append(this.EntryDate);
             sb.Append(c).Append(this.LeaveDate);
             if (sb.Length > 0) { sb.Remove(0, c.Length); }
@@ -233,26 +241,6 @@ namespace Dbflute.ExEntity {
             }
         }
 
-        /// <summary>password: {NotNull, varchar(255)}</summary>
-        [Seasar.Dao.Attrs.Column("password")]
-        public String Password {
-            get { return _password; }
-            set {
-                __modifiedProperties.AddPropertyName("Password");
-                _password = value;
-            }
-        }
-
-        /// <summary>rank_code: {NotNull, varchar(3), FK to rank}</summary>
-        [Seasar.Dao.Attrs.Column("rank_code")]
-        public String RankCode {
-            get { return _rankCode; }
-            set {
-                __modifiedProperties.AddPropertyName("RankCode");
-                _rankCode = value;
-            }
-        }
-
         /// <summary>last_name: {NotNull, varchar(20)}</summary>
         [Seasar.Dao.Attrs.Column("last_name")]
         public String LastName {
@@ -270,6 +258,46 @@ namespace Dbflute.ExEntity {
             set {
                 __modifiedProperties.AddPropertyName("FirstName");
                 _firstName = value;
+            }
+        }
+
+        /// <summary>ruby_name: {NotNull, varchar(50)}</summary>
+        [Seasar.Dao.Attrs.Column("ruby_name")]
+        public String RubyName {
+            get { return _rubyName; }
+            set {
+                __modifiedProperties.AddPropertyName("RubyName");
+                _rubyName = value;
+            }
+        }
+
+        /// <summary>email: {varchar(255)}</summary>
+        [Seasar.Dao.Attrs.Column("email")]
+        public String Email {
+            get { return _email; }
+            set {
+                __modifiedProperties.AddPropertyName("Email");
+                _email = value;
+            }
+        }
+
+        /// <summary>password: {NotNull, varchar(255)}</summary>
+        [Seasar.Dao.Attrs.Column("password")]
+        public String Password {
+            get { return _password; }
+            set {
+                __modifiedProperties.AddPropertyName("Password");
+                _password = value;
+            }
+        }
+
+        /// <summary>rank_code: {NotNull, varchar(3), FK to rank}</summary>
+        [Seasar.Dao.Attrs.Column("rank_code")]
+        public String RankCode {
+            get { return _rankCode; }
+            set {
+                __modifiedProperties.AddPropertyName("RankCode");
+                _rankCode = value;
             }
         }
 

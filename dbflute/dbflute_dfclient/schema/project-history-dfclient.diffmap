@@ -1,4 +1,23 @@
 map:{
+    ; 2020/11/06 22:05:43 = map:{
+        ; diffDate = 2020/11/06 22:05:43
+        ; tableDiff = map:{
+            ; employee = map:{
+                ; tableName = employee
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; ruby_name = map:{
+                        ; columnName = ruby_name
+                        ; diffType = ADD
+                    }
+                    ; email = map:{
+                        ; columnName = email
+                        ; diffType = ADD
+                    }
+                }
+            }
+        }
+    }
     ; 2020/11/06 19:29:43 = map:{
         ; diffDate = 2020/11/06 19:29:43
         ; tableDiff = map:{

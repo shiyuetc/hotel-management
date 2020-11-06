@@ -21,14 +21,18 @@
             primaryKey="true" required="true" size="19" type="BIGINT"/>
         <column dbType="varchar" javaType="String" name="employee_no"
             required="true" size="10" type="VARCHAR"/>
-        <column dbType="varchar" javaType="String" name="password"
-            required="true" size="255" type="VARCHAR"/>
-        <column dbType="varchar" javaType="String" name="rank_code"
-            required="true" size="3" type="VARCHAR"/>
         <column dbType="varchar" javaType="String" name="last_name"
             required="true" size="20" type="VARCHAR"/>
         <column dbType="varchar" javaType="String" name="first_name"
             required="true" size="20" type="VARCHAR"/>
+        <column dbType="varchar" javaType="String" name="ruby_name"
+            required="true" size="50" type="VARCHAR"/>
+        <column dbType="varchar" javaType="String" name="email"
+            size="255" type="VARCHAR"/>
+        <column dbType="varchar" javaType="String" name="password"
+            required="true" size="255" type="VARCHAR"/>
+        <column dbType="varchar" javaType="String" name="rank_code"
+            required="true" size="3" type="VARCHAR"/>
         <column dbType="timestamp" javaType="DateTime?"
             name="entry_date" required="true" size="26, 3" type="TIMESTAMP"/>
         <column dbType="timestamp" javaType="DateTime?"

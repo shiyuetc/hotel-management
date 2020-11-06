@@ -1,3 +1,4 @@
+
 -- Rank:職位区分
 CREATE TABLE "rank" (
     "code" CHAR(3) NOT NULL PRIMARY KEY,
@@ -18,10 +19,12 @@ CREATE TABLE "room_type" (
 CREATE TABLE "employee" (
     "id" BIGSERIAL NOT NULL PRIMARY KEY,
     "employee_no" VARCHAR(10) UNIQUE NOT NULL,
-    "password" VARCHAR(255) NOT NULL,
-    "rank_code" VARCHAR(3) NOT NULL,
     "last_name" VARCHAR(20) NOT NULL,
     "first_name" VARCHAR(20) NOT NULL,
+    "ruby_name"  VARCHAR(50) NOT NULL,
+    "email" VARCHAR(255),
+    "password" VARCHAR(255) NOT NULL,
+    "rank_code" VARCHAR(3) NOT NULL,
     "entry_date" TIMESTAMP(3) NOT NULL,
     "leave_date" TIMESTAMP(3),
     FOREIGN KEY ("rank_code") REFERENCES "rank"("code")
@@ -35,7 +38,7 @@ CREATE TABLE "customer" (
     "first_name" VARCHAR(20) NOT NULL
 );
 
--- Room
+-- Room:客室マスタ
 CREATE TABLE "room" (
     "id" BIGSERIAL NOT NULL PRIMARY KEY,
     "room_no" VARCHAR(10) UNIQUE NOT NULL,
