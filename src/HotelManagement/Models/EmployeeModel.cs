@@ -19,9 +19,37 @@ namespace HotelManagement.Models
         #endregion
 
         /// <summary>
-        /// 
+        /// 指定したIDと一致する従業員を取得します
         /// </summary>
-        /// <returns>取得した従業員情報の配列を返す</returns>
+        /// <param name="id">ID</param>
+        /// <returns>取得した従業員を返す</returns>
+        public Employee GetEmployee(long id)
+        {
+            var employeeCB = new EmployeeCB();
+            employeeCB.SetupSelect_Rank();
+            employeeCB.Query().SetId_Equal(id);
+
+            return EmployeeBhv.SelectEntity(employeeCB);
+        }
+
+        /// <summary>
+        /// 指定した従業員番号と一致する従業員を取得します。
+        /// </summary>
+        /// <param name="employeeNo">従業員番号</param>
+        /// <returns>取得した従業員を返す</returns>
+        public Employee GetEmployee(string employeeNo)
+        {
+            var employeeCB = new EmployeeCB();
+            employeeCB.SetupSelect_Rank();
+            employeeCB.Query().SetEmployeeNo_Equal(employeeNo);
+
+            return EmployeeBhv.SelectEntity(employeeCB);
+        }
+
+        /// <summary>
+        /// 従業員を全件取得します。
+        /// </summary>
+        /// <returns>取得した従業員の配列を返す</returns>
         public Employee[] GetEmployeeList()
         {
             var employeeCB = new EmployeeCB();
