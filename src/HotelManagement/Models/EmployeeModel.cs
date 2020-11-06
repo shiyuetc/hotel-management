@@ -2,6 +2,7 @@
 using Dbflute.ExBhv;
 using Dbflute.ExEntity;
 using Seasar.Quill.Attrs;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace HotelManagement.Models
@@ -50,15 +51,14 @@ namespace HotelManagement.Models
         /// 従業員を全件取得します。
         /// </summary>
         /// <returns>取得した従業員の配列を返す</returns>
-        public Employee[] GetEmployeeList()
+        public List<Employee> GetEmployeeList()
         {
             var employeeCB = new EmployeeCB();
             employeeCB.SetupSelect_Rank();
 
             var selectList = EmployeeBhv.SelectList(employeeCB);
 
-            var employees = selectList.Count > 0 ? selectList.ToArray() : new Employee[0];
-            return employees;
+            return selectList.Any() ? selectList.ToList() : new List<Employee>();
         }
     }
 }
