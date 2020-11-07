@@ -1,6 +1,5 @@
 ﻿using Dbflute.ExEntity;
 using HotelManagement.Common;
-using HotelManagement.Const;
 using HotelManagement.CustomControls;
 using HotelManagement.Enums;
 using HotelManagement.Extensions;
@@ -14,6 +13,8 @@ namespace HotelManagement.View
     /// </summary>
     public partial class FmMain : Form
     {
+        #region コンストラクタ
+
         /// <summary>
         /// FmMainを初期化します。
         /// </summary>
@@ -21,6 +22,10 @@ namespace HotelManagement.View
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region イベンドハンドラ
 
         /// <summary>
         /// FmMainのロードイベント
@@ -59,6 +64,10 @@ namespace HotelManagement.View
             // 指定の画面に遷移
             this.MoveDisplay((Display)targetDisplay);
         }
+
+        #endregion
+
+        #region メインイベント
 
         /// <summary>
         /// 画面を遷移します。
@@ -111,5 +120,7 @@ namespace HotelManagement.View
             // ログイン情報を破棄
             this.SetLoginInfomation(null);
         }
+
+        #endregion
     }
 }
