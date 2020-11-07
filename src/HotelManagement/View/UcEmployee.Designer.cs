@@ -29,21 +29,25 @@
         private void InitializeComponent()
         {
             this.EmployeeListView = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.EmployeeNoColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.RankColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.EmailColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.EntryDateColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LeaveDateColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.EmployeeId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // EmployeeListView
             // 
             this.EmployeeListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
+            this.EmployeeId,
+            this.EmployeeNoColumnHeader,
+            this.NameColumnHeader,
+            this.RankColumnHeader,
+            this.EmailColumnHeader,
+            this.EntryDateColumnHeader,
+            this.LeaveDateColumnHeader});
             this.EmployeeListView.FullRowSelect = true;
             this.EmployeeListView.GridLines = true;
             this.EmployeeListView.HideSelection = false;
@@ -54,26 +58,36 @@
             this.EmployeeListView.TabIndex = 2;
             this.EmployeeListView.UseCompatibleStateImageBehavior = false;
             this.EmployeeListView.View = System.Windows.Forms.View.Details;
+            this.EmployeeListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.EmployeeListView_MouseDoubleClick);
             // 
-            // columnHeader1
+            // EmployeeNoColumnHeader
             // 
-            this.columnHeader1.Text = "従業員番号";
+            this.EmployeeNoColumnHeader.Text = "従業員番号";
             // 
-            // columnHeader2
+            // NameColumnHeader
             // 
-            this.columnHeader2.Text = "名前";
+            this.NameColumnHeader.Text = "名前";
             // 
-            // columnHeader3
+            // RankColumnHeader
             // 
-            this.columnHeader3.Text = "職位";
+            this.RankColumnHeader.Text = "職位";
             // 
-            // columnHeader4
+            // EmailColumnHeader
             // 
-            this.columnHeader4.Text = "入社年月日";
+            this.EmailColumnHeader.Text = "Eメール";
             // 
-            // columnHeader5
+            // EntryDateColumnHeader
             // 
-            this.columnHeader5.Text = "退社年月日";
+            this.EntryDateColumnHeader.Text = "入社年月日";
+            // 
+            // LeaveDateColumnHeader
+            // 
+            this.LeaveDateColumnHeader.Text = "退社年月日";
+            this.LeaveDateColumnHeader.Width = 78;
+            // 
+            // EmployeeId
+            // 
+            this.EmployeeId.Text = "ID";
             // 
             // UcEmployee
             // 
@@ -89,10 +103,12 @@
 
         #endregion
         private System.Windows.Forms.ListView EmployeeListView;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader EmployeeNoColumnHeader;
+        private System.Windows.Forms.ColumnHeader NameColumnHeader;
+        private System.Windows.Forms.ColumnHeader RankColumnHeader;
+        private System.Windows.Forms.ColumnHeader EntryDateColumnHeader;
+        private System.Windows.Forms.ColumnHeader LeaveDateColumnHeader;
+        private System.Windows.Forms.ColumnHeader EmailColumnHeader;
+        private System.Windows.Forms.ColumnHeader EmployeeId;
     }
 }

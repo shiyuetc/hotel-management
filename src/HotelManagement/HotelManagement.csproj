@@ -149,6 +149,19 @@
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\RoomModel.cs" />
+    <Compile Include="View\Dialog\UcDialogBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dialog\UcDialogBase.Designer.cs">
+      <DependentUpon>UcDialogBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\UcEmployeeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dialog\UcEmployeeDialog.Designer.cs">
+      <DependentUpon>UcEmployeeDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +224,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\TickDate.resx">
       <DependentUpon>TickDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dialog\UcDialogBase.resx">
+      <DependentUpon>UcDialogBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dialog\UcEmployeeDialog.resx">
+      <DependentUpon>UcEmployeeDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FmMain.resx">
       <DependentUpon>FmMain.cs</DependentUpon>

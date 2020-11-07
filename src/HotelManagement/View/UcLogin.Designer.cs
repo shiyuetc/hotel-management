@@ -54,6 +54,7 @@
             this.EmployeeIDTextBox.Name = "EmployeeIDTextBox";
             this.EmployeeIDTextBox.Size = new System.Drawing.Size(300, 31);
             this.EmployeeIDTextBox.TabIndex = 1;
+            this.EmployeeIDTextBox.Text = "system";
             // 
             // PasswordTextBox
             // 
@@ -63,6 +64,7 @@
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(300, 31);
             this.PasswordTextBox.TabIndex = 3;
+            this.PasswordTextBox.Text = "password";
             // 
             // label2
             // 
