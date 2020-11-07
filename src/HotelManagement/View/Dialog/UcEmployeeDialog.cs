@@ -9,6 +9,8 @@ namespace HotelManagement.View.Dialog
     /// </summary>
     public partial class UcEmployeeDialog : UcDialogBase
     {
+        #region メンバ変数
+
         /// <summary>
         /// 従業員情報の受け渡しに利用
         /// </summary>
@@ -18,6 +20,10 @@ namespace HotelManagement.View.Dialog
         /// 登録を行ったかどうか判定するフラグ
         /// </summary>
         public bool UpdateFlag { get; private set; }
+
+        #endregion
+
+        #region コンストラクタ
 
         /// <summary>
         /// UcEmployeeDialogクラスを初期化します。
@@ -50,6 +56,15 @@ namespace HotelManagement.View.Dialog
             
         }
 
+        #endregion
+
+        #region イベントハンドラ
+
+        /// <summary>
+        /// 退社チェックボックスのチェック変更イベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void IsLeaveCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
             this.LeaveDateLabel2.Enabled = this.IsLeaveCheckBox.Checked;
@@ -63,13 +78,74 @@ namespace HotelManagement.View.Dialog
         /// <param name="e"></param>
         private void UpdateButton_Click(object sender, System.EventArgs e)
         {
+            // 入力チェック
+            if(!this.InputCheck()) return;
+
             // 登録確認チェック
-            if(!Messages.ShowConfirm("従業員を登録しますか？"))
-            {
-                return;
-            }
+            if (this.ConfirmCheck()) return;
 
             // データ登録処理
+            this.UpdateEvent();
+
+            // ダイアログを閉じる
+            this.Close();
+        }
+
+        #endregion
+
+        #region 登録チェック
+
+        /// <summary>
+        /// 入力チェックを行います。
+        /// </summary>
+        /// <returns>チェックが通ればtrueを返す</returns>
+        private bool InputCheck()
+        {
+            if (string.IsNullOrEmpty(this.LastNameTextBox.Text))
+            {
+                Messages.ShowError("{0}が入力されていません。", "名前（性）");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(this.FirstNameTextBox.Text))
+            {
+                Messages.ShowError("{0}が入力されていません。", "名前（名）");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(this.RubyNameTextBox.Text))
+            {
+                Messages.ShowError("{0}が入力されていません。", "ﾖﾐｶﾞﾅ");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(this.EmailTextBox.Text))
+            {
+                Messages.ShowError("{0}が入力されていません。", "Eメール");
+                return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// 登録確認チェックを行います。
+        /// </summary>
+        /// <returns>チェックが通ればtrueを返す</returns>
+        private bool ConfirmCheck()
+        {
+            return !Messages.ShowConfirm("従業員を登録しますか？");
+        }
+
+        #endregion
+
+        #region 登録イベント
+
+        /// <summary>
+        /// 従業員の登録処理を行います。
+        /// </summary>
+        private void UpdateEvent()
+        {
             this.Employee.LastName = this.LastNameTextBox.Text;
             this.Employee.FirstName = this.FirstNameTextBox.Text;
             this.Employee.RubyName = this.RubyNameTextBox.Text;
@@ -79,18 +155,17 @@ namespace HotelManagement.View.Dialog
             {
                 this.Employee.LeaveDate = this.LeaveDateTimePicker.Value;
             }
-            else if(this.IsLeaveCheckBox.Checked)
+            else if (this.IsLeaveCheckBox.Checked)
             {
                 this.Employee.LeaveDate = this.LeaveDateTimePicker2.Value;
             }
 
             var vm = new ModelQuillInjector<EmployeeModel>();
             vm.Model.UpdateEmployee(this.Employee);
-            this.UpdateFlag = true;
 
-            // ダイアログを閉じる
-            this.Close();
+            this.UpdateFlag = true;
         }
 
+        #endregion
     }
 }

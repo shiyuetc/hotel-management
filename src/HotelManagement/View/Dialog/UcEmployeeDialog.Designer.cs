@@ -50,6 +50,7 @@
             this.LeaveDateLabel2 = new System.Windows.Forms.Label();
             this.LeaveDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.IsLeaveCheckBox = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.BasicSettingTabPage.SuspendLayout();
             this.LeaveTabPage.SuspendLayout();
@@ -215,6 +216,7 @@
             // 
             // LeaveTabPage
             // 
+            this.LeaveTabPage.Controls.Add(this.label1);
             this.LeaveTabPage.Controls.Add(this.IsLeaveCheckBox);
             this.LeaveTabPage.Controls.Add(this.LeaveDateLabel2);
             this.LeaveTabPage.Controls.Add(this.LeaveDateTimePicker2);
@@ -275,6 +277,15 @@
             this.IsLeaveCheckBox.UseVisualStyleBackColor = true;
             this.IsLeaveCheckBox.CheckedChanged += new System.EventHandler(this.IsLeaveCheckBox_CheckedChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(172, 12);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "※退社処理は取り消しできません。";
+            // 
             // UcEmployeeDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -318,5 +329,6 @@
         private System.Windows.Forms.CheckBox IsLeaveCheckBox;
         private System.Windows.Forms.Label LeaveDateLabel2;
         private System.Windows.Forms.DateTimePicker LeaveDateTimePicker2;
+        private System.Windows.Forms.Label label1;
     }
 }
