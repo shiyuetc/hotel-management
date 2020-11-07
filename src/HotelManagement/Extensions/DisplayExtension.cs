@@ -37,10 +37,7 @@ namespace HotelManagement.Extensions
         public static string GetDisplayName(this Display value)
         {
             FieldInfo fieldInfo = value.GetType().GetField(value.ToString());
-            if (fieldInfo == null)
-            {
-                return null;
-            }
+            if (fieldInfo == null) return null;
 
             DisplayNameAttribute[] attribs = fieldInfo.GetCustomAttributes(typeof(DisplayNameAttribute), false) as DisplayNameAttribute[];
             return attribs.Length > 0 ? attribs[0].DisplayName : null;
