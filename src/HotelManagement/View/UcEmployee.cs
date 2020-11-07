@@ -53,9 +53,11 @@ namespace HotelManagement.View
 
         private void SetEmployeeList(List<Employee> employees)
         {
+            this.EmployeeListView.Visible = false;
             this.EmployeeListView.Items.Clear();
             this.EmployeeListView.Items.AddRange(this.CreateEmployeeListViewItems(employees.ToArray()));
             this.EmployeeListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            this.EmployeeListView.Visible = true;
         }
 
         private void UpdateEmployee(int rowIndex, Employee employee)
