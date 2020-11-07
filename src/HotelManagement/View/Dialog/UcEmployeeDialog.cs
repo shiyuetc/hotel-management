@@ -38,7 +38,22 @@ namespace HotelManagement.View.Dialog
                 this.RankComboBox.Text = employee.Rank.JapaneseName;
                 this.EmailTextBox.Text = employee.Email;
                 this.EntryDateTimePicker.Value = employee.EntryDate.Value;
+
+                if(employee.IsLeave)
+                {
+                    this.LeaveDateLabel.Visible = true;
+                    this.LeaveDateTimePicker.Visible = true;
+                    this.LeaveDateTimePicker.Value = employee.LeaveDate.Value;
+                    this.LeaveTabPage.Dispose();
+                }
             }
+            
+        }
+
+        private void IsLeaveCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            this.LeaveDateLabel2.Enabled = this.IsLeaveCheckBox.Checked;
+            this.LeaveDateTimePicker2.Enabled = this.IsLeaveCheckBox.Checked;
         }
 
         /// <summary>
@@ -60,6 +75,14 @@ namespace HotelManagement.View.Dialog
             this.Employee.RubyName = this.RubyNameTextBox.Text;
             this.Employee.Email = this.EmailTextBox.Text;
             this.Employee.EntryDate = this.EntryDateTimePicker.Value;
+            if (this.Employee.IsLeave)
+            {
+                this.Employee.LeaveDate = this.LeaveDateTimePicker.Value;
+            }
+            else if(this.IsLeaveCheckBox.Checked)
+            {
+                this.Employee.LeaveDate = this.LeaveDateTimePicker2.Value;
+            }
 
             var vm = new ModelQuillInjector<EmployeeModel>();
             vm.Model.UpdateEmployee(this.Employee);
@@ -68,5 +91,6 @@ namespace HotelManagement.View.Dialog
             // ダイアログを閉じる
             this.Close();
         }
+
     }
 }
