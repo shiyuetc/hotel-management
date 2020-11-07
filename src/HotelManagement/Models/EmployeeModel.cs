@@ -30,7 +30,7 @@ namespace HotelManagement.Models
             employeeCB.SetupSelect_Rank();
             employeeCB.Query().SetId_Equal(id);
 
-            return EmployeeBhv.SelectEntity(employeeCB);
+            return this.EmployeeBhv.SelectEntity(employeeCB);
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace HotelManagement.Models
             employeeCB.SetupSelect_Rank();
             employeeCB.Query().SetEmployeeNo_Equal(employeeNo);
 
-            return EmployeeBhv.SelectEntity(employeeCB);
+            return this.EmployeeBhv.SelectEntity(employeeCB);
         }
 
         /// <summary>
@@ -59,6 +59,15 @@ namespace HotelManagement.Models
             var selectList = EmployeeBhv.SelectList(employeeCB);
 
             return selectList.Any() ? selectList.ToList() : new List<Employee>();
+        }
+    
+        /// <summary>
+        /// 従業員を更新します。
+        /// </summary>
+        /// <param name="employee">従業員</param>
+        public void UpdateEmployee(Employee employee)
+        {
+            this.EmployeeBhv.Update(employee);
         }
     }
 }
