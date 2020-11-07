@@ -18,5 +18,15 @@ namespace HotelManagement.Extensions
         {
             return parameters.Contains(value);
         }
+
+        /// <summary>
+        /// 文字列をlong型に変換します。
+        /// </summary>
+        /// <param name="value">対象の文字列</param>
+        /// <returns>long型に変換したオブジェクト</returns>
+        public static long ToLong(this string value)
+        {
+            return long.Parse(value);
+        }
     }
 }

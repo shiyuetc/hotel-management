@@ -12,10 +12,7 @@ namespace HotelManagement.View.Dialog
 
         private void DialogBaseForm_Load(object sender, EventArgs e)
         {
-            if(this.DesignMode)
-            {
-                return;
-            } 
+
         }
     }
 }
