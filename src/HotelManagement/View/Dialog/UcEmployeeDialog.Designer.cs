@@ -44,15 +44,21 @@
             this.UpdateButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.BasicSettingTabPage = new System.Windows.Forms.TabPage();
-            this.LeaveTabPage = new System.Windows.Forms.TabPage();
-            this.LeaveDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.LeaveDateLabel = new System.Windows.Forms.Label();
+            this.LeaveDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.PasswordChangeTabPage = new System.Windows.Forms.TabPage();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LeaveTabPage = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.IsLeaveCheckBox = new System.Windows.Forms.CheckBox();
             this.LeaveDateLabel2 = new System.Windows.Forms.Label();
             this.LeaveDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.IsLeaveCheckBox = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.BasicSettingTabPage.SuspendLayout();
+            this.PasswordChangeTabPage.SuspendLayout();
             this.LeaveTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +74,7 @@
             // LastNameTextBox
             // 
             this.LastNameTextBox.Location = new System.Drawing.Point(95, 42);
+            this.LastNameTextBox.MaxLength = 20;
             this.LastNameTextBox.Name = "LastNameTextBox";
             this.LastNameTextBox.Size = new System.Drawing.Size(91, 19);
             this.LastNameTextBox.TabIndex = 1;
@@ -75,6 +82,7 @@
             // FirstNameTextBox
             // 
             this.FirstNameTextBox.Location = new System.Drawing.Point(193, 42);
+            this.FirstNameTextBox.MaxLength = 20;
             this.FirstNameTextBox.Name = "FirstNameTextBox";
             this.FirstNameTextBox.Size = new System.Drawing.Size(91, 19);
             this.FirstNameTextBox.TabIndex = 2;
@@ -117,6 +125,7 @@
             // EmployeeNoTextBox
             // 
             this.EmployeeNoTextBox.Location = new System.Drawing.Point(95, 17);
+            this.EmployeeNoTextBox.MaxLength = 10;
             this.EmployeeNoTextBox.Name = "EmployeeNoTextBox";
             this.EmployeeNoTextBox.ReadOnly = true;
             this.EmployeeNoTextBox.Size = new System.Drawing.Size(189, 19);
@@ -136,6 +145,7 @@
             // RubyNameTextBox
             // 
             this.RubyNameTextBox.Location = new System.Drawing.Point(95, 67);
+            this.RubyNameTextBox.MaxLength = 50;
             this.RubyNameTextBox.Name = "RubyNameTextBox";
             this.RubyNameTextBox.Size = new System.Drawing.Size(189, 19);
             this.RubyNameTextBox.TabIndex = 3;
@@ -152,6 +162,7 @@
             // EmailTextBox
             // 
             this.EmailTextBox.Location = new System.Drawing.Point(95, 118);
+            this.EmailTextBox.MaxLength = 255;
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(189, 19);
             this.EmailTextBox.TabIndex = 5;
@@ -182,6 +193,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.BasicSettingTabPage);
+            this.tabControl1.Controls.Add(this.PasswordChangeTabPage);
             this.tabControl1.Controls.Add(this.LeaveTabPage);
             this.tabControl1.Location = new System.Drawing.Point(2, 2);
             this.tabControl1.Name = "tabControl1";
@@ -214,6 +226,74 @@
             this.BasicSettingTabPage.Text = "基本情報";
             this.BasicSettingTabPage.UseVisualStyleBackColor = true;
             // 
+            // LeaveDateLabel
+            // 
+            this.LeaveDateLabel.AutoSize = true;
+            this.LeaveDateLabel.Location = new System.Drawing.Point(27, 172);
+            this.LeaveDateLabel.Name = "LeaveDateLabel";
+            this.LeaveDateLabel.Size = new System.Drawing.Size(65, 12);
+            this.LeaveDateLabel.TabIndex = 12;
+            this.LeaveDateLabel.Text = "退社年月日";
+            this.LeaveDateLabel.Visible = false;
+            // 
+            // LeaveDateTimePicker
+            // 
+            this.LeaveDateTimePicker.CustomFormat = "";
+            this.LeaveDateTimePicker.Location = new System.Drawing.Point(95, 168);
+            this.LeaveDateTimePicker.Name = "LeaveDateTimePicker";
+            this.LeaveDateTimePicker.Size = new System.Drawing.Size(189, 19);
+            this.LeaveDateTimePicker.TabIndex = 11;
+            this.LeaveDateTimePicker.Visible = false;
+            // 
+            // PasswordChangeTabPage
+            // 
+            this.PasswordChangeTabPage.Controls.Add(this.textBox2);
+            this.PasswordChangeTabPage.Controls.Add(this.label3);
+            this.PasswordChangeTabPage.Controls.Add(this.textBox1);
+            this.PasswordChangeTabPage.Controls.Add(this.label2);
+            this.PasswordChangeTabPage.Location = new System.Drawing.Point(4, 22);
+            this.PasswordChangeTabPage.Name = "PasswordChangeTabPage";
+            this.PasswordChangeTabPage.Size = new System.Drawing.Size(322, 215);
+            this.PasswordChangeTabPage.TabIndex = 2;
+            this.PasswordChangeTabPage.Text = "パスワード変更";
+            this.PasswordChangeTabPage.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(113, 42);
+            this.textBox2.MaxLength = 50;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '●';
+            this.textBox2.Size = new System.Drawing.Size(189, 19);
+            this.textBox2.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(20, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 12);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "パスワード再入力";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(113, 17);
+            this.textBox1.MaxLength = 50;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '●';
+            this.textBox1.Size = new System.Drawing.Size(189, 19);
+            this.textBox1.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 12);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "新しいパスワード";
+            // 
             // LeaveTabPage
             // 
             this.LeaveTabPage.Controls.Add(this.label1);
@@ -228,24 +308,25 @@
             this.LeaveTabPage.Text = "退社処理";
             this.LeaveTabPage.UseVisualStyleBackColor = true;
             // 
-            // LeaveDateTimePicker
+            // label1
             // 
-            this.LeaveDateTimePicker.CustomFormat = "";
-            this.LeaveDateTimePicker.Location = new System.Drawing.Point(95, 168);
-            this.LeaveDateTimePicker.Name = "LeaveDateTimePicker";
-            this.LeaveDateTimePicker.Size = new System.Drawing.Size(189, 19);
-            this.LeaveDateTimePicker.TabIndex = 11;
-            this.LeaveDateTimePicker.Visible = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(172, 12);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "※退社処理は取り消しできません。";
             // 
-            // LeaveDateLabel
+            // IsLeaveCheckBox
             // 
-            this.LeaveDateLabel.AutoSize = true;
-            this.LeaveDateLabel.Location = new System.Drawing.Point(27, 172);
-            this.LeaveDateLabel.Name = "LeaveDateLabel";
-            this.LeaveDateLabel.Size = new System.Drawing.Size(65, 12);
-            this.LeaveDateLabel.TabIndex = 12;
-            this.LeaveDateLabel.Text = "退社年月日";
-            this.LeaveDateLabel.Visible = false;
+            this.IsLeaveCheckBox.AutoSize = true;
+            this.IsLeaveCheckBox.Location = new System.Drawing.Point(24, 20);
+            this.IsLeaveCheckBox.Name = "IsLeaveCheckBox";
+            this.IsLeaveCheckBox.Size = new System.Drawing.Size(48, 16);
+            this.IsLeaveCheckBox.TabIndex = 15;
+            this.IsLeaveCheckBox.Text = "退社";
+            this.IsLeaveCheckBox.UseVisualStyleBackColor = true;
+            this.IsLeaveCheckBox.CheckedChanged += new System.EventHandler(this.IsLeaveCheckBox_CheckedChanged);
             // 
             // LeaveDateLabel2
             // 
@@ -266,26 +347,6 @@
             this.LeaveDateTimePicker2.Size = new System.Drawing.Size(189, 19);
             this.LeaveDateTimePicker2.TabIndex = 13;
             // 
-            // IsLeaveCheckBox
-            // 
-            this.IsLeaveCheckBox.AutoSize = true;
-            this.IsLeaveCheckBox.Location = new System.Drawing.Point(24, 20);
-            this.IsLeaveCheckBox.Name = "IsLeaveCheckBox";
-            this.IsLeaveCheckBox.Size = new System.Drawing.Size(48, 16);
-            this.IsLeaveCheckBox.TabIndex = 15;
-            this.IsLeaveCheckBox.Text = "退社";
-            this.IsLeaveCheckBox.UseVisualStyleBackColor = true;
-            this.IsLeaveCheckBox.CheckedChanged += new System.EventHandler(this.IsLeaveCheckBox_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 12);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "※退社処理は取り消しできません。";
-            // 
             // UcEmployeeDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -299,6 +360,8 @@
             this.tabControl1.ResumeLayout(false);
             this.BasicSettingTabPage.ResumeLayout(false);
             this.BasicSettingTabPage.PerformLayout();
+            this.PasswordChangeTabPage.ResumeLayout(false);
+            this.PasswordChangeTabPage.PerformLayout();
             this.LeaveTabPage.ResumeLayout(false);
             this.LeaveTabPage.PerformLayout();
             this.ResumeLayout(false);
@@ -330,5 +393,10 @@
         private System.Windows.Forms.Label LeaveDateLabel2;
         private System.Windows.Forms.DateTimePicker LeaveDateTimePicker2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabPage PasswordChangeTabPage;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

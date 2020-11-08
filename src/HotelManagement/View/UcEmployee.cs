@@ -28,6 +28,22 @@ namespace HotelManagement.View
             this.SetEmployeeList(vm.Model.GetEmployeeList());
         }
 
+        private void EmployeeListView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var vm = new ModelQuillInjector<EmployeeModel>();
+            var selectItem = this.EmployeeListView.SelectedItems[0];
+
+            var dialog = new UcEmployeeDialog(vm.Model.GetEmployee(selectItem.Text.ToLong()));
+            dialog.Left = this.TopLevelControl.Left + (this.TopLevelControl.Width - dialog.Width) / 2;
+            dialog.Top = this.TopLevelControl.Top + (this.TopLevelControl.Height - dialog.Height) / 2;
+            dialog.ShowDialog();
+
+            if (dialog.UpdateFlag)
+            {
+                this.UpdateEmployee(selectItem.Index, dialog.Employee);
+            }
+        }
+
         private ListViewItem CreateEmployeeListViewItem(Employee employee)
         {
             return new ListViewItem(new string[] {
@@ -53,33 +69,12 @@ namespace HotelManagement.View
 
         private void SetEmployeeList(List<Employee> employees)
         {
-            this.EmployeeListView.Visible = false;
-            this.EmployeeListView.Items.Clear();
-            this.EmployeeListView.Items.AddRange(this.CreateEmployeeListViewItems(employees.ToArray()));
-            this.EmployeeListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            this.EmployeeListView.Visible = true;
+            this.EmployeeListView.Init(this.CreateEmployeeListViewItems(employees.ToArray()));
         }
 
         private void UpdateEmployee(int rowIndex, Employee employee)
         {
-            this.EmployeeListView.Items[rowIndex] = this.CreateEmployeeListViewItem(employee);
-            this.EmployeeListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-        }
-
-        private void EmployeeListView_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            var vm = new ModelQuillInjector<EmployeeModel>();
-            var selectItem = this.EmployeeListView.SelectedItems[0];
-
-            var dialog = new UcEmployeeDialog(vm.Model.GetEmployee(selectItem.Text.ToLong()));
-            dialog.Left = this.TopLevelControl.Left + (this.TopLevelControl.Width - dialog.Width) / 2;
-            dialog.Top = this.TopLevelControl.Top + (this.TopLevelControl.Height - dialog.Height) / 2;
-            dialog.ShowDialog();
-
-            if (dialog.UpdateFlag)
-            {
-                this.UpdateEmployee(selectItem.Index, dialog.Employee);
-            }
+            this.EmployeeListView.UpdateItem(rowIndex, this.CreateEmployeeListViewItem(employee));
         }
     }
 }

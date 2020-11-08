@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.EmployeeListView = new System.Windows.Forms.ListView();
+            this.EmployeeListView = new HotelManagement.Extensions.ExListView();
+            this.IdColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.EmployeeNoColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RankColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.EmailColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.EntryDateColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LeaveDateColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.EmployeeId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LeaveColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // EmployeeListView
             // 
             this.EmployeeListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.EmployeeId,
+            this.IdColumnHeader,
             this.EmployeeNoColumnHeader,
             this.NameColumnHeader,
             this.RankColumnHeader,
             this.EmailColumnHeader,
             this.EntryDateColumnHeader,
-            this.LeaveDateColumnHeader});
+            this.LeaveColumnHeader});
             this.EmployeeListView.FullRowSelect = true;
             this.EmployeeListView.GridLines = true;
             this.EmployeeListView.HideSelection = false;
@@ -55,10 +55,13 @@
             this.EmployeeListView.MultiSelect = false;
             this.EmployeeListView.Name = "EmployeeListView";
             this.EmployeeListView.Size = new System.Drawing.Size(923, 528);
-            this.EmployeeListView.TabIndex = 2;
+            this.EmployeeListView.TabIndex = 3;
             this.EmployeeListView.UseCompatibleStateImageBehavior = false;
             this.EmployeeListView.View = System.Windows.Forms.View.Details;
-            this.EmployeeListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.EmployeeListView_MouseDoubleClick);
+            // 
+            // IdColumnHeader
+            // 
+            this.IdColumnHeader.Text = "ID";
             // 
             // EmployeeNoColumnHeader
             // 
@@ -80,14 +83,9 @@
             // 
             this.EntryDateColumnHeader.Text = "入社年月日";
             // 
-            // LeaveDateColumnHeader
+            // LeaveColumnHeader
             // 
-            this.LeaveDateColumnHeader.Text = "退社年月日";
-            this.LeaveDateColumnHeader.Width = 78;
-            // 
-            // EmployeeId
-            // 
-            this.EmployeeId.Text = "ID";
+            this.LeaveColumnHeader.Text = "退社年月日";
             // 
             // UcEmployee
             // 
@@ -102,13 +100,14 @@
         }
 
         #endregion
-        private System.Windows.Forms.ListView EmployeeListView;
+
+        private Extensions.ExListView EmployeeListView;
+        private System.Windows.Forms.ColumnHeader IdColumnHeader;
         private System.Windows.Forms.ColumnHeader EmployeeNoColumnHeader;
         private System.Windows.Forms.ColumnHeader NameColumnHeader;
         private System.Windows.Forms.ColumnHeader RankColumnHeader;
-        private System.Windows.Forms.ColumnHeader EntryDateColumnHeader;
-        private System.Windows.Forms.ColumnHeader LeaveDateColumnHeader;
         private System.Windows.Forms.ColumnHeader EmailColumnHeader;
-        private System.Windows.Forms.ColumnHeader EmployeeId;
+        private System.Windows.Forms.ColumnHeader EntryDateColumnHeader;
+        private System.Windows.Forms.ColumnHeader LeaveColumnHeader;
     }
 }
