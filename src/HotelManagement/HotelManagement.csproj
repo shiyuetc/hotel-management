@@ -146,6 +146,9 @@
     <Compile Include="Common\Messages.cs" />
     <Compile Include="Common\ModelQuillInjector.cs" />
     <Compile Include="Extensions\ListExtension.cs" />
+    <Compile Include="Extensions\ExListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\LoginModel.cs" />

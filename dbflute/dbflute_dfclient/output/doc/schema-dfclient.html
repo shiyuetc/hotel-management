@@ -317,7 +317,7 @@ dl.procedurelist dd.column pre {
 		<td class="rownumcell">4</td>
 		<td><a href="#room" title="type=TABLE, primaryKey={id}, nameLength=4, columnCount=4">room</a></td>
 		<td class="typecell">TABLE</td>
-		<td class="relcell">&nbsp;</td>
+		<td class="relcell"><a href="#room_type" title="room_room_type_code_fkey">room_type</a></td>
 		<td class="relcell">&nbsp;</td>
 		<td class="subcell">Room</td>
 	</tr>
@@ -326,7 +326,7 @@ dl.procedurelist dd.column pre {
 		<td><a href="#room_type" title="type=TABLE, primaryKey={code}, nameLength=9, columnCount=5">room_type</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
+		<td class="relcell"><a href="#room" title="room_room_type_code_fkey">room</a></td>
 		<td class="subcell">RoomType</td>
 	</tr>
 	</tbody>
@@ -719,8 +719,8 @@ room
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
 		<td id="room_room_no">room_no</td>
-		<td class="typecell">varchar</td>
-		<td class="sizecell"> 10 </td>
+		<td class="typecell">bpchar</td>
+		<td class="sizecell"> 3 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
@@ -737,7 +737,7 @@ room
 		<td id="room_room_type_code">room_type_code</td>
 		<td class="typecell">bpchar</td>
 		<td class="sizecell"> 3 </td>
-		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell"><a href="#room_type" title="room_room_type_code_fkey">room_type</a>&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
 		<td class="subcell">roomTypeCode</td>
@@ -795,7 +795,7 @@ room_type
 		<td class="sizecell"> 3 </td>
 		<td class="defvalcell"> &nbsp;</td>
 		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
+		<td class="relcell"><a href="#room" title="room_room_type_code_fkey">room</a>&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
 		<td class="subcell">code</td>
 		<td class="subcell">String</td>
