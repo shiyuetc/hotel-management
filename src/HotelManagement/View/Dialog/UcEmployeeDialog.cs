@@ -99,6 +99,16 @@ namespace HotelManagement.View.Dialog
             this.Close();
         }
 
+        /// <summary>
+        /// キャンセルボタンのクリックイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         #endregion
 
         #region 登録チェック
@@ -196,6 +206,5 @@ namespace HotelManagement.View.Dialog
         }
 
         #endregion
-
     }
 }

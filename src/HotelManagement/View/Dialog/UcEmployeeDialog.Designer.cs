@@ -51,6 +51,7 @@
             this.UpdatePasswordCheckBox = new System.Windows.Forms.CheckBox();
             this.RePasswordTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -187,7 +188,7 @@
             // UpdateButton
             // 
             this.UpdateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.UpdateButton.Location = new System.Drawing.Point(297, 336);
+            this.UpdateButton.Location = new System.Drawing.Point(216, 336);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(75, 23);
             this.UpdateButton.TabIndex = 7;
@@ -314,11 +315,23 @@
             this.label1.Text = "パスワード再入力";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // CloseButton
+            // 
+            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseButton.Location = new System.Drawing.Point(297, 336);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(75, 23);
+            this.CloseButton.TabIndex = 17;
+            this.CloseButton.Text = "キャンセル";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
             // UcEmployeeDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 371);
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.UpdateButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -355,5 +368,6 @@
         private System.Windows.Forms.CheckBox UpdatePasswordCheckBox;
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button CloseButton;
     }
 }
