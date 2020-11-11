@@ -1,6 +1,7 @@
 ﻿using Dbflute.ExEntity;
 using HotelManagement.Common;
 using HotelManagement.Models;
+using System;
 
 namespace HotelManagement.View.Dialog
 {
@@ -47,13 +48,10 @@ namespace HotelManagement.View.Dialog
 
                 if(employee.IsLeave)
                 {
-                    this.LeaveDateLabel.Visible = true;
-                    this.LeaveDateTimePicker.Visible = true;
+                    this.IsLeaveCheckBox.Checked = true;
                     this.LeaveDateTimePicker.Value = employee.LeaveDate.Value;
-                    this.LeaveTabPage.Dispose();
                 }
             }
-            
         }
 
         #endregion
@@ -65,10 +63,20 @@ namespace HotelManagement.View.Dialog
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void IsLeaveCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        private void IsLeaveCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            this.LeaveDateLabel2.Enabled = this.IsLeaveCheckBox.Checked;
-            this.LeaveDateTimePicker2.Enabled = this.IsLeaveCheckBox.Checked;
+            this.LeaveDateTimePicker.Enabled = this.IsLeaveCheckBox.Checked;
+        }
+
+        /// <summary>
+        /// パスワード変更チェックボックスのチェック変更イベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UpdatePasswordCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            this.PasswordTextBox.Enabled = this.UpdatePasswordCheckBox.Checked;
+            this.RePasswordTextBox.Enabled = this.UpdatePasswordCheckBox.Checked;
         }
 
         /// <summary>
@@ -76,7 +84,7 @@ namespace HotelManagement.View.Dialog
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void UpdateButton_Click(object sender, System.EventArgs e)
+        private void UpdateButton_Click(object sender, EventArgs e)
         {
             // 入力チェック
             if(!this.InputCheck()) return;
@@ -101,21 +109,27 @@ namespace HotelManagement.View.Dialog
         /// <returns>チェックが通ればtrueを返す</returns>
         private bool InputCheck()
         {
+            if (string.IsNullOrEmpty(this.EmployeeNoTextBox.Text))
+            {
+                Messages.ShowError("{0}が入力されていません。", "従業員番号");
+                return false;
+            }
+
             if (string.IsNullOrEmpty(this.LastNameTextBox.Text))
             {
-                Messages.ShowError("{0}が入力されていません。", "名前（性）");
+                Messages.ShowError("{0}が入力されていません。", "氏名（性）");
                 return false;
             }
 
             if (string.IsNullOrEmpty(this.FirstNameTextBox.Text))
             {
-                Messages.ShowError("{0}が入力されていません。", "名前（名）");
+                Messages.ShowError("{0}が入力されていません。", "氏名（名）");
                 return false;
             }
 
             if (string.IsNullOrEmpty(this.RubyNameTextBox.Text))
             {
-                Messages.ShowError("{0}が入力されていません。", "ﾖﾐｶﾞﾅ");
+                Messages.ShowError("{0}が入力されていません。", "氏名（ｶﾅ）");
                 return false;
             }
 
@@ -123,6 +137,21 @@ namespace HotelManagement.View.Dialog
             {
                 Messages.ShowError("{0}が入力されていません。", "Eメール");
                 return false;
+            }
+
+            if (this.UpdatePasswordCheckBox.Checked)
+            {
+                if (string.IsNullOrEmpty(this.PasswordTextBox.Text))
+                {
+                    Messages.ShowError("{0}が入力されていません。", "新しいパスワード");
+                    return false;
+                }
+
+                if (string.IsNullOrEmpty(this.RePasswordTextBox.Text))
+                {
+                    Messages.ShowError("{0}が入力されていません。", "パスワード再入力");
+                    return false;
+                }
             }
 
             return true;
@@ -146,18 +175,18 @@ namespace HotelManagement.View.Dialog
         /// </summary>
         private void UpdateEvent()
         {
+            this.Employee.EmployeeNo = this.EmployeeNoTextBox.Text;
             this.Employee.LastName = this.LastNameTextBox.Text;
             this.Employee.FirstName = this.FirstNameTextBox.Text;
             this.Employee.RubyName = this.RubyNameTextBox.Text;
             this.Employee.Email = this.EmailTextBox.Text;
             this.Employee.EntryDate = this.EntryDateTimePicker.Value;
-            if (this.Employee.IsLeave)
+
+            this.Employee.LeaveDate = this.IsLeaveCheckBox.Checked ? (DateTime?)this.LeaveDateTimePicker.Value : null;
+
+            if(this.UpdatePasswordCheckBox.Checked)
             {
-                this.Employee.LeaveDate = this.LeaveDateTimePicker.Value;
-            }
-            else if (this.IsLeaveCheckBox.Checked)
-            {
-                this.Employee.LeaveDate = this.LeaveDateTimePicker2.Value;
+                this.Employee.Password = BcryptUtil.GetHashedString(this.PasswordTextBox.Text);
             }
 
             var vm = new ModelQuillInjector<EmployeeModel>();
@@ -167,5 +196,6 @@ namespace HotelManagement.View.Dialog
         }
 
         #endregion
+
     }
 }

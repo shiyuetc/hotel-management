@@ -2,6 +2,9 @@
 
 namespace HotelManagement.View
 {
+    /// <summary>
+    /// ベースフォームクラス
+    /// </summary>
     public partial class UcBase : UserControl
     {
         #region メンバ変数

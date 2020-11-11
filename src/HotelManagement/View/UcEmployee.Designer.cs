@@ -58,6 +58,7 @@
             this.EmployeeListView.TabIndex = 3;
             this.EmployeeListView.UseCompatibleStateImageBehavior = false;
             this.EmployeeListView.View = System.Windows.Forms.View.Details;
+            this.EmployeeListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.EmployeeListView_MouseDoubleClick);
             // 
             // IdColumnHeader
             // 
