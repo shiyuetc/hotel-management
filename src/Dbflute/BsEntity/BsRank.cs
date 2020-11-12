@@ -55,7 +55,7 @@ namespace Dbflute.ExEntity {
         //                                                                       Attribute
         //                                                                       =========
         #region Attribute
-        /// <summary>code: {PK, NotNull, bpchar(3)}</summary>
+        /// <summary>code: {PK, NotNull, bpchar(3), classification=Rank}</summary>
         protected String _code;
 
         /// <summary>english_name: {NotNull, varchar(20)}</summary>
@@ -77,6 +77,130 @@ namespace Dbflute.ExEntity {
         //                                                                          DBMeta
         //                                                                          ======
         public DBMeta DBMeta { get { return DBMetaInstanceHandler.FindDBMeta(TableDbName); } }
+
+        // ===============================================================================
+        //                                                         Classification Property
+        //                                                         =======================
+        #region Classification Property
+        public CDef.Rank CodeAsRank { get {
+            return CDef.Rank.CodeOf(_code);
+        } set {
+            Code = value != null ? value.Code : null;
+        }}
+
+        #endregion
+
+        // ===============================================================================
+        //                                                          Classification Setting
+        //                                                          ======================
+        #region Classification Setting
+        /// <summary>
+        /// Set the value of code as SystemMaintenancer.
+        /// <![CDATA[
+        /// System Maintenancer: システム保守
+        /// ]]>
+        /// </summary>
+        public void SetCode_SystemMaintenancer() {
+            CodeAsRank = CDef.Rank.SystemMaintenancer;
+        }
+
+        /// <summary>
+        /// Set the value of code as AssistantManager.
+        /// <![CDATA[
+        /// Assistant Manager: アシスタントマネージャー
+        /// ]]>
+        /// </summary>
+        public void SetCode_AssistantManager() {
+            CodeAsRank = CDef.Rank.AssistantManager;
+        }
+
+        /// <summary>
+        /// Set the value of code as FinancialController.
+        /// <![CDATA[
+        /// Financial Controller: ファイナンシャルコントローラー
+        /// ]]>
+        /// </summary>
+        public void SetCode_FinancialController() {
+            CodeAsRank = CDef.Rank.FinancialController;
+        }
+
+        /// <summary>
+        /// Set the value of code as FrontClerk.
+        /// <![CDATA[
+        /// Front Clerk: フロントクラーク
+        /// ]]>
+        /// </summary>
+        public void SetCode_FrontClerk() {
+            CodeAsRank = CDef.Rank.FrontClerk;
+        }
+
+        #endregion
+
+        // ===============================================================================
+        //                                                    Classification Determination
+        //                                                    ============================
+        #region Classification Determination
+        /// <summary>
+        /// Is the value of code 'SystemMaintenancer'?
+        /// <![CDATA[
+        /// The difference of capital letters and small letters is NOT distinguished.
+        /// If the value is null, this method returns false!
+        /// System Maintenancer: システム保守
+        /// ]]>
+        /// </summary>
+        public bool IsCodeSystemMaintenancer {
+            get {
+                CDef.Rank cls = CodeAsRank;
+                return cls != null ? cls.Equals(CDef.Rank.SystemMaintenancer) : false;
+            }
+        }
+
+        /// <summary>
+        /// Is the value of code 'AssistantManager'?
+        /// <![CDATA[
+        /// The difference of capital letters and small letters is NOT distinguished.
+        /// If the value is null, this method returns false!
+        /// Assistant Manager: アシスタントマネージャー
+        /// ]]>
+        /// </summary>
+        public bool IsCodeAssistantManager {
+            get {
+                CDef.Rank cls = CodeAsRank;
+                return cls != null ? cls.Equals(CDef.Rank.AssistantManager) : false;
+            }
+        }
+
+        /// <summary>
+        /// Is the value of code 'FinancialController'?
+        /// <![CDATA[
+        /// The difference of capital letters and small letters is NOT distinguished.
+        /// If the value is null, this method returns false!
+        /// Financial Controller: ファイナンシャルコントローラー
+        /// ]]>
+        /// </summary>
+        public bool IsCodeFinancialController {
+            get {
+                CDef.Rank cls = CodeAsRank;
+                return cls != null ? cls.Equals(CDef.Rank.FinancialController) : false;
+            }
+        }
+
+        /// <summary>
+        /// Is the value of code 'FrontClerk'?
+        /// <![CDATA[
+        /// The difference of capital letters and small letters is NOT distinguished.
+        /// If the value is null, this method returns false!
+        /// Front Clerk: フロントクラーク
+        /// ]]>
+        /// </summary>
+        public bool IsCodeFrontClerk {
+            get {
+                CDef.Rank cls = CodeAsRank;
+                return cls != null ? cls.Equals(CDef.Rank.FrontClerk) : false;
+            }
+        }
+
+        #endregion
 
         // ===============================================================================
         //                                                                Foreign Property
@@ -192,7 +316,7 @@ namespace Dbflute.ExEntity {
         //                                                                        Accessor
         //                                                                        ========
         #region Accessor
-        /// <summary>code: {PK, NotNull, bpchar(3)}</summary>
+        /// <summary>code: {PK, NotNull, bpchar(3), classification=Rank}</summary>
         [Seasar.Dao.Attrs.Column("code")]
         public String Code {
             get { return _code; }

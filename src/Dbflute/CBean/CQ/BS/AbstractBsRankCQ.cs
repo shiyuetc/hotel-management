@@ -21,20 +21,67 @@ namespace Dbflute.CBean.CQ.BS {
         public override String getTableSqlName() { return "rank"; }
 
         public void SetCode_Equal(String v) { DoSetCode_Equal(fRES(v)); }
+        /// <summary>
+        /// Set the value of SystemMaintenancer of code as equal. { = }
+        /// System Maintenancer: システム保守
+        /// </summary>
+        public void SetCode_Equal_SystemMaintenancer() {
+            DoSetCode_Equal(CDef.Rank.SystemMaintenancer.Code);
+        }
+        /// <summary>
+        /// Set the value of AssistantManager of code as equal. { = }
+        /// Assistant Manager: アシスタントマネージャー
+        /// </summary>
+        public void SetCode_Equal_AssistantManager() {
+            DoSetCode_Equal(CDef.Rank.AssistantManager.Code);
+        }
+        /// <summary>
+        /// Set the value of FinancialController of code as equal. { = }
+        /// Financial Controller: ファイナンシャルコントローラー
+        /// </summary>
+        public void SetCode_Equal_FinancialController() {
+            DoSetCode_Equal(CDef.Rank.FinancialController.Code);
+        }
+        /// <summary>
+        /// Set the value of FrontClerk of code as equal. { = }
+        /// Front Clerk: フロントクラーク
+        /// </summary>
+        public void SetCode_Equal_FrontClerk() {
+            DoSetCode_Equal(CDef.Rank.FrontClerk.Code);
+        }
         protected void DoSetCode_Equal(String v) { regCode(CK_EQ, v); }
         public void SetCode_NotEqual(String v) { DoSetCode_NotEqual(fRES(v)); }
+        /// <summary>
+        /// Set the value of SystemMaintenancer of code as notEqual. { &lt;&gt; }
+        /// System Maintenancer: システム保守
+        /// </summary>
+        public void SetCode_NotEqual_SystemMaintenancer() {
+            DoSetCode_NotEqual(CDef.Rank.SystemMaintenancer.Code);
+        }
+        /// <summary>
+        /// Set the value of AssistantManager of code as notEqual. { &lt;&gt; }
+        /// Assistant Manager: アシスタントマネージャー
+        /// </summary>
+        public void SetCode_NotEqual_AssistantManager() {
+            DoSetCode_NotEqual(CDef.Rank.AssistantManager.Code);
+        }
+        /// <summary>
+        /// Set the value of FinancialController of code as notEqual. { &lt;&gt; }
+        /// Financial Controller: ファイナンシャルコントローラー
+        /// </summary>
+        public void SetCode_NotEqual_FinancialController() {
+            DoSetCode_NotEqual(CDef.Rank.FinancialController.Code);
+        }
+        /// <summary>
+        /// Set the value of FrontClerk of code as notEqual. { &lt;&gt; }
+        /// Front Clerk: フロントクラーク
+        /// </summary>
+        public void SetCode_NotEqual_FrontClerk() {
+            DoSetCode_NotEqual(CDef.Rank.FrontClerk.Code);
+        }
         protected void DoSetCode_NotEqual(String v) { regCode(CK_NES, v); }
-        public void SetCode_GreaterThan(String v) { regCode(CK_GT, fRES(v)); }
-        public void SetCode_LessThan(String v) { regCode(CK_LT, fRES(v)); }
-        public void SetCode_GreaterEqual(String v) { regCode(CK_GE, fRES(v)); }
-        public void SetCode_LessEqual(String v) { regCode(CK_LE, fRES(v)); }
         public void SetCode_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValueCode(), "code"); }
         public void SetCode_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValueCode(), "code"); }
-        public void SetCode_PrefixSearch(String v) { SetCode_LikeSearch(v, cLSOP()); }
-        public void SetCode_LikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_LS, fRES(v), getCValueCode(), "code", option); }
-        public void SetCode_NotLikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_NLS, fRES(v), getCValueCode(), "code", option); }
         public void ExistsEmployeeList(SubQuery<EmployeeCB> subQuery) {
             assertObjectNotNull("subQuery<EmployeeCB>", subQuery);
             EmployeeCB cb = new EmployeeCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);

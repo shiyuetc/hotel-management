@@ -76,7 +76,7 @@ namespace Dbflute.ExEntity {
         /// <summary>password: {NotNull, varchar(255)}</summary>
         protected String _password;
 
-        /// <summary>rank_code: {NotNull, bpchar(3), FK to rank}</summary>
+        /// <summary>rank_code: {NotNull, bpchar(3), FK to rank, classification=Rank}</summary>
         protected String _rankCode;
 
         /// <summary>entry_date: {NotNull, timestamp(26, 3)}</summary>
@@ -98,6 +98,130 @@ namespace Dbflute.ExEntity {
         //                                                                          DBMeta
         //                                                                          ======
         public DBMeta DBMeta { get { return DBMetaInstanceHandler.FindDBMeta(TableDbName); } }
+
+        // ===============================================================================
+        //                                                         Classification Property
+        //                                                         =======================
+        #region Classification Property
+        public CDef.Rank RankCodeAsRank { get {
+            return CDef.Rank.CodeOf(_rankCode);
+        } set {
+            RankCode = value != null ? value.Code : null;
+        }}
+
+        #endregion
+
+        // ===============================================================================
+        //                                                          Classification Setting
+        //                                                          ======================
+        #region Classification Setting
+        /// <summary>
+        /// Set the value of rankCode as SystemMaintenancer.
+        /// <![CDATA[
+        /// System Maintenancer: システム保守
+        /// ]]>
+        /// </summary>
+        public void SetRankCode_SystemMaintenancer() {
+            RankCodeAsRank = CDef.Rank.SystemMaintenancer;
+        }
+
+        /// <summary>
+        /// Set the value of rankCode as AssistantManager.
+        /// <![CDATA[
+        /// Assistant Manager: アシスタントマネージャー
+        /// ]]>
+        /// </summary>
+        public void SetRankCode_AssistantManager() {
+            RankCodeAsRank = CDef.Rank.AssistantManager;
+        }
+
+        /// <summary>
+        /// Set the value of rankCode as FinancialController.
+        /// <![CDATA[
+        /// Financial Controller: ファイナンシャルコントローラー
+        /// ]]>
+        /// </summary>
+        public void SetRankCode_FinancialController() {
+            RankCodeAsRank = CDef.Rank.FinancialController;
+        }
+
+        /// <summary>
+        /// Set the value of rankCode as FrontClerk.
+        /// <![CDATA[
+        /// Front Clerk: フロントクラーク
+        /// ]]>
+        /// </summary>
+        public void SetRankCode_FrontClerk() {
+            RankCodeAsRank = CDef.Rank.FrontClerk;
+        }
+
+        #endregion
+
+        // ===============================================================================
+        //                                                    Classification Determination
+        //                                                    ============================
+        #region Classification Determination
+        /// <summary>
+        /// Is the value of rankCode 'SystemMaintenancer'?
+        /// <![CDATA[
+        /// The difference of capital letters and small letters is NOT distinguished.
+        /// If the value is null, this method returns false!
+        /// System Maintenancer: システム保守
+        /// ]]>
+        /// </summary>
+        public bool IsRankCodeSystemMaintenancer {
+            get {
+                CDef.Rank cls = RankCodeAsRank;
+                return cls != null ? cls.Equals(CDef.Rank.SystemMaintenancer) : false;
+            }
+        }
+
+        /// <summary>
+        /// Is the value of rankCode 'AssistantManager'?
+        /// <![CDATA[
+        /// The difference of capital letters and small letters is NOT distinguished.
+        /// If the value is null, this method returns false!
+        /// Assistant Manager: アシスタントマネージャー
+        /// ]]>
+        /// </summary>
+        public bool IsRankCodeAssistantManager {
+            get {
+                CDef.Rank cls = RankCodeAsRank;
+                return cls != null ? cls.Equals(CDef.Rank.AssistantManager) : false;
+            }
+        }
+
+        /// <summary>
+        /// Is the value of rankCode 'FinancialController'?
+        /// <![CDATA[
+        /// The difference of capital letters and small letters is NOT distinguished.
+        /// If the value is null, this method returns false!
+        /// Financial Controller: ファイナンシャルコントローラー
+        /// ]]>
+        /// </summary>
+        public bool IsRankCodeFinancialController {
+            get {
+                CDef.Rank cls = RankCodeAsRank;
+                return cls != null ? cls.Equals(CDef.Rank.FinancialController) : false;
+            }
+        }
+
+        /// <summary>
+        /// Is the value of rankCode 'FrontClerk'?
+        /// <![CDATA[
+        /// The difference of capital letters and small letters is NOT distinguished.
+        /// If the value is null, this method returns false!
+        /// Front Clerk: フロントクラーク
+        /// ]]>
+        /// </summary>
+        public bool IsRankCodeFrontClerk {
+            get {
+                CDef.Rank cls = RankCodeAsRank;
+                return cls != null ? cls.Equals(CDef.Rank.FrontClerk) : false;
+            }
+        }
+
+        #endregion
 
         // ===============================================================================
         //                                                                Foreign Property
@@ -291,7 +415,7 @@ namespace Dbflute.ExEntity {
             }
         }
 
-        /// <summary>rank_code: {NotNull, bpchar(3), FK to rank}</summary>
+        /// <summary>rank_code: {NotNull, bpchar(3), FK to rank, classification=Rank}</summary>
         [Seasar.Dao.Attrs.Column("rank_code")]
         public String RankCode {
             get { return _rankCode; }

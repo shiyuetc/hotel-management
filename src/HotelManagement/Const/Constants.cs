@@ -1,4 +1,5 @@
 ﻿
+using Dbflute.AllCommon;
 using HotelManagement.Enums;
 using System.Collections.Generic;
 
@@ -20,7 +21,7 @@ namespace HotelManagement.Const
         public static Dictionary<string, Display[]> Permissions = new Dictionary<string, Display[]>()
         {
             { 
-                Rank.SystemMaintenancer, 
+                CDef.Rank.SystemMaintenancer.Code, 
                 new Display[] { 
                     Display.Reserve,
                     Display.History,
@@ -31,7 +32,7 @@ namespace HotelManagement.Const
                 } 
             },
             {
-                Rank.AssistantManager,
+                CDef.Rank.AssistantManager.Code,
                 new Display[] {
                     Display.Reserve,
                     Display.History,
@@ -42,7 +43,7 @@ namespace HotelManagement.Const
                 }
             },
             {
-                Rank.FinancialController,
+                CDef.Rank.FinancialController.Code,
                 new Display[] {
                     Display.History,
                     Display.Sale,
@@ -51,38 +52,12 @@ namespace HotelManagement.Const
                 }
             },
             {
-                Rank.FrontClerk,
+                CDef.Rank.FrontClerk.Code,
                 new Display[] {
                     Display.Reserve,
                     Display.History
                 }
             }
         };
-
-        /// <summary>
-        /// 従業員の職位を表す構造体
-        /// </summary>
-        public struct Rank
-        {
-            /// <summary>
-            /// システム保守
-            /// </summary>
-            public static readonly string SystemMaintenancer = "000";
-
-            /// <summary>
-            /// アシスタントマネージャー
-            /// </summary>
-            public static readonly string AssistantManager = "001";
-
-            /// <summary>
-            /// ファイナンシャルコントローラー
-            /// </summary>
-            public static readonly string FinancialController = "002";
-
-            /// <summary>
-            /// フロントクラーク
-            /// </summary>
-            public static readonly string FrontClerk = "003";
-        }
     }
 }

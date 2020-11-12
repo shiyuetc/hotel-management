@@ -144,20 +144,67 @@ namespace Dbflute.CBean.CQ.BS {
         protected abstract ConditionValue getCValuePassword();
 
         public void SetRankCode_Equal(String v) { DoSetRankCode_Equal(fRES(v)); }
+        /// <summary>
+        /// Set the value of SystemMaintenancer of rankCode as equal. { = }
+        /// System Maintenancer: システム保守
+        /// </summary>
+        public void SetRankCode_Equal_SystemMaintenancer() {
+            DoSetRankCode_Equal(CDef.Rank.SystemMaintenancer.Code);
+        }
+        /// <summary>
+        /// Set the value of AssistantManager of rankCode as equal. { = }
+        /// Assistant Manager: アシスタントマネージャー
+        /// </summary>
+        public void SetRankCode_Equal_AssistantManager() {
+            DoSetRankCode_Equal(CDef.Rank.AssistantManager.Code);
+        }
+        /// <summary>
+        /// Set the value of FinancialController of rankCode as equal. { = }
+        /// Financial Controller: ファイナンシャルコントローラー
+        /// </summary>
+        public void SetRankCode_Equal_FinancialController() {
+            DoSetRankCode_Equal(CDef.Rank.FinancialController.Code);
+        }
+        /// <summary>
+        /// Set the value of FrontClerk of rankCode as equal. { = }
+        /// Front Clerk: フロントクラーク
+        /// </summary>
+        public void SetRankCode_Equal_FrontClerk() {
+            DoSetRankCode_Equal(CDef.Rank.FrontClerk.Code);
+        }
         protected void DoSetRankCode_Equal(String v) { regRankCode(CK_EQ, v); }
         public void SetRankCode_NotEqual(String v) { DoSetRankCode_NotEqual(fRES(v)); }
+        /// <summary>
+        /// Set the value of SystemMaintenancer of rankCode as notEqual. { &lt;&gt; }
+        /// System Maintenancer: システム保守
+        /// </summary>
+        public void SetRankCode_NotEqual_SystemMaintenancer() {
+            DoSetRankCode_NotEqual(CDef.Rank.SystemMaintenancer.Code);
+        }
+        /// <summary>
+        /// Set the value of AssistantManager of rankCode as notEqual. { &lt;&gt; }
+        /// Assistant Manager: アシスタントマネージャー
+        /// </summary>
+        public void SetRankCode_NotEqual_AssistantManager() {
+            DoSetRankCode_NotEqual(CDef.Rank.AssistantManager.Code);
+        }
+        /// <summary>
+        /// Set the value of FinancialController of rankCode as notEqual. { &lt;&gt; }
+        /// Financial Controller: ファイナンシャルコントローラー
+        /// </summary>
+        public void SetRankCode_NotEqual_FinancialController() {
+            DoSetRankCode_NotEqual(CDef.Rank.FinancialController.Code);
+        }
+        /// <summary>
+        /// Set the value of FrontClerk of rankCode as notEqual. { &lt;&gt; }
+        /// Front Clerk: フロントクラーク
+        /// </summary>
+        public void SetRankCode_NotEqual_FrontClerk() {
+            DoSetRankCode_NotEqual(CDef.Rank.FrontClerk.Code);
+        }
         protected void DoSetRankCode_NotEqual(String v) { regRankCode(CK_NES, v); }
-        public void SetRankCode_GreaterThan(String v) { regRankCode(CK_GT, fRES(v)); }
-        public void SetRankCode_LessThan(String v) { regRankCode(CK_LT, fRES(v)); }
-        public void SetRankCode_GreaterEqual(String v) { regRankCode(CK_GE, fRES(v)); }
-        public void SetRankCode_LessEqual(String v) { regRankCode(CK_LE, fRES(v)); }
         public void SetRankCode_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValueRankCode(), "rank_code"); }
         public void SetRankCode_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValueRankCode(), "rank_code"); }
-        public void SetRankCode_PrefixSearch(String v) { SetRankCode_LikeSearch(v, cLSOP()); }
-        public void SetRankCode_LikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_LS, fRES(v), getCValueRankCode(), "rank_code", option); }
-        public void SetRankCode_NotLikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_NLS, fRES(v), getCValueRankCode(), "rank_code", option); }
         public void InScopeRank(SubQuery<RankCB> subQuery) {
             assertObjectNotNull("subQuery<RankCB>", subQuery);
             RankCB cb = new RankCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);

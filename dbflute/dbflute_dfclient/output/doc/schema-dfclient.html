@@ -268,6 +268,7 @@ dl.procedurelist dd.column pre {
 <h1>Schema for dfclient (postgresql)</h1>
 <p class="mainschema">generated from <strong>hotel_management.public</strong></p>
 <div class="navilinkarea">
+<p class="sublink"><a href="#cdef">Classification Definition</a></p>
 <p class="sisterlink"><a href="./history-dfclient.html">to HistoryHTML</a></p>
 </div>
 
@@ -565,7 +566,7 @@ employee
 		<td class="sizecell"> 3 </td>
 		<td class="relcell"><a href="#rank" title="employee_rank_code_fkey">rank</a>&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
+		<td class="relcell"><a href="#RankCls">Rank</a></td>
 		<td class="subcell">rankCode</td>
 		<td class="subcell">String</td>
 	</tr>
@@ -636,7 +637,7 @@ rank
 		<td class="sizecell"> 3 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
 		<td class="relcell"><a href="#employee" title="employee_rank_code_fkey">employee</a>&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
+		<td class="relcell"><a href="#RankCls">Rank</a></td>
 		<td class="subcell">code</td>
 		<td class="subcell">String</td>
 	</tr>
@@ -870,6 +871,58 @@ room_type
 	</tr>
 </table>
 
+<h2 id="cdef">Classification Definition</h2>
+<table summary="Classifications in the Schema">
+	<thead>
+	<tr>
+		<th>Classification</th>
+		<th>Type</th>
+		<th>Top Comment</th>
+		<th>Definition</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>Rank</td>
+		<td class="clstypecell">table</td>
+		<td>従業員の職位を表す</td>
+		<td>
+			<table class="child">
+			<tr>
+				<th id="RankCls">Code</th>
+				<th>Name</th>
+				<th>Alias</th>
+				<th>Comment</th>
+			</tr>
+			<tr>
+				<td>000</td>
+				<td>SystemMaintenancer</td>
+				<td>System Maintenancer</td>
+				<td class="commentcell">システム保守</td>
+			</tr>
+			<tr>
+				<td>001</td>
+				<td>AssistantManager</td>
+				<td>Assistant Manager</td>
+				<td class="commentcell">アシスタントマネージャー</td>
+			</tr>
+			<tr>
+				<td>002</td>
+				<td>FinancialController</td>
+				<td>Financial Controller</td>
+				<td class="commentcell">ファイナンシャルコントローラー</td>
+			</tr>
+			<tr>
+				<td>003</td>
+				<td>FrontClerk</td>
+				<td>Front Clerk</td>
+				<td class="commentcell">フロントクラーク</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	</tbody>
+</table>
 
 <script>
 /**

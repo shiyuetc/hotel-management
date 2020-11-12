@@ -186,6 +186,7 @@
     <Compile Include="AllCommon\CBean\SpecifyQuery.cs" />
     <Compile Include="AllCommon\CBean\SubQuery.cs" />
     <Compile Include="AllCommon\CBean\UnionQuery.cs" />
+    <Compile Include="AllCommon\CDef.cs" />
     <Compile Include="AllCommon\DaoReadable.cs" />
     <Compile Include="AllCommon\DaoSelector.cs" />
     <Compile Include="AllCommon\DaoWritable.cs" />

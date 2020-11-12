@@ -52,5 +52,19 @@ map:{
     #        ; comment=DESCRIPTION; orderBy=DISPLAY_ORDER
     #    }
     #}
+
+    ; Rank = list:{
+        ; map:{
+            topComment=従業員の職位を表す
+            ; codeType=String
+        }
+        ; map:{
+            ; table=rank
+            ; code=code
+            ; name=english_name
+            ; comment=japanese_name
+            ; orderBy=code
+        }
+    }
 }
 # ----------------/
