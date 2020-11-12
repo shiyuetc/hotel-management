@@ -337,6 +337,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "UcEmployeeDialog";
             this.Text = "EmployeeDialogForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UcEmployeeDialog_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

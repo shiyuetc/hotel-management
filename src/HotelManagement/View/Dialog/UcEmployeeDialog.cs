@@ -59,12 +59,27 @@ namespace HotelManagement.View.Dialog
         #region イベントハンドラ
 
         /// <summary>
+        /// フォームの終了時イベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UcEmployeeDialog_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            // 破棄確認チェック
+            if (!this.RevokeCheck())
+            {
+                e.Cancel = true;
+            }
+        }
+
+        /// <summary>
         /// 退社チェックボックスのチェック変更イベント
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void IsLeaveCheckBox_CheckedChanged(object sender, EventArgs e)
         {
+            // 退社関係の活性を切り替える
             this.LeaveDateTimePicker.Enabled = this.IsLeaveCheckBox.Checked;
         }
 
@@ -75,6 +90,7 @@ namespace HotelManagement.View.Dialog
         /// <param name="e"></param>
         private void UpdatePasswordCheckBox_CheckedChanged(object sender, EventArgs e)
         {
+            // パスワード変更関係の活性を切り替える
             this.PasswordTextBox.Enabled = this.UpdatePasswordCheckBox.Checked;
             this.RePasswordTextBox.Enabled = this.UpdatePasswordCheckBox.Checked;
         }
@@ -90,7 +106,7 @@ namespace HotelManagement.View.Dialog
             if(!this.InputCheck()) return;
 
             // 登録確認チェック
-            if (this.ConfirmCheck()) return;
+            if (!this.ConfirmCheck()) return;
 
             // データ登録処理
             this.UpdateEvent();
@@ -106,6 +122,7 @@ namespace HotelManagement.View.Dialog
         /// <param name="e"></param>
         private void CloseButton_Click(object sender, EventArgs e)
         {
+            // ダイアログを閉じる
             this.Close();
         }
 
@@ -173,7 +190,53 @@ namespace HotelManagement.View.Dialog
         /// <returns>チェックが通ればtrueを返す</returns>
         private bool ConfirmCheck()
         {
-            return !Messages.ShowConfirm("従業員を登録しますか？");
+            return Messages.ShowConfirm("従業員を登録しますか？");
+        }
+
+        /// <summary>
+        /// 破棄確認チェックを行います。
+        /// </summary>
+        /// <returns>チェックが通ればtrueを返す</returns>
+        private bool RevokeCheck()
+        {
+            // 変更フラグを定義
+            bool change = false;
+
+            // 従業員番号の変更をチェック
+            if (this.Employee.EmployeeNo != this.EmployeeNoTextBox.Text)
+            {
+                change = true;
+            }
+
+            // 氏名（性）の変更をチェック
+            else if (this.Employee.LastName != this.LastNameTextBox.Text)
+            {
+                change = true;
+            }
+
+            // 氏名（名）の変更をチェック
+            else if (this.Employee.FirstName != this.FirstNameTextBox.Text)
+            {
+                change = true;
+            }
+
+            // 氏名（ｶﾅ）の変更をチェック
+            else if (this.Employee.RubyName != this.RubyNameTextBox.Text)
+            {
+                change = true;
+            }
+
+            // Eメールの変更をチェック
+            else if (this.Employee.Email != this.EmailTextBox.Text)
+            {
+                change = true;
+            }
+
+            // 変更がない場合はtrue
+            if (!change) return true;
+
+            // 変更がある場合は破棄確認を表示
+            return Messages.ShowConfirm("変更内容を取り消しますか？");
         }
 
         #endregion
