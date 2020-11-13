@@ -34,6 +34,9 @@ namespace HotelManagement.View.Dialog
         {
             InitializeComponent();
 
+            this.UpdateLeaveDateGroup_SetEnable(false);
+            this.UpdatePasswordGroup_SetEnable(false);
+
             if (employee != null)
             {
                 this.Employee = employee;
@@ -79,8 +82,8 @@ namespace HotelManagement.View.Dialog
         /// <param name="e"></param>
         private void IsLeaveCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            // 退社関係の活性を切り替える
-            this.LeaveDateTimePicker.Enabled = this.IsLeaveCheckBox.Checked;
+            // 退職関係の活性を切り替える
+            this.UpdateLeaveDateGroup_SetEnable(this.IsLeaveCheckBox.Checked);
         }
 
         /// <summary>
@@ -91,8 +94,7 @@ namespace HotelManagement.View.Dialog
         private void UpdatePasswordCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             // パスワード変更関係の活性を切り替える
-            this.PasswordTextBox.Enabled = this.UpdatePasswordCheckBox.Checked;
-            this.RePasswordTextBox.Enabled = this.UpdatePasswordCheckBox.Checked;
+            this.UpdatePasswordGroup_SetEnable(this.UpdatePasswordCheckBox.Checked);
         }
 
         /// <summary>
@@ -124,6 +126,32 @@ namespace HotelManagement.View.Dialog
         {
             // ダイアログを閉じる
             this.Close();
+        }
+
+        #endregion
+
+        #region コントロール制御
+
+        /// <summary>
+        /// 退職関係のコントロールの活性を切り替えます。
+        /// </summary>
+        /// <param name="value">活性・非活性</param>
+        private void UpdateLeaveDateGroup_SetEnable(bool value)
+        {
+            this.LeaveDateLabel.SetEnable(value);
+            this.LeaveDateTimePicker.Enabled = value;
+        }
+
+        /// <summary>
+        /// パスワード変更関係のコントロールの活性を切り替えます。
+        /// </summary>
+        /// <param name="value">活性・非活性</param>
+        private void UpdatePasswordGroup_SetEnable(bool value)
+        {
+            this.PasswordLabel.SetEnable(value);
+            this.PasswordTextBox.Enabled = value;
+            this.RePasswordLabel.SetEnable(value);
+            this.RePasswordTextBox.Enabled = value;
         }
 
         #endregion

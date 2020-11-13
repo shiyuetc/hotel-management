@@ -28,44 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.NameLabel = new System.Windows.Forms.Label();
             this.LastNameTextBox = new System.Windows.Forms.TextBox();
             this.FirstNameTextBox = new System.Windows.Forms.TextBox();
             this.EntryDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.EntryDateLabel = new System.Windows.Forms.Label();
-            this.RnkLabel = new System.Windows.Forms.Label();
             this.RankComboBox = new System.Windows.Forms.ComboBox();
             this.EmployeeNoTextBox = new System.Windows.Forms.TextBox();
-            this.EmployeeNoLabel = new System.Windows.Forms.Label();
             this.RubyNameTextBox = new System.Windows.Forms.TextBox();
-            this.RubyNameLabel = new System.Windows.Forms.Label();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
-            this.EmailLabel = new System.Windows.Forms.Label();
             this.UpdateButton = new System.Windows.Forms.Button();
-            this.LeaveDateLabel = new System.Windows.Forms.Label();
             this.LeaveDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.IsLeaveCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.PasswordTextBox = new System.Windows.Forms.TextBox();
-            this.UpdatePasswordCheckBox = new System.Windows.Forms.CheckBox();
+            this.LeaveDateLabel = new HotelManagement.CustomControls.ExLabel();
+            this.exLabel6 = new HotelManagement.CustomControls.ExLabel();
+            this.exLabel5 = new HotelManagement.CustomControls.ExLabel();
+            this.exLabel4 = new HotelManagement.CustomControls.ExLabel();
+            this.exLabel3 = new HotelManagement.CustomControls.ExLabel();
+            this.exLabel2 = new HotelManagement.CustomControls.ExLabel();
+            this.exLabel1 = new HotelManagement.CustomControls.ExLabel();
             this.RePasswordTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.UpdatePasswordCheckBox = new System.Windows.Forms.CheckBox();
+            this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.CloseButton = new System.Windows.Forms.Button();
+            this.PasswordLabel = new HotelManagement.CustomControls.ExLabel();
+            this.RePasswordLabel = new HotelManagement.CustomControls.ExLabel();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // NameLabel
-            // 
-            this.NameLabel.BackColor = System.Drawing.Color.RoyalBlue;
-            this.NameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.NameLabel.ForeColor = System.Drawing.Color.White;
-            this.NameLabel.Location = new System.Drawing.Point(26, 55);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(100, 19);
-            this.NameLabel.TabIndex = 0;
-            this.NameLabel.Text = "氏名";
-            this.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // LastNameTextBox
             // 
@@ -90,30 +78,6 @@
             this.EntryDateTimePicker.Size = new System.Drawing.Size(200, 19);
             this.EntryDateTimePicker.TabIndex = 6;
             // 
-            // EntryDateLabel
-            // 
-            this.EntryDateLabel.BackColor = System.Drawing.Color.RoyalBlue;
-            this.EntryDateLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.EntryDateLabel.ForeColor = System.Drawing.Color.White;
-            this.EntryDateLabel.Location = new System.Drawing.Point(26, 156);
-            this.EntryDateLabel.Name = "EntryDateLabel";
-            this.EntryDateLabel.Size = new System.Drawing.Size(100, 19);
-            this.EntryDateLabel.TabIndex = 5;
-            this.EntryDateLabel.Text = "入社年月日";
-            this.EntryDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // RnkLabel
-            // 
-            this.RnkLabel.BackColor = System.Drawing.Color.RoyalBlue;
-            this.RnkLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.RnkLabel.ForeColor = System.Drawing.Color.White;
-            this.RnkLabel.Location = new System.Drawing.Point(26, 105);
-            this.RnkLabel.Name = "RnkLabel";
-            this.RnkLabel.Size = new System.Drawing.Size(100, 19);
-            this.RnkLabel.TabIndex = 8;
-            this.RnkLabel.Text = "職位";
-            this.RnkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // RankComboBox
             // 
             this.RankComboBox.Enabled = false;
@@ -133,18 +97,6 @@
             this.EmployeeNoTextBox.TabIndex = 0;
             this.EmployeeNoTextBox.TabStop = false;
             // 
-            // EmployeeNoLabel
-            // 
-            this.EmployeeNoLabel.BackColor = System.Drawing.Color.RoyalBlue;
-            this.EmployeeNoLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.EmployeeNoLabel.ForeColor = System.Drawing.Color.White;
-            this.EmployeeNoLabel.Location = new System.Drawing.Point(26, 30);
-            this.EmployeeNoLabel.Name = "EmployeeNoLabel";
-            this.EmployeeNoLabel.Size = new System.Drawing.Size(100, 19);
-            this.EmployeeNoLabel.TabIndex = 10;
-            this.EmployeeNoLabel.Text = "従業員番号";
-            this.EmployeeNoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // RubyNameTextBox
             // 
             this.RubyNameTextBox.Location = new System.Drawing.Point(132, 80);
@@ -153,18 +105,6 @@
             this.RubyNameTextBox.Size = new System.Drawing.Size(200, 19);
             this.RubyNameTextBox.TabIndex = 3;
             // 
-            // RubyNameLabel
-            // 
-            this.RubyNameLabel.BackColor = System.Drawing.Color.RoyalBlue;
-            this.RubyNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.RubyNameLabel.ForeColor = System.Drawing.Color.White;
-            this.RubyNameLabel.Location = new System.Drawing.Point(26, 80);
-            this.RubyNameLabel.Name = "RubyNameLabel";
-            this.RubyNameLabel.Size = new System.Drawing.Size(100, 19);
-            this.RubyNameLabel.TabIndex = 8;
-            this.RubyNameLabel.Text = "氏名(ｶﾅ)";
-            this.RubyNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // EmailTextBox
             // 
             this.EmailTextBox.Location = new System.Drawing.Point(132, 131);
@@ -172,18 +112,6 @@
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(200, 19);
             this.EmailTextBox.TabIndex = 5;
-            // 
-            // EmailLabel
-            // 
-            this.EmailLabel.BackColor = System.Drawing.Color.RoyalBlue;
-            this.EmailLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.EmailLabel.ForeColor = System.Drawing.Color.White;
-            this.EmailLabel.Location = new System.Drawing.Point(26, 131);
-            this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(100, 19);
-            this.EmailLabel.TabIndex = 6;
-            this.EmailLabel.Text = "Eメール";
-            this.EmailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // UpdateButton
             // 
@@ -196,24 +124,11 @@
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
-            // LeaveDateLabel
-            // 
-            this.LeaveDateLabel.BackColor = System.Drawing.Color.RoyalBlue;
-            this.LeaveDateLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LeaveDateLabel.ForeColor = System.Drawing.Color.White;
-            this.LeaveDateLabel.Location = new System.Drawing.Point(26, 203);
-            this.LeaveDateLabel.Name = "LeaveDateLabel";
-            this.LeaveDateLabel.Size = new System.Drawing.Size(100, 19);
-            this.LeaveDateLabel.TabIndex = 12;
-            this.LeaveDateLabel.Text = "退社年月日";
-            this.LeaveDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // LeaveDateTimePicker
             // 
             this.LeaveDateTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.LeaveDateTimePicker.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLight;
             this.LeaveDateTimePicker.CustomFormat = "";
-            this.LeaveDateTimePicker.Enabled = false;
             this.LeaveDateTimePicker.Location = new System.Drawing.Point(132, 203);
             this.LeaveDateTimePicker.Name = "LeaveDateTimePicker";
             this.LeaveDateTimePicker.Size = new System.Drawing.Size(200, 19);
@@ -227,33 +142,33 @@
             this.IsLeaveCheckBox.Name = "IsLeaveCheckBox";
             this.IsLeaveCheckBox.Size = new System.Drawing.Size(200, 16);
             this.IsLeaveCheckBox.TabIndex = 15;
-            this.IsLeaveCheckBox.Text = "退社";
+            this.IsLeaveCheckBox.Text = "退職";
             this.IsLeaveCheckBox.UseVisualStyleBackColor = false;
             this.IsLeaveCheckBox.CheckedChanged += new System.EventHandler(this.IsLeaveCheckBox_CheckedChanged);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.RePasswordLabel);
+            this.groupBox1.Controls.Add(this.PasswordLabel);
+            this.groupBox1.Controls.Add(this.LeaveDateLabel);
+            this.groupBox1.Controls.Add(this.exLabel6);
+            this.groupBox1.Controls.Add(this.exLabel5);
+            this.groupBox1.Controls.Add(this.exLabel4);
+            this.groupBox1.Controls.Add(this.exLabel3);
+            this.groupBox1.Controls.Add(this.exLabel2);
+            this.groupBox1.Controls.Add(this.exLabel1);
             this.groupBox1.Controls.Add(this.RePasswordTextBox);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.UpdatePasswordCheckBox);
             this.groupBox1.Controls.Add(this.PasswordTextBox);
             this.groupBox1.Controls.Add(this.EmployeeNoTextBox);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.RnkLabel);
             this.groupBox1.Controls.Add(this.IsLeaveCheckBox);
-            this.groupBox1.Controls.Add(this.NameLabel);
-            this.groupBox1.Controls.Add(this.LeaveDateLabel);
-            this.groupBox1.Controls.Add(this.EntryDateLabel);
             this.groupBox1.Controls.Add(this.FirstNameTextBox);
             this.groupBox1.Controls.Add(this.RankComboBox);
-            this.groupBox1.Controls.Add(this.RubyNameLabel);
             this.groupBox1.Controls.Add(this.EntryDateTimePicker);
             this.groupBox1.Controls.Add(this.LeaveDateTimePicker);
             this.groupBox1.Controls.Add(this.RubyNameTextBox);
             this.groupBox1.Controls.Add(this.EmailTextBox);
             this.groupBox1.Controls.Add(this.LastNameTextBox);
-            this.groupBox1.Controls.Add(this.EmployeeNoLabel);
-            this.groupBox1.Controls.Add(this.EmailLabel);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(360, 318);
@@ -261,27 +176,98 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "基本情報";
             // 
-            // label2
+            // LeaveDateLabel
             // 
-            this.label2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(26, 250);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 19);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "新しいパスワード";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LeaveDateLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
+            this.LeaveDateLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.LeaveDateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.LeaveDateLabel.Location = new System.Drawing.Point(26, 203);
+            this.LeaveDateLabel.Name = "LeaveDateLabel";
+            this.LeaveDateLabel.Size = new System.Drawing.Size(100, 19);
+            this.LeaveDateLabel.TabIndex = 25;
+            this.LeaveDateLabel.Text = "退社年月日";
+            this.LeaveDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // PasswordTextBox
+            // exLabel6
             // 
-            this.PasswordTextBox.Enabled = false;
-            this.PasswordTextBox.Location = new System.Drawing.Point(132, 250);
-            this.PasswordTextBox.MaxLength = 50;
-            this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.PasswordChar = '●';
-            this.PasswordTextBox.Size = new System.Drawing.Size(200, 19);
-            this.PasswordTextBox.TabIndex = 9;
+            this.exLabel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
+            this.exLabel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.exLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.exLabel6.Location = new System.Drawing.Point(26, 156);
+            this.exLabel6.Name = "exLabel6";
+            this.exLabel6.Size = new System.Drawing.Size(100, 19);
+            this.exLabel6.TabIndex = 24;
+            this.exLabel6.Text = "入社年月日";
+            this.exLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // exLabel5
+            // 
+            this.exLabel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
+            this.exLabel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.exLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.exLabel5.Location = new System.Drawing.Point(26, 131);
+            this.exLabel5.Name = "exLabel5";
+            this.exLabel5.Size = new System.Drawing.Size(100, 19);
+            this.exLabel5.TabIndex = 23;
+            this.exLabel5.Text = "Eメール";
+            this.exLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // exLabel4
+            // 
+            this.exLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
+            this.exLabel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.exLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.exLabel4.Location = new System.Drawing.Point(26, 106);
+            this.exLabel4.Name = "exLabel4";
+            this.exLabel4.Size = new System.Drawing.Size(100, 19);
+            this.exLabel4.TabIndex = 22;
+            this.exLabel4.Text = "職位";
+            this.exLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // exLabel3
+            // 
+            this.exLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
+            this.exLabel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.exLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.exLabel3.Location = new System.Drawing.Point(26, 80);
+            this.exLabel3.Name = "exLabel3";
+            this.exLabel3.Size = new System.Drawing.Size(100, 19);
+            this.exLabel3.TabIndex = 21;
+            this.exLabel3.Text = "氏名（ｶﾅ）";
+            this.exLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // exLabel2
+            // 
+            this.exLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
+            this.exLabel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.exLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.exLabel2.Location = new System.Drawing.Point(26, 55);
+            this.exLabel2.Name = "exLabel2";
+            this.exLabel2.Size = new System.Drawing.Size(100, 19);
+            this.exLabel2.TabIndex = 20;
+            this.exLabel2.Text = "氏名";
+            this.exLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // exLabel1
+            // 
+            this.exLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
+            this.exLabel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.exLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.exLabel1.Location = new System.Drawing.Point(26, 30);
+            this.exLabel1.Name = "exLabel1";
+            this.exLabel1.Size = new System.Drawing.Size(100, 19);
+            this.exLabel1.TabIndex = 19;
+            this.exLabel1.Text = "従業員番号";
+            this.exLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // RePasswordTextBox
+            // 
+            this.RePasswordTextBox.Location = new System.Drawing.Point(132, 275);
+            this.RePasswordTextBox.MaxLength = 50;
+            this.RePasswordTextBox.Name = "RePasswordTextBox";
+            this.RePasswordTextBox.PasswordChar = '●';
+            this.RePasswordTextBox.Size = new System.Drawing.Size(200, 19);
+            this.RePasswordTextBox.TabIndex = 17;
             // 
             // UpdatePasswordCheckBox
             // 
@@ -293,27 +279,14 @@
             this.UpdatePasswordCheckBox.UseVisualStyleBackColor = true;
             this.UpdatePasswordCheckBox.CheckedChanged += new System.EventHandler(this.UpdatePasswordCheckBox_CheckedChanged);
             // 
-            // RePasswordTextBox
+            // PasswordTextBox
             // 
-            this.RePasswordTextBox.Enabled = false;
-            this.RePasswordTextBox.Location = new System.Drawing.Point(132, 275);
-            this.RePasswordTextBox.MaxLength = 50;
-            this.RePasswordTextBox.Name = "RePasswordTextBox";
-            this.RePasswordTextBox.PasswordChar = '●';
-            this.RePasswordTextBox.Size = new System.Drawing.Size(200, 19);
-            this.RePasswordTextBox.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(26, 275);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 19);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "パスワード再入力";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.PasswordTextBox.Location = new System.Drawing.Point(132, 250);
+            this.PasswordTextBox.MaxLength = 50;
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.PasswordChar = '●';
+            this.PasswordTextBox.Size = new System.Drawing.Size(200, 19);
+            this.PasswordTextBox.TabIndex = 9;
             // 
             // CloseButton
             // 
@@ -325,6 +298,30 @@
             this.CloseButton.Text = "キャンセル";
             this.CloseButton.UseVisualStyleBackColor = true;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
+            // PasswordLabel
+            // 
+            this.PasswordLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
+            this.PasswordLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.PasswordLabel.Location = new System.Drawing.Point(26, 250);
+            this.PasswordLabel.Name = "PasswordLabel";
+            this.PasswordLabel.Size = new System.Drawing.Size(100, 19);
+            this.PasswordLabel.TabIndex = 26;
+            this.PasswordLabel.Text = "新しいパスワード";
+            this.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // RePasswordLabel
+            // 
+            this.RePasswordLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
+            this.RePasswordLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.RePasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.RePasswordLabel.Location = new System.Drawing.Point(26, 275);
+            this.RePasswordLabel.Name = "RePasswordLabel";
+            this.RePasswordLabel.Size = new System.Drawing.Size(100, 19);
+            this.RePasswordLabel.TabIndex = 27;
+            this.RePasswordLabel.Text = "パスワード再入力";
+            this.RePasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // UcEmployeeDialog
             // 
@@ -345,30 +342,29 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.TextBox LastNameTextBox;
         private System.Windows.Forms.TextBox FirstNameTextBox;
         private System.Windows.Forms.DateTimePicker EntryDateTimePicker;
-        private System.Windows.Forms.Label EntryDateLabel;
-        private System.Windows.Forms.Label RnkLabel;
         private System.Windows.Forms.ComboBox RankComboBox;
         private System.Windows.Forms.TextBox EmployeeNoTextBox;
-        private System.Windows.Forms.Label EmployeeNoLabel;
         private System.Windows.Forms.TextBox RubyNameTextBox;
-        private System.Windows.Forms.Label RubyNameLabel;
         private System.Windows.Forms.TextBox EmailTextBox;
-        private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.DateTimePicker LeaveDateTimePicker;
-        private System.Windows.Forms.Label LeaveDateLabel;
         private System.Windows.Forms.CheckBox IsLeaveCheckBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox RePasswordTextBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox UpdatePasswordCheckBox;
         private System.Windows.Forms.TextBox PasswordTextBox;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button CloseButton;
+        private CustomControls.ExLabel exLabel1;
+        private CustomControls.ExLabel exLabel6;
+        private CustomControls.ExLabel exLabel5;
+        private CustomControls.ExLabel exLabel4;
+        private CustomControls.ExLabel exLabel3;
+        private CustomControls.ExLabel exLabel2;
+        private CustomControls.ExLabel LeaveDateLabel;
+        private CustomControls.ExLabel RePasswordLabel;
+        private CustomControls.ExLabel PasswordLabel;
     }
 }
