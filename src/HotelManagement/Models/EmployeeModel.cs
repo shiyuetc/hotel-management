@@ -19,8 +19,25 @@ namespace HotelManagement.Models
 
         #endregion
 
+        #region Createリクエスト
+
         /// <summary>
-        /// 指定したIDと一致する従業員を取得します
+        /// 従業員を作成します。
+        /// </summary>
+        /// <param name="employee"></param>
+        /// <returns></returns>
+        public Employee CreateEmployee(Employee employee)
+        {
+            EmployeeBhv.Insert(employee);
+            return employee;
+        }
+
+        #endregion
+
+        #region Getリクエスト
+
+        /// <summary>
+        /// 指定したIDと一致する従業員を取得します。
         /// </summary>
         /// <param name="id">ID</param>
         /// <returns>取得した従業員を返す</returns>
@@ -60,7 +77,11 @@ namespace HotelManagement.Models
 
             return selectList.Any() ? selectList.ToList() : new List<Employee>();
         }
-    
+
+        #endregion
+
+        #region Updateリクエスト
+
         /// <summary>
         /// 従業員を更新します。
         /// </summary>
@@ -69,5 +90,7 @@ namespace HotelManagement.Models
         {
             this.EmployeeBhv.Update(employee);
         }
+
+        #endregion
     }
 }
