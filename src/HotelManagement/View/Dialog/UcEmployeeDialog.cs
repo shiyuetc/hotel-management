@@ -37,7 +37,11 @@ namespace HotelManagement.View.Dialog
             this.UpdateLeaveDateGroup_SetEnable(false);
             this.UpdatePasswordGroup_SetEnable(false);
 
-            if (employee != null)
+            if (employee == null)
+            {
+
+            }
+            else
             {
                 this.Employee = employee;
                 this.Text = $"{employee.FullName}";
@@ -49,7 +53,8 @@ namespace HotelManagement.View.Dialog
                 this.EmailTextBox.Text = employee.Email;
                 this.EntryDateTimePicker.Value = employee.EntryDate.Value;
 
-                if(employee.IsLeave)
+                // 退職している場合
+                if (employee.IsLeave)
                 {
                     this.IsLeaveCheckBox.Checked = true;
                     this.LeaveDateTimePicker.Value = employee.LeaveDate.Value;
@@ -256,6 +261,36 @@ namespace HotelManagement.View.Dialog
 
             // Eメールの変更をチェック
             else if (this.Employee.Email != this.EmailTextBox.Text)
+            {
+                change = true;
+            }
+
+            // 入社年月日の変更をチェック
+            else if (this.Employee.EntryDate != this.EntryDateTimePicker.Value)
+            {
+                change = true;
+            }
+
+            // 退職の変更をチェック
+            else if (this.Employee.IsLeave != this.IsLeaveCheckBox.Checked)
+            {
+                change = true;
+            }
+
+            // 退社年月日の変更をチェック
+            else if (this.Employee.IsLeave && (this.Employee.LeaveDate != this.LeaveDateTimePicker.Value))
+            {
+                change = true;
+            }
+
+            // 新しいパスワードの変更をチェック
+            else if (!string.IsNullOrEmpty(this.PasswordTextBox.Text))
+            {
+                change = true;
+            }
+
+            // パスワード再入力の変更をチェック
+            else if (!string.IsNullOrEmpty(this.RePasswordTextBox.Text))
             {
                 change = true;
             }
