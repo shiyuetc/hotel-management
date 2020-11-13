@@ -125,6 +125,9 @@
     <Compile Include="Common\BcryptUtil.cs" />
     <Compile Include="Common\ResourceUtil.cs" />
     <Compile Include="Const\Message.cs" />
+    <Compile Include="CustomControls\ExLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CustomControls\MenuBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -146,7 +149,7 @@
     <Compile Include="Common\Messages.cs" />
     <Compile Include="Common\ModelQuillInjector.cs" />
     <Compile Include="Extensions\ListExtension.cs" />
-    <Compile Include="Extensions\ExListView.cs">
+    <Compile Include="CustomControls\ExListView.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Extensions\StringExtension.cs" />
