@@ -316,5 +316,6 @@
     <EmbeddedResource Include="Resources\Images\icon_room.png" />
     <EmbeddedResource Include="Resources\Images\icon_sale.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using Dbflute.ExEntity;
+﻿using Dbflute.AllCommon;
+using Dbflute.ExEntity;
 using HotelManagement.Common;
 using HotelManagement.Models;
 using System;
@@ -42,7 +43,16 @@ namespace HotelManagement.View.Dialog
         {
             InitializeComponent();
 
-            this.Employee = employee ?? new Employee();
+            this.Employee = employee ?? new Employee()
+            {
+                EmployeeNo = string.Empty,
+                LastName = string.Empty,
+                FirstName = string.Empty,
+                RubyName = string.Empty,
+                RankCode = CDef.Rank.FrontClerk.Code,
+                Email = string.Empty,
+                EntryDate = DateTime.Now
+            };
 
             this.UpdateLeaveDateGroup_SetEnable(false);
             this.UpdatePasswordGroup_SetEnable(false);
@@ -59,9 +69,18 @@ namespace HotelManagement.View.Dialog
         /// <param name="e"></param>
         private void UcEmployeeDialog_Load(object sender, EventArgs e)
         {
+            this.EmployeeNoTextBox.Text = this.Employee.EmployeeNo;
+            this.LastNameTextBox.Text = this.Employee.LastName;
+            this.FirstNameTextBox.Text = this.Employee.FirstName;
+            this.RubyNameTextBox.Text = this.Employee.RubyName;
+            this.RankComboBox.SelectFromValue(this.Employee.RankCode);
+            this.EmailTextBox.Text = this.Employee.Email;
+            this.EntryDateTimePicker.Value = this.Employee.EntryDate.Value;
+
             // 新規登録かどうか
             if (this.Employee.Id == null)
             {
+                // 新規登録フラグを切り替え
                 this.IsRegister = true;
 
                 this.Text = "新規登録";
@@ -72,14 +91,7 @@ namespace HotelManagement.View.Dialog
             else
             {
                 this.Text = this.Employee.FullName;
-                this.EmployeeNoTextBox.Text = this.Employee.EmployeeNo;
-                this.LastNameTextBox.Text = this.Employee.LastName;
-                this.FirstNameTextBox.Text = this.Employee.FirstName;
-                this.RubyNameTextBox.Text = this.Employee.RubyName;
-                this.RankComboBox.SelectFromValue(this.Employee.Rank.Code);
-                this.EmailTextBox.Text = this.Employee.Email;
-                this.EntryDateTimePicker.Value = this.Employee.EntryDate.Value;
-
+                
                 // 退職している場合
                 if (this.Employee.IsLeave)
                 {
@@ -281,6 +293,12 @@ namespace HotelManagement.View.Dialog
 
             // 氏名（ｶﾅ）の変更をチェック
             else if (this.Employee.RubyName != this.RubyNameTextBox.Text)
+            {
+                change = true;
+            }
+
+            // 職位の変更をチェック
+            else if (this.Employee.RankCode != this.RankComboBox.SelectedValue.ToString())
             {
                 change = true;
             }
