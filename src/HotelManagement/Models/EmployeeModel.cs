@@ -19,7 +19,7 @@ namespace HotelManagement.Models
 
         #endregion
 
-        #region Createリクエスト
+        #region データ登録
 
         /// <summary>
         /// 従業員を作成します。
@@ -34,7 +34,7 @@ namespace HotelManagement.Models
 
         #endregion
 
-        #region Getリクエスト
+        #region データ取得
 
         /// <summary>
         /// 指定したIDと一致する従業員を取得します。
@@ -80,7 +80,7 @@ namespace HotelManagement.Models
 
         #endregion
 
-        #region Updateリクエスト
+        #region データ更新
 
         /// <summary>
         /// 従業員を更新します。
