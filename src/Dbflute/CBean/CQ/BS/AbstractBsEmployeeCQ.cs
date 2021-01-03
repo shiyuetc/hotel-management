@@ -146,28 +146,28 @@ namespace Dbflute.CBean.CQ.BS {
         public void SetRankCode_Equal(String v) { DoSetRankCode_Equal(fRES(v)); }
         /// <summary>
         /// Set the value of SystemMaintenancer of rankCode as equal. { = }
-        /// System Maintenancer: システム保守
+        /// システム保守: System Maintenancer
         /// </summary>
         public void SetRankCode_Equal_SystemMaintenancer() {
             DoSetRankCode_Equal(CDef.Rank.SystemMaintenancer.Code);
         }
         /// <summary>
         /// Set the value of AssistantManager of rankCode as equal. { = }
-        /// Assistant Manager: アシスタントマネージャー
+        /// アシスタントマネージャー: Assistant Manager
         /// </summary>
         public void SetRankCode_Equal_AssistantManager() {
             DoSetRankCode_Equal(CDef.Rank.AssistantManager.Code);
         }
         /// <summary>
         /// Set the value of FinancialController of rankCode as equal. { = }
-        /// Financial Controller: ファイナンシャルコントローラー
+        /// ファイナンシャルコントローラー: Financial Controller
         /// </summary>
         public void SetRankCode_Equal_FinancialController() {
             DoSetRankCode_Equal(CDef.Rank.FinancialController.Code);
         }
         /// <summary>
         /// Set the value of FrontClerk of rankCode as equal. { = }
-        /// Front Clerk: フロントクラーク
+        /// フロントクラーク: Front Clerk
         /// </summary>
         public void SetRankCode_Equal_FrontClerk() {
             DoSetRankCode_Equal(CDef.Rank.FrontClerk.Code);
@@ -176,28 +176,28 @@ namespace Dbflute.CBean.CQ.BS {
         public void SetRankCode_NotEqual(String v) { DoSetRankCode_NotEqual(fRES(v)); }
         /// <summary>
         /// Set the value of SystemMaintenancer of rankCode as notEqual. { &lt;&gt; }
-        /// System Maintenancer: システム保守
+        /// システム保守: System Maintenancer
         /// </summary>
         public void SetRankCode_NotEqual_SystemMaintenancer() {
             DoSetRankCode_NotEqual(CDef.Rank.SystemMaintenancer.Code);
         }
         /// <summary>
         /// Set the value of AssistantManager of rankCode as notEqual. { &lt;&gt; }
-        /// Assistant Manager: アシスタントマネージャー
+        /// アシスタントマネージャー: Assistant Manager
         /// </summary>
         public void SetRankCode_NotEqual_AssistantManager() {
             DoSetRankCode_NotEqual(CDef.Rank.AssistantManager.Code);
         }
         /// <summary>
         /// Set the value of FinancialController of rankCode as notEqual. { &lt;&gt; }
-        /// Financial Controller: ファイナンシャルコントローラー
+        /// ファイナンシャルコントローラー: Financial Controller
         /// </summary>
         public void SetRankCode_NotEqual_FinancialController() {
             DoSetRankCode_NotEqual(CDef.Rank.FinancialController.Code);
         }
         /// <summary>
         /// Set the value of FrontClerk of rankCode as notEqual. { &lt;&gt; }
-        /// Front Clerk: フロントクラーク
+        /// フロントクラーク: Front Clerk
         /// </summary>
         public void SetRankCode_NotEqual_FrontClerk() {
             DoSetRankCode_NotEqual(CDef.Rank.FrontClerk.Code);

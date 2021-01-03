@@ -97,7 +97,7 @@ namespace Dbflute.ExEntity {
         /// <summary>
         /// Set the value of code as SystemMaintenancer.
         /// <![CDATA[
-        /// System Maintenancer: システム保守
+        /// システム保守: System Maintenancer
         /// ]]>
         /// </summary>
         public void SetCode_SystemMaintenancer() {
@@ -107,7 +107,7 @@ namespace Dbflute.ExEntity {
         /// <summary>
         /// Set the value of code as AssistantManager.
         /// <![CDATA[
-        /// Assistant Manager: アシスタントマネージャー
+        /// アシスタントマネージャー: Assistant Manager
         /// ]]>
         /// </summary>
         public void SetCode_AssistantManager() {
@@ -117,7 +117,7 @@ namespace Dbflute.ExEntity {
         /// <summary>
         /// Set the value of code as FinancialController.
         /// <![CDATA[
-        /// Financial Controller: ファイナンシャルコントローラー
+        /// ファイナンシャルコントローラー: Financial Controller
         /// ]]>
         /// </summary>
         public void SetCode_FinancialController() {
@@ -127,7 +127,7 @@ namespace Dbflute.ExEntity {
         /// <summary>
         /// Set the value of code as FrontClerk.
         /// <![CDATA[
-        /// Front Clerk: フロントクラーク
+        /// フロントクラーク: Front Clerk
         /// ]]>
         /// </summary>
         public void SetCode_FrontClerk() {
@@ -145,7 +145,7 @@ namespace Dbflute.ExEntity {
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
-        /// System Maintenancer: システム保守
+        /// システム保守: System Maintenancer
         /// ]]>
         /// </summary>
         public bool IsCodeSystemMaintenancer {
@@ -160,7 +160,7 @@ namespace Dbflute.ExEntity {
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
-        /// Assistant Manager: アシスタントマネージャー
+        /// アシスタントマネージャー: Assistant Manager
         /// ]]>
         /// </summary>
         public bool IsCodeAssistantManager {
@@ -175,7 +175,7 @@ namespace Dbflute.ExEntity {
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
-        /// Financial Controller: ファイナンシャルコントローラー
+        /// ファイナンシャルコントローラー: Financial Controller
         /// ]]>
         /// </summary>
         public bool IsCodeFinancialController {
@@ -190,7 +190,7 @@ namespace Dbflute.ExEntity {
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
-        /// Front Clerk: フロントクラーク
+        /// フロントクラーク: Front Clerk
         /// ]]>
         /// </summary>
         public bool IsCodeFrontClerk {

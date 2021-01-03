@@ -62,7 +62,8 @@ map:{
             ; table=rank
             ; code=code
             ; name=english_name
-            ; comment=japanese_name
+            ; alias=japanese_name
+            ; comment=english_name
             ; orderBy=code
         }
     }

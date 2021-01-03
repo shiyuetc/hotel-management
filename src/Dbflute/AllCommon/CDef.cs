@@ -11,14 +11,14 @@ namespace Dbflute.AllCommon {
          * 従業員の職位を表す
          */
         public class Rank {
-            /** System Maintenancer: システム保守 */
-            public static readonly Rank SystemMaintenancer = new Rank("000", "SystemMaintenancer", "System Maintenancer");
-            /** Assistant Manager: アシスタントマネージャー */
-            public static readonly Rank AssistantManager = new Rank("001", "AssistantManager", "Assistant Manager");
-            /** Financial Controller: ファイナンシャルコントローラー */
-            public static readonly Rank FinancialController = new Rank("002", "FinancialController", "Financial Controller");
-            /** Front Clerk: フロントクラーク */
-            public static readonly Rank FrontClerk = new Rank("003", "FrontClerk", "Front Clerk");
+            /** システム保守: System Maintenancer */
+            public static readonly Rank SystemMaintenancer = new Rank("000", "SystemMaintenancer", "システム保守");
+            /** アシスタントマネージャー: Assistant Manager */
+            public static readonly Rank AssistantManager = new Rank("001", "AssistantManager", "アシスタントマネージャー");
+            /** ファイナンシャルコントローラー: Financial Controller */
+            public static readonly Rank FinancialController = new Rank("002", "FinancialController", "ファイナンシャルコントローラー");
+            /** フロントクラーク: Front Clerk */
+            public static readonly Rank FrontClerk = new Rank("003", "FrontClerk", "フロントクラーク");
             private static readonly Map<String, Rank> _codeValueMap = new LinkedHashMap<String, Rank>();
             static Rank() {
                 _codeValueMap.put(SystemMaintenancer.Code.ToLower(), SystemMaintenancer);

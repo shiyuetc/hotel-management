@@ -118,7 +118,7 @@ namespace Dbflute.ExEntity {
         /// <summary>
         /// Set the value of rankCode as SystemMaintenancer.
         /// <![CDATA[
-        /// System Maintenancer: システム保守
+        /// システム保守: System Maintenancer
         /// ]]>
         /// </summary>
         public void SetRankCode_SystemMaintenancer() {
@@ -128,7 +128,7 @@ namespace Dbflute.ExEntity {
         /// <summary>
         /// Set the value of rankCode as AssistantManager.
         /// <![CDATA[
-        /// Assistant Manager: アシスタントマネージャー
+        /// アシスタントマネージャー: Assistant Manager
         /// ]]>
         /// </summary>
         public void SetRankCode_AssistantManager() {
@@ -138,7 +138,7 @@ namespace Dbflute.ExEntity {
         /// <summary>
         /// Set the value of rankCode as FinancialController.
         /// <![CDATA[
-        /// Financial Controller: ファイナンシャルコントローラー
+        /// ファイナンシャルコントローラー: Financial Controller
         /// ]]>
         /// </summary>
         public void SetRankCode_FinancialController() {
@@ -148,7 +148,7 @@ namespace Dbflute.ExEntity {
         /// <summary>
         /// Set the value of rankCode as FrontClerk.
         /// <![CDATA[
-        /// Front Clerk: フロントクラーク
+        /// フロントクラーク: Front Clerk
         /// ]]>
         /// </summary>
         public void SetRankCode_FrontClerk() {
@@ -166,7 +166,7 @@ namespace Dbflute.ExEntity {
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
-        /// System Maintenancer: システム保守
+        /// システム保守: System Maintenancer
         /// ]]>
         /// </summary>
         public bool IsRankCodeSystemMaintenancer {
@@ -181,7 +181,7 @@ namespace Dbflute.ExEntity {
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
-        /// Assistant Manager: アシスタントマネージャー
+        /// アシスタントマネージャー: Assistant Manager
         /// ]]>
         /// </summary>
         public bool IsRankCodeAssistantManager {
@@ -196,7 +196,7 @@ namespace Dbflute.ExEntity {
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
-        /// Financial Controller: ファイナンシャルコントローラー
+        /// ファイナンシャルコントローラー: Financial Controller
         /// ]]>
         /// </summary>
         public bool IsRankCodeFinancialController {
@@ -211,7 +211,7 @@ namespace Dbflute.ExEntity {
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
-        /// Front Clerk: フロントクラーク
+        /// フロントクラーク: Front Clerk
         /// ]]>
         /// </summary>
         public bool IsRankCodeFrontClerk {
