@@ -125,6 +125,9 @@
     <Compile Include="Common\BcryptUtil.cs" />
     <Compile Include="Common\ResourceUtil.cs" />
     <Compile Include="Const\Message.cs" />
+    <Compile Include="CustomControls\ConstantComboBox\ConstantComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CustomControls\ExLabel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -135,6 +138,9 @@
       <DependentUpon>MenuBar.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\MenuButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ConstantComboBox\RankComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomControls\TickDate.cs">
