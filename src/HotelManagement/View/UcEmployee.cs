@@ -40,6 +40,28 @@ namespace HotelManagement.View
         }
 
         /// <summary>
+        /// RegisterButtonのClickイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RegisterButton_Click(object sender, System.EventArgs e)
+        {
+            var vm = new ModelQuillInjector<EmployeeModel>();
+
+            // ダイアログを表示
+            var dialog = new UcEmployeeDialog();
+            dialog.Left = this.TopLevelControl.Left + (this.TopLevelControl.Width - dialog.Width) / 2;
+            dialog.Top = this.TopLevelControl.Top + (this.TopLevelControl.Height - dialog.Height) / 2;
+            dialog.ShowDialog();
+
+            // 更新があった場合はリストを初期化
+            if (dialog.UpdateFlag)
+            {
+                this.SetEmployeeList(vm.Model.GetEmployeeList());
+            }
+        }
+
+        /// <summary>
         /// EmployeeListViewのMouseDoubleClickイベント
         /// </summary>
         /// <param name="sender"></param>
@@ -49,20 +71,31 @@ namespace HotelManagement.View
             var vm = new ModelQuillInjector<EmployeeModel>();
             var selectItem = this.EmployeeListView.SelectedItems[0];
 
+            // ダイアログを表示
             var dialog = new UcEmployeeDialog(vm.Model.GetEmployee(selectItem.Text.ToLong()));
             dialog.Left = this.TopLevelControl.Left + (this.TopLevelControl.Width - dialog.Width) / 2;
             dialog.Top = this.TopLevelControl.Top + (this.TopLevelControl.Height - dialog.Height) / 2;
             dialog.ShowDialog();
 
+            // 更新があった場合はリストを初期化
             if (dialog.UpdateFlag)
             {
-                this.UpdateEmployee(selectItem.Index, dialog.Employee);
+                this.SetEmployeeList(vm.Model.GetEmployeeList());
             }
         }
 
         #endregion
 
         #region ListView操作イベント
+
+        /// <summary>
+        /// 従業員リストを初期化します。
+        /// </summary>
+        /// <param name="employees">従業員のリスト</param>
+        private void SetEmployeeList(List<Employee> employees)
+        {
+            this.EmployeeListView.Init(this.CreateEmployeeListViewItems(employees.ToArray()));
+        }
 
         /// <summary>
         /// 従業員からリストビューのアイテムを生成します。
@@ -89,7 +122,7 @@ namespace HotelManagement.View
         /// <returns></returns>
         private ListViewItem[] CreateEmployeeListViewItems(Employee[] employees)
         {
-            ListViewItem[] listViewItems = new ListViewItem[employees.Length];
+            var listViewItems = new ListViewItem[employees.Length];
             for (int i = 0; i < employees.Length; i++)
             {
                 listViewItems[i] = this.CreateEmployeeListViewItem(employees[i]);
@@ -97,25 +130,7 @@ namespace HotelManagement.View
             return listViewItems;
         }
 
-        /// <summary>
-        /// 従業員リストを初期化します。
-        /// </summary>
-        /// <param name="employees">従業員のリスト</param>
-        private void SetEmployeeList(List<Employee> employees)
-        {
-            this.EmployeeListView.Init(this.CreateEmployeeListViewItems(employees.ToArray()));
-        }
-
-        /// <summary>
-        /// 指定した行の従業員を更新します。
-        /// </summary>
-        /// <param name="rowIndex">対象の行のインデックス</param>
-        /// <param name="employee">従業員</param>
-        private void UpdateEmployee(int rowIndex, Employee employee)
-        {
-            this.EmployeeListView.UpdateItem(rowIndex, this.CreateEmployeeListViewItem(employee));
-        }
-
         #endregion
+
     }
 }

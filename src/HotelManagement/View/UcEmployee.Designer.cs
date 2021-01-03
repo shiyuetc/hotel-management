@@ -36,6 +36,7 @@
             this.EmailColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.EntryDateColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LeaveColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.RegisterButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // EmployeeListView
@@ -51,10 +52,10 @@
             this.EmployeeListView.FullRowSelect = true;
             this.EmployeeListView.GridLines = true;
             this.EmployeeListView.HideSelection = false;
-            this.EmployeeListView.Location = new System.Drawing.Point(3, 3);
+            this.EmployeeListView.Location = new System.Drawing.Point(3, 32);
             this.EmployeeListView.MultiSelect = false;
             this.EmployeeListView.Name = "EmployeeListView";
-            this.EmployeeListView.Size = new System.Drawing.Size(923, 528);
+            this.EmployeeListView.Size = new System.Drawing.Size(923, 499);
             this.EmployeeListView.TabIndex = 3;
             this.EmployeeListView.UseCompatibleStateImageBehavior = false;
             this.EmployeeListView.View = System.Windows.Forms.View.Details;
@@ -88,10 +89,21 @@
             // 
             this.LeaveColumnHeader.Text = "退社年月日";
             // 
+            // RegisterButton
+            // 
+            this.RegisterButton.Location = new System.Drawing.Point(851, 3);
+            this.RegisterButton.Name = "RegisterButton";
+            this.RegisterButton.Size = new System.Drawing.Size(75, 23);
+            this.RegisterButton.TabIndex = 4;
+            this.RegisterButton.Text = "新規登録";
+            this.RegisterButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
+            // 
             // UcEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.EmployeeListView);
             this.Name = "UcEmployee";
             this.Size = new System.Drawing.Size(929, 534);
@@ -110,5 +122,6 @@
         private System.Windows.Forms.ColumnHeader EmailColumnHeader;
         private System.Windows.Forms.ColumnHeader EntryDateColumnHeader;
         private System.Windows.Forms.ColumnHeader LeaveColumnHeader;
+        private System.Windows.Forms.Button RegisterButton;
     }
 }

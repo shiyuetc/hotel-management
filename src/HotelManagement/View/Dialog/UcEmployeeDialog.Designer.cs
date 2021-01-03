@@ -31,7 +31,6 @@
             this.LastNameTextBox = new System.Windows.Forms.TextBox();
             this.FirstNameTextBox = new System.Windows.Forms.TextBox();
             this.EntryDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.RankComboBox = new System.Windows.Forms.ComboBox();
             this.EmployeeNoTextBox = new System.Windows.Forms.TextBox();
             this.RubyNameTextBox = new System.Windows.Forms.TextBox();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
@@ -39,6 +38,8 @@
             this.LeaveDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.IsLeaveCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RePasswordLabel = new HotelManagement.CustomControls.ExLabel();
+            this.PasswordLabel = new HotelManagement.CustomControls.ExLabel();
             this.LeaveDateLabel = new HotelManagement.CustomControls.ExLabel();
             this.exLabel6 = new HotelManagement.CustomControls.ExLabel();
             this.exLabel5 = new HotelManagement.CustomControls.ExLabel();
@@ -50,8 +51,7 @@
             this.UpdatePasswordCheckBox = new System.Windows.Forms.CheckBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.CloseButton = new System.Windows.Forms.Button();
-            this.PasswordLabel = new HotelManagement.CustomControls.ExLabel();
-            this.RePasswordLabel = new HotelManagement.CustomControls.ExLabel();
+            this.RankComboBox = new HotelManagement.CustomControls.ConstantComboBox.RankComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,16 +77,6 @@
             this.EntryDateTimePicker.Name = "EntryDateTimePicker";
             this.EntryDateTimePicker.Size = new System.Drawing.Size(200, 19);
             this.EntryDateTimePicker.TabIndex = 6;
-            // 
-            // RankComboBox
-            // 
-            this.RankComboBox.Enabled = false;
-            this.RankComboBox.FormattingEnabled = true;
-            this.RankComboBox.Location = new System.Drawing.Point(132, 105);
-            this.RankComboBox.Name = "RankComboBox";
-            this.RankComboBox.Size = new System.Drawing.Size(200, 20);
-            this.RankComboBox.TabIndex = 4;
-            this.RankComboBox.TabStop = false;
             // 
             // EmployeeNoTextBox
             // 
@@ -148,6 +138,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.RankComboBox);
             this.groupBox1.Controls.Add(this.RePasswordLabel);
             this.groupBox1.Controls.Add(this.PasswordLabel);
             this.groupBox1.Controls.Add(this.LeaveDateLabel);
@@ -163,7 +154,6 @@
             this.groupBox1.Controls.Add(this.EmployeeNoTextBox);
             this.groupBox1.Controls.Add(this.IsLeaveCheckBox);
             this.groupBox1.Controls.Add(this.FirstNameTextBox);
-            this.groupBox1.Controls.Add(this.RankComboBox);
             this.groupBox1.Controls.Add(this.EntryDateTimePicker);
             this.groupBox1.Controls.Add(this.LeaveDateTimePicker);
             this.groupBox1.Controls.Add(this.RubyNameTextBox);
@@ -175,6 +165,30 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "基本情報";
+            // 
+            // RePasswordLabel
+            // 
+            this.RePasswordLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
+            this.RePasswordLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.RePasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.RePasswordLabel.Location = new System.Drawing.Point(26, 275);
+            this.RePasswordLabel.Name = "RePasswordLabel";
+            this.RePasswordLabel.Size = new System.Drawing.Size(100, 19);
+            this.RePasswordLabel.TabIndex = 27;
+            this.RePasswordLabel.Text = "パスワード再入力";
+            this.RePasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // PasswordLabel
+            // 
+            this.PasswordLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
+            this.PasswordLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.PasswordLabel.Location = new System.Drawing.Point(26, 250);
+            this.PasswordLabel.Name = "PasswordLabel";
+            this.PasswordLabel.Size = new System.Drawing.Size(100, 19);
+            this.PasswordLabel.TabIndex = 26;
+            this.PasswordLabel.Text = "新しいパスワード";
+            this.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // LeaveDateLabel
             // 
@@ -299,29 +313,16 @@
             this.CloseButton.UseVisualStyleBackColor = true;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // PasswordLabel
+            // RankComboBox
             // 
-            this.PasswordLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
-            this.PasswordLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.PasswordLabel.Location = new System.Drawing.Point(26, 250);
-            this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(100, 19);
-            this.PasswordLabel.TabIndex = 26;
-            this.PasswordLabel.Text = "新しいパスワード";
-            this.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // RePasswordLabel
-            // 
-            this.RePasswordLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(111)))), ((int)(((byte)(225)))));
-            this.RePasswordLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.RePasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.RePasswordLabel.Location = new System.Drawing.Point(26, 275);
-            this.RePasswordLabel.Name = "RePasswordLabel";
-            this.RePasswordLabel.Size = new System.Drawing.Size(100, 19);
-            this.RePasswordLabel.TabIndex = 27;
-            this.RePasswordLabel.Text = "パスワード再入力";
-            this.RePasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.RankComboBox.DisplayMember = "Alias";
+            this.RankComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RankComboBox.FormattingEnabled = true;
+            this.RankComboBox.Location = new System.Drawing.Point(132, 105);
+            this.RankComboBox.Name = "RankComboBox";
+            this.RankComboBox.Size = new System.Drawing.Size(200, 20);
+            this.RankComboBox.TabIndex = 28;
+            this.RankComboBox.ValueMember = "Code";
             // 
             // UcEmployeeDialog
             // 
@@ -335,6 +336,7 @@
             this.Name = "UcEmployeeDialog";
             this.Text = "EmployeeDialogForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UcEmployeeDialog_FormClosing);
+            this.Load += new System.EventHandler(this.UcEmployeeDialog_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -345,7 +347,6 @@
         private System.Windows.Forms.TextBox LastNameTextBox;
         private System.Windows.Forms.TextBox FirstNameTextBox;
         private System.Windows.Forms.DateTimePicker EntryDateTimePicker;
-        private System.Windows.Forms.ComboBox RankComboBox;
         private System.Windows.Forms.TextBox EmployeeNoTextBox;
         private System.Windows.Forms.TextBox RubyNameTextBox;
         private System.Windows.Forms.TextBox EmailTextBox;
@@ -366,5 +367,6 @@
         private CustomControls.ExLabel LeaveDateLabel;
         private CustomControls.ExLabel RePasswordLabel;
         private CustomControls.ExLabel PasswordLabel;
+        private CustomControls.ConstantComboBox.RankComboBox RankComboBox;
     }
 }

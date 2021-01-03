@@ -2,6 +2,9 @@
 using HotelManagement.Common;
 using HotelManagement.Models;
 using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Windows.Forms;
 
 namespace HotelManagement.View.Dialog
 {
@@ -22,6 +25,11 @@ namespace HotelManagement.View.Dialog
         /// </summary>
         public bool UpdateFlag { get; private set; }
 
+        /// <summary>
+        /// 新規登録かどうか
+        /// </summary>
+        private bool IsRegister { get; set; }
+
         #endregion
 
         #region コンストラクタ
@@ -34,37 +42,55 @@ namespace HotelManagement.View.Dialog
         {
             InitializeComponent();
 
+            this.Employee = employee ?? new Employee();
+
             this.UpdateLeaveDateGroup_SetEnable(false);
             this.UpdatePasswordGroup_SetEnable(false);
-
-            if (employee == null)
-            {
-
-            }
-            else
-            {
-                this.Employee = employee;
-                this.Text = $"{employee.FullName}";
-                this.EmployeeNoTextBox.Text = employee.EmployeeNo;
-                this.LastNameTextBox.Text = employee.LastName;
-                this.FirstNameTextBox.Text = employee.FirstName;
-                this.RubyNameTextBox.Text = employee.RubyName;
-                this.RankComboBox.Text = employee.Rank.JapaneseName;
-                this.EmailTextBox.Text = employee.Email;
-                this.EntryDateTimePicker.Value = employee.EntryDate.Value;
-
-                // 退職している場合
-                if (employee.IsLeave)
-                {
-                    this.IsLeaveCheckBox.Checked = true;
-                    this.LeaveDateTimePicker.Value = employee.LeaveDate.Value;
-                }
-            }
         }
 
         #endregion
 
         #region イベントハンドラ
+
+        /// <summary>
+        /// フォームのロードイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UcEmployeeDialog_Load(object sender, EventArgs e)
+        {
+            // 新規登録かどうか
+            if (this.Employee.Id == null)
+            {
+                this.IsRegister = true;
+
+                this.Text = "新規登録";
+                this.IsLeaveCheckBox.Enabled = false;
+                this.UpdatePasswordCheckBox.Enabled = false;
+                this.UpdatePasswordCheckBox.Checked = true;
+            }
+            else
+            {
+                this.Text = this.Employee.FullName;
+                this.EmployeeNoTextBox.Text = this.Employee.EmployeeNo;
+                this.LastNameTextBox.Text = this.Employee.LastName;
+                this.FirstNameTextBox.Text = this.Employee.FirstName;
+                this.RubyNameTextBox.Text = this.Employee.RubyName;
+                this.RankComboBox.SelectFromValue(this.Employee.Rank.Code);
+                this.EmailTextBox.Text = this.Employee.Email;
+                this.EntryDateTimePicker.Value = this.Employee.EntryDate.Value;
+
+                // 退職している場合
+                if (this.Employee.IsLeave)
+                {
+                    this.IsLeaveCheckBox.Checked = true;
+                    this.LeaveDateTimePicker.Value = this.Employee.LeaveDate.Value;
+                }
+
+                // 従業員番号は編集不可にする
+                this.EmployeeNoTextBox.Enabled = false;
+            }
+        }
 
         /// <summary>
         /// フォームの終了時イベント
@@ -74,7 +100,7 @@ namespace HotelManagement.View.Dialog
         private void UcEmployeeDialog_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
         {
             // 破棄確認チェック
-            if (!this.RevokeCheck())
+            if (!this.UpdateFlag && !this.RevokeCheck())
             {
                 e.Cancel = true;
             }
@@ -110,7 +136,7 @@ namespace HotelManagement.View.Dialog
         private void UpdateButton_Click(object sender, EventArgs e)
         {
             // 入力チェック
-            if(!this.InputCheck()) return;
+            if (!this.InputCheck()) return;
 
             // 登録確認チェック
             if (!this.ConfirmCheck()) return;
@@ -311,13 +337,14 @@ namespace HotelManagement.View.Dialog
         /// </summary>
         private void UpdateEvent()
         {
+            // 従業員情報を代入
             this.Employee.EmployeeNo = this.EmployeeNoTextBox.Text;
             this.Employee.LastName = this.LastNameTextBox.Text;
             this.Employee.FirstName = this.FirstNameTextBox.Text;
             this.Employee.RubyName = this.RubyNameTextBox.Text;
+            this.Employee.RankCode = this.RankComboBox.SelectedValue.ToString();
             this.Employee.Email = this.EmailTextBox.Text;
             this.Employee.EntryDate = this.EntryDateTimePicker.Value;
-
             this.Employee.LeaveDate = this.IsLeaveCheckBox.Checked ? (DateTime?)this.LeaveDateTimePicker.Value : null;
 
             if(this.UpdatePasswordCheckBox.Checked)
@@ -326,11 +353,22 @@ namespace HotelManagement.View.Dialog
             }
 
             var vm = new ModelQuillInjector<EmployeeModel>();
-            vm.Model.UpdateEmployee(this.Employee);
+            if(this.IsRegister)
+            {
+                // 従業員情報を登録
+                vm.Model.CreateEmployee(this.Employee);
+            }
+            else
+            {
+                // 従業員情報を更新
+                vm.Model.UpdateEmployee(this.Employee);
+            }
 
+            // 登録フラグを切り替え
             this.UpdateFlag = true;
         }
 
         #endregion
+
     }
 }
