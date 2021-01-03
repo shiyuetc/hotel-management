@@ -11,6 +11,11 @@ namespace HotelManagement.Const
     public static class Constants
     {
         /// <summary>
+        /// アプリケーション名
+        /// </summary>
+        public static readonly string AppName = "HotelManagement";
+
+        /// <summary>
         /// DayOfWeek列挙体に対応した日本語
         /// </summary>
         public static readonly char[] WeekNames = { '日', '月', '火', '水', '木', '金', '土' };

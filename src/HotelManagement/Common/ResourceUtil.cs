@@ -1,4 +1,5 @@
-﻿using HotelManagement.Enums;
+﻿using HotelManagement.Const;
+using HotelManagement.Enums;
 using System.Drawing;
 
 namespace HotelManagement.Common
@@ -9,7 +10,7 @@ namespace HotelManagement.Common
         {
             System.Reflection.Assembly myAssembly = System.Reflection.Assembly.GetExecutingAssembly();
             return new Bitmap(
-                myAssembly.GetManifestResourceStream($"HotelManagement.Resources.Images.icon_{display.ToString().ToLower()}.png"));
+                myAssembly.GetManifestResourceStream($"{Constants.AppName}.Resources.Images.icon_{display.ToString().ToLower()}.png"));
         }
     }
 }
