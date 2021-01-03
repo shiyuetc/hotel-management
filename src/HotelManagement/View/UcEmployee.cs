@@ -55,7 +55,7 @@ namespace HotelManagement.View
             dialog.ShowDialog();
 
             // 更新があった場合はリストを初期化
-            if (dialog.UpdateFlag)
+            if (dialog.IsUpdated)
             {
                 this.SetEmployeeList(vm.Model.GetEmployeeList());
             }
@@ -78,7 +78,7 @@ namespace HotelManagement.View
             dialog.ShowDialog();
 
             // 更新があった場合はリストを初期化
-            if (dialog.UpdateFlag)
+            if (dialog.IsUpdated)
             {
                 this.SetEmployeeList(vm.Model.GetEmployeeList());
             }

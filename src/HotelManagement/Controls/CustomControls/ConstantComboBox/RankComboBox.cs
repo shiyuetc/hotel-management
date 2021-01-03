@@ -1,6 +1,6 @@
 ﻿using Dbflute.AllCommon;
 
-namespace HotelManagement.CustomControls.ConstantComboBox
+namespace HotelManagement.Controls.CustomControls.ConstantComboBox
 {
     /// <summary>
     /// 職位区分のコンボボックスを表すクラス

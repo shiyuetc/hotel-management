@@ -1,5 +1,6 @@
 ﻿using HotelManagement.Common;
 using HotelManagement.Const;
+using HotelManagement.Controls.CustomControls;
 using HotelManagement.Enums;
 using HotelManagement.Extensions;
 using System;
@@ -7,7 +8,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace HotelManagement.CustomControls
+namespace HotelManagement.Controls.UserControls
 {
     /// <summary>
     /// メニューバーを表すクラス

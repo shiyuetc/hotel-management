@@ -1,6 +1,6 @@
 ﻿using Dbflute.ExEntity;
 using HotelManagement.Common;
-using HotelManagement.CustomControls;
+using HotelManagement.Controls.CustomControls;
 using HotelManagement.Enums;
 using HotelManagement.Extensions;
 using System;

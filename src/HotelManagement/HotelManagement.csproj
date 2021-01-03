@@ -125,28 +125,28 @@
     <Compile Include="Common\BcryptUtil.cs" />
     <Compile Include="Common\ResourceUtil.cs" />
     <Compile Include="Const\Message.cs" />
-    <Compile Include="CustomControls\ConstantComboBox\ConstantComboBox.cs">
+    <Compile Include="Controls\CustomControls\ConstantComboBox\ConstantComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomControls\ExLabel.cs">
+    <Compile Include="Controls\CustomControls\ExLabel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomControls\MenuBar.cs">
+    <Compile Include="Controls\UserContols\MenuBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomControls\MenuBar.Designer.cs">
+    <Compile Include="Controls\UserContols\MenuBar.Designer.cs">
       <DependentUpon>MenuBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomControls\MenuButton.cs">
+    <Compile Include="Controls\CustomControls\MenuButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomControls\ConstantComboBox\RankComboBox.cs">
+    <Compile Include="Controls\CustomControls\ConstantComboBox\RankComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomControls\TickDate.cs">
+    <Compile Include="Controls\UserContols\TickDate.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomControls\TickDate.Designer.cs">
+    <Compile Include="Controls\UserContols\TickDate.Designer.cs">
       <DependentUpon>TickDate.cs</DependentUpon>
     </Compile>
     <Compile Include="Const\Constants.cs" />
@@ -155,7 +155,7 @@
     <Compile Include="Common\Messages.cs" />
     <Compile Include="Common\ModelQuillInjector.cs" />
     <Compile Include="Extensions\ListExtension.cs" />
-    <Compile Include="CustomControls\ExListView.cs">
+    <Compile Include="Controls\CustomControls\ExListView.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Extensions\StringExtension.cs" />
@@ -231,10 +231,10 @@
     <Compile Include="View\UcLogin.Designer.cs">
       <DependentUpon>UcLogin.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CustomControls\MenuBar.resx">
+    <EmbeddedResource Include="Controls\UserContols\MenuBar.resx">
       <DependentUpon>MenuBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\TickDate.resx">
+    <EmbeddedResource Include="Controls\UserContols\TickDate.resx">
       <DependentUpon>TickDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Dialog\UcDialogBase.resx">

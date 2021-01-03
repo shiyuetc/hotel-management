@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace HotelManagement.Extensions
+namespace HotelManagement.Controls.CustomControls
 {
     public class ExListView : ListView
     {

@@ -4,7 +4,7 @@ using HotelManagement.Extensions;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace HotelManagement.CustomControls
+namespace HotelManagement.Controls.CustomControls
 {
     public class MenuButton : Button
     {

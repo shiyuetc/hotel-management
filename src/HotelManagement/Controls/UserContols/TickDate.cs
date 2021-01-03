@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace HotelManagement.CustomControls
+namespace HotelManagement.Controls.UserControls
 {
     /// <summary>
     /// 現在時刻を表示するコントロール

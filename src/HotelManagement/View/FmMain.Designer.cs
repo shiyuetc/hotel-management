@@ -33,8 +33,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.LoginInfoLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.DisplayNameLabel = new System.Windows.Forms.Label();
-            this.MenuBar = new HotelManagement.CustomControls.MenuBar();
-            this.tickDate1 = new HotelManagement.CustomControls.TickDate();
+            this.MenuBar = new HotelManagement.Controls.UserControls.MenuBar();
+            this.tickDate1 = new HotelManagement.Controls.UserControls.TickDate();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,8 +135,8 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel LoginInfoLabel;
         private System.Windows.Forms.Label DisplayNameLabel;
-        private CustomControls.TickDate tickDate1;
-        private CustomControls.MenuBar MenuBar;
+        private Controls.UserControls.TickDate tickDate1;
+        private Controls.UserControls.MenuBar MenuBar;
     }
 }
 

@@ -38,20 +38,20 @@
             this.LeaveDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.IsLeaveCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.RePasswordLabel = new HotelManagement.CustomControls.ExLabel();
-            this.PasswordLabel = new HotelManagement.CustomControls.ExLabel();
-            this.LeaveDateLabel = new HotelManagement.CustomControls.ExLabel();
-            this.exLabel6 = new HotelManagement.CustomControls.ExLabel();
-            this.exLabel5 = new HotelManagement.CustomControls.ExLabel();
-            this.exLabel4 = new HotelManagement.CustomControls.ExLabel();
-            this.exLabel3 = new HotelManagement.CustomControls.ExLabel();
-            this.exLabel2 = new HotelManagement.CustomControls.ExLabel();
-            this.exLabel1 = new HotelManagement.CustomControls.ExLabel();
+            this.RePasswordLabel = new HotelManagement.Controls.CustomControls.ExLabel();
+            this.PasswordLabel = new HotelManagement.Controls.CustomControls.ExLabel();
+            this.LeaveDateLabel = new HotelManagement.Controls.CustomControls.ExLabel();
+            this.exLabel6 = new HotelManagement.Controls.CustomControls.ExLabel();
+            this.exLabel5 = new HotelManagement.Controls.CustomControls.ExLabel();
+            this.exLabel4 = new HotelManagement.Controls.CustomControls.ExLabel();
+            this.exLabel3 = new HotelManagement.Controls.CustomControls.ExLabel();
+            this.exLabel2 = new HotelManagement.Controls.CustomControls.ExLabel();
+            this.exLabel1 = new HotelManagement.Controls.CustomControls.ExLabel();
             this.RePasswordTextBox = new System.Windows.Forms.TextBox();
             this.UpdatePasswordCheckBox = new System.Windows.Forms.CheckBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.CloseButton = new System.Windows.Forms.Button();
-            this.RankComboBox = new HotelManagement.CustomControls.ConstantComboBox.RankComboBox();
+            this.RankComboBox = new HotelManagement.Controls.CustomControls.ConstantComboBox.RankComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -358,15 +358,15 @@
         private System.Windows.Forms.CheckBox UpdatePasswordCheckBox;
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.Button CloseButton;
-        private CustomControls.ExLabel exLabel1;
-        private CustomControls.ExLabel exLabel6;
-        private CustomControls.ExLabel exLabel5;
-        private CustomControls.ExLabel exLabel4;
-        private CustomControls.ExLabel exLabel3;
-        private CustomControls.ExLabel exLabel2;
-        private CustomControls.ExLabel LeaveDateLabel;
-        private CustomControls.ExLabel RePasswordLabel;
-        private CustomControls.ExLabel PasswordLabel;
-        private CustomControls.ConstantComboBox.RankComboBox RankComboBox;
+        private Controls.CustomControls.ExLabel exLabel1;
+        private Controls.CustomControls.ExLabel exLabel6;
+        private Controls.CustomControls.ExLabel exLabel5;
+        private Controls.CustomControls.ExLabel exLabel4;
+        private Controls.CustomControls.ExLabel exLabel3;
+        private Controls.CustomControls.ExLabel exLabel2;
+        private Controls.CustomControls.ExLabel LeaveDateLabel;
+        private Controls.CustomControls.ExLabel RePasswordLabel;
+        private Controls.CustomControls.ExLabel PasswordLabel;
+        private Controls.CustomControls.ConstantComboBox.RankComboBox RankComboBox;
     }
 }

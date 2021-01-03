@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.EmployeeListView = new HotelManagement.Extensions.ExListView();
+            this.EmployeeListView = new HotelManagement.Controls.CustomControls.ExListView();
             this.IdColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.EmployeeNoColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -114,7 +114,7 @@
 
         #endregion
 
-        private Extensions.ExListView EmployeeListView;
+        private Controls.CustomControls.ExListView EmployeeListView;
         private System.Windows.Forms.ColumnHeader IdColumnHeader;
         private System.Windows.Forms.ColumnHeader EmployeeNoColumnHeader;
         private System.Windows.Forms.ColumnHeader NameColumnHeader;

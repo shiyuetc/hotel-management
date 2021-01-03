@@ -1,4 +1,4 @@
-﻿namespace HotelManagement.CustomControls
+﻿namespace HotelManagement.Controls.UserControls
 {
     partial class MenuBar
     {

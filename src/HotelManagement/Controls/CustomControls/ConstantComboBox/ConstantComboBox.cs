@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace HotelManagement.CustomControls.ConstantComboBox
+namespace HotelManagement.Controls.CustomControls.ConstantComboBox
 {
     /// <summary>
     /// 区分値用のコンボボックスを表すクラス

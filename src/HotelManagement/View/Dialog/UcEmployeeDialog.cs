@@ -3,9 +3,6 @@ using Dbflute.ExEntity;
 using HotelManagement.Common;
 using HotelManagement.Models;
 using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Windows.Forms;
 
 namespace HotelManagement.View.Dialog
 {
@@ -19,17 +16,17 @@ namespace HotelManagement.View.Dialog
         /// <summary>
         /// 従業員情報の受け渡しに利用
         /// </summary>
-        public Employee Employee { get; private set; }
-
-        /// <summary>
-        /// 登録を行ったかどうか判定するフラグ
-        /// </summary>
-        public bool UpdateFlag { get; private set; }
+        private Employee Employee { get; set; }
 
         /// <summary>
         /// 新規登録かどうか
         /// </summary>
         private bool IsRegister { get; set; }
+
+        /// <summary>
+        /// 登録を行ったかどうか判定するフラグ
+        /// </summary>
+        public bool IsUpdated { get; private set; }
 
         #endregion
 
@@ -112,7 +109,7 @@ namespace HotelManagement.View.Dialog
         private void UcEmployeeDialog_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
         {
             // 破棄確認チェック
-            if (!this.UpdateFlag && !this.RevokeCheck())
+            if (!this.IsUpdated && !this.RevokeCheck())
             {
                 e.Cancel = true;
             }
@@ -383,7 +380,7 @@ namespace HotelManagement.View.Dialog
             }
 
             // 登録フラグを切り替え
-            this.UpdateFlag = true;
+            this.IsUpdated = true;
         }
 
         #endregion
