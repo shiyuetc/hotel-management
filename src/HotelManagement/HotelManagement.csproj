@@ -300,12 +300,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dbflute\Dbflute.csproj">
-      <Project>{57187724-8a05-4d1a-9e00-bdf733c3ad39}</Project>
-      <Name>Dbflute</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Resources\Images\icon_login.png" />
   </ItemGroup>
   <ItemGroup>
@@ -316,6 +310,11 @@
     <EmbeddedResource Include="Resources\Images\icon_room.png" />
     <EmbeddedResource Include="Resources\Images\icon_sale.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Dbflute\Dbflute.csproj">
+      <Project>{57187724-8a05-4d1a-9e00-bdf733c3ad39}</Project>
+      <Name>Dbflute</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
