@@ -269,7 +269,6 @@ dl.procedurelist dd.column pre {
 <p class="mainschema">generated from <strong>hotel_management.public</strong></p>
 <div class="navilinkarea">
 <p class="sublink"><a href="#cdef">Classification Definition</a></p>
-<p class="sisterlink"><a href="./history-dfclient.html">to HistoryHTML</a></p>
 </div>
 
 <h2>Table List</h2>
@@ -292,51 +291,155 @@ dl.procedurelist dd.column pre {
 	<tbody id="table-list-body">
 	<tr>
 		<td class="rownumcell">1</td>
-		<td><a href="#customer" title="type=TABLE, primaryKey={id}, nameLength=8, columnCount=4">customer</a></td>
+		<td><a href="#dchその他予定台帳" title="type=TABLE, primaryKey={id}, nameLength=10, columnCount=2">dchその他予定台帳</a></td>
 		<td class="typecell">TABLE</td>
+		<td class="relcell"><a href="#dch客室利用予定台帳" title="dchその他予定台帳_客室利用予定台帳id_fkey">dch客室利用予定台帳</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="subcell">Customer</td>
+		<td class="subcell">Dchその他予定台帳</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">2</td>
-		<td><a href="#employee" title="type=TABLE, primaryKey={id}, nameLength=8, columnCount=10">employee</a></td>
+		<td><a href="#dchその他実績台帳" title="type=TABLE, primaryKey={id}, nameLength=10, columnCount=2">dchその他実績台帳</a></td>
 		<td class="typecell">TABLE</td>
-		<td class="relcell"><a href="#rank" title="employee_rank_code_fkey">rank</a></td>
+		<td class="relcell"><a href="#dch客室利用実績台帳" title="dchその他実績台帳_客室利用実績台帳id_fkey">dch客室利用実績台帳</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="subcell">Employee</td>
+		<td class="subcell">Dchその他実績台帳</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">3</td>
-		<td><a href="#rank" title="type=TABLE, primaryKey={code}, nameLength=4, columnCount=3">rank</a></td>
+		<td><a href="#dch客室利用予定台帳" title="type=TABLE, primaryKey={id}, nameLength=11, columnCount=5">dch客室利用予定台帳</a></td>
 		<td class="typecell">TABLE</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"><a href="#employee" title="employee_rank_code_fkey">employee</a></td>
-		<td class="subcell">Rank</td>
+		<td class="relcell"><a href="#mst客室マスタ" title="dch客室利用予定台帳_客室マスタid_fkey">mst客室マスタ</a>, <a href="#kbn客室利用区分" title="dch客室利用予定台帳_客室利用コード_fkey">kbn客室利用区分</a></td>
+		<td class="relcell"><a href="#dchその他予定台帳" title="dchその他予定台帳_客室利用予定台帳id_fkey">dchその他予定台帳</a>, <a href="#dch宿泊予定台帳" title="dch宿泊予定台帳_客室利用予定台帳id_fkey">dch宿泊予定台帳</a>, <a href="#dch清掃予定台帳" title="dch清掃予定台帳_客室利用予定台帳id_fkey">dch清掃予定台帳</a></td>
+		<td class="subcell">Dch客室利用予定台帳</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">4</td>
-		<td><a href="#room" title="type=TABLE, primaryKey={id}, nameLength=4, columnCount=4">room</a></td>
+		<td><a href="#dch客室利用実績台帳" title="type=TABLE, primaryKey={id}, nameLength=11, columnCount=5">dch客室利用実績台帳</a></td>
 		<td class="typecell">TABLE</td>
-		<td class="relcell"><a href="#room_type" title="room_room_type_code_fkey">room_type</a></td>
-		<td class="relcell">&nbsp;</td>
-		<td class="subcell">Room</td>
+		<td class="relcell"><a href="#mst客室マスタ" title="dch客室利用実績台帳_客室マスタid_fkey">mst客室マスタ</a>, <a href="#kbn客室利用区分" title="dch客室利用実績台帳_客室利用コード_fkey">kbn客室利用区分</a></td>
+		<td class="relcell"><a href="#dchその他実績台帳" title="dchその他実績台帳_客室利用実績台帳id_fkey">dchその他実績台帳</a>, <a href="#dch宿泊実績台帳" title="dch宿泊実績台帳_客室利用実績台帳id_fkey">dch宿泊実績台帳</a>, <a href="#dch清掃実績台帳" title="dch清掃実績台帳_客室利用実績台帳id_fkey">dch清掃実績台帳</a></td>
+		<td class="subcell">Dch客室利用実績台帳</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">5</td>
-		<td><a href="#room_type" title="type=TABLE, primaryKey={code}, nameLength=9, columnCount=5">room_type</a></td>
+		<td><a href="#dch宿泊予定台帳" title="type=TABLE, primaryKey={id}, nameLength=9, columnCount=2">dch宿泊予定台帳</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell"><a href="#dch客室利用予定台帳" title="dch宿泊予定台帳_客室利用予定台帳id_fkey">dch客室利用予定台帳</a></td>
+		<td class="relcell">&nbsp;</td>
+		<td class="subcell">Dch宿泊予定台帳</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">6</td>
+		<td><a href="#dch宿泊実績台帳" title="type=TABLE, primaryKey={id}, nameLength=9, columnCount=2">dch宿泊実績台帳</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell"><a href="#dch客室利用実績台帳" title="dch宿泊実績台帳_客室利用実績台帳id_fkey">dch客室利用実績台帳</a></td>
+		<td class="relcell">&nbsp;</td>
+		<td class="subcell">Dch宿泊実績台帳</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">7</td>
+		<td><a href="#dch従業員職位履歴台帳" title="type=TABLE, primaryKey={id}, nameLength=12, columnCount=5">dch従業員職位履歴台帳</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell"><a href="#mst従業員マスタ" title="dch従業員職位履歴台帳_従業員id_fkey">mst従業員マスタ</a>, <a href="#kbn職位区分" title="dch従業員職位履歴台帳_職位コード_fkey">kbn職位区分</a></td>
+		<td class="relcell">&nbsp;</td>
+		<td class="subcell">Dch従業員職位履歴台帳</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">8</td>
+		<td><a href="#dch月締確定台帳" title="type=TABLE, primaryKey={id}, nameLength=9, columnCount=2">dch月締確定台帳</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
-		<td class="relcell"><a href="#room" title="room_room_type_code_fkey">room</a></td>
-		<td class="subcell">RoomType</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="subcell">Dch月締確定台帳</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">9</td>
+		<td><a href="#dch清掃予定台帳" title="type=TABLE, primaryKey={id}, nameLength=9, columnCount=2">dch清掃予定台帳</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell"><a href="#dch客室利用予定台帳" title="dch清掃予定台帳_客室利用予定台帳id_fkey">dch客室利用予定台帳</a></td>
+		<td class="relcell">&nbsp;</td>
+		<td class="subcell">Dch清掃予定台帳</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">10</td>
+		<td><a href="#dch清掃実績台帳" title="type=TABLE, primaryKey={id}, nameLength=9, columnCount=2">dch清掃実績台帳</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell"><a href="#dch客室利用実績台帳" title="dch清掃実績台帳_客室利用実績台帳id_fkey">dch客室利用実績台帳</a></td>
+		<td class="relcell">&nbsp;</td>
+		<td class="subcell">Dch清掃実績台帳</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">11</td>
+		<td><a href="#kbn客室利用区分" title="type=TABLE, primaryKey={コード}, nameLength=9, columnCount=2">kbn客室利用区分</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"><a href="#dch客室利用予定台帳" title="dch客室利用予定台帳_客室利用コード_fkey">dch客室利用予定台帳</a>, <a href="#dch客室利用実績台帳" title="dch客室利用実績台帳_客室利用コード_fkey">dch客室利用実績台帳</a></td>
+		<td class="subcell">Kbn客室利用区分</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">12</td>
+		<td><a href="#kbn権限区分" title="type=TABLE, primaryKey={コード}, nameLength=7, columnCount=2">kbn権限区分</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"><a href="#mst権限マスタ" title="mst権限マスタ_権限コード_fkey">mst権限マスタ</a></td>
+		<td class="subcell">Kbn権限区分</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">13</td>
+		<td><a href="#kbn職位区分" title="type=TABLE, primaryKey={コード}, nameLength=7, columnCount=3">kbn職位区分</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"><a href="#dch従業員職位履歴台帳" title="dch従業員職位履歴台帳_職位コード_fkey">dch従業員職位履歴台帳</a>, <a href="#mst従業員マスタ" title="mst従業員マスタ_職位コード_fkey">mst従業員マスタ</a>, <a href="#mst権限マスタ" title="mst権限マスタ_職位コード_fkey">mst権限マスタ</a></td>
+		<td class="subcell">Kbn職位区分</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">14</td>
+		<td><a href="#mst会員マスタ" title="type=TABLE, primaryKey={id}, nameLength=8, columnCount=12">mst会員マスタ</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="subcell">Mst会員マスタ</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">15</td>
+		<td><a href="#mst客室タイプマスタ" title="type=TABLE, primaryKey={id}, nameLength=11, columnCount=5">mst客室タイプマスタ</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"><a href="#mst客室マスタ" title="mst客室マスタ_客室タイプid_fkey">mst客室マスタ</a></td>
+		<td class="subcell">Mst客室タイプマスタ</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">16</td>
+		<td><a href="#mst客室マスタ" title="type=TABLE, primaryKey={id}, nameLength=8, columnCount=5">mst客室マスタ</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell"><a href="#mst客室タイプマスタ" title="mst客室マスタ_客室タイプid_fkey">mst客室タイプマスタ</a></td>
+		<td class="relcell"><a href="#dch客室利用予定台帳" title="dch客室利用予定台帳_客室マスタid_fkey">dch客室利用予定台帳</a>, <a href="#dch客室利用実績台帳" title="dch客室利用実績台帳_客室マスタid_fkey">dch客室利用実績台帳</a></td>
+		<td class="subcell">Mst客室マスタ</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">17</td>
+		<td><a href="#mst従業員マスタ" title="type=TABLE, primaryKey={id}, nameLength=9, columnCount=13">mst従業員マスタ</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell"><a href="#kbn職位区分" title="mst従業員マスタ_職位コード_fkey">kbn職位区分</a></td>
+		<td class="relcell"><a href="#dch従業員職位履歴台帳" title="dch従業員職位履歴台帳_従業員id_fkey">dch従業員職位履歴台帳</a></td>
+		<td class="subcell">Mst従業員マスタ</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">18</td>
+		<td><a href="#mst権限マスタ" title="type=TABLE, primaryKey={id}, nameLength=8, columnCount=3">mst権限マスタ</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell"><a href="#kbn権限区分" title="mst権限マスタ_権限コード_fkey">kbn権限区分</a>, <a href="#kbn職位区分" title="mst権限マスタ_職位コード_fkey">kbn職位区分</a></td>
+		<td class="relcell">&nbsp;</td>
+		<td class="subcell">Mst権限マスタ</td>
 	</tr>
 	</tbody>
 </table>
 
-  <h2 id="customer" title="type=TABLE, primaryKey={id}, nameLength=8, columnCount=4">
-customer
+  <h2 id="dchその他予定台帳" title="type=TABLE, primaryKey={id}, nameLength=10, columnCount=2">
+dchその他予定台帳
 </h2>
-<table summary="Columns in customer">
+<table summary="Columns in dchその他予定台帳">
 	<thead>
 	<tr>
 		<th class="rownumhead">No.</th>
@@ -357,12 +460,12 @@ customer
 	</thead>
 	<tr>
 		<td class="rownumcell">1</td>
-		<td class="flgcell" title="customer_pkey :: sequence=customer_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell" title="dchその他予定台帳_pkey :: sequence=dch009_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
 		<td class="flgcell">o</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="customer_id">id</td>
+		<td id="dchその他予定台帳_id">id</td>
 		<td class="typecell">bigserial</td>
 		<td class="sizecell"> 19 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
@@ -377,15 +480,125 @@ customer
 		<td class="flgcell"> &nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td id="customer_campany_name">campany_name</td>
-		<td class="typecell">varchar</td>
-		<td class="sizecell"> 100 </td>
+		<td class="flgcell">*</td>
+		<td id="dchその他予定台帳_客室利用予定台帳id">客室利用予定台帳id</td>
+		<td class="typecell">int8</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell"><a href="#dch客室利用予定台帳" title="dchその他予定台帳_客室利用予定台帳id_fkey">dch客室利用予定台帳</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">客室利用予定台帳id</td>
+		<td class="subcell">long?</td>
+	</tr>
+</table>
+  <h2 id="dchその他実績台帳" title="type=TABLE, primaryKey={id}, nameLength=10, columnCount=2">
+dchその他実績台帳
+</h2>
+<table summary="Columns in dchその他実績台帳">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="dchその他実績台帳_pkey :: sequence=dch010_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dchその他実績台帳_id">id</td>
+		<td class="typecell">bigserial</td>
+		<td class="sizecell"> 19 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">campanyName</td>
-		<td class="subcell">String</td>
+		<td class="subcell">id</td>
+		<td class="subcell">long?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dchその他実績台帳_客室利用実績台帳id">客室利用実績台帳id</td>
+		<td class="typecell">int8</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell"><a href="#dch客室利用実績台帳" title="dchその他実績台帳_客室利用実績台帳id_fkey">dch客室利用実績台帳</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">客室利用実績台帳id</td>
+		<td class="subcell">long?</td>
+	</tr>
+</table>
+  <h2 id="dch客室利用予定台帳" title="type=TABLE, primaryKey={id}, nameLength=11, columnCount=5">
+dch客室利用予定台帳
+</h2>
+<table summary="Columns in dch客室利用予定台帳">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="dch客室利用予定台帳_pkey :: sequence=dch003_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch客室利用予定台帳_id">id</td>
+		<td class="typecell">bigserial</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell"><a href="#dchその他予定台帳" title="dchその他予定台帳_客室利用予定台帳id_fkey">dchその他予定台帳</a>,<br /><a href="#dch宿泊予定台帳" title="dch宿泊予定台帳_客室利用予定台帳id_fkey">dch宿泊予定台帳</a>,<br /><a href="#dch清掃予定台帳" title="dch清掃予定台帳_客室利用予定台帳id_fkey">dch清掃予定台帳</a>&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">id</td>
+		<td class="subcell">long?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch客室利用予定台帳_客室マスタid">客室マスタid</td>
+		<td class="typecell">int8</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell"><a href="#mst客室マスタ" title="dch客室利用予定台帳_客室マスタid_fkey">mst客室マスタ</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">客室マスタid</td>
+		<td class="subcell">long?</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">3</td>
@@ -394,13 +607,13 @@ customer
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="customer_last_name">last_name</td>
-		<td class="typecell">varchar</td>
-		<td class="sizecell"> 20 </td>
-		<td class="relcell">&nbsp;&nbsp;</td>
+		<td id="dch客室利用予定台帳_客室利用コード">客室利用コード</td>
+		<td class="typecell">bpchar</td>
+		<td class="sizecell"> 3 </td>
+		<td class="relcell"><a href="#kbn客室利用区分" title="dch客室利用予定台帳_客室利用コード_fkey">kbn客室利用区分</a>&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">lastName</td>
+		<td class="relcell"><a href="#客室利用区分Cls">客室利用区分</a></td>
+		<td class="subcell">客室利用コード</td>
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
@@ -410,20 +623,352 @@ customer
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="customer_first_name">first_name</td>
-		<td class="typecell">varchar</td>
-		<td class="sizecell"> 20 </td>
+		<td id="dch客室利用予定台帳_利用開始日時">利用開始日時</td>
+		<td class="typecell">timestamp</td>
+		<td class="sizecell"> 26, 3 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">firstName</td>
+		<td class="subcell">利用開始日時</td>
+		<td class="subcell">DateTime?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">5</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch客室利用予定台帳_利用終了日時">利用終了日時</td>
+		<td class="typecell">timestamp</td>
+		<td class="sizecell"> 26, 3 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">利用終了日時</td>
+		<td class="subcell">DateTime?</td>
+	</tr>
+</table>
+  <h2 id="dch客室利用実績台帳" title="type=TABLE, primaryKey={id}, nameLength=11, columnCount=5">
+dch客室利用実績台帳
+</h2>
+<table summary="Columns in dch客室利用実績台帳">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="dch客室利用実績台帳_pkey :: sequence=dch004_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch客室利用実績台帳_id">id</td>
+		<td class="typecell">bigserial</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell"><a href="#dchその他実績台帳" title="dchその他実績台帳_客室利用実績台帳id_fkey">dchその他実績台帳</a>,<br /><a href="#dch宿泊実績台帳" title="dch宿泊実績台帳_客室利用実績台帳id_fkey">dch宿泊実績台帳</a>,<br /><a href="#dch清掃実績台帳" title="dch清掃実績台帳_客室利用実績台帳id_fkey">dch清掃実績台帳</a>&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">id</td>
+		<td class="subcell">long?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch客室利用実績台帳_客室マスタid">客室マスタid</td>
+		<td class="typecell">int8</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell"><a href="#mst客室マスタ" title="dch客室利用実績台帳_客室マスタid_fkey">mst客室マスタ</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">客室マスタid</td>
+		<td class="subcell">long?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch客室利用実績台帳_客室利用コード">客室利用コード</td>
+		<td class="typecell">bpchar</td>
+		<td class="sizecell"> 3 </td>
+		<td class="relcell"><a href="#kbn客室利用区分" title="dch客室利用実績台帳_客室利用コード_fkey">kbn客室利用区分</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"><a href="#客室利用区分Cls">客室利用区分</a></td>
+		<td class="subcell">客室利用コード</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">4</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch客室利用実績台帳_利用開始日時">利用開始日時</td>
+		<td class="typecell">timestamp</td>
+		<td class="sizecell"> 26, 3 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">利用開始日時</td>
+		<td class="subcell">DateTime?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">5</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch客室利用実績台帳_利用終了日時">利用終了日時</td>
+		<td class="typecell">timestamp</td>
+		<td class="sizecell"> 26, 3 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">利用終了日時</td>
+		<td class="subcell">DateTime?</td>
+	</tr>
+</table>
+  <h2 id="dch宿泊予定台帳" title="type=TABLE, primaryKey={id}, nameLength=9, columnCount=2">
+dch宿泊予定台帳
+</h2>
+<table summary="Columns in dch宿泊予定台帳">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="dch宿泊予定台帳_pkey :: sequence=dch005_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch宿泊予定台帳_id">id</td>
+		<td class="typecell">bigserial</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">id</td>
+		<td class="subcell">long?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch宿泊予定台帳_客室利用予定台帳id">客室利用予定台帳id</td>
+		<td class="typecell">int8</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell"><a href="#dch客室利用予定台帳" title="dch宿泊予定台帳_客室利用予定台帳id_fkey">dch客室利用予定台帳</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">客室利用予定台帳id</td>
+		<td class="subcell">long?</td>
+	</tr>
+</table>
+  <h2 id="dch宿泊実績台帳" title="type=TABLE, primaryKey={id}, nameLength=9, columnCount=2">
+dch宿泊実績台帳
+</h2>
+<table summary="Columns in dch宿泊実績台帳">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="dch宿泊実績台帳_pkey :: sequence=dch006_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch宿泊実績台帳_id">id</td>
+		<td class="typecell">bigserial</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">id</td>
+		<td class="subcell">long?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch宿泊実績台帳_客室利用実績台帳id">客室利用実績台帳id</td>
+		<td class="typecell">int8</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell"><a href="#dch客室利用実績台帳" title="dch宿泊実績台帳_客室利用実績台帳id_fkey">dch客室利用実績台帳</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">客室利用実績台帳id</td>
+		<td class="subcell">long?</td>
+	</tr>
+</table>
+  <h2 id="dch従業員職位履歴台帳" title="type=TABLE, primaryKey={id}, nameLength=12, columnCount=5">
+dch従業員職位履歴台帳
+</h2>
+<table summary="Columns in dch従業員職位履歴台帳">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="dch従業員職位履歴台帳_pkey :: sequence=dch001_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch従業員職位履歴台帳_id">id</td>
+		<td class="typecell">bigserial</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">id</td>
+		<td class="subcell">long?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch従業員職位履歴台帳_従業員id">従業員id</td>
+		<td class="typecell">int8</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell"><a href="#mst従業員マスタ" title="dch従業員職位履歴台帳_従業員id_fkey">mst従業員マスタ</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">従業員id</td>
+		<td class="subcell">long?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch従業員職位履歴台帳_適用開始日">適用開始日</td>
+		<td class="typecell">timestamp</td>
+		<td class="sizecell"> 26, 3 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">適用開始日</td>
+		<td class="subcell">DateTime?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">4</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch従業員職位履歴台帳_適用終了日">適用終了日</td>
+		<td class="typecell">timestamp</td>
+		<td class="sizecell"> 26, 3 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">適用終了日</td>
+		<td class="subcell">DateTime?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">5</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch従業員職位履歴台帳_職位コード">職位コード</td>
+		<td class="typecell">bpchar</td>
+		<td class="sizecell"> 3 </td>
+		<td class="relcell"><a href="#kbn職位区分" title="dch従業員職位履歴台帳_職位コード_fkey">kbn職位区分</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"><a href="#職位区分Cls">職位区分</a></td>
+		<td class="subcell">職位コード</td>
 		<td class="subcell">String</td>
 	</tr>
 </table>
-  <h2 id="employee" title="type=TABLE, primaryKey={id}, nameLength=8, columnCount=10">
-employee
+  <h2 id="dch月締確定台帳" title="type=TABLE, primaryKey={id}, nameLength=9, columnCount=2">
+dch月締確定台帳
 </h2>
-<table summary="Columns in employee">
+<table summary="Columns in dch月締確定台帳">
 	<thead>
 	<tr>
 		<th class="rownumhead">No.</th>
@@ -444,12 +989,12 @@ employee
 	</thead>
 	<tr>
 		<td class="rownumcell">1</td>
-		<td class="flgcell" title="employee_pkey :: sequence=employee_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell" title="dch月締確定台帳_pkey :: sequence=dch002_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
 		<td class="flgcell">o</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="employee_id">id</td>
+		<td id="dch月締確定台帳_id">id</td>
 		<td class="typecell">bigserial</td>
 		<td class="sizecell"> 19 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
@@ -462,16 +1007,291 @@ employee
 		<td class="rownumcell">2</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell" title="employee_employee_no_key(employee_no)">o</td>
+		<td class="flgcell" title="dch月締確定台帳_対象年月_key(対象年月)">o</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="employee_employee_no">employee_no</td>
-		<td class="typecell">varchar</td>
-		<td class="sizecell"> 10 </td>
+		<td id="dch月締確定台帳_対象年月">対象年月</td>
+		<td class="typecell">timestamp</td>
+		<td class="sizecell"> 26, 3 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">employeeNo</td>
+		<td class="subcell">対象年月</td>
+		<td class="subcell">DateTime?</td>
+	</tr>
+</table>
+  <h2 id="dch清掃予定台帳" title="type=TABLE, primaryKey={id}, nameLength=9, columnCount=2">
+dch清掃予定台帳
+</h2>
+<table summary="Columns in dch清掃予定台帳">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="dch清掃予定台帳_pkey :: sequence=dch007_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch清掃予定台帳_id">id</td>
+		<td class="typecell">bigserial</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">id</td>
+		<td class="subcell">long?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch清掃予定台帳_客室利用予定台帳id">客室利用予定台帳id</td>
+		<td class="typecell">int8</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell"><a href="#dch客室利用予定台帳" title="dch清掃予定台帳_客室利用予定台帳id_fkey">dch客室利用予定台帳</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">客室利用予定台帳id</td>
+		<td class="subcell">long?</td>
+	</tr>
+</table>
+  <h2 id="dch清掃実績台帳" title="type=TABLE, primaryKey={id}, nameLength=9, columnCount=2">
+dch清掃実績台帳
+</h2>
+<table summary="Columns in dch清掃実績台帳">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="dch清掃実績台帳_pkey :: sequence=dch008_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch清掃実績台帳_id">id</td>
+		<td class="typecell">bigserial</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">id</td>
+		<td class="subcell">long?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="dch清掃実績台帳_客室利用実績台帳id">客室利用実績台帳id</td>
+		<td class="typecell">int8</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell"><a href="#dch客室利用実績台帳" title="dch清掃実績台帳_客室利用実績台帳id_fkey">dch客室利用実績台帳</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">客室利用実績台帳id</td>
+		<td class="subcell">long?</td>
+	</tr>
+</table>
+  <h2 id="kbn客室利用区分" title="type=TABLE, primaryKey={コード}, nameLength=9, columnCount=2">
+kbn客室利用区分
+</h2>
+<table summary="Columns in kbn客室利用区分">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="kbn客室利用区分_pkey">o</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="kbn客室利用区分_コード">コード</td>
+		<td class="typecell">bpchar</td>
+		<td class="sizecell"> 3 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell"><a href="#dch客室利用予定台帳" title="dch客室利用予定台帳_客室利用コード_fkey">dch客室利用予定台帳</a>,<br /><a href="#dch客室利用実績台帳" title="dch客室利用実績台帳_客室利用コード_fkey">dch客室利用実績台帳</a>&nbsp;</td>
+		<td class="relcell"><a href="#客室利用区分Cls">客室利用区分</a></td>
+		<td class="subcell">コード</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="kbn客室利用区分_名称">名称</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 20 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">名称</td>
+		<td class="subcell">String</td>
+	</tr>
+</table>
+  <h2 id="kbn権限区分" title="type=TABLE, primaryKey={コード}, nameLength=7, columnCount=2">
+kbn権限区分
+</h2>
+<table summary="Columns in kbn権限区分">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="kbn権限区分_pkey">o</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="kbn権限区分_コード">コード</td>
+		<td class="typecell">bpchar</td>
+		<td class="sizecell"> 3 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell"><a href="#mst権限マスタ" title="mst権限マスタ_権限コード_fkey">mst権限マスタ</a>&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">コード</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="kbn権限区分_名称">名称</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 20 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">名称</td>
+		<td class="subcell">String</td>
+	</tr>
+</table>
+  <h2 id="kbn職位区分" title="type=TABLE, primaryKey={コード}, nameLength=7, columnCount=3">
+kbn職位区分
+</h2>
+<table summary="Columns in kbn職位区分">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="kbn職位区分_pkey">o</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="kbn職位区分_コード">コード</td>
+		<td class="typecell">bpchar</td>
+		<td class="sizecell"> 3 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell"><a href="#dch従業員職位履歴台帳" title="dch従業員職位履歴台帳_職位コード_fkey">dch従業員職位履歴台帳</a>,<br /><a href="#mst従業員マスタ" title="mst従業員マスタ_職位コード_fkey">mst従業員マスタ</a>,<br /><a href="#mst権限マスタ" title="mst権限マスタ_職位コード_fkey">mst権限マスタ</a>&nbsp;</td>
+		<td class="relcell"><a href="#職位区分Cls">職位区分</a></td>
+		<td class="subcell">コード</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="kbn職位区分_名称">名称</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 20 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">名称</td>
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
@@ -481,13 +1301,84 @@ employee
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="employee_last_name">last_name</td>
+		<td id="kbn職位区分_名称_英字">名称_英字</td>
 		<td class="typecell">varchar</td>
 		<td class="sizecell"> 20 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">lastName</td>
+		<td class="subcell">名称英字</td>
+		<td class="subcell">String</td>
+	</tr>
+</table>
+  <h2 id="mst会員マスタ" title="type=TABLE, primaryKey={id}, nameLength=8, columnCount=12">
+mst会員マスタ
+</h2>
+<table summary="Columns in mst会員マスタ">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="mst会員マスタ_pkey :: sequence=mst003_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst会員マスタ_id">id</td>
+		<td class="typecell">bigserial</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">id</td>
+		<td class="subcell">long?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell" title="mst会員マスタ_会員番号_key(会員番号)">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst会員マスタ_会員番号">会員番号</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 9 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">会員番号</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst会員マスタ_氏名_姓">氏名_姓</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 20 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">氏名姓</td>
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
@@ -497,13 +1388,13 @@ employee
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="employee_first_name">first_name</td>
+		<td id="mst会員マスタ_氏名_名">氏名_名</td>
 		<td class="typecell">varchar</td>
 		<td class="sizecell"> 20 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">firstName</td>
+		<td class="subcell">氏名名</td>
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
@@ -513,13 +1404,13 @@ employee
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="employee_ruby_name">ruby_name</td>
+		<td id="mst会員マスタ_氏名_カナ">氏名_カナ</td>
 		<td class="typecell">varchar</td>
 		<td class="sizecell"> 50 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">rubyName</td>
+		<td class="subcell">氏名カナ</td>
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
@@ -529,13 +1420,13 @@ employee
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell"> &nbsp;</td>
-		<td id="employee_email">email</td>
+		<td id="mst会員マスタ_会社名">会社名</td>
 		<td class="typecell">varchar</td>
-		<td class="sizecell"> 255 </td>
+		<td class="sizecell"> 50 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">email</td>
+		<td class="subcell">会社名</td>
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
@@ -544,14 +1435,14 @@ employee
 		<td class="flgcell"> &nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td id="employee_password">password</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td id="mst会員マスタ_会社名_カナ">会社名_カナ</td>
 		<td class="typecell">varchar</td>
-		<td class="sizecell"> 255 </td>
+		<td class="sizecell"> 50 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">password</td>
+		<td class="subcell">会社名カナ</td>
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
@@ -560,14 +1451,14 @@ employee
 		<td class="flgcell"> &nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td id="employee_rank_code">rank_code</td>
-		<td class="typecell">bpchar</td>
-		<td class="sizecell"> 3 </td>
-		<td class="relcell"><a href="#rank" title="employee_rank_code_fkey">rank</a>&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td id="mst会員マスタ_電話番号">電話番号</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 20 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
-		<td class="relcell"><a href="#RankCls">Rank</a></td>
-		<td class="subcell">rankCode</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">電話番号</td>
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
@@ -576,15 +1467,15 @@ employee
 		<td class="flgcell"> &nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td id="employee_entry_date">entry_date</td>
-		<td class="typecell">timestamp</td>
-		<td class="sizecell"> 26, 3 </td>
+		<td class="flgcell"> &nbsp;</td>
+		<td id="mst会員マスタ_メールアドレス">メールアドレス</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 255 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">entryDate</td>
-		<td class="subcell">DateTime?</td>
+		<td class="subcell">メールアドレス</td>
+		<td class="subcell">String</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">10</td>
@@ -592,21 +1483,53 @@ employee
 		<td class="flgcell"> &nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td id="employee_leave_date">leave_date</td>
+		<td class="flgcell">*</td>
+		<td id="mst会員マスタ_入会年月日">入会年月日</td>
 		<td class="typecell">timestamp</td>
 		<td class="sizecell"> 26, 3 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">leaveDate</td>
+		<td class="subcell">入会年月日</td>
 		<td class="subcell">DateTime?</td>
 	</tr>
+	<tr>
+		<td class="rownumcell">11</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td id="mst会員マスタ_退会年月日">退会年月日</td>
+		<td class="typecell">timestamp</td>
+		<td class="sizecell"> 26, 3 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">退会年月日</td>
+		<td class="subcell">DateTime?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">12</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td id="mst会員マスタ_備考">備考</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 255 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">備考</td>
+		<td class="subcell">String</td>
+	</tr>
 </table>
-  <h2 id="rank" title="type=TABLE, primaryKey={code}, nameLength=4, columnCount=3">
-rank
+  <h2 id="mst客室タイプマスタ" title="type=TABLE, primaryKey={id}, nameLength=11, columnCount=5">
+mst客室タイプマスタ
 </h2>
-<table summary="Columns in rank">
+<table summary="Columns in mst客室タイプマスタ">
 	<thead>
 	<tr>
 		<th class="rownumhead">No.</th>
@@ -627,19 +1550,19 @@ rank
 	</thead>
 	<tr>
 		<td class="rownumcell">1</td>
-		<td class="flgcell" title="rank_pkey">o</td>
-		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell" title="mst客室タイプマスタ_pkey :: sequence=mst004_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell">o</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="rank_code">code</td>
-		<td class="typecell">bpchar</td>
-		<td class="sizecell"> 3 </td>
+		<td id="mst客室タイプマスタ_id">id</td>
+		<td class="typecell">bigserial</td>
+		<td class="sizecell"> 19 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell"><a href="#employee" title="employee_rank_code_fkey">employee</a>&nbsp;</td>
-		<td class="relcell"><a href="#RankCls">Rank</a></td>
-		<td class="subcell">code</td>
-		<td class="subcell">String</td>
+		<td class="relcell"><a href="#mst客室マスタ" title="mst客室マスタ_客室タイプid_fkey">mst客室マスタ</a>&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">id</td>
+		<td class="subcell">long?</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">2</td>
@@ -648,13 +1571,13 @@ rank
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="rank_english_name">english_name</td>
+		<td id="mst客室タイプマスタ_名称">名称</td>
 		<td class="typecell">varchar</td>
 		<td class="sizecell"> 20 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">englishName</td>
+		<td class="subcell">名称</td>
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
@@ -664,20 +1587,52 @@ rank
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="rank_japanese_name">japanese_name</td>
-		<td class="typecell">varchar</td>
-		<td class="sizecell"> 20 </td>
+		<td id="mst客室タイプマスタ_料金">料金</td>
+		<td class="typecell">int4</td>
+		<td class="sizecell"> 10 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">japaneseName</td>
+		<td class="subcell">料金</td>
+		<td class="subcell">int?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">4</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst客室タイプマスタ_宿泊人数">宿泊人数</td>
+		<td class="typecell">int4</td>
+		<td class="sizecell"> 10 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">宿泊人数</td>
+		<td class="subcell">int?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">5</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td id="mst客室タイプマスタ_備考">備考</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 255 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">備考</td>
 		<td class="subcell">String</td>
 	</tr>
 </table>
-  <h2 id="room" title="type=TABLE, primaryKey={id}, nameLength=4, columnCount=4">
-room
+  <h2 id="mst客室マスタ" title="type=TABLE, primaryKey={id}, nameLength=8, columnCount=5">
+mst客室マスタ
 </h2>
-<table summary="Columns in room">
+<table summary="Columns in mst客室マスタ">
 	<thead>
 	<tr>
 		<th class="rownumhead">No.</th>
@@ -698,12 +1653,346 @@ room
 	</thead>
 	<tr>
 		<td class="rownumcell">1</td>
-		<td class="flgcell" title="room_pkey :: sequence=room_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell" title="mst客室マスタ_pkey :: sequence=mst005_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
 		<td class="flgcell">o</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="room_id">id</td>
+		<td id="mst客室マスタ_id">id</td>
+		<td class="typecell">bigserial</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell"><a href="#dch客室利用予定台帳" title="dch客室利用予定台帳_客室マスタid_fkey">dch客室利用予定台帳</a>,<br /><a href="#dch客室利用実績台帳" title="dch客室利用実績台帳_客室マスタid_fkey">dch客室利用実績台帳</a>&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">id</td>
+		<td class="subcell">long?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell" title="mst客室マスタ_客室番号_key(客室番号)">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst客室マスタ_客室番号">客室番号</td>
+		<td class="typecell">bpchar</td>
+		<td class="sizecell"> 3 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">客室番号</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst客室マスタ_客室タイプid">客室タイプid</td>
+		<td class="typecell">int8</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell"><a href="#mst客室タイプマスタ" title="mst客室マスタ_客室タイプid_fkey">mst客室タイプマスタ</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">客室タイプid</td>
+		<td class="subcell">long?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">4</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst客室マスタ_喫煙">喫煙</td>
+		<td class="typecell">bool</td>
+		<td class="sizecell"> 1 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">喫煙</td>
+		<td class="subcell">bool?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">5</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td id="mst客室マスタ_備考">備考</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 255 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">備考</td>
+		<td class="subcell">String</td>
+	</tr>
+</table>
+  <h2 id="mst従業員マスタ" title="type=TABLE, primaryKey={id}, nameLength=9, columnCount=13">
+mst従業員マスタ
+</h2>
+<table summary="Columns in mst従業員マスタ">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="mst従業員マスタ_pkey :: sequence=mst002_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst従業員マスタ_id">id</td>
+		<td class="typecell">bigserial</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell"><a href="#dch従業員職位履歴台帳" title="dch従業員職位履歴台帳_従業員id_fkey">dch従業員職位履歴台帳</a>&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">id</td>
+		<td class="subcell">long?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell" title="mst従業員マスタ_従業員番号_key(従業員番号)">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst従業員マスタ_従業員番号">従業員番号</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 20 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">従業員番号</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst従業員マスタ_氏名_姓">氏名_姓</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 20 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">氏名姓</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">4</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst従業員マスタ_氏名_名">氏名_名</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 20 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">氏名名</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">5</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst従業員マスタ_氏名_カナ">氏名_カナ</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 50 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">氏名カナ</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">6</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td id="mst従業員マスタ_メールアドレス">メールアドレス</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 255 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">メールアドレス</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">7</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst従業員マスタ_パスワード">パスワード</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 255 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">パスワード</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">8</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst従業員マスタ_生年月日">生年月日</td>
+		<td class="typecell">timestamp</td>
+		<td class="sizecell"> 26, 3 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">生年月日</td>
+		<td class="subcell">DateTime?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">9</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst従業員マスタ_入社年月日">入社年月日</td>
+		<td class="typecell">timestamp</td>
+		<td class="sizecell"> 26, 3 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">入社年月日</td>
+		<td class="subcell">DateTime?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">10</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td id="mst従業員マスタ_退社年月日">退社年月日</td>
+		<td class="typecell">timestamp</td>
+		<td class="sizecell"> 26, 3 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">退社年月日</td>
+		<td class="subcell">DateTime?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">11</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst従業員マスタ_職位コード">職位コード</td>
+		<td class="typecell">bpchar</td>
+		<td class="sizecell"> 3 </td>
+		<td class="relcell"><a href="#kbn職位区分" title="mst従業員マスタ_職位コード_fkey">kbn職位区分</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"><a href="#職位区分Cls">職位区分</a></td>
+		<td class="subcell">職位コード</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">12</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td id="mst従業員マスタ_最終ログイン日時">最終ログイン日時</td>
+		<td class="typecell">timestamp</td>
+		<td class="sizecell"> 26, 3 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">最終ログイン日時</td>
+		<td class="subcell">DateTime?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">13</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td id="mst従業員マスタ_備考">備考</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 255 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">備考</td>
+		<td class="subcell">String</td>
+	</tr>
+</table>
+  <h2 id="mst権限マスタ" title="type=TABLE, primaryKey={id}, nameLength=8, columnCount=3">
+mst権限マスタ
+</h2>
+<table summary="Columns in mst権限マスタ">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="mst権限マスタ_pkey :: sequence=mst001_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst権限マスタ_id">id</td>
 		<td class="typecell">bigserial</td>
 		<td class="sizecell"> 19 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
@@ -716,16 +2005,16 @@ room
 		<td class="rownumcell">2</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell" title="room_room_no_key(room_no)">o</td>
+		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="room_room_no">room_no</td>
+		<td id="mst権限マスタ_職位コード">職位コード</td>
 		<td class="typecell">bpchar</td>
 		<td class="sizecell"> 3 </td>
-		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell"><a href="#kbn職位区分" title="mst権限マスタ_職位コード_fkey">kbn職位区分</a>&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">roomNo</td>
+		<td class="relcell"><a href="#職位区分Cls">職位区分</a></td>
+		<td class="subcell">職位コード</td>
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
@@ -735,138 +2024,13 @@ room
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="room_room_type_code">room_type_code</td>
+		<td id="mst権限マスタ_権限コード">権限コード</td>
 		<td class="typecell">bpchar</td>
 		<td class="sizecell"> 3 </td>
-		<td class="relcell"><a href="#room_type" title="room_room_type_code_fkey">room_type</a>&nbsp;</td>
+		<td class="relcell"><a href="#kbn権限区分" title="mst権限マスタ_権限コード_fkey">kbn権限区分</a>&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">roomTypeCode</td>
-		<td class="subcell">String</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">4</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td id="room_can_smoke">can_smoke</td>
-		<td class="typecell">bool</td>
-		<td class="sizecell"> 1 </td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">canSmoke</td>
-		<td class="subcell">bool?</td>
-	</tr>
-</table>
-  <h2 id="room_type" title="type=TABLE, primaryKey={code}, nameLength=9, columnCount=5">
-room_type
-</h2>
-<table summary="Columns in room_type">
-	<thead>
-	<tr>
-		<th class="rownumhead">No.</th>
-		<th>PK</th>
-		<th>ID</th>
-		<th>UQ</th>
-		<th>IX</th>
-		<th>Not<br />Null</th>
-		<th>Name</th>
-		<th>Type</th>
-		<th>Size</th>
-		<th>Default</th>
-		<th>ForeignTable</th>
-		<th>ReferrerTable</th>
-		<th>Classification</th>
-		<th>PropertyName</th>
-		<th>CsharpType</th>
-	</tr>
-	</thead>
-	<tr>
-		<td class="rownumcell">1</td>
-		<td class="flgcell" title="room_type_pkey">o</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td id="room_type_code">code</td>
-		<td class="typecell">bpchar</td>
-		<td class="sizecell"> 3 </td>
-		<td class="defvalcell"> &nbsp;</td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell"><a href="#room" title="room_room_type_code_fkey">room</a>&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">code</td>
-		<td class="subcell">String</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">2</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td id="room_type_name">name</td>
-		<td class="typecell">varchar</td>
-		<td class="sizecell"> 20 </td>
-		<td class="defvalcell"> &nbsp;</td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">name</td>
-		<td class="subcell">String</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">3</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td id="room_type_price">price</td>
-		<td class="typecell">int4</td>
-		<td class="sizecell"> 10 </td>
-		<td class="defvalcell"> 0</td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">price</td>
-		<td class="subcell">int?</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">4</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td id="room_type_capacity">capacity</td>
-		<td class="typecell">int4</td>
-		<td class="sizecell"> 10 </td>
-		<td class="defvalcell"> 1</td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">capacity</td>
-		<td class="subcell">int?</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">5</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td id="room_type_description">description</td>
-		<td class="typecell">varchar</td>
-		<td class="sizecell"> 255 </td>
-		<td class="defvalcell"> &nbsp;</td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">description</td>
+		<td class="subcell">権限コード</td>
 		<td class="subcell">String</td>
 	</tr>
 </table>
@@ -883,40 +2047,64 @@ room_type
 	</thead>
 	<tbody>
 	<tr>
-		<td>Rank</td>
+		<td>職位区分</td>
 		<td class="clstypecell">table</td>
-		<td>従業員の職位を表す</td>
+		<td>職位区分</td>
 		<td>
 			<table class="child">
 			<tr>
-				<th id="RankCls">Code</th>
+				<th id="職位区分Cls">Code</th>
 				<th>Name</th>
-				<th>Alias</th>
 				<th>Comment</th>
 			</tr>
 			<tr>
-				<td>000</td>
-				<td>SystemMaintenancer</td>
-				<td>System Maintenancer</td>
-				<td class="commentcell">システム保守</td>
-			</tr>
-			<tr>
 				<td>001</td>
-				<td>AssistantManager</td>
-				<td>Assistant Manager</td>
-				<td class="commentcell">アシスタントマネージャー</td>
+				<td>システム保守</td>
+				<td class="commentcell">System&nbsp;Maintenancer</td>
 			</tr>
 			<tr>
 				<td>002</td>
-				<td>FinancialController</td>
-				<td>Financial Controller</td>
-				<td class="commentcell">ファイナンシャルコントローラー</td>
+				<td>アシスタントマネージャー</td>
+				<td class="commentcell">Assistant&nbsp;Manager</td>
 			</tr>
 			<tr>
 				<td>003</td>
-				<td>FrontClerk</td>
-				<td>Front Clerk</td>
-				<td class="commentcell">フロントクラーク</td>
+				<td>ファイナンシャルコントローラー</td>
+				<td class="commentcell">Financial&nbsp;Controller</td>
+			</tr>
+			<tr>
+				<td>004</td>
+				<td>フロントクラーク</td>
+				<td class="commentcell">Front&nbsp;Clerk</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>客室利用区分</td>
+		<td class="clstypecell">table</td>
+		<td>客室利用区分</td>
+		<td>
+			<table class="child">
+			<tr>
+				<th id="客室利用区分Cls">Code</th>
+				<th>Name</th>
+				<th>Comment</th>
+			</tr>
+			<tr>
+				<td>001</td>
+				<td>宿泊</td>
+				<td class="commentcell"> &nbsp;</td>
+			</tr>
+			<tr>
+				<td>002</td>
+				<td>清掃</td>
+				<td class="commentcell"> &nbsp;</td>
+			</tr>
+			<tr>
+				<td>003</td>
+				<td>その他</td>
+				<td class="commentcell"> &nbsp;</td>
 			</tr>
 			</table>
 		</td>

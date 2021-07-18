@@ -7,9 +7,14 @@
 data-directory: playsql/data/common/xls
 
 [10-kbn.xls]
-  rank (4)
-  room_type (10)
+  kbn権限区分 (1)
+  kbn職位区分 (4)
+  kbn客室利用区分 (3)
 
 [20-mst.xls]
-  employee (4)
-  room (21)
+  mst従業員マスタ (4)
+  mst客室タイプマスタ (10)
+  mst客室マスタ (23)
+
+[30-dch.xls]
+  dch従業員職位履歴台帳 (4)

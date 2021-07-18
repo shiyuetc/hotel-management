@@ -8,39 +8,39 @@ namespace Dbflute.AllCommon {
     public static class CDef {
 
         /**
-         * 従業員の職位を表す
+         * 職位区分
          */
-        public class Rank {
+        public class 職位区分 {
             /** システム保守: System Maintenancer */
-            public static readonly Rank SystemMaintenancer = new Rank("000", "SystemMaintenancer", "システム保守");
+            public static readonly 職位区分 システム保守 = new 職位区分("001", "システム保守", "システム保守");
             /** アシスタントマネージャー: Assistant Manager */
-            public static readonly Rank AssistantManager = new Rank("001", "AssistantManager", "アシスタントマネージャー");
+            public static readonly 職位区分 アシスタントマネージャー = new 職位区分("002", "アシスタントマネージャー", "アシスタントマネージャー");
             /** ファイナンシャルコントローラー: Financial Controller */
-            public static readonly Rank FinancialController = new Rank("002", "FinancialController", "ファイナンシャルコントローラー");
+            public static readonly 職位区分 ファイナンシャルコントローラー = new 職位区分("003", "ファイナンシャルコントローラー", "ファイナンシャルコントローラー");
             /** フロントクラーク: Front Clerk */
-            public static readonly Rank FrontClerk = new Rank("003", "FrontClerk", "フロントクラーク");
-            private static readonly Map<String, Rank> _codeValueMap = new LinkedHashMap<String, Rank>();
-            static Rank() {
-                _codeValueMap.put(SystemMaintenancer.Code.ToLower(), SystemMaintenancer);
-                _codeValueMap.put(AssistantManager.Code.ToLower(), AssistantManager);
-                _codeValueMap.put(FinancialController.Code.ToLower(), FinancialController);
-                _codeValueMap.put(FrontClerk.Code.ToLower(), FrontClerk);
+            public static readonly 職位区分 フロントクラーク = new 職位区分("004", "フロントクラーク", "フロントクラーク");
+            private static readonly Map<String, 職位区分> _codeValueMap = new LinkedHashMap<String, 職位区分>();
+            static 職位区分() {
+                _codeValueMap.put(システム保守.Code.ToLower(), システム保守);
+                _codeValueMap.put(アシスタントマネージャー.Code.ToLower(), アシスタントマネージャー);
+                _codeValueMap.put(ファイナンシャルコントローラー.Code.ToLower(), ファイナンシャルコントローラー);
+                _codeValueMap.put(フロントクラーク.Code.ToLower(), フロントクラーク);
             }
             protected String _code; protected String _name; protected String _alias;
-            public Rank(String code, String name, String alias) {
+            public 職位区分(String code, String name, String alias) {
                 _code = code; _name = name; _alias = alias;
             }
             public String Code { get { return _code; } }
             public String Name { get { return _name; } }
             public String Alias { get { return _alias; } }
-            public static Rank CodeOf(Object code) {
-                if (code == null) { return null; } if (code is Rank) { return (Rank)code; }
+            public static 職位区分 CodeOf(Object code) {
+                if (code == null) { return null; } if (code is 職位区分) { return (職位区分)code; }
                 return _codeValueMap.get(code.ToString().ToLower());
             }
-            public static Rank[] Values { get {
-                Rank[] values = new Rank[_codeValueMap.size()];
+            public static 職位区分[] Values { get {
+                職位区分[] values = new 職位区分[_codeValueMap.size()];
                 int index = 0;
-                foreach (Rank flg in _codeValueMap.values()) {
+                foreach (職位区分 flg in _codeValueMap.values()) {
                     values[index] = flg;
                     ++index;
                 }
@@ -48,8 +48,53 @@ namespace Dbflute.AllCommon {
             }}
             public override int GetHashCode() { return 7 + _code.GetHashCode(); }
             public override bool Equals(Object obj) {
-                if (!(obj is Rank)) { return false; }
-                Rank cls = (Rank)obj;
+                if (!(obj is 職位区分)) { return false; }
+                職位区分 cls = (職位区分)obj;
+                return _code.ToLower().Equals(cls.Code.ToLower());
+            }
+            public override String ToString() { return this.Code; }
+        }
+
+        /**
+         * 客室利用区分
+         */
+        public class 客室利用区分 {
+            /** 宿泊 */
+            public static readonly 客室利用区分 宿泊 = new 客室利用区分("001", "宿泊", "宿泊");
+            /** 清掃 */
+            public static readonly 客室利用区分 清掃 = new 客室利用区分("002", "清掃", "清掃");
+            /** その他 */
+            public static readonly 客室利用区分 その他 = new 客室利用区分("003", "その他", "その他");
+            private static readonly Map<String, 客室利用区分> _codeValueMap = new LinkedHashMap<String, 客室利用区分>();
+            static 客室利用区分() {
+                _codeValueMap.put(宿泊.Code.ToLower(), 宿泊);
+                _codeValueMap.put(清掃.Code.ToLower(), 清掃);
+                _codeValueMap.put(その他.Code.ToLower(), その他);
+            }
+            protected String _code; protected String _name; protected String _alias;
+            public 客室利用区分(String code, String name, String alias) {
+                _code = code; _name = name; _alias = alias;
+            }
+            public String Code { get { return _code; } }
+            public String Name { get { return _name; } }
+            public String Alias { get { return _alias; } }
+            public static 客室利用区分 CodeOf(Object code) {
+                if (code == null) { return null; } if (code is 客室利用区分) { return (客室利用区分)code; }
+                return _codeValueMap.get(code.ToString().ToLower());
+            }
+            public static 客室利用区分[] Values { get {
+                客室利用区分[] values = new 客室利用区分[_codeValueMap.size()];
+                int index = 0;
+                foreach (客室利用区分 flg in _codeValueMap.values()) {
+                    values[index] = flg;
+                    ++index;
+                }
+                return values;
+            }}
+            public override int GetHashCode() { return 7 + _code.GetHashCode(); }
+            public override bool Equals(Object obj) {
+                if (!(obj is 客室利用区分)) { return false; }
+                客室利用区分 cls = (客室利用区分)obj;
                 return _code.ToLower().Equals(cls.Code.ToLower());
             }
             public override String ToString() { return this.Code; }

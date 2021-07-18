@@ -25,31 +25,70 @@ namespace Dbflute.AllCommon.Dbm {
         static DBMetaInstanceHandler() {
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
-                tmpMap.put("customer", "Dbflute.BsEntity.Dbm.CustomerDbm");
-                tmpMap.put("employee", "Dbflute.BsEntity.Dbm.EmployeeDbm");
-                tmpMap.put("rank", "Dbflute.BsEntity.Dbm.RankDbm");
-                tmpMap.put("room", "Dbflute.BsEntity.Dbm.RoomDbm");
-                tmpMap.put("room_type", "Dbflute.BsEntity.Dbm.RoomTypeDbm");
+                tmpMap.put("dchその他予定台帳", "Dbflute.BsEntity.Dbm.Dchその他予定台帳Dbm");
+                tmpMap.put("dchその他実績台帳", "Dbflute.BsEntity.Dbm.Dchその他実績台帳Dbm");
+                tmpMap.put("dch客室利用予定台帳", "Dbflute.BsEntity.Dbm.Dch客室利用予定台帳Dbm");
+                tmpMap.put("dch客室利用実績台帳", "Dbflute.BsEntity.Dbm.Dch客室利用実績台帳Dbm");
+                tmpMap.put("dch宿泊予定台帳", "Dbflute.BsEntity.Dbm.Dch宿泊予定台帳Dbm");
+                tmpMap.put("dch宿泊実績台帳", "Dbflute.BsEntity.Dbm.Dch宿泊実績台帳Dbm");
+                tmpMap.put("dch従業員職位履歴台帳", "Dbflute.BsEntity.Dbm.Dch従業員職位履歴台帳Dbm");
+                tmpMap.put("dch月締確定台帳", "Dbflute.BsEntity.Dbm.Dch月締確定台帳Dbm");
+                tmpMap.put("dch清掃予定台帳", "Dbflute.BsEntity.Dbm.Dch清掃予定台帳Dbm");
+                tmpMap.put("dch清掃実績台帳", "Dbflute.BsEntity.Dbm.Dch清掃実績台帳Dbm");
+                tmpMap.put("kbn客室利用区分", "Dbflute.BsEntity.Dbm.Kbn客室利用区分Dbm");
+                tmpMap.put("kbn権限区分", "Dbflute.BsEntity.Dbm.Kbn権限区分Dbm");
+                tmpMap.put("kbn職位区分", "Dbflute.BsEntity.Dbm.Kbn職位区分Dbm");
+                tmpMap.put("mst会員マスタ", "Dbflute.BsEntity.Dbm.Mst会員マスタDbm");
+                tmpMap.put("mst客室タイプマスタ", "Dbflute.BsEntity.Dbm.Mst客室タイプマスタDbm");
+                tmpMap.put("mst客室マスタ", "Dbflute.BsEntity.Dbm.Mst客室マスタDbm");
+                tmpMap.put("mst従業員マスタ", "Dbflute.BsEntity.Dbm.Mst従業員マスタDbm");
+                tmpMap.put("mst権限マスタ", "Dbflute.BsEntity.Dbm.Mst権限マスタDbm");
                 _tableDbNameClassNameMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
 
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
-                tmpMap.put("customer".ToLower(), "customer");
-                tmpMap.put("employee".ToLower(), "employee");
-                tmpMap.put("rank".ToLower(), "rank");
-                tmpMap.put("room".ToLower(), "room");
-                tmpMap.put("room_type".ToLower(), "roomType");
+                tmpMap.put("dchその他予定台帳".ToLower(), "dchその他予定台帳");
+                tmpMap.put("dchその他実績台帳".ToLower(), "dchその他実績台帳");
+                tmpMap.put("dch客室利用予定台帳".ToLower(), "dch客室利用予定台帳");
+                tmpMap.put("dch客室利用実績台帳".ToLower(), "dch客室利用実績台帳");
+                tmpMap.put("dch宿泊予定台帳".ToLower(), "dch宿泊予定台帳");
+                tmpMap.put("dch宿泊実績台帳".ToLower(), "dch宿泊実績台帳");
+                tmpMap.put("dch従業員職位履歴台帳".ToLower(), "dch従業員職位履歴台帳");
+                tmpMap.put("dch月締確定台帳".ToLower(), "dch月締確定台帳");
+                tmpMap.put("dch清掃予定台帳".ToLower(), "dch清掃予定台帳");
+                tmpMap.put("dch清掃実績台帳".ToLower(), "dch清掃実績台帳");
+                tmpMap.put("kbn客室利用区分".ToLower(), "kbn客室利用区分");
+                tmpMap.put("kbn権限区分".ToLower(), "kbn権限区分");
+                tmpMap.put("kbn職位区分".ToLower(), "kbn職位区分");
+                tmpMap.put("mst会員マスタ".ToLower(), "mst会員マスタ");
+                tmpMap.put("mst客室タイプマスタ".ToLower(), "mst客室タイプマスタ");
+                tmpMap.put("mst客室マスタ".ToLower(), "mst客室マスタ");
+                tmpMap.put("mst従業員マスタ".ToLower(), "mst従業員マスタ");
+                tmpMap.put("mst権限マスタ".ToLower(), "mst権限マスタ");
                 _tableDbNamePropertyNameKeyToLowerMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
 
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
-                tmpMap.put("Customer".ToLower(), "customer");
-                tmpMap.put("Employee".ToLower(), "employee");
-                tmpMap.put("Rank".ToLower(), "rank");
-                tmpMap.put("Room".ToLower(), "room");
-                tmpMap.put("RoomType".ToLower(), "room_type");
+                tmpMap.put("Dchその他予定台帳".ToLower(), "dchその他予定台帳");
+                tmpMap.put("Dchその他実績台帳".ToLower(), "dchその他実績台帳");
+                tmpMap.put("Dch客室利用予定台帳".ToLower(), "dch客室利用予定台帳");
+                tmpMap.put("Dch客室利用実績台帳".ToLower(), "dch客室利用実績台帳");
+                tmpMap.put("Dch宿泊予定台帳".ToLower(), "dch宿泊予定台帳");
+                tmpMap.put("Dch宿泊実績台帳".ToLower(), "dch宿泊実績台帳");
+                tmpMap.put("Dch従業員職位履歴台帳".ToLower(), "dch従業員職位履歴台帳");
+                tmpMap.put("Dch月締確定台帳".ToLower(), "dch月締確定台帳");
+                tmpMap.put("Dch清掃予定台帳".ToLower(), "dch清掃予定台帳");
+                tmpMap.put("Dch清掃実績台帳".ToLower(), "dch清掃実績台帳");
+                tmpMap.put("Kbn客室利用区分".ToLower(), "kbn客室利用区分");
+                tmpMap.put("Kbn権限区分".ToLower(), "kbn権限区分");
+                tmpMap.put("Kbn職位区分".ToLower(), "kbn職位区分");
+                tmpMap.put("Mst会員マスタ".ToLower(), "mst会員マスタ");
+                tmpMap.put("Mst客室タイプマスタ".ToLower(), "mst客室タイプマスタ");
+                tmpMap.put("Mst客室マスタ".ToLower(), "mst客室マスタ");
+                tmpMap.put("Mst従業員マスタ".ToLower(), "mst従業員マスタ");
+                tmpMap.put("Mst権限マスタ".ToLower(), "mst権限マスタ");
                 _tablePropertyNameDbNameKeyToLowerMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
         }

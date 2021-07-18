@@ -53,18 +53,31 @@ map:{
     #    }
     #}
 
-    ; Rank = list:{
+    ; 職位区分 = list:{
         ; map:{
-            topComment=従業員の職位を表す
+            ; topComment=職位区分
             ; codeType=String
         }
         ; map:{
-            ; table=rank
-            ; code=code
-            ; name=english_name
-            ; alias=japanese_name
-            ; comment=english_name
-            ; orderBy=code
+            ; table=kbn職位区分
+            ; code=コード
+            ; name=名称
+            ; alias=名称
+            ; comment=名称_英字
+            ; orderBy=コード
+        }
+    }
+    ; 客室利用区分 = list:{
+        ; map:{
+            ; topComment=客室利用区分
+            ; codeType=String
+        }
+        ; map:{
+            ; table=kbn客室利用区分
+            ; code=コード
+            ; name=名称
+            ; alias=名称
+            ; orderBy=コード
         }
     }
 }
