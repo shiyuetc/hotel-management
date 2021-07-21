@@ -276,7 +276,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images\icon_顧客管理画面.png" />
     <EmbeddedResource Include="Resources\Images\icon_従業員管理画面.png" />
-    <EmbeddedResource Include="Resources\Images\icon_宿泊履歴確認画面.png" />
+    <EmbeddedResource Include="Resources\Images\icon_宿泊履歴画面.png" />
     <EmbeddedResource Include="Resources\Images\icon_予約管理画面.png" />
     <EmbeddedResource Include="Resources\Images\icon_客室管理画面.png" />
   </ItemGroup>
