@@ -119,18 +119,18 @@ namespace Dbflute.ExBhv {
             return SelectEntityWithDeletedCheck(Downcast(cb));
         }
 
-        public virtual Kbn客室利用区分 SelectByPKValue(String コード) {
-            return SelectEntity(BuildPKCB(コード));
+        public virtual Kbn客室利用区分 SelectByPKValue(String code) {
+            return SelectEntity(BuildPKCB(code));
         }
 
-        public virtual Kbn客室利用区分 SelectByPKValueWithDeletedCheck(String コード) {
-            return SelectEntityWithDeletedCheck(BuildPKCB(コード));
+        public virtual Kbn客室利用区分 SelectByPKValueWithDeletedCheck(String code) {
+            return SelectEntityWithDeletedCheck(BuildPKCB(code));
         }
 
-        private Kbn客室利用区分CB BuildPKCB(String コード) {
-            AssertObjectNotNull("コード", コード);
+        private Kbn客室利用区分CB BuildPKCB(String code) {
+            AssertObjectNotNull("code", code);
             Kbn客室利用区分CB cb = NewMyConditionBean();
-            cb.Query().Setコード_Equal(コード);
+            cb.Query().SetCode_Equal(code);
             return cb;            
         }
         #endregion
@@ -190,14 +190,14 @@ namespace Dbflute.ExBhv {
         protected class MyInternalLoadDch客室利用予定台帳ListCallback : InternalLoadReferrerCallback<Kbn客室利用区分, String, Dch客室利用予定台帳CB, Dch客室利用予定台帳> {
             protected Dch客室利用予定台帳Bhv referrerBhv;
             public MyInternalLoadDch客室利用予定台帳ListCallback(Dch客室利用予定台帳Bhv referrerBhv) { this.referrerBhv = referrerBhv; }
-            public String getPKVal(Kbn客室利用区分 e) { return e.コード; }
+            public String getPKVal(Kbn客室利用区分 e) { return e.Code; }
             public void setRfLs(Kbn客室利用区分 e, IList<Dch客室利用予定台帳> ls) { e.Dch客室利用予定台帳List = ls; }
             public Dch客室利用予定台帳CB newMyCB() { return referrerBhv.NewMyConditionBean(); }
-            public void qyFKIn(Dch客室利用予定台帳CB cb, IList<String> ls) { cb.Query().Set客室利用コード_InScope(ls); }
-            public void qyOdFKAsc(Dch客室利用予定台帳CB cb) { cb.Query().AddOrderBy_客室利用コード_Asc(); }
-            public void spFKCol(Dch客室利用予定台帳CB cb) { cb.Specify().Column客室利用コード(); }
+            public void qyFKIn(Dch客室利用予定台帳CB cb, IList<String> ls) { cb.Query().Set客室利用code_InScope(ls); }
+            public void qyOdFKAsc(Dch客室利用予定台帳CB cb) { cb.Query().AddOrderBy_客室利用code_Asc(); }
+            public void spFKCol(Dch客室利用予定台帳CB cb) { cb.Specify().Column客室利用code(); }
             public IList<Dch客室利用予定台帳> selRfLs(Dch客室利用予定台帳CB cb) { return referrerBhv.SelectList(cb); }
-            public String getFKVal(Dch客室利用予定台帳 e) { return e.客室利用コード; }
+            public String getFKVal(Dch客室利用予定台帳 e) { return e.客室利用code; }
             public void setlcEt(Dch客室利用予定台帳 re, Kbn客室利用区分 be) { re.Kbn客室利用区分 = be; }
         }
         public virtual void LoadDch客室利用実績台帳List(Kbn客室利用区分 kbn客室利用区分, ConditionBeanSetupper<Dch客室利用実績台帳CB> conditionBeanSetupper) {
@@ -222,14 +222,14 @@ namespace Dbflute.ExBhv {
         protected class MyInternalLoadDch客室利用実績台帳ListCallback : InternalLoadReferrerCallback<Kbn客室利用区分, String, Dch客室利用実績台帳CB, Dch客室利用実績台帳> {
             protected Dch客室利用実績台帳Bhv referrerBhv;
             public MyInternalLoadDch客室利用実績台帳ListCallback(Dch客室利用実績台帳Bhv referrerBhv) { this.referrerBhv = referrerBhv; }
-            public String getPKVal(Kbn客室利用区分 e) { return e.コード; }
+            public String getPKVal(Kbn客室利用区分 e) { return e.Code; }
             public void setRfLs(Kbn客室利用区分 e, IList<Dch客室利用実績台帳> ls) { e.Dch客室利用実績台帳List = ls; }
             public Dch客室利用実績台帳CB newMyCB() { return referrerBhv.NewMyConditionBean(); }
-            public void qyFKIn(Dch客室利用実績台帳CB cb, IList<String> ls) { cb.Query().Set客室利用コード_InScope(ls); }
-            public void qyOdFKAsc(Dch客室利用実績台帳CB cb) { cb.Query().AddOrderBy_客室利用コード_Asc(); }
-            public void spFKCol(Dch客室利用実績台帳CB cb) { cb.Specify().Column客室利用コード(); }
+            public void qyFKIn(Dch客室利用実績台帳CB cb, IList<String> ls) { cb.Query().Set客室利用code_InScope(ls); }
+            public void qyOdFKAsc(Dch客室利用実績台帳CB cb) { cb.Query().AddOrderBy_客室利用code_Asc(); }
+            public void spFKCol(Dch客室利用実績台帳CB cb) { cb.Specify().Column客室利用code(); }
             public IList<Dch客室利用実績台帳> selRfLs(Dch客室利用実績台帳CB cb) { return referrerBhv.SelectList(cb); }
-            public String getFKVal(Dch客室利用実績台帳 e) { return e.客室利用コード; }
+            public String getFKVal(Dch客室利用実績台帳 e) { return e.客室利用code; }
             public void setlcEt(Dch客室利用実績台帳 re, Kbn客室利用区分 be) { re.Kbn客室利用区分 = be; }
         }
         #endregion
@@ -276,7 +276,7 @@ namespace Dbflute.ExBhv {
             public void CallbackUpdate(Kbn客室利用区分 entity) { _bhv.Update(entity); }
             public Kbn客室利用区分CB CallbackNewMyConditionBean() { return _bhv.NewMyConditionBean(); }
             public void CallbackSetupPrimaryKeyCondition(Kbn客室利用区分CB cb, Kbn客室利用区分 entity) {
-                cb.Query().Setコード_Equal(entity.コード);
+                cb.Query().SetCode_Equal(entity.Code);
             }
             public int CallbackSelectCount(Kbn客室利用区分CB cb) { return _bhv.SelectCount(cb); }
         }

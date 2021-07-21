@@ -235,31 +235,31 @@ namespace Dbflute.CBean.CQ.BS {
         public BsDch客室利用実績台帳CQ AddOrderBy_客室マスタid_Asc() { regOBA("客室マスタid");return this; }
         public BsDch客室利用実績台帳CQ AddOrderBy_客室マスタid_Desc() { regOBD("客室マスタid");return this; }
 
-        protected ConditionValue _客室利用コード;
-        public ConditionValue 客室利用コード {
-            get { if (_客室利用コード == null) { _客室利用コード = new ConditionValue(); } return _客室利用コード; }
+        protected ConditionValue _客室利用code;
+        public ConditionValue 客室利用code {
+            get { if (_客室利用code == null) { _客室利用code = new ConditionValue(); } return _客室利用code; }
         }
-        protected override ConditionValue getCValue客室利用コード() { return this.客室利用コード; }
+        protected override ConditionValue getCValue客室利用code() { return this.客室利用code; }
 
 
-        protected Map<String, Kbn客室利用区分CQ> _客室利用コード_InScopeSubQuery_Kbn客室利用区分Map;
-        public Map<String, Kbn客室利用区分CQ> 客室利用コード_InScopeSubQuery_Kbn客室利用区分 { get { return _客室利用コード_InScopeSubQuery_Kbn客室利用区分Map; }}
-        public override String keep客室利用コード_InScopeSubQuery_Kbn客室利用区分(Kbn客室利用区分CQ subQuery) {
-            if (_客室利用コード_InScopeSubQuery_Kbn客室利用区分Map == null) { _客室利用コード_InScopeSubQuery_Kbn客室利用区分Map = new LinkedHashMap<String, Kbn客室利用区分CQ>(); }
-            String key = "subQueryMapKey" + (_客室利用コード_InScopeSubQuery_Kbn客室利用区分Map.size() + 1);
-            _客室利用コード_InScopeSubQuery_Kbn客室利用区分Map.put(key, subQuery); return "客室利用コード_InScopeSubQuery_Kbn客室利用区分." + key;
-        }
-
-        protected Map<String, Kbn客室利用区分CQ> _客室利用コード_NotInScopeSubQuery_Kbn客室利用区分Map;
-        public Map<String, Kbn客室利用区分CQ> 客室利用コード_NotInScopeSubQuery_Kbn客室利用区分 { get { return _客室利用コード_NotInScopeSubQuery_Kbn客室利用区分Map; }}
-        public override String keep客室利用コード_NotInScopeSubQuery_Kbn客室利用区分(Kbn客室利用区分CQ subQuery) {
-            if (_客室利用コード_NotInScopeSubQuery_Kbn客室利用区分Map == null) { _客室利用コード_NotInScopeSubQuery_Kbn客室利用区分Map = new LinkedHashMap<String, Kbn客室利用区分CQ>(); }
-            String key = "subQueryMapKey" + (_客室利用コード_NotInScopeSubQuery_Kbn客室利用区分Map.size() + 1);
-            _客室利用コード_NotInScopeSubQuery_Kbn客室利用区分Map.put(key, subQuery); return "客室利用コード_NotInScopeSubQuery_Kbn客室利用区分." + key;
+        protected Map<String, Kbn客室利用区分CQ> _客室利用code_InScopeSubQuery_Kbn客室利用区分Map;
+        public Map<String, Kbn客室利用区分CQ> 客室利用code_InScopeSubQuery_Kbn客室利用区分 { get { return _客室利用code_InScopeSubQuery_Kbn客室利用区分Map; }}
+        public override String keep客室利用code_InScopeSubQuery_Kbn客室利用区分(Kbn客室利用区分CQ subQuery) {
+            if (_客室利用code_InScopeSubQuery_Kbn客室利用区分Map == null) { _客室利用code_InScopeSubQuery_Kbn客室利用区分Map = new LinkedHashMap<String, Kbn客室利用区分CQ>(); }
+            String key = "subQueryMapKey" + (_客室利用code_InScopeSubQuery_Kbn客室利用区分Map.size() + 1);
+            _客室利用code_InScopeSubQuery_Kbn客室利用区分Map.put(key, subQuery); return "客室利用code_InScopeSubQuery_Kbn客室利用区分." + key;
         }
 
-        public BsDch客室利用実績台帳CQ AddOrderBy_客室利用コード_Asc() { regOBA("客室利用コード");return this; }
-        public BsDch客室利用実績台帳CQ AddOrderBy_客室利用コード_Desc() { regOBD("客室利用コード");return this; }
+        protected Map<String, Kbn客室利用区分CQ> _客室利用code_NotInScopeSubQuery_Kbn客室利用区分Map;
+        public Map<String, Kbn客室利用区分CQ> 客室利用code_NotInScopeSubQuery_Kbn客室利用区分 { get { return _客室利用code_NotInScopeSubQuery_Kbn客室利用区分Map; }}
+        public override String keep客室利用code_NotInScopeSubQuery_Kbn客室利用区分(Kbn客室利用区分CQ subQuery) {
+            if (_客室利用code_NotInScopeSubQuery_Kbn客室利用区分Map == null) { _客室利用code_NotInScopeSubQuery_Kbn客室利用区分Map = new LinkedHashMap<String, Kbn客室利用区分CQ>(); }
+            String key = "subQueryMapKey" + (_客室利用code_NotInScopeSubQuery_Kbn客室利用区分Map.size() + 1);
+            _客室利用code_NotInScopeSubQuery_Kbn客室利用区分Map.put(key, subQuery); return "客室利用code_NotInScopeSubQuery_Kbn客室利用区分." + key;
+        }
+
+        public BsDch客室利用実績台帳CQ AddOrderBy_客室利用code_Asc() { regOBA("客室利用code");return this; }
+        public BsDch客室利用実績台帳CQ AddOrderBy_客室利用code_Desc() { regOBD("客室利用code");return this; }
 
         protected ConditionValue _利用開始日時;
         public ConditionValue 利用開始日時 {
@@ -349,7 +349,7 @@ namespace Dbflute.CBean.CQ.BS {
         public void xsetupOuterJoin_Kbn客室利用区分() {
             Kbn客室利用区分CQ cq = ConditionQueryKbn客室利用区分;
             Map<String, String> joinOnMap = new LinkedHashMap<String, String>();
-            joinOnMap.put("客室利用コード", "コード");
+            joinOnMap.put("客室利用code", "code");
             registerOuterJoin(cq, joinOnMap);
         }
         protected String resolveNextRelationPathKbn客室利用区分() {

@@ -29,19 +29,19 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                             PrimaryKey Handling
         //                                                             ===================
-        public void AcceptPrimaryKey(String コード) {
-            assertObjectNotNull("コード", コード);
+        public void AcceptPrimaryKey(String code) {
+            assertObjectNotNull("code", code);
             BsKbn客室利用区分CB cb = this;
-            cb.Query().Setコード_Equal(コード);
+            cb.Query().SetCode_Equal(code);
         }
 
         public override ConditionBean AddOrderBy_PK_Asc() {
-            Query().AddOrderBy_コード_Asc();
+            Query().AddOrderBy_Code_Asc();
             return this;
         }
 
         public override ConditionBean AddOrderBy_PK_Desc() {
-            Query().AddOrderBy_コード_Desc();
+            Query().AddOrderBy_Code_Desc();
             return this;
         }
 
@@ -165,10 +165,10 @@ namespace Dbflute.CBean.BS {
         public Kbn客室利用区分CBSpecification(ConditionBean baseCB, HpSpQyCall<Kbn客室利用区分CQ> qyCall
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
-        public void Columnコード() { doColumn("コード"); }
+        public void ColumnCode() { doColumn("code"); }
         public void Column名称() { doColumn("名称"); }
         protected override void doSpecifyRequiredColumn() {
-            Columnコード(); // PK
+            ColumnCode(); // PK
         }
         protected override String getTableDbName() { return "kbn客室利用区分"; }
         public RAFunction<Dch客室利用予定台帳CB, Kbn客室利用区分CQ> DerivedDch客室利用予定台帳List() {

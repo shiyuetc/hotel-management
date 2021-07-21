@@ -19,10 +19,10 @@ namespace Dbflute.ExEntity {
     /// The entity of kbn職位区分 as TABLE. (partial class for auto-generation)
     /// <![CDATA[
     /// [primary-key]
-    ///     コード
+    ///     code
     /// 
     /// [column]
-    ///     コード, 名称, 名称_英字
+    ///     code, 名称, 名称_英字
     /// 
     /// [sequence]
     ///     
@@ -37,13 +37,13 @@ namespace Dbflute.ExEntity {
     ///     
     /// 
     /// [referrer-table]
-    ///     dch従業員職位履歴台帳, mst従業員マスタ, mst権限マスタ
+    ///     dch従業員職位履歴台帳, mstメニュー権限マスタ, mst従業員マスタ
     /// 
     /// [foreign-property]
     ///     
     /// 
     /// [referrer-property]
-    ///     dch従業員職位履歴台帳List, mst従業員マスタList, mst権限マスタList
+    ///     dch従業員職位履歴台帳List, mstメニュー権限マスタList, mst従業員マスタList
     /// ]]>
     /// Author: DBFlute(AutoGenerator)
     /// </summary>
@@ -55,8 +55,8 @@ namespace Dbflute.ExEntity {
         //                                                                       Attribute
         //                                                                       =========
         #region Attribute
-        /// <summary>コード: {PK, NotNull, bpchar(3), classification=職位区分}</summary>
-        protected String _コード;
+        /// <summary>code: {PK, NotNull, bpchar(3), classification=職位区分}</summary>
+        protected String _code;
 
         /// <summary>名称: {NotNull, varchar(20)}</summary>
         protected String _名称;
@@ -82,10 +82,10 @@ namespace Dbflute.ExEntity {
         //                                                         Classification Property
         //                                                         =======================
         #region Classification Property
-        public CDef.職位区分 コードAs職位区分 { get {
-            return CDef.職位区分.CodeOf(_コード);
+        public CDef.職位区分 CodeAs職位区分 { get {
+            return CDef.職位区分.CodeOf(_code);
         } set {
-            コード = value != null ? value.Code : null;
+            Code = value != null ? value.Code : null;
         }}
 
         #endregion
@@ -95,43 +95,43 @@ namespace Dbflute.ExEntity {
         //                                                          ======================
         #region Classification Setting
         /// <summary>
-        /// Set the value of コード as システム保守.
+        /// Set the value of code as システム保守.
         /// <![CDATA[
         /// システム保守: System Maintenancer
         /// ]]>
         /// </summary>
-        public void Setコード_システム保守() {
-            コードAs職位区分 = CDef.職位区分.システム保守;
+        public void SetCode_システム保守() {
+            CodeAs職位区分 = CDef.職位区分.システム保守;
         }
 
         /// <summary>
-        /// Set the value of コード as アシスタントマネージャー.
+        /// Set the value of code as アシスタントマネージャー.
         /// <![CDATA[
         /// アシスタントマネージャー: Assistant Manager
         /// ]]>
         /// </summary>
-        public void Setコード_アシスタントマネージャー() {
-            コードAs職位区分 = CDef.職位区分.アシスタントマネージャー;
+        public void SetCode_アシスタントマネージャー() {
+            CodeAs職位区分 = CDef.職位区分.アシスタントマネージャー;
         }
 
         /// <summary>
-        /// Set the value of コード as ファイナンシャルコントローラー.
+        /// Set the value of code as ファイナンシャルコントローラー.
         /// <![CDATA[
         /// ファイナンシャルコントローラー: Financial Controller
         /// ]]>
         /// </summary>
-        public void Setコード_ファイナンシャルコントローラー() {
-            コードAs職位区分 = CDef.職位区分.ファイナンシャルコントローラー;
+        public void SetCode_ファイナンシャルコントローラー() {
+            CodeAs職位区分 = CDef.職位区分.ファイナンシャルコントローラー;
         }
 
         /// <summary>
-        /// Set the value of コード as フロントクラーク.
+        /// Set the value of code as フロントクラーク.
         /// <![CDATA[
         /// フロントクラーク: Front Clerk
         /// ]]>
         /// </summary>
-        public void Setコード_フロントクラーク() {
-            コードAs職位区分 = CDef.職位区分.フロントクラーク;
+        public void SetCode_フロントクラーク() {
+            CodeAs職位区分 = CDef.職位区分.フロントクラーク;
         }
 
         #endregion
@@ -141,61 +141,61 @@ namespace Dbflute.ExEntity {
         //                                                    ============================
         #region Classification Determination
         /// <summary>
-        /// Is the value of コード 'システム保守'?
+        /// Is the value of code 'システム保守'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// システム保守: System Maintenancer
         /// ]]>
         /// </summary>
-        public bool Isコードシステム保守 {
+        public bool IsCodeシステム保守 {
             get {
-                CDef.職位区分 cls = コードAs職位区分;
+                CDef.職位区分 cls = CodeAs職位区分;
                 return cls != null ? cls.Equals(CDef.職位区分.システム保守) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of コード 'アシスタントマネージャー'?
+        /// Is the value of code 'アシスタントマネージャー'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// アシスタントマネージャー: Assistant Manager
         /// ]]>
         /// </summary>
-        public bool Isコードアシスタントマネージャー {
+        public bool IsCodeアシスタントマネージャー {
             get {
-                CDef.職位区分 cls = コードAs職位区分;
+                CDef.職位区分 cls = CodeAs職位区分;
                 return cls != null ? cls.Equals(CDef.職位区分.アシスタントマネージャー) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of コード 'ファイナンシャルコントローラー'?
+        /// Is the value of code 'ファイナンシャルコントローラー'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// ファイナンシャルコントローラー: Financial Controller
         /// ]]>
         /// </summary>
-        public bool Isコードファイナンシャルコントローラー {
+        public bool IsCodeファイナンシャルコントローラー {
             get {
-                CDef.職位区分 cls = コードAs職位区分;
+                CDef.職位区分 cls = CodeAs職位区分;
                 return cls != null ? cls.Equals(CDef.職位区分.ファイナンシャルコントローラー) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of コード 'フロントクラーク'?
+        /// Is the value of code 'フロントクラーク'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// フロントクラーク: Front Clerk
         /// ]]>
         /// </summary>
-        public bool Isコードフロントクラーク {
+        public bool IsCodeフロントクラーク {
             get {
-                CDef.職位区分 cls = コードAs職位区分;
+                CDef.職位区分 cls = CodeAs職位区分;
                 return cls != null ? cls.Equals(CDef.職位区分.フロントクラーク) : false;
             }
         }
@@ -220,20 +220,20 @@ namespace Dbflute.ExEntity {
             set { _dch従業員職位履歴台帳List = value; }
         }
 
+        protected IList<Mstメニュー権限マスタ> _mstメニュー権限マスタList;
+
+        /// <summary>mstメニュー権限マスタ as 'Mstメニュー権限マスタList'.</summary>
+        public IList<Mstメニュー権限マスタ> Mstメニュー権限マスタList {
+            get { if (_mstメニュー権限マスタList == null) { _mstメニュー権限マスタList = new List<Mstメニュー権限マスタ>(); } return _mstメニュー権限マスタList; }
+            set { _mstメニュー権限マスタList = value; }
+        }
+
         protected IList<Mst従業員マスタ> _mst従業員マスタList;
 
         /// <summary>mst従業員マスタ as 'Mst従業員マスタList'.</summary>
         public IList<Mst従業員マスタ> Mst従業員マスタList {
             get { if (_mst従業員マスタList == null) { _mst従業員マスタList = new List<Mst従業員マスタ>(); } return _mst従業員マスタList; }
             set { _mst従業員マスタList = value; }
-        }
-
-        protected IList<Mst権限マスタ> _mst権限マスタList;
-
-        /// <summary>mst権限マスタ as 'Mst権限マスタList'.</summary>
-        public IList<Mst権限マスタ> Mst権限マスタList {
-            get { if (_mst権限マスタList == null) { _mst権限マスタList = new List<Mst権限マスタ>(); } return _mst権限マスタList; }
-            set { _mst権限マスタList = value; }
         }
 
         #endregion
@@ -243,7 +243,7 @@ namespace Dbflute.ExEntity {
         //                                                                   =============
         public virtual bool HasPrimaryKeyValue {
             get {
-                if (_コード == null) { return false; }
+                if (_code == null) { return false; }
                 return true;
             }
         }
@@ -266,7 +266,7 @@ namespace Dbflute.ExEntity {
         public override bool Equals(Object other) {
             if (other == null || !(other is Kbn職位区分)) { return false; }
             Kbn職位区分 otherEntity = (Kbn職位区分)other;
-            if (!xSV(this.コード, otherEntity.コード)) { return false; }
+            if (!xSV(this.Code, otherEntity.Code)) { return false; }
             return true;
         }
         protected bool xSV(Object value1, Object value2) { // isSameValue()
@@ -277,7 +277,7 @@ namespace Dbflute.ExEntity {
 
         public override int GetHashCode() {
             int result = 17;
-            result = xCH(result, _コード);
+            result = xCH(result, _code);
             return result;
         }
         protected int xCH(int result, Object value) { // calculateHashcode()
@@ -295,10 +295,10 @@ namespace Dbflute.ExEntity {
             String l = "\n  ";
             if (_dch従業員職位履歴台帳List != null) { foreach (Entity e in _dch従業員職位履歴台帳List)
             { if (e != null) { sb.Append(l).Append(xbRDS(e, "Dch従業員職位履歴台帳List")); } } }
+            if (_mstメニュー権限マスタList != null) { foreach (Entity e in _mstメニュー権限マスタList)
+            { if (e != null) { sb.Append(l).Append(xbRDS(e, "Mstメニュー権限マスタList")); } } }
             if (_mst従業員マスタList != null) { foreach (Entity e in _mst従業員マスタList)
             { if (e != null) { sb.Append(l).Append(xbRDS(e, "Mst従業員マスタList")); } } }
-            if (_mst権限マスタList != null) { foreach (Entity e in _mst権限マスタList)
-            { if (e != null) { sb.Append(l).Append(xbRDS(e, "Mst権限マスタList")); } } }
             return sb.ToString();
         }
         protected String xbRDS(Entity e, String name) { // buildRelationDisplayString()
@@ -315,7 +315,7 @@ namespace Dbflute.ExEntity {
         protected virtual String BuildColumnString() {
             String c = ", ";
             StringBuilder sb = new StringBuilder();
-            sb.Append(c).Append(this.コード);
+            sb.Append(c).Append(this.Code);
             sb.Append(c).Append(this.名称);
             sb.Append(c).Append(this.名称英字);
             if (sb.Length > 0) { sb.Remove(0, c.Length); }
@@ -327,10 +327,10 @@ namespace Dbflute.ExEntity {
             String c = ",";
             if (_dch従業員職位履歴台帳List != null && _dch従業員職位履歴台帳List.Count > 0)
             { sb.Append(c).Append("Dch従業員職位履歴台帳List"); }
+            if (_mstメニュー権限マスタList != null && _mstメニュー権限マスタList.Count > 0)
+            { sb.Append(c).Append("Mstメニュー権限マスタList"); }
             if (_mst従業員マスタList != null && _mst従業員マスタList.Count > 0)
             { sb.Append(c).Append("Mst従業員マスタList"); }
-            if (_mst権限マスタList != null && _mst権限マスタList.Count > 0)
-            { sb.Append(c).Append("Mst権限マスタList"); }
             if (sb.Length > 0) { sb.Remove(0, c.Length).Insert(0, "(").Append(")"); }
             return sb.ToString();
         }
@@ -340,13 +340,13 @@ namespace Dbflute.ExEntity {
         //                                                                        Accessor
         //                                                                        ========
         #region Accessor
-        /// <summary>コード: {PK, NotNull, bpchar(3), classification=職位区分}</summary>
-        [Seasar.Dao.Attrs.Column("コード")]
-        public String コード {
-            get { return _コード; }
+        /// <summary>code: {PK, NotNull, bpchar(3), classification=職位区分}</summary>
+        [Seasar.Dao.Attrs.Column("code")]
+        public String Code {
+            get { return _code; }
             set {
-                __modifiedProperties.AddPropertyName("コード");
-                _コード = value;
+                __modifiedProperties.AddPropertyName("Code");
+                _code = value;
             }
         }
 

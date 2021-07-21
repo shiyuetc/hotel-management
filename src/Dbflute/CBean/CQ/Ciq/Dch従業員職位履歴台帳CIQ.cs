@@ -91,17 +91,17 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        protected override ConditionValue getCValue職位コード() {
-            return _myCQ.職位コード;
+        protected override ConditionValue getCValue職位code() {
+            return _myCQ.職位code;
         }
 
 
-        public override String keep職位コード_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
-            return _myCQ.keep職位コード_InScopeSubQuery_Kbn職位区分(subQuery);
+        public override String keep職位code_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
+            return _myCQ.keep職位code_InScopeSubQuery_Kbn職位区分(subQuery);
         }
 
-        public override String keep職位コード_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
-            return _myCQ.keep職位コード_NotInScopeSubQuery_Kbn職位区分(subQuery);
+        public override String keep職位code_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
+            return _myCQ.keep職位code_NotInScopeSubQuery_Kbn職位区分(subQuery);
         }
 
         // ===================================================================================

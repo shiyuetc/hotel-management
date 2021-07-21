@@ -34,125 +34,125 @@ namespace Dbflute.CBean.CQ.BS {
         }
 
 
-        protected ConditionValue _コード;
-        public ConditionValue コード {
-            get { if (_コード == null) { _コード = new ConditionValue(); } return _コード; }
+        protected ConditionValue _code;
+        public ConditionValue Code {
+            get { if (_code == null) { _code = new ConditionValue(); } return _code; }
         }
-        protected override ConditionValue getCValueコード() { return this.コード; }
+        protected override ConditionValue getCValueCode() { return this.Code; }
 
 
-        protected Map<String, Dch客室利用予定台帳CQ> _コード_ExistsSubQuery_Dch客室利用予定台帳ListMap;
-        public Map<String, Dch客室利用予定台帳CQ> コード_ExistsSubQuery_Dch客室利用予定台帳List { get { return _コード_ExistsSubQuery_Dch客室利用予定台帳ListMap; }}
-        public override String keepコード_ExistsSubQuery_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
-            if (_コード_ExistsSubQuery_Dch客室利用予定台帳ListMap == null) { _コード_ExistsSubQuery_Dch客室利用予定台帳ListMap = new LinkedHashMap<String, Dch客室利用予定台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_ExistsSubQuery_Dch客室利用予定台帳ListMap.size() + 1);
-            _コード_ExistsSubQuery_Dch客室利用予定台帳ListMap.put(key, subQuery); return "コード_ExistsSubQuery_Dch客室利用予定台帳List." + key;
+        protected Map<String, Dch客室利用予定台帳CQ> _code_ExistsSubQuery_Dch客室利用予定台帳ListMap;
+        public Map<String, Dch客室利用予定台帳CQ> Code_ExistsSubQuery_Dch客室利用予定台帳List { get { return _code_ExistsSubQuery_Dch客室利用予定台帳ListMap; }}
+        public override String keepCode_ExistsSubQuery_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
+            if (_code_ExistsSubQuery_Dch客室利用予定台帳ListMap == null) { _code_ExistsSubQuery_Dch客室利用予定台帳ListMap = new LinkedHashMap<String, Dch客室利用予定台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_ExistsSubQuery_Dch客室利用予定台帳ListMap.size() + 1);
+            _code_ExistsSubQuery_Dch客室利用予定台帳ListMap.put(key, subQuery); return "Code_ExistsSubQuery_Dch客室利用予定台帳List." + key;
         }
 
-        protected Map<String, Dch客室利用実績台帳CQ> _コード_ExistsSubQuery_Dch客室利用実績台帳ListMap;
-        public Map<String, Dch客室利用実績台帳CQ> コード_ExistsSubQuery_Dch客室利用実績台帳List { get { return _コード_ExistsSubQuery_Dch客室利用実績台帳ListMap; }}
-        public override String keepコード_ExistsSubQuery_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
-            if (_コード_ExistsSubQuery_Dch客室利用実績台帳ListMap == null) { _コード_ExistsSubQuery_Dch客室利用実績台帳ListMap = new LinkedHashMap<String, Dch客室利用実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_ExistsSubQuery_Dch客室利用実績台帳ListMap.size() + 1);
-            _コード_ExistsSubQuery_Dch客室利用実績台帳ListMap.put(key, subQuery); return "コード_ExistsSubQuery_Dch客室利用実績台帳List." + key;
+        protected Map<String, Dch客室利用実績台帳CQ> _code_ExistsSubQuery_Dch客室利用実績台帳ListMap;
+        public Map<String, Dch客室利用実績台帳CQ> Code_ExistsSubQuery_Dch客室利用実績台帳List { get { return _code_ExistsSubQuery_Dch客室利用実績台帳ListMap; }}
+        public override String keepCode_ExistsSubQuery_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
+            if (_code_ExistsSubQuery_Dch客室利用実績台帳ListMap == null) { _code_ExistsSubQuery_Dch客室利用実績台帳ListMap = new LinkedHashMap<String, Dch客室利用実績台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_ExistsSubQuery_Dch客室利用実績台帳ListMap.size() + 1);
+            _code_ExistsSubQuery_Dch客室利用実績台帳ListMap.put(key, subQuery); return "Code_ExistsSubQuery_Dch客室利用実績台帳List." + key;
         }
 
-        protected Map<String, Dch客室利用予定台帳CQ> _コード_NotExistsSubQuery_Dch客室利用予定台帳ListMap;
-        public Map<String, Dch客室利用予定台帳CQ> コード_NotExistsSubQuery_Dch客室利用予定台帳List { get { return _コード_NotExistsSubQuery_Dch客室利用予定台帳ListMap; }}
-        public override String keepコード_NotExistsSubQuery_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
-            if (_コード_NotExistsSubQuery_Dch客室利用予定台帳ListMap == null) { _コード_NotExistsSubQuery_Dch客室利用予定台帳ListMap = new LinkedHashMap<String, Dch客室利用予定台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_NotExistsSubQuery_Dch客室利用予定台帳ListMap.size() + 1);
-            _コード_NotExistsSubQuery_Dch客室利用予定台帳ListMap.put(key, subQuery); return "コード_NotExistsSubQuery_Dch客室利用予定台帳List." + key;
+        protected Map<String, Dch客室利用予定台帳CQ> _code_NotExistsSubQuery_Dch客室利用予定台帳ListMap;
+        public Map<String, Dch客室利用予定台帳CQ> Code_NotExistsSubQuery_Dch客室利用予定台帳List { get { return _code_NotExistsSubQuery_Dch客室利用予定台帳ListMap; }}
+        public override String keepCode_NotExistsSubQuery_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
+            if (_code_NotExistsSubQuery_Dch客室利用予定台帳ListMap == null) { _code_NotExistsSubQuery_Dch客室利用予定台帳ListMap = new LinkedHashMap<String, Dch客室利用予定台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_NotExistsSubQuery_Dch客室利用予定台帳ListMap.size() + 1);
+            _code_NotExistsSubQuery_Dch客室利用予定台帳ListMap.put(key, subQuery); return "Code_NotExistsSubQuery_Dch客室利用予定台帳List." + key;
         }
 
-        protected Map<String, Dch客室利用実績台帳CQ> _コード_NotExistsSubQuery_Dch客室利用実績台帳ListMap;
-        public Map<String, Dch客室利用実績台帳CQ> コード_NotExistsSubQuery_Dch客室利用実績台帳List { get { return _コード_NotExistsSubQuery_Dch客室利用実績台帳ListMap; }}
-        public override String keepコード_NotExistsSubQuery_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
-            if (_コード_NotExistsSubQuery_Dch客室利用実績台帳ListMap == null) { _コード_NotExistsSubQuery_Dch客室利用実績台帳ListMap = new LinkedHashMap<String, Dch客室利用実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_NotExistsSubQuery_Dch客室利用実績台帳ListMap.size() + 1);
-            _コード_NotExistsSubQuery_Dch客室利用実績台帳ListMap.put(key, subQuery); return "コード_NotExistsSubQuery_Dch客室利用実績台帳List." + key;
+        protected Map<String, Dch客室利用実績台帳CQ> _code_NotExistsSubQuery_Dch客室利用実績台帳ListMap;
+        public Map<String, Dch客室利用実績台帳CQ> Code_NotExistsSubQuery_Dch客室利用実績台帳List { get { return _code_NotExistsSubQuery_Dch客室利用実績台帳ListMap; }}
+        public override String keepCode_NotExistsSubQuery_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
+            if (_code_NotExistsSubQuery_Dch客室利用実績台帳ListMap == null) { _code_NotExistsSubQuery_Dch客室利用実績台帳ListMap = new LinkedHashMap<String, Dch客室利用実績台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_NotExistsSubQuery_Dch客室利用実績台帳ListMap.size() + 1);
+            _code_NotExistsSubQuery_Dch客室利用実績台帳ListMap.put(key, subQuery); return "Code_NotExistsSubQuery_Dch客室利用実績台帳List." + key;
         }
 
-        protected Map<String, Dch客室利用予定台帳CQ> _コード_InScopeSubQuery_Dch客室利用予定台帳ListMap;
-        public Map<String, Dch客室利用予定台帳CQ> コード_InScopeSubQuery_Dch客室利用予定台帳List { get { return _コード_InScopeSubQuery_Dch客室利用予定台帳ListMap; }}
-        public override String keepコード_InScopeSubQuery_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
-            if (_コード_InScopeSubQuery_Dch客室利用予定台帳ListMap == null) { _コード_InScopeSubQuery_Dch客室利用予定台帳ListMap = new LinkedHashMap<String, Dch客室利用予定台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_InScopeSubQuery_Dch客室利用予定台帳ListMap.size() + 1);
-            _コード_InScopeSubQuery_Dch客室利用予定台帳ListMap.put(key, subQuery); return "コード_InScopeSubQuery_Dch客室利用予定台帳List." + key;
+        protected Map<String, Dch客室利用予定台帳CQ> _code_InScopeSubQuery_Dch客室利用予定台帳ListMap;
+        public Map<String, Dch客室利用予定台帳CQ> Code_InScopeSubQuery_Dch客室利用予定台帳List { get { return _code_InScopeSubQuery_Dch客室利用予定台帳ListMap; }}
+        public override String keepCode_InScopeSubQuery_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
+            if (_code_InScopeSubQuery_Dch客室利用予定台帳ListMap == null) { _code_InScopeSubQuery_Dch客室利用予定台帳ListMap = new LinkedHashMap<String, Dch客室利用予定台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_InScopeSubQuery_Dch客室利用予定台帳ListMap.size() + 1);
+            _code_InScopeSubQuery_Dch客室利用予定台帳ListMap.put(key, subQuery); return "Code_InScopeSubQuery_Dch客室利用予定台帳List." + key;
         }
 
-        protected Map<String, Dch客室利用実績台帳CQ> _コード_InScopeSubQuery_Dch客室利用実績台帳ListMap;
-        public Map<String, Dch客室利用実績台帳CQ> コード_InScopeSubQuery_Dch客室利用実績台帳List { get { return _コード_InScopeSubQuery_Dch客室利用実績台帳ListMap; }}
-        public override String keepコード_InScopeSubQuery_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
-            if (_コード_InScopeSubQuery_Dch客室利用実績台帳ListMap == null) { _コード_InScopeSubQuery_Dch客室利用実績台帳ListMap = new LinkedHashMap<String, Dch客室利用実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_InScopeSubQuery_Dch客室利用実績台帳ListMap.size() + 1);
-            _コード_InScopeSubQuery_Dch客室利用実績台帳ListMap.put(key, subQuery); return "コード_InScopeSubQuery_Dch客室利用実績台帳List." + key;
+        protected Map<String, Dch客室利用実績台帳CQ> _code_InScopeSubQuery_Dch客室利用実績台帳ListMap;
+        public Map<String, Dch客室利用実績台帳CQ> Code_InScopeSubQuery_Dch客室利用実績台帳List { get { return _code_InScopeSubQuery_Dch客室利用実績台帳ListMap; }}
+        public override String keepCode_InScopeSubQuery_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
+            if (_code_InScopeSubQuery_Dch客室利用実績台帳ListMap == null) { _code_InScopeSubQuery_Dch客室利用実績台帳ListMap = new LinkedHashMap<String, Dch客室利用実績台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_InScopeSubQuery_Dch客室利用実績台帳ListMap.size() + 1);
+            _code_InScopeSubQuery_Dch客室利用実績台帳ListMap.put(key, subQuery); return "Code_InScopeSubQuery_Dch客室利用実績台帳List." + key;
         }
 
-        protected Map<String, Dch客室利用予定台帳CQ> _コード_NotInScopeSubQuery_Dch客室利用予定台帳ListMap;
-        public Map<String, Dch客室利用予定台帳CQ> コード_NotInScopeSubQuery_Dch客室利用予定台帳List { get { return _コード_NotInScopeSubQuery_Dch客室利用予定台帳ListMap; }}
-        public override String keepコード_NotInScopeSubQuery_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
-            if (_コード_NotInScopeSubQuery_Dch客室利用予定台帳ListMap == null) { _コード_NotInScopeSubQuery_Dch客室利用予定台帳ListMap = new LinkedHashMap<String, Dch客室利用予定台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_NotInScopeSubQuery_Dch客室利用予定台帳ListMap.size() + 1);
-            _コード_NotInScopeSubQuery_Dch客室利用予定台帳ListMap.put(key, subQuery); return "コード_NotInScopeSubQuery_Dch客室利用予定台帳List." + key;
+        protected Map<String, Dch客室利用予定台帳CQ> _code_NotInScopeSubQuery_Dch客室利用予定台帳ListMap;
+        public Map<String, Dch客室利用予定台帳CQ> Code_NotInScopeSubQuery_Dch客室利用予定台帳List { get { return _code_NotInScopeSubQuery_Dch客室利用予定台帳ListMap; }}
+        public override String keepCode_NotInScopeSubQuery_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
+            if (_code_NotInScopeSubQuery_Dch客室利用予定台帳ListMap == null) { _code_NotInScopeSubQuery_Dch客室利用予定台帳ListMap = new LinkedHashMap<String, Dch客室利用予定台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_NotInScopeSubQuery_Dch客室利用予定台帳ListMap.size() + 1);
+            _code_NotInScopeSubQuery_Dch客室利用予定台帳ListMap.put(key, subQuery); return "Code_NotInScopeSubQuery_Dch客室利用予定台帳List." + key;
         }
 
-        protected Map<String, Dch客室利用実績台帳CQ> _コード_NotInScopeSubQuery_Dch客室利用実績台帳ListMap;
-        public Map<String, Dch客室利用実績台帳CQ> コード_NotInScopeSubQuery_Dch客室利用実績台帳List { get { return _コード_NotInScopeSubQuery_Dch客室利用実績台帳ListMap; }}
-        public override String keepコード_NotInScopeSubQuery_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
-            if (_コード_NotInScopeSubQuery_Dch客室利用実績台帳ListMap == null) { _コード_NotInScopeSubQuery_Dch客室利用実績台帳ListMap = new LinkedHashMap<String, Dch客室利用実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_NotInScopeSubQuery_Dch客室利用実績台帳ListMap.size() + 1);
-            _コード_NotInScopeSubQuery_Dch客室利用実績台帳ListMap.put(key, subQuery); return "コード_NotInScopeSubQuery_Dch客室利用実績台帳List." + key;
+        protected Map<String, Dch客室利用実績台帳CQ> _code_NotInScopeSubQuery_Dch客室利用実績台帳ListMap;
+        public Map<String, Dch客室利用実績台帳CQ> Code_NotInScopeSubQuery_Dch客室利用実績台帳List { get { return _code_NotInScopeSubQuery_Dch客室利用実績台帳ListMap; }}
+        public override String keepCode_NotInScopeSubQuery_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
+            if (_code_NotInScopeSubQuery_Dch客室利用実績台帳ListMap == null) { _code_NotInScopeSubQuery_Dch客室利用実績台帳ListMap = new LinkedHashMap<String, Dch客室利用実績台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_NotInScopeSubQuery_Dch客室利用実績台帳ListMap.size() + 1);
+            _code_NotInScopeSubQuery_Dch客室利用実績台帳ListMap.put(key, subQuery); return "Code_NotInScopeSubQuery_Dch客室利用実績台帳List." + key;
         }
 
-        protected Map<String, Dch客室利用予定台帳CQ> _コード_SpecifyDerivedReferrer_Dch客室利用予定台帳ListMap;
-        public Map<String, Dch客室利用予定台帳CQ> コード_SpecifyDerivedReferrer_Dch客室利用予定台帳List { get { return _コード_SpecifyDerivedReferrer_Dch客室利用予定台帳ListMap; }}
-        public override String keepコード_SpecifyDerivedReferrer_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
-            if (_コード_SpecifyDerivedReferrer_Dch客室利用予定台帳ListMap == null) { _コード_SpecifyDerivedReferrer_Dch客室利用予定台帳ListMap = new LinkedHashMap<String, Dch客室利用予定台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_SpecifyDerivedReferrer_Dch客室利用予定台帳ListMap.size() + 1);
-           _コード_SpecifyDerivedReferrer_Dch客室利用予定台帳ListMap.put(key, subQuery); return "コード_SpecifyDerivedReferrer_Dch客室利用予定台帳List." + key;
+        protected Map<String, Dch客室利用予定台帳CQ> _code_SpecifyDerivedReferrer_Dch客室利用予定台帳ListMap;
+        public Map<String, Dch客室利用予定台帳CQ> Code_SpecifyDerivedReferrer_Dch客室利用予定台帳List { get { return _code_SpecifyDerivedReferrer_Dch客室利用予定台帳ListMap; }}
+        public override String keepCode_SpecifyDerivedReferrer_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
+            if (_code_SpecifyDerivedReferrer_Dch客室利用予定台帳ListMap == null) { _code_SpecifyDerivedReferrer_Dch客室利用予定台帳ListMap = new LinkedHashMap<String, Dch客室利用予定台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_SpecifyDerivedReferrer_Dch客室利用予定台帳ListMap.size() + 1);
+           _code_SpecifyDerivedReferrer_Dch客室利用予定台帳ListMap.put(key, subQuery); return "Code_SpecifyDerivedReferrer_Dch客室利用予定台帳List." + key;
         }
 
-        protected Map<String, Dch客室利用実績台帳CQ> _コード_SpecifyDerivedReferrer_Dch客室利用実績台帳ListMap;
-        public Map<String, Dch客室利用実績台帳CQ> コード_SpecifyDerivedReferrer_Dch客室利用実績台帳List { get { return _コード_SpecifyDerivedReferrer_Dch客室利用実績台帳ListMap; }}
-        public override String keepコード_SpecifyDerivedReferrer_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
-            if (_コード_SpecifyDerivedReferrer_Dch客室利用実績台帳ListMap == null) { _コード_SpecifyDerivedReferrer_Dch客室利用実績台帳ListMap = new LinkedHashMap<String, Dch客室利用実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_SpecifyDerivedReferrer_Dch客室利用実績台帳ListMap.size() + 1);
-           _コード_SpecifyDerivedReferrer_Dch客室利用実績台帳ListMap.put(key, subQuery); return "コード_SpecifyDerivedReferrer_Dch客室利用実績台帳List." + key;
+        protected Map<String, Dch客室利用実績台帳CQ> _code_SpecifyDerivedReferrer_Dch客室利用実績台帳ListMap;
+        public Map<String, Dch客室利用実績台帳CQ> Code_SpecifyDerivedReferrer_Dch客室利用実績台帳List { get { return _code_SpecifyDerivedReferrer_Dch客室利用実績台帳ListMap; }}
+        public override String keepCode_SpecifyDerivedReferrer_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
+            if (_code_SpecifyDerivedReferrer_Dch客室利用実績台帳ListMap == null) { _code_SpecifyDerivedReferrer_Dch客室利用実績台帳ListMap = new LinkedHashMap<String, Dch客室利用実績台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_SpecifyDerivedReferrer_Dch客室利用実績台帳ListMap.size() + 1);
+           _code_SpecifyDerivedReferrer_Dch客室利用実績台帳ListMap.put(key, subQuery); return "Code_SpecifyDerivedReferrer_Dch客室利用実績台帳List." + key;
         }
 
-        protected Map<String, Dch客室利用予定台帳CQ> _コード_QueryDerivedReferrer_Dch客室利用予定台帳ListMap;
-        public Map<String, Dch客室利用予定台帳CQ> コード_QueryDerivedReferrer_Dch客室利用予定台帳List { get { return _コード_QueryDerivedReferrer_Dch客室利用予定台帳ListMap; } }
-        public override String keepコード_QueryDerivedReferrer_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
-            if (_コード_QueryDerivedReferrer_Dch客室利用予定台帳ListMap == null) { _コード_QueryDerivedReferrer_Dch客室利用予定台帳ListMap = new LinkedHashMap<String, Dch客室利用予定台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_QueryDerivedReferrer_Dch客室利用予定台帳ListMap.size() + 1);
-            _コード_QueryDerivedReferrer_Dch客室利用予定台帳ListMap.put(key, subQuery); return "コード_QueryDerivedReferrer_Dch客室利用予定台帳List." + key;
+        protected Map<String, Dch客室利用予定台帳CQ> _code_QueryDerivedReferrer_Dch客室利用予定台帳ListMap;
+        public Map<String, Dch客室利用予定台帳CQ> Code_QueryDerivedReferrer_Dch客室利用予定台帳List { get { return _code_QueryDerivedReferrer_Dch客室利用予定台帳ListMap; } }
+        public override String keepCode_QueryDerivedReferrer_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
+            if (_code_QueryDerivedReferrer_Dch客室利用予定台帳ListMap == null) { _code_QueryDerivedReferrer_Dch客室利用予定台帳ListMap = new LinkedHashMap<String, Dch客室利用予定台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_QueryDerivedReferrer_Dch客室利用予定台帳ListMap.size() + 1);
+            _code_QueryDerivedReferrer_Dch客室利用予定台帳ListMap.put(key, subQuery); return "Code_QueryDerivedReferrer_Dch客室利用予定台帳List." + key;
         }
-        protected Map<String, Object> _コード_QueryDerivedReferrer_Dch客室利用予定台帳ListParameterMap;
-        public Map<String, Object> コード_QueryDerivedReferrer_Dch客室利用予定台帳ListParameter { get { return _コード_QueryDerivedReferrer_Dch客室利用予定台帳ListParameterMap; } }
-        public override String keepコード_QueryDerivedReferrer_Dch客室利用予定台帳ListParameter(Object parameterValue) {
-            if (_コード_QueryDerivedReferrer_Dch客室利用予定台帳ListParameterMap == null) { _コード_QueryDerivedReferrer_Dch客室利用予定台帳ListParameterMap = new LinkedHashMap<String, Object>(); }
-            String key = "subQueryParameterKey" + (_コード_QueryDerivedReferrer_Dch客室利用予定台帳ListParameterMap.size() + 1);
-            _コード_QueryDerivedReferrer_Dch客室利用予定台帳ListParameterMap.put(key, parameterValue); return "コード_QueryDerivedReferrer_Dch客室利用予定台帳ListParameter." + key;
-        }
-
-        protected Map<String, Dch客室利用実績台帳CQ> _コード_QueryDerivedReferrer_Dch客室利用実績台帳ListMap;
-        public Map<String, Dch客室利用実績台帳CQ> コード_QueryDerivedReferrer_Dch客室利用実績台帳List { get { return _コード_QueryDerivedReferrer_Dch客室利用実績台帳ListMap; } }
-        public override String keepコード_QueryDerivedReferrer_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
-            if (_コード_QueryDerivedReferrer_Dch客室利用実績台帳ListMap == null) { _コード_QueryDerivedReferrer_Dch客室利用実績台帳ListMap = new LinkedHashMap<String, Dch客室利用実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_QueryDerivedReferrer_Dch客室利用実績台帳ListMap.size() + 1);
-            _コード_QueryDerivedReferrer_Dch客室利用実績台帳ListMap.put(key, subQuery); return "コード_QueryDerivedReferrer_Dch客室利用実績台帳List." + key;
-        }
-        protected Map<String, Object> _コード_QueryDerivedReferrer_Dch客室利用実績台帳ListParameterMap;
-        public Map<String, Object> コード_QueryDerivedReferrer_Dch客室利用実績台帳ListParameter { get { return _コード_QueryDerivedReferrer_Dch客室利用実績台帳ListParameterMap; } }
-        public override String keepコード_QueryDerivedReferrer_Dch客室利用実績台帳ListParameter(Object parameterValue) {
-            if (_コード_QueryDerivedReferrer_Dch客室利用実績台帳ListParameterMap == null) { _コード_QueryDerivedReferrer_Dch客室利用実績台帳ListParameterMap = new LinkedHashMap<String, Object>(); }
-            String key = "subQueryParameterKey" + (_コード_QueryDerivedReferrer_Dch客室利用実績台帳ListParameterMap.size() + 1);
-            _コード_QueryDerivedReferrer_Dch客室利用実績台帳ListParameterMap.put(key, parameterValue); return "コード_QueryDerivedReferrer_Dch客室利用実績台帳ListParameter." + key;
+        protected Map<String, Object> _code_QueryDerivedReferrer_Dch客室利用予定台帳ListParameterMap;
+        public Map<String, Object> Code_QueryDerivedReferrer_Dch客室利用予定台帳ListParameter { get { return _code_QueryDerivedReferrer_Dch客室利用予定台帳ListParameterMap; } }
+        public override String keepCode_QueryDerivedReferrer_Dch客室利用予定台帳ListParameter(Object parameterValue) {
+            if (_code_QueryDerivedReferrer_Dch客室利用予定台帳ListParameterMap == null) { _code_QueryDerivedReferrer_Dch客室利用予定台帳ListParameterMap = new LinkedHashMap<String, Object>(); }
+            String key = "subQueryParameterKey" + (_code_QueryDerivedReferrer_Dch客室利用予定台帳ListParameterMap.size() + 1);
+            _code_QueryDerivedReferrer_Dch客室利用予定台帳ListParameterMap.put(key, parameterValue); return "Code_QueryDerivedReferrer_Dch客室利用予定台帳ListParameter." + key;
         }
 
-        public BsKbn客室利用区分CQ AddOrderBy_コード_Asc() { regOBA("コード");return this; }
-        public BsKbn客室利用区分CQ AddOrderBy_コード_Desc() { regOBD("コード");return this; }
+        protected Map<String, Dch客室利用実績台帳CQ> _code_QueryDerivedReferrer_Dch客室利用実績台帳ListMap;
+        public Map<String, Dch客室利用実績台帳CQ> Code_QueryDerivedReferrer_Dch客室利用実績台帳List { get { return _code_QueryDerivedReferrer_Dch客室利用実績台帳ListMap; } }
+        public override String keepCode_QueryDerivedReferrer_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
+            if (_code_QueryDerivedReferrer_Dch客室利用実績台帳ListMap == null) { _code_QueryDerivedReferrer_Dch客室利用実績台帳ListMap = new LinkedHashMap<String, Dch客室利用実績台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_QueryDerivedReferrer_Dch客室利用実績台帳ListMap.size() + 1);
+            _code_QueryDerivedReferrer_Dch客室利用実績台帳ListMap.put(key, subQuery); return "Code_QueryDerivedReferrer_Dch客室利用実績台帳List." + key;
+        }
+        protected Map<String, Object> _code_QueryDerivedReferrer_Dch客室利用実績台帳ListParameterMap;
+        public Map<String, Object> Code_QueryDerivedReferrer_Dch客室利用実績台帳ListParameter { get { return _code_QueryDerivedReferrer_Dch客室利用実績台帳ListParameterMap; } }
+        public override String keepCode_QueryDerivedReferrer_Dch客室利用実績台帳ListParameter(Object parameterValue) {
+            if (_code_QueryDerivedReferrer_Dch客室利用実績台帳ListParameterMap == null) { _code_QueryDerivedReferrer_Dch客室利用実績台帳ListParameterMap = new LinkedHashMap<String, Object>(); }
+            String key = "subQueryParameterKey" + (_code_QueryDerivedReferrer_Dch客室利用実績台帳ListParameterMap.size() + 1);
+            _code_QueryDerivedReferrer_Dch客室利用実績台帳ListParameterMap.put(key, parameterValue); return "Code_QueryDerivedReferrer_Dch客室利用実績台帳ListParameter." + key;
+        }
+
+        public BsKbn客室利用区分CQ AddOrderBy_Code_Asc() { regOBA("code");return this; }
+        public BsKbn客室利用区分CQ AddOrderBy_Code_Desc() { regOBD("code");return this; }
 
         protected ConditionValue _名称;
         public ConditionValue 名称 {

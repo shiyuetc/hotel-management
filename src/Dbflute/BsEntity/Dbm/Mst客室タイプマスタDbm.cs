@@ -101,8 +101,8 @@ namespace Dbflute.BsEntity.Dbm {
         //                                                                    Various Info
         //                                                                    ============
         public override bool HasSequence { get { return true; } }
-        public override String SequenceName { get { return "mst004_id_seq"; } }
-        public override String SequenceNextValSql { get { return "select nextval ('mst004_id_seq')"; } }
+        public override String SequenceName { get { return "mst005_id_seq"; } }
+        public override String SequenceNextValSql { get { return "select nextval ('mst005_id_seq')"; } }
         public override int? SequenceIncrementSize { get { return 1; } }
         public override int? SequenceCacheSize { get { return null; } }
         public override bool HasCommonColumn { get { return false; } }

@@ -40,20 +40,20 @@ namespace Dbflute.BsEntity.Dbm {
         //                                                                     ===========
         protected ColumnInfo _columnId;
         protected ColumnInfo _column客室マスタid;
-        protected ColumnInfo _column客室利用コード;
+        protected ColumnInfo _column客室利用code;
         protected ColumnInfo _column利用開始日時;
         protected ColumnInfo _column利用終了日時;
 
         public ColumnInfo ColumnId { get { return _columnId; } }
         public ColumnInfo Column客室マスタid { get { return _column客室マスタid; } }
-        public ColumnInfo Column客室利用コード { get { return _column客室利用コード; } }
+        public ColumnInfo Column客室利用code { get { return _column客室利用code; } }
         public ColumnInfo Column利用開始日時 { get { return _column利用開始日時; } }
         public ColumnInfo Column利用終了日時 { get { return _column利用終了日時; } }
 
         protected void InitializeColumnInfo() {
             _columnId = cci("id", "id", null, null, true, "Id", typeof(long?), true, "bigserial", 19, 0, false, OptimisticLockType.NONE, null, null, "dchその他予定台帳List,dch宿泊予定台帳List,dch清掃予定台帳List");
             _column客室マスタid = cci("客室マスタid", "客室マスタid", null, null, true, "客室マスタid", typeof(long?), false, "int8", 19, 0, false, OptimisticLockType.NONE, null, "mst客室マスタ", null);
-            _column客室利用コード = cci("客室利用コード", "客室利用コード", null, null, true, "客室利用コード", typeof(String), false, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, "kbn客室利用区分", null);
+            _column客室利用code = cci("客室利用code", "客室利用code", null, null, true, "客室利用code", typeof(String), false, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, "kbn客室利用区分", null);
             _column利用開始日時 = cci("利用開始日時", "利用開始日時", null, null, true, "利用開始日時", typeof(DateTime?), false, "timestamp", 26, 3, false, OptimisticLockType.NONE, null, null, null);
             _column利用終了日時 = cci("利用終了日時", "利用終了日時", null, null, true, "利用終了日時", typeof(DateTime?), false, "timestamp", 26, 3, false, OptimisticLockType.NONE, null, null, null);
         }
@@ -62,7 +62,7 @@ namespace Dbflute.BsEntity.Dbm {
             _columnInfoList = new ArrayList<ColumnInfo>();
             _columnInfoList.add(ColumnId);
             _columnInfoList.add(Column客室マスタid);
-            _columnInfoList.add(Column客室利用コード);
+            _columnInfoList.add(Column客室利用code);
             _columnInfoList.add(Column利用開始日時);
             _columnInfoList.add(Column利用終了日時);
         }
@@ -93,7 +93,7 @@ namespace Dbflute.BsEntity.Dbm {
         }}
         public ForeignInfo ForeignKbn客室利用区分 { get {
             Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(Column客室利用コード, Kbn客室利用区分Dbm.GetInstance().Columnコード);
+            map.put(Column客室利用code, Kbn客室利用区分Dbm.GetInstance().ColumnCode);
             return cfi("Kbn客室利用区分", this, Kbn客室利用区分Dbm.GetInstance(), map, 1, false, false);
         }}
 
@@ -143,7 +143,7 @@ namespace Dbflute.BsEntity.Dbm {
         //                                    --------------
         public static readonly String DB_NAME_id = "id";
         public static readonly String DB_NAME_客室マスタid = "客室マスタid";
-        public static readonly String DB_NAME_客室利用コード = "客室利用コード";
+        public static readonly String DB_NAME_客室利用code = "客室利用code";
         public static readonly String DB_NAME_利用開始日時 = "利用開始日時";
         public static readonly String DB_NAME_利用終了日時 = "利用終了日時";
 
@@ -152,7 +152,7 @@ namespace Dbflute.BsEntity.Dbm {
         //                              --------------------
         public static readonly String PROPERTY_NAME_id = "Id";
         public static readonly String PROPERTY_NAME_客室マスタid = "客室マスタid";
-        public static readonly String PROPERTY_NAME_客室利用コード = "客室利用コード";
+        public static readonly String PROPERTY_NAME_客室利用code = "客室利用code";
         public static readonly String PROPERTY_NAME_利用開始日時 = "利用開始日時";
         public static readonly String PROPERTY_NAME_利用終了日時 = "利用終了日時";
 
@@ -180,7 +180,7 @@ namespace Dbflute.BsEntity.Dbm {
                 map.put(TABLE_DB_NAME.ToLower(), TABLE_PROPERTY_NAME);
                 map.put(DB_NAME_id.ToLower(), PROPERTY_NAME_id);
                 map.put(DB_NAME_客室マスタid.ToLower(), PROPERTY_NAME_客室マスタid);
-                map.put(DB_NAME_客室利用コード.ToLower(), PROPERTY_NAME_客室利用コード);
+                map.put(DB_NAME_客室利用code.ToLower(), PROPERTY_NAME_客室利用code);
                 map.put(DB_NAME_利用開始日時.ToLower(), PROPERTY_NAME_利用開始日時);
                 map.put(DB_NAME_利用終了日時.ToLower(), PROPERTY_NAME_利用終了日時);
                 _dbNamePropertyNameKeyToLowerMap = map;
@@ -191,7 +191,7 @@ namespace Dbflute.BsEntity.Dbm {
                 map.put(TABLE_PROPERTY_NAME.ToLower(), TABLE_DB_NAME);
                 map.put(PROPERTY_NAME_id.ToLower(), DB_NAME_id);
                 map.put(PROPERTY_NAME_客室マスタid.ToLower(), DB_NAME_客室マスタid);
-                map.put(PROPERTY_NAME_客室利用コード.ToLower(), DB_NAME_客室利用コード);
+                map.put(PROPERTY_NAME_客室利用code.ToLower(), DB_NAME_客室利用code);
                 map.put(PROPERTY_NAME_利用開始日時.ToLower(), DB_NAME_利用開始日時);
                 map.put(PROPERTY_NAME_利用終了日時.ToLower(), DB_NAME_利用終了日時);
                 _propertyNameDbNameKeyToLowerMap = map;
@@ -237,7 +237,7 @@ namespace Dbflute.BsEntity.Dbm {
         protected void InitializeEntityPropertySetupper() {
             RegisterEntityPropertySetupper("id", "Id", new EntityPropertyIdSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("客室マスタid", "客室マスタid", new EntityProperty客室マスタidSetupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("客室利用コード", "客室利用コード", new EntityProperty客室利用コードSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("客室利用code", "客室利用code", new EntityProperty客室利用codeSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("利用開始日時", "利用開始日時", new EntityProperty利用開始日時Setupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("利用終了日時", "利用終了日時", new EntityProperty利用終了日時Setupper(), _entityPropertySetupperMap);
         }
@@ -257,8 +257,8 @@ namespace Dbflute.BsEntity.Dbm {
         public class EntityProperty客室マスタidSetupper : EntityPropertySetupper<Dch客室利用予定台帳> {
             public void Setup(Dch客室利用予定台帳 entity, Object value) { entity.客室マスタid = (value != null) ? (long?)value : null; }
         }
-        public class EntityProperty客室利用コードSetupper : EntityPropertySetupper<Dch客室利用予定台帳> {
-            public void Setup(Dch客室利用予定台帳 entity, Object value) { entity.客室利用コード = (value != null) ? (String)value : null; }
+        public class EntityProperty客室利用codeSetupper : EntityPropertySetupper<Dch客室利用予定台帳> {
+            public void Setup(Dch客室利用予定台帳 entity, Object value) { entity.客室利用code = (value != null) ? (String)value : null; }
         }
         public class EntityProperty利用開始日時Setupper : EntityPropertySetupper<Dch客室利用予定台帳> {
             public void Setup(Dch客室利用予定台帳 entity, Object value) { entity.利用開始日時 = (value != null) ? (DateTime?)value : null; }

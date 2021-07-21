@@ -48,7 +48,7 @@ namespace Dbflute.BsEntity.Dbm {
         protected ColumnInfo _column生年月日;
         protected ColumnInfo _column入社年月日;
         protected ColumnInfo _column退社年月日;
-        protected ColumnInfo _column職位コード;
+        protected ColumnInfo _column職位code;
         protected ColumnInfo _column最終ログイン日時;
         protected ColumnInfo _column備考;
 
@@ -62,7 +62,7 @@ namespace Dbflute.BsEntity.Dbm {
         public ColumnInfo Column生年月日 { get { return _column生年月日; } }
         public ColumnInfo Column入社年月日 { get { return _column入社年月日; } }
         public ColumnInfo Column退社年月日 { get { return _column退社年月日; } }
-        public ColumnInfo Column職位コード { get { return _column職位コード; } }
+        public ColumnInfo Column職位code { get { return _column職位code; } }
         public ColumnInfo Column最終ログイン日時 { get { return _column最終ログイン日時; } }
         public ColumnInfo Column備考 { get { return _column備考; } }
 
@@ -77,7 +77,7 @@ namespace Dbflute.BsEntity.Dbm {
             _column生年月日 = cci("生年月日", "生年月日", null, null, true, "生年月日", typeof(DateTime?), false, "timestamp", 26, 3, false, OptimisticLockType.NONE, null, null, null);
             _column入社年月日 = cci("入社年月日", "入社年月日", null, null, true, "入社年月日", typeof(DateTime?), false, "timestamp", 26, 3, false, OptimisticLockType.NONE, null, null, null);
             _column退社年月日 = cci("退社年月日", "退社年月日", null, null, false, "退社年月日", typeof(DateTime?), false, "timestamp", 26, 3, false, OptimisticLockType.NONE, null, null, null);
-            _column職位コード = cci("職位コード", "職位コード", null, null, true, "職位コード", typeof(String), false, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, "kbn職位区分", null);
+            _column職位code = cci("職位code", "職位code", null, null, true, "職位code", typeof(String), false, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, "kbn職位区分", null);
             _column最終ログイン日時 = cci("最終ログイン日時", "最終ログイン日時", null, null, false, "最終ログイン日時", typeof(DateTime?), false, "timestamp", 26, 3, false, OptimisticLockType.NONE, null, null, null);
             _column備考 = cci("備考", "備考", null, null, false, "備考", typeof(String), false, "varchar", 255, 0, false, OptimisticLockType.NONE, null, null, null);
         }
@@ -94,7 +94,7 @@ namespace Dbflute.BsEntity.Dbm {
             _columnInfoList.add(Column生年月日);
             _columnInfoList.add(Column入社年月日);
             _columnInfoList.add(Column退社年月日);
-            _columnInfoList.add(Column職位コード);
+            _columnInfoList.add(Column職位code);
             _columnInfoList.add(Column最終ログイン日時);
             _columnInfoList.add(Column備考);
         }
@@ -120,7 +120,7 @@ namespace Dbflute.BsEntity.Dbm {
         //                                   ---------------
         public ForeignInfo ForeignKbn職位区分 { get {
             Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(Column職位コード, Kbn職位区分Dbm.GetInstance().Columnコード);
+            map.put(Column職位code, Kbn職位区分Dbm.GetInstance().ColumnCode);
             return cfi("Kbn職位区分", this, Kbn職位区分Dbm.GetInstance(), map, 0, false, false);
         }}
 
@@ -138,8 +138,8 @@ namespace Dbflute.BsEntity.Dbm {
         //                                                                    Various Info
         //                                                                    ============
         public override bool HasSequence { get { return true; } }
-        public override String SequenceName { get { return "mst002_id_seq"; } }
-        public override String SequenceNextValSql { get { return "select nextval ('mst002_id_seq')"; } }
+        public override String SequenceName { get { return "mst003_id_seq"; } }
+        public override String SequenceNextValSql { get { return "select nextval ('mst003_id_seq')"; } }
         public override int? SequenceIncrementSize { get { return 1; } }
         public override int? SequenceCacheSize { get { return null; } }
         public override bool HasCommonColumn { get { return false; } }
@@ -168,7 +168,7 @@ namespace Dbflute.BsEntity.Dbm {
         public static readonly String DB_NAME_生年月日 = "生年月日";
         public static readonly String DB_NAME_入社年月日 = "入社年月日";
         public static readonly String DB_NAME_退社年月日 = "退社年月日";
-        public static readonly String DB_NAME_職位コード = "職位コード";
+        public static readonly String DB_NAME_職位code = "職位code";
         public static readonly String DB_NAME_最終ログイン日時 = "最終ログイン日時";
         public static readonly String DB_NAME_備考 = "備考";
 
@@ -185,7 +185,7 @@ namespace Dbflute.BsEntity.Dbm {
         public static readonly String PROPERTY_NAME_生年月日 = "生年月日";
         public static readonly String PROPERTY_NAME_入社年月日 = "入社年月日";
         public static readonly String PROPERTY_NAME_退社年月日 = "退社年月日";
-        public static readonly String PROPERTY_NAME_職位コード = "職位コード";
+        public static readonly String PROPERTY_NAME_職位code = "職位code";
         public static readonly String PROPERTY_NAME_最終ログイン日時 = "最終ログイン日時";
         public static readonly String PROPERTY_NAME_備考 = "備考";
 
@@ -218,7 +218,7 @@ namespace Dbflute.BsEntity.Dbm {
                 map.put(DB_NAME_生年月日.ToLower(), PROPERTY_NAME_生年月日);
                 map.put(DB_NAME_入社年月日.ToLower(), PROPERTY_NAME_入社年月日);
                 map.put(DB_NAME_退社年月日.ToLower(), PROPERTY_NAME_退社年月日);
-                map.put(DB_NAME_職位コード.ToLower(), PROPERTY_NAME_職位コード);
+                map.put(DB_NAME_職位code.ToLower(), PROPERTY_NAME_職位code);
                 map.put(DB_NAME_最終ログイン日時.ToLower(), PROPERTY_NAME_最終ログイン日時);
                 map.put(DB_NAME_備考.ToLower(), PROPERTY_NAME_備考);
                 _dbNamePropertyNameKeyToLowerMap = map;
@@ -237,7 +237,7 @@ namespace Dbflute.BsEntity.Dbm {
                 map.put(PROPERTY_NAME_生年月日.ToLower(), DB_NAME_生年月日);
                 map.put(PROPERTY_NAME_入社年月日.ToLower(), DB_NAME_入社年月日);
                 map.put(PROPERTY_NAME_退社年月日.ToLower(), DB_NAME_退社年月日);
-                map.put(PROPERTY_NAME_職位コード.ToLower(), DB_NAME_職位コード);
+                map.put(PROPERTY_NAME_職位code.ToLower(), DB_NAME_職位code);
                 map.put(PROPERTY_NAME_最終ログイン日時.ToLower(), DB_NAME_最終ログイン日時);
                 map.put(PROPERTY_NAME_備考.ToLower(), DB_NAME_備考);
                 _propertyNameDbNameKeyToLowerMap = map;
@@ -291,7 +291,7 @@ namespace Dbflute.BsEntity.Dbm {
             RegisterEntityPropertySetupper("生年月日", "生年月日", new EntityProperty生年月日Setupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("入社年月日", "入社年月日", new EntityProperty入社年月日Setupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("退社年月日", "退社年月日", new EntityProperty退社年月日Setupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("職位コード", "職位コード", new EntityProperty職位コードSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("職位code", "職位code", new EntityProperty職位codeSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("最終ログイン日時", "最終ログイン日時", new EntityProperty最終ログイン日時Setupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("備考", "備考", new EntityProperty備考Setupper(), _entityPropertySetupperMap);
         }
@@ -335,8 +335,8 @@ namespace Dbflute.BsEntity.Dbm {
         public class EntityProperty退社年月日Setupper : EntityPropertySetupper<Mst従業員マスタ> {
             public void Setup(Mst従業員マスタ entity, Object value) { entity.退社年月日 = (value != null) ? (DateTime?)value : null; }
         }
-        public class EntityProperty職位コードSetupper : EntityPropertySetupper<Mst従業員マスタ> {
-            public void Setup(Mst従業員マスタ entity, Object value) { entity.職位コード = (value != null) ? (String)value : null; }
+        public class EntityProperty職位codeSetupper : EntityPropertySetupper<Mst従業員マスタ> {
+            public void Setup(Mst従業員マスタ entity, Object value) { entity.職位code = (value != null) ? (String)value : null; }
         }
         public class EntityProperty最終ログイン日時Setupper : EntityPropertySetupper<Mst従業員マスタ> {
             public void Setup(Mst従業員マスタ entity, Object value) { entity.最終ログイン日時 = (value != null) ? (DateTime?)value : null; }

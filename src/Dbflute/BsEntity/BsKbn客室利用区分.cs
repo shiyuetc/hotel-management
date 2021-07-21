@@ -19,10 +19,10 @@ namespace Dbflute.ExEntity {
     /// The entity of kbn客室利用区分 as TABLE. (partial class for auto-generation)
     /// <![CDATA[
     /// [primary-key]
-    ///     コード
+    ///     code
     /// 
     /// [column]
-    ///     コード, 名称
+    ///     code, 名称
     /// 
     /// [sequence]
     ///     
@@ -55,8 +55,8 @@ namespace Dbflute.ExEntity {
         //                                                                       Attribute
         //                                                                       =========
         #region Attribute
-        /// <summary>コード: {PK, NotNull, bpchar(3), classification=客室利用区分}</summary>
-        protected String _コード;
+        /// <summary>code: {PK, NotNull, bpchar(3), classification=客室利用区分}</summary>
+        protected String _code;
 
         /// <summary>名称: {NotNull, varchar(20)}</summary>
         protected String _名称;
@@ -79,10 +79,10 @@ namespace Dbflute.ExEntity {
         //                                                         Classification Property
         //                                                         =======================
         #region Classification Property
-        public CDef.客室利用区分 コードAs客室利用区分 { get {
-            return CDef.客室利用区分.CodeOf(_コード);
+        public CDef.客室利用区分 CodeAs客室利用区分 { get {
+            return CDef.客室利用区分.CodeOf(_code);
         } set {
-            コード = value != null ? value.Code : null;
+            Code = value != null ? value.Code : null;
         }}
 
         #endregion
@@ -92,33 +92,33 @@ namespace Dbflute.ExEntity {
         //                                                          ======================
         #region Classification Setting
         /// <summary>
-        /// Set the value of コード as 宿泊.
+        /// Set the value of code as 宿泊.
         /// <![CDATA[
         /// 宿泊
         /// ]]>
         /// </summary>
-        public void Setコード_宿泊() {
-            コードAs客室利用区分 = CDef.客室利用区分.宿泊;
+        public void SetCode_宿泊() {
+            CodeAs客室利用区分 = CDef.客室利用区分.宿泊;
         }
 
         /// <summary>
-        /// Set the value of コード as 清掃.
+        /// Set the value of code as 清掃.
         /// <![CDATA[
         /// 清掃
         /// ]]>
         /// </summary>
-        public void Setコード_清掃() {
-            コードAs客室利用区分 = CDef.客室利用区分.清掃;
+        public void SetCode_清掃() {
+            CodeAs客室利用区分 = CDef.客室利用区分.清掃;
         }
 
         /// <summary>
-        /// Set the value of コード as その他.
+        /// Set the value of code as その他.
         /// <![CDATA[
         /// その他
         /// ]]>
         /// </summary>
-        public void Setコード_その他() {
-            コードAs客室利用区分 = CDef.客室利用区分.その他;
+        public void SetCode_その他() {
+            CodeAs客室利用区分 = CDef.客室利用区分.その他;
         }
 
         #endregion
@@ -128,46 +128,46 @@ namespace Dbflute.ExEntity {
         //                                                    ============================
         #region Classification Determination
         /// <summary>
-        /// Is the value of コード '宿泊'?
+        /// Is the value of code '宿泊'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// 宿泊
         /// ]]>
         /// </summary>
-        public bool Isコード宿泊 {
+        public bool IsCode宿泊 {
             get {
-                CDef.客室利用区分 cls = コードAs客室利用区分;
+                CDef.客室利用区分 cls = CodeAs客室利用区分;
                 return cls != null ? cls.Equals(CDef.客室利用区分.宿泊) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of コード '清掃'?
+        /// Is the value of code '清掃'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// 清掃
         /// ]]>
         /// </summary>
-        public bool Isコード清掃 {
+        public bool IsCode清掃 {
             get {
-                CDef.客室利用区分 cls = コードAs客室利用区分;
+                CDef.客室利用区分 cls = CodeAs客室利用区分;
                 return cls != null ? cls.Equals(CDef.客室利用区分.清掃) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of コード 'その他'?
+        /// Is the value of code 'その他'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// その他
         /// ]]>
         /// </summary>
-        public bool Isコードその他 {
+        public bool IsCodeその他 {
             get {
-                CDef.客室利用区分 cls = コードAs客室利用区分;
+                CDef.客室利用区分 cls = CodeAs客室利用区分;
                 return cls != null ? cls.Equals(CDef.客室利用区分.その他) : false;
             }
         }
@@ -207,7 +207,7 @@ namespace Dbflute.ExEntity {
         //                                                                   =============
         public virtual bool HasPrimaryKeyValue {
             get {
-                if (_コード == null) { return false; }
+                if (_code == null) { return false; }
                 return true;
             }
         }
@@ -230,7 +230,7 @@ namespace Dbflute.ExEntity {
         public override bool Equals(Object other) {
             if (other == null || !(other is Kbn客室利用区分)) { return false; }
             Kbn客室利用区分 otherEntity = (Kbn客室利用区分)other;
-            if (!xSV(this.コード, otherEntity.コード)) { return false; }
+            if (!xSV(this.Code, otherEntity.Code)) { return false; }
             return true;
         }
         protected bool xSV(Object value1, Object value2) { // isSameValue()
@@ -241,7 +241,7 @@ namespace Dbflute.ExEntity {
 
         public override int GetHashCode() {
             int result = 17;
-            result = xCH(result, _コード);
+            result = xCH(result, _code);
             return result;
         }
         protected int xCH(int result, Object value) { // calculateHashcode()
@@ -277,7 +277,7 @@ namespace Dbflute.ExEntity {
         protected virtual String BuildColumnString() {
             String c = ", ";
             StringBuilder sb = new StringBuilder();
-            sb.Append(c).Append(this.コード);
+            sb.Append(c).Append(this.Code);
             sb.Append(c).Append(this.名称);
             if (sb.Length > 0) { sb.Remove(0, c.Length); }
             sb.Insert(0, "{").Append("}");
@@ -299,13 +299,13 @@ namespace Dbflute.ExEntity {
         //                                                                        Accessor
         //                                                                        ========
         #region Accessor
-        /// <summary>コード: {PK, NotNull, bpchar(3), classification=客室利用区分}</summary>
-        [Seasar.Dao.Attrs.Column("コード")]
-        public String コード {
-            get { return _コード; }
+        /// <summary>code: {PK, NotNull, bpchar(3), classification=客室利用区分}</summary>
+        [Seasar.Dao.Attrs.Column("code")]
+        public String Code {
+            get { return _code; }
             set {
-                __modifiedProperties.AddPropertyName("コード");
-                _コード = value;
+                __modifiedProperties.AddPropertyName("Code");
+                _code = value;
             }
         }
 

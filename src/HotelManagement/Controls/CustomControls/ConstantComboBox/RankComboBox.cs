@@ -12,7 +12,7 @@ namespace HotelManagement.Controls.CustomControls.ConstantComboBox
         /// </summary>
         public RankComboBox()
         {
-            this.SetMember(CDef.Rank.Values, "Alias", "Code");
+            this.SetMember(CDef.職位区分.Values, "Alias", "Code");
         }
     }
 }

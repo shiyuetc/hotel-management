@@ -60,11 +60,11 @@ map:{
         }
         ; map:{
             ; table=kbn職位区分
-            ; code=コード
+            ; code=code
             ; name=名称
             ; alias=名称
             ; comment=名称_英字
-            ; orderBy=コード
+            ; orderBy=code
         }
     }
     ; 客室利用区分 = list:{
@@ -74,10 +74,10 @@ map:{
         }
         ; map:{
             ; table=kbn客室利用区分
-            ; code=コード
+            ; code=code
             ; name=名称
             ; alias=名称
-            ; orderBy=コード
+            ; orderBy=code
         }
     }
 }

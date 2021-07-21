@@ -25,7 +25,7 @@ namespace Dbflute.ExEntity {
     ///     id, 名称, 料金, 宿泊人数, 備考
     /// 
     /// [sequence]
-    ///     mst004_id_seq
+    ///     mst005_id_seq
     /// 
     /// [identity]
     ///     

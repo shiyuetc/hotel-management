@@ -90,31 +90,31 @@ namespace Dbflute.CBean.CQ.BS {
         public BsDch従業員職位履歴台帳CQ AddOrderBy_適用終了日_Asc() { regOBA("適用終了日");return this; }
         public BsDch従業員職位履歴台帳CQ AddOrderBy_適用終了日_Desc() { regOBD("適用終了日");return this; }
 
-        protected ConditionValue _職位コード;
-        public ConditionValue 職位コード {
-            get { if (_職位コード == null) { _職位コード = new ConditionValue(); } return _職位コード; }
+        protected ConditionValue _職位code;
+        public ConditionValue 職位code {
+            get { if (_職位code == null) { _職位code = new ConditionValue(); } return _職位code; }
         }
-        protected override ConditionValue getCValue職位コード() { return this.職位コード; }
+        protected override ConditionValue getCValue職位code() { return this.職位code; }
 
 
-        protected Map<String, Kbn職位区分CQ> _職位コード_InScopeSubQuery_Kbn職位区分Map;
-        public Map<String, Kbn職位区分CQ> 職位コード_InScopeSubQuery_Kbn職位区分 { get { return _職位コード_InScopeSubQuery_Kbn職位区分Map; }}
-        public override String keep職位コード_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
-            if (_職位コード_InScopeSubQuery_Kbn職位区分Map == null) { _職位コード_InScopeSubQuery_Kbn職位区分Map = new LinkedHashMap<String, Kbn職位区分CQ>(); }
-            String key = "subQueryMapKey" + (_職位コード_InScopeSubQuery_Kbn職位区分Map.size() + 1);
-            _職位コード_InScopeSubQuery_Kbn職位区分Map.put(key, subQuery); return "職位コード_InScopeSubQuery_Kbn職位区分." + key;
-        }
-
-        protected Map<String, Kbn職位区分CQ> _職位コード_NotInScopeSubQuery_Kbn職位区分Map;
-        public Map<String, Kbn職位区分CQ> 職位コード_NotInScopeSubQuery_Kbn職位区分 { get { return _職位コード_NotInScopeSubQuery_Kbn職位区分Map; }}
-        public override String keep職位コード_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
-            if (_職位コード_NotInScopeSubQuery_Kbn職位区分Map == null) { _職位コード_NotInScopeSubQuery_Kbn職位区分Map = new LinkedHashMap<String, Kbn職位区分CQ>(); }
-            String key = "subQueryMapKey" + (_職位コード_NotInScopeSubQuery_Kbn職位区分Map.size() + 1);
-            _職位コード_NotInScopeSubQuery_Kbn職位区分Map.put(key, subQuery); return "職位コード_NotInScopeSubQuery_Kbn職位区分." + key;
+        protected Map<String, Kbn職位区分CQ> _職位code_InScopeSubQuery_Kbn職位区分Map;
+        public Map<String, Kbn職位区分CQ> 職位code_InScopeSubQuery_Kbn職位区分 { get { return _職位code_InScopeSubQuery_Kbn職位区分Map; }}
+        public override String keep職位code_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
+            if (_職位code_InScopeSubQuery_Kbn職位区分Map == null) { _職位code_InScopeSubQuery_Kbn職位区分Map = new LinkedHashMap<String, Kbn職位区分CQ>(); }
+            String key = "subQueryMapKey" + (_職位code_InScopeSubQuery_Kbn職位区分Map.size() + 1);
+            _職位code_InScopeSubQuery_Kbn職位区分Map.put(key, subQuery); return "職位code_InScopeSubQuery_Kbn職位区分." + key;
         }
 
-        public BsDch従業員職位履歴台帳CQ AddOrderBy_職位コード_Asc() { regOBA("職位コード");return this; }
-        public BsDch従業員職位履歴台帳CQ AddOrderBy_職位コード_Desc() { regOBD("職位コード");return this; }
+        protected Map<String, Kbn職位区分CQ> _職位code_NotInScopeSubQuery_Kbn職位区分Map;
+        public Map<String, Kbn職位区分CQ> 職位code_NotInScopeSubQuery_Kbn職位区分 { get { return _職位code_NotInScopeSubQuery_Kbn職位区分Map; }}
+        public override String keep職位code_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
+            if (_職位code_NotInScopeSubQuery_Kbn職位区分Map == null) { _職位code_NotInScopeSubQuery_Kbn職位区分Map = new LinkedHashMap<String, Kbn職位区分CQ>(); }
+            String key = "subQueryMapKey" + (_職位code_NotInScopeSubQuery_Kbn職位区分Map.size() + 1);
+            _職位code_NotInScopeSubQuery_Kbn職位区分Map.put(key, subQuery); return "職位code_NotInScopeSubQuery_Kbn職位区分." + key;
+        }
+
+        public BsDch従業員職位履歴台帳CQ AddOrderBy_職位code_Asc() { regOBA("職位code");return this; }
+        public BsDch従業員職位履歴台帳CQ AddOrderBy_職位code_Desc() { regOBD("職位code");return this; }
 
         public BsDch従業員職位履歴台帳CQ AddSpecifiedDerivedOrderBy_Asc(String aliasName) { registerSpecifiedDerivedOrderBy_Asc(aliasName); return this; }
         public BsDch従業員職位履歴台帳CQ AddSpecifiedDerivedOrderBy_Desc(String aliasName) { registerSpecifiedDerivedOrderBy_Desc(aliasName); return this; }
@@ -184,7 +184,7 @@ namespace Dbflute.CBean.CQ.BS {
         public void xsetupOuterJoin_Kbn職位区分() {
             Kbn職位区分CQ cq = ConditionQueryKbn職位区分;
             Map<String, String> joinOnMap = new LinkedHashMap<String, String>();
-            joinOnMap.put("職位コード", "コード");
+            joinOnMap.put("職位code", "code");
             registerOuterJoin(cq, joinOnMap);
         }
         protected String resolveNextRelationPathKbn職位区分() {

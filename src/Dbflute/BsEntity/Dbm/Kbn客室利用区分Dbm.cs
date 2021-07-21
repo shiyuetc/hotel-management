@@ -38,20 +38,20 @@ namespace Dbflute.BsEntity.Dbm {
         // ===============================================================================
         //                                                                     Column Info
         //                                                                     ===========
-        protected ColumnInfo _columnコード;
+        protected ColumnInfo _columnCode;
         protected ColumnInfo _column名称;
 
-        public ColumnInfo Columnコード { get { return _columnコード; } }
+        public ColumnInfo ColumnCode { get { return _columnCode; } }
         public ColumnInfo Column名称 { get { return _column名称; } }
 
         protected void InitializeColumnInfo() {
-            _columnコード = cci("コード", "コード", null, null, true, "コード", typeof(String), true, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, null, "dch客室利用予定台帳List,dch客室利用実績台帳List");
+            _columnCode = cci("code", "code", null, null, true, "Code", typeof(String), true, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, null, "dch客室利用予定台帳List,dch客室利用実績台帳List");
             _column名称 = cci("名称", "名称", null, null, true, "名称", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
         }
 
         protected void InitializeColumnInfoList() {
             _columnInfoList = new ArrayList<ColumnInfo>();
-            _columnInfoList.add(Columnコード);
+            _columnInfoList.add(ColumnCode);
             _columnInfoList.add(Column名称);
         }
 
@@ -59,7 +59,7 @@ namespace Dbflute.BsEntity.Dbm {
         //                                                                     Unique Info
         //                                                                     ===========
         public override UniqueInfo PrimaryUniqueInfo { get {
-            return cpui(Columnコード);
+            return cpui(ColumnCode);
         }}
 
         // -------------------------------------------------
@@ -81,12 +81,12 @@ namespace Dbflute.BsEntity.Dbm {
         //                                  ----------------
         public ReferrerInfo ReferrerDch客室利用予定台帳List { get {
             Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(Columnコード, Dch客室利用予定台帳Dbm.GetInstance().Column客室利用コード);
+            map.put(ColumnCode, Dch客室利用予定台帳Dbm.GetInstance().Column客室利用code);
             return cri("Dch客室利用予定台帳List", this, Dch客室利用予定台帳Dbm.GetInstance(), map, false);
         }}
         public ReferrerInfo ReferrerDch客室利用実績台帳List { get {
             Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(Columnコード, Dch客室利用実績台帳Dbm.GetInstance().Column客室利用コード);
+            map.put(ColumnCode, Dch客室利用実績台帳Dbm.GetInstance().Column客室利用code);
             return cri("Dch客室利用実績台帳List", this, Dch客室利用実績台帳Dbm.GetInstance(), map, false);
         }}
 
@@ -109,13 +109,13 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                    Column DB-Name
         //                                    --------------
-        public static readonly String DB_NAME_コード = "コード";
+        public static readonly String DB_NAME_code = "code";
         public static readonly String DB_NAME_名称 = "名称";
 
         // -------------------------------------------------
         //                              Column Property-Name
         //                              --------------------
-        public static readonly String PROPERTY_NAME_コード = "コード";
+        public static readonly String PROPERTY_NAME_code = "Code";
         public static readonly String PROPERTY_NAME_名称 = "名称";
 
         // -------------------------------------------------
@@ -137,7 +137,7 @@ namespace Dbflute.BsEntity.Dbm {
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_DB_NAME.ToLower(), TABLE_PROPERTY_NAME);
-                map.put(DB_NAME_コード.ToLower(), PROPERTY_NAME_コード);
+                map.put(DB_NAME_code.ToLower(), PROPERTY_NAME_code);
                 map.put(DB_NAME_名称.ToLower(), PROPERTY_NAME_名称);
                 _dbNamePropertyNameKeyToLowerMap = map;
             }
@@ -145,7 +145,7 @@ namespace Dbflute.BsEntity.Dbm {
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_PROPERTY_NAME.ToLower(), TABLE_DB_NAME);
-                map.put(PROPERTY_NAME_コード.ToLower(), DB_NAME_コード);
+                map.put(PROPERTY_NAME_code.ToLower(), DB_NAME_code);
                 map.put(PROPERTY_NAME_名称.ToLower(), DB_NAME_名称);
                 _propertyNameDbNameKeyToLowerMap = map;
             }
@@ -188,7 +188,7 @@ namespace Dbflute.BsEntity.Dbm {
         protected Map<String, EntityPropertySetupper<Kbn客室利用区分>> _entityPropertySetupperMap = new LinkedHashMap<String, EntityPropertySetupper<Kbn客室利用区分>>();
 
         protected void InitializeEntityPropertySetupper() {
-            RegisterEntityPropertySetupper("コード", "コード", new EntityPropertyコードSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("code", "Code", new EntityPropertyCodeSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("名称", "名称", new EntityProperty名称Setupper(), _entityPropertySetupperMap);
         }
 
@@ -201,8 +201,8 @@ namespace Dbflute.BsEntity.Dbm {
             callback.Setup((Kbn客室利用区分)entity, value);
         }
 
-        public class EntityPropertyコードSetupper : EntityPropertySetupper<Kbn客室利用区分> {
-            public void Setup(Kbn客室利用区分 entity, Object value) { entity.コード = (value != null) ? (String)value : null; }
+        public class EntityPropertyCodeSetupper : EntityPropertySetupper<Kbn客室利用区分> {
+            public void Setup(Kbn客室利用区分 entity, Object value) { entity.Code = (value != null) ? (String)value : null; }
         }
         public class EntityProperty名称Setupper : EntityPropertySetupper<Kbn客室利用区分> {
             public void Setup(Kbn客室利用区分 entity, Object value) { entity.名称 = (value != null) ? (String)value : null; }

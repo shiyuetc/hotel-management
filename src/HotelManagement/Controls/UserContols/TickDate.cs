@@ -1,4 +1,4 @@
-﻿using HotelManagement.Const;
+﻿using HotelManagement.Common;
 using System;
 using System.Windows.Forms;
 

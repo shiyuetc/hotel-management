@@ -231,84 +231,84 @@ namespace Dbflute.CBean.CQ.BS {
         protected void reg退社年月日(ConditionKey k, Object v) { regQ(k, v, getCValue退社年月日(), "退社年月日"); }
         protected abstract ConditionValue getCValue退社年月日();
 
-        public void Set職位コード_Equal(String v) { DoSet職位コード_Equal(fRES(v)); }
+        public void Set職位code_Equal(String v) { DoSet職位code_Equal(fRES(v)); }
         /// <summary>
-        /// Set the value of システム保守 of 職位コード as equal. { = }
+        /// Set the value of システム保守 of 職位code as equal. { = }
         /// システム保守: System Maintenancer
         /// </summary>
-        public void Set職位コード_Equal_システム保守() {
-            DoSet職位コード_Equal(CDef.職位区分.システム保守.Code);
+        public void Set職位code_Equal_システム保守() {
+            DoSet職位code_Equal(CDef.職位区分.システム保守.Code);
         }
         /// <summary>
-        /// Set the value of アシスタントマネージャー of 職位コード as equal. { = }
+        /// Set the value of アシスタントマネージャー of 職位code as equal. { = }
         /// アシスタントマネージャー: Assistant Manager
         /// </summary>
-        public void Set職位コード_Equal_アシスタントマネージャー() {
-            DoSet職位コード_Equal(CDef.職位区分.アシスタントマネージャー.Code);
+        public void Set職位code_Equal_アシスタントマネージャー() {
+            DoSet職位code_Equal(CDef.職位区分.アシスタントマネージャー.Code);
         }
         /// <summary>
-        /// Set the value of ファイナンシャルコントローラー of 職位コード as equal. { = }
+        /// Set the value of ファイナンシャルコントローラー of 職位code as equal. { = }
         /// ファイナンシャルコントローラー: Financial Controller
         /// </summary>
-        public void Set職位コード_Equal_ファイナンシャルコントローラー() {
-            DoSet職位コード_Equal(CDef.職位区分.ファイナンシャルコントローラー.Code);
+        public void Set職位code_Equal_ファイナンシャルコントローラー() {
+            DoSet職位code_Equal(CDef.職位区分.ファイナンシャルコントローラー.Code);
         }
         /// <summary>
-        /// Set the value of フロントクラーク of 職位コード as equal. { = }
+        /// Set the value of フロントクラーク of 職位code as equal. { = }
         /// フロントクラーク: Front Clerk
         /// </summary>
-        public void Set職位コード_Equal_フロントクラーク() {
-            DoSet職位コード_Equal(CDef.職位区分.フロントクラーク.Code);
+        public void Set職位code_Equal_フロントクラーク() {
+            DoSet職位code_Equal(CDef.職位区分.フロントクラーク.Code);
         }
-        protected void DoSet職位コード_Equal(String v) { reg職位コード(CK_EQ, v); }
-        public void Set職位コード_NotEqual(String v) { DoSet職位コード_NotEqual(fRES(v)); }
+        protected void DoSet職位code_Equal(String v) { reg職位code(CK_EQ, v); }
+        public void Set職位code_NotEqual(String v) { DoSet職位code_NotEqual(fRES(v)); }
         /// <summary>
-        /// Set the value of システム保守 of 職位コード as notEqual. { &lt;&gt; }
+        /// Set the value of システム保守 of 職位code as notEqual. { &lt;&gt; }
         /// システム保守: System Maintenancer
         /// </summary>
-        public void Set職位コード_NotEqual_システム保守() {
-            DoSet職位コード_NotEqual(CDef.職位区分.システム保守.Code);
+        public void Set職位code_NotEqual_システム保守() {
+            DoSet職位code_NotEqual(CDef.職位区分.システム保守.Code);
         }
         /// <summary>
-        /// Set the value of アシスタントマネージャー of 職位コード as notEqual. { &lt;&gt; }
+        /// Set the value of アシスタントマネージャー of 職位code as notEqual. { &lt;&gt; }
         /// アシスタントマネージャー: Assistant Manager
         /// </summary>
-        public void Set職位コード_NotEqual_アシスタントマネージャー() {
-            DoSet職位コード_NotEqual(CDef.職位区分.アシスタントマネージャー.Code);
+        public void Set職位code_NotEqual_アシスタントマネージャー() {
+            DoSet職位code_NotEqual(CDef.職位区分.アシスタントマネージャー.Code);
         }
         /// <summary>
-        /// Set the value of ファイナンシャルコントローラー of 職位コード as notEqual. { &lt;&gt; }
+        /// Set the value of ファイナンシャルコントローラー of 職位code as notEqual. { &lt;&gt; }
         /// ファイナンシャルコントローラー: Financial Controller
         /// </summary>
-        public void Set職位コード_NotEqual_ファイナンシャルコントローラー() {
-            DoSet職位コード_NotEqual(CDef.職位区分.ファイナンシャルコントローラー.Code);
+        public void Set職位code_NotEqual_ファイナンシャルコントローラー() {
+            DoSet職位code_NotEqual(CDef.職位区分.ファイナンシャルコントローラー.Code);
         }
         /// <summary>
-        /// Set the value of フロントクラーク of 職位コード as notEqual. { &lt;&gt; }
+        /// Set the value of フロントクラーク of 職位code as notEqual. { &lt;&gt; }
         /// フロントクラーク: Front Clerk
         /// </summary>
-        public void Set職位コード_NotEqual_フロントクラーク() {
-            DoSet職位コード_NotEqual(CDef.職位区分.フロントクラーク.Code);
+        public void Set職位code_NotEqual_フロントクラーク() {
+            DoSet職位code_NotEqual(CDef.職位区分.フロントクラーク.Code);
         }
-        protected void DoSet職位コード_NotEqual(String v) { reg職位コード(CK_NES, v); }
-        public void Set職位コード_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue職位コード(), "職位コード"); }
-        public void Set職位コード_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue職位コード(), "職位コード"); }
+        protected void DoSet職位code_NotEqual(String v) { reg職位code(CK_NES, v); }
+        public void Set職位code_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue職位code(), "職位code"); }
+        public void Set職位code_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue職位code(), "職位code"); }
         public void InScopeKbn職位区分(SubQuery<Kbn職位区分CB> subQuery) {
             assertObjectNotNull("subQuery<Kbn職位区分CB>", subQuery);
             Kbn職位区分CB cb = new Kbn職位区分CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keep職位コード_InScopeSubQuery_Kbn職位区分(cb.Query());
-            registerInScopeSubQuery(cb.Query(), "職位コード", "コード", subQueryPropertyName);
+            String subQueryPropertyName = keep職位code_InScopeSubQuery_Kbn職位区分(cb.Query());
+            registerInScopeSubQuery(cb.Query(), "職位code", "code", subQueryPropertyName);
         }
-        public abstract String keep職位コード_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery);
+        public abstract String keep職位code_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery);
         public void NotInScopeKbn職位区分(SubQuery<Kbn職位区分CB> subQuery) {
             assertObjectNotNull("subQuery<Kbn職位区分CB>", subQuery);
             Kbn職位区分CB cb = new Kbn職位区分CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keep職位コード_NotInScopeSubQuery_Kbn職位区分(cb.Query());
-            registerNotInScopeSubQuery(cb.Query(), "職位コード", "コード", subQueryPropertyName);
+            String subQueryPropertyName = keep職位code_NotInScopeSubQuery_Kbn職位区分(cb.Query());
+            registerNotInScopeSubQuery(cb.Query(), "職位code", "code", subQueryPropertyName);
         }
-        public abstract String keep職位コード_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery);
-        protected void reg職位コード(ConditionKey k, Object v) { regQ(k, v, getCValue職位コード(), "職位コード"); }
-        protected abstract ConditionValue getCValue職位コード();
+        public abstract String keep職位code_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery);
+        protected void reg職位code(ConditionKey k, Object v) { regQ(k, v, getCValue職位code(), "職位code"); }
+        protected abstract ConditionValue getCValue職位code();
 
         public void Set最終ログイン日時_Equal(DateTime? v) { reg最終ログイン日時(CK_EQ, v); }
         public void Set最終ログイン日時_GreaterThan(DateTime? v) { reg最終ログイン日時(CK_GT, v); }

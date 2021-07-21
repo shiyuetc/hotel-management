@@ -122,9 +122,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\AppState.cs" />
-    <Compile Include="Common\BcryptUtil.cs" />
-    <Compile Include="Common\ResourceUtil.cs" />
-    <Compile Include="Const\Message.cs" />
+    <Compile Include="Common\Functions\BcryptUtil.cs" />
+    <Compile Include="Common\Functions\ResourceUtil.cs" />
+    <Compile Include="Common\Const\Message.cs" />
     <Compile Include="Controls\CustomControls\ConstantComboBox\ConstantComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -149,31 +149,18 @@
     <Compile Include="Controls\UserContols\TickDate.Designer.cs">
       <DependentUpon>TickDate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Const\Constants.cs" />
+    <Compile Include="Common\Const\Constants.cs" />
     <Compile Include="Extensions\DictionaryExtension.cs" />
-    <Compile Include="Extensions\DisplayExtension.cs" />
-    <Compile Include="Common\Messages.cs" />
+    <Compile Include="Common\Functions\Messages.cs" />
     <Compile Include="Common\ModelQuillInjector.cs" />
     <Compile Include="Extensions\ListExtension.cs" />
     <Compile Include="Controls\CustomControls\ExListView.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Extensions\StringExtension.cs" />
-    <Compile Include="Models\EmployeeModel.cs" />
-    <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="Models\RoomModel.cs" />
-    <Compile Include="View\Dialog\UcDialogBase.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Dialog\UcDialogBase.Designer.cs">
-      <DependentUpon>UcDialogBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Dialog\UcEmployeeDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Dialog\UcEmployeeDialog.Designer.cs">
-      <DependentUpon>UcEmployeeDialog.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Models\従業員マスタModel.cs" />
+    <Compile Include="Models\UcProc\ログイン画面処理Model.cs" />
+    <Compile Include="Models\UcProc\ベース画面処理Model.cs" />
     <Compile Include="View\FmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,42 +169,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Enums\Display.cs" />
-    <Compile Include="View\UcHistory.cs">
+    <Compile Include="View\宿泊履歴確認画面.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UcHistory.Designer.cs">
-      <DependentUpon>UcHistory.cs</DependentUpon>
+    <Compile Include="View\宿泊履歴確認画面.Designer.cs">
+      <DependentUpon>宿泊履歴確認画面.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UcRoom.cs">
+    <Compile Include="View\客室管理画面.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UcRoom.Designer.cs">
-      <DependentUpon>UcRoom.cs</DependentUpon>
+    <Compile Include="View\客室管理画面.Designer.cs">
+      <DependentUpon>客室管理画面.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UcSale.cs">
+    <Compile Include="View\顧客管理画面.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UcSale.Designer.cs">
-      <DependentUpon>UcSale.cs</DependentUpon>
+    <Compile Include="View\顧客管理画面.Designer.cs">
+      <DependentUpon>顧客管理画面.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UcCustomer.cs">
+    <Compile Include="View\従業員管理画面.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UcCustomer.Designer.cs">
-      <DependentUpon>UcCustomer.cs</DependentUpon>
+    <Compile Include="View\従業員管理画面.Designer.cs">
+      <DependentUpon>従業員管理画面.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UcEmployee.cs">
+    <Compile Include="View\予約管理画面.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UcEmployee.Designer.cs">
-      <DependentUpon>UcEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\UcReserve.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\UcReserve.Designer.cs">
-      <DependentUpon>UcReserve.cs</DependentUpon>
+    <Compile Include="View\予約管理画面.Designer.cs">
+      <DependentUpon>予約管理画面.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UcBase.cs">
       <SubType>UserControl</SubType>
@@ -225,23 +205,17 @@
     <Compile Include="View\UcBase.Designer.cs">
       <DependentUpon>UcBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UcLogin.cs">
+    <Compile Include="View\ログイン画面.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UcLogin.Designer.cs">
-      <DependentUpon>UcLogin.cs</DependentUpon>
+    <Compile Include="View\ログイン画面.Designer.cs">
+      <DependentUpon>ログイン画面.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Controls\UserContols\MenuBar.resx">
       <DependentUpon>MenuBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UserContols\TickDate.resx">
       <DependentUpon>TickDate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Dialog\UcDialogBase.resx">
-      <DependentUpon>UcDialogBase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Dialog\UcEmployeeDialog.resx">
-      <DependentUpon>UcEmployeeDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FmMain.resx">
       <DependentUpon>FmMain.cs</DependentUpon>
@@ -256,29 +230,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\UcHistory.resx">
-      <DependentUpon>UcHistory.cs</DependentUpon>
+    <EmbeddedResource Include="View\宿泊履歴確認画面.resx">
+      <DependentUpon>宿泊履歴確認画面.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UcRoom.resx">
-      <DependentUpon>UcRoom.cs</DependentUpon>
+    <EmbeddedResource Include="View\客室管理画面.resx">
+      <DependentUpon>客室管理画面.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UcSale.resx">
-      <DependentUpon>UcSale.cs</DependentUpon>
+    <EmbeddedResource Include="View\顧客管理画面.resx">
+      <DependentUpon>顧客管理画面.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UcCustomer.resx">
-      <DependentUpon>UcCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="View\従業員管理画面.resx">
+      <DependentUpon>従業員管理画面.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UcEmployee.resx">
-      <DependentUpon>UcEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\UcReserve.resx">
-      <DependentUpon>UcReserve.cs</DependentUpon>
+    <EmbeddedResource Include="View\予約管理画面.resx">
+      <DependentUpon>予約管理画面.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UcBase.resx">
       <DependentUpon>UcBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UcLogin.resx">
-      <DependentUpon>UcLogin.cs</DependentUpon>
+    <EmbeddedResource Include="View\ログイン画面.resx">
+      <DependentUpon>ログイン画面.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -300,15 +271,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Images\icon_login.png" />
+    <EmbeddedResource Include="Resources\Images\icon_ログイン画面.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Images\icon_customer.png" />
-    <EmbeddedResource Include="Resources\Images\icon_employee.png" />
-    <EmbeddedResource Include="Resources\Images\icon_history.png" />
-    <EmbeddedResource Include="Resources\Images\icon_reserve.png" />
-    <EmbeddedResource Include="Resources\Images\icon_room.png" />
-    <EmbeddedResource Include="Resources\Images\icon_sale.png" />
+    <EmbeddedResource Include="Resources\Images\icon_顧客管理画面.png" />
+    <EmbeddedResource Include="Resources\Images\icon_従業員管理画面.png" />
+    <EmbeddedResource Include="Resources\Images\icon_宿泊履歴確認画面.png" />
+    <EmbeddedResource Include="Resources\Images\icon_予約管理画面.png" />
+    <EmbeddedResource Include="Resources\Images\icon_客室管理画面.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dbflute\Dbflute.csproj">
@@ -316,5 +286,6 @@
       <Name>Dbflute</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

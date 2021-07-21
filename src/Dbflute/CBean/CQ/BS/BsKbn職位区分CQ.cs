@@ -34,180 +34,180 @@ namespace Dbflute.CBean.CQ.BS {
         }
 
 
-        protected ConditionValue _コード;
-        public ConditionValue コード {
-            get { if (_コード == null) { _コード = new ConditionValue(); } return _コード; }
+        protected ConditionValue _code;
+        public ConditionValue Code {
+            get { if (_code == null) { _code = new ConditionValue(); } return _code; }
         }
-        protected override ConditionValue getCValueコード() { return this.コード; }
+        protected override ConditionValue getCValueCode() { return this.Code; }
 
 
-        protected Map<String, Dch従業員職位履歴台帳CQ> _コード_ExistsSubQuery_Dch従業員職位履歴台帳ListMap;
-        public Map<String, Dch従業員職位履歴台帳CQ> コード_ExistsSubQuery_Dch従業員職位履歴台帳List { get { return _コード_ExistsSubQuery_Dch従業員職位履歴台帳ListMap; }}
-        public override String keepコード_ExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
-            if (_コード_ExistsSubQuery_Dch従業員職位履歴台帳ListMap == null) { _コード_ExistsSubQuery_Dch従業員職位履歴台帳ListMap = new LinkedHashMap<String, Dch従業員職位履歴台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_ExistsSubQuery_Dch従業員職位履歴台帳ListMap.size() + 1);
-            _コード_ExistsSubQuery_Dch従業員職位履歴台帳ListMap.put(key, subQuery); return "コード_ExistsSubQuery_Dch従業員職位履歴台帳List." + key;
+        protected Map<String, Dch従業員職位履歴台帳CQ> _code_ExistsSubQuery_Dch従業員職位履歴台帳ListMap;
+        public Map<String, Dch従業員職位履歴台帳CQ> Code_ExistsSubQuery_Dch従業員職位履歴台帳List { get { return _code_ExistsSubQuery_Dch従業員職位履歴台帳ListMap; }}
+        public override String keepCode_ExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+            if (_code_ExistsSubQuery_Dch従業員職位履歴台帳ListMap == null) { _code_ExistsSubQuery_Dch従業員職位履歴台帳ListMap = new LinkedHashMap<String, Dch従業員職位履歴台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_ExistsSubQuery_Dch従業員職位履歴台帳ListMap.size() + 1);
+            _code_ExistsSubQuery_Dch従業員職位履歴台帳ListMap.put(key, subQuery); return "Code_ExistsSubQuery_Dch従業員職位履歴台帳List." + key;
         }
 
-        protected Map<String, Mst従業員マスタCQ> _コード_ExistsSubQuery_Mst従業員マスタListMap;
-        public Map<String, Mst従業員マスタCQ> コード_ExistsSubQuery_Mst従業員マスタList { get { return _コード_ExistsSubQuery_Mst従業員マスタListMap; }}
-        public override String keepコード_ExistsSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
-            if (_コード_ExistsSubQuery_Mst従業員マスタListMap == null) { _コード_ExistsSubQuery_Mst従業員マスタListMap = new LinkedHashMap<String, Mst従業員マスタCQ>(); }
-            String key = "subQueryMapKey" + (_コード_ExistsSubQuery_Mst従業員マスタListMap.size() + 1);
-            _コード_ExistsSubQuery_Mst従業員マスタListMap.put(key, subQuery); return "コード_ExistsSubQuery_Mst従業員マスタList." + key;
+        protected Map<String, Mstメニュー権限マスタCQ> _code_ExistsSubQuery_Mstメニュー権限マスタListMap;
+        public Map<String, Mstメニュー権限マスタCQ> Code_ExistsSubQuery_Mstメニュー権限マスタList { get { return _code_ExistsSubQuery_Mstメニュー権限マスタListMap; }}
+        public override String keepCode_ExistsSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
+            if (_code_ExistsSubQuery_Mstメニュー権限マスタListMap == null) { _code_ExistsSubQuery_Mstメニュー権限マスタListMap = new LinkedHashMap<String, Mstメニュー権限マスタCQ>(); }
+            String key = "subQueryMapKey" + (_code_ExistsSubQuery_Mstメニュー権限マスタListMap.size() + 1);
+            _code_ExistsSubQuery_Mstメニュー権限マスタListMap.put(key, subQuery); return "Code_ExistsSubQuery_Mstメニュー権限マスタList." + key;
         }
 
-        protected Map<String, Mst権限マスタCQ> _コード_ExistsSubQuery_Mst権限マスタListMap;
-        public Map<String, Mst権限マスタCQ> コード_ExistsSubQuery_Mst権限マスタList { get { return _コード_ExistsSubQuery_Mst権限マスタListMap; }}
-        public override String keepコード_ExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
-            if (_コード_ExistsSubQuery_Mst権限マスタListMap == null) { _コード_ExistsSubQuery_Mst権限マスタListMap = new LinkedHashMap<String, Mst権限マスタCQ>(); }
-            String key = "subQueryMapKey" + (_コード_ExistsSubQuery_Mst権限マスタListMap.size() + 1);
-            _コード_ExistsSubQuery_Mst権限マスタListMap.put(key, subQuery); return "コード_ExistsSubQuery_Mst権限マスタList." + key;
+        protected Map<String, Mst従業員マスタCQ> _code_ExistsSubQuery_Mst従業員マスタListMap;
+        public Map<String, Mst従業員マスタCQ> Code_ExistsSubQuery_Mst従業員マスタList { get { return _code_ExistsSubQuery_Mst従業員マスタListMap; }}
+        public override String keepCode_ExistsSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
+            if (_code_ExistsSubQuery_Mst従業員マスタListMap == null) { _code_ExistsSubQuery_Mst従業員マスタListMap = new LinkedHashMap<String, Mst従業員マスタCQ>(); }
+            String key = "subQueryMapKey" + (_code_ExistsSubQuery_Mst従業員マスタListMap.size() + 1);
+            _code_ExistsSubQuery_Mst従業員マスタListMap.put(key, subQuery); return "Code_ExistsSubQuery_Mst従業員マスタList." + key;
         }
 
-        protected Map<String, Dch従業員職位履歴台帳CQ> _コード_NotExistsSubQuery_Dch従業員職位履歴台帳ListMap;
-        public Map<String, Dch従業員職位履歴台帳CQ> コード_NotExistsSubQuery_Dch従業員職位履歴台帳List { get { return _コード_NotExistsSubQuery_Dch従業員職位履歴台帳ListMap; }}
-        public override String keepコード_NotExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
-            if (_コード_NotExistsSubQuery_Dch従業員職位履歴台帳ListMap == null) { _コード_NotExistsSubQuery_Dch従業員職位履歴台帳ListMap = new LinkedHashMap<String, Dch従業員職位履歴台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_NotExistsSubQuery_Dch従業員職位履歴台帳ListMap.size() + 1);
-            _コード_NotExistsSubQuery_Dch従業員職位履歴台帳ListMap.put(key, subQuery); return "コード_NotExistsSubQuery_Dch従業員職位履歴台帳List." + key;
+        protected Map<String, Dch従業員職位履歴台帳CQ> _code_NotExistsSubQuery_Dch従業員職位履歴台帳ListMap;
+        public Map<String, Dch従業員職位履歴台帳CQ> Code_NotExistsSubQuery_Dch従業員職位履歴台帳List { get { return _code_NotExistsSubQuery_Dch従業員職位履歴台帳ListMap; }}
+        public override String keepCode_NotExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+            if (_code_NotExistsSubQuery_Dch従業員職位履歴台帳ListMap == null) { _code_NotExistsSubQuery_Dch従業員職位履歴台帳ListMap = new LinkedHashMap<String, Dch従業員職位履歴台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_NotExistsSubQuery_Dch従業員職位履歴台帳ListMap.size() + 1);
+            _code_NotExistsSubQuery_Dch従業員職位履歴台帳ListMap.put(key, subQuery); return "Code_NotExistsSubQuery_Dch従業員職位履歴台帳List." + key;
         }
 
-        protected Map<String, Mst従業員マスタCQ> _コード_NotExistsSubQuery_Mst従業員マスタListMap;
-        public Map<String, Mst従業員マスタCQ> コード_NotExistsSubQuery_Mst従業員マスタList { get { return _コード_NotExistsSubQuery_Mst従業員マスタListMap; }}
-        public override String keepコード_NotExistsSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
-            if (_コード_NotExistsSubQuery_Mst従業員マスタListMap == null) { _コード_NotExistsSubQuery_Mst従業員マスタListMap = new LinkedHashMap<String, Mst従業員マスタCQ>(); }
-            String key = "subQueryMapKey" + (_コード_NotExistsSubQuery_Mst従業員マスタListMap.size() + 1);
-            _コード_NotExistsSubQuery_Mst従業員マスタListMap.put(key, subQuery); return "コード_NotExistsSubQuery_Mst従業員マスタList." + key;
+        protected Map<String, Mstメニュー権限マスタCQ> _code_NotExistsSubQuery_Mstメニュー権限マスタListMap;
+        public Map<String, Mstメニュー権限マスタCQ> Code_NotExistsSubQuery_Mstメニュー権限マスタList { get { return _code_NotExistsSubQuery_Mstメニュー権限マスタListMap; }}
+        public override String keepCode_NotExistsSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
+            if (_code_NotExistsSubQuery_Mstメニュー権限マスタListMap == null) { _code_NotExistsSubQuery_Mstメニュー権限マスタListMap = new LinkedHashMap<String, Mstメニュー権限マスタCQ>(); }
+            String key = "subQueryMapKey" + (_code_NotExistsSubQuery_Mstメニュー権限マスタListMap.size() + 1);
+            _code_NotExistsSubQuery_Mstメニュー権限マスタListMap.put(key, subQuery); return "Code_NotExistsSubQuery_Mstメニュー権限マスタList." + key;
         }
 
-        protected Map<String, Mst権限マスタCQ> _コード_NotExistsSubQuery_Mst権限マスタListMap;
-        public Map<String, Mst権限マスタCQ> コード_NotExistsSubQuery_Mst権限マスタList { get { return _コード_NotExistsSubQuery_Mst権限マスタListMap; }}
-        public override String keepコード_NotExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
-            if (_コード_NotExistsSubQuery_Mst権限マスタListMap == null) { _コード_NotExistsSubQuery_Mst権限マスタListMap = new LinkedHashMap<String, Mst権限マスタCQ>(); }
-            String key = "subQueryMapKey" + (_コード_NotExistsSubQuery_Mst権限マスタListMap.size() + 1);
-            _コード_NotExistsSubQuery_Mst権限マスタListMap.put(key, subQuery); return "コード_NotExistsSubQuery_Mst権限マスタList." + key;
+        protected Map<String, Mst従業員マスタCQ> _code_NotExistsSubQuery_Mst従業員マスタListMap;
+        public Map<String, Mst従業員マスタCQ> Code_NotExistsSubQuery_Mst従業員マスタList { get { return _code_NotExistsSubQuery_Mst従業員マスタListMap; }}
+        public override String keepCode_NotExistsSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
+            if (_code_NotExistsSubQuery_Mst従業員マスタListMap == null) { _code_NotExistsSubQuery_Mst従業員マスタListMap = new LinkedHashMap<String, Mst従業員マスタCQ>(); }
+            String key = "subQueryMapKey" + (_code_NotExistsSubQuery_Mst従業員マスタListMap.size() + 1);
+            _code_NotExistsSubQuery_Mst従業員マスタListMap.put(key, subQuery); return "Code_NotExistsSubQuery_Mst従業員マスタList." + key;
         }
 
-        protected Map<String, Dch従業員職位履歴台帳CQ> _コード_InScopeSubQuery_Dch従業員職位履歴台帳ListMap;
-        public Map<String, Dch従業員職位履歴台帳CQ> コード_InScopeSubQuery_Dch従業員職位履歴台帳List { get { return _コード_InScopeSubQuery_Dch従業員職位履歴台帳ListMap; }}
-        public override String keepコード_InScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
-            if (_コード_InScopeSubQuery_Dch従業員職位履歴台帳ListMap == null) { _コード_InScopeSubQuery_Dch従業員職位履歴台帳ListMap = new LinkedHashMap<String, Dch従業員職位履歴台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_InScopeSubQuery_Dch従業員職位履歴台帳ListMap.size() + 1);
-            _コード_InScopeSubQuery_Dch従業員職位履歴台帳ListMap.put(key, subQuery); return "コード_InScopeSubQuery_Dch従業員職位履歴台帳List." + key;
+        protected Map<String, Dch従業員職位履歴台帳CQ> _code_InScopeSubQuery_Dch従業員職位履歴台帳ListMap;
+        public Map<String, Dch従業員職位履歴台帳CQ> Code_InScopeSubQuery_Dch従業員職位履歴台帳List { get { return _code_InScopeSubQuery_Dch従業員職位履歴台帳ListMap; }}
+        public override String keepCode_InScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+            if (_code_InScopeSubQuery_Dch従業員職位履歴台帳ListMap == null) { _code_InScopeSubQuery_Dch従業員職位履歴台帳ListMap = new LinkedHashMap<String, Dch従業員職位履歴台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_InScopeSubQuery_Dch従業員職位履歴台帳ListMap.size() + 1);
+            _code_InScopeSubQuery_Dch従業員職位履歴台帳ListMap.put(key, subQuery); return "Code_InScopeSubQuery_Dch従業員職位履歴台帳List." + key;
         }
 
-        protected Map<String, Mst従業員マスタCQ> _コード_InScopeSubQuery_Mst従業員マスタListMap;
-        public Map<String, Mst従業員マスタCQ> コード_InScopeSubQuery_Mst従業員マスタList { get { return _コード_InScopeSubQuery_Mst従業員マスタListMap; }}
-        public override String keepコード_InScopeSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
-            if (_コード_InScopeSubQuery_Mst従業員マスタListMap == null) { _コード_InScopeSubQuery_Mst従業員マスタListMap = new LinkedHashMap<String, Mst従業員マスタCQ>(); }
-            String key = "subQueryMapKey" + (_コード_InScopeSubQuery_Mst従業員マスタListMap.size() + 1);
-            _コード_InScopeSubQuery_Mst従業員マスタListMap.put(key, subQuery); return "コード_InScopeSubQuery_Mst従業員マスタList." + key;
+        protected Map<String, Mstメニュー権限マスタCQ> _code_InScopeSubQuery_Mstメニュー権限マスタListMap;
+        public Map<String, Mstメニュー権限マスタCQ> Code_InScopeSubQuery_Mstメニュー権限マスタList { get { return _code_InScopeSubQuery_Mstメニュー権限マスタListMap; }}
+        public override String keepCode_InScopeSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
+            if (_code_InScopeSubQuery_Mstメニュー権限マスタListMap == null) { _code_InScopeSubQuery_Mstメニュー権限マスタListMap = new LinkedHashMap<String, Mstメニュー権限マスタCQ>(); }
+            String key = "subQueryMapKey" + (_code_InScopeSubQuery_Mstメニュー権限マスタListMap.size() + 1);
+            _code_InScopeSubQuery_Mstメニュー権限マスタListMap.put(key, subQuery); return "Code_InScopeSubQuery_Mstメニュー権限マスタList." + key;
         }
 
-        protected Map<String, Mst権限マスタCQ> _コード_InScopeSubQuery_Mst権限マスタListMap;
-        public Map<String, Mst権限マスタCQ> コード_InScopeSubQuery_Mst権限マスタList { get { return _コード_InScopeSubQuery_Mst権限マスタListMap; }}
-        public override String keepコード_InScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
-            if (_コード_InScopeSubQuery_Mst権限マスタListMap == null) { _コード_InScopeSubQuery_Mst権限マスタListMap = new LinkedHashMap<String, Mst権限マスタCQ>(); }
-            String key = "subQueryMapKey" + (_コード_InScopeSubQuery_Mst権限マスタListMap.size() + 1);
-            _コード_InScopeSubQuery_Mst権限マスタListMap.put(key, subQuery); return "コード_InScopeSubQuery_Mst権限マスタList." + key;
+        protected Map<String, Mst従業員マスタCQ> _code_InScopeSubQuery_Mst従業員マスタListMap;
+        public Map<String, Mst従業員マスタCQ> Code_InScopeSubQuery_Mst従業員マスタList { get { return _code_InScopeSubQuery_Mst従業員マスタListMap; }}
+        public override String keepCode_InScopeSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
+            if (_code_InScopeSubQuery_Mst従業員マスタListMap == null) { _code_InScopeSubQuery_Mst従業員マスタListMap = new LinkedHashMap<String, Mst従業員マスタCQ>(); }
+            String key = "subQueryMapKey" + (_code_InScopeSubQuery_Mst従業員マスタListMap.size() + 1);
+            _code_InScopeSubQuery_Mst従業員マスタListMap.put(key, subQuery); return "Code_InScopeSubQuery_Mst従業員マスタList." + key;
         }
 
-        protected Map<String, Dch従業員職位履歴台帳CQ> _コード_NotInScopeSubQuery_Dch従業員職位履歴台帳ListMap;
-        public Map<String, Dch従業員職位履歴台帳CQ> コード_NotInScopeSubQuery_Dch従業員職位履歴台帳List { get { return _コード_NotInScopeSubQuery_Dch従業員職位履歴台帳ListMap; }}
-        public override String keepコード_NotInScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
-            if (_コード_NotInScopeSubQuery_Dch従業員職位履歴台帳ListMap == null) { _コード_NotInScopeSubQuery_Dch従業員職位履歴台帳ListMap = new LinkedHashMap<String, Dch従業員職位履歴台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_NotInScopeSubQuery_Dch従業員職位履歴台帳ListMap.size() + 1);
-            _コード_NotInScopeSubQuery_Dch従業員職位履歴台帳ListMap.put(key, subQuery); return "コード_NotInScopeSubQuery_Dch従業員職位履歴台帳List." + key;
+        protected Map<String, Dch従業員職位履歴台帳CQ> _code_NotInScopeSubQuery_Dch従業員職位履歴台帳ListMap;
+        public Map<String, Dch従業員職位履歴台帳CQ> Code_NotInScopeSubQuery_Dch従業員職位履歴台帳List { get { return _code_NotInScopeSubQuery_Dch従業員職位履歴台帳ListMap; }}
+        public override String keepCode_NotInScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+            if (_code_NotInScopeSubQuery_Dch従業員職位履歴台帳ListMap == null) { _code_NotInScopeSubQuery_Dch従業員職位履歴台帳ListMap = new LinkedHashMap<String, Dch従業員職位履歴台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_NotInScopeSubQuery_Dch従業員職位履歴台帳ListMap.size() + 1);
+            _code_NotInScopeSubQuery_Dch従業員職位履歴台帳ListMap.put(key, subQuery); return "Code_NotInScopeSubQuery_Dch従業員職位履歴台帳List." + key;
         }
 
-        protected Map<String, Mst従業員マスタCQ> _コード_NotInScopeSubQuery_Mst従業員マスタListMap;
-        public Map<String, Mst従業員マスタCQ> コード_NotInScopeSubQuery_Mst従業員マスタList { get { return _コード_NotInScopeSubQuery_Mst従業員マスタListMap; }}
-        public override String keepコード_NotInScopeSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
-            if (_コード_NotInScopeSubQuery_Mst従業員マスタListMap == null) { _コード_NotInScopeSubQuery_Mst従業員マスタListMap = new LinkedHashMap<String, Mst従業員マスタCQ>(); }
-            String key = "subQueryMapKey" + (_コード_NotInScopeSubQuery_Mst従業員マスタListMap.size() + 1);
-            _コード_NotInScopeSubQuery_Mst従業員マスタListMap.put(key, subQuery); return "コード_NotInScopeSubQuery_Mst従業員マスタList." + key;
+        protected Map<String, Mstメニュー権限マスタCQ> _code_NotInScopeSubQuery_Mstメニュー権限マスタListMap;
+        public Map<String, Mstメニュー権限マスタCQ> Code_NotInScopeSubQuery_Mstメニュー権限マスタList { get { return _code_NotInScopeSubQuery_Mstメニュー権限マスタListMap; }}
+        public override String keepCode_NotInScopeSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
+            if (_code_NotInScopeSubQuery_Mstメニュー権限マスタListMap == null) { _code_NotInScopeSubQuery_Mstメニュー権限マスタListMap = new LinkedHashMap<String, Mstメニュー権限マスタCQ>(); }
+            String key = "subQueryMapKey" + (_code_NotInScopeSubQuery_Mstメニュー権限マスタListMap.size() + 1);
+            _code_NotInScopeSubQuery_Mstメニュー権限マスタListMap.put(key, subQuery); return "Code_NotInScopeSubQuery_Mstメニュー権限マスタList." + key;
         }
 
-        protected Map<String, Mst権限マスタCQ> _コード_NotInScopeSubQuery_Mst権限マスタListMap;
-        public Map<String, Mst権限マスタCQ> コード_NotInScopeSubQuery_Mst権限マスタList { get { return _コード_NotInScopeSubQuery_Mst権限マスタListMap; }}
-        public override String keepコード_NotInScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
-            if (_コード_NotInScopeSubQuery_Mst権限マスタListMap == null) { _コード_NotInScopeSubQuery_Mst権限マスタListMap = new LinkedHashMap<String, Mst権限マスタCQ>(); }
-            String key = "subQueryMapKey" + (_コード_NotInScopeSubQuery_Mst権限マスタListMap.size() + 1);
-            _コード_NotInScopeSubQuery_Mst権限マスタListMap.put(key, subQuery); return "コード_NotInScopeSubQuery_Mst権限マスタList." + key;
+        protected Map<String, Mst従業員マスタCQ> _code_NotInScopeSubQuery_Mst従業員マスタListMap;
+        public Map<String, Mst従業員マスタCQ> Code_NotInScopeSubQuery_Mst従業員マスタList { get { return _code_NotInScopeSubQuery_Mst従業員マスタListMap; }}
+        public override String keepCode_NotInScopeSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
+            if (_code_NotInScopeSubQuery_Mst従業員マスタListMap == null) { _code_NotInScopeSubQuery_Mst従業員マスタListMap = new LinkedHashMap<String, Mst従業員マスタCQ>(); }
+            String key = "subQueryMapKey" + (_code_NotInScopeSubQuery_Mst従業員マスタListMap.size() + 1);
+            _code_NotInScopeSubQuery_Mst従業員マスタListMap.put(key, subQuery); return "Code_NotInScopeSubQuery_Mst従業員マスタList." + key;
         }
 
-        protected Map<String, Dch従業員職位履歴台帳CQ> _コード_SpecifyDerivedReferrer_Dch従業員職位履歴台帳ListMap;
-        public Map<String, Dch従業員職位履歴台帳CQ> コード_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List { get { return _コード_SpecifyDerivedReferrer_Dch従業員職位履歴台帳ListMap; }}
-        public override String keepコード_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
-            if (_コード_SpecifyDerivedReferrer_Dch従業員職位履歴台帳ListMap == null) { _コード_SpecifyDerivedReferrer_Dch従業員職位履歴台帳ListMap = new LinkedHashMap<String, Dch従業員職位履歴台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_SpecifyDerivedReferrer_Dch従業員職位履歴台帳ListMap.size() + 1);
-           _コード_SpecifyDerivedReferrer_Dch従業員職位履歴台帳ListMap.put(key, subQuery); return "コード_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List." + key;
+        protected Map<String, Dch従業員職位履歴台帳CQ> _code_SpecifyDerivedReferrer_Dch従業員職位履歴台帳ListMap;
+        public Map<String, Dch従業員職位履歴台帳CQ> Code_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List { get { return _code_SpecifyDerivedReferrer_Dch従業員職位履歴台帳ListMap; }}
+        public override String keepCode_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+            if (_code_SpecifyDerivedReferrer_Dch従業員職位履歴台帳ListMap == null) { _code_SpecifyDerivedReferrer_Dch従業員職位履歴台帳ListMap = new LinkedHashMap<String, Dch従業員職位履歴台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_SpecifyDerivedReferrer_Dch従業員職位履歴台帳ListMap.size() + 1);
+           _code_SpecifyDerivedReferrer_Dch従業員職位履歴台帳ListMap.put(key, subQuery); return "Code_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List." + key;
         }
 
-        protected Map<String, Mst従業員マスタCQ> _コード_SpecifyDerivedReferrer_Mst従業員マスタListMap;
-        public Map<String, Mst従業員マスタCQ> コード_SpecifyDerivedReferrer_Mst従業員マスタList { get { return _コード_SpecifyDerivedReferrer_Mst従業員マスタListMap; }}
-        public override String keepコード_SpecifyDerivedReferrer_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
-            if (_コード_SpecifyDerivedReferrer_Mst従業員マスタListMap == null) { _コード_SpecifyDerivedReferrer_Mst従業員マスタListMap = new LinkedHashMap<String, Mst従業員マスタCQ>(); }
-            String key = "subQueryMapKey" + (_コード_SpecifyDerivedReferrer_Mst従業員マスタListMap.size() + 1);
-           _コード_SpecifyDerivedReferrer_Mst従業員マスタListMap.put(key, subQuery); return "コード_SpecifyDerivedReferrer_Mst従業員マスタList." + key;
+        protected Map<String, Mstメニュー権限マスタCQ> _code_SpecifyDerivedReferrer_Mstメニュー権限マスタListMap;
+        public Map<String, Mstメニュー権限マスタCQ> Code_SpecifyDerivedReferrer_Mstメニュー権限マスタList { get { return _code_SpecifyDerivedReferrer_Mstメニュー権限マスタListMap; }}
+        public override String keepCode_SpecifyDerivedReferrer_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
+            if (_code_SpecifyDerivedReferrer_Mstメニュー権限マスタListMap == null) { _code_SpecifyDerivedReferrer_Mstメニュー権限マスタListMap = new LinkedHashMap<String, Mstメニュー権限マスタCQ>(); }
+            String key = "subQueryMapKey" + (_code_SpecifyDerivedReferrer_Mstメニュー権限マスタListMap.size() + 1);
+           _code_SpecifyDerivedReferrer_Mstメニュー権限マスタListMap.put(key, subQuery); return "Code_SpecifyDerivedReferrer_Mstメニュー権限マスタList." + key;
         }
 
-        protected Map<String, Mst権限マスタCQ> _コード_SpecifyDerivedReferrer_Mst権限マスタListMap;
-        public Map<String, Mst権限マスタCQ> コード_SpecifyDerivedReferrer_Mst権限マスタList { get { return _コード_SpecifyDerivedReferrer_Mst権限マスタListMap; }}
-        public override String keepコード_SpecifyDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery) {
-            if (_コード_SpecifyDerivedReferrer_Mst権限マスタListMap == null) { _コード_SpecifyDerivedReferrer_Mst権限マスタListMap = new LinkedHashMap<String, Mst権限マスタCQ>(); }
-            String key = "subQueryMapKey" + (_コード_SpecifyDerivedReferrer_Mst権限マスタListMap.size() + 1);
-           _コード_SpecifyDerivedReferrer_Mst権限マスタListMap.put(key, subQuery); return "コード_SpecifyDerivedReferrer_Mst権限マスタList." + key;
+        protected Map<String, Mst従業員マスタCQ> _code_SpecifyDerivedReferrer_Mst従業員マスタListMap;
+        public Map<String, Mst従業員マスタCQ> Code_SpecifyDerivedReferrer_Mst従業員マスタList { get { return _code_SpecifyDerivedReferrer_Mst従業員マスタListMap; }}
+        public override String keepCode_SpecifyDerivedReferrer_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
+            if (_code_SpecifyDerivedReferrer_Mst従業員マスタListMap == null) { _code_SpecifyDerivedReferrer_Mst従業員マスタListMap = new LinkedHashMap<String, Mst従業員マスタCQ>(); }
+            String key = "subQueryMapKey" + (_code_SpecifyDerivedReferrer_Mst従業員マスタListMap.size() + 1);
+           _code_SpecifyDerivedReferrer_Mst従業員マスタListMap.put(key, subQuery); return "Code_SpecifyDerivedReferrer_Mst従業員マスタList." + key;
         }
 
-        protected Map<String, Dch従業員職位履歴台帳CQ> _コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListMap;
-        public Map<String, Dch従業員職位履歴台帳CQ> コード_QueryDerivedReferrer_Dch従業員職位履歴台帳List { get { return _コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListMap; } }
-        public override String keepコード_QueryDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
-            if (_コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListMap == null) { _コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListMap = new LinkedHashMap<String, Dch従業員職位履歴台帳CQ>(); }
-            String key = "subQueryMapKey" + (_コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListMap.size() + 1);
-            _コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListMap.put(key, subQuery); return "コード_QueryDerivedReferrer_Dch従業員職位履歴台帳List." + key;
+        protected Map<String, Dch従業員職位履歴台帳CQ> _code_QueryDerivedReferrer_Dch従業員職位履歴台帳ListMap;
+        public Map<String, Dch従業員職位履歴台帳CQ> Code_QueryDerivedReferrer_Dch従業員職位履歴台帳List { get { return _code_QueryDerivedReferrer_Dch従業員職位履歴台帳ListMap; } }
+        public override String keepCode_QueryDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+            if (_code_QueryDerivedReferrer_Dch従業員職位履歴台帳ListMap == null) { _code_QueryDerivedReferrer_Dch従業員職位履歴台帳ListMap = new LinkedHashMap<String, Dch従業員職位履歴台帳CQ>(); }
+            String key = "subQueryMapKey" + (_code_QueryDerivedReferrer_Dch従業員職位履歴台帳ListMap.size() + 1);
+            _code_QueryDerivedReferrer_Dch従業員職位履歴台帳ListMap.put(key, subQuery); return "Code_QueryDerivedReferrer_Dch従業員職位履歴台帳List." + key;
         }
-        protected Map<String, Object> _コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameterMap;
-        public Map<String, Object> コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter { get { return _コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameterMap; } }
-        public override String keepコード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter(Object parameterValue) {
-            if (_コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameterMap == null) { _コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameterMap = new LinkedHashMap<String, Object>(); }
-            String key = "subQueryParameterKey" + (_コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameterMap.size() + 1);
-            _コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameterMap.put(key, parameterValue); return "コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter." + key;
-        }
-
-        protected Map<String, Mst従業員マスタCQ> _コード_QueryDerivedReferrer_Mst従業員マスタListMap;
-        public Map<String, Mst従業員マスタCQ> コード_QueryDerivedReferrer_Mst従業員マスタList { get { return _コード_QueryDerivedReferrer_Mst従業員マスタListMap; } }
-        public override String keepコード_QueryDerivedReferrer_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
-            if (_コード_QueryDerivedReferrer_Mst従業員マスタListMap == null) { _コード_QueryDerivedReferrer_Mst従業員マスタListMap = new LinkedHashMap<String, Mst従業員マスタCQ>(); }
-            String key = "subQueryMapKey" + (_コード_QueryDerivedReferrer_Mst従業員マスタListMap.size() + 1);
-            _コード_QueryDerivedReferrer_Mst従業員マスタListMap.put(key, subQuery); return "コード_QueryDerivedReferrer_Mst従業員マスタList." + key;
-        }
-        protected Map<String, Object> _コード_QueryDerivedReferrer_Mst従業員マスタListParameterMap;
-        public Map<String, Object> コード_QueryDerivedReferrer_Mst従業員マスタListParameter { get { return _コード_QueryDerivedReferrer_Mst従業員マスタListParameterMap; } }
-        public override String keepコード_QueryDerivedReferrer_Mst従業員マスタListParameter(Object parameterValue) {
-            if (_コード_QueryDerivedReferrer_Mst従業員マスタListParameterMap == null) { _コード_QueryDerivedReferrer_Mst従業員マスタListParameterMap = new LinkedHashMap<String, Object>(); }
-            String key = "subQueryParameterKey" + (_コード_QueryDerivedReferrer_Mst従業員マスタListParameterMap.size() + 1);
-            _コード_QueryDerivedReferrer_Mst従業員マスタListParameterMap.put(key, parameterValue); return "コード_QueryDerivedReferrer_Mst従業員マスタListParameter." + key;
+        protected Map<String, Object> _code_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameterMap;
+        public Map<String, Object> Code_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter { get { return _code_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameterMap; } }
+        public override String keepCode_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter(Object parameterValue) {
+            if (_code_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameterMap == null) { _code_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameterMap = new LinkedHashMap<String, Object>(); }
+            String key = "subQueryParameterKey" + (_code_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameterMap.size() + 1);
+            _code_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameterMap.put(key, parameterValue); return "Code_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter." + key;
         }
 
-        protected Map<String, Mst権限マスタCQ> _コード_QueryDerivedReferrer_Mst権限マスタListMap;
-        public Map<String, Mst権限マスタCQ> コード_QueryDerivedReferrer_Mst権限マスタList { get { return _コード_QueryDerivedReferrer_Mst権限マスタListMap; } }
-        public override String keepコード_QueryDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery) {
-            if (_コード_QueryDerivedReferrer_Mst権限マスタListMap == null) { _コード_QueryDerivedReferrer_Mst権限マスタListMap = new LinkedHashMap<String, Mst権限マスタCQ>(); }
-            String key = "subQueryMapKey" + (_コード_QueryDerivedReferrer_Mst権限マスタListMap.size() + 1);
-            _コード_QueryDerivedReferrer_Mst権限マスタListMap.put(key, subQuery); return "コード_QueryDerivedReferrer_Mst権限マスタList." + key;
+        protected Map<String, Mstメニュー権限マスタCQ> _code_QueryDerivedReferrer_Mstメニュー権限マスタListMap;
+        public Map<String, Mstメニュー権限マスタCQ> Code_QueryDerivedReferrer_Mstメニュー権限マスタList { get { return _code_QueryDerivedReferrer_Mstメニュー権限マスタListMap; } }
+        public override String keepCode_QueryDerivedReferrer_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
+            if (_code_QueryDerivedReferrer_Mstメニュー権限マスタListMap == null) { _code_QueryDerivedReferrer_Mstメニュー権限マスタListMap = new LinkedHashMap<String, Mstメニュー権限マスタCQ>(); }
+            String key = "subQueryMapKey" + (_code_QueryDerivedReferrer_Mstメニュー権限マスタListMap.size() + 1);
+            _code_QueryDerivedReferrer_Mstメニュー権限マスタListMap.put(key, subQuery); return "Code_QueryDerivedReferrer_Mstメニュー権限マスタList." + key;
         }
-        protected Map<String, Object> _コード_QueryDerivedReferrer_Mst権限マスタListParameterMap;
-        public Map<String, Object> コード_QueryDerivedReferrer_Mst権限マスタListParameter { get { return _コード_QueryDerivedReferrer_Mst権限マスタListParameterMap; } }
-        public override String keepコード_QueryDerivedReferrer_Mst権限マスタListParameter(Object parameterValue) {
-            if (_コード_QueryDerivedReferrer_Mst権限マスタListParameterMap == null) { _コード_QueryDerivedReferrer_Mst権限マスタListParameterMap = new LinkedHashMap<String, Object>(); }
-            String key = "subQueryParameterKey" + (_コード_QueryDerivedReferrer_Mst権限マスタListParameterMap.size() + 1);
-            _コード_QueryDerivedReferrer_Mst権限マスタListParameterMap.put(key, parameterValue); return "コード_QueryDerivedReferrer_Mst権限マスタListParameter." + key;
+        protected Map<String, Object> _code_QueryDerivedReferrer_Mstメニュー権限マスタListParameterMap;
+        public Map<String, Object> Code_QueryDerivedReferrer_Mstメニュー権限マスタListParameter { get { return _code_QueryDerivedReferrer_Mstメニュー権限マスタListParameterMap; } }
+        public override String keepCode_QueryDerivedReferrer_Mstメニュー権限マスタListParameter(Object parameterValue) {
+            if (_code_QueryDerivedReferrer_Mstメニュー権限マスタListParameterMap == null) { _code_QueryDerivedReferrer_Mstメニュー権限マスタListParameterMap = new LinkedHashMap<String, Object>(); }
+            String key = "subQueryParameterKey" + (_code_QueryDerivedReferrer_Mstメニュー権限マスタListParameterMap.size() + 1);
+            _code_QueryDerivedReferrer_Mstメニュー権限マスタListParameterMap.put(key, parameterValue); return "Code_QueryDerivedReferrer_Mstメニュー権限マスタListParameter." + key;
         }
 
-        public BsKbn職位区分CQ AddOrderBy_コード_Asc() { regOBA("コード");return this; }
-        public BsKbn職位区分CQ AddOrderBy_コード_Desc() { regOBD("コード");return this; }
+        protected Map<String, Mst従業員マスタCQ> _code_QueryDerivedReferrer_Mst従業員マスタListMap;
+        public Map<String, Mst従業員マスタCQ> Code_QueryDerivedReferrer_Mst従業員マスタList { get { return _code_QueryDerivedReferrer_Mst従業員マスタListMap; } }
+        public override String keepCode_QueryDerivedReferrer_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
+            if (_code_QueryDerivedReferrer_Mst従業員マスタListMap == null) { _code_QueryDerivedReferrer_Mst従業員マスタListMap = new LinkedHashMap<String, Mst従業員マスタCQ>(); }
+            String key = "subQueryMapKey" + (_code_QueryDerivedReferrer_Mst従業員マスタListMap.size() + 1);
+            _code_QueryDerivedReferrer_Mst従業員マスタListMap.put(key, subQuery); return "Code_QueryDerivedReferrer_Mst従業員マスタList." + key;
+        }
+        protected Map<String, Object> _code_QueryDerivedReferrer_Mst従業員マスタListParameterMap;
+        public Map<String, Object> Code_QueryDerivedReferrer_Mst従業員マスタListParameter { get { return _code_QueryDerivedReferrer_Mst従業員マスタListParameterMap; } }
+        public override String keepCode_QueryDerivedReferrer_Mst従業員マスタListParameter(Object parameterValue) {
+            if (_code_QueryDerivedReferrer_Mst従業員マスタListParameterMap == null) { _code_QueryDerivedReferrer_Mst従業員マスタListParameterMap = new LinkedHashMap<String, Object>(); }
+            String key = "subQueryParameterKey" + (_code_QueryDerivedReferrer_Mst従業員マスタListParameterMap.size() + 1);
+            _code_QueryDerivedReferrer_Mst従業員マスタListParameterMap.put(key, parameterValue); return "Code_QueryDerivedReferrer_Mst従業員マスタListParameter." + key;
+        }
+
+        public BsKbn職位区分CQ AddOrderBy_Code_Asc() { regOBA("code");return this; }
+        public BsKbn職位区分CQ AddOrderBy_Code_Desc() { regOBD("code");return this; }
 
         protected ConditionValue _名称;
         public ConditionValue 名称 {

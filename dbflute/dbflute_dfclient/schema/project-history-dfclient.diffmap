@@ -1,0 +1,335 @@
+map:{
+    ; 2021/07/21 06:36:28 = map:{
+        ; diffDate = 2021/07/21 06:36:28
+        ; tableDiff = map:{
+            ; mstメニュー権限マスタ = map:{
+                ; tableName = mstメニュー権限マスタ
+                ; diffType = ADD
+            }
+            ; mst制御画面マスタ = map:{
+                ; tableName = mst制御画面マスタ
+                ; diffType = ADD
+            }
+            ; mst会員マスタ = map:{
+                ; tableName = mst会員マスタ
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; id = map:{
+                        ; columnName = id
+                        ; diffType = CHANGE
+                        ; defaultValueDiff = map:{
+                            ; next = "nextval('mst004_id_seq'::regclass)"
+                            ; previous = "nextval('mst003_id_seq'::regclass)"
+                        }
+                    }
+                }
+            }
+            ; mst客室タイプマスタ = map:{
+                ; tableName = mst客室タイプマスタ
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; id = map:{
+                        ; columnName = id
+                        ; diffType = CHANGE
+                        ; defaultValueDiff = map:{
+                            ; next = "nextval('mst005_id_seq'::regclass)"
+                            ; previous = "nextval('mst004_id_seq'::regclass)"
+                        }
+                    }
+                }
+            }
+            ; mst客室マスタ = map:{
+                ; tableName = mst客室マスタ
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; id = map:{
+                        ; columnName = id
+                        ; diffType = CHANGE
+                        ; defaultValueDiff = map:{
+                            ; next = "nextval('mst006_id_seq'::regclass)"
+                            ; previous = "nextval('mst005_id_seq'::regclass)"
+                        }
+                    }
+                }
+            }
+            ; mst従業員マスタ = map:{
+                ; tableName = mst従業員マスタ
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; id = map:{
+                        ; columnName = id
+                        ; diffType = CHANGE
+                        ; defaultValueDiff = map:{
+                            ; next = "nextval('mst003_id_seq'::regclass)"
+                            ; previous = "nextval('mst002_id_seq'::regclass)"
+                        }
+                    }
+                }
+            }
+            ; kbn制御画面区分 = map:{
+                ; tableName = kbn制御画面区分
+                ; diffType = DELETE
+            }
+            ; mst権限マスタ = map:{
+                ; tableName = mst権限マスタ
+                ; diffType = DELETE
+            }
+        }
+        ; sequenceDiff = map:{
+            ; hotel_management.public.mst006_id_seq = map:{
+                ; sequenceName = hotel_management.public.mst006_id_seq
+                ; diffType = ADD
+            }
+        }
+    }
+    ; 2021/07/20 19:32:11 = map:{
+        ; diffDate = 2021/07/20 19:32:11
+        ; tableDiff = map:{
+            ; dch客室利用予定台帳 = map:{
+                ; tableName = dch客室利用予定台帳
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 客室利用code = map:{
+                        ; columnName = 客室利用code
+                        ; diffType = ADD
+                    }
+                    ; 客室利用コード = map:{
+                        ; columnName = 客室利用コード
+                        ; diffType = DELETE
+                    }
+                }
+                ; foreignKeyDiff = map:{
+                    ; dch客室利用予定台帳_客室利用code_fkey = map:{
+                        ; constraintName = dch客室利用予定台帳_客室利用code_fkey
+                        ; diffType = ADD
+                    }
+                    ; dch客室利用予定台帳_客室利用コード_fkey = map:{
+                        ; constraintName = dch客室利用予定台帳_客室利用コード_fkey
+                        ; diffType = DELETE
+                    }
+                }
+            }
+            ; dch客室利用実績台帳 = map:{
+                ; tableName = dch客室利用実績台帳
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 客室利用code = map:{
+                        ; columnName = 客室利用code
+                        ; diffType = ADD
+                    }
+                    ; 客室利用コード = map:{
+                        ; columnName = 客室利用コード
+                        ; diffType = DELETE
+                    }
+                }
+                ; foreignKeyDiff = map:{
+                    ; dch客室利用実績台帳_客室利用code_fkey = map:{
+                        ; constraintName = dch客室利用実績台帳_客室利用code_fkey
+                        ; diffType = ADD
+                    }
+                    ; dch客室利用実績台帳_客室利用コード_fkey = map:{
+                        ; constraintName = dch客室利用実績台帳_客室利用コード_fkey
+                        ; diffType = DELETE
+                    }
+                }
+            }
+            ; dch従業員職位履歴台帳 = map:{
+                ; tableName = dch従業員職位履歴台帳
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 職位code = map:{
+                        ; columnName = 職位code
+                        ; diffType = ADD
+                    }
+                    ; 職位コード = map:{
+                        ; columnName = 職位コード
+                        ; diffType = DELETE
+                    }
+                }
+                ; foreignKeyDiff = map:{
+                    ; dch従業員職位履歴台帳_職位code_fkey = map:{
+                        ; constraintName = dch従業員職位履歴台帳_職位code_fkey
+                        ; diffType = ADD
+                    }
+                    ; dch従業員職位履歴台帳_職位コード_fkey = map:{
+                        ; constraintName = dch従業員職位履歴台帳_職位コード_fkey
+                        ; diffType = DELETE
+                    }
+                }
+            }
+            ; kbn制御画面区分 = map:{
+                ; tableName = kbn制御画面区分
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; code = map:{
+                        ; columnName = code
+                        ; diffType = ADD
+                    }
+                    ; コード = map:{
+                        ; columnName = コード
+                        ; diffType = DELETE
+                    }
+                }
+                ; primaryKeyDiff = map:{
+                    ; kbn制御画面区分_pkey = map:{
+                        ; constraintName = kbn制御画面区分_pkey
+                        ; diffType = CHANGE
+                        ; columnDiff = map:{
+                            ; next = code
+                            ; previous = コード
+                        }
+                    }
+                }
+            }
+            ; kbn客室利用区分 = map:{
+                ; tableName = kbn客室利用区分
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; code = map:{
+                        ; columnName = code
+                        ; diffType = ADD
+                    }
+                    ; コード = map:{
+                        ; columnName = コード
+                        ; diffType = DELETE
+                    }
+                }
+                ; primaryKeyDiff = map:{
+                    ; kbn客室利用区分_pkey = map:{
+                        ; constraintName = kbn客室利用区分_pkey
+                        ; diffType = CHANGE
+                        ; columnDiff = map:{
+                            ; next = code
+                            ; previous = コード
+                        }
+                    }
+                }
+            }
+            ; kbn職位区分 = map:{
+                ; tableName = kbn職位区分
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; code = map:{
+                        ; columnName = code
+                        ; diffType = ADD
+                    }
+                    ; コード = map:{
+                        ; columnName = コード
+                        ; diffType = DELETE
+                    }
+                }
+                ; primaryKeyDiff = map:{
+                    ; kbn職位区分_pkey = map:{
+                        ; constraintName = kbn職位区分_pkey
+                        ; diffType = CHANGE
+                        ; columnDiff = map:{
+                            ; next = code
+                            ; previous = コード
+                        }
+                    }
+                }
+            }
+            ; mst従業員マスタ = map:{
+                ; tableName = mst従業員マスタ
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 職位code = map:{
+                        ; columnName = 職位code
+                        ; diffType = ADD
+                    }
+                    ; 職位コード = map:{
+                        ; columnName = 職位コード
+                        ; diffType = DELETE
+                    }
+                }
+                ; foreignKeyDiff = map:{
+                    ; mst従業員マスタ_職位code_fkey = map:{
+                        ; constraintName = mst従業員マスタ_職位code_fkey
+                        ; diffType = ADD
+                    }
+                    ; mst従業員マスタ_職位コード_fkey = map:{
+                        ; constraintName = mst従業員マスタ_職位コード_fkey
+                        ; diffType = DELETE
+                    }
+                }
+            }
+            ; mst権限マスタ = map:{
+                ; tableName = mst権限マスタ
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 職位code = map:{
+                        ; columnName = 職位code
+                        ; diffType = ADD
+                    }
+                    ; 制御画面code = map:{
+                        ; columnName = 制御画面code
+                        ; diffType = ADD
+                    }
+                    ; 職位コード = map:{
+                        ; columnName = 職位コード
+                        ; diffType = DELETE
+                    }
+                    ; 制御画面コード = map:{
+                        ; columnName = 制御画面コード
+                        ; diffType = DELETE
+                    }
+                }
+                ; foreignKeyDiff = map:{
+                    ; mst権限マスタ_制御画面code_fkey = map:{
+                        ; constraintName = mst権限マスタ_制御画面code_fkey
+                        ; diffType = ADD
+                    }
+                    ; mst権限マスタ_職位code_fkey = map:{
+                        ; constraintName = mst権限マスタ_職位code_fkey
+                        ; diffType = ADD
+                    }
+                    ; mst権限マスタ_制御画面コード_fkey = map:{
+                        ; constraintName = mst権限マスタ_制御画面コード_fkey
+                        ; diffType = DELETE
+                    }
+                    ; mst権限マスタ_職位コード_fkey = map:{
+                        ; constraintName = mst権限マスタ_職位コード_fkey
+                        ; diffType = DELETE
+                    }
+                }
+            }
+        }
+    }
+    ; 2021/07/18 21:55:35 = map:{
+        ; diffDate = 2021/07/18 21:55:35
+        ; tableDiff = map:{
+            ; kbn制御画面区分 = map:{
+                ; tableName = kbn制御画面区分
+                ; diffType = ADD
+            }
+            ; mst権限マスタ = map:{
+                ; tableName = mst権限マスタ
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 制御画面コード = map:{
+                        ; columnName = 制御画面コード
+                        ; diffType = ADD
+                    }
+                    ; 権限コード = map:{
+                        ; columnName = 権限コード
+                        ; diffType = DELETE
+                    }
+                }
+                ; foreignKeyDiff = map:{
+                    ; mst権限マスタ_制御画面コード_fkey = map:{
+                        ; constraintName = mst権限マスタ_制御画面コード_fkey
+                        ; diffType = ADD
+                    }
+                    ; mst権限マスタ_権限コード_fkey = map:{
+                        ; constraintName = mst権限マスタ_権限コード_fkey
+                        ; diffType = DELETE
+                    }
+                }
+            }
+            ; kbn権限区分 = map:{
+                ; tableName = kbn権限区分
+                ; diffType = DELETE
+            }
+        }
+    }
+}

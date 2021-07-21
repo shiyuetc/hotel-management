@@ -162,17 +162,17 @@ namespace Dbflute.CBean.CQ.Ciq {
             return _myCQ.keep客室マスタid_NotInScopeSubQuery_Mst客室マスタ(subQuery);
         }
 
-        protected override ConditionValue getCValue客室利用コード() {
-            return _myCQ.客室利用コード;
+        protected override ConditionValue getCValue客室利用code() {
+            return _myCQ.客室利用code;
         }
 
 
-        public override String keep客室利用コード_InScopeSubQuery_Kbn客室利用区分(Kbn客室利用区分CQ subQuery) {
-            return _myCQ.keep客室利用コード_InScopeSubQuery_Kbn客室利用区分(subQuery);
+        public override String keep客室利用code_InScopeSubQuery_Kbn客室利用区分(Kbn客室利用区分CQ subQuery) {
+            return _myCQ.keep客室利用code_InScopeSubQuery_Kbn客室利用区分(subQuery);
         }
 
-        public override String keep客室利用コード_NotInScopeSubQuery_Kbn客室利用区分(Kbn客室利用区分CQ subQuery) {
-            return _myCQ.keep客室利用コード_NotInScopeSubQuery_Kbn客室利用区分(subQuery);
+        public override String keep客室利用code_NotInScopeSubQuery_Kbn客室利用区分(Kbn客室利用区分CQ subQuery) {
+            return _myCQ.keep客室利用code_NotInScopeSubQuery_Kbn客室利用区分(subQuery);
         }
 
         protected override ConditionValue getCValue利用開始日時() {

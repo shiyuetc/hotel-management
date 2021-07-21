@@ -10,6 +10,6 @@ namespace HotelManagement.Common
         /// <summary>
         /// ログイン中の従業員
         /// </summary>
-        public static Employee LoginEmployee { get; set; } = null;
+        public static Mst従業員マスタ ログイン従業員 { get; set; } = null;
     }
 }

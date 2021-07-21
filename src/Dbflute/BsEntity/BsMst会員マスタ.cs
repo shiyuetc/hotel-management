@@ -25,7 +25,7 @@ namespace Dbflute.ExEntity {
     ///     id, 会員番号, 氏名_姓, 氏名_名, 氏名_カナ, 会社名, 会社名_カナ, 電話番号, メールアドレス, 入会年月日, 退会年月日, 備考
     /// 
     /// [sequence]
-    ///     mst003_id_seq
+    ///     mst004_id_seq
     /// 
     /// [identity]
     ///     

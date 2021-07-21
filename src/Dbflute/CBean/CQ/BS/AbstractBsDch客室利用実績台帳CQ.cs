@@ -217,70 +217,70 @@ namespace Dbflute.CBean.CQ.BS {
         protected void reg客室マスタid(ConditionKey k, Object v) { regQ(k, v, getCValue客室マスタid(), "客室マスタid"); }
         protected abstract ConditionValue getCValue客室マスタid();
 
-        public void Set客室利用コード_Equal(String v) { DoSet客室利用コード_Equal(fRES(v)); }
+        public void Set客室利用code_Equal(String v) { DoSet客室利用code_Equal(fRES(v)); }
         /// <summary>
-        /// Set the value of 宿泊 of 客室利用コード as equal. { = }
+        /// Set the value of 宿泊 of 客室利用code as equal. { = }
         /// 宿泊
         /// </summary>
-        public void Set客室利用コード_Equal_宿泊() {
-            DoSet客室利用コード_Equal(CDef.客室利用区分.宿泊.Code);
+        public void Set客室利用code_Equal_宿泊() {
+            DoSet客室利用code_Equal(CDef.客室利用区分.宿泊.Code);
         }
         /// <summary>
-        /// Set the value of 清掃 of 客室利用コード as equal. { = }
+        /// Set the value of 清掃 of 客室利用code as equal. { = }
         /// 清掃
         /// </summary>
-        public void Set客室利用コード_Equal_清掃() {
-            DoSet客室利用コード_Equal(CDef.客室利用区分.清掃.Code);
+        public void Set客室利用code_Equal_清掃() {
+            DoSet客室利用code_Equal(CDef.客室利用区分.清掃.Code);
         }
         /// <summary>
-        /// Set the value of その他 of 客室利用コード as equal. { = }
+        /// Set the value of その他 of 客室利用code as equal. { = }
         /// その他
         /// </summary>
-        public void Set客室利用コード_Equal_その他() {
-            DoSet客室利用コード_Equal(CDef.客室利用区分.その他.Code);
+        public void Set客室利用code_Equal_その他() {
+            DoSet客室利用code_Equal(CDef.客室利用区分.その他.Code);
         }
-        protected void DoSet客室利用コード_Equal(String v) { reg客室利用コード(CK_EQ, v); }
-        public void Set客室利用コード_NotEqual(String v) { DoSet客室利用コード_NotEqual(fRES(v)); }
+        protected void DoSet客室利用code_Equal(String v) { reg客室利用code(CK_EQ, v); }
+        public void Set客室利用code_NotEqual(String v) { DoSet客室利用code_NotEqual(fRES(v)); }
         /// <summary>
-        /// Set the value of 宿泊 of 客室利用コード as notEqual. { &lt;&gt; }
+        /// Set the value of 宿泊 of 客室利用code as notEqual. { &lt;&gt; }
         /// 宿泊
         /// </summary>
-        public void Set客室利用コード_NotEqual_宿泊() {
-            DoSet客室利用コード_NotEqual(CDef.客室利用区分.宿泊.Code);
+        public void Set客室利用code_NotEqual_宿泊() {
+            DoSet客室利用code_NotEqual(CDef.客室利用区分.宿泊.Code);
         }
         /// <summary>
-        /// Set the value of 清掃 of 客室利用コード as notEqual. { &lt;&gt; }
+        /// Set the value of 清掃 of 客室利用code as notEqual. { &lt;&gt; }
         /// 清掃
         /// </summary>
-        public void Set客室利用コード_NotEqual_清掃() {
-            DoSet客室利用コード_NotEqual(CDef.客室利用区分.清掃.Code);
+        public void Set客室利用code_NotEqual_清掃() {
+            DoSet客室利用code_NotEqual(CDef.客室利用区分.清掃.Code);
         }
         /// <summary>
-        /// Set the value of その他 of 客室利用コード as notEqual. { &lt;&gt; }
+        /// Set the value of その他 of 客室利用code as notEqual. { &lt;&gt; }
         /// その他
         /// </summary>
-        public void Set客室利用コード_NotEqual_その他() {
-            DoSet客室利用コード_NotEqual(CDef.客室利用区分.その他.Code);
+        public void Set客室利用code_NotEqual_その他() {
+            DoSet客室利用code_NotEqual(CDef.客室利用区分.その他.Code);
         }
-        protected void DoSet客室利用コード_NotEqual(String v) { reg客室利用コード(CK_NES, v); }
-        public void Set客室利用コード_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue客室利用コード(), "客室利用コード"); }
-        public void Set客室利用コード_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue客室利用コード(), "客室利用コード"); }
+        protected void DoSet客室利用code_NotEqual(String v) { reg客室利用code(CK_NES, v); }
+        public void Set客室利用code_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue客室利用code(), "客室利用code"); }
+        public void Set客室利用code_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue客室利用code(), "客室利用code"); }
         public void InScopeKbn客室利用区分(SubQuery<Kbn客室利用区分CB> subQuery) {
             assertObjectNotNull("subQuery<Kbn客室利用区分CB>", subQuery);
             Kbn客室利用区分CB cb = new Kbn客室利用区分CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keep客室利用コード_InScopeSubQuery_Kbn客室利用区分(cb.Query());
-            registerInScopeSubQuery(cb.Query(), "客室利用コード", "コード", subQueryPropertyName);
+            String subQueryPropertyName = keep客室利用code_InScopeSubQuery_Kbn客室利用区分(cb.Query());
+            registerInScopeSubQuery(cb.Query(), "客室利用code", "code", subQueryPropertyName);
         }
-        public abstract String keep客室利用コード_InScopeSubQuery_Kbn客室利用区分(Kbn客室利用区分CQ subQuery);
+        public abstract String keep客室利用code_InScopeSubQuery_Kbn客室利用区分(Kbn客室利用区分CQ subQuery);
         public void NotInScopeKbn客室利用区分(SubQuery<Kbn客室利用区分CB> subQuery) {
             assertObjectNotNull("subQuery<Kbn客室利用区分CB>", subQuery);
             Kbn客室利用区分CB cb = new Kbn客室利用区分CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keep客室利用コード_NotInScopeSubQuery_Kbn客室利用区分(cb.Query());
-            registerNotInScopeSubQuery(cb.Query(), "客室利用コード", "コード", subQueryPropertyName);
+            String subQueryPropertyName = keep客室利用code_NotInScopeSubQuery_Kbn客室利用区分(cb.Query());
+            registerNotInScopeSubQuery(cb.Query(), "客室利用code", "code", subQueryPropertyName);
         }
-        public abstract String keep客室利用コード_NotInScopeSubQuery_Kbn客室利用区分(Kbn客室利用区分CQ subQuery);
-        protected void reg客室利用コード(ConditionKey k, Object v) { regQ(k, v, getCValue客室利用コード(), "客室利用コード"); }
-        protected abstract ConditionValue getCValue客室利用コード();
+        public abstract String keep客室利用code_NotInScopeSubQuery_Kbn客室利用区分(Kbn客室利用区分CQ subQuery);
+        protected void reg客室利用code(ConditionKey k, Object v) { regQ(k, v, getCValue客室利用code(), "客室利用code"); }
+        protected abstract ConditionValue getCValue客室利用code();
 
         public void Set利用開始日時_Equal(DateTime? v) { reg利用開始日時(CK_EQ, v); }
         public void Set利用開始日時_GreaterThan(DateTime? v) { reg利用開始日時(CK_GT, v); }

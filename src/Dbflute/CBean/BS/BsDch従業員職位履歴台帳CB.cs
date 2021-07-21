@@ -116,7 +116,7 @@ namespace Dbflute.CBean.BS {
         }}
         public Kbn職位区分Nss SetupSelect_Kbn職位区分() {
             if (HasSpecifiedColumn) { // if reverse call
-                Specify().Column職位コード();
+                Specify().Column職位code();
             }
             doSetupSelect(delegate { return Query().QueryKbn職位区分(); });
             if (_nssKbn職位区分 == null || !_nssKbn職位区分.HasConditionQuery)
@@ -199,7 +199,7 @@ namespace Dbflute.CBean.BS {
         public void Column従業員id() { doColumn("従業員id"); }
         public void Column適用開始日() { doColumn("適用開始日"); }
         public void Column適用終了日() { doColumn("適用終了日"); }
-        public void Column職位コード() { doColumn("職位コード"); }
+        public void Column職位code() { doColumn("職位code"); }
         protected override void doSpecifyRequiredColumn() {
             ColumnId(); // PK
             if (qyCall().qy().hasConditionQueryMst従業員マスタ()
@@ -208,7 +208,7 @@ namespace Dbflute.CBean.BS {
             }
             if (qyCall().qy().hasConditionQueryKbn職位区分()
                     || qyCall().qy().xgetReferrerQuery() is Kbn職位区分CQ) {
-                Column職位コード(); // FK or one-to-one referrer
+                Column職位code(); // FK or one-to-one referrer
             }
         }
         protected override String getTableDbName() { return "dch従業員職位履歴台帳"; }

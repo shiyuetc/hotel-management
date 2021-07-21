@@ -31,7 +31,7 @@
             primaryKey="true" required="true" size="19" type="BIGINT"/>
         <column dbType="int8" javaType="long?" name="客室マスタid"
             required="true" size="19" type="BIGINT"/>
-        <column dbType="bpchar" javaType="String" name="客室利用コード"
+        <column dbType="bpchar" javaType="String" name="客室利用code"
             required="true" size="3" type="CHAR"/>
         <column dbType="timestamp" javaType="DateTime?" name="利用開始日時"
             required="true" size="26, 3" type="TIMESTAMP"/>
@@ -40,8 +40,8 @@
         <foreign-key foreignSchema="public" foreignTable="mst客室マスタ" name="dch客室利用予定台帳_客室マスタid_fkey">
             <reference foreign="id" local="客室マスタid"/>
         </foreign-key>
-        <foreign-key foreignSchema="public" foreignTable="kbn客室利用区分" name="dch客室利用予定台帳_客室利用コード_fkey">
-            <reference foreign="コード" local="客室利用コード"/>
+        <foreign-key foreignSchema="public" foreignTable="kbn客室利用区分" name="dch客室利用予定台帳_客室利用code_fkey">
+            <reference foreign="code" local="客室利用code"/>
         </foreign-key>
     </table>
     <table name="dch客室利用実績台帳" schema="hotel_management.public" type="TABLE">
@@ -51,7 +51,7 @@
             primaryKey="true" required="true" size="19" type="BIGINT"/>
         <column dbType="int8" javaType="long?" name="客室マスタid"
             required="true" size="19" type="BIGINT"/>
-        <column dbType="bpchar" javaType="String" name="客室利用コード"
+        <column dbType="bpchar" javaType="String" name="客室利用code"
             required="true" size="3" type="CHAR"/>
         <column dbType="timestamp" javaType="DateTime?" name="利用開始日時"
             required="true" size="26, 3" type="TIMESTAMP"/>
@@ -60,8 +60,8 @@
         <foreign-key foreignSchema="public" foreignTable="mst客室マスタ" name="dch客室利用実績台帳_客室マスタid_fkey">
             <reference foreign="id" local="客室マスタid"/>
         </foreign-key>
-        <foreign-key foreignSchema="public" foreignTable="kbn客室利用区分" name="dch客室利用実績台帳_客室利用コード_fkey">
-            <reference foreign="コード" local="客室利用コード"/>
+        <foreign-key foreignSchema="public" foreignTable="kbn客室利用区分" name="dch客室利用実績台帳_客室利用code_fkey">
+            <reference foreign="code" local="客室利用code"/>
         </foreign-key>
     </table>
     <table name="dch宿泊予定台帳" schema="hotel_management.public" type="TABLE">
@@ -97,13 +97,13 @@
             required="true" size="26, 3" type="TIMESTAMP"/>
         <column dbType="timestamp" javaType="DateTime?" name="適用終了日"
             required="true" size="26, 3" type="TIMESTAMP"/>
-        <column dbType="bpchar" javaType="String" name="職位コード"
+        <column dbType="bpchar" javaType="String" name="職位code"
             required="true" size="3" type="CHAR"/>
         <foreign-key foreignSchema="public" foreignTable="mst従業員マスタ" name="dch従業員職位履歴台帳_従業員id_fkey">
             <reference foreign="id" local="従業員id"/>
         </foreign-key>
-        <foreign-key foreignSchema="public" foreignTable="kbn職位区分" name="dch従業員職位履歴台帳_職位コード_fkey">
-            <reference foreign="コード" local="職位コード"/>
+        <foreign-key foreignSchema="public" foreignTable="kbn職位区分" name="dch従業員職位履歴台帳_職位code_fkey">
+            <reference foreign="code" local="職位code"/>
         </foreign-key>
     </table>
     <table name="dch月締確定台帳" schema="hotel_management.public" type="TABLE">
@@ -140,21 +140,14 @@
         </foreign-key>
     </table>
     <table name="kbn客室利用区分" schema="hotel_management.public" type="TABLE">
-        <column dbType="bpchar" javaType="String" name="コード"
+        <column dbType="bpchar" javaType="String" name="code"
             pkName="kbn客室利用区分_pkey" primaryKey="true" required="true"
             size="3" type="CHAR"/>
         <column dbType="varchar" javaType="String" name="名称"
             required="true" size="20" type="VARCHAR"/>
     </table>
-    <table name="kbn権限区分" schema="hotel_management.public" type="TABLE">
-        <column dbType="bpchar" javaType="String" name="コード"
-            pkName="kbn権限区分_pkey" primaryKey="true" required="true"
-            size="3" type="CHAR"/>
-        <column dbType="varchar" javaType="String" name="名称"
-            required="true" size="20" type="VARCHAR"/>
-    </table>
     <table name="kbn職位区分" schema="hotel_management.public" type="TABLE">
-        <column dbType="bpchar" javaType="String" name="コード"
+        <column dbType="bpchar" javaType="String" name="code"
             pkName="kbn職位区分_pkey" primaryKey="true" required="true"
             size="3" type="CHAR"/>
         <column dbType="varchar" javaType="String" name="名称"
@@ -162,9 +155,25 @@
         <column dbType="varchar" javaType="String" name="名称_英字"
             required="true" size="20" type="VARCHAR"/>
     </table>
+    <table name="mstメニュー権限マスタ" schema="hotel_management.public" type="TABLE">
+        <column autoIncrement="true" dbType="bigserial"
+            default="nextval('mst002_id_seq'::regclass)"
+            javaType="long?" name="id" pkName="mstメニュー権限マスタ_pkey"
+            primaryKey="true" required="true" size="19" type="BIGINT"/>
+        <column dbType="bpchar" javaType="String" name="職位code"
+            required="true" size="3" type="CHAR"/>
+        <column dbType="int8" javaType="long?" name="制御画面id"
+            required="true" size="19" type="BIGINT"/>
+        <foreign-key foreignSchema="public" foreignTable="mst制御画面マスタ" name="mstメニュー権限マスタ_制御画面id_fkey">
+            <reference foreign="id" local="制御画面id"/>
+        </foreign-key>
+        <foreign-key foreignSchema="public" foreignTable="kbn職位区分" name="mstメニュー権限マスタ_職位code_fkey">
+            <reference foreign="code" local="職位code"/>
+        </foreign-key>
+    </table>
     <table name="mst会員マスタ" schema="hotel_management.public" type="TABLE">
         <column autoIncrement="true" dbType="bigserial"
-            default="nextval('mst003_id_seq'::regclass)"
+            default="nextval('mst004_id_seq'::regclass)"
             javaType="long?" name="id" pkName="mst会員マスタ_pkey"
             primaryKey="true" required="true" size="19" type="BIGINT"/>
         <column dbType="varchar" javaType="String" name="会員番号"
@@ -190,9 +199,21 @@
             <unique-column name="会員番号" position="1"/>
         </unique>
     </table>
+    <table name="mst制御画面マスタ" schema="hotel_management.public" type="TABLE">
+        <column autoIncrement="true" dbType="bigserial"
+            default="nextval('mst001_id_seq'::regclass)"
+            javaType="long?" name="id" pkName="mst制御画面マスタ_pkey"
+            primaryKey="true" required="true" size="19" type="BIGINT"/>
+        <column dbType="varchar" javaType="String" name="画面名"
+            required="true" size="20" type="VARCHAR"/>
+        <column dbType="varchar" javaType="String" name="表示名"
+            required="true" size="20" type="VARCHAR"/>
+        <column dbType="int4" javaType="int?" name="優先順位"
+            required="true" size="10" type="INTEGER"/>
+    </table>
     <table name="mst客室タイプマスタ" schema="hotel_management.public" type="TABLE">
         <column autoIncrement="true" dbType="bigserial"
-            default="nextval('mst004_id_seq'::regclass)"
+            default="nextval('mst005_id_seq'::regclass)"
             javaType="long?" name="id" pkName="mst客室タイプマスタ_pkey"
             primaryKey="true" required="true" size="19" type="BIGINT"/>
         <column dbType="varchar" javaType="String" name="名称"
@@ -205,7 +226,7 @@
     </table>
     <table name="mst客室マスタ" schema="hotel_management.public" type="TABLE">
         <column autoIncrement="true" dbType="bigserial"
-            default="nextval('mst005_id_seq'::regclass)"
+            default="nextval('mst006_id_seq'::regclass)"
             javaType="long?" name="id" pkName="mst客室マスタ_pkey"
             primaryKey="true" required="true" size="19" type="BIGINT"/>
         <column dbType="bpchar" javaType="String" name="客室番号"
@@ -224,7 +245,7 @@
     </table>
     <table name="mst従業員マスタ" schema="hotel_management.public" type="TABLE">
         <column autoIncrement="true" dbType="bigserial"
-            default="nextval('mst002_id_seq'::regclass)"
+            default="nextval('mst003_id_seq'::regclass)"
             javaType="long?" name="id" pkName="mst従業員マスタ_pkey"
             primaryKey="true" required="true" size="19" type="BIGINT"/>
         <column dbType="varchar" javaType="String" name="従業員番号"
@@ -245,39 +266,19 @@
             required="true" size="26, 3" type="TIMESTAMP"/>
         <column dbType="timestamp" javaType="DateTime?" name="退社年月日"
             size="26, 3" type="TIMESTAMP"/>
-        <column dbType="bpchar" javaType="String" name="職位コード"
+        <column dbType="bpchar" javaType="String" name="職位code"
             required="true" size="3" type="CHAR"/>
         <column dbType="timestamp" javaType="DateTime?" name="最終ログイン日時"
             size="26, 3" type="TIMESTAMP"/>
         <column dbType="varchar" javaType="String" name="備考" size="255" type="VARCHAR"/>
-        <foreign-key foreignSchema="public" foreignTable="kbn職位区分" name="mst従業員マスタ_職位コード_fkey">
-            <reference foreign="コード" local="職位コード"/>
+        <foreign-key foreignSchema="public" foreignTable="kbn職位区分" name="mst従業員マスタ_職位code_fkey">
+            <reference foreign="code" local="職位code"/>
         </foreign-key>
         <unique name="mst従業員マスタ_従業員番号_key">
             <unique-column name="従業員番号" position="1"/>
         </unique>
     </table>
-    <table name="mst権限マスタ" schema="hotel_management.public" type="TABLE">
-        <column autoIncrement="true" dbType="bigserial"
-            default="nextval('mst001_id_seq'::regclass)"
-            javaType="long?" name="id" pkName="mst権限マスタ_pkey"
-            primaryKey="true" required="true" size="19" type="BIGINT"/>
-        <column dbType="bpchar" javaType="String" name="職位コード"
-            required="true" size="3" type="CHAR"/>
-        <column dbType="bpchar" javaType="String" name="権限コード"
-            required="true" size="3" type="CHAR"/>
-        <foreign-key foreignSchema="public" foreignTable="kbn権限区分" name="mst権限マスタ_権限コード_fkey">
-            <reference foreign="コード" local="権限コード"/>
-        </foreign-key>
-        <foreign-key foreignSchema="public" foreignTable="kbn職位区分" name="mst権限マスタ_職位コード_fkey">
-            <reference foreign="コード" local="職位コード"/>
-        </foreign-key>
-    </table>
     <sequenceGroup>
-        <sequence incrementSize="1" maximumValue="9223372036854775807"
-            minimumValue="1" name="dch005_id_seq" schema="hotel_management.public"/>
-        <sequence incrementSize="1" maximumValue="9223372036854775807"
-            minimumValue="1" name="dch006_id_seq" schema="hotel_management.public"/>
         <sequence incrementSize="1" maximumValue="9223372036854775807"
             minimumValue="1" name="mst001_id_seq" schema="hotel_management.public"/>
         <sequence incrementSize="1" maximumValue="9223372036854775807"
@@ -289,6 +290,8 @@
         <sequence incrementSize="1" maximumValue="9223372036854775807"
             minimumValue="1" name="mst005_id_seq" schema="hotel_management.public"/>
         <sequence incrementSize="1" maximumValue="9223372036854775807"
+            minimumValue="1" name="mst006_id_seq" schema="hotel_management.public"/>
+        <sequence incrementSize="1" maximumValue="9223372036854775807"
             minimumValue="1" name="dch001_id_seq" schema="hotel_management.public"/>
         <sequence incrementSize="1" maximumValue="9223372036854775807"
             minimumValue="1" name="dch002_id_seq" schema="hotel_management.public"/>
@@ -296,6 +299,10 @@
             minimumValue="1" name="dch003_id_seq" schema="hotel_management.public"/>
         <sequence incrementSize="1" maximumValue="9223372036854775807"
             minimumValue="1" name="dch004_id_seq" schema="hotel_management.public"/>
+        <sequence incrementSize="1" maximumValue="9223372036854775807"
+            minimumValue="1" name="dch005_id_seq" schema="hotel_management.public"/>
+        <sequence incrementSize="1" maximumValue="9223372036854775807"
+            minimumValue="1" name="dch006_id_seq" schema="hotel_management.public"/>
         <sequence incrementSize="1" maximumValue="9223372036854775807"
             minimumValue="1" name="dch007_id_seq" schema="hotel_management.public"/>
         <sequence incrementSize="1" maximumValue="9223372036854775807"

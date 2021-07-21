@@ -116,7 +116,7 @@ namespace Dbflute.CBean.BS {
         }}
         public Kbn客室利用区分Nss SetupSelect_Kbn客室利用区分() {
             if (HasSpecifiedColumn) { // if reverse call
-                Specify().Column客室利用コード();
+                Specify().Column客室利用code();
             }
             doSetupSelect(delegate { return Query().QueryKbn客室利用区分(); });
             if (_nssKbn客室利用区分 == null || !_nssKbn客室利用区分.HasConditionQuery)
@@ -197,7 +197,7 @@ namespace Dbflute.CBean.BS {
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
         public void ColumnId() { doColumn("id"); }
         public void Column客室マスタid() { doColumn("客室マスタid"); }
-        public void Column客室利用コード() { doColumn("客室利用コード"); }
+        public void Column客室利用code() { doColumn("客室利用code"); }
         public void Column利用開始日時() { doColumn("利用開始日時"); }
         public void Column利用終了日時() { doColumn("利用終了日時"); }
         protected override void doSpecifyRequiredColumn() {
@@ -208,7 +208,7 @@ namespace Dbflute.CBean.BS {
             }
             if (qyCall().qy().hasConditionQueryKbn客室利用区分()
                     || qyCall().qy().xgetReferrerQuery() is Kbn客室利用区分CQ) {
-                Column客室利用コード(); // FK or one-to-one referrer
+                Column客室利用code(); // FK or one-to-one referrer
             }
         }
         protected override String getTableDbName() { return "dch客室利用実績台帳"; }

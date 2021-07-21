@@ -29,19 +29,19 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                             PrimaryKey Handling
         //                                                             ===================
-        public void AcceptPrimaryKey(String コード) {
-            assertObjectNotNull("コード", コード);
+        public void AcceptPrimaryKey(String code) {
+            assertObjectNotNull("code", code);
             BsKbn職位区分CB cb = this;
-            cb.Query().Setコード_Equal(コード);
+            cb.Query().SetCode_Equal(code);
         }
 
         public override ConditionBean AddOrderBy_PK_Asc() {
-            Query().AddOrderBy_コード_Asc();
+            Query().AddOrderBy_Code_Asc();
             return this;
         }
 
         public override ConditionBean AddOrderBy_PK_Desc() {
-            Query().AddOrderBy_コード_Desc();
+            Query().AddOrderBy_Code_Desc();
             return this;
         }
 
@@ -165,11 +165,11 @@ namespace Dbflute.CBean.BS {
         public Kbn職位区分CBSpecification(ConditionBean baseCB, HpSpQyCall<Kbn職位区分CQ> qyCall
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
-        public void Columnコード() { doColumn("コード"); }
+        public void ColumnCode() { doColumn("code"); }
         public void Column名称() { doColumn("名称"); }
         public void Column名称英字() { doColumn("名称_英字"); }
         protected override void doSpecifyRequiredColumn() {
-            Columnコード(); // PK
+            ColumnCode(); // PK
         }
         protected override String getTableDbName() { return "kbn職位区分"; }
         public RAFunction<Dch従業員職位履歴台帳CB, Kbn職位区分CQ> DerivedDch従業員職位履歴台帳List() {
@@ -177,15 +177,15 @@ namespace Dbflute.CBean.BS {
             return new RAFunction<Dch従業員職位履歴台帳CB, Kbn職位区分CQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Dch従業員職位履歴台帳CB> subQuery, Kbn職位区分CQ cq, String aliasName)
                 { cq.xsderiveDch従業員職位履歴台帳List(function, subQuery, aliasName); });
         }
+        public RAFunction<Mstメニュー権限マスタCB, Kbn職位区分CQ> DerivedMstメニュー権限マスタList() {
+            if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
+            return new RAFunction<Mstメニュー権限マスタCB, Kbn職位区分CQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Mstメニュー権限マスタCB> subQuery, Kbn職位区分CQ cq, String aliasName)
+                { cq.xsderiveMstメニュー権限マスタList(function, subQuery, aliasName); });
+        }
         public RAFunction<Mst従業員マスタCB, Kbn職位区分CQ> DerivedMst従業員マスタList() {
             if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
             return new RAFunction<Mst従業員マスタCB, Kbn職位区分CQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Mst従業員マスタCB> subQuery, Kbn職位区分CQ cq, String aliasName)
                 { cq.xsderiveMst従業員マスタList(function, subQuery, aliasName); });
-        }
-        public RAFunction<Mst権限マスタCB, Kbn職位区分CQ> DerivedMst権限マスタList() {
-            if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return new RAFunction<Mst権限マスタCB, Kbn職位区分CQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Mst権限マスタCB> subQuery, Kbn職位区分CQ cq, String aliasName)
-                { cq.xsderiveMst権限マスタList(function, subQuery, aliasName); });
         }
     }
 }

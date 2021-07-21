@@ -1,11 +1,10 @@
-﻿using HotelManagement.Common;
-using HotelManagement.Const;
+﻿using Castle.Core;
+using Dbflute.ExEntity;
 using HotelManagement.Controls.CustomControls;
-using HotelManagement.Enums;
-using HotelManagement.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace HotelManagement.Controls.UserControls
@@ -15,10 +14,21 @@ namespace HotelManagement.Controls.UserControls
     /// </summary>
     public partial class MenuBar : UserControl
     {
+        #region メンバ変数
+
+        /// <summary>
+        /// メニューボタンクリック時のイベント
+        /// </summary>
+        private Action<object, EventArgs> ClickEvent;
+
         /// <summary>
         /// 表示するメニューボタンを保持する
         /// </summary>
-        private readonly Dictionary<Display, MenuButton> MenuButtons = new Dictionary<Display, MenuButton>();
+        private readonly List<MenuButton> MenuButtonList = new List<MenuButton>();
+
+        #endregion
+
+        #region コンストラクタ
 
         /// <summary>
         /// MenuBarを初期化します。
@@ -28,51 +38,62 @@ namespace HotelManagement.Controls.UserControls
             InitializeComponent();
         }
 
+        #endregion
+
+        #region メソッド
+
         /// <summary>
-        /// メニューボタンを初期化します。
+        /// MenuBarクラスを初期化します。
         /// </summary>
         /// <param name="clickEvent">メニューボタンクリック時のイベント</param>
-        public void InitMenuButtons(Action<object, EventArgs> clickEvent)
+        public void Init(Action<object, EventArgs> clickEvent)
         {
-            Display[] displays = (Display[])Enum.GetValues(typeof(Display));
-            for (int i = 0; i < displays.Length; i++)
-            {
-                var menuButton = new MenuButton(displays[i]);
-                menuButton.Location = new Point(2 + (menuButton.Width * i), 2);
-                menuButton.Click += new EventHandler(clickEvent);
-                this.MenuButtons.Add(displays[i], menuButton);
-            }
-            this.MenuBarPanel.Controls.AddRange(this.MenuButtons.GetValueArray());
-        }
-        
-        /// <summary>
-        /// メニューボタンの活性を変更します。
-        /// </summary>
-        /// <param name="enabled">有効/無効</param>
-        public void SetEnabled(bool enabled)
-        {
-            var displays = Constants.Permissions[AppState.LoginEmployee.Rank.Code];
-            foreach (Display display in displays)
-            {
-                this.MenuButtons[display].Enabled = enabled;
-            }
-            this.MenuButtons[Display.Login].Enabled = enabled;
+            this.ClickEvent = clickEvent;
         }
 
         /// <summary>
-        /// 1つめの有効化されているボタンを取得します。
+        /// メニューボタンを設定します。
         /// </summary>
-        /// <returns>1つめの有効化されているボタンを返す</returns>
-        public MenuButton GetEnableButtonFirst()
+        /// <param name="Mst制御画面マスタList">制御画面マスタのリスト</param>
+        public void SetPermission(List<Mst制御画面マスタ> Mst制御画面マスタList)
         {
-            foreach (Display display in Enum.GetValues(typeof(Display)))
+            // メニューボタンをクリア
+            this.MenuButtonList.Clear();
+
+            // 制御画面マスタリストからメニューボタンを作成
+            for (int i = 0; i < Mst制御画面マスタList?.Count; i++)
             {
-                if(this.MenuButtons[display].Enabled)
-                {
-                    return this.MenuButtons[display];
-                }
+                var menuButton = new MenuButton(Mst制御画面マスタList[i]);
+                menuButton.Location = new Point(2 + (menuButton.Width * i + (i * 2)), 2);
+                menuButton.Click += new EventHandler(this.ClickEvent);
+                this.MenuButtonList.Add(menuButton);
             }
-            return null;
+
+            // メニューバーパネルのコントロールを初期化
+            this.MenuBarPanel.Controls.Clear();
+            if(this.MenuButtonList.Count > 0)
+            {
+                this.MenuBarPanel.Controls.AddRange(this.MenuButtonList.ToArray());
+                this.MenuButtonList[0].PerformClick();
+            }
         }
+
+        /// <summary>
+        /// メニューボタンのアクティブを設定します。
+        /// </summary>
+        /// <param name="画面名">画面名</param>
+        public void SetActivate(string 画面名)
+        {
+            // 画面名とは異なるボタンをすべて非アクティブに設定
+            this.MenuButtonList.Where(x => x.制御画面マスタ.画面名 != 画面名)
+                .ForEach(x => x.Activate = false);
+
+            // 画面名と等しいボタンをアクティブに設定
+            this.MenuButtonList.Where(x => x.制御画面マスタ.画面名 == 画面名)
+                .First().Activate = true;
+        }
+
+        #endregion
+
     }
 }

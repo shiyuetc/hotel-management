@@ -42,20 +42,20 @@ namespace Dbflute.BsEntity.Dbm {
         protected ColumnInfo _column従業員id;
         protected ColumnInfo _column適用開始日;
         protected ColumnInfo _column適用終了日;
-        protected ColumnInfo _column職位コード;
+        protected ColumnInfo _column職位code;
 
         public ColumnInfo ColumnId { get { return _columnId; } }
         public ColumnInfo Column従業員id { get { return _column従業員id; } }
         public ColumnInfo Column適用開始日 { get { return _column適用開始日; } }
         public ColumnInfo Column適用終了日 { get { return _column適用終了日; } }
-        public ColumnInfo Column職位コード { get { return _column職位コード; } }
+        public ColumnInfo Column職位code { get { return _column職位code; } }
 
         protected void InitializeColumnInfo() {
             _columnId = cci("id", "id", null, null, true, "Id", typeof(long?), true, "bigserial", 19, 0, false, OptimisticLockType.NONE, null, null, null);
             _column従業員id = cci("従業員id", "従業員id", null, null, true, "従業員id", typeof(long?), false, "int8", 19, 0, false, OptimisticLockType.NONE, null, "mst従業員マスタ", null);
             _column適用開始日 = cci("適用開始日", "適用開始日", null, null, true, "適用開始日", typeof(DateTime?), false, "timestamp", 26, 3, false, OptimisticLockType.NONE, null, null, null);
             _column適用終了日 = cci("適用終了日", "適用終了日", null, null, true, "適用終了日", typeof(DateTime?), false, "timestamp", 26, 3, false, OptimisticLockType.NONE, null, null, null);
-            _column職位コード = cci("職位コード", "職位コード", null, null, true, "職位コード", typeof(String), false, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, "kbn職位区分", null);
+            _column職位code = cci("職位code", "職位code", null, null, true, "職位code", typeof(String), false, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, "kbn職位区分", null);
         }
 
         protected void InitializeColumnInfoList() {
@@ -64,7 +64,7 @@ namespace Dbflute.BsEntity.Dbm {
             _columnInfoList.add(Column従業員id);
             _columnInfoList.add(Column適用開始日);
             _columnInfoList.add(Column適用終了日);
-            _columnInfoList.add(Column職位コード);
+            _columnInfoList.add(Column職位code);
         }
 
         // ===============================================================================
@@ -93,7 +93,7 @@ namespace Dbflute.BsEntity.Dbm {
         }}
         public ForeignInfo ForeignKbn職位区分 { get {
             Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(Column職位コード, Kbn職位区分Dbm.GetInstance().Columnコード);
+            map.put(Column職位code, Kbn職位区分Dbm.GetInstance().ColumnCode);
             return cfi("Kbn職位区分", this, Kbn職位区分Dbm.GetInstance(), map, 1, false, false);
         }}
 
@@ -130,7 +130,7 @@ namespace Dbflute.BsEntity.Dbm {
         public static readonly String DB_NAME_従業員id = "従業員id";
         public static readonly String DB_NAME_適用開始日 = "適用開始日";
         public static readonly String DB_NAME_適用終了日 = "適用終了日";
-        public static readonly String DB_NAME_職位コード = "職位コード";
+        public static readonly String DB_NAME_職位code = "職位code";
 
         // -------------------------------------------------
         //                              Column Property-Name
@@ -139,7 +139,7 @@ namespace Dbflute.BsEntity.Dbm {
         public static readonly String PROPERTY_NAME_従業員id = "従業員id";
         public static readonly String PROPERTY_NAME_適用開始日 = "適用開始日";
         public static readonly String PROPERTY_NAME_適用終了日 = "適用終了日";
-        public static readonly String PROPERTY_NAME_職位コード = "職位コード";
+        public static readonly String PROPERTY_NAME_職位code = "職位code";
 
         // -------------------------------------------------
         //                                      Foreign Name
@@ -164,7 +164,7 @@ namespace Dbflute.BsEntity.Dbm {
                 map.put(DB_NAME_従業員id.ToLower(), PROPERTY_NAME_従業員id);
                 map.put(DB_NAME_適用開始日.ToLower(), PROPERTY_NAME_適用開始日);
                 map.put(DB_NAME_適用終了日.ToLower(), PROPERTY_NAME_適用終了日);
-                map.put(DB_NAME_職位コード.ToLower(), PROPERTY_NAME_職位コード);
+                map.put(DB_NAME_職位code.ToLower(), PROPERTY_NAME_職位code);
                 _dbNamePropertyNameKeyToLowerMap = map;
             }
 
@@ -175,7 +175,7 @@ namespace Dbflute.BsEntity.Dbm {
                 map.put(PROPERTY_NAME_従業員id.ToLower(), DB_NAME_従業員id);
                 map.put(PROPERTY_NAME_適用開始日.ToLower(), DB_NAME_適用開始日);
                 map.put(PROPERTY_NAME_適用終了日.ToLower(), DB_NAME_適用終了日);
-                map.put(PROPERTY_NAME_職位コード.ToLower(), DB_NAME_職位コード);
+                map.put(PROPERTY_NAME_職位code.ToLower(), DB_NAME_職位code);
                 _propertyNameDbNameKeyToLowerMap = map;
             }
         }
@@ -221,7 +221,7 @@ namespace Dbflute.BsEntity.Dbm {
             RegisterEntityPropertySetupper("従業員id", "従業員id", new EntityProperty従業員idSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("適用開始日", "適用開始日", new EntityProperty適用開始日Setupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("適用終了日", "適用終了日", new EntityProperty適用終了日Setupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("職位コード", "職位コード", new EntityProperty職位コードSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("職位code", "職位code", new EntityProperty職位codeSetupper(), _entityPropertySetupperMap);
         }
 
         public override bool HasEntityPropertySetupper(String propertyName) {
@@ -245,8 +245,8 @@ namespace Dbflute.BsEntity.Dbm {
         public class EntityProperty適用終了日Setupper : EntityPropertySetupper<Dch従業員職位履歴台帳> {
             public void Setup(Dch従業員職位履歴台帳 entity, Object value) { entity.適用終了日 = (value != null) ? (DateTime?)value : null; }
         }
-        public class EntityProperty職位コードSetupper : EntityPropertySetupper<Dch従業員職位履歴台帳> {
-            public void Setup(Dch従業員職位履歴台帳 entity, Object value) { entity.職位コード = (value != null) ? (String)value : null; }
+        public class EntityProperty職位codeSetupper : EntityPropertySetupper<Dch従業員職位履歴台帳> {
+            public void Setup(Dch従業員職位履歴台帳 entity, Object value) { entity.職位code = (value != null) ? (String)value : null; }
         }
     }
 }
