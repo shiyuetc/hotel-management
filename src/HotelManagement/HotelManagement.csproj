@@ -169,11 +169,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\宿泊履歴確認画面.cs">
+    <Compile Include="View\宿泊履歴画面.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\宿泊履歴確認画面.Designer.cs">
-      <DependentUpon>宿泊履歴確認画面.cs</DependentUpon>
+    <Compile Include="View\宿泊履歴画面.Designer.cs">
+      <DependentUpon>宿泊履歴画面.cs</DependentUpon>
     </Compile>
     <Compile Include="View\客室管理画面.cs">
       <SubType>UserControl</SubType>
@@ -230,8 +230,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\宿泊履歴確認画面.resx">
-      <DependentUpon>宿泊履歴確認画面.cs</DependentUpon>
+    <EmbeddedResource Include="View\宿泊履歴画面.resx">
+      <DependentUpon>宿泊履歴画面.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\客室管理画面.resx">
       <DependentUpon>客室管理画面.cs</DependentUpon>

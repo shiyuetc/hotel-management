@@ -1,6 +1,6 @@
 ﻿namespace HotelManagement.View
 {
-    partial class 宿泊履歴確認画面
+    partial class 宿泊履歴画面
     {
         /// <summary> 
         /// 必要なデザイナー変数です。
