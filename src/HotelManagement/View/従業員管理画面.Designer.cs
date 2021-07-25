@@ -106,7 +106,7 @@
             this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.EmployeeListView);
             this.Name = "従業員管理画面";
-            this.Size = new System.Drawing.Size(929, 530);
+            this.Size = new System.Drawing.Size(929, 531);
             this.Load += new System.EventHandler(this.UcEmployee_Load);
             this.ResumeLayout(false);
 

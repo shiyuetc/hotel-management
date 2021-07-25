@@ -101,7 +101,7 @@
             this.UcPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.UcPanel.Location = new System.Drawing.Point(6, 98);
             this.UcPanel.Name = "UcPanel";
-            this.UcPanel.Size = new System.Drawing.Size(933, 534);
+            this.UcPanel.Size = new System.Drawing.Size(933, 535);
             this.UcPanel.TabIndex = 6;
             // 
             // MenuBar

@@ -35,7 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "宿泊履歴画面";
-            this.Size = new System.Drawing.Size(929, 530);
+            this.Size = new System.Drawing.Size(929, 531);
             this.ResumeLayout(false);
 
         }

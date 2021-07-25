@@ -11,7 +11,9 @@ namespace HotelManagement.View
     {
         #region メンバ変数
 
-        // FmMain
+        /// <summary>
+        /// FmMain
+        /// </summary>
         protected readonly FmMain Main = null;
 
         #endregion

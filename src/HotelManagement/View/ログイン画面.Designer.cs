@@ -42,7 +42,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(310, 207);
+            this.label1.Location = new System.Drawing.Point(310, 209);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 21);
             this.label1.TabIndex = 0;
@@ -51,7 +51,7 @@
             // EmployeeIDTextBox
             // 
             this.EmployeeIDTextBox.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.EmployeeIDTextBox.Location = new System.Drawing.Point(314, 232);
+            this.EmployeeIDTextBox.Location = new System.Drawing.Point(314, 234);
             this.EmployeeIDTextBox.Name = "EmployeeIDTextBox";
             this.EmployeeIDTextBox.Size = new System.Drawing.Size(300, 31);
             this.EmployeeIDTextBox.TabIndex = 1;
@@ -60,7 +60,7 @@
             // PasswordTextBox
             // 
             this.PasswordTextBox.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.PasswordTextBox.Location = new System.Drawing.Point(314, 303);
+            this.PasswordTextBox.Location = new System.Drawing.Point(314, 305);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(300, 31);
@@ -71,7 +71,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(310, 278);
+            this.label2.Location = new System.Drawing.Point(310, 280);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 21);
             this.label2.TabIndex = 2;
@@ -80,7 +80,7 @@
             // ログインButton
             // 
             this.ログインButton.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ログインButton.Location = new System.Drawing.Point(428, 340);
+            this.ログインButton.Location = new System.Drawing.Point(428, 342);
             this.ログインButton.Name = "ログインButton";
             this.ログインButton.Size = new System.Drawing.Size(90, 31);
             this.ログインButton.TabIndex = 4;
@@ -101,7 +101,7 @@
             // 終了Button
             // 
             this.終了Button.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.終了Button.Location = new System.Drawing.Point(524, 340);
+            this.終了Button.Location = new System.Drawing.Point(524, 342);
             this.終了Button.Name = "終了Button";
             this.終了Button.Size = new System.Drawing.Size(90, 31);
             this.終了Button.TabIndex = 6;
@@ -134,7 +134,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("ＭＳ 明朝", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Name = "ログイン画面";
-            this.Size = new System.Drawing.Size(929, 530);
+            this.Size = new System.Drawing.Size(929, 531);
             this.ResumeLayout(false);
             this.PerformLayout();
 
