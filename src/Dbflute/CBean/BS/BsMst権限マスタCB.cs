@@ -14,24 +14,24 @@ using Dbflute.CBean.Nss;
 namespace Dbflute.CBean.BS {
 
     [System.Serializable]
-    public class BsMstメニュー権限マスタCB : AbstractConditionBean {
+    public class BsMst権限マスタCB : AbstractConditionBean {
 
         // ===============================================================================
         //                                                                       Attribute
         //                                                                       =========
-        protected Mstメニュー権限マスタCQ _conditionQuery;
+        protected Mst権限マスタCQ _conditionQuery;
 
         // ===============================================================================
         //                                                                      Table Name
         //                                                                      ==========
-        public override String TableDbName { get { return "mstメニュー権限マスタ"; } }
+        public override String TableDbName { get { return "mst権限マスタ"; } }
 
         // ===============================================================================
         //                                                             PrimaryKey Handling
         //                                                             ===================
         public void AcceptPrimaryKey(long? id) {
             assertObjectNotNull("id", id);
-            BsMstメニュー権限マスタCB cb = this;
+            BsMst権限マスタCB cb = this;
             cb.Query().SetId_Equal(id);
         }
 
@@ -48,11 +48,11 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                                           Query
         //                                                                           =====
-        public Mstメニュー権限マスタCQ Query() {
+        public Mst権限マスタCQ Query() {
             return this.ConditionQuery;
         }
 
-        public Mstメニュー権限マスタCQ ConditionQuery {
+        public Mst権限マスタCQ ConditionQuery {
             get {
                 if (_conditionQuery == null) {
                     _conditionQuery = CreateLocalCQ();
@@ -61,12 +61,12 @@ namespace Dbflute.CBean.BS {
             }
         }
 
-        protected virtual Mstメニュー権限マスタCQ CreateLocalCQ() {
+        protected virtual Mst権限マスタCQ CreateLocalCQ() {
             return xcreateCQ(null, this.SqlClause, this.SqlClause.getBasePointAliasName(), 0);
         }
 
-        protected virtual Mstメニュー権限マスタCQ xcreateCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel) {
-            return new Mstメニュー権限マスタCQ(childQuery, sqlClause, aliasName, nestLevel);
+        protected virtual Mst権限マスタCQ xcreateCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel) {
+            return new Mst権限マスタCQ(childQuery, sqlClause, aliasName, nestLevel);
         }
 
         public override ConditionQuery LocalCQ {
@@ -76,16 +76,16 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                                           Union
         //                                                                           =====
-	    public virtual void Union(UnionQuery<Mstメニュー権限マスタCB> unionQuery) {
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB();
+	    public virtual void Union(UnionQuery<Mst権限マスタCB> unionQuery) {
+            Mst権限マスタCB cb = new Mst権限マスタCB();
             cb.xsetupForUnion(this); xsyncUQ(cb); unionQuery.Invoke(cb);
-		    Mstメニュー権限マスタCQ cq = cb.Query(); Query().xsetUnionQuery(cq);
+		    Mst権限マスタCQ cq = cb.Query(); Query().xsetUnionQuery(cq);
         }
 
-	    public virtual void UnionAll(UnionQuery<Mstメニュー権限マスタCB> unionQuery) {
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB();
+	    public virtual void UnionAll(UnionQuery<Mst権限マスタCB> unionQuery) {
+            Mst権限マスタCB cb = new Mst権限マスタCB();
             cb.xsetupForUnion(this); xsyncUQ(cb); unionQuery.Invoke(cb);
-		    Mstメニュー権限マスタCQ cq = cb.Query(); Query().xsetUnionAllQuery(cq);
+		    Mst権限マスタCQ cq = cb.Query(); Query().xsetUnionAllQuery(cq);
 	    }
 
         public override bool HasUnionQueryOrUnionAllQuery() {
@@ -128,33 +128,33 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                                         Specify
         //                                                                         =======
-        protected Mstメニュー権限マスタCBSpecification _specification;
-        public Mstメニュー権限マスタCBSpecification Specify() {
-            if (_specification == null) { _specification = new Mstメニュー権限マスタCBSpecification(this, new MySpQyCall(this), _forDerivedReferrer, _forScalarSelect, _forScalarCondition, _forColumnQuery); }
+        protected Mst権限マスタCBSpecification _specification;
+        public Mst権限マスタCBSpecification Specify() {
+            if (_specification == null) { _specification = new Mst権限マスタCBSpecification(this, new MySpQyCall(this), _forDerivedReferrer, _forScalarSelect, _forScalarCondition, _forColumnQuery); }
             return _specification;
         }
         protected bool HasSpecifiedColumn { get {
             return _specification != null && _specification.IsAlreadySpecifiedRequiredColumn;
         }}
-        protected class MySpQyCall : HpSpQyCall<Mstメニュー権限マスタCQ> {
-			protected BsMstメニュー権限マスタCB _myCB;
-			public MySpQyCall(BsMstメニュー権限マスタCB myCB) { _myCB = myCB; }
-    		public bool has() { return true; } public Mstメニュー権限マスタCQ qy() { return _myCB.Query(); }
+        protected class MySpQyCall : HpSpQyCall<Mst権限マスタCQ> {
+			protected BsMst権限マスタCB _myCB;
+			public MySpQyCall(BsMst権限マスタCB myCB) { _myCB = myCB; }
+    		public bool has() { return true; } public Mst権限マスタCQ qy() { return _myCB.Query(); }
     	}
 
         // [DBFlute-0.8.9.18]
         // ===============================================================================
         //                                                                     ColumnQuery
         //                                                                     ===========
-        public HpColQyOperand<Mstメニュー権限マスタCB> ColumnQuery(SpecifyQuery<Mstメニュー権限マスタCB> leftSpecifyQuery) {
-            return new HpColQyOperand<Mstメニュー権限マスタCB>(delegate(SpecifyQuery<Mstメニュー権限マスタCB> rightSp, String operand) {
+        public HpColQyOperand<Mst権限マスタCB> ColumnQuery(SpecifyQuery<Mst権限マスタCB> leftSpecifyQuery) {
+            return new HpColQyOperand<Mst権限マスタCB>(delegate(SpecifyQuery<Mst権限マスタCB> rightSp, String operand) {
                 xcolqy(xcreateColumnQueryCB(), xcreateColumnQueryCB(), leftSpecifyQuery, rightSp, operand);
             });
         }
 
-        protected Mstメニュー権限マスタCB xcreateColumnQueryCB() {
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB();
-            cb.xsetupForColumnQuery((Mstメニュー権限マスタCB)this);
+        protected Mst権限マスタCB xcreateColumnQueryCB() {
+            Mst権限マスタCB cb = new Mst権限マスタCB();
+            cb.xsetupForColumnQuery((Mst権限マスタCB)this);
             return cb;
         }
 
@@ -162,37 +162,37 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                                    OrScopeQuery
         //                                                                    ============
-        public void OrScopeQuery(OrQuery<Mstメニュー権限マスタCB> orQuery) {
-            xorQ((Mstメニュー権限マスタCB)this, orQuery);
+        public void OrScopeQuery(OrQuery<Mst権限マスタCB> orQuery) {
+            xorQ((Mst権限マスタCB)this, orQuery);
         }
 
         // ===============================================================================
         //                                                                    Purpose Type
         //                                                                    ============
-        public void xsetupForColumnQuery(Mstメニュー権限マスタCB mainCB) {
+        public void xsetupForColumnQuery(Mst権限マスタCB mainCB) {
             xinheritSubQueryInfo(mainCB.LocalCQ);
             //xchangePurposeSqlClause(HpCBPurpose.COLUMN_QUERY);
             _forColumnQuery = true; // old style
 
             // inherits a parent query to synchronize real name
             // (and also for suppressing query check) 
-            Specify().xsetSyncQyCall(new Mstメニュー権限マスタCBColQySpQyCall(mainCB));
+            Specify().xsetSyncQyCall(new Mst権限マスタCBColQySpQyCall(mainCB));
         }
     }
 
-    public class Mstメニュー権限マスタCBColQySpQyCall : HpSpQyCall<Mstメニュー権限マスタCQ> {
-        protected Mstメニュー権限マスタCB _mainCB;
-        public Mstメニュー権限マスタCBColQySpQyCall(Mstメニュー権限マスタCB mainCB) {
+    public class Mst権限マスタCBColQySpQyCall : HpSpQyCall<Mst権限マスタCQ> {
+        protected Mst権限マスタCB _mainCB;
+        public Mst権限マスタCBColQySpQyCall(Mst権限マスタCB mainCB) {
             _mainCB = mainCB;
         }
         public bool has() { return true; } 
-        public Mstメニュー権限マスタCQ qy() { return _mainCB.Query(); } 
+        public Mst権限マスタCQ qy() { return _mainCB.Query(); } 
     }
 
-    public class Mstメニュー権限マスタCBSpecification : AbstractSpecification<Mstメニュー権限マスタCQ> {
+    public class Mst権限マスタCBSpecification : AbstractSpecification<Mst権限マスタCQ> {
         protected Mst制御画面マスタCBSpecification _mst制御画面マスタ;
         protected Kbn職位区分CBSpecification _kbn職位区分;
-        public Mstメニュー権限マスタCBSpecification(ConditionBean baseCB, HpSpQyCall<Mstメニュー権限マスタCQ> qyCall
+        public Mst権限マスタCBSpecification(ConditionBean baseCB, HpSpQyCall<Mst権限マスタCQ> qyCall
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
         public void ColumnId() { doColumn("id"); }
@@ -209,7 +209,7 @@ namespace Dbflute.CBean.BS {
                 Column職位code(); // FK or one-to-one referrer
             }
         }
-        protected override String getTableDbName() { return "mstメニュー権限マスタ"; }
+        protected override String getTableDbName() { return "mst権限マスタ"; }
         public Mst制御画面マスタCBSpecification SpecifyMst制御画面マスタ() {
             assertForeign("mst制御画面マスタ");
             if (_mst制御画面マスタ == null) {
@@ -220,8 +220,8 @@ namespace Dbflute.CBean.BS {
             return _mst制御画面マスタ;
         }
 		public class Mst制御画面マスタSpQyCall : HpSpQyCall<Mst制御画面マスタCQ> {
-		    protected HpSpQyCall<Mstメニュー権限マスタCQ> _qyCall;
-		    public Mst制御画面マスタSpQyCall(HpSpQyCall<Mstメニュー権限マスタCQ> myQyCall) { _qyCall = myQyCall; }
+		    protected HpSpQyCall<Mst権限マスタCQ> _qyCall;
+		    public Mst制御画面マスタSpQyCall(HpSpQyCall<Mst権限マスタCQ> myQyCall) { _qyCall = myQyCall; }
 		    public bool has() { return _qyCall.has() && _qyCall.qy().hasConditionQueryMst制御画面マスタ(); }
 			public Mst制御画面マスタCQ qy() { return _qyCall.qy().QueryMst制御画面マスタ(); }
 		}
@@ -235,8 +235,8 @@ namespace Dbflute.CBean.BS {
             return _kbn職位区分;
         }
 		public class Kbn職位区分SpQyCall : HpSpQyCall<Kbn職位区分CQ> {
-		    protected HpSpQyCall<Mstメニュー権限マスタCQ> _qyCall;
-		    public Kbn職位区分SpQyCall(HpSpQyCall<Mstメニュー権限マスタCQ> myQyCall) { _qyCall = myQyCall; }
+		    protected HpSpQyCall<Mst権限マスタCQ> _qyCall;
+		    public Kbn職位区分SpQyCall(HpSpQyCall<Mst権限マスタCQ> myQyCall) { _qyCall = myQyCall; }
 		    public bool has() { return _qyCall.has() && _qyCall.qy().hasConditionQueryKbn職位区分(); }
 			public Kbn職位区分CQ qy() { return _qyCall.qy().QueryKbn職位区分(); }
 		}

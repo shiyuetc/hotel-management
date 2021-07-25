@@ -131,13 +131,16 @@
     <Compile Include="Controls\CustomControls\ExLabel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\UserContols\MenuBar.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Controls\CustomControls\MenuBar\MenuBar.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\UserContols\MenuBar.Designer.cs">
-      <DependentUpon>MenuBar.cs</DependentUpon>
+    <Compile Include="Controls\CustomControls\TabMenu\MenuPage.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\CustomControls\MenuButton.cs">
+    <Compile Include="Controls\CustomControls\TabMenu\MenuTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\MenuBar\MenuButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\CustomControls\ConstantComboBox\RankComboBox.cs">
@@ -150,6 +153,7 @@
       <DependentUpon>TickDate.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\Const\Constants.cs" />
+    <Compile Include="Extensions\DateTimeExtension.cs" />
     <Compile Include="Extensions\DictionaryExtension.cs" />
     <Compile Include="Common\Functions\Messages.cs" />
     <Compile Include="Common\ModelQuillInjector.cs" />
@@ -211,9 +215,6 @@
     <Compile Include="View\ログイン画面.Designer.cs">
       <DependentUpon>ログイン画面.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\UserContols\MenuBar.resx">
-      <DependentUpon>MenuBar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\UserContols\TickDate.resx">
       <DependentUpon>TickDate.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,14 +272,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Images\icon_ログイン画面.png" />
+    <EmbeddedResource Include="Resources\Images\icon_ログアウト.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Images\icon_顧客管理画面.png" />
-    <EmbeddedResource Include="Resources\Images\icon_従業員管理画面.png" />
-    <EmbeddedResource Include="Resources\Images\icon_宿泊履歴画面.png" />
-    <EmbeddedResource Include="Resources\Images\icon_予約管理画面.png" />
-    <EmbeddedResource Include="Resources\Images\icon_客室管理画面.png" />
+    <EmbeddedResource Include="Resources\Images\icon_顧客管理.png" />
+    <EmbeddedResource Include="Resources\Images\icon_従業員管理.png" />
+    <EmbeddedResource Include="Resources\Images\icon_宿泊履歴.png" />
+    <EmbeddedResource Include="Resources\Images\icon_予約管理.png" />
+    <EmbeddedResource Include="Resources\Images\icon_客室管理.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dbflute\Dbflute.csproj">

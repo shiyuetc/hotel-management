@@ -10,7 +10,7 @@ using Dbflute.CBean.CQ.BS;
 namespace Dbflute.CBean.CQ {
 
     [System.Serializable]
-    public class Mstメニュー権限マスタCQ : BsMstメニュー権限マスタCQ {
+    public class Kbnメニュー区分CQ : BsKbnメニュー区分CQ {
 
         // ===============================================================================
         //                                                                     Constructor
@@ -23,7 +23,7 @@ namespace Dbflute.CBean.CQ {
         /// <param name="sqlClause">SQL clause instance. (NotNull)</param>
         /// <param name="aliasName">My alias name. (NotNull)</param>
         /// <param name="nestLevel">Nest level.</param>
-        public Mstメニュー権限マスタCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel)
+        public Kbnメニュー区分CQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel)
             : base(childQuery, sqlClause, aliasName, nestLevel) {}
 
         // ===============================================================================

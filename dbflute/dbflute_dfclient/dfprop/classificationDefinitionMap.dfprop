@@ -53,6 +53,20 @@ map:{
     #    }
     #}
 
+    ; メニュー区分 = list:{ 
+        ; map:{
+            ; topComment=メニュー区分
+            ; codeType=String
+        }
+        ; map:{
+            ; table=kbnメニュー区分
+            ; code=code
+            ; name=メニュー名
+            ; alias=メニュー名
+            ; comment=優先順位
+            ; orderBy=code
+        }
+    }
     ; 職位区分 = list:{
         ; map:{
             ; topComment=職位区分

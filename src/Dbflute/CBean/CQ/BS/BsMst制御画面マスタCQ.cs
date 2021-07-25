@@ -41,63 +41,89 @@ namespace Dbflute.CBean.CQ.BS {
         protected override ConditionValue getCValueId() { return this.Id; }
 
 
-        protected Map<String, Mstメニュー権限マスタCQ> _id_ExistsSubQuery_Mstメニュー権限マスタListMap;
-        public Map<String, Mstメニュー権限マスタCQ> Id_ExistsSubQuery_Mstメニュー権限マスタList { get { return _id_ExistsSubQuery_Mstメニュー権限マスタListMap; }}
-        public override String keepId_ExistsSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
-            if (_id_ExistsSubQuery_Mstメニュー権限マスタListMap == null) { _id_ExistsSubQuery_Mstメニュー権限マスタListMap = new LinkedHashMap<String, Mstメニュー権限マスタCQ>(); }
-            String key = "subQueryMapKey" + (_id_ExistsSubQuery_Mstメニュー権限マスタListMap.size() + 1);
-            _id_ExistsSubQuery_Mstメニュー権限マスタListMap.put(key, subQuery); return "Id_ExistsSubQuery_Mstメニュー権限マスタList." + key;
+        protected Map<String, Mst権限マスタCQ> _id_ExistsSubQuery_Mst権限マスタListMap;
+        public Map<String, Mst権限マスタCQ> Id_ExistsSubQuery_Mst権限マスタList { get { return _id_ExistsSubQuery_Mst権限マスタListMap; }}
+        public override String keepId_ExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
+            if (_id_ExistsSubQuery_Mst権限マスタListMap == null) { _id_ExistsSubQuery_Mst権限マスタListMap = new LinkedHashMap<String, Mst権限マスタCQ>(); }
+            String key = "subQueryMapKey" + (_id_ExistsSubQuery_Mst権限マスタListMap.size() + 1);
+            _id_ExistsSubQuery_Mst権限マスタListMap.put(key, subQuery); return "Id_ExistsSubQuery_Mst権限マスタList." + key;
         }
 
-        protected Map<String, Mstメニュー権限マスタCQ> _id_NotExistsSubQuery_Mstメニュー権限マスタListMap;
-        public Map<String, Mstメニュー権限マスタCQ> Id_NotExistsSubQuery_Mstメニュー権限マスタList { get { return _id_NotExistsSubQuery_Mstメニュー権限マスタListMap; }}
-        public override String keepId_NotExistsSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
-            if (_id_NotExistsSubQuery_Mstメニュー権限マスタListMap == null) { _id_NotExistsSubQuery_Mstメニュー権限マスタListMap = new LinkedHashMap<String, Mstメニュー権限マスタCQ>(); }
-            String key = "subQueryMapKey" + (_id_NotExistsSubQuery_Mstメニュー権限マスタListMap.size() + 1);
-            _id_NotExistsSubQuery_Mstメニュー権限マスタListMap.put(key, subQuery); return "Id_NotExistsSubQuery_Mstメニュー権限マスタList." + key;
+        protected Map<String, Mst権限マスタCQ> _id_NotExistsSubQuery_Mst権限マスタListMap;
+        public Map<String, Mst権限マスタCQ> Id_NotExistsSubQuery_Mst権限マスタList { get { return _id_NotExistsSubQuery_Mst権限マスタListMap; }}
+        public override String keepId_NotExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
+            if (_id_NotExistsSubQuery_Mst権限マスタListMap == null) { _id_NotExistsSubQuery_Mst権限マスタListMap = new LinkedHashMap<String, Mst権限マスタCQ>(); }
+            String key = "subQueryMapKey" + (_id_NotExistsSubQuery_Mst権限マスタListMap.size() + 1);
+            _id_NotExistsSubQuery_Mst権限マスタListMap.put(key, subQuery); return "Id_NotExistsSubQuery_Mst権限マスタList." + key;
         }
 
-        protected Map<String, Mstメニュー権限マスタCQ> _id_InScopeSubQuery_Mstメニュー権限マスタListMap;
-        public Map<String, Mstメニュー権限マスタCQ> Id_InScopeSubQuery_Mstメニュー権限マスタList { get { return _id_InScopeSubQuery_Mstメニュー権限マスタListMap; }}
-        public override String keepId_InScopeSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
-            if (_id_InScopeSubQuery_Mstメニュー権限マスタListMap == null) { _id_InScopeSubQuery_Mstメニュー権限マスタListMap = new LinkedHashMap<String, Mstメニュー権限マスタCQ>(); }
-            String key = "subQueryMapKey" + (_id_InScopeSubQuery_Mstメニュー権限マスタListMap.size() + 1);
-            _id_InScopeSubQuery_Mstメニュー権限マスタListMap.put(key, subQuery); return "Id_InScopeSubQuery_Mstメニュー権限マスタList." + key;
+        protected Map<String, Mst権限マスタCQ> _id_InScopeSubQuery_Mst権限マスタListMap;
+        public Map<String, Mst権限マスタCQ> Id_InScopeSubQuery_Mst権限マスタList { get { return _id_InScopeSubQuery_Mst権限マスタListMap; }}
+        public override String keepId_InScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
+            if (_id_InScopeSubQuery_Mst権限マスタListMap == null) { _id_InScopeSubQuery_Mst権限マスタListMap = new LinkedHashMap<String, Mst権限マスタCQ>(); }
+            String key = "subQueryMapKey" + (_id_InScopeSubQuery_Mst権限マスタListMap.size() + 1);
+            _id_InScopeSubQuery_Mst権限マスタListMap.put(key, subQuery); return "Id_InScopeSubQuery_Mst権限マスタList." + key;
         }
 
-        protected Map<String, Mstメニュー権限マスタCQ> _id_NotInScopeSubQuery_Mstメニュー権限マスタListMap;
-        public Map<String, Mstメニュー権限マスタCQ> Id_NotInScopeSubQuery_Mstメニュー権限マスタList { get { return _id_NotInScopeSubQuery_Mstメニュー権限マスタListMap; }}
-        public override String keepId_NotInScopeSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
-            if (_id_NotInScopeSubQuery_Mstメニュー権限マスタListMap == null) { _id_NotInScopeSubQuery_Mstメニュー権限マスタListMap = new LinkedHashMap<String, Mstメニュー権限マスタCQ>(); }
-            String key = "subQueryMapKey" + (_id_NotInScopeSubQuery_Mstメニュー権限マスタListMap.size() + 1);
-            _id_NotInScopeSubQuery_Mstメニュー権限マスタListMap.put(key, subQuery); return "Id_NotInScopeSubQuery_Mstメニュー権限マスタList." + key;
+        protected Map<String, Mst権限マスタCQ> _id_NotInScopeSubQuery_Mst権限マスタListMap;
+        public Map<String, Mst権限マスタCQ> Id_NotInScopeSubQuery_Mst権限マスタList { get { return _id_NotInScopeSubQuery_Mst権限マスタListMap; }}
+        public override String keepId_NotInScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
+            if (_id_NotInScopeSubQuery_Mst権限マスタListMap == null) { _id_NotInScopeSubQuery_Mst権限マスタListMap = new LinkedHashMap<String, Mst権限マスタCQ>(); }
+            String key = "subQueryMapKey" + (_id_NotInScopeSubQuery_Mst権限マスタListMap.size() + 1);
+            _id_NotInScopeSubQuery_Mst権限マスタListMap.put(key, subQuery); return "Id_NotInScopeSubQuery_Mst権限マスタList." + key;
         }
 
-        protected Map<String, Mstメニュー権限マスタCQ> _id_SpecifyDerivedReferrer_Mstメニュー権限マスタListMap;
-        public Map<String, Mstメニュー権限マスタCQ> Id_SpecifyDerivedReferrer_Mstメニュー権限マスタList { get { return _id_SpecifyDerivedReferrer_Mstメニュー権限マスタListMap; }}
-        public override String keepId_SpecifyDerivedReferrer_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
-            if (_id_SpecifyDerivedReferrer_Mstメニュー権限マスタListMap == null) { _id_SpecifyDerivedReferrer_Mstメニュー権限マスタListMap = new LinkedHashMap<String, Mstメニュー権限マスタCQ>(); }
-            String key = "subQueryMapKey" + (_id_SpecifyDerivedReferrer_Mstメニュー権限マスタListMap.size() + 1);
-            _id_SpecifyDerivedReferrer_Mstメニュー権限マスタListMap.put(key, subQuery); return "Id_SpecifyDerivedReferrer_Mstメニュー権限マスタList." + key;
+        protected Map<String, Mst権限マスタCQ> _id_SpecifyDerivedReferrer_Mst権限マスタListMap;
+        public Map<String, Mst権限マスタCQ> Id_SpecifyDerivedReferrer_Mst権限マスタList { get { return _id_SpecifyDerivedReferrer_Mst権限マスタListMap; }}
+        public override String keepId_SpecifyDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery) {
+            if (_id_SpecifyDerivedReferrer_Mst権限マスタListMap == null) { _id_SpecifyDerivedReferrer_Mst権限マスタListMap = new LinkedHashMap<String, Mst権限マスタCQ>(); }
+            String key = "subQueryMapKey" + (_id_SpecifyDerivedReferrer_Mst権限マスタListMap.size() + 1);
+            _id_SpecifyDerivedReferrer_Mst権限マスタListMap.put(key, subQuery); return "Id_SpecifyDerivedReferrer_Mst権限マスタList." + key;
         }
 
-        protected Map<String, Mstメニュー権限マスタCQ> _id_QueryDerivedReferrer_Mstメニュー権限マスタListMap;
-        public Map<String, Mstメニュー権限マスタCQ> Id_QueryDerivedReferrer_Mstメニュー権限マスタList { get { return _id_QueryDerivedReferrer_Mstメニュー権限マスタListMap; } }
-        public override String keepId_QueryDerivedReferrer_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
-            if (_id_QueryDerivedReferrer_Mstメニュー権限マスタListMap == null) { _id_QueryDerivedReferrer_Mstメニュー権限マスタListMap = new LinkedHashMap<String, Mstメニュー権限マスタCQ>(); }
-            String key = "subQueryMapKey" + (_id_QueryDerivedReferrer_Mstメニュー権限マスタListMap.size() + 1);
-            _id_QueryDerivedReferrer_Mstメニュー権限マスタListMap.put(key, subQuery); return "Id_QueryDerivedReferrer_Mstメニュー権限マスタList." + key;
+        protected Map<String, Mst権限マスタCQ> _id_QueryDerivedReferrer_Mst権限マスタListMap;
+        public Map<String, Mst権限マスタCQ> Id_QueryDerivedReferrer_Mst権限マスタList { get { return _id_QueryDerivedReferrer_Mst権限マスタListMap; } }
+        public override String keepId_QueryDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery) {
+            if (_id_QueryDerivedReferrer_Mst権限マスタListMap == null) { _id_QueryDerivedReferrer_Mst権限マスタListMap = new LinkedHashMap<String, Mst権限マスタCQ>(); }
+            String key = "subQueryMapKey" + (_id_QueryDerivedReferrer_Mst権限マスタListMap.size() + 1);
+            _id_QueryDerivedReferrer_Mst権限マスタListMap.put(key, subQuery); return "Id_QueryDerivedReferrer_Mst権限マスタList." + key;
         }
-        protected Map<String, Object> _id_QueryDerivedReferrer_Mstメニュー権限マスタListParameterMap;
-        public Map<String, Object> Id_QueryDerivedReferrer_Mstメニュー権限マスタListParameter { get { return _id_QueryDerivedReferrer_Mstメニュー権限マスタListParameterMap; } }
-        public override String keepId_QueryDerivedReferrer_Mstメニュー権限マスタListParameter(Object parameterValue) {
-            if (_id_QueryDerivedReferrer_Mstメニュー権限マスタListParameterMap == null) { _id_QueryDerivedReferrer_Mstメニュー権限マスタListParameterMap = new LinkedHashMap<String, Object>(); }
-            String key = "subQueryParameterKey" + (_id_QueryDerivedReferrer_Mstメニュー権限マスタListParameterMap.size() + 1);
-            _id_QueryDerivedReferrer_Mstメニュー権限マスタListParameterMap.put(key, parameterValue); return "Id_QueryDerivedReferrer_Mstメニュー権限マスタListParameter." + key;
+        protected Map<String, Object> _id_QueryDerivedReferrer_Mst権限マスタListParameterMap;
+        public Map<String, Object> Id_QueryDerivedReferrer_Mst権限マスタListParameter { get { return _id_QueryDerivedReferrer_Mst権限マスタListParameterMap; } }
+        public override String keepId_QueryDerivedReferrer_Mst権限マスタListParameter(Object parameterValue) {
+            if (_id_QueryDerivedReferrer_Mst権限マスタListParameterMap == null) { _id_QueryDerivedReferrer_Mst権限マスタListParameterMap = new LinkedHashMap<String, Object>(); }
+            String key = "subQueryParameterKey" + (_id_QueryDerivedReferrer_Mst権限マスタListParameterMap.size() + 1);
+            _id_QueryDerivedReferrer_Mst権限マスタListParameterMap.put(key, parameterValue); return "Id_QueryDerivedReferrer_Mst権限マスタListParameter." + key;
         }
 
         public BsMst制御画面マスタCQ AddOrderBy_Id_Asc() { regOBA("id");return this; }
         public BsMst制御画面マスタCQ AddOrderBy_Id_Desc() { regOBD("id");return this; }
+
+        protected ConditionValue _メニューcode;
+        public ConditionValue メニューcode {
+            get { if (_メニューcode == null) { _メニューcode = new ConditionValue(); } return _メニューcode; }
+        }
+        protected override ConditionValue getCValueメニューcode() { return this.メニューcode; }
+
+
+        protected Map<String, Kbnメニュー区分CQ> _メニューcode_InScopeSubQuery_Kbnメニュー区分Map;
+        public Map<String, Kbnメニュー区分CQ> メニューcode_InScopeSubQuery_Kbnメニュー区分 { get { return _メニューcode_InScopeSubQuery_Kbnメニュー区分Map; }}
+        public override String keepメニューcode_InScopeSubQuery_Kbnメニュー区分(Kbnメニュー区分CQ subQuery) {
+            if (_メニューcode_InScopeSubQuery_Kbnメニュー区分Map == null) { _メニューcode_InScopeSubQuery_Kbnメニュー区分Map = new LinkedHashMap<String, Kbnメニュー区分CQ>(); }
+            String key = "subQueryMapKey" + (_メニューcode_InScopeSubQuery_Kbnメニュー区分Map.size() + 1);
+            _メニューcode_InScopeSubQuery_Kbnメニュー区分Map.put(key, subQuery); return "メニューcode_InScopeSubQuery_Kbnメニュー区分." + key;
+        }
+
+        protected Map<String, Kbnメニュー区分CQ> _メニューcode_NotInScopeSubQuery_Kbnメニュー区分Map;
+        public Map<String, Kbnメニュー区分CQ> メニューcode_NotInScopeSubQuery_Kbnメニュー区分 { get { return _メニューcode_NotInScopeSubQuery_Kbnメニュー区分Map; }}
+        public override String keepメニューcode_NotInScopeSubQuery_Kbnメニュー区分(Kbnメニュー区分CQ subQuery) {
+            if (_メニューcode_NotInScopeSubQuery_Kbnメニュー区分Map == null) { _メニューcode_NotInScopeSubQuery_Kbnメニュー区分Map = new LinkedHashMap<String, Kbnメニュー区分CQ>(); }
+            String key = "subQueryMapKey" + (_メニューcode_NotInScopeSubQuery_Kbnメニュー区分Map.size() + 1);
+            _メニューcode_NotInScopeSubQuery_Kbnメニュー区分Map.put(key, subQuery); return "メニューcode_NotInScopeSubQuery_Kbnメニュー区分." + key;
+        }
+
+        public BsMst制御画面マスタCQ AddOrderBy_メニューcode_Asc() { regOBA("メニューcode");return this; }
+        public BsMst制御画面マスタCQ AddOrderBy_メニューcode_Desc() { regOBD("メニューcode");return this; }
 
         protected ConditionValue _画面名;
         public ConditionValue 画面名 {
@@ -133,9 +159,45 @@ namespace Dbflute.CBean.CQ.BS {
         public BsMst制御画面マスタCQ AddSpecifiedDerivedOrderBy_Desc(String aliasName) { registerSpecifiedDerivedOrderBy_Desc(aliasName); return this; }
 
         public override void reflectRelationOnUnionQuery(ConditionQuery baseQueryAsSuper, ConditionQuery unionQueryAsSuper) {
+            Mst制御画面マスタCQ baseQuery = (Mst制御画面マスタCQ)baseQueryAsSuper;
+            Mst制御画面マスタCQ unionQuery = (Mst制御画面マスタCQ)unionQueryAsSuper;
+            if (baseQuery.hasConditionQueryKbnメニュー区分()) {
+                unionQuery.QueryKbnメニュー区分().reflectRelationOnUnionQuery(baseQuery.QueryKbnメニュー区分(), unionQuery.QueryKbnメニュー区分());
+            }
 
         }
     
+        protected Kbnメニュー区分CQ _conditionQueryKbnメニュー区分;
+        public Kbnメニュー区分CQ QueryKbnメニュー区分() {
+            return this.ConditionQueryKbnメニュー区分;
+        }
+        public Kbnメニュー区分CQ ConditionQueryKbnメニュー区分 {
+            get {
+                if (_conditionQueryKbnメニュー区分 == null) {
+                    _conditionQueryKbnメニュー区分 = xcreateQueryKbnメニュー区分();
+                    xsetupOuterJoin_Kbnメニュー区分();
+                }
+                return _conditionQueryKbnメニュー区分;
+            }
+        }
+        protected Kbnメニュー区分CQ xcreateQueryKbnメニュー区分() {
+            String nrp = resolveNextRelationPathKbnメニュー区分();
+            String jan = resolveJoinAliasName(nrp, xgetNextNestLevel());
+            Kbnメニュー区分CQ cq = new Kbnメニュー区分CQ(this, xgetSqlClause(), jan, xgetNextNestLevel());
+            cq.xsetForeignPropertyName("kbnメニュー区分"); cq.xsetRelationPath(nrp); return cq;
+        }
+        public void xsetupOuterJoin_Kbnメニュー区分() {
+            Kbnメニュー区分CQ cq = ConditionQueryKbnメニュー区分;
+            Map<String, String> joinOnMap = new LinkedHashMap<String, String>();
+            joinOnMap.put("メニューcode", "code");
+            registerOuterJoin(cq, joinOnMap);
+        }
+        protected String resolveNextRelationPathKbnメニュー区分() {
+            return resolveNextRelationPath("mst制御画面マスタ", "kbnメニュー区分");
+        }
+        public bool hasConditionQueryKbnメニュー区分() {
+            return _conditionQueryKbnメニュー区分 != null;
+        }
 
 
 	    // ===============================================================================

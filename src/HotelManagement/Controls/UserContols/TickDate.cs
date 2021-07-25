@@ -1,4 +1,5 @@
 ﻿using HotelManagement.Common;
+using HotelManagement.Extensions;
 using System;
 using System.Windows.Forms;
 
@@ -36,9 +37,9 @@ namespace HotelManagement.Controls.UserControls
         /// <param name="nowDateTime">更新する時刻</param>
         private void UpdateDateTime(DateTime nowDateTime)
         {
-            this.DateLabel.Text = nowDateTime.ToString("yyyy年MM月dd日");
+            this.DateLabel.Text = nowDateTime.ToYYYYMMDD();
             this.DayOfWeekLabel.Text = $"({Constants.WeekNames[(int)nowDateTime.DayOfWeek]})";
-            this.TimeLabel.Text = nowDateTime.ToString("HH時mm分");
+            this.TimeLabel.Text = nowDateTime.ToHHMM();
         }
     }
 }

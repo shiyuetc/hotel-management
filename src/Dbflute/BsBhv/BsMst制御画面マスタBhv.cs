@@ -179,37 +179,37 @@ namespace Dbflute.ExBhv {
         //                                                                   Load Referrer
         //                                                                   =============
         #region Load Referrer
-        public virtual void LoadMstメニュー権限マスタList(Mst制御画面マスタ mst制御画面マスタ, ConditionBeanSetupper<Mstメニュー権限マスタCB> conditionBeanSetupper) {
+        public virtual void LoadMst権限マスタList(Mst制御画面マスタ mst制御画面マスタ, ConditionBeanSetupper<Mst権限マスタCB> conditionBeanSetupper) {
             AssertObjectNotNull("mst制御画面マスタ", mst制御画面マスタ); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
-            LoadMstメニュー権限マスタList(xnewLRLs<Mst制御画面マスタ>(mst制御画面マスタ), conditionBeanSetupper);
+            LoadMst権限マスタList(xnewLRLs<Mst制御画面マスタ>(mst制御画面マスタ), conditionBeanSetupper);
         }
-        public virtual void LoadMstメニュー権限マスタList(IList<Mst制御画面マスタ> mst制御画面マスタList, ConditionBeanSetupper<Mstメニュー権限マスタCB> conditionBeanSetupper) {
+        public virtual void LoadMst権限マスタList(IList<Mst制御画面マスタ> mst制御画面マスタList, ConditionBeanSetupper<Mst権限マスタCB> conditionBeanSetupper) {
             AssertObjectNotNull("mst制御画面マスタList", mst制御画面マスタList); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
-            LoadMstメニュー権限マスタList(mst制御画面マスタList, new LoadReferrerOption<Mstメニュー権限マスタCB, Mstメニュー権限マスタ>().xinit(conditionBeanSetupper));
+            LoadMst権限マスタList(mst制御画面マスタList, new LoadReferrerOption<Mst権限マスタCB, Mst権限マスタ>().xinit(conditionBeanSetupper));
         }
-        public virtual void LoadMstメニュー権限マスタList(Mst制御画面マスタ mst制御画面マスタ, LoadReferrerOption<Mstメニュー権限マスタCB, Mstメニュー権限マスタ> loadReferrerOption) {
+        public virtual void LoadMst権限マスタList(Mst制御画面マスタ mst制御画面マスタ, LoadReferrerOption<Mst権限マスタCB, Mst権限マスタ> loadReferrerOption) {
             AssertObjectNotNull("mst制御画面マスタ", mst制御画面マスタ); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
-            LoadMstメニュー権限マスタList(xnewLRLs<Mst制御画面マスタ>(mst制御画面マスタ), loadReferrerOption);
+            LoadMst権限マスタList(xnewLRLs<Mst制御画面マスタ>(mst制御画面マスタ), loadReferrerOption);
         }
-        public virtual void LoadMstメニュー権限マスタList(IList<Mst制御画面マスタ> mst制御画面マスタList, LoadReferrerOption<Mstメニュー権限マスタCB, Mstメニュー権限マスタ> loadReferrerOption) {
+        public virtual void LoadMst権限マスタList(IList<Mst制御画面マスタ> mst制御画面マスタList, LoadReferrerOption<Mst権限マスタCB, Mst権限マスタ> loadReferrerOption) {
             AssertObjectNotNull("mst制御画面マスタList", mst制御画面マスタList); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
             if (mst制御画面マスタList.Count == 0) { return; }
-            Mstメニュー権限マスタBhv referrerBhv = xgetBSFLR().Select<Mstメニュー権限マスタBhv>();
-            HelpLoadReferrerInternally<Mst制御画面マスタ, long?, Mstメニュー権限マスタCB, Mstメニュー権限マスタ>
-                    (mst制御画面マスタList, loadReferrerOption, new MyInternalLoadMstメニュー権限マスタListCallback(referrerBhv));
+            Mst権限マスタBhv referrerBhv = xgetBSFLR().Select<Mst権限マスタBhv>();
+            HelpLoadReferrerInternally<Mst制御画面マスタ, long?, Mst権限マスタCB, Mst権限マスタ>
+                    (mst制御画面マスタList, loadReferrerOption, new MyInternalLoadMst権限マスタListCallback(referrerBhv));
         }
-        protected class MyInternalLoadMstメニュー権限マスタListCallback : InternalLoadReferrerCallback<Mst制御画面マスタ, long?, Mstメニュー権限マスタCB, Mstメニュー権限マスタ> {
-            protected Mstメニュー権限マスタBhv referrerBhv;
-            public MyInternalLoadMstメニュー権限マスタListCallback(Mstメニュー権限マスタBhv referrerBhv) { this.referrerBhv = referrerBhv; }
+        protected class MyInternalLoadMst権限マスタListCallback : InternalLoadReferrerCallback<Mst制御画面マスタ, long?, Mst権限マスタCB, Mst権限マスタ> {
+            protected Mst権限マスタBhv referrerBhv;
+            public MyInternalLoadMst権限マスタListCallback(Mst権限マスタBhv referrerBhv) { this.referrerBhv = referrerBhv; }
             public long? getPKVal(Mst制御画面マスタ e) { return e.Id; }
-            public void setRfLs(Mst制御画面マスタ e, IList<Mstメニュー権限マスタ> ls) { e.Mstメニュー権限マスタList = ls; }
-            public Mstメニュー権限マスタCB newMyCB() { return referrerBhv.NewMyConditionBean(); }
-            public void qyFKIn(Mstメニュー権限マスタCB cb, IList<long?> ls) { cb.Query().Set制御画面id_InScope(ls); }
-            public void qyOdFKAsc(Mstメニュー権限マスタCB cb) { cb.Query().AddOrderBy_制御画面id_Asc(); }
-            public void spFKCol(Mstメニュー権限マスタCB cb) { cb.Specify().Column制御画面id(); }
-            public IList<Mstメニュー権限マスタ> selRfLs(Mstメニュー権限マスタCB cb) { return referrerBhv.SelectList(cb); }
-            public long? getFKVal(Mstメニュー権限マスタ e) { return e.制御画面id; }
-            public void setlcEt(Mstメニュー権限マスタ re, Mst制御画面マスタ be) { re.Mst制御画面マスタ = be; }
+            public void setRfLs(Mst制御画面マスタ e, IList<Mst権限マスタ> ls) { e.Mst権限マスタList = ls; }
+            public Mst権限マスタCB newMyCB() { return referrerBhv.NewMyConditionBean(); }
+            public void qyFKIn(Mst権限マスタCB cb, IList<long?> ls) { cb.Query().Set制御画面id_InScope(ls); }
+            public void qyOdFKAsc(Mst権限マスタCB cb) { cb.Query().AddOrderBy_制御画面id_Asc(); }
+            public void spFKCol(Mst権限マスタCB cb) { cb.Specify().Column制御画面id(); }
+            public IList<Mst権限マスタ> selRfLs(Mst権限マスタCB cb) { return referrerBhv.SelectList(cb); }
+            public long? getFKVal(Mst権限マスタ e) { return e.制御画面id; }
+            public void setlcEt(Mst権限マスタ re, Mst制御画面マスタ be) { re.Mst制御画面マスタ = be; }
         }
         #endregion
 
@@ -217,6 +217,12 @@ namespace Dbflute.ExBhv {
         //                                                                Pull out Foreign
         //                                                                ================
         #region Pullout Foreign
+        public IList<Kbnメニュー区分> PulloutKbnメニュー区分(IList<Mst制御画面マスタ> mst制御画面マスタList) {
+            return HelpPulloutInternally<Mst制御画面マスタ, Kbnメニュー区分>(mst制御画面マスタList, new MyInternalPulloutKbnメニュー区分Callback());
+        }
+        protected class MyInternalPulloutKbnメニュー区分Callback : InternalPulloutCallback<Mst制御画面マスタ, Kbnメニュー区分> {
+            public Kbnメニュー区分 getFr(Mst制御画面マスタ entity) { return entity.Kbnメニュー区分; }
+        }
         #endregion
 
 

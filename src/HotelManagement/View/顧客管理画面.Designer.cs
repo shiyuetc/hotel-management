@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // UcCustomer
+            // 顧客管理画面
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "UcCustomer";
-            this.Size = new System.Drawing.Size(929, 534);
+            this.Name = "顧客管理画面";
+            this.Size = new System.Drawing.Size(929, 530);
             this.ResumeLayout(false);
 
         }

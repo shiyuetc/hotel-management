@@ -55,7 +55,7 @@
             this.EmployeeListView.Location = new System.Drawing.Point(3, 32);
             this.EmployeeListView.MultiSelect = false;
             this.EmployeeListView.Name = "EmployeeListView";
-            this.EmployeeListView.Size = new System.Drawing.Size(923, 499);
+            this.EmployeeListView.Size = new System.Drawing.Size(923, 493);
             this.EmployeeListView.TabIndex = 3;
             this.EmployeeListView.UseCompatibleStateImageBehavior = false;
             this.EmployeeListView.View = System.Windows.Forms.View.Details;
@@ -99,14 +99,14 @@
             this.RegisterButton.UseVisualStyleBackColor = true;
             this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
-            // UcEmployee
+            // 従業員管理画面
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.EmployeeListView);
-            this.Name = "UcEmployee";
-            this.Size = new System.Drawing.Size(929, 534);
+            this.Name = "従業員管理画面";
+            this.Size = new System.Drawing.Size(929, 530);
             this.Load += new System.EventHandler(this.UcEmployee_Load);
             this.ResumeLayout(false);
 

@@ -4,10 +4,10 @@ using Dbflute.CBean.CQ;
 
 namespace Dbflute.CBean.Nss {
 
-    public class Mstメニュー権限マスタNss {
+    public class Mst権限マスタNss {
 
-        protected Mstメニュー権限マスタCQ _query;
-        public Mstメニュー権限マスタNss(Mstメニュー権限マスタCQ query) { _query = query; }
+        protected Mst権限マスタCQ _query;
+        public Mst権限マスタNss(Mst権限マスタCQ query) { _query = query; }
         public bool HasConditionQuery { get { return _query != null; } }
 
         // ===============================================================================

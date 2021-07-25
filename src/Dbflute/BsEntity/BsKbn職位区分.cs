@@ -37,13 +37,13 @@ namespace Dbflute.ExEntity {
     ///     
     /// 
     /// [referrer-table]
-    ///     dch従業員職位履歴台帳, mstメニュー権限マスタ, mst従業員マスタ
+    ///     dch従業員職位履歴台帳, mst従業員マスタ, mst権限マスタ
     /// 
     /// [foreign-property]
     ///     
     /// 
     /// [referrer-property]
-    ///     dch従業員職位履歴台帳List, mstメニュー権限マスタList, mst従業員マスタList
+    ///     dch従業員職位履歴台帳List, mst従業員マスタList, mst権限マスタList
     /// ]]>
     /// Author: DBFlute(AutoGenerator)
     /// </summary>
@@ -220,20 +220,20 @@ namespace Dbflute.ExEntity {
             set { _dch従業員職位履歴台帳List = value; }
         }
 
-        protected IList<Mstメニュー権限マスタ> _mstメニュー権限マスタList;
-
-        /// <summary>mstメニュー権限マスタ as 'Mstメニュー権限マスタList'.</summary>
-        public IList<Mstメニュー権限マスタ> Mstメニュー権限マスタList {
-            get { if (_mstメニュー権限マスタList == null) { _mstメニュー権限マスタList = new List<Mstメニュー権限マスタ>(); } return _mstメニュー権限マスタList; }
-            set { _mstメニュー権限マスタList = value; }
-        }
-
         protected IList<Mst従業員マスタ> _mst従業員マスタList;
 
         /// <summary>mst従業員マスタ as 'Mst従業員マスタList'.</summary>
         public IList<Mst従業員マスタ> Mst従業員マスタList {
             get { if (_mst従業員マスタList == null) { _mst従業員マスタList = new List<Mst従業員マスタ>(); } return _mst従業員マスタList; }
             set { _mst従業員マスタList = value; }
+        }
+
+        protected IList<Mst権限マスタ> _mst権限マスタList;
+
+        /// <summary>mst権限マスタ as 'Mst権限マスタList'.</summary>
+        public IList<Mst権限マスタ> Mst権限マスタList {
+            get { if (_mst権限マスタList == null) { _mst権限マスタList = new List<Mst権限マスタ>(); } return _mst権限マスタList; }
+            set { _mst権限マスタList = value; }
         }
 
         #endregion
@@ -295,10 +295,10 @@ namespace Dbflute.ExEntity {
             String l = "\n  ";
             if (_dch従業員職位履歴台帳List != null) { foreach (Entity e in _dch従業員職位履歴台帳List)
             { if (e != null) { sb.Append(l).Append(xbRDS(e, "Dch従業員職位履歴台帳List")); } } }
-            if (_mstメニュー権限マスタList != null) { foreach (Entity e in _mstメニュー権限マスタList)
-            { if (e != null) { sb.Append(l).Append(xbRDS(e, "Mstメニュー権限マスタList")); } } }
             if (_mst従業員マスタList != null) { foreach (Entity e in _mst従業員マスタList)
             { if (e != null) { sb.Append(l).Append(xbRDS(e, "Mst従業員マスタList")); } } }
+            if (_mst権限マスタList != null) { foreach (Entity e in _mst権限マスタList)
+            { if (e != null) { sb.Append(l).Append(xbRDS(e, "Mst権限マスタList")); } } }
             return sb.ToString();
         }
         protected String xbRDS(Entity e, String name) { // buildRelationDisplayString()
@@ -327,10 +327,10 @@ namespace Dbflute.ExEntity {
             String c = ",";
             if (_dch従業員職位履歴台帳List != null && _dch従業員職位履歴台帳List.Count > 0)
             { sb.Append(c).Append("Dch従業員職位履歴台帳List"); }
-            if (_mstメニュー権限マスタList != null && _mstメニュー権限マスタList.Count > 0)
-            { sb.Append(c).Append("Mstメニュー権限マスタList"); }
             if (_mst従業員マスタList != null && _mst従業員マスタList.Count > 0)
             { sb.Append(c).Append("Mst従業員マスタList"); }
+            if (_mst権限マスタList != null && _mst権限マスタList.Count > 0)
+            { sb.Append(c).Append("Mst権限マスタList"); }
             if (sb.Length > 0) { sb.Remove(0, c.Length).Insert(0, "(").Append(")"); }
             return sb.ToString();
         }

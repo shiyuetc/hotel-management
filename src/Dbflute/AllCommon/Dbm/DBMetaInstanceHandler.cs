@@ -35,14 +35,16 @@ namespace Dbflute.AllCommon.Dbm {
                 tmpMap.put("dch月締確定台帳", "Dbflute.BsEntity.Dbm.Dch月締確定台帳Dbm");
                 tmpMap.put("dch清掃予定台帳", "Dbflute.BsEntity.Dbm.Dch清掃予定台帳Dbm");
                 tmpMap.put("dch清掃実績台帳", "Dbflute.BsEntity.Dbm.Dch清掃実績台帳Dbm");
+                tmpMap.put("dmyプロシージャ", "Dbflute.BsEntity.Dbm.DmyプロシージャDbm");
+                tmpMap.put("kbnメニュー区分", "Dbflute.BsEntity.Dbm.Kbnメニュー区分Dbm");
                 tmpMap.put("kbn客室利用区分", "Dbflute.BsEntity.Dbm.Kbn客室利用区分Dbm");
                 tmpMap.put("kbn職位区分", "Dbflute.BsEntity.Dbm.Kbn職位区分Dbm");
-                tmpMap.put("mstメニュー権限マスタ", "Dbflute.BsEntity.Dbm.Mstメニュー権限マスタDbm");
                 tmpMap.put("mst会員マスタ", "Dbflute.BsEntity.Dbm.Mst会員マスタDbm");
                 tmpMap.put("mst制御画面マスタ", "Dbflute.BsEntity.Dbm.Mst制御画面マスタDbm");
                 tmpMap.put("mst客室タイプマスタ", "Dbflute.BsEntity.Dbm.Mst客室タイプマスタDbm");
                 tmpMap.put("mst客室マスタ", "Dbflute.BsEntity.Dbm.Mst客室マスタDbm");
                 tmpMap.put("mst従業員マスタ", "Dbflute.BsEntity.Dbm.Mst従業員マスタDbm");
+                tmpMap.put("mst権限マスタ", "Dbflute.BsEntity.Dbm.Mst権限マスタDbm");
                 _tableDbNameClassNameMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
 
@@ -58,14 +60,16 @@ namespace Dbflute.AllCommon.Dbm {
                 tmpMap.put("dch月締確定台帳".ToLower(), "dch月締確定台帳");
                 tmpMap.put("dch清掃予定台帳".ToLower(), "dch清掃予定台帳");
                 tmpMap.put("dch清掃実績台帳".ToLower(), "dch清掃実績台帳");
+                tmpMap.put("dmyプロシージャ".ToLower(), "dmyプロシージャ");
+                tmpMap.put("kbnメニュー区分".ToLower(), "kbnメニュー区分");
                 tmpMap.put("kbn客室利用区分".ToLower(), "kbn客室利用区分");
                 tmpMap.put("kbn職位区分".ToLower(), "kbn職位区分");
-                tmpMap.put("mstメニュー権限マスタ".ToLower(), "mstメニュー権限マスタ");
                 tmpMap.put("mst会員マスタ".ToLower(), "mst会員マスタ");
                 tmpMap.put("mst制御画面マスタ".ToLower(), "mst制御画面マスタ");
                 tmpMap.put("mst客室タイプマスタ".ToLower(), "mst客室タイプマスタ");
                 tmpMap.put("mst客室マスタ".ToLower(), "mst客室マスタ");
                 tmpMap.put("mst従業員マスタ".ToLower(), "mst従業員マスタ");
+                tmpMap.put("mst権限マスタ".ToLower(), "mst権限マスタ");
                 _tableDbNamePropertyNameKeyToLowerMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
 
@@ -81,14 +85,16 @@ namespace Dbflute.AllCommon.Dbm {
                 tmpMap.put("Dch月締確定台帳".ToLower(), "dch月締確定台帳");
                 tmpMap.put("Dch清掃予定台帳".ToLower(), "dch清掃予定台帳");
                 tmpMap.put("Dch清掃実績台帳".ToLower(), "dch清掃実績台帳");
+                tmpMap.put("Dmyプロシージャ".ToLower(), "dmyプロシージャ");
+                tmpMap.put("Kbnメニュー区分".ToLower(), "kbnメニュー区分");
                 tmpMap.put("Kbn客室利用区分".ToLower(), "kbn客室利用区分");
                 tmpMap.put("Kbn職位区分".ToLower(), "kbn職位区分");
-                tmpMap.put("Mstメニュー権限マスタ".ToLower(), "mstメニュー権限マスタ");
                 tmpMap.put("Mst会員マスタ".ToLower(), "mst会員マスタ");
                 tmpMap.put("Mst制御画面マスタ".ToLower(), "mst制御画面マスタ");
                 tmpMap.put("Mst客室タイプマスタ".ToLower(), "mst客室タイプマスタ");
                 tmpMap.put("Mst客室マスタ".ToLower(), "mst客室マスタ");
                 tmpMap.put("Mst従業員マスタ".ToLower(), "mst従業員マスタ");
+                tmpMap.put("Mst権限マスタ".ToLower(), "mst権限マスタ");
                 _tablePropertyNameDbNameKeyToLowerMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
         }

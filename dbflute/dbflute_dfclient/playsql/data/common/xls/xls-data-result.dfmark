@@ -7,12 +7,13 @@
 data-directory: playsql/data/common/xls
 
 [10-kbn.xls]
+  kbnメニュー区分 (6)
   kbn職位区分 (4)
   kbn客室利用区分 (3)
 
 [20-mst.xls]
   mst制御画面マスタ (6)
-  mstメニュー権限マスタ (16)
+  mst権限マスタ (16)
   mst従業員マスタ (4)
   mst客室タイプマスタ (10)
   mst客室マスタ (23)

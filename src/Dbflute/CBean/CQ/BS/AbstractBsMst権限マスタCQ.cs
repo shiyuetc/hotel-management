@@ -12,13 +12,13 @@ using Dbflute.AllCommon.CBean.SClause;
 namespace Dbflute.CBean.CQ.BS {
 
     [System.Serializable]
-    public abstract class AbstractBsMstメニュー権限マスタCQ : AbstractConditionQuery {
+    public abstract class AbstractBsMst権限マスタCQ : AbstractConditionQuery {
 
-        public AbstractBsMstメニュー権限マスタCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel)
+        public AbstractBsMst権限マスタCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel)
             : base(childQuery, sqlClause, aliasName, nestLevel) {}
 
-        public override String getTableDbName() { return "mstメニュー権限マスタ"; }
-        public override String getTableSqlName() { return "mstメニュー権限マスタ"; }
+        public override String getTableDbName() { return "mst権限マスタ"; }
+        public override String getTableSqlName() { return "mst権限マスタ"; }
 
         public void SetId_Equal(long? v) { regId(CK_EQ, v); }
         public void SetId_NotEqual(long? v) { regId(CK_NES, v); }
@@ -140,54 +140,54 @@ namespace Dbflute.CBean.CQ.BS {
         // ===================================================================================
         //                                                                    Scalar Condition
         //                                                                    ================
-        public SSQFunction<Mstメニュー権限マスタCB> Scalar_Equal() {
+        public SSQFunction<Mst権限マスタCB> Scalar_Equal() {
             return xcreateSSQFunction("=");
         }
 
-        public SSQFunction<Mstメニュー権限マスタCB> Scalar_NotEqual() {
+        public SSQFunction<Mst権限マスタCB> Scalar_NotEqual() {
             return xcreateSSQFunction("<>");
         }
 
-        public SSQFunction<Mstメニュー権限マスタCB> Scalar_GreaterEqual() {
+        public SSQFunction<Mst権限マスタCB> Scalar_GreaterEqual() {
             return xcreateSSQFunction(">=");
         }
 
-        public SSQFunction<Mstメニュー権限マスタCB> Scalar_GreaterThan() {
+        public SSQFunction<Mst権限マスタCB> Scalar_GreaterThan() {
             return xcreateSSQFunction(">");
         }
 
-        public SSQFunction<Mstメニュー権限マスタCB> Scalar_LessEqual() {
+        public SSQFunction<Mst権限マスタCB> Scalar_LessEqual() {
             return xcreateSSQFunction("<=");
         }
 
-        public SSQFunction<Mstメニュー権限マスタCB> Scalar_LessThan() {
+        public SSQFunction<Mst権限マスタCB> Scalar_LessThan() {
             return xcreateSSQFunction("<");
         }
 
-        protected SSQFunction<Mstメニュー権限マスタCB> xcreateSSQFunction(String operand) {
-            return new SSQFunction<Mstメニュー権限マスタCB>(delegate(String function, SubQuery<Mstメニュー権限マスタCB> subQuery) {
+        protected SSQFunction<Mst権限マスタCB> xcreateSSQFunction(String operand) {
+            return new SSQFunction<Mst権限マスタCB>(delegate(String function, SubQuery<Mst権限マスタCB> subQuery) {
                 xscalarSubQuery(function, subQuery, operand);
             });
         }
 
-        protected void xscalarSubQuery(String function, SubQuery<Mstメニュー権限マスタCB> subQuery, String operand) {
-            assertObjectNotNull("subQuery<Mstメニュー権限マスタCB>", subQuery);
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB(); cb.xsetupForScalarCondition(this); subQuery.Invoke(cb);
+        protected void xscalarSubQuery(String function, SubQuery<Mst権限マスタCB> subQuery, String operand) {
+            assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
+            Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForScalarCondition(this); subQuery.Invoke(cb);
             String subQueryPropertyName = keepScalarSubQuery(cb.Query()); // for saving query-value.
             registerScalarSubQuery(function, cb.Query(), subQueryPropertyName, operand);
         }
-        public abstract String keepScalarSubQuery(Mstメニュー権限マスタCQ subQuery);
+        public abstract String keepScalarSubQuery(Mst権限マスタCQ subQuery);
 
         // ===============================================================================
         //                                                                  MySelf InScope
         //                                                                  ==============
-        public void MyselfInScope(SubQuery<Mstメニュー権限マスタCB> subQuery) {
-            assertObjectNotNull("subQuery<Mstメニュー権限マスタCB>", subQuery);
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
+        public void MyselfInScope(SubQuery<Mst権限マスタCB> subQuery) {
+            assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
+            Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
             String subQueryPropertyName = keepMyselfInScopeSubQuery(cb.Query()); // for saving query-value.
             registerInScopeSubQuery(cb.Query(), "id", "id", subQueryPropertyName);
         }
-        public abstract String keepMyselfInScopeSubQuery(Mstメニュー権限マスタCQ subQuery);
+        public abstract String keepMyselfInScopeSubQuery(Mst権限マスタCQ subQuery);
 
         public override String ToString() { return xgetSqlClause().getClause(); }
     }

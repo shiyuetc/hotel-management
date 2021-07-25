@@ -8,6 +8,60 @@ namespace Dbflute.AllCommon {
     public static class CDef {
 
         /**
+         * メニュー区分
+         */
+        public class メニュー区分 {
+            /** ログアウト: 9999 */
+            public static readonly メニュー区分 ログアウト = new メニュー区分("001", "ログアウト", "ログアウト");
+            /** 予約管理: 10 */
+            public static readonly メニュー区分 予約管理 = new メニュー区分("002", "予約管理", "予約管理");
+            /** 宿泊履歴: 20 */
+            public static readonly メニュー区分 宿泊履歴 = new メニュー区分("003", "宿泊履歴", "宿泊履歴");
+            /** 顧客管理: 30 */
+            public static readonly メニュー区分 顧客管理 = new メニュー区分("004", "顧客管理", "顧客管理");
+            /** 従業員管理: 40 */
+            public static readonly メニュー区分 従業員管理 = new メニュー区分("005", "従業員管理", "従業員管理");
+            /** 客室管理: 50 */
+            public static readonly メニュー区分 客室管理 = new メニュー区分("006", "客室管理", "客室管理");
+            private static readonly Map<String, メニュー区分> _codeValueMap = new LinkedHashMap<String, メニュー区分>();
+            static メニュー区分() {
+                _codeValueMap.put(ログアウト.Code.ToLower(), ログアウト);
+                _codeValueMap.put(予約管理.Code.ToLower(), 予約管理);
+                _codeValueMap.put(宿泊履歴.Code.ToLower(), 宿泊履歴);
+                _codeValueMap.put(顧客管理.Code.ToLower(), 顧客管理);
+                _codeValueMap.put(従業員管理.Code.ToLower(), 従業員管理);
+                _codeValueMap.put(客室管理.Code.ToLower(), 客室管理);
+            }
+            protected String _code; protected String _name; protected String _alias;
+            public メニュー区分(String code, String name, String alias) {
+                _code = code; _name = name; _alias = alias;
+            }
+            public String Code { get { return _code; } }
+            public String Name { get { return _name; } }
+            public String Alias { get { return _alias; } }
+            public static メニュー区分 CodeOf(Object code) {
+                if (code == null) { return null; } if (code is メニュー区分) { return (メニュー区分)code; }
+                return _codeValueMap.get(code.ToString().ToLower());
+            }
+            public static メニュー区分[] Values { get {
+                メニュー区分[] values = new メニュー区分[_codeValueMap.size()];
+                int index = 0;
+                foreach (メニュー区分 flg in _codeValueMap.values()) {
+                    values[index] = flg;
+                    ++index;
+                }
+                return values;
+            }}
+            public override int GetHashCode() { return 7 + _code.GetHashCode(); }
+            public override bool Equals(Object obj) {
+                if (!(obj is メニュー区分)) { return false; }
+                メニュー区分 cls = (メニュー区分)obj;
+                return _code.ToLower().Equals(cls.Code.ToLower());
+            }
+            public override String ToString() { return this.Code; }
+        }
+
+        /**
          * 職位区分
          */
         public class 職位区分 {

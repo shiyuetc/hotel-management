@@ -45,7 +45,7 @@ namespace HotelManagement.Common
         /// <param name="args"></param>
         public static void ShowError(string message, params string[] args)
         {
-            MessageBox.Show(string.Format(message, args), "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(string.Format(message, args), "エラー", MessageBoxButtons.OK, MessageBoxIcon.Stop);
         }
     }
 }

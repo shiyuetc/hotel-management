@@ -269,6 +269,7 @@ dl.procedurelist dd.column pre {
 <p class="mainschema">generated from <strong>hotel_management.public</strong></p>
 <div class="navilinkarea">
 <p class="sublink"><a href="#cdef">Classification Definition</a></p>
+<p class="sublink"><a href="#procedure">Procedure List</a></p>
 </div>
 
 <h2>Table List</h2>
@@ -309,7 +310,7 @@ dl.procedurelist dd.column pre {
 		<td class="rownumcell">3</td>
 		<td><a href="#dch客室利用予定台帳" title="type=TABLE, primaryKey={id}, nameLength=11, columnCount=5">dch客室利用予定台帳</a></td>
 		<td class="typecell">TABLE</td>
-		<td class="relcell"><a href="#mst客室マスタ" title="dch客室利用予定台帳_客室マスタid_fkey">mst客室マスタ</a>, <a href="#kbn客室利用区分" title="dch客室利用予定台帳_客室利用コード_fkey">kbn客室利用区分</a></td>
+		<td class="relcell"><a href="#mst客室マスタ" title="dch客室利用予定台帳_客室マスタid_fkey">mst客室マスタ</a>, <a href="#kbn客室利用区分" title="dch客室利用予定台帳_客室利用code_fkey">kbn客室利用区分</a></td>
 		<td class="relcell"><a href="#dchその他予定台帳" title="dchその他予定台帳_客室利用予定台帳id_fkey">dchその他予定台帳</a>, <a href="#dch宿泊予定台帳" title="dch宿泊予定台帳_客室利用予定台帳id_fkey">dch宿泊予定台帳</a>, <a href="#dch清掃予定台帳" title="dch清掃予定台帳_客室利用予定台帳id_fkey">dch清掃予定台帳</a></td>
 		<td class="subcell">Dch客室利用予定台帳</td>
 	</tr>
@@ -317,7 +318,7 @@ dl.procedurelist dd.column pre {
 		<td class="rownumcell">4</td>
 		<td><a href="#dch客室利用実績台帳" title="type=TABLE, primaryKey={id}, nameLength=11, columnCount=5">dch客室利用実績台帳</a></td>
 		<td class="typecell">TABLE</td>
-		<td class="relcell"><a href="#mst客室マスタ" title="dch客室利用実績台帳_客室マスタid_fkey">mst客室マスタ</a>, <a href="#kbn客室利用区分" title="dch客室利用実績台帳_客室利用コード_fkey">kbn客室利用区分</a></td>
+		<td class="relcell"><a href="#mst客室マスタ" title="dch客室利用実績台帳_客室マスタid_fkey">mst客室マスタ</a>, <a href="#kbn客室利用区分" title="dch客室利用実績台帳_客室利用code_fkey">kbn客室利用区分</a></td>
 		<td class="relcell"><a href="#dchその他実績台帳" title="dchその他実績台帳_客室利用実績台帳id_fkey">dchその他実績台帳</a>, <a href="#dch宿泊実績台帳" title="dch宿泊実績台帳_客室利用実績台帳id_fkey">dch宿泊実績台帳</a>, <a href="#dch清掃実績台帳" title="dch清掃実績台帳_客室利用実績台帳id_fkey">dch清掃実績台帳</a></td>
 		<td class="subcell">Dch客室利用実績台帳</td>
 	</tr>
@@ -341,7 +342,7 @@ dl.procedurelist dd.column pre {
 		<td class="rownumcell">7</td>
 		<td><a href="#dch従業員職位履歴台帳" title="type=TABLE, primaryKey={id}, nameLength=12, columnCount=5">dch従業員職位履歴台帳</a></td>
 		<td class="typecell">TABLE</td>
-		<td class="relcell"><a href="#mst従業員マスタ" title="dch従業員職位履歴台帳_従業員id_fkey">mst従業員マスタ</a>, <a href="#kbn職位区分" title="dch従業員職位履歴台帳_職位コード_fkey">kbn職位区分</a></td>
+		<td class="relcell"><a href="#mst従業員マスタ" title="dch従業員職位履歴台帳_従業員id_fkey">mst従業員マスタ</a>, <a href="#kbn職位区分" title="dch従業員職位履歴台帳_職位code_fkey">kbn職位区分</a></td>
 		<td class="relcell">&nbsp;</td>
 		<td class="subcell">Dch従業員職位履歴台帳</td>
 	</tr>
@@ -371,30 +372,38 @@ dl.procedurelist dd.column pre {
 	</tr>
 	<tr>
 		<td class="rownumcell">11</td>
-		<td><a href="#kbn客室利用区分" title="type=TABLE, primaryKey={コード}, nameLength=9, columnCount=2">kbn客室利用区分</a></td>
+		<td><a href="#dmyプロシージャ" title="type=TABLE, primaryKey={}, nameLength=9, columnCount=1">dmyプロシージャ</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
-		<td class="relcell"><a href="#dch客室利用予定台帳" title="dch客室利用予定台帳_客室利用コード_fkey">dch客室利用予定台帳</a>, <a href="#dch客室利用実績台帳" title="dch客室利用実績台帳_客室利用コード_fkey">dch客室利用実績台帳</a></td>
-		<td class="subcell">Kbn客室利用区分</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="subcell">Dmyプロシージャ</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">12</td>
-		<td><a href="#kbn権限区分" title="type=TABLE, primaryKey={コード}, nameLength=7, columnCount=2">kbn権限区分</a></td>
+		<td><a href="#kbnメニュー区分" title="type=TABLE, primaryKey={code}, nameLength=9, columnCount=3">kbnメニュー区分</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
-		<td class="relcell"><a href="#mst権限マスタ" title="mst権限マスタ_権限コード_fkey">mst権限マスタ</a></td>
-		<td class="subcell">Kbn権限区分</td>
+		<td class="relcell"><a href="#mst制御画面マスタ" title="mst制御画面マスタ_メニューcode_fkey">mst制御画面マスタ</a></td>
+		<td class="subcell">Kbnメニュー区分</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">13</td>
-		<td><a href="#kbn職位区分" title="type=TABLE, primaryKey={コード}, nameLength=7, columnCount=3">kbn職位区分</a></td>
+		<td><a href="#kbn客室利用区分" title="type=TABLE, primaryKey={code}, nameLength=9, columnCount=2">kbn客室利用区分</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
-		<td class="relcell"><a href="#dch従業員職位履歴台帳" title="dch従業員職位履歴台帳_職位コード_fkey">dch従業員職位履歴台帳</a>, <a href="#mst従業員マスタ" title="mst従業員マスタ_職位コード_fkey">mst従業員マスタ</a>, <a href="#mst権限マスタ" title="mst権限マスタ_職位コード_fkey">mst権限マスタ</a></td>
-		<td class="subcell">Kbn職位区分</td>
+		<td class="relcell"><a href="#dch客室利用予定台帳" title="dch客室利用予定台帳_客室利用code_fkey">dch客室利用予定台帳</a>, <a href="#dch客室利用実績台帳" title="dch客室利用実績台帳_客室利用code_fkey">dch客室利用実績台帳</a></td>
+		<td class="subcell">Kbn客室利用区分</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">14</td>
+		<td><a href="#kbn職位区分" title="type=TABLE, primaryKey={code}, nameLength=7, columnCount=3">kbn職位区分</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"><a href="#dch従業員職位履歴台帳" title="dch従業員職位履歴台帳_職位code_fkey">dch従業員職位履歴台帳</a>, <a href="#mst従業員マスタ" title="mst従業員マスタ_職位code_fkey">mst従業員マスタ</a>, <a href="#mst権限マスタ" title="mst権限マスタ_職位code_fkey">mst権限マスタ</a></td>
+		<td class="subcell">Kbn職位区分</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">15</td>
 		<td><a href="#mst会員マスタ" title="type=TABLE, primaryKey={id}, nameLength=8, columnCount=12">mst会員マスタ</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
@@ -402,7 +411,15 @@ dl.procedurelist dd.column pre {
 		<td class="subcell">Mst会員マスタ</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">15</td>
+		<td class="rownumcell">16</td>
+		<td><a href="#mst制御画面マスタ" title="type=TABLE, primaryKey={id}, nameLength=10, columnCount=5">mst制御画面マスタ</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell"><a href="#kbnメニュー区分" title="mst制御画面マスタ_メニューcode_fkey">kbnメニュー区分</a></td>
+		<td class="relcell"><a href="#mst権限マスタ" title="mst権限マスタ_制御画面id_fkey">mst権限マスタ</a></td>
+		<td class="subcell">Mst制御画面マスタ</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">17</td>
 		<td><a href="#mst客室タイプマスタ" title="type=TABLE, primaryKey={id}, nameLength=11, columnCount=5">mst客室タイプマスタ</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
@@ -410,7 +427,7 @@ dl.procedurelist dd.column pre {
 		<td class="subcell">Mst客室タイプマスタ</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">16</td>
+		<td class="rownumcell">18</td>
 		<td><a href="#mst客室マスタ" title="type=TABLE, primaryKey={id}, nameLength=8, columnCount=5">mst客室マスタ</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#mst客室タイプマスタ" title="mst客室マスタ_客室タイプid_fkey">mst客室タイプマスタ</a></td>
@@ -418,18 +435,18 @@ dl.procedurelist dd.column pre {
 		<td class="subcell">Mst客室マスタ</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">17</td>
+		<td class="rownumcell">19</td>
 		<td><a href="#mst従業員マスタ" title="type=TABLE, primaryKey={id}, nameLength=9, columnCount=13">mst従業員マスタ</a></td>
 		<td class="typecell">TABLE</td>
-		<td class="relcell"><a href="#kbn職位区分" title="mst従業員マスタ_職位コード_fkey">kbn職位区分</a></td>
+		<td class="relcell"><a href="#kbn職位区分" title="mst従業員マスタ_職位code_fkey">kbn職位区分</a></td>
 		<td class="relcell"><a href="#dch従業員職位履歴台帳" title="dch従業員職位履歴台帳_従業員id_fkey">dch従業員職位履歴台帳</a></td>
 		<td class="subcell">Mst従業員マスタ</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">18</td>
+		<td class="rownumcell">20</td>
 		<td><a href="#mst権限マスタ" title="type=TABLE, primaryKey={id}, nameLength=8, columnCount=3">mst権限マスタ</a></td>
 		<td class="typecell">TABLE</td>
-		<td class="relcell"><a href="#kbn権限区分" title="mst権限マスタ_権限コード_fkey">kbn権限区分</a>, <a href="#kbn職位区分" title="mst権限マスタ_職位コード_fkey">kbn職位区分</a></td>
+		<td class="relcell"><a href="#mst制御画面マスタ" title="mst権限マスタ_制御画面id_fkey">mst制御画面マスタ</a>, <a href="#kbn職位区分" title="mst権限マスタ_職位code_fkey">kbn職位区分</a></td>
 		<td class="relcell">&nbsp;</td>
 		<td class="subcell">Mst権限マスタ</td>
 	</tr>
@@ -607,13 +624,13 @@ dch客室利用予定台帳
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="dch客室利用予定台帳_客室利用コード">客室利用コード</td>
+		<td id="dch客室利用予定台帳_客室利用code">客室利用code</td>
 		<td class="typecell">bpchar</td>
 		<td class="sizecell"> 3 </td>
-		<td class="relcell"><a href="#kbn客室利用区分" title="dch客室利用予定台帳_客室利用コード_fkey">kbn客室利用区分</a>&nbsp;</td>
+		<td class="relcell"><a href="#kbn客室利用区分" title="dch客室利用予定台帳_客室利用code_fkey">kbn客室利用区分</a>&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#客室利用区分Cls">客室利用区分</a></td>
-		<td class="subcell">客室利用コード</td>
+		<td class="subcell">客室利用code</td>
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
@@ -710,13 +727,13 @@ dch客室利用実績台帳
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="dch客室利用実績台帳_客室利用コード">客室利用コード</td>
+		<td id="dch客室利用実績台帳_客室利用code">客室利用code</td>
 		<td class="typecell">bpchar</td>
 		<td class="sizecell"> 3 </td>
-		<td class="relcell"><a href="#kbn客室利用区分" title="dch客室利用実績台帳_客室利用コード_fkey">kbn客室利用区分</a>&nbsp;</td>
+		<td class="relcell"><a href="#kbn客室利用区分" title="dch客室利用実績台帳_客室利用code_fkey">kbn客室利用区分</a>&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#客室利用区分Cls">客室利用区分</a></td>
-		<td class="subcell">客室利用コード</td>
+		<td class="subcell">客室利用code</td>
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
@@ -955,13 +972,13 @@ dch従業員職位履歴台帳
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="dch従業員職位履歴台帳_職位コード">職位コード</td>
+		<td id="dch従業員職位履歴台帳_職位code">職位code</td>
 		<td class="typecell">bpchar</td>
 		<td class="sizecell"> 3 </td>
-		<td class="relcell"><a href="#kbn職位区分" title="dch従業員職位履歴台帳_職位コード_fkey">kbn職位区分</a>&nbsp;</td>
+		<td class="relcell"><a href="#kbn職位区分" title="dch従業員職位履歴台帳_職位code_fkey">kbn職位区分</a>&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#職位区分Cls">職位区分</a></td>
-		<td class="subcell">職位コード</td>
+		<td class="subcell">職位code</td>
 		<td class="subcell">String</td>
 	</tr>
 </table>
@@ -1130,7 +1147,117 @@ dch清掃実績台帳
 		<td class="subcell">long?</td>
 	</tr>
 </table>
-  <h2 id="kbn客室利用区分" title="type=TABLE, primaryKey={コード}, nameLength=9, columnCount=2">
+  <h2 id="dmyプロシージャ" title="type=TABLE, primaryKey={}, nameLength=9, columnCount=1">
+dmyプロシージャ
+</h2>
+<table summary="Columns in dmyプロシージャ">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td id="dmyプロシージャ_dummy">dummy</td>
+		<td class="typecell">bpchar</td>
+		<td class="sizecell"> 1 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">dummy</td>
+		<td class="subcell">String</td>
+	</tr>
+</table>
+  <h2 id="kbnメニュー区分" title="type=TABLE, primaryKey={code}, nameLength=9, columnCount=3">
+kbnメニュー区分
+</h2>
+<table summary="Columns in kbnメニュー区分">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="kbnメニュー区分_pkey">o</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="kbnメニュー区分_code">code</td>
+		<td class="typecell">bpchar</td>
+		<td class="sizecell"> 3 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell"><a href="#mst制御画面マスタ" title="mst制御画面マスタ_メニューcode_fkey">mst制御画面マスタ</a>&nbsp;</td>
+		<td class="relcell"><a href="#メニュー区分Cls">メニュー区分</a></td>
+		<td class="subcell">code</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="kbnメニュー区分_メニュー名">メニュー名</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 20 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">メニュー名</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="kbnメニュー区分_優先順位">優先順位</td>
+		<td class="typecell">int4</td>
+		<td class="sizecell"> 10 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">優先順位</td>
+		<td class="subcell">int?</td>
+	</tr>
+</table>
+  <h2 id="kbn客室利用区分" title="type=TABLE, primaryKey={code}, nameLength=9, columnCount=2">
 kbn客室利用区分
 </h2>
 <table summary="Columns in kbn客室利用区分">
@@ -1159,13 +1286,13 @@ kbn客室利用区分
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="kbn客室利用区分_コード">コード</td>
+		<td id="kbn客室利用区分_code">code</td>
 		<td class="typecell">bpchar</td>
 		<td class="sizecell"> 3 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell"><a href="#dch客室利用予定台帳" title="dch客室利用予定台帳_客室利用コード_fkey">dch客室利用予定台帳</a>,<br /><a href="#dch客室利用実績台帳" title="dch客室利用実績台帳_客室利用コード_fkey">dch客室利用実績台帳</a>&nbsp;</td>
+		<td class="relcell"><a href="#dch客室利用予定台帳" title="dch客室利用予定台帳_客室利用code_fkey">dch客室利用予定台帳</a>,<br /><a href="#dch客室利用実績台帳" title="dch客室利用実績台帳_客室利用code_fkey">dch客室利用実績台帳</a>&nbsp;</td>
 		<td class="relcell"><a href="#客室利用区分Cls">客室利用区分</a></td>
-		<td class="subcell">コード</td>
+		<td class="subcell">code</td>
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
@@ -1185,62 +1312,7 @@ kbn客室利用区分
 		<td class="subcell">String</td>
 	</tr>
 </table>
-  <h2 id="kbn権限区分" title="type=TABLE, primaryKey={コード}, nameLength=7, columnCount=2">
-kbn権限区分
-</h2>
-<table summary="Columns in kbn権限区分">
-	<thead>
-	<tr>
-		<th class="rownumhead">No.</th>
-		<th>PK</th>
-		<th>ID</th>
-		<th>UQ</th>
-		<th>IX</th>
-		<th>Not<br />Null</th>
-		<th>Name</th>
-		<th>Type</th>
-		<th>Size</th>
-		<th>ForeignTable</th>
-		<th>ReferrerTable</th>
-		<th>Classification</th>
-		<th>PropertyName</th>
-		<th>CsharpType</th>
-	</tr>
-	</thead>
-	<tr>
-		<td class="rownumcell">1</td>
-		<td class="flgcell" title="kbn権限区分_pkey">o</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td id="kbn権限区分_コード">コード</td>
-		<td class="typecell">bpchar</td>
-		<td class="sizecell"> 3 </td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell"><a href="#mst権限マスタ" title="mst権限マスタ_権限コード_fkey">mst権限マスタ</a>&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">コード</td>
-		<td class="subcell">String</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">2</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td id="kbn権限区分_名称">名称</td>
-		<td class="typecell">varchar</td>
-		<td class="sizecell"> 20 </td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">名称</td>
-		<td class="subcell">String</td>
-	</tr>
-</table>
-  <h2 id="kbn職位区分" title="type=TABLE, primaryKey={コード}, nameLength=7, columnCount=3">
+  <h2 id="kbn職位区分" title="type=TABLE, primaryKey={code}, nameLength=7, columnCount=3">
 kbn職位区分
 </h2>
 <table summary="Columns in kbn職位区分">
@@ -1269,13 +1341,13 @@ kbn職位区分
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="kbn職位区分_コード">コード</td>
+		<td id="kbn職位区分_code">code</td>
 		<td class="typecell">bpchar</td>
 		<td class="sizecell"> 3 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell"><a href="#dch従業員職位履歴台帳" title="dch従業員職位履歴台帳_職位コード_fkey">dch従業員職位履歴台帳</a>,<br /><a href="#mst従業員マスタ" title="mst従業員マスタ_職位コード_fkey">mst従業員マスタ</a>,<br /><a href="#mst権限マスタ" title="mst権限マスタ_職位コード_fkey">mst権限マスタ</a>&nbsp;</td>
+		<td class="relcell"><a href="#dch従業員職位履歴台帳" title="dch従業員職位履歴台帳_職位code_fkey">dch従業員職位履歴台帳</a>,<br /><a href="#mst従業員マスタ" title="mst従業員マスタ_職位code_fkey">mst従業員マスタ</a>,<br /><a href="#mst権限マスタ" title="mst権限マスタ_職位code_fkey">mst権限マスタ</a>&nbsp;</td>
 		<td class="relcell"><a href="#職位区分Cls">職位区分</a></td>
-		<td class="subcell">コード</td>
+		<td class="subcell">code</td>
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
@@ -1335,7 +1407,7 @@ mst会員マスタ
 	</thead>
 	<tr>
 		<td class="rownumcell">1</td>
-		<td class="flgcell" title="mst会員マスタ_pkey :: sequence=mst003_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell" title="mst会員マスタ_pkey :: sequence=mst004_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
 		<td class="flgcell">o</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
@@ -1526,6 +1598,109 @@ mst会員マスタ
 		<td class="subcell">String</td>
 	</tr>
 </table>
+  <h2 id="mst制御画面マスタ" title="type=TABLE, primaryKey={id}, nameLength=10, columnCount=5">
+mst制御画面マスタ
+</h2>
+<table summary="Columns in mst制御画面マスタ">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>PropertyName</th>
+		<th>CsharpType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="mst制御画面マスタ_pkey :: sequence=mst001_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst制御画面マスタ_id">id</td>
+		<td class="typecell">bigserial</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell"><a href="#mst権限マスタ" title="mst権限マスタ_制御画面id_fkey">mst権限マスタ</a>&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">id</td>
+		<td class="subcell">long?</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst制御画面マスタ_メニューcode">メニューcode</td>
+		<td class="typecell">bpchar</td>
+		<td class="sizecell"> 3 </td>
+		<td class="relcell"><a href="#kbnメニュー区分" title="mst制御画面マスタ_メニューcode_fkey">kbnメニュー区分</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"><a href="#メニュー区分Cls">メニュー区分</a></td>
+		<td class="subcell">メニューcode</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst制御画面マスタ_画面名">画面名</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 20 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">画面名</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">4</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst制御画面マスタ_表示名">表示名</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 20 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">表示名</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">5</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="mst制御画面マスタ_優先順位">優先順位</td>
+		<td class="typecell">int4</td>
+		<td class="sizecell"> 10 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="subcell">優先順位</td>
+		<td class="subcell">int?</td>
+	</tr>
+</table>
   <h2 id="mst客室タイプマスタ" title="type=TABLE, primaryKey={id}, nameLength=11, columnCount=5">
 mst客室タイプマスタ
 </h2>
@@ -1550,7 +1725,7 @@ mst客室タイプマスタ
 	</thead>
 	<tr>
 		<td class="rownumcell">1</td>
-		<td class="flgcell" title="mst客室タイプマスタ_pkey :: sequence=mst004_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell" title="mst客室タイプマスタ_pkey :: sequence=mst005_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
 		<td class="flgcell">o</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
@@ -1653,7 +1828,7 @@ mst客室マスタ
 	</thead>
 	<tr>
 		<td class="rownumcell">1</td>
-		<td class="flgcell" title="mst客室マスタ_pkey :: sequence=mst005_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell" title="mst客室マスタ_pkey :: sequence=mst006_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
 		<td class="flgcell">o</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
@@ -1756,7 +1931,7 @@ mst従業員マスタ
 	</thead>
 	<tr>
 		<td class="rownumcell">1</td>
-		<td class="flgcell" title="mst従業員マスタ_pkey :: sequence=mst002_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell" title="mst従業員マスタ_pkey :: sequence=mst003_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
 		<td class="flgcell">o</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
@@ -1921,13 +2096,13 @@ mst従業員マスタ
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="mst従業員マスタ_職位コード">職位コード</td>
+		<td id="mst従業員マスタ_職位code">職位code</td>
 		<td class="typecell">bpchar</td>
 		<td class="sizecell"> 3 </td>
-		<td class="relcell"><a href="#kbn職位区分" title="mst従業員マスタ_職位コード_fkey">kbn職位区分</a>&nbsp;</td>
+		<td class="relcell"><a href="#kbn職位区分" title="mst従業員マスタ_職位code_fkey">kbn職位区分</a>&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#職位区分Cls">職位区分</a></td>
-		<td class="subcell">職位コード</td>
+		<td class="subcell">職位code</td>
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
@@ -1987,7 +2162,7 @@ mst権限マスタ
 	</thead>
 	<tr>
 		<td class="rownumcell">1</td>
-		<td class="flgcell" title="mst権限マスタ_pkey :: sequence=mst001_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
+		<td class="flgcell" title="mst権限マスタ_pkey :: sequence=mst002_id_seq:minimum(1),maximum(9223372036854775807),increment(1)">o</td>
 		<td class="flgcell">o</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
@@ -2008,13 +2183,13 @@ mst権限マスタ
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="mst権限マスタ_職位コード">職位コード</td>
+		<td id="mst権限マスタ_職位code">職位code</td>
 		<td class="typecell">bpchar</td>
 		<td class="sizecell"> 3 </td>
-		<td class="relcell"><a href="#kbn職位区分" title="mst権限マスタ_職位コード_fkey">kbn職位区分</a>&nbsp;</td>
+		<td class="relcell"><a href="#kbn職位区分" title="mst権限マスタ_職位code_fkey">kbn職位区分</a>&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#職位区分Cls">職位区分</a></td>
-		<td class="subcell">職位コード</td>
+		<td class="subcell">職位code</td>
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
@@ -2024,14 +2199,14 @@ mst権限マスタ
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
-		<td id="mst権限マスタ_権限コード">権限コード</td>
-		<td class="typecell">bpchar</td>
-		<td class="sizecell"> 3 </td>
-		<td class="relcell"><a href="#kbn権限区分" title="mst権限マスタ_権限コード_fkey">kbn権限区分</a>&nbsp;</td>
+		<td id="mst権限マスタ_制御画面id">制御画面id</td>
+		<td class="typecell">int8</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell"><a href="#mst制御画面マスタ" title="mst権限マスタ_制御画面id_fkey">mst制御画面マスタ</a>&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
-		<td class="subcell">権限コード</td>
-		<td class="subcell">String</td>
+		<td class="subcell">制御画面id</td>
+		<td class="subcell">long?</td>
 	</tr>
 </table>
 
@@ -2046,6 +2221,50 @@ mst権限マスタ
 	</tr>
 	</thead>
 	<tbody>
+	<tr>
+		<td>メニュー区分</td>
+		<td class="clstypecell">table</td>
+		<td>メニュー区分</td>
+		<td>
+			<table class="child">
+			<tr>
+				<th id="メニュー区分Cls">Code</th>
+				<th>Name</th>
+				<th>Comment</th>
+			</tr>
+			<tr>
+				<td>001</td>
+				<td>ログアウト</td>
+				<td class="commentcell">9999</td>
+			</tr>
+			<tr>
+				<td>002</td>
+				<td>予約管理</td>
+				<td class="commentcell">10</td>
+			</tr>
+			<tr>
+				<td>003</td>
+				<td>宿泊履歴</td>
+				<td class="commentcell">20</td>
+			</tr>
+			<tr>
+				<td>004</td>
+				<td>顧客管理</td>
+				<td class="commentcell">30</td>
+			</tr>
+			<tr>
+				<td>005</td>
+				<td>従業員管理</td>
+				<td class="commentcell">40</td>
+			</tr>
+			<tr>
+				<td>006</td>
+				<td>客室管理</td>
+				<td class="commentcell">50</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
 	<tr>
 		<td>職位区分</td>
 		<td class="clstypecell">table</td>
@@ -2112,6 +2331,7 @@ mst権限マスタ
 	</tbody>
 </table>
 
+<h2 id="procedure">Procedure</h2>
 <script>
 /**
  * Incremental Search contributed by makotot (Thanks!)

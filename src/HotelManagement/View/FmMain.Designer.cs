@@ -29,13 +29,18 @@
         private void InitializeComponent()
         {
             this.TitleLabel = new System.Windows.Forms.Label();
-            this.UcPanel = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.LoginInfoLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.DisplayNameLabel = new System.Windows.Forms.Label();
-            this.MenuBar = new HotelManagement.Controls.UserControls.MenuBar();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.UcPanel = new System.Windows.Forms.Panel();
+            this.MenuBar = new HotelManagement.Controls.CustomControls.MenuBar();
+            this.MenuTab = new HotelManagement.Controls.CustomControls.MenuTab();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tickDate1 = new HotelManagement.Controls.UserControls.TickDate();
             this.statusStrip1.SuspendLayout();
+            this.MenuTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // TitleLabel
@@ -49,23 +54,11 @@
             this.TitleLabel.Text = "ホテル宿泊管理";
             this.TitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // UcPanel
-            // 
-            this.UcPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.UcPanel.BackColor = System.Drawing.SystemColors.Control;
-            this.UcPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.UcPanel.Location = new System.Drawing.Point(6, 78);
-            this.UcPanel.Name = "UcPanel";
-            this.UcPanel.Size = new System.Drawing.Size(933, 538);
-            this.UcPanel.TabIndex = 2;
-            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LoginInfoLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 619);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 639);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(944, 22);
             this.statusStrip1.SizingGrip = false;
@@ -89,12 +82,56 @@
             this.DisplayNameLabel.Text = "表示画面名";
             this.DisplayNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(0, 0);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(200, 100);
+            this.tabPage2.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(0, 0);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(200, 100);
+            this.tabPage3.TabIndex = 0;
+            // 
+            // UcPanel
+            // 
+            this.UcPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.UcPanel.Location = new System.Drawing.Point(6, 98);
+            this.UcPanel.Name = "UcPanel";
+            this.UcPanel.Size = new System.Drawing.Size(933, 534);
+            this.UcPanel.TabIndex = 6;
+            // 
             // MenuBar
             // 
+            this.MenuBar.BackColor = System.Drawing.Color.Transparent;
             this.MenuBar.Location = new System.Drawing.Point(207, 5);
             this.MenuBar.Name = "MenuBar";
             this.MenuBar.Size = new System.Drawing.Size(549, 70);
-            this.MenuBar.TabIndex = 5;
+            this.MenuBar.TabIndex = 7;
+            // 
+            // MenuTab
+            // 
+            this.MenuTab.Controls.Add(this.tabPage1);
+            this.MenuTab.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.MenuTab.ItemSize = new System.Drawing.Size(60, 18);
+            this.MenuTab.Location = new System.Drawing.Point(6, 78);
+            this.MenuTab.Name = "MenuTab";
+            this.MenuTab.SelectedIndex = 0;
+            this.MenuTab.Size = new System.Drawing.Size(933, 23);
+            this.MenuTab.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(925, 0);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tickDate1
             // 
@@ -107,22 +144,24 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 641);
+            this.ClientSize = new System.Drawing.Size(944, 661);
             this.Controls.Add(this.MenuBar);
+            this.Controls.Add(this.UcPanel);
+            this.Controls.Add(this.MenuTab);
             this.Controls.Add(this.tickDate1);
             this.Controls.Add(this.DisplayNameLabel);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.UcPanel);
             this.Controls.Add(this.TitleLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(960, 680);
+            this.MaximumSize = new System.Drawing.Size(960, 700);
             this.MinimumSize = new System.Drawing.Size(960, 680);
             this.Name = "FmMain";
             this.Text = "ホテル宿泊管理システム";
             this.Load += new System.EventHandler(this.FmMain_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.MenuTab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,12 +170,16 @@
         #endregion
 
         private System.Windows.Forms.Label TitleLabel;
-        private System.Windows.Forms.Panel UcPanel;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel LoginInfoLabel;
         private System.Windows.Forms.Label DisplayNameLabel;
         private Controls.UserControls.TickDate tickDate1;
-        private Controls.UserControls.MenuBar MenuBar;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private Controls.CustomControls.MenuTab MenuTab;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Panel UcPanel;
+        private Controls.CustomControls.MenuBar MenuBar;
     }
 }
 

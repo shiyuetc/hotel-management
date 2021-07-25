@@ -95,6 +95,20 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                                    Setup Select
         //                                                                    ============
+        protected Kbnメニュー区分Nss _nssKbnメニュー区分;
+        public Kbnメニュー区分Nss NssKbnメニュー区分 { get {
+            if (_nssKbnメニュー区分 == null) { _nssKbnメニュー区分 = new Kbnメニュー区分Nss(null); }
+            return _nssKbnメニュー区分;
+        }}
+        public Kbnメニュー区分Nss SetupSelect_Kbnメニュー区分() {
+            if (HasSpecifiedColumn) { // if reverse call
+                Specify().Columnメニューcode();
+            }
+            doSetupSelect(delegate { return Query().QueryKbnメニュー区分(); });
+            if (_nssKbnメニュー区分 == null || !_nssKbnメニュー区分.HasConditionQuery)
+            { _nssKbnメニュー区分 = new Kbnメニュー区分Nss(Query().QueryKbnメニュー区分()); }
+            return _nssKbnメニュー区分;
+        }
 
         // [DBFlute-0.7.4]
         // ===============================================================================
@@ -162,21 +176,42 @@ namespace Dbflute.CBean.BS {
     }
 
     public class Mst制御画面マスタCBSpecification : AbstractSpecification<Mst制御画面マスタCQ> {
+        protected Kbnメニュー区分CBSpecification _kbnメニュー区分;
         public Mst制御画面マスタCBSpecification(ConditionBean baseCB, HpSpQyCall<Mst制御画面マスタCQ> qyCall
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
         public void ColumnId() { doColumn("id"); }
+        public void Columnメニューcode() { doColumn("メニューcode"); }
         public void Column画面名() { doColumn("画面名"); }
         public void Column表示名() { doColumn("表示名"); }
         public void Column優先順位() { doColumn("優先順位"); }
         protected override void doSpecifyRequiredColumn() {
             ColumnId(); // PK
+            if (qyCall().qy().hasConditionQueryKbnメニュー区分()
+                    || qyCall().qy().xgetReferrerQuery() is Kbnメニュー区分CQ) {
+                Columnメニューcode(); // FK or one-to-one referrer
+            }
         }
         protected override String getTableDbName() { return "mst制御画面マスタ"; }
-        public RAFunction<Mstメニュー権限マスタCB, Mst制御画面マスタCQ> DerivedMstメニュー権限マスタList() {
+        public Kbnメニュー区分CBSpecification SpecifyKbnメニュー区分() {
+            assertForeign("kbnメニュー区分");
+            if (_kbnメニュー区分 == null) {
+                _kbnメニュー区分 = new Kbnメニュー区分CBSpecification(_baseCB, new Kbnメニュー区分SpQyCall(_qyCall), _forDerivedReferrer, _forScalarSelect, _forScalarCondition, _forColumnQuery);
+                if (xhasSyncQyCall()) // inherits it
+                { _kbnメニュー区分.xsetSyncQyCall(new Kbnメニュー区分SpQyCall(xsyncQyCall())); }
+            }
+            return _kbnメニュー区分;
+        }
+		public class Kbnメニュー区分SpQyCall : HpSpQyCall<Kbnメニュー区分CQ> {
+		    protected HpSpQyCall<Mst制御画面マスタCQ> _qyCall;
+		    public Kbnメニュー区分SpQyCall(HpSpQyCall<Mst制御画面マスタCQ> myQyCall) { _qyCall = myQyCall; }
+		    public bool has() { return _qyCall.has() && _qyCall.qy().hasConditionQueryKbnメニュー区分(); }
+			public Kbnメニュー区分CQ qy() { return _qyCall.qy().QueryKbnメニュー区分(); }
+		}
+        public RAFunction<Mst権限マスタCB, Mst制御画面マスタCQ> DerivedMst権限マスタList() {
             if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return new RAFunction<Mstメニュー権限マスタCB, Mst制御画面マスタCQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Mstメニュー権限マスタCB> subQuery, Mst制御画面マスタCQ cq, String aliasName)
-                { cq.xsderiveMstメニュー権限マスタList(function, subQuery, aliasName); });
+            return new RAFunction<Mst権限マスタCB, Mst制御画面マスタCQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Mst権限マスタCB> subQuery, Mst制御画面マスタCQ cq, String aliasName)
+                { cq.xsderiveMst権限マスタList(function, subQuery, aliasName); });
         }
     }
 }

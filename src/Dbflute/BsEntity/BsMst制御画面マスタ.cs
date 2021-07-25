@@ -22,7 +22,7 @@ namespace Dbflute.ExEntity {
     ///     id
     /// 
     /// [column]
-    ///     id, 画面名, 表示名, 優先順位
+    ///     id, メニューcode, 画面名, 表示名, 優先順位
     /// 
     /// [sequence]
     ///     mst001_id_seq
@@ -34,16 +34,16 @@ namespace Dbflute.ExEntity {
     ///     
     /// 
     /// [foreign-table]
-    ///     
+    ///     kbnメニュー区分
     /// 
     /// [referrer-table]
-    ///     mstメニュー権限マスタ
+    ///     mst権限マスタ
     /// 
     /// [foreign-property]
-    ///     
+    ///     kbnメニュー区分
     /// 
     /// [referrer-property]
-    ///     mstメニュー権限マスタList
+    ///     mst権限マスタList
     /// ]]>
     /// Author: DBFlute(AutoGenerator)
     /// </summary>
@@ -57,6 +57,9 @@ namespace Dbflute.ExEntity {
         #region Attribute
         /// <summary>id: {PK, ID, NotNull, bigserial(19)}</summary>
         protected long? _id;
+
+        /// <summary>メニューcode: {NotNull, bpchar(3), FK to kbnメニュー区分, classification=メニュー区分}</summary>
+        protected String _メニューcode;
 
         /// <summary>画面名: {NotNull, varchar(20)}</summary>
         protected String _画面名;
@@ -82,21 +85,204 @@ namespace Dbflute.ExEntity {
         public DBMeta DBMeta { get { return DBMetaInstanceHandler.FindDBMeta(TableDbName); } }
 
         // ===============================================================================
+        //                                                         Classification Property
+        //                                                         =======================
+        #region Classification Property
+        public CDef.メニュー区分 メニューcodeAsメニュー区分 { get {
+            return CDef.メニュー区分.CodeOf(_メニューcode);
+        } set {
+            メニューcode = value != null ? value.Code : null;
+        }}
+
+        #endregion
+
+        // ===============================================================================
+        //                                                          Classification Setting
+        //                                                          ======================
+        #region Classification Setting
+        /// <summary>
+        /// Set the value of メニューcode as ログアウト.
+        /// <![CDATA[
+        /// ログアウト: 9999
+        /// ]]>
+        /// </summary>
+        public void Setメニューcode_ログアウト() {
+            メニューcodeAsメニュー区分 = CDef.メニュー区分.ログアウト;
+        }
+
+        /// <summary>
+        /// Set the value of メニューcode as 予約管理.
+        /// <![CDATA[
+        /// 予約管理: 10
+        /// ]]>
+        /// </summary>
+        public void Setメニューcode_予約管理() {
+            メニューcodeAsメニュー区分 = CDef.メニュー区分.予約管理;
+        }
+
+        /// <summary>
+        /// Set the value of メニューcode as 宿泊履歴.
+        /// <![CDATA[
+        /// 宿泊履歴: 20
+        /// ]]>
+        /// </summary>
+        public void Setメニューcode_宿泊履歴() {
+            メニューcodeAsメニュー区分 = CDef.メニュー区分.宿泊履歴;
+        }
+
+        /// <summary>
+        /// Set the value of メニューcode as 顧客管理.
+        /// <![CDATA[
+        /// 顧客管理: 30
+        /// ]]>
+        /// </summary>
+        public void Setメニューcode_顧客管理() {
+            メニューcodeAsメニュー区分 = CDef.メニュー区分.顧客管理;
+        }
+
+        /// <summary>
+        /// Set the value of メニューcode as 従業員管理.
+        /// <![CDATA[
+        /// 従業員管理: 40
+        /// ]]>
+        /// </summary>
+        public void Setメニューcode_従業員管理() {
+            メニューcodeAsメニュー区分 = CDef.メニュー区分.従業員管理;
+        }
+
+        /// <summary>
+        /// Set the value of メニューcode as 客室管理.
+        /// <![CDATA[
+        /// 客室管理: 50
+        /// ]]>
+        /// </summary>
+        public void Setメニューcode_客室管理() {
+            メニューcodeAsメニュー区分 = CDef.メニュー区分.客室管理;
+        }
+
+        #endregion
+
+        // ===============================================================================
+        //                                                    Classification Determination
+        //                                                    ============================
+        #region Classification Determination
+        /// <summary>
+        /// Is the value of メニューcode 'ログアウト'?
+        /// <![CDATA[
+        /// The difference of capital letters and small letters is NOT distinguished.
+        /// If the value is null, this method returns false!
+        /// ログアウト: 9999
+        /// ]]>
+        /// </summary>
+        public bool Isメニューcodeログアウト {
+            get {
+                CDef.メニュー区分 cls = メニューcodeAsメニュー区分;
+                return cls != null ? cls.Equals(CDef.メニュー区分.ログアウト) : false;
+            }
+        }
+
+        /// <summary>
+        /// Is the value of メニューcode '予約管理'?
+        /// <![CDATA[
+        /// The difference of capital letters and small letters is NOT distinguished.
+        /// If the value is null, this method returns false!
+        /// 予約管理: 10
+        /// ]]>
+        /// </summary>
+        public bool Isメニューcode予約管理 {
+            get {
+                CDef.メニュー区分 cls = メニューcodeAsメニュー区分;
+                return cls != null ? cls.Equals(CDef.メニュー区分.予約管理) : false;
+            }
+        }
+
+        /// <summary>
+        /// Is the value of メニューcode '宿泊履歴'?
+        /// <![CDATA[
+        /// The difference of capital letters and small letters is NOT distinguished.
+        /// If the value is null, this method returns false!
+        /// 宿泊履歴: 20
+        /// ]]>
+        /// </summary>
+        public bool Isメニューcode宿泊履歴 {
+            get {
+                CDef.メニュー区分 cls = メニューcodeAsメニュー区分;
+                return cls != null ? cls.Equals(CDef.メニュー区分.宿泊履歴) : false;
+            }
+        }
+
+        /// <summary>
+        /// Is the value of メニューcode '顧客管理'?
+        /// <![CDATA[
+        /// The difference of capital letters and small letters is NOT distinguished.
+        /// If the value is null, this method returns false!
+        /// 顧客管理: 30
+        /// ]]>
+        /// </summary>
+        public bool Isメニューcode顧客管理 {
+            get {
+                CDef.メニュー区分 cls = メニューcodeAsメニュー区分;
+                return cls != null ? cls.Equals(CDef.メニュー区分.顧客管理) : false;
+            }
+        }
+
+        /// <summary>
+        /// Is the value of メニューcode '従業員管理'?
+        /// <![CDATA[
+        /// The difference of capital letters and small letters is NOT distinguished.
+        /// If the value is null, this method returns false!
+        /// 従業員管理: 40
+        /// ]]>
+        /// </summary>
+        public bool Isメニューcode従業員管理 {
+            get {
+                CDef.メニュー区分 cls = メニューcodeAsメニュー区分;
+                return cls != null ? cls.Equals(CDef.メニュー区分.従業員管理) : false;
+            }
+        }
+
+        /// <summary>
+        /// Is the value of メニューcode '客室管理'?
+        /// <![CDATA[
+        /// The difference of capital letters and small letters is NOT distinguished.
+        /// If the value is null, this method returns false!
+        /// 客室管理: 50
+        /// ]]>
+        /// </summary>
+        public bool Isメニューcode客室管理 {
+            get {
+                CDef.メニュー区分 cls = メニューcodeAsメニュー区分;
+                return cls != null ? cls.Equals(CDef.メニュー区分.客室管理) : false;
+            }
+        }
+
+        #endregion
+
+        // ===============================================================================
         //                                                                Foreign Property
         //                                                                ================
         #region Foreign Property
+        protected Kbnメニュー区分 _kbnメニュー区分;
+
+        /// <summary>kbnメニュー区分 as 'Kbnメニュー区分'.</summary>
+        [Seasar.Dao.Attrs.Relno(0), Seasar.Dao.Attrs.Relkeys("メニューcode:code")]
+        public Kbnメニュー区分 Kbnメニュー区分 {
+            get { return _kbnメニュー区分; }
+            set { _kbnメニュー区分 = value; }
+        }
+
         #endregion
 
         // ===============================================================================
         //                                                               Referrer Property
         //                                                               =================
         #region Referrer Property
-        protected IList<Mstメニュー権限マスタ> _mstメニュー権限マスタList;
+        protected IList<Mst権限マスタ> _mst権限マスタList;
 
-        /// <summary>mstメニュー権限マスタ as 'Mstメニュー権限マスタList'.</summary>
-        public IList<Mstメニュー権限マスタ> Mstメニュー権限マスタList {
-            get { if (_mstメニュー権限マスタList == null) { _mstメニュー権限マスタList = new List<Mstメニュー権限マスタ>(); } return _mstメニュー権限マスタList; }
-            set { _mstメニュー権限マスタList = value; }
+        /// <summary>mst権限マスタ as 'Mst権限マスタList'.</summary>
+        public IList<Mst権限マスタ> Mst権限マスタList {
+            get { if (_mst権限マスタList == null) { _mst権限マスタList = new List<Mst権限マスタ>(); } return _mst権限マスタList; }
+            set { _mst権限マスタList = value; }
         }
 
         #endregion
@@ -156,8 +342,10 @@ namespace Dbflute.ExEntity {
             StringBuilder sb = new StringBuilder();
             sb.Append(ToString());
             String l = "\n  ";
-            if (_mstメニュー権限マスタList != null) { foreach (Entity e in _mstメニュー権限マスタList)
-            { if (e != null) { sb.Append(l).Append(xbRDS(e, "Mstメニュー権限マスタList")); } } }
+            if (_kbnメニュー区分 != null)
+            { sb.Append(l).Append(xbRDS(_kbnメニュー区分, "Kbnメニュー区分")); }
+            if (_mst権限マスタList != null) { foreach (Entity e in _mst権限マスタList)
+            { if (e != null) { sb.Append(l).Append(xbRDS(e, "Mst権限マスタList")); } } }
             return sb.ToString();
         }
         protected String xbRDS(Entity e, String name) { // buildRelationDisplayString()
@@ -175,6 +363,7 @@ namespace Dbflute.ExEntity {
             String c = ", ";
             StringBuilder sb = new StringBuilder();
             sb.Append(c).Append(this.Id);
+            sb.Append(c).Append(this.メニューcode);
             sb.Append(c).Append(this.画面名);
             sb.Append(c).Append(this.表示名);
             sb.Append(c).Append(this.優先順位);
@@ -185,8 +374,9 @@ namespace Dbflute.ExEntity {
         protected virtual String BuildRelationString() {
             StringBuilder sb = new StringBuilder();
             String c = ",";
-            if (_mstメニュー権限マスタList != null && _mstメニュー権限マスタList.Count > 0)
-            { sb.Append(c).Append("Mstメニュー権限マスタList"); }
+            if (_kbnメニュー区分 != null) { sb.Append(c).Append("Kbnメニュー区分"); }
+            if (_mst権限マスタList != null && _mst権限マスタList.Count > 0)
+            { sb.Append(c).Append("Mst権限マスタList"); }
             if (sb.Length > 0) { sb.Remove(0, c.Length).Insert(0, "(").Append(")"); }
             return sb.ToString();
         }
@@ -204,6 +394,16 @@ namespace Dbflute.ExEntity {
             set {
                 __modifiedProperties.AddPropertyName("Id");
                 _id = value;
+            }
+        }
+
+        /// <summary>メニューcode: {NotNull, bpchar(3), FK to kbnメニュー区分, classification=メニュー区分}</summary>
+        [Seasar.Dao.Attrs.Column("メニューcode")]
+        public String メニューcode {
+            get { return _メニューcode; }
+            set {
+                __modifiedProperties.AddPropertyName("メニューcode");
+                _メニューcode = value;
             }
         }
 

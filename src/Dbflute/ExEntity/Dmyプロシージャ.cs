@@ -4,6 +4,6 @@ using System.Collections.Generic;
 
 namespace Dbflute.ExEntity {
 
-    partial class Mstメニュー権限マスタ {
+    partial class Dmyプロシージャ {
     }
 }

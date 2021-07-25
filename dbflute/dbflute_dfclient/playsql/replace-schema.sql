@@ -1,5 +1,15 @@
 
+CREATE TABLE "dmyプロシージャ" (
+  "dummy" CHAR(1)
+);
+
 -- 区分テーブル
+
+CREATE TABLE "kbnメニュー区分" (
+  "code" CHAR(3) NOT NULL PRIMARY KEY,
+  "メニュー名" VARCHAR(20) NOT NULL,
+  "優先順位" INT NOT NULL
+);
 
 CREATE TABLE "kbn職位区分" (
   "code" CHAR(3) NOT NULL PRIMARY KEY,
@@ -16,12 +26,14 @@ CREATE TABLE "kbn客室利用区分" (
 
 CREATE TABLE "mst制御画面マスタ" (
   "id" BIGINT NOT NULL PRIMARY KEY,
+  "メニューcode" CHAR(3) NOT NULL,
   "画面名" VARCHAR(20) NOT NULL,
   "表示名" VARCHAR(20) NOT NULL,
-  "優先順位" INT NOT NULL
+  "優先順位" INT NOT NULL,
+  FOREIGN KEY ("メニューcode") REFERENCES "kbnメニュー区分"("code")
 );
 
-CREATE TABLE "mstメニュー権限マスタ" (
+CREATE TABLE "mst権限マスタ" (
   "id" BIGINT NOT NULL PRIMARY KEY,
   "職位code" CHAR(3) NOT NULL,
   "制御画面id" BIGINT NOT NULL,
@@ -160,7 +172,7 @@ CREATE SEQUENCE "mst004_id_seq";
 CREATE SEQUENCE "mst005_id_seq";
 CREATE SEQUENCE "mst006_id_seq";
 ALTER TABLE "mst制御画面マスタ" ALTER COLUMN "id" SET DEFAULT nextval('mst001_id_seq');
-ALTER TABLE "mstメニュー権限マスタ" ALTER COLUMN "id" SET DEFAULT nextval('mst002_id_seq');
+ALTER TABLE "mst権限マスタ" ALTER COLUMN "id" SET DEFAULT nextval('mst002_id_seq');
 ALTER TABLE "mst従業員マスタ" ALTER COLUMN "id" SET DEFAULT nextval('mst003_id_seq');
 ALTER TABLE "mst会員マスタ" ALTER COLUMN "id" SET DEFAULT nextval('mst004_id_seq');
 ALTER TABLE "mst客室タイプマスタ" ALTER COLUMN "id" SET DEFAULT nextval('mst005_id_seq');

@@ -13,17 +13,17 @@ using Dbflute.CBean.CQ;
 namespace Dbflute.CBean.CQ.Ciq {
 
     [System.Serializable]
-    public class Mstメニュー権限マスタCIQ : AbstractBsMstメニュー権限マスタCQ {
+    public class Mst権限マスタCIQ : AbstractBsMst権限マスタCQ {
 
         // ===============================================================================
         //                                                                       Attribute
         //                                                                       =========
-        protected BsMstメニュー権限マスタCQ _myCQ;
+        protected BsMst権限マスタCQ _myCQ;
 
         // ===============================================================================
         //                                                                     Constructor
         //                                                                     ===========
-        public Mstメニュー権限マスタCIQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel, BsMstメニュー権限マスタCQ myCQ)
+        public Mst権限マスタCIQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel, BsMst権限マスタCQ myCQ)
             : base(childQuery, sqlClause, aliasName, nestLevel) {
             _myCQ = myCQ;
             _foreignPropertyName = _myCQ.xgetForeignPropertyName();// Accept foreign property name.
@@ -97,14 +97,14 @@ namespace Dbflute.CBean.CQ.Ciq {
         // ===================================================================================
         //                                                                     Scalar SubQuery
         //                                                                     ===============
-        public override String keepScalarSubQuery(Mstメニュー権限マスタCQ subQuery) {
+        public override String keepScalarSubQuery(Mst権限マスタCQ subQuery) {
             throw new UnsupportedOperationException("ScalarSubQuery at inline() is unsupported! Sorry!");
         }
 
         // ===============================================================================
         //                                                         Myself InScope SubQuery
         //                                                         =======================
-        public override String keepMyselfInScopeSubQuery(Mstメニュー権限マスタCQ subQuery) {
+        public override String keepMyselfInScopeSubQuery(Mst権限マスタCQ subQuery) {
             throw new UnsupportedOperationException("MyselfInScopeSubQuery at inline() is unsupported! Sorry!");
         }
     }

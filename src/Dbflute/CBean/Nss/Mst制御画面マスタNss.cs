@@ -13,6 +13,11 @@ namespace Dbflute.CBean.Nss {
         // ===============================================================================
         //                                                       With Nested Foreign Table
         //                                                       =========================
+        public Kbnメニュー区分Nss WithKbnメニュー区分() {
+            _query.doNss(delegate() { return _query.QueryKbnメニュー区分(); });
+            return new Kbnメニュー区分Nss(_query.QueryKbnメニュー区分());
+        }
+
 
         // ===============================================================================
         //                                                      With Nested Referrer Table

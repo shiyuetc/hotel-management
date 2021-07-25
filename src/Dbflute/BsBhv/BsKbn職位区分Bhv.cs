@@ -200,38 +200,6 @@ namespace Dbflute.ExBhv {
             public String getFKVal(Dch従業員職位履歴台帳 e) { return e.職位code; }
             public void setlcEt(Dch従業員職位履歴台帳 re, Kbn職位区分 be) { re.Kbn職位区分 = be; }
         }
-        public virtual void LoadMstメニュー権限マスタList(Kbn職位区分 kbn職位区分, ConditionBeanSetupper<Mstメニュー権限マスタCB> conditionBeanSetupper) {
-            AssertObjectNotNull("kbn職位区分", kbn職位区分); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
-            LoadMstメニュー権限マスタList(xnewLRLs<Kbn職位区分>(kbn職位区分), conditionBeanSetupper);
-        }
-        public virtual void LoadMstメニュー権限マスタList(IList<Kbn職位区分> kbn職位区分List, ConditionBeanSetupper<Mstメニュー権限マスタCB> conditionBeanSetupper) {
-            AssertObjectNotNull("kbn職位区分List", kbn職位区分List); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
-            LoadMstメニュー権限マスタList(kbn職位区分List, new LoadReferrerOption<Mstメニュー権限マスタCB, Mstメニュー権限マスタ>().xinit(conditionBeanSetupper));
-        }
-        public virtual void LoadMstメニュー権限マスタList(Kbn職位区分 kbn職位区分, LoadReferrerOption<Mstメニュー権限マスタCB, Mstメニュー権限マスタ> loadReferrerOption) {
-            AssertObjectNotNull("kbn職位区分", kbn職位区分); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
-            LoadMstメニュー権限マスタList(xnewLRLs<Kbn職位区分>(kbn職位区分), loadReferrerOption);
-        }
-        public virtual void LoadMstメニュー権限マスタList(IList<Kbn職位区分> kbn職位区分List, LoadReferrerOption<Mstメニュー権限マスタCB, Mstメニュー権限マスタ> loadReferrerOption) {
-            AssertObjectNotNull("kbn職位区分List", kbn職位区分List); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
-            if (kbn職位区分List.Count == 0) { return; }
-            Mstメニュー権限マスタBhv referrerBhv = xgetBSFLR().Select<Mstメニュー権限マスタBhv>();
-            HelpLoadReferrerInternally<Kbn職位区分, String, Mstメニュー権限マスタCB, Mstメニュー権限マスタ>
-                    (kbn職位区分List, loadReferrerOption, new MyInternalLoadMstメニュー権限マスタListCallback(referrerBhv));
-        }
-        protected class MyInternalLoadMstメニュー権限マスタListCallback : InternalLoadReferrerCallback<Kbn職位区分, String, Mstメニュー権限マスタCB, Mstメニュー権限マスタ> {
-            protected Mstメニュー権限マスタBhv referrerBhv;
-            public MyInternalLoadMstメニュー権限マスタListCallback(Mstメニュー権限マスタBhv referrerBhv) { this.referrerBhv = referrerBhv; }
-            public String getPKVal(Kbn職位区分 e) { return e.Code; }
-            public void setRfLs(Kbn職位区分 e, IList<Mstメニュー権限マスタ> ls) { e.Mstメニュー権限マスタList = ls; }
-            public Mstメニュー権限マスタCB newMyCB() { return referrerBhv.NewMyConditionBean(); }
-            public void qyFKIn(Mstメニュー権限マスタCB cb, IList<String> ls) { cb.Query().Set職位code_InScope(ls); }
-            public void qyOdFKAsc(Mstメニュー権限マスタCB cb) { cb.Query().AddOrderBy_職位code_Asc(); }
-            public void spFKCol(Mstメニュー権限マスタCB cb) { cb.Specify().Column職位code(); }
-            public IList<Mstメニュー権限マスタ> selRfLs(Mstメニュー権限マスタCB cb) { return referrerBhv.SelectList(cb); }
-            public String getFKVal(Mstメニュー権限マスタ e) { return e.職位code; }
-            public void setlcEt(Mstメニュー権限マスタ re, Kbn職位区分 be) { re.Kbn職位区分 = be; }
-        }
         public virtual void LoadMst従業員マスタList(Kbn職位区分 kbn職位区分, ConditionBeanSetupper<Mst従業員マスタCB> conditionBeanSetupper) {
             AssertObjectNotNull("kbn職位区分", kbn職位区分); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
             LoadMst従業員マスタList(xnewLRLs<Kbn職位区分>(kbn職位区分), conditionBeanSetupper);
@@ -263,6 +231,38 @@ namespace Dbflute.ExBhv {
             public IList<Mst従業員マスタ> selRfLs(Mst従業員マスタCB cb) { return referrerBhv.SelectList(cb); }
             public String getFKVal(Mst従業員マスタ e) { return e.職位code; }
             public void setlcEt(Mst従業員マスタ re, Kbn職位区分 be) { re.Kbn職位区分 = be; }
+        }
+        public virtual void LoadMst権限マスタList(Kbn職位区分 kbn職位区分, ConditionBeanSetupper<Mst権限マスタCB> conditionBeanSetupper) {
+            AssertObjectNotNull("kbn職位区分", kbn職位区分); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
+            LoadMst権限マスタList(xnewLRLs<Kbn職位区分>(kbn職位区分), conditionBeanSetupper);
+        }
+        public virtual void LoadMst権限マスタList(IList<Kbn職位区分> kbn職位区分List, ConditionBeanSetupper<Mst権限マスタCB> conditionBeanSetupper) {
+            AssertObjectNotNull("kbn職位区分List", kbn職位区分List); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
+            LoadMst権限マスタList(kbn職位区分List, new LoadReferrerOption<Mst権限マスタCB, Mst権限マスタ>().xinit(conditionBeanSetupper));
+        }
+        public virtual void LoadMst権限マスタList(Kbn職位区分 kbn職位区分, LoadReferrerOption<Mst権限マスタCB, Mst権限マスタ> loadReferrerOption) {
+            AssertObjectNotNull("kbn職位区分", kbn職位区分); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
+            LoadMst権限マスタList(xnewLRLs<Kbn職位区分>(kbn職位区分), loadReferrerOption);
+        }
+        public virtual void LoadMst権限マスタList(IList<Kbn職位区分> kbn職位区分List, LoadReferrerOption<Mst権限マスタCB, Mst権限マスタ> loadReferrerOption) {
+            AssertObjectNotNull("kbn職位区分List", kbn職位区分List); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
+            if (kbn職位区分List.Count == 0) { return; }
+            Mst権限マスタBhv referrerBhv = xgetBSFLR().Select<Mst権限マスタBhv>();
+            HelpLoadReferrerInternally<Kbn職位区分, String, Mst権限マスタCB, Mst権限マスタ>
+                    (kbn職位区分List, loadReferrerOption, new MyInternalLoadMst権限マスタListCallback(referrerBhv));
+        }
+        protected class MyInternalLoadMst権限マスタListCallback : InternalLoadReferrerCallback<Kbn職位区分, String, Mst権限マスタCB, Mst権限マスタ> {
+            protected Mst権限マスタBhv referrerBhv;
+            public MyInternalLoadMst権限マスタListCallback(Mst権限マスタBhv referrerBhv) { this.referrerBhv = referrerBhv; }
+            public String getPKVal(Kbn職位区分 e) { return e.Code; }
+            public void setRfLs(Kbn職位区分 e, IList<Mst権限マスタ> ls) { e.Mst権限マスタList = ls; }
+            public Mst権限マスタCB newMyCB() { return referrerBhv.NewMyConditionBean(); }
+            public void qyFKIn(Mst権限マスタCB cb, IList<String> ls) { cb.Query().Set職位code_InScope(ls); }
+            public void qyOdFKAsc(Mst権限マスタCB cb) { cb.Query().AddOrderBy_職位code_Asc(); }
+            public void spFKCol(Mst権限マスタCB cb) { cb.Specify().Column職位code(); }
+            public IList<Mst権限マスタ> selRfLs(Mst権限マスタCB cb) { return referrerBhv.SelectList(cb); }
+            public String getFKVal(Mst権限マスタ e) { return e.職位code; }
+            public void setlcEt(Mst権限マスタ re, Kbn職位区分 be) { re.Kbn職位区分 = be; }
         }
         #endregion
 

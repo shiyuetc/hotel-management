@@ -16,7 +16,7 @@ using Dbflute.BsEntity.Dbm;
 namespace Dbflute.ExEntity {
 
     /// <summary>
-    /// The entity of mstメニュー権限マスタ as TABLE. (partial class for auto-generation)
+    /// The entity of mst権限マスタ as TABLE. (partial class for auto-generation)
     /// <![CDATA[
     /// [primary-key]
     ///     id
@@ -47,9 +47,9 @@ namespace Dbflute.ExEntity {
     /// ]]>
     /// Author: DBFlute(AutoGenerator)
     /// </summary>
-    [Seasar.Dao.Attrs.Table("mstメニュー権限マスタ")]
+    [Seasar.Dao.Attrs.Table("mst権限マスタ")]
     [System.Serializable]
-    public partial class Mstメニュー権限マスタ : Entity {
+    public partial class Mst権限マスタ : Entity {
 
         // ===============================================================================
         //                                                                       Attribute
@@ -70,8 +70,8 @@ namespace Dbflute.ExEntity {
         // ===============================================================================
         //                                                                      Table Name
         //                                                                      ==========
-        public String TableDbName { get { return "mstメニュー権限マスタ"; } }
-        public String TablePropertyName { get { return "Mstメニュー権限マスタ"; } }
+        public String TableDbName { get { return "mst権限マスタ"; } }
+        public String TablePropertyName { get { return "Mst権限マスタ"; } }
 
         // ===============================================================================
         //                                                                          DBMeta
@@ -258,8 +258,8 @@ namespace Dbflute.ExEntity {
         //                                                                  ==============
         #region Basic Override
         public override bool Equals(Object other) {
-            if (other == null || !(other is Mstメニュー権限マスタ)) { return false; }
-            Mstメニュー権限マスタ otherEntity = (Mstメニュー権限マスタ)other;
+            if (other == null || !(other is Mst権限マスタ)) { return false; }
+            Mst権限マスタ otherEntity = (Mst権限マスタ)other;
             if (!xSV(this.Id, otherEntity.Id)) { return false; }
             return true;
         }
@@ -280,7 +280,7 @@ namespace Dbflute.ExEntity {
         }
 
         public override String ToString() {
-            return "Mstメニュー権限マスタ:" + BuildColumnString() + BuildRelationString();
+            return "Mst権限マスタ:" + BuildColumnString() + BuildRelationString();
         }
 
         public virtual String ToStringWithRelation() {

@@ -177,15 +177,15 @@ namespace Dbflute.CBean.BS {
             return new RAFunction<Dch従業員職位履歴台帳CB, Kbn職位区分CQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Dch従業員職位履歴台帳CB> subQuery, Kbn職位区分CQ cq, String aliasName)
                 { cq.xsderiveDch従業員職位履歴台帳List(function, subQuery, aliasName); });
         }
-        public RAFunction<Mstメニュー権限マスタCB, Kbn職位区分CQ> DerivedMstメニュー権限マスタList() {
-            if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return new RAFunction<Mstメニュー権限マスタCB, Kbn職位区分CQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Mstメニュー権限マスタCB> subQuery, Kbn職位区分CQ cq, String aliasName)
-                { cq.xsderiveMstメニュー権限マスタList(function, subQuery, aliasName); });
-        }
         public RAFunction<Mst従業員マスタCB, Kbn職位区分CQ> DerivedMst従業員マスタList() {
             if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
             return new RAFunction<Mst従業員マスタCB, Kbn職位区分CQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Mst従業員マスタCB> subQuery, Kbn職位区分CQ cq, String aliasName)
                 { cq.xsderiveMst従業員マスタList(function, subQuery, aliasName); });
+        }
+        public RAFunction<Mst権限マスタCB, Kbn職位区分CQ> DerivedMst権限マスタList() {
+            if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
+            return new RAFunction<Mst権限マスタCB, Kbn職位区分CQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Mst権限マスタCB> subQuery, Kbn職位区分CQ cq, String aliasName)
+                { cq.xsderiveMst権限マスタList(function, subQuery, aliasName); });
         }
     }
 }

@@ -14,62 +14,54 @@ using Dbflute.CBean;
 
 namespace Dbflute.BsEntity.Dbm {
 
-    public class Mstメニュー権限マスタDbm : AbstractDBMeta {
+    public class DmyプロシージャDbm : AbstractDBMeta {
 
-        public static readonly Type ENTITY_TYPE = typeof(Mstメニュー権限マスタ);
+        public static readonly Type ENTITY_TYPE = typeof(Dmyプロシージャ);
 
-        private static readonly Mstメニュー権限マスタDbm _instance = new Mstメニュー権限マスタDbm();
-        private Mstメニュー権限マスタDbm() {
+        private static readonly DmyプロシージャDbm _instance = new DmyプロシージャDbm();
+        private DmyプロシージャDbm() {
             InitializeColumnInfo();
             InitializeColumnInfoList();
             InitializeEntityPropertySetupper();
         }
-        public static Mstメニュー権限マスタDbm GetInstance() {
+        public static DmyプロシージャDbm GetInstance() {
             return _instance;
         }
 
         // ===============================================================================
         //                                                                      Table Info
         //                                                                      ==========
-        public override String TableDbName { get { return "mstメニュー権限マスタ"; } }
-        public override String TablePropertyName { get { return "Mstメニュー権限マスタ"; } }
-        public override String TableSqlName { get { return "mstメニュー権限マスタ"; } }
+        public override String TableDbName { get { return "dmyプロシージャ"; } }
+        public override String TablePropertyName { get { return "Dmyプロシージャ"; } }
+        public override String TableSqlName { get { return "dmyプロシージャ"; } }
 
         // ===============================================================================
         //                                                                     Column Info
         //                                                                     ===========
-        protected ColumnInfo _columnId;
-        protected ColumnInfo _column職位code;
-        protected ColumnInfo _column制御画面id;
+        protected ColumnInfo _columnDummy;
 
-        public ColumnInfo ColumnId { get { return _columnId; } }
-        public ColumnInfo Column職位code { get { return _column職位code; } }
-        public ColumnInfo Column制御画面id { get { return _column制御画面id; } }
+        public ColumnInfo ColumnDummy { get { return _columnDummy; } }
 
         protected void InitializeColumnInfo() {
-            _columnId = cci("id", "id", null, null, true, "Id", typeof(long?), true, "bigserial", 19, 0, false, OptimisticLockType.NONE, null, null, null);
-            _column職位code = cci("職位code", "職位code", null, null, true, "職位code", typeof(String), false, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, "kbn職位区分", null);
-            _column制御画面id = cci("制御画面id", "制御画面id", null, null, true, "制御画面id", typeof(long?), false, "int8", 19, 0, false, OptimisticLockType.NONE, null, "mst制御画面マスタ", null);
+            _columnDummy = cci("dummy", "dummy", null, null, false, "Dummy", typeof(String), false, "bpchar", 1, 0, false, OptimisticLockType.NONE, null, null, null);
         }
 
         protected void InitializeColumnInfoList() {
             _columnInfoList = new ArrayList<ColumnInfo>();
-            _columnInfoList.add(ColumnId);
-            _columnInfoList.add(Column職位code);
-            _columnInfoList.add(Column制御画面id);
+            _columnInfoList.add(ColumnDummy);
         }
 
         // ===============================================================================
         //                                                                     Unique Info
         //                                                                     ===========
         public override UniqueInfo PrimaryUniqueInfo { get {
-            return cpui(ColumnId);
+            throw new NotSupportedException("The table does not have primary key: " + TableDbName);
         }}
 
         // -------------------------------------------------
         //                                   Primary Element
         //                                   ---------------
-        public override bool HasPrimaryKey { get { return true; } }
+        public override bool HasPrimaryKey { get { return false; } }
         public override bool HasCompoundPrimaryKey { get { return false; } }
 
         // ===============================================================================
@@ -78,16 +70,6 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                   Foreign Element
         //                                   ---------------
-        public ForeignInfo ForeignMst制御画面マスタ { get {
-            Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(Column制御画面id, Mst制御画面マスタDbm.GetInstance().ColumnId);
-            return cfi("Mst制御画面マスタ", this, Mst制御画面マスタDbm.GetInstance(), map, 0, false, false);
-        }}
-        public ForeignInfo ForeignKbn職位区分 { get {
-            Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(Column職位code, Kbn職位区分Dbm.GetInstance().ColumnCode);
-            return cfi("Kbn職位区分", this, Kbn職位区分Dbm.GetInstance(), map, 1, false, false);
-        }}
 
 
         // -------------------------------------------------
@@ -97,11 +79,6 @@ namespace Dbflute.BsEntity.Dbm {
         // ===============================================================================
         //                                                                    Various Info
         //                                                                    ============
-        public override bool HasSequence { get { return true; } }
-        public override String SequenceName { get { return "mst002_id_seq"; } }
-        public override String SequenceNextValSql { get { return "select nextval ('mst002_id_seq')"; } }
-        public override int? SequenceIncrementSize { get { return 1; } }
-        public override int? SequenceCacheSize { get { return null; } }
         public override bool HasCommonColumn { get { return false; } }
 
         // ===============================================================================
@@ -112,28 +89,22 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                             Table
         //                                             -----
-        public static readonly String TABLE_DB_NAME = "mstメニュー権限マスタ";
-        public static readonly String TABLE_PROPERTY_NAME = "Mstメニュー権限マスタ";
+        public static readonly String TABLE_DB_NAME = "dmyプロシージャ";
+        public static readonly String TABLE_PROPERTY_NAME = "Dmyプロシージャ";
 
         // -------------------------------------------------
         //                                    Column DB-Name
         //                                    --------------
-        public static readonly String DB_NAME_id = "id";
-        public static readonly String DB_NAME_職位code = "職位code";
-        public static readonly String DB_NAME_制御画面id = "制御画面id";
+        public static readonly String DB_NAME_dummy = "dummy";
 
         // -------------------------------------------------
         //                              Column Property-Name
         //                              --------------------
-        public static readonly String PROPERTY_NAME_id = "Id";
-        public static readonly String PROPERTY_NAME_職位code = "職位code";
-        public static readonly String PROPERTY_NAME_制御画面id = "制御画面id";
+        public static readonly String PROPERTY_NAME_dummy = "Dummy";
 
         // -------------------------------------------------
         //                                      Foreign Name
         //                                      ------------
-        public static readonly String FOREIGN_PROPERTY_NAME_Mst制御画面マスタ = "Mst制御画面マスタ";
-        public static readonly String FOREIGN_PROPERTY_NAME_Kbn職位区分 = "Kbn職位区分";
         // -------------------------------------------------
         //                                     Referrer Name
         //                                     -------------
@@ -144,22 +115,18 @@ namespace Dbflute.BsEntity.Dbm {
         protected static readonly Map<String, String> _dbNamePropertyNameKeyToLowerMap;
         protected static readonly Map<String, String> _propertyNameDbNameKeyToLowerMap;
 
-        static Mstメニュー権限マスタDbm() {
+        static DmyプロシージャDbm() {
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_DB_NAME.ToLower(), TABLE_PROPERTY_NAME);
-                map.put(DB_NAME_id.ToLower(), PROPERTY_NAME_id);
-                map.put(DB_NAME_職位code.ToLower(), PROPERTY_NAME_職位code);
-                map.put(DB_NAME_制御画面id.ToLower(), PROPERTY_NAME_制御画面id);
+                map.put(DB_NAME_dummy.ToLower(), PROPERTY_NAME_dummy);
                 _dbNamePropertyNameKeyToLowerMap = map;
             }
 
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_PROPERTY_NAME.ToLower(), TABLE_DB_NAME);
-                map.put(PROPERTY_NAME_id.ToLower(), DB_NAME_id);
-                map.put(PROPERTY_NAME_職位code.ToLower(), DB_NAME_職位code);
-                map.put(PROPERTY_NAME_制御画面id.ToLower(), DB_NAME_制御画面id);
+                map.put(PROPERTY_NAME_dummy.ToLower(), DB_NAME_dummy);
                 _propertyNameDbNameKeyToLowerMap = map;
             }
         }
@@ -177,10 +144,10 @@ namespace Dbflute.BsEntity.Dbm {
         // ===============================================================================
         //                                                                       Type Name
         //                                                                       =========
-        public override String EntityTypeName { get { return "Dbflute.ExEntity.Mstメニュー権限マスタ"; } }
-        public override String DaoTypeName { get { return "Dbflute.ExDao.Mstメニュー権限マスタDao"; } }
-        public override String ConditionBeanTypeName { get { return "Dbflute.CBean.Mstメニュー権限マスタCB"; } }
-        public override String BehaviorTypeName { get { return "Dbflute.ExBhv.Mstメニュー権限マスタBhv"; } }
+        public override String EntityTypeName { get { return "Dbflute.ExEntity.Dmyプロシージャ"; } }
+        public override String DaoTypeName { get { return "Dbflute.ExDao.DmyプロシージャDao"; } }
+        public override String ConditionBeanTypeName { get { return "Dbflute.CBean.DmyプロシージャCB"; } }
+        public override String BehaviorTypeName { get { return "Dbflute.ExBhv.DmyプロシージャBhv"; } }
 
         // ===============================================================================
         //                                                                     Object Type
@@ -191,19 +158,17 @@ namespace Dbflute.BsEntity.Dbm {
         //                                                                 Object Instance
         //                                                                 ===============
         public override Entity NewEntity() { return NewMyEntity(); }
-        public Mstメニュー権限マスタ NewMyEntity() { return new Mstメニュー権限マスタ(); }
+        public Dmyプロシージャ NewMyEntity() { return new Dmyプロシージャ(); }
         public override ConditionBean NewConditionBean() { return NewMyConditionBean(); }
-        public Mstメニュー権限マスタCB NewMyConditionBean() { return new Mstメニュー権限マスタCB(); }
+        public DmyプロシージャCB NewMyConditionBean() { return new DmyプロシージャCB(); }
 
         // ===============================================================================
         //                                                           Entity Property Setup
         //                                                           =====================
-        protected Map<String, EntityPropertySetupper<Mstメニュー権限マスタ>> _entityPropertySetupperMap = new LinkedHashMap<String, EntityPropertySetupper<Mstメニュー権限マスタ>>();
+        protected Map<String, EntityPropertySetupper<Dmyプロシージャ>> _entityPropertySetupperMap = new LinkedHashMap<String, EntityPropertySetupper<Dmyプロシージャ>>();
 
         protected void InitializeEntityPropertySetupper() {
-            RegisterEntityPropertySetupper("id", "Id", new EntityPropertyIdSetupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("職位code", "職位code", new EntityProperty職位codeSetupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("制御画面id", "制御画面id", new EntityProperty制御画面idSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("dummy", "Dummy", new EntityPropertyDummySetupper(), _entityPropertySetupperMap);
         }
 
         public override bool HasEntityPropertySetupper(String propertyName) {
@@ -211,18 +176,12 @@ namespace Dbflute.BsEntity.Dbm {
         }
 
         public override void SetupEntityProperty(String propertyName, Object entity, Object value) {
-            EntityPropertySetupper<Mstメニュー権限マスタ> callback = _entityPropertySetupperMap.get(propertyName);
-            callback.Setup((Mstメニュー権限マスタ)entity, value);
+            EntityPropertySetupper<Dmyプロシージャ> callback = _entityPropertySetupperMap.get(propertyName);
+            callback.Setup((Dmyプロシージャ)entity, value);
         }
 
-        public class EntityPropertyIdSetupper : EntityPropertySetupper<Mstメニュー権限マスタ> {
-            public void Setup(Mstメニュー権限マスタ entity, Object value) { entity.Id = (value != null) ? (long?)value : null; }
-        }
-        public class EntityProperty職位codeSetupper : EntityPropertySetupper<Mstメニュー権限マスタ> {
-            public void Setup(Mstメニュー権限マスタ entity, Object value) { entity.職位code = (value != null) ? (String)value : null; }
-        }
-        public class EntityProperty制御画面idSetupper : EntityPropertySetupper<Mstメニュー権限マスタ> {
-            public void Setup(Mstメニュー権限マスタ entity, Object value) { entity.制御画面id = (value != null) ? (long?)value : null; }
+        public class EntityPropertyDummySetupper : EntityPropertySetupper<Dmyプロシージャ> {
+            public void Setup(Dmyプロシージャ entity, Object value) { entity.Dummy = (value != null) ? (String)value : null; }
         }
     }
 }

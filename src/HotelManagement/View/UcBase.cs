@@ -1,10 +1,12 @@
-﻿using System.Windows.Forms;
+﻿using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace HotelManagement.View
 {
     /// <summary>
     /// ベースフォームクラス
     /// </summary>
+    [DesignTimeVisible(false)]
     public partial class UcBase : UserControl
     {
         #region メンバ変数

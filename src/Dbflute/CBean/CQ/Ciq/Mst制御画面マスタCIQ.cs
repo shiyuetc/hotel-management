@@ -68,31 +68,44 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        public override String keepId_ExistsSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
+        public override String keepId_ExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
             throw new SystemException("ExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepId_ExistsSubQuery_Mstメニュー権限マスタList(subQuery);
+            // _myCQ.keepId_ExistsSubQuery_Mst権限マスタList(subQuery);
         }
 
-        public override String keepId_NotExistsSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
+        public override String keepId_NotExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
             throw new SystemException("NotExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepId_NotExistsSubQuery_Mstメニュー権限マスタList(subQuery);
+            // _myCQ.keepId_NotExistsSubQuery_Mst権限マスタList(subQuery);
         }
 
-        public override String keepId_InScopeSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
-            return _myCQ.keepId_InScopeSubQuery_Mstメニュー権限マスタList(subQuery);
+        public override String keepId_InScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
+            return _myCQ.keepId_InScopeSubQuery_Mst権限マスタList(subQuery);
         }
 
-        public override String keepId_NotInScopeSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
-            return _myCQ.keepId_NotInScopeSubQuery_Mstメニュー権限マスタList(subQuery);
+        public override String keepId_NotInScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
+            return _myCQ.keepId_NotInScopeSubQuery_Mst権限マスタList(subQuery);
         }
-        public override String keepId_SpecifyDerivedReferrer_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
+        public override String keepId_SpecifyDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery) {
             throw new UnsupportedOperationException("(Specify)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepId_QueryDerivedReferrer_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery) {
+        public override String keepId_QueryDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepId_QueryDerivedReferrer_Mstメニュー権限マスタListParameter(Object parameterValue) {
+        public override String keepId_QueryDerivedReferrer_Mst権限マスタListParameter(Object parameterValue) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
+        }
+
+        protected override ConditionValue getCValueメニューcode() {
+            return _myCQ.メニューcode;
+        }
+
+
+        public override String keepメニューcode_InScopeSubQuery_Kbnメニュー区分(Kbnメニュー区分CQ subQuery) {
+            return _myCQ.keepメニューcode_InScopeSubQuery_Kbnメニュー区分(subQuery);
+        }
+
+        public override String keepメニューcode_NotInScopeSubQuery_Kbnメニュー区分(Kbnメニュー区分CQ subQuery) {
+            return _myCQ.keepメニューcode_NotInScopeSubQuery_Kbnメニュー区分(subQuery);
         }
 
         protected override ConditionValue getCValue画面名() {

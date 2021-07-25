@@ -47,7 +47,7 @@ namespace Dbflute.BsEntity.Dbm {
         public ColumnInfo Column名称英字 { get { return _column名称英字; } }
 
         protected void InitializeColumnInfo() {
-            _columnCode = cci("code", "code", null, null, true, "Code", typeof(String), true, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, null, "dch従業員職位履歴台帳List,mstメニュー権限マスタList,mst従業員マスタList");
+            _columnCode = cci("code", "code", null, null, true, "Code", typeof(String), true, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, null, "dch従業員職位履歴台帳List,mst従業員マスタList,mst権限マスタList");
             _column名称 = cci("名称", "名称", null, null, true, "名称", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
             _column名称英字 = cci("名称_英字", "名称_英字", null, null, true, "名称英字", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
         }
@@ -88,15 +88,15 @@ namespace Dbflute.BsEntity.Dbm {
             map.put(ColumnCode, Dch従業員職位履歴台帳Dbm.GetInstance().Column職位code);
             return cri("Dch従業員職位履歴台帳List", this, Dch従業員職位履歴台帳Dbm.GetInstance(), map, false);
         }}
-        public ReferrerInfo ReferrerMstメニュー権限マスタList { get {
-            Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(ColumnCode, Mstメニュー権限マスタDbm.GetInstance().Column職位code);
-            return cri("Mstメニュー権限マスタList", this, Mstメニュー権限マスタDbm.GetInstance(), map, false);
-        }}
         public ReferrerInfo ReferrerMst従業員マスタList { get {
             Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
             map.put(ColumnCode, Mst従業員マスタDbm.GetInstance().Column職位code);
             return cri("Mst従業員マスタList", this, Mst従業員マスタDbm.GetInstance(), map, false);
+        }}
+        public ReferrerInfo ReferrerMst権限マスタList { get {
+            Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
+            map.put(ColumnCode, Mst権限マスタDbm.GetInstance().Column職位code);
+            return cri("Mst権限マスタList", this, Mst権限マスタDbm.GetInstance(), map, false);
         }}
 
         // ===============================================================================
@@ -136,8 +136,8 @@ namespace Dbflute.BsEntity.Dbm {
         //                                     Referrer Name
         //                                     -------------
         public static readonly String REFERRER_PROPERTY_NAME_Dch従業員職位履歴台帳List = "Dch従業員職位履歴台帳List";
-        public static readonly String REFERRER_PROPERTY_NAME_Mstメニュー権限マスタList = "Mstメニュー権限マスタList";
         public static readonly String REFERRER_PROPERTY_NAME_Mst従業員マスタList = "Mst従業員マスタList";
+        public static readonly String REFERRER_PROPERTY_NAME_Mst権限マスタList = "Mst権限マスタList";
 
         // -------------------------------------------------
         //                               DB-Property Mapping

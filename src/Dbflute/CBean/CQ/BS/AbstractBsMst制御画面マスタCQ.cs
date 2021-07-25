@@ -28,63 +28,170 @@ namespace Dbflute.CBean.CQ.BS {
         public void SetId_LessEqual(long? v) { regId(CK_LE, v); }
         public void SetId_InScope(IList<long?> ls) { regINS<long?>(CK_INS, cTL<long?>(ls), getCValueId(), "id"); }
         public void SetId_NotInScope(IList<long?> ls) { regINS<long?>(CK_NINS, cTL<long?>(ls), getCValueId(), "id"); }
-        public void ExistsMstメニュー権限マスタList(SubQuery<Mstメニュー権限マスタCB> subQuery) {
-            assertObjectNotNull("subQuery<Mstメニュー権限マスタCB>", subQuery);
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_ExistsSubQuery_Mstメニュー権限マスタList(cb.Query());
+        public void ExistsMst権限マスタList(SubQuery<Mst権限マスタCB> subQuery) {
+            assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
+            Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepId_ExistsSubQuery_Mst権限マスタList(cb.Query());
             registerExistsSubQuery(cb.Query(), "id", "制御画面id", subQueryPropertyName);
         }
-        public abstract String keepId_ExistsSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery);
-        public void NotExistsMstメニュー権限マスタList(SubQuery<Mstメニュー権限マスタCB> subQuery) {
-            assertObjectNotNull("subQuery<Mstメニュー権限マスタCB>", subQuery);
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_NotExistsSubQuery_Mstメニュー権限マスタList(cb.Query());
+        public abstract String keepId_ExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery);
+        public void NotExistsMst権限マスタList(SubQuery<Mst権限マスタCB> subQuery) {
+            assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
+            Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepId_NotExistsSubQuery_Mst権限マスタList(cb.Query());
             registerNotExistsSubQuery(cb.Query(), "id", "制御画面id", subQueryPropertyName);
         }
-        public abstract String keepId_NotExistsSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery);
-        public void InScopeMstメニュー権限マスタList(SubQuery<Mstメニュー権限マスタCB> subQuery) {
-            assertObjectNotNull("subQuery<Mstメニュー権限マスタCB>", subQuery);
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_InScopeSubQuery_Mstメニュー権限マスタList(cb.Query());
+        public abstract String keepId_NotExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery);
+        public void InScopeMst権限マスタList(SubQuery<Mst権限マスタCB> subQuery) {
+            assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
+            Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepId_InScopeSubQuery_Mst権限マスタList(cb.Query());
             registerInScopeSubQuery(cb.Query(), "id", "制御画面id", subQueryPropertyName);
         }
-        public abstract String keepId_InScopeSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery);
-        public void NotInScopeMstメニュー権限マスタList(SubQuery<Mstメニュー権限マスタCB> subQuery) {
-            assertObjectNotNull("subQuery<Mstメニュー権限マスタCB>", subQuery);
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_NotInScopeSubQuery_Mstメニュー権限マスタList(cb.Query());
+        public abstract String keepId_InScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery);
+        public void NotInScopeMst権限マスタList(SubQuery<Mst権限マスタCB> subQuery) {
+            assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
+            Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepId_NotInScopeSubQuery_Mst権限マスタList(cb.Query());
             registerNotInScopeSubQuery(cb.Query(), "id", "制御画面id", subQueryPropertyName);
         }
-        public abstract String keepId_NotInScopeSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery);
-        public void xsderiveMstメニュー権限マスタList(String function, SubQuery<Mstメニュー権限マスタCB> subQuery, String aliasName) {
-            assertObjectNotNull("subQuery<Mstメニュー権限マスタCB>", subQuery);
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_SpecifyDerivedReferrer_Mstメニュー権限マスタList(cb.Query());
+        public abstract String keepId_NotInScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery);
+        public void xsderiveMst権限マスタList(String function, SubQuery<Mst権限マスタCB> subQuery, String aliasName) {
+            assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
+            Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepId_SpecifyDerivedReferrer_Mst権限マスタList(cb.Query());
             registerSpecifyDerivedReferrer(function, cb.Query(), "id", "制御画面id", subQueryPropertyName, aliasName);
         }
-        abstract public String keepId_SpecifyDerivedReferrer_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery);
+        abstract public String keepId_SpecifyDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery);
 
-        public QDRFunction<Mstメニュー権限マスタCB> DerivedMstメニュー権限マスタList() {
-            return xcreateQDRFunctionMstメニュー権限マスタList();
+        public QDRFunction<Mst権限マスタCB> DerivedMst権限マスタList() {
+            return xcreateQDRFunctionMst権限マスタList();
         }
-        protected QDRFunction<Mstメニュー権限マスタCB> xcreateQDRFunctionMstメニュー権限マスタList() {
-            return new QDRFunction<Mstメニュー権限マスタCB>(delegate(String function, SubQuery<Mstメニュー権限マスタCB> subQuery, String operand, Object value) {
-                xqderiveMstメニュー権限マスタList(function, subQuery, operand, value);
+        protected QDRFunction<Mst権限マスタCB> xcreateQDRFunctionMst権限マスタList() {
+            return new QDRFunction<Mst権限マスタCB>(delegate(String function, SubQuery<Mst権限マスタCB> subQuery, String operand, Object value) {
+                xqderiveMst権限マスタList(function, subQuery, operand, value);
             });
         }
-        public void xqderiveMstメニュー権限マスタList(String function, SubQuery<Mstメニュー権限マスタCB> subQuery, String operand, Object value) {
-            assertObjectNotNull("subQuery<Mstメニュー権限マスタCB>", subQuery);
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_QueryDerivedReferrer_Mstメニュー権限マスタList(cb.Query()); // for saving query-value.
-            String parameterPropertyName = keepId_QueryDerivedReferrer_Mstメニュー権限マスタListParameter(value);
+        public void xqderiveMst権限マスタList(String function, SubQuery<Mst権限マスタCB> subQuery, String operand, Object value) {
+            assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
+            Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepId_QueryDerivedReferrer_Mst権限マスタList(cb.Query()); // for saving query-value.
+            String parameterPropertyName = keepId_QueryDerivedReferrer_Mst権限マスタListParameter(value);
             registerQueryDerivedReferrer(function, cb.Query(), "id", "制御画面id", subQueryPropertyName, operand, value, parameterPropertyName);
         }
-        public abstract String keepId_QueryDerivedReferrer_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery);
-        public abstract String keepId_QueryDerivedReferrer_Mstメニュー権限マスタListParameter(Object parameterValue);
+        public abstract String keepId_QueryDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery);
+        public abstract String keepId_QueryDerivedReferrer_Mst権限マスタListParameter(Object parameterValue);
         public void SetId_IsNull() { regId(CK_ISN, DUMMY_OBJECT); }
         public void SetId_IsNotNull() { regId(CK_ISNN, DUMMY_OBJECT); }
         protected void regId(ConditionKey k, Object v) { regQ(k, v, getCValueId(), "id"); }
         protected abstract ConditionValue getCValueId();
+
+        public void Setメニューcode_Equal(String v) { DoSetメニューcode_Equal(fRES(v)); }
+        /// <summary>
+        /// Set the value of ログアウト of メニューcode as equal. { = }
+        /// ログアウト: 9999
+        /// </summary>
+        public void Setメニューcode_Equal_ログアウト() {
+            DoSetメニューcode_Equal(CDef.メニュー区分.ログアウト.Code);
+        }
+        /// <summary>
+        /// Set the value of 予約管理 of メニューcode as equal. { = }
+        /// 予約管理: 10
+        /// </summary>
+        public void Setメニューcode_Equal_予約管理() {
+            DoSetメニューcode_Equal(CDef.メニュー区分.予約管理.Code);
+        }
+        /// <summary>
+        /// Set the value of 宿泊履歴 of メニューcode as equal. { = }
+        /// 宿泊履歴: 20
+        /// </summary>
+        public void Setメニューcode_Equal_宿泊履歴() {
+            DoSetメニューcode_Equal(CDef.メニュー区分.宿泊履歴.Code);
+        }
+        /// <summary>
+        /// Set the value of 顧客管理 of メニューcode as equal. { = }
+        /// 顧客管理: 30
+        /// </summary>
+        public void Setメニューcode_Equal_顧客管理() {
+            DoSetメニューcode_Equal(CDef.メニュー区分.顧客管理.Code);
+        }
+        /// <summary>
+        /// Set the value of 従業員管理 of メニューcode as equal. { = }
+        /// 従業員管理: 40
+        /// </summary>
+        public void Setメニューcode_Equal_従業員管理() {
+            DoSetメニューcode_Equal(CDef.メニュー区分.従業員管理.Code);
+        }
+        /// <summary>
+        /// Set the value of 客室管理 of メニューcode as equal. { = }
+        /// 客室管理: 50
+        /// </summary>
+        public void Setメニューcode_Equal_客室管理() {
+            DoSetメニューcode_Equal(CDef.メニュー区分.客室管理.Code);
+        }
+        protected void DoSetメニューcode_Equal(String v) { regメニューcode(CK_EQ, v); }
+        public void Setメニューcode_NotEqual(String v) { DoSetメニューcode_NotEqual(fRES(v)); }
+        /// <summary>
+        /// Set the value of ログアウト of メニューcode as notEqual. { &lt;&gt; }
+        /// ログアウト: 9999
+        /// </summary>
+        public void Setメニューcode_NotEqual_ログアウト() {
+            DoSetメニューcode_NotEqual(CDef.メニュー区分.ログアウト.Code);
+        }
+        /// <summary>
+        /// Set the value of 予約管理 of メニューcode as notEqual. { &lt;&gt; }
+        /// 予約管理: 10
+        /// </summary>
+        public void Setメニューcode_NotEqual_予約管理() {
+            DoSetメニューcode_NotEqual(CDef.メニュー区分.予約管理.Code);
+        }
+        /// <summary>
+        /// Set the value of 宿泊履歴 of メニューcode as notEqual. { &lt;&gt; }
+        /// 宿泊履歴: 20
+        /// </summary>
+        public void Setメニューcode_NotEqual_宿泊履歴() {
+            DoSetメニューcode_NotEqual(CDef.メニュー区分.宿泊履歴.Code);
+        }
+        /// <summary>
+        /// Set the value of 顧客管理 of メニューcode as notEqual. { &lt;&gt; }
+        /// 顧客管理: 30
+        /// </summary>
+        public void Setメニューcode_NotEqual_顧客管理() {
+            DoSetメニューcode_NotEqual(CDef.メニュー区分.顧客管理.Code);
+        }
+        /// <summary>
+        /// Set the value of 従業員管理 of メニューcode as notEqual. { &lt;&gt; }
+        /// 従業員管理: 40
+        /// </summary>
+        public void Setメニューcode_NotEqual_従業員管理() {
+            DoSetメニューcode_NotEqual(CDef.メニュー区分.従業員管理.Code);
+        }
+        /// <summary>
+        /// Set the value of 客室管理 of メニューcode as notEqual. { &lt;&gt; }
+        /// 客室管理: 50
+        /// </summary>
+        public void Setメニューcode_NotEqual_客室管理() {
+            DoSetメニューcode_NotEqual(CDef.メニュー区分.客室管理.Code);
+        }
+        protected void DoSetメニューcode_NotEqual(String v) { regメニューcode(CK_NES, v); }
+        public void Setメニューcode_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValueメニューcode(), "メニューcode"); }
+        public void Setメニューcode_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValueメニューcode(), "メニューcode"); }
+        public void InScopeKbnメニュー区分(SubQuery<Kbnメニュー区分CB> subQuery) {
+            assertObjectNotNull("subQuery<Kbnメニュー区分CB>", subQuery);
+            Kbnメニュー区分CB cb = new Kbnメニュー区分CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepメニューcode_InScopeSubQuery_Kbnメニュー区分(cb.Query());
+            registerInScopeSubQuery(cb.Query(), "メニューcode", "code", subQueryPropertyName);
+        }
+        public abstract String keepメニューcode_InScopeSubQuery_Kbnメニュー区分(Kbnメニュー区分CQ subQuery);
+        public void NotInScopeKbnメニュー区分(SubQuery<Kbnメニュー区分CB> subQuery) {
+            assertObjectNotNull("subQuery<Kbnメニュー区分CB>", subQuery);
+            Kbnメニュー区分CB cb = new Kbnメニュー区分CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepメニューcode_NotInScopeSubQuery_Kbnメニュー区分(cb.Query());
+            registerNotInScopeSubQuery(cb.Query(), "メニューcode", "code", subQueryPropertyName);
+        }
+        public abstract String keepメニューcode_NotInScopeSubQuery_Kbnメニュー区分(Kbnメニュー区分CQ subQuery);
+        protected void regメニューcode(ConditionKey k, Object v) { regQ(k, v, getCValueメニューcode(), "メニューcode"); }
+        protected abstract ConditionValue getCValueメニューcode();
 
         public void Set画面名_Equal(String v) { DoSet画面名_Equal(fRES(v)); }
         protected void DoSet画面名_Equal(String v) { reg画面名(CK_EQ, v); }

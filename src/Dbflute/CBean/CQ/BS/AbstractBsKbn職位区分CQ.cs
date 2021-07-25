@@ -89,13 +89,6 @@ namespace Dbflute.CBean.CQ.BS {
             registerExistsSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
         }
         public abstract String keepCode_ExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
-        public void ExistsMstメニュー権限マスタList(SubQuery<Mstメニュー権限マスタCB> subQuery) {
-            assertObjectNotNull("subQuery<Mstメニュー権限マスタCB>", subQuery);
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_ExistsSubQuery_Mstメニュー権限マスタList(cb.Query());
-            registerExistsSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
-        }
-        public abstract String keepCode_ExistsSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery);
         public void ExistsMst従業員マスタList(SubQuery<Mst従業員マスタCB> subQuery) {
             assertObjectNotNull("subQuery<Mst従業員マスタCB>", subQuery);
             Mst従業員マスタCB cb = new Mst従業員マスタCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
@@ -103,6 +96,13 @@ namespace Dbflute.CBean.CQ.BS {
             registerExistsSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
         }
         public abstract String keepCode_ExistsSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
+        public void ExistsMst権限マスタList(SubQuery<Mst権限マスタCB> subQuery) {
+            assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
+            Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepCode_ExistsSubQuery_Mst権限マスタList(cb.Query());
+            registerExistsSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
+        }
+        public abstract String keepCode_ExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery);
         public void NotExistsDch従業員職位履歴台帳List(SubQuery<Dch従業員職位履歴台帳CB> subQuery) {
             assertObjectNotNull("subQuery<Dch従業員職位履歴台帳CB>", subQuery);
             Dch従業員職位履歴台帳CB cb = new Dch従業員職位履歴台帳CB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
@@ -110,13 +110,6 @@ namespace Dbflute.CBean.CQ.BS {
             registerNotExistsSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
         }
         public abstract String keepCode_NotExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
-        public void NotExistsMstメニュー権限マスタList(SubQuery<Mstメニュー権限マスタCB> subQuery) {
-            assertObjectNotNull("subQuery<Mstメニュー権限マスタCB>", subQuery);
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_NotExistsSubQuery_Mstメニュー権限マスタList(cb.Query());
-            registerNotExistsSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
-        }
-        public abstract String keepCode_NotExistsSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery);
         public void NotExistsMst従業員マスタList(SubQuery<Mst従業員マスタCB> subQuery) {
             assertObjectNotNull("subQuery<Mst従業員マスタCB>", subQuery);
             Mst従業員マスタCB cb = new Mst従業員マスタCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
@@ -124,6 +117,13 @@ namespace Dbflute.CBean.CQ.BS {
             registerNotExistsSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
         }
         public abstract String keepCode_NotExistsSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
+        public void NotExistsMst権限マスタList(SubQuery<Mst権限マスタCB> subQuery) {
+            assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
+            Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepCode_NotExistsSubQuery_Mst権限マスタList(cb.Query());
+            registerNotExistsSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
+        }
+        public abstract String keepCode_NotExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery);
         public void InScopeDch従業員職位履歴台帳List(SubQuery<Dch従業員職位履歴台帳CB> subQuery) {
             assertObjectNotNull("subQuery<Dch従業員職位履歴台帳CB>", subQuery);
             Dch従業員職位履歴台帳CB cb = new Dch従業員職位履歴台帳CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
@@ -131,13 +131,6 @@ namespace Dbflute.CBean.CQ.BS {
             registerInScopeSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
         }
         public abstract String keepCode_InScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
-        public void InScopeMstメニュー権限マスタList(SubQuery<Mstメニュー権限マスタCB> subQuery) {
-            assertObjectNotNull("subQuery<Mstメニュー権限マスタCB>", subQuery);
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_InScopeSubQuery_Mstメニュー権限マスタList(cb.Query());
-            registerInScopeSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
-        }
-        public abstract String keepCode_InScopeSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery);
         public void InScopeMst従業員マスタList(SubQuery<Mst従業員マスタCB> subQuery) {
             assertObjectNotNull("subQuery<Mst従業員マスタCB>", subQuery);
             Mst従業員マスタCB cb = new Mst従業員マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
@@ -145,6 +138,13 @@ namespace Dbflute.CBean.CQ.BS {
             registerInScopeSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
         }
         public abstract String keepCode_InScopeSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
+        public void InScopeMst権限マスタList(SubQuery<Mst権限マスタCB> subQuery) {
+            assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
+            Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepCode_InScopeSubQuery_Mst権限マスタList(cb.Query());
+            registerInScopeSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
+        }
+        public abstract String keepCode_InScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery);
         public void NotInScopeDch従業員職位履歴台帳List(SubQuery<Dch従業員職位履歴台帳CB> subQuery) {
             assertObjectNotNull("subQuery<Dch従業員職位履歴台帳CB>", subQuery);
             Dch従業員職位履歴台帳CB cb = new Dch従業員職位履歴台帳CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
@@ -152,13 +152,6 @@ namespace Dbflute.CBean.CQ.BS {
             registerNotInScopeSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
         }
         public abstract String keepCode_NotInScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
-        public void NotInScopeMstメニュー権限マスタList(SubQuery<Mstメニュー権限マスタCB> subQuery) {
-            assertObjectNotNull("subQuery<Mstメニュー権限マスタCB>", subQuery);
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_NotInScopeSubQuery_Mstメニュー権限マスタList(cb.Query());
-            registerNotInScopeSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
-        }
-        public abstract String keepCode_NotInScopeSubQuery_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery);
         public void NotInScopeMst従業員マスタList(SubQuery<Mst従業員マスタCB> subQuery) {
             assertObjectNotNull("subQuery<Mst従業員マスタCB>", subQuery);
             Mst従業員マスタCB cb = new Mst従業員マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
@@ -166,6 +159,13 @@ namespace Dbflute.CBean.CQ.BS {
             registerNotInScopeSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
         }
         public abstract String keepCode_NotInScopeSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
+        public void NotInScopeMst権限マスタList(SubQuery<Mst権限マスタCB> subQuery) {
+            assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
+            Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepCode_NotInScopeSubQuery_Mst権限マスタList(cb.Query());
+            registerNotInScopeSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
+        }
+        public abstract String keepCode_NotInScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery);
         public void xsderiveDch従業員職位履歴台帳List(String function, SubQuery<Dch従業員職位履歴台帳CB> subQuery, String aliasName) {
             assertObjectNotNull("subQuery<Dch従業員職位履歴台帳CB>", subQuery);
             Dch従業員職位履歴台帳CB cb = new Dch従業員職位履歴台帳CB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
@@ -173,13 +173,6 @@ namespace Dbflute.CBean.CQ.BS {
             registerSpecifyDerivedReferrer(function, cb.Query(), "code", "職位code", subQueryPropertyName, aliasName);
         }
         abstract public String keepCode_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
-        public void xsderiveMstメニュー権限マスタList(String function, SubQuery<Mstメニュー権限マスタCB> subQuery, String aliasName) {
-            assertObjectNotNull("subQuery<Mstメニュー権限マスタCB>", subQuery);
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_SpecifyDerivedReferrer_Mstメニュー権限マスタList(cb.Query());
-            registerSpecifyDerivedReferrer(function, cb.Query(), "code", "職位code", subQueryPropertyName, aliasName);
-        }
-        abstract public String keepCode_SpecifyDerivedReferrer_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery);
         public void xsderiveMst従業員マスタList(String function, SubQuery<Mst従業員マスタCB> subQuery, String aliasName) {
             assertObjectNotNull("subQuery<Mst従業員マスタCB>", subQuery);
             Mst従業員マスタCB cb = new Mst従業員マスタCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
@@ -187,6 +180,13 @@ namespace Dbflute.CBean.CQ.BS {
             registerSpecifyDerivedReferrer(function, cb.Query(), "code", "職位code", subQueryPropertyName, aliasName);
         }
         abstract public String keepCode_SpecifyDerivedReferrer_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
+        public void xsderiveMst権限マスタList(String function, SubQuery<Mst権限マスタCB> subQuery, String aliasName) {
+            assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
+            Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepCode_SpecifyDerivedReferrer_Mst権限マスタList(cb.Query());
+            registerSpecifyDerivedReferrer(function, cb.Query(), "code", "職位code", subQueryPropertyName, aliasName);
+        }
+        abstract public String keepCode_SpecifyDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery);
 
         public QDRFunction<Dch従業員職位履歴台帳CB> DerivedDch従業員職位履歴台帳List() {
             return xcreateQDRFunctionDch従業員職位履歴台帳List();
@@ -206,24 +206,6 @@ namespace Dbflute.CBean.CQ.BS {
         public abstract String keepCode_QueryDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
         public abstract String keepCode_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter(Object parameterValue);
 
-        public QDRFunction<Mstメニュー権限マスタCB> DerivedMstメニュー権限マスタList() {
-            return xcreateQDRFunctionMstメニュー権限マスタList();
-        }
-        protected QDRFunction<Mstメニュー権限マスタCB> xcreateQDRFunctionMstメニュー権限マスタList() {
-            return new QDRFunction<Mstメニュー権限マスタCB>(delegate(String function, SubQuery<Mstメニュー権限マスタCB> subQuery, String operand, Object value) {
-                xqderiveMstメニュー権限マスタList(function, subQuery, operand, value);
-            });
-        }
-        public void xqderiveMstメニュー権限マスタList(String function, SubQuery<Mstメニュー権限マスタCB> subQuery, String operand, Object value) {
-            assertObjectNotNull("subQuery<Mstメニュー権限マスタCB>", subQuery);
-            Mstメニュー権限マスタCB cb = new Mstメニュー権限マスタCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_QueryDerivedReferrer_Mstメニュー権限マスタList(cb.Query()); // for saving query-value.
-            String parameterPropertyName = keepCode_QueryDerivedReferrer_Mstメニュー権限マスタListParameter(value);
-            registerQueryDerivedReferrer(function, cb.Query(), "code", "職位code", subQueryPropertyName, operand, value, parameterPropertyName);
-        }
-        public abstract String keepCode_QueryDerivedReferrer_Mstメニュー権限マスタList(Mstメニュー権限マスタCQ subQuery);
-        public abstract String keepCode_QueryDerivedReferrer_Mstメニュー権限マスタListParameter(Object parameterValue);
-
         public QDRFunction<Mst従業員マスタCB> DerivedMst従業員マスタList() {
             return xcreateQDRFunctionMst従業員マスタList();
         }
@@ -241,6 +223,24 @@ namespace Dbflute.CBean.CQ.BS {
         }
         public abstract String keepCode_QueryDerivedReferrer_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
         public abstract String keepCode_QueryDerivedReferrer_Mst従業員マスタListParameter(Object parameterValue);
+
+        public QDRFunction<Mst権限マスタCB> DerivedMst権限マスタList() {
+            return xcreateQDRFunctionMst権限マスタList();
+        }
+        protected QDRFunction<Mst権限マスタCB> xcreateQDRFunctionMst権限マスタList() {
+            return new QDRFunction<Mst権限マスタCB>(delegate(String function, SubQuery<Mst権限マスタCB> subQuery, String operand, Object value) {
+                xqderiveMst権限マスタList(function, subQuery, operand, value);
+            });
+        }
+        public void xqderiveMst権限マスタList(String function, SubQuery<Mst権限マスタCB> subQuery, String operand, Object value) {
+            assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
+            Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keepCode_QueryDerivedReferrer_Mst権限マスタList(cb.Query()); // for saving query-value.
+            String parameterPropertyName = keepCode_QueryDerivedReferrer_Mst権限マスタListParameter(value);
+            registerQueryDerivedReferrer(function, cb.Query(), "code", "職位code", subQueryPropertyName, operand, value, parameterPropertyName);
+        }
+        public abstract String keepCode_QueryDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery);
+        public abstract String keepCode_QueryDerivedReferrer_Mst権限マスタListParameter(Object parameterValue);
         public void SetCode_IsNull() { regCode(CK_ISN, DUMMY_OBJECT); }
         public void SetCode_IsNotNull() { regCode(CK_ISNN, DUMMY_OBJECT); }
         protected void regCode(ConditionKey k, Object v) { regQ(k, v, getCValueCode(), "code"); }
