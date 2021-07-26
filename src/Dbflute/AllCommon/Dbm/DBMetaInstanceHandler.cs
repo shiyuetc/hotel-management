@@ -25,16 +25,12 @@ namespace Dbflute.AllCommon.Dbm {
         static DBMetaInstanceHandler() {
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
-                tmpMap.put("dchその他予定台帳", "Dbflute.BsEntity.Dbm.Dchその他予定台帳Dbm");
-                tmpMap.put("dchその他実績台帳", "Dbflute.BsEntity.Dbm.Dchその他実績台帳Dbm");
                 tmpMap.put("dch客室利用予定台帳", "Dbflute.BsEntity.Dbm.Dch客室利用予定台帳Dbm");
                 tmpMap.put("dch客室利用実績台帳", "Dbflute.BsEntity.Dbm.Dch客室利用実績台帳Dbm");
                 tmpMap.put("dch宿泊予定台帳", "Dbflute.BsEntity.Dbm.Dch宿泊予定台帳Dbm");
                 tmpMap.put("dch宿泊実績台帳", "Dbflute.BsEntity.Dbm.Dch宿泊実績台帳Dbm");
                 tmpMap.put("dch従業員職位履歴台帳", "Dbflute.BsEntity.Dbm.Dch従業員職位履歴台帳Dbm");
                 tmpMap.put("dch月締確定台帳", "Dbflute.BsEntity.Dbm.Dch月締確定台帳Dbm");
-                tmpMap.put("dch清掃予定台帳", "Dbflute.BsEntity.Dbm.Dch清掃予定台帳Dbm");
-                tmpMap.put("dch清掃実績台帳", "Dbflute.BsEntity.Dbm.Dch清掃実績台帳Dbm");
                 tmpMap.put("dmyプロシージャ", "Dbflute.BsEntity.Dbm.DmyプロシージャDbm");
                 tmpMap.put("kbnメニュー区分", "Dbflute.BsEntity.Dbm.Kbnメニュー区分Dbm");
                 tmpMap.put("kbn客室利用区分", "Dbflute.BsEntity.Dbm.Kbn客室利用区分Dbm");
@@ -50,16 +46,12 @@ namespace Dbflute.AllCommon.Dbm {
 
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
-                tmpMap.put("dchその他予定台帳".ToLower(), "dchその他予定台帳");
-                tmpMap.put("dchその他実績台帳".ToLower(), "dchその他実績台帳");
                 tmpMap.put("dch客室利用予定台帳".ToLower(), "dch客室利用予定台帳");
                 tmpMap.put("dch客室利用実績台帳".ToLower(), "dch客室利用実績台帳");
                 tmpMap.put("dch宿泊予定台帳".ToLower(), "dch宿泊予定台帳");
                 tmpMap.put("dch宿泊実績台帳".ToLower(), "dch宿泊実績台帳");
                 tmpMap.put("dch従業員職位履歴台帳".ToLower(), "dch従業員職位履歴台帳");
                 tmpMap.put("dch月締確定台帳".ToLower(), "dch月締確定台帳");
-                tmpMap.put("dch清掃予定台帳".ToLower(), "dch清掃予定台帳");
-                tmpMap.put("dch清掃実績台帳".ToLower(), "dch清掃実績台帳");
                 tmpMap.put("dmyプロシージャ".ToLower(), "dmyプロシージャ");
                 tmpMap.put("kbnメニュー区分".ToLower(), "kbnメニュー区分");
                 tmpMap.put("kbn客室利用区分".ToLower(), "kbn客室利用区分");
@@ -75,16 +67,12 @@ namespace Dbflute.AllCommon.Dbm {
 
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
-                tmpMap.put("Dchその他予定台帳".ToLower(), "dchその他予定台帳");
-                tmpMap.put("Dchその他実績台帳".ToLower(), "dchその他実績台帳");
                 tmpMap.put("Dch客室利用予定台帳".ToLower(), "dch客室利用予定台帳");
                 tmpMap.put("Dch客室利用実績台帳".ToLower(), "dch客室利用実績台帳");
                 tmpMap.put("Dch宿泊予定台帳".ToLower(), "dch宿泊予定台帳");
                 tmpMap.put("Dch宿泊実績台帳".ToLower(), "dch宿泊実績台帳");
                 tmpMap.put("Dch従業員職位履歴台帳".ToLower(), "dch従業員職位履歴台帳");
                 tmpMap.put("Dch月締確定台帳".ToLower(), "dch月締確定台帳");
-                tmpMap.put("Dch清掃予定台帳".ToLower(), "dch清掃予定台帳");
-                tmpMap.put("Dch清掃実績台帳".ToLower(), "dch清掃実績台帳");
                 tmpMap.put("Dmyプロシージャ".ToLower(), "dmyプロシージャ");
                 tmpMap.put("Kbnメニュー区分".ToLower(), "kbnメニュー区分");
                 tmpMap.put("Kbn客室利用区分".ToLower(), "kbn客室利用区分");

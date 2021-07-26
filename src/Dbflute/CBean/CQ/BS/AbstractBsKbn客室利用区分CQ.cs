@@ -36,6 +36,13 @@ namespace Dbflute.CBean.CQ.BS {
             DoSetCode_Equal(CDef.客室利用区分.清掃.Code);
         }
         /// <summary>
+        /// Set the value of 工事 of code as equal. { = }
+        /// 工事
+        /// </summary>
+        public void SetCode_Equal_工事() {
+            DoSetCode_Equal(CDef.客室利用区分.工事.Code);
+        }
+        /// <summary>
         /// Set the value of その他 of code as equal. { = }
         /// その他
         /// </summary>
@@ -57,6 +64,13 @@ namespace Dbflute.CBean.CQ.BS {
         /// </summary>
         public void SetCode_NotEqual_清掃() {
             DoSetCode_NotEqual(CDef.客室利用区分.清掃.Code);
+        }
+        /// <summary>
+        /// Set the value of 工事 of code as notEqual. { &lt;&gt; }
+        /// 工事
+        /// </summary>
+        public void SetCode_NotEqual_工事() {
+            DoSetCode_NotEqual(CDef.客室利用区分.工事.Code);
         }
         /// <summary>
         /// Set the value of その他 of code as notEqual. { &lt;&gt; }

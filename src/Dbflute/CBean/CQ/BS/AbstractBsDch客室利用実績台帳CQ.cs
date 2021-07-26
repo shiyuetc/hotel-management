@@ -28,13 +28,6 @@ namespace Dbflute.CBean.CQ.BS {
         public void SetId_LessEqual(long? v) { regId(CK_LE, v); }
         public void SetId_InScope(IList<long?> ls) { regINS<long?>(CK_INS, cTL<long?>(ls), getCValueId(), "id"); }
         public void SetId_NotInScope(IList<long?> ls) { regINS<long?>(CK_NINS, cTL<long?>(ls), getCValueId(), "id"); }
-        public void ExistsDchその他実績台帳List(SubQuery<Dchその他実績台帳CB> subQuery) {
-            assertObjectNotNull("subQuery<Dchその他実績台帳CB>", subQuery);
-            Dchその他実績台帳CB cb = new Dchその他実績台帳CB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_ExistsSubQuery_Dchその他実績台帳List(cb.Query());
-            registerExistsSubQuery(cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName);
-        }
-        public abstract String keepId_ExistsSubQuery_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery);
         public void ExistsDch宿泊実績台帳List(SubQuery<Dch宿泊実績台帳CB> subQuery) {
             assertObjectNotNull("subQuery<Dch宿泊実績台帳CB>", subQuery);
             Dch宿泊実績台帳CB cb = new Dch宿泊実績台帳CB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
@@ -42,20 +35,6 @@ namespace Dbflute.CBean.CQ.BS {
             registerExistsSubQuery(cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName);
         }
         public abstract String keepId_ExistsSubQuery_Dch宿泊実績台帳List(Dch宿泊実績台帳CQ subQuery);
-        public void ExistsDch清掃実績台帳List(SubQuery<Dch清掃実績台帳CB> subQuery) {
-            assertObjectNotNull("subQuery<Dch清掃実績台帳CB>", subQuery);
-            Dch清掃実績台帳CB cb = new Dch清掃実績台帳CB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_ExistsSubQuery_Dch清掃実績台帳List(cb.Query());
-            registerExistsSubQuery(cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName);
-        }
-        public abstract String keepId_ExistsSubQuery_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery);
-        public void NotExistsDchその他実績台帳List(SubQuery<Dchその他実績台帳CB> subQuery) {
-            assertObjectNotNull("subQuery<Dchその他実績台帳CB>", subQuery);
-            Dchその他実績台帳CB cb = new Dchその他実績台帳CB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_NotExistsSubQuery_Dchその他実績台帳List(cb.Query());
-            registerNotExistsSubQuery(cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName);
-        }
-        public abstract String keepId_NotExistsSubQuery_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery);
         public void NotExistsDch宿泊実績台帳List(SubQuery<Dch宿泊実績台帳CB> subQuery) {
             assertObjectNotNull("subQuery<Dch宿泊実績台帳CB>", subQuery);
             Dch宿泊実績台帳CB cb = new Dch宿泊実績台帳CB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
@@ -63,20 +42,6 @@ namespace Dbflute.CBean.CQ.BS {
             registerNotExistsSubQuery(cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName);
         }
         public abstract String keepId_NotExistsSubQuery_Dch宿泊実績台帳List(Dch宿泊実績台帳CQ subQuery);
-        public void NotExistsDch清掃実績台帳List(SubQuery<Dch清掃実績台帳CB> subQuery) {
-            assertObjectNotNull("subQuery<Dch清掃実績台帳CB>", subQuery);
-            Dch清掃実績台帳CB cb = new Dch清掃実績台帳CB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_NotExistsSubQuery_Dch清掃実績台帳List(cb.Query());
-            registerNotExistsSubQuery(cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName);
-        }
-        public abstract String keepId_NotExistsSubQuery_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery);
-        public void InScopeDchその他実績台帳List(SubQuery<Dchその他実績台帳CB> subQuery) {
-            assertObjectNotNull("subQuery<Dchその他実績台帳CB>", subQuery);
-            Dchその他実績台帳CB cb = new Dchその他実績台帳CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_InScopeSubQuery_Dchその他実績台帳List(cb.Query());
-            registerInScopeSubQuery(cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName);
-        }
-        public abstract String keepId_InScopeSubQuery_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery);
         public void InScopeDch宿泊実績台帳List(SubQuery<Dch宿泊実績台帳CB> subQuery) {
             assertObjectNotNull("subQuery<Dch宿泊実績台帳CB>", subQuery);
             Dch宿泊実績台帳CB cb = new Dch宿泊実績台帳CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
@@ -84,20 +49,6 @@ namespace Dbflute.CBean.CQ.BS {
             registerInScopeSubQuery(cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName);
         }
         public abstract String keepId_InScopeSubQuery_Dch宿泊実績台帳List(Dch宿泊実績台帳CQ subQuery);
-        public void InScopeDch清掃実績台帳List(SubQuery<Dch清掃実績台帳CB> subQuery) {
-            assertObjectNotNull("subQuery<Dch清掃実績台帳CB>", subQuery);
-            Dch清掃実績台帳CB cb = new Dch清掃実績台帳CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_InScopeSubQuery_Dch清掃実績台帳List(cb.Query());
-            registerInScopeSubQuery(cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName);
-        }
-        public abstract String keepId_InScopeSubQuery_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery);
-        public void NotInScopeDchその他実績台帳List(SubQuery<Dchその他実績台帳CB> subQuery) {
-            assertObjectNotNull("subQuery<Dchその他実績台帳CB>", subQuery);
-            Dchその他実績台帳CB cb = new Dchその他実績台帳CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_NotInScopeSubQuery_Dchその他実績台帳List(cb.Query());
-            registerNotInScopeSubQuery(cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName);
-        }
-        public abstract String keepId_NotInScopeSubQuery_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery);
         public void NotInScopeDch宿泊実績台帳List(SubQuery<Dch宿泊実績台帳CB> subQuery) {
             assertObjectNotNull("subQuery<Dch宿泊実績台帳CB>", subQuery);
             Dch宿泊実績台帳CB cb = new Dch宿泊実績台帳CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
@@ -105,20 +56,6 @@ namespace Dbflute.CBean.CQ.BS {
             registerNotInScopeSubQuery(cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName);
         }
         public abstract String keepId_NotInScopeSubQuery_Dch宿泊実績台帳List(Dch宿泊実績台帳CQ subQuery);
-        public void NotInScopeDch清掃実績台帳List(SubQuery<Dch清掃実績台帳CB> subQuery) {
-            assertObjectNotNull("subQuery<Dch清掃実績台帳CB>", subQuery);
-            Dch清掃実績台帳CB cb = new Dch清掃実績台帳CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_NotInScopeSubQuery_Dch清掃実績台帳List(cb.Query());
-            registerNotInScopeSubQuery(cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName);
-        }
-        public abstract String keepId_NotInScopeSubQuery_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery);
-        public void xsderiveDchその他実績台帳List(String function, SubQuery<Dchその他実績台帳CB> subQuery, String aliasName) {
-            assertObjectNotNull("subQuery<Dchその他実績台帳CB>", subQuery);
-            Dchその他実績台帳CB cb = new Dchその他実績台帳CB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_SpecifyDerivedReferrer_Dchその他実績台帳List(cb.Query());
-            registerSpecifyDerivedReferrer(function, cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName, aliasName);
-        }
-        abstract public String keepId_SpecifyDerivedReferrer_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery);
         public void xsderiveDch宿泊実績台帳List(String function, SubQuery<Dch宿泊実績台帳CB> subQuery, String aliasName) {
             assertObjectNotNull("subQuery<Dch宿泊実績台帳CB>", subQuery);
             Dch宿泊実績台帳CB cb = new Dch宿泊実績台帳CB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
@@ -126,31 +63,6 @@ namespace Dbflute.CBean.CQ.BS {
             registerSpecifyDerivedReferrer(function, cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName, aliasName);
         }
         abstract public String keepId_SpecifyDerivedReferrer_Dch宿泊実績台帳List(Dch宿泊実績台帳CQ subQuery);
-        public void xsderiveDch清掃実績台帳List(String function, SubQuery<Dch清掃実績台帳CB> subQuery, String aliasName) {
-            assertObjectNotNull("subQuery<Dch清掃実績台帳CB>", subQuery);
-            Dch清掃実績台帳CB cb = new Dch清掃実績台帳CB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_SpecifyDerivedReferrer_Dch清掃実績台帳List(cb.Query());
-            registerSpecifyDerivedReferrer(function, cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName, aliasName);
-        }
-        abstract public String keepId_SpecifyDerivedReferrer_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery);
-
-        public QDRFunction<Dchその他実績台帳CB> DerivedDchその他実績台帳List() {
-            return xcreateQDRFunctionDchその他実績台帳List();
-        }
-        protected QDRFunction<Dchその他実績台帳CB> xcreateQDRFunctionDchその他実績台帳List() {
-            return new QDRFunction<Dchその他実績台帳CB>(delegate(String function, SubQuery<Dchその他実績台帳CB> subQuery, String operand, Object value) {
-                xqderiveDchその他実績台帳List(function, subQuery, operand, value);
-            });
-        }
-        public void xqderiveDchその他実績台帳List(String function, SubQuery<Dchその他実績台帳CB> subQuery, String operand, Object value) {
-            assertObjectNotNull("subQuery<Dchその他実績台帳CB>", subQuery);
-            Dchその他実績台帳CB cb = new Dchその他実績台帳CB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_QueryDerivedReferrer_Dchその他実績台帳List(cb.Query()); // for saving query-value.
-            String parameterPropertyName = keepId_QueryDerivedReferrer_Dchその他実績台帳ListParameter(value);
-            registerQueryDerivedReferrer(function, cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName, operand, value, parameterPropertyName);
-        }
-        public abstract String keepId_QueryDerivedReferrer_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery);
-        public abstract String keepId_QueryDerivedReferrer_Dchその他実績台帳ListParameter(Object parameterValue);
 
         public QDRFunction<Dch宿泊実績台帳CB> DerivedDch宿泊実績台帳List() {
             return xcreateQDRFunctionDch宿泊実績台帳List();
@@ -169,24 +81,6 @@ namespace Dbflute.CBean.CQ.BS {
         }
         public abstract String keepId_QueryDerivedReferrer_Dch宿泊実績台帳List(Dch宿泊実績台帳CQ subQuery);
         public abstract String keepId_QueryDerivedReferrer_Dch宿泊実績台帳ListParameter(Object parameterValue);
-
-        public QDRFunction<Dch清掃実績台帳CB> DerivedDch清掃実績台帳List() {
-            return xcreateQDRFunctionDch清掃実績台帳List();
-        }
-        protected QDRFunction<Dch清掃実績台帳CB> xcreateQDRFunctionDch清掃実績台帳List() {
-            return new QDRFunction<Dch清掃実績台帳CB>(delegate(String function, SubQuery<Dch清掃実績台帳CB> subQuery, String operand, Object value) {
-                xqderiveDch清掃実績台帳List(function, subQuery, operand, value);
-            });
-        }
-        public void xqderiveDch清掃実績台帳List(String function, SubQuery<Dch清掃実績台帳CB> subQuery, String operand, Object value) {
-            assertObjectNotNull("subQuery<Dch清掃実績台帳CB>", subQuery);
-            Dch清掃実績台帳CB cb = new Dch清掃実績台帳CB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_QueryDerivedReferrer_Dch清掃実績台帳List(cb.Query()); // for saving query-value.
-            String parameterPropertyName = keepId_QueryDerivedReferrer_Dch清掃実績台帳ListParameter(value);
-            registerQueryDerivedReferrer(function, cb.Query(), "id", "客室利用実績台帳id", subQueryPropertyName, operand, value, parameterPropertyName);
-        }
-        public abstract String keepId_QueryDerivedReferrer_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery);
-        public abstract String keepId_QueryDerivedReferrer_Dch清掃実績台帳ListParameter(Object parameterValue);
         public void SetId_IsNull() { regId(CK_ISN, DUMMY_OBJECT); }
         public void SetId_IsNotNull() { regId(CK_ISNN, DUMMY_OBJECT); }
         protected void regId(ConditionKey k, Object v) { regQ(k, v, getCValueId(), "id"); }
@@ -233,6 +127,13 @@ namespace Dbflute.CBean.CQ.BS {
             DoSet客室利用code_Equal(CDef.客室利用区分.清掃.Code);
         }
         /// <summary>
+        /// Set the value of 工事 of 客室利用code as equal. { = }
+        /// 工事
+        /// </summary>
+        public void Set客室利用code_Equal_工事() {
+            DoSet客室利用code_Equal(CDef.客室利用区分.工事.Code);
+        }
+        /// <summary>
         /// Set the value of その他 of 客室利用code as equal. { = }
         /// その他
         /// </summary>
@@ -254,6 +155,13 @@ namespace Dbflute.CBean.CQ.BS {
         /// </summary>
         public void Set客室利用code_NotEqual_清掃() {
             DoSet客室利用code_NotEqual(CDef.客室利用区分.清掃.Code);
+        }
+        /// <summary>
+        /// Set the value of 工事 of 客室利用code as notEqual. { &lt;&gt; }
+        /// 工事
+        /// </summary>
+        public void Set客室利用code_NotEqual_工事() {
+            DoSet客室利用code_NotEqual(CDef.客室利用区分.工事.Code);
         }
         /// <summary>
         /// Set the value of その他 of 客室利用code as notEqual. { &lt;&gt; }
@@ -303,6 +211,26 @@ namespace Dbflute.CBean.CQ.BS {
         public void Set利用終了日時_DateFromTo(DateTime? from, DateTime? to) { Set利用終了日時_FromTo(from, to, new DateFromToOption()); }
         protected void reg利用終了日時(ConditionKey k, Object v) { regQ(k, v, getCValue利用終了日時(), "利用終了日時"); }
         protected abstract ConditionValue getCValue利用終了日時();
+
+        public void Set備考_Equal(String v) { DoSet備考_Equal(fRES(v)); }
+        protected void DoSet備考_Equal(String v) { reg備考(CK_EQ, v); }
+        public void Set備考_NotEqual(String v) { DoSet備考_NotEqual(fRES(v)); }
+        protected void DoSet備考_NotEqual(String v) { reg備考(CK_NES, v); }
+        public void Set備考_GreaterThan(String v) { reg備考(CK_GT, fRES(v)); }
+        public void Set備考_LessThan(String v) { reg備考(CK_LT, fRES(v)); }
+        public void Set備考_GreaterEqual(String v) { reg備考(CK_GE, fRES(v)); }
+        public void Set備考_LessEqual(String v) { reg備考(CK_LE, fRES(v)); }
+        public void Set備考_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue備考(), "備考"); }
+        public void Set備考_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue備考(), "備考"); }
+        public void Set備考_PrefixSearch(String v) { Set備考_LikeSearch(v, cLSOP()); }
+        public void Set備考_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValue備考(), "備考", option); }
+        public void Set備考_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValue備考(), "備考", option); }
+        public void Set備考_IsNull() { reg備考(CK_ISN, DUMMY_OBJECT); }
+        public void Set備考_IsNotNull() { reg備考(CK_ISNN, DUMMY_OBJECT); }
+        protected void reg備考(ConditionKey k, Object v) { regQ(k, v, getCValue備考(), "備考"); }
+        protected abstract ConditionValue getCValue備考();
 
         // ===================================================================================
         //                                                                    Scalar Condition

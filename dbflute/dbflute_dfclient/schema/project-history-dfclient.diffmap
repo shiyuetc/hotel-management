@@ -1,0 +1,65 @@
+map:{
+    ; 2021/07/25 21:54:04 = map:{
+        ; diffDate = 2021/07/25 21:54:04
+        ; tableCount = map:{
+            ; next = 16
+            ; previous = 20
+        }
+        ; tableDiff = map:{
+            ; dch客室利用予定台帳 = map:{
+                ; tableName = dch客室利用予定台帳
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 備考 = map:{
+                        ; columnName = 備考
+                        ; diffType = ADD
+                    }
+                }
+            }
+            ; dch客室利用実績台帳 = map:{
+                ; tableName = dch客室利用実績台帳
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 備考 = map:{
+                        ; columnName = 備考
+                        ; diffType = ADD
+                    }
+                }
+            }
+            ; dchその他予定台帳 = map:{
+                ; tableName = dchその他予定台帳
+                ; diffType = DELETE
+            }
+            ; dchその他実績台帳 = map:{
+                ; tableName = dchその他実績台帳
+                ; diffType = DELETE
+            }
+            ; dch清掃予定台帳 = map:{
+                ; tableName = dch清掃予定台帳
+                ; diffType = DELETE
+            }
+            ; dch清掃実績台帳 = map:{
+                ; tableName = dch清掃実績台帳
+                ; diffType = DELETE
+            }
+        }
+        ; sequenceDiff = map:{
+            ; hotel_management.public.dch007_id_seq = map:{
+                ; sequenceName = hotel_management.public.dch007_id_seq
+                ; diffType = DELETE
+            }
+            ; hotel_management.public.dch008_id_seq = map:{
+                ; sequenceName = hotel_management.public.dch008_id_seq
+                ; diffType = DELETE
+            }
+            ; hotel_management.public.dch009_id_seq = map:{
+                ; sequenceName = hotel_management.public.dch009_id_seq
+                ; diffType = DELETE
+            }
+            ; hotel_management.public.dch010_id_seq = map:{
+                ; sequenceName = hotel_management.public.dch010_id_seq
+                ; diffType = DELETE
+            }
+        }
+    }
+}

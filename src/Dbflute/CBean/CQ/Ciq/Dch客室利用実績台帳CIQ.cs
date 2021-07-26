@@ -68,24 +68,9 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        public override String keepId_ExistsSubQuery_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery) {
-            throw new SystemException("ExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepId_ExistsSubQuery_Dchその他実績台帳List(subQuery);
-        }
-
         public override String keepId_ExistsSubQuery_Dch宿泊実績台帳List(Dch宿泊実績台帳CQ subQuery) {
             throw new SystemException("ExistsSubQuery at inline() is unsupported! Sorry!");
             // _myCQ.keepId_ExistsSubQuery_Dch宿泊実績台帳List(subQuery);
-        }
-
-        public override String keepId_ExistsSubQuery_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery) {
-            throw new SystemException("ExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepId_ExistsSubQuery_Dch清掃実績台帳List(subQuery);
-        }
-
-        public override String keepId_NotExistsSubQuery_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery) {
-            throw new SystemException("NotExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepId_NotExistsSubQuery_Dchその他実績台帳List(subQuery);
         }
 
         public override String keepId_NotExistsSubQuery_Dch宿泊実績台帳List(Dch宿泊実績台帳CQ subQuery) {
@@ -93,59 +78,20 @@ namespace Dbflute.CBean.CQ.Ciq {
             // _myCQ.keepId_NotExistsSubQuery_Dch宿泊実績台帳List(subQuery);
         }
 
-        public override String keepId_NotExistsSubQuery_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery) {
-            throw new SystemException("NotExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepId_NotExistsSubQuery_Dch清掃実績台帳List(subQuery);
-        }
-
-        public override String keepId_InScopeSubQuery_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery) {
-            return _myCQ.keepId_InScopeSubQuery_Dchその他実績台帳List(subQuery);
-        }
-
         public override String keepId_InScopeSubQuery_Dch宿泊実績台帳List(Dch宿泊実績台帳CQ subQuery) {
             return _myCQ.keepId_InScopeSubQuery_Dch宿泊実績台帳List(subQuery);
-        }
-
-        public override String keepId_InScopeSubQuery_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery) {
-            return _myCQ.keepId_InScopeSubQuery_Dch清掃実績台帳List(subQuery);
-        }
-
-        public override String keepId_NotInScopeSubQuery_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery) {
-            return _myCQ.keepId_NotInScopeSubQuery_Dchその他実績台帳List(subQuery);
         }
 
         public override String keepId_NotInScopeSubQuery_Dch宿泊実績台帳List(Dch宿泊実績台帳CQ subQuery) {
             return _myCQ.keepId_NotInScopeSubQuery_Dch宿泊実績台帳List(subQuery);
         }
-
-        public override String keepId_NotInScopeSubQuery_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery) {
-            return _myCQ.keepId_NotInScopeSubQuery_Dch清掃実績台帳List(subQuery);
-        }
-        public override String keepId_SpecifyDerivedReferrer_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery) {
-            throw new UnsupportedOperationException("(Specify)DerivedReferrer at inline() is unsupported! Sorry!");
-        }
         public override String keepId_SpecifyDerivedReferrer_Dch宿泊実績台帳List(Dch宿泊実績台帳CQ subQuery) {
             throw new UnsupportedOperationException("(Specify)DerivedReferrer at inline() is unsupported! Sorry!");
-        }
-        public override String keepId_SpecifyDerivedReferrer_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery) {
-            throw new UnsupportedOperationException("(Specify)DerivedReferrer at inline() is unsupported! Sorry!");
-        }
-        public override String keepId_QueryDerivedReferrer_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery) {
-            throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
-        }
-        public override String keepId_QueryDerivedReferrer_Dchその他実績台帳ListParameter(Object parameterValue) {
-            throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
         public override String keepId_QueryDerivedReferrer_Dch宿泊実績台帳List(Dch宿泊実績台帳CQ subQuery) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
         public override String keepId_QueryDerivedReferrer_Dch宿泊実績台帳ListParameter(Object parameterValue) {
-            throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
-        }
-        public override String keepId_QueryDerivedReferrer_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery) {
-            throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
-        }
-        public override String keepId_QueryDerivedReferrer_Dch清掃実績台帳ListParameter(Object parameterValue) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
 
@@ -182,6 +128,11 @@ namespace Dbflute.CBean.CQ.Ciq {
 
         protected override ConditionValue getCValue利用終了日時() {
             return _myCQ.利用終了日時;
+        }
+
+
+        protected override ConditionValue getCValue備考() {
+            return _myCQ.備考;
         }
 
 

@@ -179,38 +179,6 @@ namespace Dbflute.ExBhv {
         //                                                                   Load Referrer
         //                                                                   =============
         #region Load Referrer
-        public virtual void LoadDchその他実績台帳List(Dch客室利用実績台帳 dch客室利用実績台帳, ConditionBeanSetupper<Dchその他実績台帳CB> conditionBeanSetupper) {
-            AssertObjectNotNull("dch客室利用実績台帳", dch客室利用実績台帳); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
-            LoadDchその他実績台帳List(xnewLRLs<Dch客室利用実績台帳>(dch客室利用実績台帳), conditionBeanSetupper);
-        }
-        public virtual void LoadDchその他実績台帳List(IList<Dch客室利用実績台帳> dch客室利用実績台帳List, ConditionBeanSetupper<Dchその他実績台帳CB> conditionBeanSetupper) {
-            AssertObjectNotNull("dch客室利用実績台帳List", dch客室利用実績台帳List); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
-            LoadDchその他実績台帳List(dch客室利用実績台帳List, new LoadReferrerOption<Dchその他実績台帳CB, Dchその他実績台帳>().xinit(conditionBeanSetupper));
-        }
-        public virtual void LoadDchその他実績台帳List(Dch客室利用実績台帳 dch客室利用実績台帳, LoadReferrerOption<Dchその他実績台帳CB, Dchその他実績台帳> loadReferrerOption) {
-            AssertObjectNotNull("dch客室利用実績台帳", dch客室利用実績台帳); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
-            LoadDchその他実績台帳List(xnewLRLs<Dch客室利用実績台帳>(dch客室利用実績台帳), loadReferrerOption);
-        }
-        public virtual void LoadDchその他実績台帳List(IList<Dch客室利用実績台帳> dch客室利用実績台帳List, LoadReferrerOption<Dchその他実績台帳CB, Dchその他実績台帳> loadReferrerOption) {
-            AssertObjectNotNull("dch客室利用実績台帳List", dch客室利用実績台帳List); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
-            if (dch客室利用実績台帳List.Count == 0) { return; }
-            Dchその他実績台帳Bhv referrerBhv = xgetBSFLR().Select<Dchその他実績台帳Bhv>();
-            HelpLoadReferrerInternally<Dch客室利用実績台帳, long?, Dchその他実績台帳CB, Dchその他実績台帳>
-                    (dch客室利用実績台帳List, loadReferrerOption, new MyInternalLoadDchその他実績台帳ListCallback(referrerBhv));
-        }
-        protected class MyInternalLoadDchその他実績台帳ListCallback : InternalLoadReferrerCallback<Dch客室利用実績台帳, long?, Dchその他実績台帳CB, Dchその他実績台帳> {
-            protected Dchその他実績台帳Bhv referrerBhv;
-            public MyInternalLoadDchその他実績台帳ListCallback(Dchその他実績台帳Bhv referrerBhv) { this.referrerBhv = referrerBhv; }
-            public long? getPKVal(Dch客室利用実績台帳 e) { return e.Id; }
-            public void setRfLs(Dch客室利用実績台帳 e, IList<Dchその他実績台帳> ls) { e.Dchその他実績台帳List = ls; }
-            public Dchその他実績台帳CB newMyCB() { return referrerBhv.NewMyConditionBean(); }
-            public void qyFKIn(Dchその他実績台帳CB cb, IList<long?> ls) { cb.Query().Set客室利用実績台帳id_InScope(ls); }
-            public void qyOdFKAsc(Dchその他実績台帳CB cb) { cb.Query().AddOrderBy_客室利用実績台帳id_Asc(); }
-            public void spFKCol(Dchその他実績台帳CB cb) { cb.Specify().Column客室利用実績台帳id(); }
-            public IList<Dchその他実績台帳> selRfLs(Dchその他実績台帳CB cb) { return referrerBhv.SelectList(cb); }
-            public long? getFKVal(Dchその他実績台帳 e) { return e.客室利用実績台帳id; }
-            public void setlcEt(Dchその他実績台帳 re, Dch客室利用実績台帳 be) { re.Dch客室利用実績台帳 = be; }
-        }
         public virtual void LoadDch宿泊実績台帳List(Dch客室利用実績台帳 dch客室利用実績台帳, ConditionBeanSetupper<Dch宿泊実績台帳CB> conditionBeanSetupper) {
             AssertObjectNotNull("dch客室利用実績台帳", dch客室利用実績台帳); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
             LoadDch宿泊実績台帳List(xnewLRLs<Dch客室利用実績台帳>(dch客室利用実績台帳), conditionBeanSetupper);
@@ -242,38 +210,6 @@ namespace Dbflute.ExBhv {
             public IList<Dch宿泊実績台帳> selRfLs(Dch宿泊実績台帳CB cb) { return referrerBhv.SelectList(cb); }
             public long? getFKVal(Dch宿泊実績台帳 e) { return e.客室利用実績台帳id; }
             public void setlcEt(Dch宿泊実績台帳 re, Dch客室利用実績台帳 be) { re.Dch客室利用実績台帳 = be; }
-        }
-        public virtual void LoadDch清掃実績台帳List(Dch客室利用実績台帳 dch客室利用実績台帳, ConditionBeanSetupper<Dch清掃実績台帳CB> conditionBeanSetupper) {
-            AssertObjectNotNull("dch客室利用実績台帳", dch客室利用実績台帳); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
-            LoadDch清掃実績台帳List(xnewLRLs<Dch客室利用実績台帳>(dch客室利用実績台帳), conditionBeanSetupper);
-        }
-        public virtual void LoadDch清掃実績台帳List(IList<Dch客室利用実績台帳> dch客室利用実績台帳List, ConditionBeanSetupper<Dch清掃実績台帳CB> conditionBeanSetupper) {
-            AssertObjectNotNull("dch客室利用実績台帳List", dch客室利用実績台帳List); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
-            LoadDch清掃実績台帳List(dch客室利用実績台帳List, new LoadReferrerOption<Dch清掃実績台帳CB, Dch清掃実績台帳>().xinit(conditionBeanSetupper));
-        }
-        public virtual void LoadDch清掃実績台帳List(Dch客室利用実績台帳 dch客室利用実績台帳, LoadReferrerOption<Dch清掃実績台帳CB, Dch清掃実績台帳> loadReferrerOption) {
-            AssertObjectNotNull("dch客室利用実績台帳", dch客室利用実績台帳); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
-            LoadDch清掃実績台帳List(xnewLRLs<Dch客室利用実績台帳>(dch客室利用実績台帳), loadReferrerOption);
-        }
-        public virtual void LoadDch清掃実績台帳List(IList<Dch客室利用実績台帳> dch客室利用実績台帳List, LoadReferrerOption<Dch清掃実績台帳CB, Dch清掃実績台帳> loadReferrerOption) {
-            AssertObjectNotNull("dch客室利用実績台帳List", dch客室利用実績台帳List); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
-            if (dch客室利用実績台帳List.Count == 0) { return; }
-            Dch清掃実績台帳Bhv referrerBhv = xgetBSFLR().Select<Dch清掃実績台帳Bhv>();
-            HelpLoadReferrerInternally<Dch客室利用実績台帳, long?, Dch清掃実績台帳CB, Dch清掃実績台帳>
-                    (dch客室利用実績台帳List, loadReferrerOption, new MyInternalLoadDch清掃実績台帳ListCallback(referrerBhv));
-        }
-        protected class MyInternalLoadDch清掃実績台帳ListCallback : InternalLoadReferrerCallback<Dch客室利用実績台帳, long?, Dch清掃実績台帳CB, Dch清掃実績台帳> {
-            protected Dch清掃実績台帳Bhv referrerBhv;
-            public MyInternalLoadDch清掃実績台帳ListCallback(Dch清掃実績台帳Bhv referrerBhv) { this.referrerBhv = referrerBhv; }
-            public long? getPKVal(Dch客室利用実績台帳 e) { return e.Id; }
-            public void setRfLs(Dch客室利用実績台帳 e, IList<Dch清掃実績台帳> ls) { e.Dch清掃実績台帳List = ls; }
-            public Dch清掃実績台帳CB newMyCB() { return referrerBhv.NewMyConditionBean(); }
-            public void qyFKIn(Dch清掃実績台帳CB cb, IList<long?> ls) { cb.Query().Set客室利用実績台帳id_InScope(ls); }
-            public void qyOdFKAsc(Dch清掃実績台帳CB cb) { cb.Query().AddOrderBy_客室利用実績台帳id_Asc(); }
-            public void spFKCol(Dch清掃実績台帳CB cb) { cb.Specify().Column客室利用実績台帳id(); }
-            public IList<Dch清掃実績台帳> selRfLs(Dch清掃実績台帳CB cb) { return referrerBhv.SelectList(cb); }
-            public long? getFKVal(Dch清掃実績台帳 e) { return e.客室利用実績台帳id; }
-            public void setlcEt(Dch清掃実績台帳 re, Dch客室利用実績台帳 be) { re.Dch客室利用実績台帳 = be; }
         }
         #endregion
 

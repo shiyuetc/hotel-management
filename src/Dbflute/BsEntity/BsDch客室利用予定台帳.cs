@@ -22,7 +22,7 @@ namespace Dbflute.ExEntity {
     ///     id
     /// 
     /// [column]
-    ///     id, 客室マスタid, 客室利用code, 利用開始日時, 利用終了日時
+    ///     id, 客室マスタid, 客室利用code, 利用開始日時, 利用終了日時, 備考
     /// 
     /// [sequence]
     ///     dch003_id_seq
@@ -37,13 +37,13 @@ namespace Dbflute.ExEntity {
     ///     mst客室マスタ, kbn客室利用区分
     /// 
     /// [referrer-table]
-    ///     dchその他予定台帳, dch宿泊予定台帳, dch清掃予定台帳
+    ///     dch宿泊予定台帳
     /// 
     /// [foreign-property]
     ///     mst客室マスタ, kbn客室利用区分
     /// 
     /// [referrer-property]
-    ///     dchその他予定台帳List, dch宿泊予定台帳List, dch清掃予定台帳List
+    ///     dch宿泊予定台帳List
     /// ]]>
     /// Author: DBFlute(AutoGenerator)
     /// </summary>
@@ -69,6 +69,9 @@ namespace Dbflute.ExEntity {
 
         /// <summary>利用終了日時: {NotNull, timestamp(26, 3)}</summary>
         protected DateTime? _利用終了日時;
+
+        /// <summary>備考: {varchar(255)}</summary>
+        protected String _備考;
 
         protected EntityModifiedProperties __modifiedProperties = new EntityModifiedProperties();
         #endregion
@@ -121,6 +124,16 @@ namespace Dbflute.ExEntity {
         }
 
         /// <summary>
+        /// Set the value of 客室利用code as 工事.
+        /// <![CDATA[
+        /// 工事
+        /// ]]>
+        /// </summary>
+        public void Set客室利用code_工事() {
+            客室利用codeAs客室利用区分 = CDef.客室利用区分.工事;
+        }
+
+        /// <summary>
         /// Set the value of 客室利用code as その他.
         /// <![CDATA[
         /// その他
@@ -163,6 +176,21 @@ namespace Dbflute.ExEntity {
             get {
                 CDef.客室利用区分 cls = 客室利用codeAs客室利用区分;
                 return cls != null ? cls.Equals(CDef.客室利用区分.清掃) : false;
+            }
+        }
+
+        /// <summary>
+        /// Is the value of 客室利用code '工事'?
+        /// <![CDATA[
+        /// The difference of capital letters and small letters is NOT distinguished.
+        /// If the value is null, this method returns false!
+        /// 工事
+        /// ]]>
+        /// </summary>
+        public bool Is客室利用code工事 {
+            get {
+                CDef.客室利用区分 cls = 客室利用codeAs客室利用区分;
+                return cls != null ? cls.Equals(CDef.客室利用区分.工事) : false;
             }
         }
 
@@ -211,28 +239,12 @@ namespace Dbflute.ExEntity {
         //                                                               Referrer Property
         //                                                               =================
         #region Referrer Property
-        protected IList<Dchその他予定台帳> _dchその他予定台帳List;
-
-        /// <summary>dchその他予定台帳 as 'Dchその他予定台帳List'.</summary>
-        public IList<Dchその他予定台帳> Dchその他予定台帳List {
-            get { if (_dchその他予定台帳List == null) { _dchその他予定台帳List = new List<Dchその他予定台帳>(); } return _dchその他予定台帳List; }
-            set { _dchその他予定台帳List = value; }
-        }
-
         protected IList<Dch宿泊予定台帳> _dch宿泊予定台帳List;
 
         /// <summary>dch宿泊予定台帳 as 'Dch宿泊予定台帳List'.</summary>
         public IList<Dch宿泊予定台帳> Dch宿泊予定台帳List {
             get { if (_dch宿泊予定台帳List == null) { _dch宿泊予定台帳List = new List<Dch宿泊予定台帳>(); } return _dch宿泊予定台帳List; }
             set { _dch宿泊予定台帳List = value; }
-        }
-
-        protected IList<Dch清掃予定台帳> _dch清掃予定台帳List;
-
-        /// <summary>dch清掃予定台帳 as 'Dch清掃予定台帳List'.</summary>
-        public IList<Dch清掃予定台帳> Dch清掃予定台帳List {
-            get { if (_dch清掃予定台帳List == null) { _dch清掃予定台帳List = new List<Dch清掃予定台帳>(); } return _dch清掃予定台帳List; }
-            set { _dch清掃予定台帳List = value; }
         }
 
         #endregion
@@ -296,12 +308,8 @@ namespace Dbflute.ExEntity {
             { sb.Append(l).Append(xbRDS(_mst客室マスタ, "Mst客室マスタ")); }
             if (_kbn客室利用区分 != null)
             { sb.Append(l).Append(xbRDS(_kbn客室利用区分, "Kbn客室利用区分")); }
-            if (_dchその他予定台帳List != null) { foreach (Entity e in _dchその他予定台帳List)
-            { if (e != null) { sb.Append(l).Append(xbRDS(e, "Dchその他予定台帳List")); } } }
             if (_dch宿泊予定台帳List != null) { foreach (Entity e in _dch宿泊予定台帳List)
             { if (e != null) { sb.Append(l).Append(xbRDS(e, "Dch宿泊予定台帳List")); } } }
-            if (_dch清掃予定台帳List != null) { foreach (Entity e in _dch清掃予定台帳List)
-            { if (e != null) { sb.Append(l).Append(xbRDS(e, "Dch清掃予定台帳List")); } } }
             return sb.ToString();
         }
         protected String xbRDS(Entity e, String name) { // buildRelationDisplayString()
@@ -323,6 +331,7 @@ namespace Dbflute.ExEntity {
             sb.Append(c).Append(this.客室利用code);
             sb.Append(c).Append(this.利用開始日時);
             sb.Append(c).Append(this.利用終了日時);
+            sb.Append(c).Append(this.備考);
             if (sb.Length > 0) { sb.Remove(0, c.Length); }
             sb.Insert(0, "{").Append("}");
             return sb.ToString();
@@ -332,12 +341,8 @@ namespace Dbflute.ExEntity {
             String c = ",";
             if (_mst客室マスタ != null) { sb.Append(c).Append("Mst客室マスタ"); }
             if (_kbn客室利用区分 != null) { sb.Append(c).Append("Kbn客室利用区分"); }
-            if (_dchその他予定台帳List != null && _dchその他予定台帳List.Count > 0)
-            { sb.Append(c).Append("Dchその他予定台帳List"); }
             if (_dch宿泊予定台帳List != null && _dch宿泊予定台帳List.Count > 0)
             { sb.Append(c).Append("Dch宿泊予定台帳List"); }
-            if (_dch清掃予定台帳List != null && _dch清掃予定台帳List.Count > 0)
-            { sb.Append(c).Append("Dch清掃予定台帳List"); }
             if (sb.Length > 0) { sb.Remove(0, c.Length).Insert(0, "(").Append(")"); }
             return sb.ToString();
         }
@@ -395,6 +400,16 @@ namespace Dbflute.ExEntity {
             set {
                 __modifiedProperties.AddPropertyName("利用終了日時");
                 _利用終了日時 = value;
+            }
+        }
+
+        /// <summary>備考: {varchar(255)}</summary>
+        [Seasar.Dao.Attrs.Column("備考")]
+        public String 備考 {
+            get { return _備考; }
+            set {
+                __modifiedProperties.AddPropertyName("備考");
+                _備考 = value;
             }
         }
 

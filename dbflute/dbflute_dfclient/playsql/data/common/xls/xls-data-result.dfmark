@@ -9,7 +9,7 @@ data-directory: playsql/data/common/xls
 [10-kbn.xls]
   kbnメニュー区分 (6)
   kbn職位区分 (4)
-  kbn客室利用区分 (3)
+  kbn客室利用区分 (4)
 
 [20-mst.xls]
   mst制御画面マスタ (6)

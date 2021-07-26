@@ -200,6 +200,7 @@ namespace Dbflute.CBean.BS {
         public void Column客室利用code() { doColumn("客室利用code"); }
         public void Column利用開始日時() { doColumn("利用開始日時"); }
         public void Column利用終了日時() { doColumn("利用終了日時"); }
+        public void Column備考() { doColumn("備考"); }
         protected override void doSpecifyRequiredColumn() {
             ColumnId(); // PK
             if (qyCall().qy().hasConditionQueryMst客室マスタ()
@@ -242,20 +243,10 @@ namespace Dbflute.CBean.BS {
 		    public bool has() { return _qyCall.has() && _qyCall.qy().hasConditionQueryKbn客室利用区分(); }
 			public Kbn客室利用区分CQ qy() { return _qyCall.qy().QueryKbn客室利用区分(); }
 		}
-        public RAFunction<Dchその他予定台帳CB, Dch客室利用予定台帳CQ> DerivedDchその他予定台帳List() {
-            if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return new RAFunction<Dchその他予定台帳CB, Dch客室利用予定台帳CQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Dchその他予定台帳CB> subQuery, Dch客室利用予定台帳CQ cq, String aliasName)
-                { cq.xsderiveDchその他予定台帳List(function, subQuery, aliasName); });
-        }
         public RAFunction<Dch宿泊予定台帳CB, Dch客室利用予定台帳CQ> DerivedDch宿泊予定台帳List() {
             if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
             return new RAFunction<Dch宿泊予定台帳CB, Dch客室利用予定台帳CQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Dch宿泊予定台帳CB> subQuery, Dch客室利用予定台帳CQ cq, String aliasName)
                 { cq.xsderiveDch宿泊予定台帳List(function, subQuery, aliasName); });
-        }
-        public RAFunction<Dch清掃予定台帳CB, Dch客室利用予定台帳CQ> DerivedDch清掃予定台帳List() {
-            if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return new RAFunction<Dch清掃予定台帳CB, Dch客室利用予定台帳CQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Dch清掃予定台帳CB> subQuery, Dch客室利用予定台帳CQ cq, String aliasName)
-                { cq.xsderiveDch清掃予定台帳List(function, subQuery, aliasName); });
         }
     }
 }

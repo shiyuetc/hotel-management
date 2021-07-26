@@ -113,6 +113,7 @@ CREATE TABLE "dch客室利用予定台帳" (
   "客室利用code" CHAR(3) NOT NULL,
   "利用開始日時" TIMESTAMP(3) NOT NULL,
   "利用終了日時" TIMESTAMP(3) NOT NULL,
+  "備考" VARCHAR(255),
   FOREIGN KEY ("客室マスタid") REFERENCES "mst客室マスタ"("id"),
   FOREIGN KEY ("客室利用code") REFERENCES "kbn客室利用区分"("code")
 );
@@ -123,6 +124,7 @@ CREATE TABLE "dch客室利用実績台帳" (
   "客室利用code" CHAR(3) NOT NULL,
   "利用開始日時" TIMESTAMP(3) NOT NULL,
   "利用終了日時" TIMESTAMP(3) NOT NULL,
+  "備考" VARCHAR(255),
   FOREIGN KEY ("客室マスタid") REFERENCES "mst客室マスタ"("id"),
   FOREIGN KEY ("客室利用code") REFERENCES "kbn客室利用区分"("code")
 );
@@ -134,30 +136,6 @@ CREATE TABLE "dch宿泊予定台帳" (
 );
 
 CREATE TABLE "dch宿泊実績台帳" (
-  "id" BIGINT NOT NULL PRIMARY KEY,
-  "客室利用実績台帳id" BIGINT NOT NULL,
-  FOREIGN KEY ("客室利用実績台帳id") REFERENCES "dch客室利用実績台帳"("id")
-);
-
-CREATE TABLE "dch清掃予定台帳" (
-  "id" BIGINT NOT NULL PRIMARY KEY,
-  "客室利用予定台帳id" BIGINT NOT NULL,
-  FOREIGN KEY ("客室利用予定台帳id") REFERENCES "dch客室利用予定台帳"("id")
-);
-
-CREATE TABLE "dch清掃実績台帳" (
-  "id" BIGINT NOT NULL PRIMARY KEY,
-  "客室利用実績台帳id" BIGINT NOT NULL,
-  FOREIGN KEY ("客室利用実績台帳id") REFERENCES "dch客室利用実績台帳"("id")
-);
-
-CREATE TABLE "dchその他予定台帳" (
-  "id" BIGINT NOT NULL PRIMARY KEY,
-  "客室利用予定台帳id" BIGINT NOT NULL,
-  FOREIGN KEY ("客室利用予定台帳id") REFERENCES "dch客室利用予定台帳"("id")
-);
-
-CREATE TABLE "dchその他実績台帳" (
   "id" BIGINT NOT NULL PRIMARY KEY,
   "客室利用実績台帳id" BIGINT NOT NULL,
   FOREIGN KEY ("客室利用実績台帳id") REFERENCES "dch客室利用実績台帳"("id")
@@ -184,17 +162,9 @@ CREATE SEQUENCE "dch003_id_seq";
 CREATE SEQUENCE "dch004_id_seq";
 CREATE SEQUENCE "dch005_id_seq";
 CREATE SEQUENCE "dch006_id_seq";
-CREATE SEQUENCE "dch007_id_seq";
-CREATE SEQUENCE "dch008_id_seq";
-CREATE SEQUENCE "dch009_id_seq";
-CREATE SEQUENCE "dch010_id_seq";
 ALTER TABLE "dch従業員職位履歴台帳" ALTER COLUMN "id" SET DEFAULT nextval('dch001_id_seq');
 ALTER TABLE "dch月締確定台帳" ALTER COLUMN "id" SET DEFAULT nextval('dch002_id_seq');
 ALTER TABLE "dch客室利用予定台帳" ALTER COLUMN "id" SET DEFAULT nextval('dch003_id_seq');
 ALTER TABLE "dch客室利用実績台帳" ALTER COLUMN "id" SET DEFAULT nextval('dch004_id_seq');
 ALTER TABLE "dch宿泊予定台帳" ALTER COLUMN "id" SET DEFAULT nextval('dch005_id_seq');
 ALTER TABLE "dch宿泊実績台帳" ALTER COLUMN "id" SET DEFAULT nextval('dch006_id_seq');
-ALTER TABLE "dch清掃予定台帳" ALTER COLUMN "id" SET DEFAULT nextval('dch007_id_seq');
-ALTER TABLE "dch清掃実績台帳" ALTER COLUMN "id" SET DEFAULT nextval('dch008_id_seq');
-ALTER TABLE "dchその他予定台帳" ALTER COLUMN "id" SET DEFAULT nextval('dch009_id_seq');
-ALTER TABLE "dchその他実績台帳" ALTER COLUMN "id" SET DEFAULT nextval('dch010_id_seq');

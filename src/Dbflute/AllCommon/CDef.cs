@@ -117,12 +117,15 @@ namespace Dbflute.AllCommon {
             public static readonly 客室利用区分 宿泊 = new 客室利用区分("001", "宿泊", "宿泊");
             /** 清掃 */
             public static readonly 客室利用区分 清掃 = new 客室利用区分("002", "清掃", "清掃");
+            /** 工事 */
+            public static readonly 客室利用区分 工事 = new 客室利用区分("003", "工事", "工事");
             /** その他 */
-            public static readonly 客室利用区分 その他 = new 客室利用区分("003", "その他", "その他");
+            public static readonly 客室利用区分 その他 = new 客室利用区分("004", "その他", "その他");
             private static readonly Map<String, 客室利用区分> _codeValueMap = new LinkedHashMap<String, 客室利用区分>();
             static 客室利用区分() {
                 _codeValueMap.put(宿泊.Code.ToLower(), 宿泊);
                 _codeValueMap.put(清掃.Code.ToLower(), 清掃);
+                _codeValueMap.put(工事.Code.ToLower(), 工事);
                 _codeValueMap.put(その他.Code.ToLower(), その他);
             }
             protected String _code; protected String _name; protected String _alias;

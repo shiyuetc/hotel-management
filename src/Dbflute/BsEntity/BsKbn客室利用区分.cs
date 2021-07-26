@@ -112,6 +112,16 @@ namespace Dbflute.ExEntity {
         }
 
         /// <summary>
+        /// Set the value of code as 工事.
+        /// <![CDATA[
+        /// 工事
+        /// ]]>
+        /// </summary>
+        public void SetCode_工事() {
+            CodeAs客室利用区分 = CDef.客室利用区分.工事;
+        }
+
+        /// <summary>
         /// Set the value of code as その他.
         /// <![CDATA[
         /// その他
@@ -154,6 +164,21 @@ namespace Dbflute.ExEntity {
             get {
                 CDef.客室利用区分 cls = CodeAs客室利用区分;
                 return cls != null ? cls.Equals(CDef.客室利用区分.清掃) : false;
+            }
+        }
+
+        /// <summary>
+        /// Is the value of code '工事'?
+        /// <![CDATA[
+        /// The difference of capital letters and small letters is NOT distinguished.
+        /// If the value is null, this method returns false!
+        /// 工事
+        /// ]]>
+        /// </summary>
+        public bool IsCode工事 {
+            get {
+                CDef.客室利用区分 cls = CodeAs客室利用区分;
+                return cls != null ? cls.Equals(CDef.客室利用区分.工事) : false;
             }
         }
 

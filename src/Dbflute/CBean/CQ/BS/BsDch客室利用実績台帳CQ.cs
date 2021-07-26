@@ -41,36 +41,12 @@ namespace Dbflute.CBean.CQ.BS {
         protected override ConditionValue getCValueId() { return this.Id; }
 
 
-        protected Map<String, Dchその他実績台帳CQ> _id_ExistsSubQuery_Dchその他実績台帳ListMap;
-        public Map<String, Dchその他実績台帳CQ> Id_ExistsSubQuery_Dchその他実績台帳List { get { return _id_ExistsSubQuery_Dchその他実績台帳ListMap; }}
-        public override String keepId_ExistsSubQuery_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery) {
-            if (_id_ExistsSubQuery_Dchその他実績台帳ListMap == null) { _id_ExistsSubQuery_Dchその他実績台帳ListMap = new LinkedHashMap<String, Dchその他実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_id_ExistsSubQuery_Dchその他実績台帳ListMap.size() + 1);
-            _id_ExistsSubQuery_Dchその他実績台帳ListMap.put(key, subQuery); return "Id_ExistsSubQuery_Dchその他実績台帳List." + key;
-        }
-
         protected Map<String, Dch宿泊実績台帳CQ> _id_ExistsSubQuery_Dch宿泊実績台帳ListMap;
         public Map<String, Dch宿泊実績台帳CQ> Id_ExistsSubQuery_Dch宿泊実績台帳List { get { return _id_ExistsSubQuery_Dch宿泊実績台帳ListMap; }}
         public override String keepId_ExistsSubQuery_Dch宿泊実績台帳List(Dch宿泊実績台帳CQ subQuery) {
             if (_id_ExistsSubQuery_Dch宿泊実績台帳ListMap == null) { _id_ExistsSubQuery_Dch宿泊実績台帳ListMap = new LinkedHashMap<String, Dch宿泊実績台帳CQ>(); }
             String key = "subQueryMapKey" + (_id_ExistsSubQuery_Dch宿泊実績台帳ListMap.size() + 1);
             _id_ExistsSubQuery_Dch宿泊実績台帳ListMap.put(key, subQuery); return "Id_ExistsSubQuery_Dch宿泊実績台帳List." + key;
-        }
-
-        protected Map<String, Dch清掃実績台帳CQ> _id_ExistsSubQuery_Dch清掃実績台帳ListMap;
-        public Map<String, Dch清掃実績台帳CQ> Id_ExistsSubQuery_Dch清掃実績台帳List { get { return _id_ExistsSubQuery_Dch清掃実績台帳ListMap; }}
-        public override String keepId_ExistsSubQuery_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery) {
-            if (_id_ExistsSubQuery_Dch清掃実績台帳ListMap == null) { _id_ExistsSubQuery_Dch清掃実績台帳ListMap = new LinkedHashMap<String, Dch清掃実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_id_ExistsSubQuery_Dch清掃実績台帳ListMap.size() + 1);
-            _id_ExistsSubQuery_Dch清掃実績台帳ListMap.put(key, subQuery); return "Id_ExistsSubQuery_Dch清掃実績台帳List." + key;
-        }
-
-        protected Map<String, Dchその他実績台帳CQ> _id_NotExistsSubQuery_Dchその他実績台帳ListMap;
-        public Map<String, Dchその他実績台帳CQ> Id_NotExistsSubQuery_Dchその他実績台帳List { get { return _id_NotExistsSubQuery_Dchその他実績台帳ListMap; }}
-        public override String keepId_NotExistsSubQuery_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery) {
-            if (_id_NotExistsSubQuery_Dchその他実績台帳ListMap == null) { _id_NotExistsSubQuery_Dchその他実績台帳ListMap = new LinkedHashMap<String, Dchその他実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_id_NotExistsSubQuery_Dchその他実績台帳ListMap.size() + 1);
-            _id_NotExistsSubQuery_Dchその他実績台帳ListMap.put(key, subQuery); return "Id_NotExistsSubQuery_Dchその他実績台帳List." + key;
         }
 
         protected Map<String, Dch宿泊実績台帳CQ> _id_NotExistsSubQuery_Dch宿泊実績台帳ListMap;
@@ -81,44 +57,12 @@ namespace Dbflute.CBean.CQ.BS {
             _id_NotExistsSubQuery_Dch宿泊実績台帳ListMap.put(key, subQuery); return "Id_NotExistsSubQuery_Dch宿泊実績台帳List." + key;
         }
 
-        protected Map<String, Dch清掃実績台帳CQ> _id_NotExistsSubQuery_Dch清掃実績台帳ListMap;
-        public Map<String, Dch清掃実績台帳CQ> Id_NotExistsSubQuery_Dch清掃実績台帳List { get { return _id_NotExistsSubQuery_Dch清掃実績台帳ListMap; }}
-        public override String keepId_NotExistsSubQuery_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery) {
-            if (_id_NotExistsSubQuery_Dch清掃実績台帳ListMap == null) { _id_NotExistsSubQuery_Dch清掃実績台帳ListMap = new LinkedHashMap<String, Dch清掃実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_id_NotExistsSubQuery_Dch清掃実績台帳ListMap.size() + 1);
-            _id_NotExistsSubQuery_Dch清掃実績台帳ListMap.put(key, subQuery); return "Id_NotExistsSubQuery_Dch清掃実績台帳List." + key;
-        }
-
-        protected Map<String, Dchその他実績台帳CQ> _id_InScopeSubQuery_Dchその他実績台帳ListMap;
-        public Map<String, Dchその他実績台帳CQ> Id_InScopeSubQuery_Dchその他実績台帳List { get { return _id_InScopeSubQuery_Dchその他実績台帳ListMap; }}
-        public override String keepId_InScopeSubQuery_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery) {
-            if (_id_InScopeSubQuery_Dchその他実績台帳ListMap == null) { _id_InScopeSubQuery_Dchその他実績台帳ListMap = new LinkedHashMap<String, Dchその他実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_id_InScopeSubQuery_Dchその他実績台帳ListMap.size() + 1);
-            _id_InScopeSubQuery_Dchその他実績台帳ListMap.put(key, subQuery); return "Id_InScopeSubQuery_Dchその他実績台帳List." + key;
-        }
-
         protected Map<String, Dch宿泊実績台帳CQ> _id_InScopeSubQuery_Dch宿泊実績台帳ListMap;
         public Map<String, Dch宿泊実績台帳CQ> Id_InScopeSubQuery_Dch宿泊実績台帳List { get { return _id_InScopeSubQuery_Dch宿泊実績台帳ListMap; }}
         public override String keepId_InScopeSubQuery_Dch宿泊実績台帳List(Dch宿泊実績台帳CQ subQuery) {
             if (_id_InScopeSubQuery_Dch宿泊実績台帳ListMap == null) { _id_InScopeSubQuery_Dch宿泊実績台帳ListMap = new LinkedHashMap<String, Dch宿泊実績台帳CQ>(); }
             String key = "subQueryMapKey" + (_id_InScopeSubQuery_Dch宿泊実績台帳ListMap.size() + 1);
             _id_InScopeSubQuery_Dch宿泊実績台帳ListMap.put(key, subQuery); return "Id_InScopeSubQuery_Dch宿泊実績台帳List." + key;
-        }
-
-        protected Map<String, Dch清掃実績台帳CQ> _id_InScopeSubQuery_Dch清掃実績台帳ListMap;
-        public Map<String, Dch清掃実績台帳CQ> Id_InScopeSubQuery_Dch清掃実績台帳List { get { return _id_InScopeSubQuery_Dch清掃実績台帳ListMap; }}
-        public override String keepId_InScopeSubQuery_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery) {
-            if (_id_InScopeSubQuery_Dch清掃実績台帳ListMap == null) { _id_InScopeSubQuery_Dch清掃実績台帳ListMap = new LinkedHashMap<String, Dch清掃実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_id_InScopeSubQuery_Dch清掃実績台帳ListMap.size() + 1);
-            _id_InScopeSubQuery_Dch清掃実績台帳ListMap.put(key, subQuery); return "Id_InScopeSubQuery_Dch清掃実績台帳List." + key;
-        }
-
-        protected Map<String, Dchその他実績台帳CQ> _id_NotInScopeSubQuery_Dchその他実績台帳ListMap;
-        public Map<String, Dchその他実績台帳CQ> Id_NotInScopeSubQuery_Dchその他実績台帳List { get { return _id_NotInScopeSubQuery_Dchその他実績台帳ListMap; }}
-        public override String keepId_NotInScopeSubQuery_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery) {
-            if (_id_NotInScopeSubQuery_Dchその他実績台帳ListMap == null) { _id_NotInScopeSubQuery_Dchその他実績台帳ListMap = new LinkedHashMap<String, Dchその他実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_id_NotInScopeSubQuery_Dchその他実績台帳ListMap.size() + 1);
-            _id_NotInScopeSubQuery_Dchその他実績台帳ListMap.put(key, subQuery); return "Id_NotInScopeSubQuery_Dchその他実績台帳List." + key;
         }
 
         protected Map<String, Dch宿泊実績台帳CQ> _id_NotInScopeSubQuery_Dch宿泊実績台帳ListMap;
@@ -129,51 +73,12 @@ namespace Dbflute.CBean.CQ.BS {
             _id_NotInScopeSubQuery_Dch宿泊実績台帳ListMap.put(key, subQuery); return "Id_NotInScopeSubQuery_Dch宿泊実績台帳List." + key;
         }
 
-        protected Map<String, Dch清掃実績台帳CQ> _id_NotInScopeSubQuery_Dch清掃実績台帳ListMap;
-        public Map<String, Dch清掃実績台帳CQ> Id_NotInScopeSubQuery_Dch清掃実績台帳List { get { return _id_NotInScopeSubQuery_Dch清掃実績台帳ListMap; }}
-        public override String keepId_NotInScopeSubQuery_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery) {
-            if (_id_NotInScopeSubQuery_Dch清掃実績台帳ListMap == null) { _id_NotInScopeSubQuery_Dch清掃実績台帳ListMap = new LinkedHashMap<String, Dch清掃実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_id_NotInScopeSubQuery_Dch清掃実績台帳ListMap.size() + 1);
-            _id_NotInScopeSubQuery_Dch清掃実績台帳ListMap.put(key, subQuery); return "Id_NotInScopeSubQuery_Dch清掃実績台帳List." + key;
-        }
-
-        protected Map<String, Dchその他実績台帳CQ> _id_SpecifyDerivedReferrer_Dchその他実績台帳ListMap;
-        public Map<String, Dchその他実績台帳CQ> Id_SpecifyDerivedReferrer_Dchその他実績台帳List { get { return _id_SpecifyDerivedReferrer_Dchその他実績台帳ListMap; }}
-        public override String keepId_SpecifyDerivedReferrer_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery) {
-            if (_id_SpecifyDerivedReferrer_Dchその他実績台帳ListMap == null) { _id_SpecifyDerivedReferrer_Dchその他実績台帳ListMap = new LinkedHashMap<String, Dchその他実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_id_SpecifyDerivedReferrer_Dchその他実績台帳ListMap.size() + 1);
-            _id_SpecifyDerivedReferrer_Dchその他実績台帳ListMap.put(key, subQuery); return "Id_SpecifyDerivedReferrer_Dchその他実績台帳List." + key;
-        }
-
         protected Map<String, Dch宿泊実績台帳CQ> _id_SpecifyDerivedReferrer_Dch宿泊実績台帳ListMap;
         public Map<String, Dch宿泊実績台帳CQ> Id_SpecifyDerivedReferrer_Dch宿泊実績台帳List { get { return _id_SpecifyDerivedReferrer_Dch宿泊実績台帳ListMap; }}
         public override String keepId_SpecifyDerivedReferrer_Dch宿泊実績台帳List(Dch宿泊実績台帳CQ subQuery) {
             if (_id_SpecifyDerivedReferrer_Dch宿泊実績台帳ListMap == null) { _id_SpecifyDerivedReferrer_Dch宿泊実績台帳ListMap = new LinkedHashMap<String, Dch宿泊実績台帳CQ>(); }
             String key = "subQueryMapKey" + (_id_SpecifyDerivedReferrer_Dch宿泊実績台帳ListMap.size() + 1);
             _id_SpecifyDerivedReferrer_Dch宿泊実績台帳ListMap.put(key, subQuery); return "Id_SpecifyDerivedReferrer_Dch宿泊実績台帳List." + key;
-        }
-
-        protected Map<String, Dch清掃実績台帳CQ> _id_SpecifyDerivedReferrer_Dch清掃実績台帳ListMap;
-        public Map<String, Dch清掃実績台帳CQ> Id_SpecifyDerivedReferrer_Dch清掃実績台帳List { get { return _id_SpecifyDerivedReferrer_Dch清掃実績台帳ListMap; }}
-        public override String keepId_SpecifyDerivedReferrer_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery) {
-            if (_id_SpecifyDerivedReferrer_Dch清掃実績台帳ListMap == null) { _id_SpecifyDerivedReferrer_Dch清掃実績台帳ListMap = new LinkedHashMap<String, Dch清掃実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_id_SpecifyDerivedReferrer_Dch清掃実績台帳ListMap.size() + 1);
-            _id_SpecifyDerivedReferrer_Dch清掃実績台帳ListMap.put(key, subQuery); return "Id_SpecifyDerivedReferrer_Dch清掃実績台帳List." + key;
-        }
-
-        protected Map<String, Dchその他実績台帳CQ> _id_QueryDerivedReferrer_Dchその他実績台帳ListMap;
-        public Map<String, Dchその他実績台帳CQ> Id_QueryDerivedReferrer_Dchその他実績台帳List { get { return _id_QueryDerivedReferrer_Dchその他実績台帳ListMap; } }
-        public override String keepId_QueryDerivedReferrer_Dchその他実績台帳List(Dchその他実績台帳CQ subQuery) {
-            if (_id_QueryDerivedReferrer_Dchその他実績台帳ListMap == null) { _id_QueryDerivedReferrer_Dchその他実績台帳ListMap = new LinkedHashMap<String, Dchその他実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_id_QueryDerivedReferrer_Dchその他実績台帳ListMap.size() + 1);
-            _id_QueryDerivedReferrer_Dchその他実績台帳ListMap.put(key, subQuery); return "Id_QueryDerivedReferrer_Dchその他実績台帳List." + key;
-        }
-        protected Map<String, Object> _id_QueryDerivedReferrer_Dchその他実績台帳ListParameterMap;
-        public Map<String, Object> Id_QueryDerivedReferrer_Dchその他実績台帳ListParameter { get { return _id_QueryDerivedReferrer_Dchその他実績台帳ListParameterMap; } }
-        public override String keepId_QueryDerivedReferrer_Dchその他実績台帳ListParameter(Object parameterValue) {
-            if (_id_QueryDerivedReferrer_Dchその他実績台帳ListParameterMap == null) { _id_QueryDerivedReferrer_Dchその他実績台帳ListParameterMap = new LinkedHashMap<String, Object>(); }
-            String key = "subQueryParameterKey" + (_id_QueryDerivedReferrer_Dchその他実績台帳ListParameterMap.size() + 1);
-            _id_QueryDerivedReferrer_Dchその他実績台帳ListParameterMap.put(key, parameterValue); return "Id_QueryDerivedReferrer_Dchその他実績台帳ListParameter." + key;
         }
 
         protected Map<String, Dch宿泊実績台帳CQ> _id_QueryDerivedReferrer_Dch宿泊実績台帳ListMap;
@@ -189,21 +94,6 @@ namespace Dbflute.CBean.CQ.BS {
             if (_id_QueryDerivedReferrer_Dch宿泊実績台帳ListParameterMap == null) { _id_QueryDerivedReferrer_Dch宿泊実績台帳ListParameterMap = new LinkedHashMap<String, Object>(); }
             String key = "subQueryParameterKey" + (_id_QueryDerivedReferrer_Dch宿泊実績台帳ListParameterMap.size() + 1);
             _id_QueryDerivedReferrer_Dch宿泊実績台帳ListParameterMap.put(key, parameterValue); return "Id_QueryDerivedReferrer_Dch宿泊実績台帳ListParameter." + key;
-        }
-
-        protected Map<String, Dch清掃実績台帳CQ> _id_QueryDerivedReferrer_Dch清掃実績台帳ListMap;
-        public Map<String, Dch清掃実績台帳CQ> Id_QueryDerivedReferrer_Dch清掃実績台帳List { get { return _id_QueryDerivedReferrer_Dch清掃実績台帳ListMap; } }
-        public override String keepId_QueryDerivedReferrer_Dch清掃実績台帳List(Dch清掃実績台帳CQ subQuery) {
-            if (_id_QueryDerivedReferrer_Dch清掃実績台帳ListMap == null) { _id_QueryDerivedReferrer_Dch清掃実績台帳ListMap = new LinkedHashMap<String, Dch清掃実績台帳CQ>(); }
-            String key = "subQueryMapKey" + (_id_QueryDerivedReferrer_Dch清掃実績台帳ListMap.size() + 1);
-            _id_QueryDerivedReferrer_Dch清掃実績台帳ListMap.put(key, subQuery); return "Id_QueryDerivedReferrer_Dch清掃実績台帳List." + key;
-        }
-        protected Map<String, Object> _id_QueryDerivedReferrer_Dch清掃実績台帳ListParameterMap;
-        public Map<String, Object> Id_QueryDerivedReferrer_Dch清掃実績台帳ListParameter { get { return _id_QueryDerivedReferrer_Dch清掃実績台帳ListParameterMap; } }
-        public override String keepId_QueryDerivedReferrer_Dch清掃実績台帳ListParameter(Object parameterValue) {
-            if (_id_QueryDerivedReferrer_Dch清掃実績台帳ListParameterMap == null) { _id_QueryDerivedReferrer_Dch清掃実績台帳ListParameterMap = new LinkedHashMap<String, Object>(); }
-            String key = "subQueryParameterKey" + (_id_QueryDerivedReferrer_Dch清掃実績台帳ListParameterMap.size() + 1);
-            _id_QueryDerivedReferrer_Dch清掃実績台帳ListParameterMap.put(key, parameterValue); return "Id_QueryDerivedReferrer_Dch清掃実績台帳ListParameter." + key;
         }
 
         public BsDch客室利用実績台帳CQ AddOrderBy_Id_Asc() { regOBA("id");return this; }
@@ -280,6 +170,16 @@ namespace Dbflute.CBean.CQ.BS {
 
         public BsDch客室利用実績台帳CQ AddOrderBy_利用終了日時_Asc() { regOBA("利用終了日時");return this; }
         public BsDch客室利用実績台帳CQ AddOrderBy_利用終了日時_Desc() { regOBD("利用終了日時");return this; }
+
+        protected ConditionValue _備考;
+        public ConditionValue 備考 {
+            get { if (_備考 == null) { _備考 = new ConditionValue(); } return _備考; }
+        }
+        protected override ConditionValue getCValue備考() { return this.備考; }
+
+
+        public BsDch客室利用実績台帳CQ AddOrderBy_備考_Asc() { regOBA("備考");return this; }
+        public BsDch客室利用実績台帳CQ AddOrderBy_備考_Desc() { regOBD("備考");return this; }
 
         public BsDch客室利用実績台帳CQ AddSpecifiedDerivedOrderBy_Asc(String aliasName) { registerSpecifiedDerivedOrderBy_Asc(aliasName); return this; }
         public BsDch客室利用実績台帳CQ AddSpecifiedDerivedOrderBy_Desc(String aliasName) { registerSpecifiedDerivedOrderBy_Desc(aliasName); return this; }
