@@ -1,7 +1,11 @@
 ﻿using System.Drawing;
+using System.Reflection;
 
 namespace HotelManagement.Common
 {
+    /// <summary>
+    /// リソースへの仲介を行うクラス
+    /// </summary>
     public static class ResourceUtil
     {
         /// <summary>
@@ -11,9 +15,9 @@ namespace HotelManagement.Common
         /// <returns></returns>
         public static Bitmap GetMenuIcon(string 画面名)
         {
-            System.Reflection.Assembly myAssembly = System.Reflection.Assembly.GetExecutingAssembly();
+            var assembly = Assembly.GetExecutingAssembly();
             return new Bitmap(
-                myAssembly.GetManifestResourceStream($"{Constants.AppName}.Resources.Images.icon_{画面名}.png"));
+                assembly.GetManifestResourceStream($"{Constants.AppName}.Resources.Images.icon_{画面名}.png"));
         }
     }
 }
