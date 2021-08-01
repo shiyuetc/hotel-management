@@ -63,35 +63,35 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        protected override ConditionValue getCValueId() {
-            return _myCQ.Id;
+        protected override ConditionValue getCValue従業員コード() {
+            return _myCQ.従業員コード;
         }
 
 
-        public override String keepId_ExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+        public override String keep従業員コード_ExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
             throw new SystemException("ExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepId_ExistsSubQuery_Dch従業員職位履歴台帳List(subQuery);
+            // _myCQ.keep従業員コード_ExistsSubQuery_Dch従業員職位履歴台帳List(subQuery);
         }
 
-        public override String keepId_NotExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+        public override String keep従業員コード_NotExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
             throw new SystemException("NotExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepId_NotExistsSubQuery_Dch従業員職位履歴台帳List(subQuery);
+            // _myCQ.keep従業員コード_NotExistsSubQuery_Dch従業員職位履歴台帳List(subQuery);
         }
 
-        public override String keepId_InScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
-            return _myCQ.keepId_InScopeSubQuery_Dch従業員職位履歴台帳List(subQuery);
+        public override String keep従業員コード_InScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+            return _myCQ.keep従業員コード_InScopeSubQuery_Dch従業員職位履歴台帳List(subQuery);
         }
 
-        public override String keepId_NotInScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
-            return _myCQ.keepId_NotInScopeSubQuery_Dch従業員職位履歴台帳List(subQuery);
+        public override String keep従業員コード_NotInScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+            return _myCQ.keep従業員コード_NotInScopeSubQuery_Dch従業員職位履歴台帳List(subQuery);
         }
-        public override String keepId_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+        public override String keep従業員コード_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
             throw new UnsupportedOperationException("(Specify)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepId_QueryDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+        public override String keep従業員コード_QueryDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepId_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter(Object parameterValue) {
+        public override String keep従業員コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter(Object parameterValue) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
 
@@ -100,13 +100,13 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        protected override ConditionValue getCValue氏名姓() {
-            return _myCQ.氏名姓;
+        protected override ConditionValue getCValue名字() {
+            return _myCQ.名字;
         }
 
 
-        protected override ConditionValue getCValue氏名名() {
-            return _myCQ.氏名名;
+        protected override ConditionValue getCValue名前() {
+            return _myCQ.名前;
         }
 
 
@@ -140,17 +140,17 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        protected override ConditionValue getCValue職位code() {
-            return _myCQ.職位code;
+        protected override ConditionValue getCValue職位コード() {
+            return _myCQ.職位コード;
         }
 
 
-        public override String keep職位code_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
-            return _myCQ.keep職位code_InScopeSubQuery_Kbn職位区分(subQuery);
+        public override String keep職位コード_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
+            return _myCQ.keep職位コード_InScopeSubQuery_Kbn職位区分(subQuery);
         }
 
-        public override String keep職位code_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
-            return _myCQ.keep職位code_NotInScopeSubQuery_Kbn職位区分(subQuery);
+        public override String keep職位コード_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
+            return _myCQ.keep職位コード_NotInScopeSubQuery_Kbn職位区分(subQuery);
         }
 
         protected override ConditionValue getCValue最終ログイン日時() {

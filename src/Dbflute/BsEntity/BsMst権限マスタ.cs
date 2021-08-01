@@ -18,14 +18,16 @@ namespace Dbflute.ExEntity {
     /// <summary>
     /// The entity of mst権限マスタ as TABLE. (partial class for auto-generation)
     /// <![CDATA[
+    /// 権限マスタ
+    /// 
     /// [primary-key]
-    ///     id
+    ///     職位コード, 画面コード
     /// 
     /// [column]
-    ///     id, 職位code, 制御画面id
+    ///     職位コード, 画面コード
     /// 
     /// [sequence]
-    ///     mst002_id_seq
+    ///     
     /// 
     /// [identity]
     ///     
@@ -34,13 +36,13 @@ namespace Dbflute.ExEntity {
     ///     
     /// 
     /// [foreign-table]
-    ///     mst制御画面マスタ, kbn職位区分
+    ///     mst画面マスタ, kbn職位区分
     /// 
     /// [referrer-table]
     ///     
     /// 
     /// [foreign-property]
-    ///     mst制御画面マスタ, kbn職位区分
+    ///     mst画面マスタ, kbn職位区分
     /// 
     /// [referrer-property]
     ///     
@@ -55,14 +57,11 @@ namespace Dbflute.ExEntity {
         //                                                                       Attribute
         //                                                                       =========
         #region Attribute
-        /// <summary>id: {PK, ID, NotNull, bigserial(19)}</summary>
-        protected long? _id;
+        /// <summary>職位コード: {PK, NotNull, bpchar(3), FK to kbn職位区分, classification=職位区分}</summary>
+        protected String _職位コード;
 
-        /// <summary>職位code: {NotNull, bpchar(3), FK to kbn職位区分, classification=職位区分}</summary>
-        protected String _職位code;
-
-        /// <summary>制御画面id: {NotNull, int8(19), FK to mst制御画面マスタ}</summary>
-        protected long? _制御画面id;
+        /// <summary>画面コード: {PK, NotNull, bpchar(3), FK to mst画面マスタ}</summary>
+        protected String _画面コード;
 
         protected EntityModifiedProperties __modifiedProperties = new EntityModifiedProperties();
         #endregion
@@ -82,10 +81,10 @@ namespace Dbflute.ExEntity {
         //                                                         Classification Property
         //                                                         =======================
         #region Classification Property
-        public CDef.職位区分 職位codeAs職位区分 { get {
-            return CDef.職位区分.CodeOf(_職位code);
+        public CDef.職位区分 職位コードAs職位区分 { get {
+            return CDef.職位区分.CodeOf(_職位コード);
         } set {
-            職位code = value != null ? value.Code : null;
+            職位コード = value != null ? value.Code : null;
         }}
 
         #endregion
@@ -95,43 +94,43 @@ namespace Dbflute.ExEntity {
         //                                                          ======================
         #region Classification Setting
         /// <summary>
-        /// Set the value of 職位code as システム保守.
+        /// Set the value of 職位コード as システム保守.
         /// <![CDATA[
         /// システム保守: System Maintenancer
         /// ]]>
         /// </summary>
-        public void Set職位code_システム保守() {
-            職位codeAs職位区分 = CDef.職位区分.システム保守;
+        public void Set職位コード_システム保守() {
+            職位コードAs職位区分 = CDef.職位区分.システム保守;
         }
 
         /// <summary>
-        /// Set the value of 職位code as アシスタントマネージャー.
+        /// Set the value of 職位コード as アシスタントマネージャー.
         /// <![CDATA[
         /// アシスタントマネージャー: Assistant Manager
         /// ]]>
         /// </summary>
-        public void Set職位code_アシスタントマネージャー() {
-            職位codeAs職位区分 = CDef.職位区分.アシスタントマネージャー;
+        public void Set職位コード_アシスタントマネージャー() {
+            職位コードAs職位区分 = CDef.職位区分.アシスタントマネージャー;
         }
 
         /// <summary>
-        /// Set the value of 職位code as ファイナンシャルコントローラー.
+        /// Set the value of 職位コード as ファイナンシャルコントローラー.
         /// <![CDATA[
         /// ファイナンシャルコントローラー: Financial Controller
         /// ]]>
         /// </summary>
-        public void Set職位code_ファイナンシャルコントローラー() {
-            職位codeAs職位区分 = CDef.職位区分.ファイナンシャルコントローラー;
+        public void Set職位コード_ファイナンシャルコントローラー() {
+            職位コードAs職位区分 = CDef.職位区分.ファイナンシャルコントローラー;
         }
 
         /// <summary>
-        /// Set the value of 職位code as フロントクラーク.
+        /// Set the value of 職位コード as フロントクラーク.
         /// <![CDATA[
         /// フロントクラーク: Front Clerk
         /// ]]>
         /// </summary>
-        public void Set職位code_フロントクラーク() {
-            職位codeAs職位区分 = CDef.職位区分.フロントクラーク;
+        public void Set職位コード_フロントクラーク() {
+            職位コードAs職位区分 = CDef.職位区分.フロントクラーク;
         }
 
         #endregion
@@ -141,61 +140,61 @@ namespace Dbflute.ExEntity {
         //                                                    ============================
         #region Classification Determination
         /// <summary>
-        /// Is the value of 職位code 'システム保守'?
+        /// Is the value of 職位コード 'システム保守'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// システム保守: System Maintenancer
         /// ]]>
         /// </summary>
-        public bool Is職位codeシステム保守 {
+        public bool Is職位コードシステム保守 {
             get {
-                CDef.職位区分 cls = 職位codeAs職位区分;
+                CDef.職位区分 cls = 職位コードAs職位区分;
                 return cls != null ? cls.Equals(CDef.職位区分.システム保守) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of 職位code 'アシスタントマネージャー'?
+        /// Is the value of 職位コード 'アシスタントマネージャー'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// アシスタントマネージャー: Assistant Manager
         /// ]]>
         /// </summary>
-        public bool Is職位codeアシスタントマネージャー {
+        public bool Is職位コードアシスタントマネージャー {
             get {
-                CDef.職位区分 cls = 職位codeAs職位区分;
+                CDef.職位区分 cls = 職位コードAs職位区分;
                 return cls != null ? cls.Equals(CDef.職位区分.アシスタントマネージャー) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of 職位code 'ファイナンシャルコントローラー'?
+        /// Is the value of 職位コード 'ファイナンシャルコントローラー'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// ファイナンシャルコントローラー: Financial Controller
         /// ]]>
         /// </summary>
-        public bool Is職位codeファイナンシャルコントローラー {
+        public bool Is職位コードファイナンシャルコントローラー {
             get {
-                CDef.職位区分 cls = 職位codeAs職位区分;
+                CDef.職位区分 cls = 職位コードAs職位区分;
                 return cls != null ? cls.Equals(CDef.職位区分.ファイナンシャルコントローラー) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of 職位code 'フロントクラーク'?
+        /// Is the value of 職位コード 'フロントクラーク'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// フロントクラーク: Front Clerk
         /// ]]>
         /// </summary>
-        public bool Is職位codeフロントクラーク {
+        public bool Is職位コードフロントクラーク {
             get {
-                CDef.職位区分 cls = 職位codeAs職位区分;
+                CDef.職位区分 cls = 職位コードAs職位区分;
                 return cls != null ? cls.Equals(CDef.職位区分.フロントクラーク) : false;
             }
         }
@@ -206,19 +205,19 @@ namespace Dbflute.ExEntity {
         //                                                                Foreign Property
         //                                                                ================
         #region Foreign Property
-        protected Mst制御画面マスタ _mst制御画面マスタ;
+        protected Mst画面マスタ _mst画面マスタ;
 
-        /// <summary>mst制御画面マスタ as 'Mst制御画面マスタ'.</summary>
-        [Seasar.Dao.Attrs.Relno(0), Seasar.Dao.Attrs.Relkeys("制御画面id:id")]
-        public Mst制御画面マスタ Mst制御画面マスタ {
-            get { return _mst制御画面マスタ; }
-            set { _mst制御画面マスタ = value; }
+        /// <summary>mst画面マスタ as 'Mst画面マスタ'.</summary>
+        [Seasar.Dao.Attrs.Relno(0), Seasar.Dao.Attrs.Relkeys("画面コード:画面コード")]
+        public Mst画面マスタ Mst画面マスタ {
+            get { return _mst画面マスタ; }
+            set { _mst画面マスタ = value; }
         }
 
         protected Kbn職位区分 _kbn職位区分;
 
         /// <summary>kbn職位区分 as 'Kbn職位区分'.</summary>
-        [Seasar.Dao.Attrs.Relno(1), Seasar.Dao.Attrs.Relkeys("職位code:code")]
+        [Seasar.Dao.Attrs.Relno(1), Seasar.Dao.Attrs.Relkeys("職位コード:職位コード")]
         public Kbn職位区分 Kbn職位区分 {
             get { return _kbn職位区分; }
             set { _kbn職位区分 = value; }
@@ -237,7 +236,8 @@ namespace Dbflute.ExEntity {
         //                                                                   =============
         public virtual bool HasPrimaryKeyValue {
             get {
-                if (_id == null) { return false; }
+                if (_職位コード == null) { return false; }
+                if (_画面コード == null) { return false; }
                 return true;
             }
         }
@@ -260,7 +260,8 @@ namespace Dbflute.ExEntity {
         public override bool Equals(Object other) {
             if (other == null || !(other is Mst権限マスタ)) { return false; }
             Mst権限マスタ otherEntity = (Mst権限マスタ)other;
-            if (!xSV(this.Id, otherEntity.Id)) { return false; }
+            if (!xSV(this.職位コード, otherEntity.職位コード)) { return false; }
+            if (!xSV(this.画面コード, otherEntity.画面コード)) { return false; }
             return true;
         }
         protected bool xSV(Object value1, Object value2) { // isSameValue()
@@ -271,7 +272,8 @@ namespace Dbflute.ExEntity {
 
         public override int GetHashCode() {
             int result = 17;
-            result = xCH(result, _id);
+            result = xCH(result, _職位コード);
+            result = xCH(result, _画面コード);
             return result;
         }
         protected int xCH(int result, Object value) { // calculateHashcode()
@@ -287,8 +289,8 @@ namespace Dbflute.ExEntity {
             StringBuilder sb = new StringBuilder();
             sb.Append(ToString());
             String l = "\n  ";
-            if (_mst制御画面マスタ != null)
-            { sb.Append(l).Append(xbRDS(_mst制御画面マスタ, "Mst制御画面マスタ")); }
+            if (_mst画面マスタ != null)
+            { sb.Append(l).Append(xbRDS(_mst画面マスタ, "Mst画面マスタ")); }
             if (_kbn職位区分 != null)
             { sb.Append(l).Append(xbRDS(_kbn職位区分, "Kbn職位区分")); }
             return sb.ToString();
@@ -307,9 +309,8 @@ namespace Dbflute.ExEntity {
         protected virtual String BuildColumnString() {
             String c = ", ";
             StringBuilder sb = new StringBuilder();
-            sb.Append(c).Append(this.Id);
-            sb.Append(c).Append(this.職位code);
-            sb.Append(c).Append(this.制御画面id);
+            sb.Append(c).Append(this.職位コード);
+            sb.Append(c).Append(this.画面コード);
             if (sb.Length > 0) { sb.Remove(0, c.Length); }
             sb.Insert(0, "{").Append("}");
             return sb.ToString();
@@ -317,7 +318,7 @@ namespace Dbflute.ExEntity {
         protected virtual String BuildRelationString() {
             StringBuilder sb = new StringBuilder();
             String c = ",";
-            if (_mst制御画面マスタ != null) { sb.Append(c).Append("Mst制御画面マスタ"); }
+            if (_mst画面マスタ != null) { sb.Append(c).Append("Mst画面マスタ"); }
             if (_kbn職位区分 != null) { sb.Append(c).Append("Kbn職位区分"); }
             if (sb.Length > 0) { sb.Remove(0, c.Length).Insert(0, "(").Append(")"); }
             return sb.ToString();
@@ -328,34 +329,29 @@ namespace Dbflute.ExEntity {
         //                                                                        Accessor
         //                                                                        ========
         #region Accessor
-        /// <summary>id: {PK, ID, NotNull, bigserial(19)}</summary>
-        [Seasar.Dao.Attrs.ID("identity")]
-        [Seasar.Dao.Attrs.Column("id")]
-        public long? Id {
-            get { return _id; }
+        /// <summary>職位コード: {PK, NotNull, bpchar(3), FK to kbn職位区分, classification=職位区分}</summary>
+        /// <remarks>
+        /// 職位コード
+        /// </remarks>
+        [Seasar.Dao.Attrs.Column("職位コード")]
+        public String 職位コード {
+            get { return _職位コード; }
             set {
-                __modifiedProperties.AddPropertyName("Id");
-                _id = value;
+                __modifiedProperties.AddPropertyName("職位コード");
+                _職位コード = value;
             }
         }
 
-        /// <summary>職位code: {NotNull, bpchar(3), FK to kbn職位区分, classification=職位区分}</summary>
-        [Seasar.Dao.Attrs.Column("職位code")]
-        public String 職位code {
-            get { return _職位code; }
+        /// <summary>画面コード: {PK, NotNull, bpchar(3), FK to mst画面マスタ}</summary>
+        /// <remarks>
+        /// 画面コード
+        /// </remarks>
+        [Seasar.Dao.Attrs.Column("画面コード")]
+        public String 画面コード {
+            get { return _画面コード; }
             set {
-                __modifiedProperties.AddPropertyName("職位code");
-                _職位code = value;
-            }
-        }
-
-        /// <summary>制御画面id: {NotNull, int8(19), FK to mst制御画面マスタ}</summary>
-        [Seasar.Dao.Attrs.Column("制御画面id")]
-        public long? 制御画面id {
-            get { return _制御画面id; }
-            set {
-                __modifiedProperties.AddPropertyName("制御画面id");
-                _制御画面id = value;
+                __modifiedProperties.AddPropertyName("画面コード");
+                _画面コード = value;
             }
         }
 

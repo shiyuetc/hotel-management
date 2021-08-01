@@ -119,18 +119,18 @@ namespace Dbflute.ExBhv {
             return SelectEntityWithDeletedCheck(Downcast(cb));
         }
 
-        public virtual Mst従業員マスタ SelectByPKValue(long? id) {
-            return SelectEntity(BuildPKCB(id));
+        public virtual Mst従業員マスタ SelectByPKValue(String 従業員コード) {
+            return SelectEntity(BuildPKCB(従業員コード));
         }
 
-        public virtual Mst従業員マスタ SelectByPKValueWithDeletedCheck(long? id) {
-            return SelectEntityWithDeletedCheck(BuildPKCB(id));
+        public virtual Mst従業員マスタ SelectByPKValueWithDeletedCheck(String 従業員コード) {
+            return SelectEntityWithDeletedCheck(BuildPKCB(従業員コード));
         }
 
-        private Mst従業員マスタCB BuildPKCB(long? id) {
-            AssertObjectNotNull("id", id);
+        private Mst従業員マスタCB BuildPKCB(String 従業員コード) {
+            AssertObjectNotNull("従業員コード", 従業員コード);
             Mst従業員マスタCB cb = NewMyConditionBean();
-            cb.Query().SetId_Equal(id);
+            cb.Query().Set従業員コード_Equal(従業員コード);
             return cb;            
         }
         #endregion
@@ -165,17 +165,6 @@ namespace Dbflute.ExBhv {
         #endregion
 
         // ===============================================================================
-        //                                                                        Sequence
-        //                                                                        ========
-        public long? SelectNextVal() {
-            return DelegateSelectNextVal();
-        }
-        protected override void SetupNextValueToPrimaryKey(Entity entity) {// Very Internal
-            Mst従業員マスタ myEntity = (Mst従業員マスタ)entity;
-            myEntity.Id = SelectNextVal();
-        }
-
-        // ===============================================================================
         //                                                                   Load Referrer
         //                                                                   =============
         #region Load Referrer
@@ -195,20 +184,20 @@ namespace Dbflute.ExBhv {
             AssertObjectNotNull("mst従業員マスタList", mst従業員マスタList); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
             if (mst従業員マスタList.Count == 0) { return; }
             Dch従業員職位履歴台帳Bhv referrerBhv = xgetBSFLR().Select<Dch従業員職位履歴台帳Bhv>();
-            HelpLoadReferrerInternally<Mst従業員マスタ, long?, Dch従業員職位履歴台帳CB, Dch従業員職位履歴台帳>
+            HelpLoadReferrerInternally<Mst従業員マスタ, String, Dch従業員職位履歴台帳CB, Dch従業員職位履歴台帳>
                     (mst従業員マスタList, loadReferrerOption, new MyInternalLoadDch従業員職位履歴台帳ListCallback(referrerBhv));
         }
-        protected class MyInternalLoadDch従業員職位履歴台帳ListCallback : InternalLoadReferrerCallback<Mst従業員マスタ, long?, Dch従業員職位履歴台帳CB, Dch従業員職位履歴台帳> {
+        protected class MyInternalLoadDch従業員職位履歴台帳ListCallback : InternalLoadReferrerCallback<Mst従業員マスタ, String, Dch従業員職位履歴台帳CB, Dch従業員職位履歴台帳> {
             protected Dch従業員職位履歴台帳Bhv referrerBhv;
             public MyInternalLoadDch従業員職位履歴台帳ListCallback(Dch従業員職位履歴台帳Bhv referrerBhv) { this.referrerBhv = referrerBhv; }
-            public long? getPKVal(Mst従業員マスタ e) { return e.Id; }
+            public String getPKVal(Mst従業員マスタ e) { return e.従業員コード; }
             public void setRfLs(Mst従業員マスタ e, IList<Dch従業員職位履歴台帳> ls) { e.Dch従業員職位履歴台帳List = ls; }
             public Dch従業員職位履歴台帳CB newMyCB() { return referrerBhv.NewMyConditionBean(); }
-            public void qyFKIn(Dch従業員職位履歴台帳CB cb, IList<long?> ls) { cb.Query().Set従業員id_InScope(ls); }
-            public void qyOdFKAsc(Dch従業員職位履歴台帳CB cb) { cb.Query().AddOrderBy_従業員id_Asc(); }
-            public void spFKCol(Dch従業員職位履歴台帳CB cb) { cb.Specify().Column従業員id(); }
+            public void qyFKIn(Dch従業員職位履歴台帳CB cb, IList<String> ls) { cb.Query().Set従業員コード_InScope(ls); }
+            public void qyOdFKAsc(Dch従業員職位履歴台帳CB cb) { cb.Query().AddOrderBy_従業員コード_Asc(); }
+            public void spFKCol(Dch従業員職位履歴台帳CB cb) { cb.Specify().Column従業員コード(); }
             public IList<Dch従業員職位履歴台帳> selRfLs(Dch従業員職位履歴台帳CB cb) { return referrerBhv.SelectList(cb); }
-            public long? getFKVal(Dch従業員職位履歴台帳 e) { return e.従業員id; }
+            public String getFKVal(Dch従業員職位履歴台帳 e) { return e.従業員コード; }
             public void setlcEt(Dch従業員職位履歴台帳 re, Mst従業員マスタ be) { re.Mst従業員マスタ = be; }
         }
         #endregion
@@ -261,7 +250,7 @@ namespace Dbflute.ExBhv {
             public void CallbackUpdate(Mst従業員マスタ entity) { _bhv.Update(entity); }
             public Mst従業員マスタCB CallbackNewMyConditionBean() { return _bhv.NewMyConditionBean(); }
             public void CallbackSetupPrimaryKeyCondition(Mst従業員マスタCB cb, Mst従業員マスタ entity) {
-                cb.Query().SetId_Equal(entity.Id);
+                cb.Query().Set従業員コード_Equal(entity.従業員コード);
             }
             public int CallbackSelectCount(Mst従業員マスタCB cb) { return _bhv.SelectCount(cb); }
         }
@@ -313,7 +302,6 @@ namespace Dbflute.ExBhv {
         #region Delegate Method
         protected int DelegateSelectCount(Mst従業員マスタCB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectCount(cb); }
         protected IList<Mst従業員マスタ> DelegateSelectList(Mst従業員マスタCB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectList(cb); }
-        protected long? DelegateSelectNextVal() { return this.Dao.SelectNextVal(); }
 
         protected int DelegateInsert(Mst従業員マスタ e) { if (!ProcessBeforeInsert(e)) { return 1; } return this.Dao.Insert(e); }
         protected int DelegateUpdate(Mst従業員マスタ e)

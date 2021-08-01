@@ -24,11 +24,7 @@ namespace Dbflute.ExDao {
         int Insert(Mst権限マスタ entity);
         int UpdateModifiedOnly(Mst権限マスタ entity);
         int UpdateNonstrictModifiedOnly(Mst権限マスタ entity);
-        int UpdateByQuery(Mst権限マスタCB cb, Mst権限マスタ entity);
         int Delete(Mst権限マスタ entity);
         int DeleteNonstrict(Mst権限マスタ entity);
-        int DeleteByQuery(Mst権限マスタCB cb);// {DBFlute-0.7.9}
-
-        long? SelectNextVal();
     }
 }

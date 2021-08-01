@@ -38,28 +38,28 @@ namespace Dbflute.BsEntity.Dbm {
         // ===============================================================================
         //                                                                     Column Info
         //                                                                     ===========
-        protected ColumnInfo _columnCode;
-        protected ColumnInfo _column名称;
+        protected ColumnInfo _column客室利用コード;
+        protected ColumnInfo _column客室利用名称;
 
-        public ColumnInfo ColumnCode { get { return _columnCode; } }
-        public ColumnInfo Column名称 { get { return _column名称; } }
+        public ColumnInfo Column客室利用コード { get { return _column客室利用コード; } }
+        public ColumnInfo Column客室利用名称 { get { return _column客室利用名称; } }
 
         protected void InitializeColumnInfo() {
-            _columnCode = cci("code", "code", null, null, true, "Code", typeof(String), true, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, null, "dch客室利用予定台帳List,dch客室利用実績台帳List");
-            _column名称 = cci("名称", "名称", null, null, true, "名称", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
+            _column客室利用コード = cci("客室利用コード", "客室利用コード", null, null, true, "客室利用コード", typeof(String), true, "bpchar", 2, 0, false, OptimisticLockType.NONE, null, null, "dch客室利用台帳List");
+            _column客室利用名称 = cci("客室利用名称", "客室利用名称", null, null, true, "客室利用名称", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
         }
 
         protected void InitializeColumnInfoList() {
             _columnInfoList = new ArrayList<ColumnInfo>();
-            _columnInfoList.add(ColumnCode);
-            _columnInfoList.add(Column名称);
+            _columnInfoList.add(Column客室利用コード);
+            _columnInfoList.add(Column客室利用名称);
         }
 
         // ===============================================================================
         //                                                                     Unique Info
         //                                                                     ===========
         public override UniqueInfo PrimaryUniqueInfo { get {
-            return cpui(ColumnCode);
+            return cpui(Column客室利用コード);
         }}
 
         // -------------------------------------------------
@@ -79,15 +79,10 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                  Referrer Element
         //                                  ----------------
-        public ReferrerInfo ReferrerDch客室利用予定台帳List { get {
+        public ReferrerInfo ReferrerDch客室利用台帳List { get {
             Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(ColumnCode, Dch客室利用予定台帳Dbm.GetInstance().Column客室利用code);
-            return cri("Dch客室利用予定台帳List", this, Dch客室利用予定台帳Dbm.GetInstance(), map, false);
-        }}
-        public ReferrerInfo ReferrerDch客室利用実績台帳List { get {
-            Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(ColumnCode, Dch客室利用実績台帳Dbm.GetInstance().Column客室利用code);
-            return cri("Dch客室利用実績台帳List", this, Dch客室利用実績台帳Dbm.GetInstance(), map, false);
+            map.put(Column客室利用コード, Dch客室利用台帳Dbm.GetInstance().Column客室利用コード);
+            return cri("Dch客室利用台帳List", this, Dch客室利用台帳Dbm.GetInstance(), map, false);
         }}
 
         // ===============================================================================
@@ -109,14 +104,14 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                    Column DB-Name
         //                                    --------------
-        public static readonly String DB_NAME_code = "code";
-        public static readonly String DB_NAME_名称 = "名称";
+        public static readonly String DB_NAME_客室利用コード = "客室利用コード";
+        public static readonly String DB_NAME_客室利用名称 = "客室利用名称";
 
         // -------------------------------------------------
         //                              Column Property-Name
         //                              --------------------
-        public static readonly String PROPERTY_NAME_code = "Code";
-        public static readonly String PROPERTY_NAME_名称 = "名称";
+        public static readonly String PROPERTY_NAME_客室利用コード = "客室利用コード";
+        public static readonly String PROPERTY_NAME_客室利用名称 = "客室利用名称";
 
         // -------------------------------------------------
         //                                      Foreign Name
@@ -124,8 +119,7 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                     Referrer Name
         //                                     -------------
-        public static readonly String REFERRER_PROPERTY_NAME_Dch客室利用予定台帳List = "Dch客室利用予定台帳List";
-        public static readonly String REFERRER_PROPERTY_NAME_Dch客室利用実績台帳List = "Dch客室利用実績台帳List";
+        public static readonly String REFERRER_PROPERTY_NAME_Dch客室利用台帳List = "Dch客室利用台帳List";
 
         // -------------------------------------------------
         //                               DB-Property Mapping
@@ -137,16 +131,16 @@ namespace Dbflute.BsEntity.Dbm {
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_DB_NAME.ToLower(), TABLE_PROPERTY_NAME);
-                map.put(DB_NAME_code.ToLower(), PROPERTY_NAME_code);
-                map.put(DB_NAME_名称.ToLower(), PROPERTY_NAME_名称);
+                map.put(DB_NAME_客室利用コード.ToLower(), PROPERTY_NAME_客室利用コード);
+                map.put(DB_NAME_客室利用名称.ToLower(), PROPERTY_NAME_客室利用名称);
                 _dbNamePropertyNameKeyToLowerMap = map;
             }
 
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_PROPERTY_NAME.ToLower(), TABLE_DB_NAME);
-                map.put(PROPERTY_NAME_code.ToLower(), DB_NAME_code);
-                map.put(PROPERTY_NAME_名称.ToLower(), DB_NAME_名称);
+                map.put(PROPERTY_NAME_客室利用コード.ToLower(), DB_NAME_客室利用コード);
+                map.put(PROPERTY_NAME_客室利用名称.ToLower(), DB_NAME_客室利用名称);
                 _propertyNameDbNameKeyToLowerMap = map;
             }
         }
@@ -188,8 +182,8 @@ namespace Dbflute.BsEntity.Dbm {
         protected Map<String, EntityPropertySetupper<Kbn客室利用区分>> _entityPropertySetupperMap = new LinkedHashMap<String, EntityPropertySetupper<Kbn客室利用区分>>();
 
         protected void InitializeEntityPropertySetupper() {
-            RegisterEntityPropertySetupper("code", "Code", new EntityPropertyCodeSetupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("名称", "名称", new EntityProperty名称Setupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("客室利用コード", "客室利用コード", new EntityProperty客室利用コードSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("客室利用名称", "客室利用名称", new EntityProperty客室利用名称Setupper(), _entityPropertySetupperMap);
         }
 
         public override bool HasEntityPropertySetupper(String propertyName) {
@@ -201,11 +195,11 @@ namespace Dbflute.BsEntity.Dbm {
             callback.Setup((Kbn客室利用区分)entity, value);
         }
 
-        public class EntityPropertyCodeSetupper : EntityPropertySetupper<Kbn客室利用区分> {
-            public void Setup(Kbn客室利用区分 entity, Object value) { entity.Code = (value != null) ? (String)value : null; }
+        public class EntityProperty客室利用コードSetupper : EntityPropertySetupper<Kbn客室利用区分> {
+            public void Setup(Kbn客室利用区分 entity, Object value) { entity.客室利用コード = (value != null) ? (String)value : null; }
         }
-        public class EntityProperty名称Setupper : EntityPropertySetupper<Kbn客室利用区分> {
-            public void Setup(Kbn客室利用区分 entity, Object value) { entity.名称 = (value != null) ? (String)value : null; }
+        public class EntityProperty客室利用名称Setupper : EntityPropertySetupper<Kbn客室利用区分> {
+            public void Setup(Kbn客室利用区分 entity, Object value) { entity.客室利用名称 = (value != null) ? (String)value : null; }
         }
     }
 }

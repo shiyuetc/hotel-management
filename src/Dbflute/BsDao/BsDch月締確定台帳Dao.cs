@@ -28,7 +28,5 @@ namespace Dbflute.ExDao {
         int Delete(Dch月締確定台帳 entity);
         int DeleteNonstrict(Dch月締確定台帳 entity);
         int DeleteByQuery(Dch月締確定台帳CB cb);// {DBFlute-0.7.9}
-
-        long? SelectNextVal();
     }
 }

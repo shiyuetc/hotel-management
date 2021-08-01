@@ -20,49 +20,56 @@ namespace Dbflute.CBean.CQ.BS {
         public override String getTableDbName() { return "mst従業員マスタ"; }
         public override String getTableSqlName() { return "mst従業員マスタ"; }
 
-        public void SetId_Equal(long? v) { regId(CK_EQ, v); }
-        public void SetId_NotEqual(long? v) { regId(CK_NES, v); }
-        public void SetId_GreaterThan(long? v) { regId(CK_GT, v); }
-        public void SetId_LessThan(long? v) { regId(CK_LT, v); }
-        public void SetId_GreaterEqual(long? v) { regId(CK_GE, v); }
-        public void SetId_LessEqual(long? v) { regId(CK_LE, v); }
-        public void SetId_InScope(IList<long?> ls) { regINS<long?>(CK_INS, cTL<long?>(ls), getCValueId(), "id"); }
-        public void SetId_NotInScope(IList<long?> ls) { regINS<long?>(CK_NINS, cTL<long?>(ls), getCValueId(), "id"); }
+        public void Set従業員コード_Equal(String v) { DoSet従業員コード_Equal(fRES(v)); }
+        protected void DoSet従業員コード_Equal(String v) { reg従業員コード(CK_EQ, v); }
+        public void Set従業員コード_NotEqual(String v) { DoSet従業員コード_NotEqual(fRES(v)); }
+        protected void DoSet従業員コード_NotEqual(String v) { reg従業員コード(CK_NES, v); }
+        public void Set従業員コード_GreaterThan(String v) { reg従業員コード(CK_GT, fRES(v)); }
+        public void Set従業員コード_LessThan(String v) { reg従業員コード(CK_LT, fRES(v)); }
+        public void Set従業員コード_GreaterEqual(String v) { reg従業員コード(CK_GE, fRES(v)); }
+        public void Set従業員コード_LessEqual(String v) { reg従業員コード(CK_LE, fRES(v)); }
+        public void Set従業員コード_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue従業員コード(), "従業員コード"); }
+        public void Set従業員コード_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue従業員コード(), "従業員コード"); }
+        public void Set従業員コード_PrefixSearch(String v) { Set従業員コード_LikeSearch(v, cLSOP()); }
+        public void Set従業員コード_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValue従業員コード(), "従業員コード", option); }
+        public void Set従業員コード_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValue従業員コード(), "従業員コード", option); }
         public void ExistsDch従業員職位履歴台帳List(SubQuery<Dch従業員職位履歴台帳CB> subQuery) {
             assertObjectNotNull("subQuery<Dch従業員職位履歴台帳CB>", subQuery);
             Dch従業員職位履歴台帳CB cb = new Dch従業員職位履歴台帳CB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_ExistsSubQuery_Dch従業員職位履歴台帳List(cb.Query());
-            registerExistsSubQuery(cb.Query(), "id", "従業員id", subQueryPropertyName);
+            String subQueryPropertyName = keep従業員コード_ExistsSubQuery_Dch従業員職位履歴台帳List(cb.Query());
+            registerExistsSubQuery(cb.Query(), "従業員コード", "従業員コード", subQueryPropertyName);
         }
-        public abstract String keepId_ExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
+        public abstract String keep従業員コード_ExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
         public void NotExistsDch従業員職位履歴台帳List(SubQuery<Dch従業員職位履歴台帳CB> subQuery) {
             assertObjectNotNull("subQuery<Dch従業員職位履歴台帳CB>", subQuery);
             Dch従業員職位履歴台帳CB cb = new Dch従業員職位履歴台帳CB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_NotExistsSubQuery_Dch従業員職位履歴台帳List(cb.Query());
-            registerNotExistsSubQuery(cb.Query(), "id", "従業員id", subQueryPropertyName);
+            String subQueryPropertyName = keep従業員コード_NotExistsSubQuery_Dch従業員職位履歴台帳List(cb.Query());
+            registerNotExistsSubQuery(cb.Query(), "従業員コード", "従業員コード", subQueryPropertyName);
         }
-        public abstract String keepId_NotExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
+        public abstract String keep従業員コード_NotExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
         public void InScopeDch従業員職位履歴台帳List(SubQuery<Dch従業員職位履歴台帳CB> subQuery) {
             assertObjectNotNull("subQuery<Dch従業員職位履歴台帳CB>", subQuery);
             Dch従業員職位履歴台帳CB cb = new Dch従業員職位履歴台帳CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_InScopeSubQuery_Dch従業員職位履歴台帳List(cb.Query());
-            registerInScopeSubQuery(cb.Query(), "id", "従業員id", subQueryPropertyName);
+            String subQueryPropertyName = keep従業員コード_InScopeSubQuery_Dch従業員職位履歴台帳List(cb.Query());
+            registerInScopeSubQuery(cb.Query(), "従業員コード", "従業員コード", subQueryPropertyName);
         }
-        public abstract String keepId_InScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
+        public abstract String keep従業員コード_InScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
         public void NotInScopeDch従業員職位履歴台帳List(SubQuery<Dch従業員職位履歴台帳CB> subQuery) {
             assertObjectNotNull("subQuery<Dch従業員職位履歴台帳CB>", subQuery);
             Dch従業員職位履歴台帳CB cb = new Dch従業員職位履歴台帳CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_NotInScopeSubQuery_Dch従業員職位履歴台帳List(cb.Query());
-            registerNotInScopeSubQuery(cb.Query(), "id", "従業員id", subQueryPropertyName);
+            String subQueryPropertyName = keep従業員コード_NotInScopeSubQuery_Dch従業員職位履歴台帳List(cb.Query());
+            registerNotInScopeSubQuery(cb.Query(), "従業員コード", "従業員コード", subQueryPropertyName);
         }
-        public abstract String keepId_NotInScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
+        public abstract String keep従業員コード_NotInScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
         public void xsderiveDch従業員職位履歴台帳List(String function, SubQuery<Dch従業員職位履歴台帳CB> subQuery, String aliasName) {
             assertObjectNotNull("subQuery<Dch従業員職位履歴台帳CB>", subQuery);
             Dch従業員職位履歴台帳CB cb = new Dch従業員職位履歴台帳CB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List(cb.Query());
-            registerSpecifyDerivedReferrer(function, cb.Query(), "id", "従業員id", subQueryPropertyName, aliasName);
+            String subQueryPropertyName = keep従業員コード_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List(cb.Query());
+            registerSpecifyDerivedReferrer(function, cb.Query(), "従業員コード", "従業員コード", subQueryPropertyName, aliasName);
         }
-        abstract public String keepId_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
+        abstract public String keep従業員コード_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
 
         public QDRFunction<Dch従業員職位履歴台帳CB> DerivedDch従業員職位履歴台帳List() {
             return xcreateQDRFunctionDch従業員職位履歴台帳List();
@@ -75,16 +82,16 @@ namespace Dbflute.CBean.CQ.BS {
         public void xqderiveDch従業員職位履歴台帳List(String function, SubQuery<Dch従業員職位履歴台帳CB> subQuery, String operand, Object value) {
             assertObjectNotNull("subQuery<Dch従業員職位履歴台帳CB>", subQuery);
             Dch従業員職位履歴台帳CB cb = new Dch従業員職位履歴台帳CB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_QueryDerivedReferrer_Dch従業員職位履歴台帳List(cb.Query()); // for saving query-value.
-            String parameterPropertyName = keepId_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter(value);
-            registerQueryDerivedReferrer(function, cb.Query(), "id", "従業員id", subQueryPropertyName, operand, value, parameterPropertyName);
+            String subQueryPropertyName = keep従業員コード_QueryDerivedReferrer_Dch従業員職位履歴台帳List(cb.Query()); // for saving query-value.
+            String parameterPropertyName = keep従業員コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter(value);
+            registerQueryDerivedReferrer(function, cb.Query(), "従業員コード", "従業員コード", subQueryPropertyName, operand, value, parameterPropertyName);
         }
-        public abstract String keepId_QueryDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
-        public abstract String keepId_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter(Object parameterValue);
-        public void SetId_IsNull() { regId(CK_ISN, DUMMY_OBJECT); }
-        public void SetId_IsNotNull() { regId(CK_ISNN, DUMMY_OBJECT); }
-        protected void regId(ConditionKey k, Object v) { regQ(k, v, getCValueId(), "id"); }
-        protected abstract ConditionValue getCValueId();
+        public abstract String keep従業員コード_QueryDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
+        public abstract String keep従業員コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter(Object parameterValue);
+        public void Set従業員コード_IsNull() { reg従業員コード(CK_ISN, DUMMY_OBJECT); }
+        public void Set従業員コード_IsNotNull() { reg従業員コード(CK_ISNN, DUMMY_OBJECT); }
+        protected void reg従業員コード(ConditionKey k, Object v) { regQ(k, v, getCValue従業員コード(), "従業員コード"); }
+        protected abstract ConditionValue getCValue従業員コード();
 
         public void Set従業員番号_Equal(String v) { DoSet従業員番号_Equal(fRES(v)); }
         protected void DoSet従業員番号_Equal(String v) { reg従業員番号(CK_EQ, v); }
@@ -104,41 +111,41 @@ namespace Dbflute.CBean.CQ.BS {
         protected void reg従業員番号(ConditionKey k, Object v) { regQ(k, v, getCValue従業員番号(), "従業員番号"); }
         protected abstract ConditionValue getCValue従業員番号();
 
-        public void Set氏名姓_Equal(String v) { DoSet氏名姓_Equal(fRES(v)); }
-        protected void DoSet氏名姓_Equal(String v) { reg氏名姓(CK_EQ, v); }
-        public void Set氏名姓_NotEqual(String v) { DoSet氏名姓_NotEqual(fRES(v)); }
-        protected void DoSet氏名姓_NotEqual(String v) { reg氏名姓(CK_NES, v); }
-        public void Set氏名姓_GreaterThan(String v) { reg氏名姓(CK_GT, fRES(v)); }
-        public void Set氏名姓_LessThan(String v) { reg氏名姓(CK_LT, fRES(v)); }
-        public void Set氏名姓_GreaterEqual(String v) { reg氏名姓(CK_GE, fRES(v)); }
-        public void Set氏名姓_LessEqual(String v) { reg氏名姓(CK_LE, fRES(v)); }
-        public void Set氏名姓_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue氏名姓(), "氏名_姓"); }
-        public void Set氏名姓_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue氏名姓(), "氏名_姓"); }
-        public void Set氏名姓_PrefixSearch(String v) { Set氏名姓_LikeSearch(v, cLSOP()); }
-        public void Set氏名姓_LikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_LS, fRES(v), getCValue氏名姓(), "氏名_姓", option); }
-        public void Set氏名姓_NotLikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_NLS, fRES(v), getCValue氏名姓(), "氏名_姓", option); }
-        protected void reg氏名姓(ConditionKey k, Object v) { regQ(k, v, getCValue氏名姓(), "氏名_姓"); }
-        protected abstract ConditionValue getCValue氏名姓();
+        public void Set名字_Equal(String v) { DoSet名字_Equal(fRES(v)); }
+        protected void DoSet名字_Equal(String v) { reg名字(CK_EQ, v); }
+        public void Set名字_NotEqual(String v) { DoSet名字_NotEqual(fRES(v)); }
+        protected void DoSet名字_NotEqual(String v) { reg名字(CK_NES, v); }
+        public void Set名字_GreaterThan(String v) { reg名字(CK_GT, fRES(v)); }
+        public void Set名字_LessThan(String v) { reg名字(CK_LT, fRES(v)); }
+        public void Set名字_GreaterEqual(String v) { reg名字(CK_GE, fRES(v)); }
+        public void Set名字_LessEqual(String v) { reg名字(CK_LE, fRES(v)); }
+        public void Set名字_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue名字(), "名字"); }
+        public void Set名字_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue名字(), "名字"); }
+        public void Set名字_PrefixSearch(String v) { Set名字_LikeSearch(v, cLSOP()); }
+        public void Set名字_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValue名字(), "名字", option); }
+        public void Set名字_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValue名字(), "名字", option); }
+        protected void reg名字(ConditionKey k, Object v) { regQ(k, v, getCValue名字(), "名字"); }
+        protected abstract ConditionValue getCValue名字();
 
-        public void Set氏名名_Equal(String v) { DoSet氏名名_Equal(fRES(v)); }
-        protected void DoSet氏名名_Equal(String v) { reg氏名名(CK_EQ, v); }
-        public void Set氏名名_NotEqual(String v) { DoSet氏名名_NotEqual(fRES(v)); }
-        protected void DoSet氏名名_NotEqual(String v) { reg氏名名(CK_NES, v); }
-        public void Set氏名名_GreaterThan(String v) { reg氏名名(CK_GT, fRES(v)); }
-        public void Set氏名名_LessThan(String v) { reg氏名名(CK_LT, fRES(v)); }
-        public void Set氏名名_GreaterEqual(String v) { reg氏名名(CK_GE, fRES(v)); }
-        public void Set氏名名_LessEqual(String v) { reg氏名名(CK_LE, fRES(v)); }
-        public void Set氏名名_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue氏名名(), "氏名_名"); }
-        public void Set氏名名_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue氏名名(), "氏名_名"); }
-        public void Set氏名名_PrefixSearch(String v) { Set氏名名_LikeSearch(v, cLSOP()); }
-        public void Set氏名名_LikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_LS, fRES(v), getCValue氏名名(), "氏名_名", option); }
-        public void Set氏名名_NotLikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_NLS, fRES(v), getCValue氏名名(), "氏名_名", option); }
-        protected void reg氏名名(ConditionKey k, Object v) { regQ(k, v, getCValue氏名名(), "氏名_名"); }
-        protected abstract ConditionValue getCValue氏名名();
+        public void Set名前_Equal(String v) { DoSet名前_Equal(fRES(v)); }
+        protected void DoSet名前_Equal(String v) { reg名前(CK_EQ, v); }
+        public void Set名前_NotEqual(String v) { DoSet名前_NotEqual(fRES(v)); }
+        protected void DoSet名前_NotEqual(String v) { reg名前(CK_NES, v); }
+        public void Set名前_GreaterThan(String v) { reg名前(CK_GT, fRES(v)); }
+        public void Set名前_LessThan(String v) { reg名前(CK_LT, fRES(v)); }
+        public void Set名前_GreaterEqual(String v) { reg名前(CK_GE, fRES(v)); }
+        public void Set名前_LessEqual(String v) { reg名前(CK_LE, fRES(v)); }
+        public void Set名前_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue名前(), "名前"); }
+        public void Set名前_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue名前(), "名前"); }
+        public void Set名前_PrefixSearch(String v) { Set名前_LikeSearch(v, cLSOP()); }
+        public void Set名前_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValue名前(), "名前", option); }
+        public void Set名前_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValue名前(), "名前", option); }
+        protected void reg名前(ConditionKey k, Object v) { regQ(k, v, getCValue名前(), "名前"); }
+        protected abstract ConditionValue getCValue名前();
 
         public void Set氏名カナ_Equal(String v) { DoSet氏名カナ_Equal(fRES(v)); }
         protected void DoSet氏名カナ_Equal(String v) { reg氏名カナ(CK_EQ, v); }
@@ -148,14 +155,14 @@ namespace Dbflute.CBean.CQ.BS {
         public void Set氏名カナ_LessThan(String v) { reg氏名カナ(CK_LT, fRES(v)); }
         public void Set氏名カナ_GreaterEqual(String v) { reg氏名カナ(CK_GE, fRES(v)); }
         public void Set氏名カナ_LessEqual(String v) { reg氏名カナ(CK_LE, fRES(v)); }
-        public void Set氏名カナ_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue氏名カナ(), "氏名_カナ"); }
-        public void Set氏名カナ_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue氏名カナ(), "氏名_カナ"); }
+        public void Set氏名カナ_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue氏名カナ(), "氏名カナ"); }
+        public void Set氏名カナ_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue氏名カナ(), "氏名カナ"); }
         public void Set氏名カナ_PrefixSearch(String v) { Set氏名カナ_LikeSearch(v, cLSOP()); }
         public void Set氏名カナ_LikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_LS, fRES(v), getCValue氏名カナ(), "氏名_カナ", option); }
+        { regLSQ(CK_LS, fRES(v), getCValue氏名カナ(), "氏名カナ", option); }
         public void Set氏名カナ_NotLikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_NLS, fRES(v), getCValue氏名カナ(), "氏名_カナ", option); }
-        protected void reg氏名カナ(ConditionKey k, Object v) { regQ(k, v, getCValue氏名カナ(), "氏名_カナ"); }
+        { regLSQ(CK_NLS, fRES(v), getCValue氏名カナ(), "氏名カナ", option); }
+        protected void reg氏名カナ(ConditionKey k, Object v) { regQ(k, v, getCValue氏名カナ(), "氏名カナ"); }
         protected abstract ConditionValue getCValue氏名カナ();
 
         public void Setメールアドレス_Equal(String v) { DoSetメールアドレス_Equal(fRES(v)); }
@@ -231,84 +238,84 @@ namespace Dbflute.CBean.CQ.BS {
         protected void reg退社年月日(ConditionKey k, Object v) { regQ(k, v, getCValue退社年月日(), "退社年月日"); }
         protected abstract ConditionValue getCValue退社年月日();
 
-        public void Set職位code_Equal(String v) { DoSet職位code_Equal(fRES(v)); }
+        public void Set職位コード_Equal(String v) { DoSet職位コード_Equal(fRES(v)); }
         /// <summary>
-        /// Set the value of システム保守 of 職位code as equal. { = }
+        /// Set the value of システム保守 of 職位コード as equal. { = }
         /// システム保守: System Maintenancer
         /// </summary>
-        public void Set職位code_Equal_システム保守() {
-            DoSet職位code_Equal(CDef.職位区分.システム保守.Code);
+        public void Set職位コード_Equal_システム保守() {
+            DoSet職位コード_Equal(CDef.職位区分.システム保守.Code);
         }
         /// <summary>
-        /// Set the value of アシスタントマネージャー of 職位code as equal. { = }
+        /// Set the value of アシスタントマネージャー of 職位コード as equal. { = }
         /// アシスタントマネージャー: Assistant Manager
         /// </summary>
-        public void Set職位code_Equal_アシスタントマネージャー() {
-            DoSet職位code_Equal(CDef.職位区分.アシスタントマネージャー.Code);
+        public void Set職位コード_Equal_アシスタントマネージャー() {
+            DoSet職位コード_Equal(CDef.職位区分.アシスタントマネージャー.Code);
         }
         /// <summary>
-        /// Set the value of ファイナンシャルコントローラー of 職位code as equal. { = }
+        /// Set the value of ファイナンシャルコントローラー of 職位コード as equal. { = }
         /// ファイナンシャルコントローラー: Financial Controller
         /// </summary>
-        public void Set職位code_Equal_ファイナンシャルコントローラー() {
-            DoSet職位code_Equal(CDef.職位区分.ファイナンシャルコントローラー.Code);
+        public void Set職位コード_Equal_ファイナンシャルコントローラー() {
+            DoSet職位コード_Equal(CDef.職位区分.ファイナンシャルコントローラー.Code);
         }
         /// <summary>
-        /// Set the value of フロントクラーク of 職位code as equal. { = }
+        /// Set the value of フロントクラーク of 職位コード as equal. { = }
         /// フロントクラーク: Front Clerk
         /// </summary>
-        public void Set職位code_Equal_フロントクラーク() {
-            DoSet職位code_Equal(CDef.職位区分.フロントクラーク.Code);
+        public void Set職位コード_Equal_フロントクラーク() {
+            DoSet職位コード_Equal(CDef.職位区分.フロントクラーク.Code);
         }
-        protected void DoSet職位code_Equal(String v) { reg職位code(CK_EQ, v); }
-        public void Set職位code_NotEqual(String v) { DoSet職位code_NotEqual(fRES(v)); }
+        protected void DoSet職位コード_Equal(String v) { reg職位コード(CK_EQ, v); }
+        public void Set職位コード_NotEqual(String v) { DoSet職位コード_NotEqual(fRES(v)); }
         /// <summary>
-        /// Set the value of システム保守 of 職位code as notEqual. { &lt;&gt; }
+        /// Set the value of システム保守 of 職位コード as notEqual. { &lt;&gt; }
         /// システム保守: System Maintenancer
         /// </summary>
-        public void Set職位code_NotEqual_システム保守() {
-            DoSet職位code_NotEqual(CDef.職位区分.システム保守.Code);
+        public void Set職位コード_NotEqual_システム保守() {
+            DoSet職位コード_NotEqual(CDef.職位区分.システム保守.Code);
         }
         /// <summary>
-        /// Set the value of アシスタントマネージャー of 職位code as notEqual. { &lt;&gt; }
+        /// Set the value of アシスタントマネージャー of 職位コード as notEqual. { &lt;&gt; }
         /// アシスタントマネージャー: Assistant Manager
         /// </summary>
-        public void Set職位code_NotEqual_アシスタントマネージャー() {
-            DoSet職位code_NotEqual(CDef.職位区分.アシスタントマネージャー.Code);
+        public void Set職位コード_NotEqual_アシスタントマネージャー() {
+            DoSet職位コード_NotEqual(CDef.職位区分.アシスタントマネージャー.Code);
         }
         /// <summary>
-        /// Set the value of ファイナンシャルコントローラー of 職位code as notEqual. { &lt;&gt; }
+        /// Set the value of ファイナンシャルコントローラー of 職位コード as notEqual. { &lt;&gt; }
         /// ファイナンシャルコントローラー: Financial Controller
         /// </summary>
-        public void Set職位code_NotEqual_ファイナンシャルコントローラー() {
-            DoSet職位code_NotEqual(CDef.職位区分.ファイナンシャルコントローラー.Code);
+        public void Set職位コード_NotEqual_ファイナンシャルコントローラー() {
+            DoSet職位コード_NotEqual(CDef.職位区分.ファイナンシャルコントローラー.Code);
         }
         /// <summary>
-        /// Set the value of フロントクラーク of 職位code as notEqual. { &lt;&gt; }
+        /// Set the value of フロントクラーク of 職位コード as notEqual. { &lt;&gt; }
         /// フロントクラーク: Front Clerk
         /// </summary>
-        public void Set職位code_NotEqual_フロントクラーク() {
-            DoSet職位code_NotEqual(CDef.職位区分.フロントクラーク.Code);
+        public void Set職位コード_NotEqual_フロントクラーク() {
+            DoSet職位コード_NotEqual(CDef.職位区分.フロントクラーク.Code);
         }
-        protected void DoSet職位code_NotEqual(String v) { reg職位code(CK_NES, v); }
-        public void Set職位code_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue職位code(), "職位code"); }
-        public void Set職位code_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue職位code(), "職位code"); }
+        protected void DoSet職位コード_NotEqual(String v) { reg職位コード(CK_NES, v); }
+        public void Set職位コード_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue職位コード(), "職位コード"); }
+        public void Set職位コード_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue職位コード(), "職位コード"); }
         public void InScopeKbn職位区分(SubQuery<Kbn職位区分CB> subQuery) {
             assertObjectNotNull("subQuery<Kbn職位区分CB>", subQuery);
             Kbn職位区分CB cb = new Kbn職位区分CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keep職位code_InScopeSubQuery_Kbn職位区分(cb.Query());
-            registerInScopeSubQuery(cb.Query(), "職位code", "code", subQueryPropertyName);
+            String subQueryPropertyName = keep職位コード_InScopeSubQuery_Kbn職位区分(cb.Query());
+            registerInScopeSubQuery(cb.Query(), "職位コード", "職位コード", subQueryPropertyName);
         }
-        public abstract String keep職位code_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery);
+        public abstract String keep職位コード_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery);
         public void NotInScopeKbn職位区分(SubQuery<Kbn職位区分CB> subQuery) {
             assertObjectNotNull("subQuery<Kbn職位区分CB>", subQuery);
             Kbn職位区分CB cb = new Kbn職位区分CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keep職位code_NotInScopeSubQuery_Kbn職位区分(cb.Query());
-            registerNotInScopeSubQuery(cb.Query(), "職位code", "code", subQueryPropertyName);
+            String subQueryPropertyName = keep職位コード_NotInScopeSubQuery_Kbn職位区分(cb.Query());
+            registerNotInScopeSubQuery(cb.Query(), "職位コード", "職位コード", subQueryPropertyName);
         }
-        public abstract String keep職位code_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery);
-        protected void reg職位code(ConditionKey k, Object v) { regQ(k, v, getCValue職位code(), "職位code"); }
-        protected abstract ConditionValue getCValue職位code();
+        public abstract String keep職位コード_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery);
+        protected void reg職位コード(ConditionKey k, Object v) { regQ(k, v, getCValue職位コード(), "職位コード"); }
+        protected abstract ConditionValue getCValue職位コード();
 
         public void Set最終ログイン日時_Equal(DateTime? v) { reg最終ログイン日時(CK_EQ, v); }
         public void Set最終ログイン日時_GreaterThan(DateTime? v) { reg最終ログイン日時(CK_GT, v); }
@@ -391,7 +398,7 @@ namespace Dbflute.CBean.CQ.BS {
             assertObjectNotNull("subQuery<Mst従業員マスタCB>", subQuery);
             Mst従業員マスタCB cb = new Mst従業員マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
             String subQueryPropertyName = keepMyselfInScopeSubQuery(cb.Query()); // for saving query-value.
-            registerInScopeSubQuery(cb.Query(), "id", "id", subQueryPropertyName);
+            registerInScopeSubQuery(cb.Query(), "従業員コード", "従業員コード", subQueryPropertyName);
         }
         public abstract String keepMyselfInScopeSubQuery(Mst従業員マスタCQ subQuery);
 

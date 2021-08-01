@@ -29,19 +29,19 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                             PrimaryKey Handling
         //                                                             ===================
-        public void AcceptPrimaryKey(String code) {
-            assertObjectNotNull("code", code);
+        public void AcceptPrimaryKey(String 客室利用コード) {
+            assertObjectNotNull("客室利用コード", 客室利用コード);
             BsKbn客室利用区分CB cb = this;
-            cb.Query().SetCode_Equal(code);
+            cb.Query().Set客室利用コード_Equal(客室利用コード);
         }
 
         public override ConditionBean AddOrderBy_PK_Asc() {
-            Query().AddOrderBy_Code_Asc();
+            Query().AddOrderBy_客室利用コード_Asc();
             return this;
         }
 
         public override ConditionBean AddOrderBy_PK_Desc() {
-            Query().AddOrderBy_Code_Desc();
+            Query().AddOrderBy_客室利用コード_Desc();
             return this;
         }
 
@@ -165,21 +165,16 @@ namespace Dbflute.CBean.BS {
         public Kbn客室利用区分CBSpecification(ConditionBean baseCB, HpSpQyCall<Kbn客室利用区分CQ> qyCall
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
-        public void ColumnCode() { doColumn("code"); }
-        public void Column名称() { doColumn("名称"); }
+        public void Column客室利用コード() { doColumn("客室利用コード"); }
+        public void Column客室利用名称() { doColumn("客室利用名称"); }
         protected override void doSpecifyRequiredColumn() {
-            ColumnCode(); // PK
+            Column客室利用コード(); // PK
         }
         protected override String getTableDbName() { return "kbn客室利用区分"; }
-        public RAFunction<Dch客室利用予定台帳CB, Kbn客室利用区分CQ> DerivedDch客室利用予定台帳List() {
+        public RAFunction<Dch客室利用台帳CB, Kbn客室利用区分CQ> DerivedDch客室利用台帳List() {
             if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return new RAFunction<Dch客室利用予定台帳CB, Kbn客室利用区分CQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Dch客室利用予定台帳CB> subQuery, Kbn客室利用区分CQ cq, String aliasName)
-                { cq.xsderiveDch客室利用予定台帳List(function, subQuery, aliasName); });
-        }
-        public RAFunction<Dch客室利用実績台帳CB, Kbn客室利用区分CQ> DerivedDch客室利用実績台帳List() {
-            if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return new RAFunction<Dch客室利用実績台帳CB, Kbn客室利用区分CQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Dch客室利用実績台帳CB> subQuery, Kbn客室利用区分CQ cq, String aliasName)
-                { cq.xsderiveDch客室利用実績台帳List(function, subQuery, aliasName); });
+            return new RAFunction<Dch客室利用台帳CB, Kbn客室利用区分CQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Dch客室利用台帳CB> subQuery, Kbn客室利用区分CQ cq, String aliasName)
+                { cq.xsderiveDch客室利用台帳List(function, subQuery, aliasName); });
         }
     }
 }

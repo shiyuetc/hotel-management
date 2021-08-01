@@ -12,7 +12,7 @@ data-directory: playsql/data/common/xls
   kbn客室利用区分 (4)
 
 [20-mst.xls]
-  mst制御画面マスタ (6)
+  mst画面マスタ (6)
   mst権限マスタ (16)
   mst従業員マスタ (4)
   mst客室タイプマスタ (10)

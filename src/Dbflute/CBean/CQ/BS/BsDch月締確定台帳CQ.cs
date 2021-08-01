@@ -34,16 +34,6 @@ namespace Dbflute.CBean.CQ.BS {
         }
 
 
-        protected ConditionValue _id;
-        public ConditionValue Id {
-            get { if (_id == null) { _id = new ConditionValue(); } return _id; }
-        }
-        protected override ConditionValue getCValueId() { return this.Id; }
-
-
-        public BsDch月締確定台帳CQ AddOrderBy_Id_Asc() { regOBA("id");return this; }
-        public BsDch月締確定台帳CQ AddOrderBy_Id_Desc() { regOBD("id");return this; }
-
         protected ConditionValue _対象年月;
         public ConditionValue 対象年月 {
             get { if (_対象年月 == null) { _対象年月 = new ConditionValue(); } return _対象年月; }

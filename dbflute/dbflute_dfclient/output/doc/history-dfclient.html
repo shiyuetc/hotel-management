@@ -118,23 +118,315 @@ p.tablecount {
 </div>
 
 <div class="section">
-	<h2><span class="dt">Diff Date: </span>2021/07/15 22:28:20</h2>
+	<h2><span class="dt">Diff Date: </span>2021/08/01 20:42:00</h2>
+	<p class="tablecount"><span class="dt">table count: </span>16&nbsp;-&gt;&nbsp;14</p>
 
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li><a href="./schema-dfclient.html#dch客室利用台帳">dch客室利用台帳</a></li>
+		<li><a href="./schema-dfclient.html#dch宿泊利用台帳">dch宿泊利用台帳</a></li>
+		<li><a href="./schema-dfclient.html#mst画面マスタ">mst画面マスタ</a></li>
+	</ul>
 	<h3>Change Table</h3>
 	<div class="table-content">
+		<h4><a href="./schema-dfclient.html#dch従業員職位履歴台帳">dch従業員職位履歴台帳</a></h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>従業員コード</li>
+				<li>職位コード</li>
+			</ul>
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>従業員id</li>
+				<li>職位code</li>
+			</ul>
+			<h5>Add FK</h5>
+			<ul class="column-content">
+				<li>dch従業員職位履歴台帳_従業員コード_fkey</li>
+				<li>dch従業員職位履歴台帳_職位コード_fkey</li>
+			</ul>
+			<h5>Delete FK</h5>
+			<ul class="column-content">
+				<li>dch従業員職位履歴台帳_従業員id_fkey</li>
+				<li>dch従業員職位履歴台帳_職位code_fkey</li>
+			</ul>
+		</div>
+		<h4><a href="./schema-dfclient.html#dch月締確定台帳">dch月締確定台帳</a></h4>
+		<div class="change-table-content">
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>対象年月</dt>
+				<dd><span>Type</span>timestamp&nbsp;-&gt;&nbsp;bpchar</dd>
+				<dd><span>Size</span>26,&nbsp;3&nbsp;-&gt;&nbsp;6</dd>
+			</dl>
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>id</li>
+			</ul>
+			<h5>Change PK</h5>
+			<dl class="column-content">
+				<dt>dch月締確定台帳_pkey</dt>
+				<dd><span>Column</span>id&nbsp;-&gt;&nbsp;対象年月</dd>
+			</dl>
+			<h5>Delete UQ</h5>
+			<ul class="column-content">
+				<li>dch月締確定台帳_対象年月_key</li>
+			</ul>
+		</div>
+		<h4><a href="./schema-dfclient.html#kbnメニュー区分">kbnメニュー区分</a></h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>メニューコード</li>
+				<li>メニュー名称</li>
+			</ul>
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>code</li>
+				<li>メニュー名</li>
+			</ul>
+			<h5>Change PK</h5>
+			<dl class="column-content">
+				<dt>kbnメニュー区分_pkey</dt>
+				<dd><span>Column</span>code&nbsp;-&gt;&nbsp;メニューコード</dd>
+			</dl>
+		</div>
+		<h4><a href="./schema-dfclient.html#kbn客室利用区分">kbn客室利用区分</a></h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>客室利用コード</li>
+				<li>客室利用名称</li>
+			</ul>
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>code</li>
+				<li>名称</li>
+			</ul>
+			<h5>Change PK</h5>
+			<dl class="column-content">
+				<dt>kbn客室利用区分_pkey</dt>
+				<dd><span>Column</span>code&nbsp;-&gt;&nbsp;客室利用コード</dd>
+			</dl>
+		</div>
+		<h4><a href="./schema-dfclient.html#kbn職位区分">kbn職位区分</a></h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>職位コード</li>
+				<li>職位名称</li>
+				<li>職位英字名称</li>
+			</ul>
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>code</li>
+				<li>名称</li>
+				<li>名称_英字</li>
+			</ul>
+			<h5>Change PK</h5>
+			<dl class="column-content">
+				<dt>kbn職位区分_pkey</dt>
+				<dd><span>Column</span>code&nbsp;-&gt;&nbsp;職位コード</dd>
+			</dl>
+		</div>
+		<h4><a href="./schema-dfclient.html#mst会員マスタ">mst会員マスタ</a></h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>会員コード</li>
+				<li>名字</li>
+				<li>名前</li>
+				<li>氏名カナ</li>
+				<li>会社名カナ</li>
+			</ul>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>会員番号</dt>
+				<dd><span>Size</span>9&nbsp;-&gt;&nbsp;12</dd>
+			</dl>
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>id</li>
+				<li>氏名_姓</li>
+				<li>氏名_名</li>
+				<li>氏名_カナ</li>
+				<li>会社名_カナ</li>
+			</ul>
+			<h5>Change PK</h5>
+			<dl class="column-content">
+				<dt>mst会員マスタ_pkey</dt>
+				<dd><span>Column</span>id&nbsp;-&gt;&nbsp;会員コード</dd>
+			</dl>
+		</div>
+		<h4><a href="./schema-dfclient.html#mst客室タイプマスタ">mst客室タイプマスタ</a></h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>客室タイプコード</li>
+				<li>客室タイプ名称</li>
+			</ul>
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>id</li>
+				<li>名称</li>
+			</ul>
+			<h5>Change PK</h5>
+			<dl class="column-content">
+				<dt>mst客室タイプマスタ_pkey</dt>
+				<dd><span>Column</span>id&nbsp;-&gt;&nbsp;客室タイプコード</dd>
+			</dl>
+		</div>
+		<h4><a href="./schema-dfclient.html#mst客室マスタ">mst客室マスタ</a></h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>客室コード</li>
+				<li>客室タイプコード</li>
+			</ul>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>客室番号</dt>
+				<dd><span>Type</span>bpchar&nbsp;-&gt;&nbsp;varchar</dd>
+			</dl>
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>id</li>
+				<li>客室タイプid</li>
+			</ul>
+			<h5>Change PK</h5>
+			<dl class="column-content">
+				<dt>mst客室マスタ_pkey</dt>
+				<dd><span>Column</span>id&nbsp;-&gt;&nbsp;客室コード</dd>
+			</dl>
+			<h5>Add FK</h5>
+			<ul class="column-content">
+				<li>mst客室マスタ_客室タイプコード_fkey</li>
+			</ul>
+			<h5>Delete FK</h5>
+			<ul class="column-content">
+				<li>mst客室マスタ_客室タイプid_fkey</li>
+			</ul>
+		</div>
 		<h4><a href="./schema-dfclient.html#mst従業員マスタ">mst従業員マスタ</a></h4>
 		<div class="change-table-content">
 			<h5>Add Column</h5>
 			<ul class="column-content">
-				<li>氏名_カナ</li>
+				<li>従業員コード</li>
+				<li>名字</li>
+				<li>名前</li>
+				<li>氏名カナ</li>
+				<li>職位コード</li>
 			</ul>
 			<h5>Delete Column</h5>
 			<ul class="column-content">
-				<li>氏名_姓_カナ</li>
-				<li>氏名_名_カナ</li>
+				<li>id</li>
+				<li>氏名_姓</li>
+				<li>氏名_名</li>
+				<li>氏名_カナ</li>
+				<li>職位code</li>
+			</ul>
+			<h5>Change PK</h5>
+			<dl class="column-content">
+				<dt>mst従業員マスタ_pkey</dt>
+				<dd><span>Column</span>id&nbsp;-&gt;&nbsp;従業員コード</dd>
+			</dl>
+			<h5>Add FK</h5>
+			<ul class="column-content">
+				<li>mst従業員マスタ_職位コード_fkey</li>
+			</ul>
+			<h5>Delete FK</h5>
+			<ul class="column-content">
+				<li>mst従業員マスタ_職位code_fkey</li>
+			</ul>
+		</div>
+		<h4><a href="./schema-dfclient.html#mst権限マスタ">mst権限マスタ</a></h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>職位コード</li>
+				<li>画面コード</li>
+			</ul>
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>id</li>
+				<li>職位code</li>
+				<li>制御画面id</li>
+			</ul>
+			<h5>Change PK</h5>
+			<dl class="column-content">
+				<dt>mst権限マスタ_pkey</dt>
+				<dd><span>Column</span>id&nbsp;-&gt;&nbsp;職位コード,&nbsp;画面コード</dd>
+			</dl>
+			<h5>Add FK</h5>
+			<ul class="column-content">
+				<li>mst権限マスタ_画面コード_fkey</li>
+				<li>mst権限マスタ_職位コード_fkey</li>
+			</ul>
+			<h5>Delete FK</h5>
+			<ul class="column-content">
+				<li>mst権限マスタ_制御画面id_fkey</li>
+				<li>mst権限マスタ_職位code_fkey</li>
 			</ul>
 		</div>
 	</div>
+	<h3>Delete Table</h3>
+	<ul class="table-content">
+		<li>dch客室利用予定台帳</li>
+		<li>dch客室利用実績台帳</li>
+		<li>dch宿泊予定台帳</li>
+		<li>dch宿泊実績台帳</li>
+		<li>mst制御画面マスタ</li>
+	</ul>
+	<h3>Delete Sequence</h3>
+	<ul class="table-content">
+		<li>hotel_management.public.mst001_id_seq</li>
+		<li>hotel_management.public.mst002_id_seq</li>
+		<li>hotel_management.public.mst003_id_seq</li>
+		<li>hotel_management.public.mst004_id_seq</li>
+		<li>hotel_management.public.mst005_id_seq</li>
+		<li>hotel_management.public.mst006_id_seq</li>
+		<li>hotel_management.public.dch003_id_seq</li>
+		<li>hotel_management.public.dch004_id_seq</li>
+		<li>hotel_management.public.dch005_id_seq</li>
+		<li>hotel_management.public.dch006_id_seq</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2021/07/25 21:54:04</h2>
+	<p class="tablecount"><span class="dt">table count: </span>20&nbsp;-&gt;&nbsp;16</p>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>dch客室利用予定台帳</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>備考</li>
+			</ul>
+		</div>
+		<h4>dch客室利用実績台帳</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>備考</li>
+			</ul>
+		</div>
+	</div>
+	<h3>Delete Table</h3>
+	<ul class="table-content">
+		<li>dchその他予定台帳</li>
+		<li>dchその他実績台帳</li>
+		<li>dch清掃予定台帳</li>
+		<li>dch清掃実績台帳</li>
+	</ul>
+	<h3>Delete Sequence</h3>
+	<ul class="table-content">
+		<li>hotel_management.public.dch007_id_seq</li>
+		<li>hotel_management.public.dch008_id_seq</li>
+		<li>hotel_management.public.dch009_id_seq</li>
+		<li>hotel_management.public.dch010_id_seq</li>
+	</ul>
 </div>
 
 </body>

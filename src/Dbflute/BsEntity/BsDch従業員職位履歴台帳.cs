@@ -18,11 +18,13 @@ namespace Dbflute.ExEntity {
     /// <summary>
     /// The entity of dch従業員職位履歴台帳 as TABLE. (partial class for auto-generation)
     /// <![CDATA[
+    /// 従業員職位履歴台帳
+    /// 
     /// [primary-key]
     ///     id
     /// 
     /// [column]
-    ///     id, 従業員id, 適用開始日, 適用終了日, 職位code
+    ///     id, 従業員コード, 職位コード, 適用開始日, 適用終了日
     /// 
     /// [sequence]
     ///     dch001_id_seq
@@ -58,17 +60,17 @@ namespace Dbflute.ExEntity {
         /// <summary>id: {PK, ID, NotNull, bigserial(19)}</summary>
         protected long? _id;
 
-        /// <summary>従業員id: {NotNull, int8(19), FK to mst従業員マスタ}</summary>
-        protected long? _従業員id;
+        /// <summary>従業員コード: {NotNull, bpchar(10), FK to mst従業員マスタ}</summary>
+        protected String _従業員コード;
+
+        /// <summary>職位コード: {NotNull, bpchar(3), FK to kbn職位区分, classification=職位区分}</summary>
+        protected String _職位コード;
 
         /// <summary>適用開始日: {NotNull, timestamp(26, 3)}</summary>
         protected DateTime? _適用開始日;
 
         /// <summary>適用終了日: {NotNull, timestamp(26, 3)}</summary>
         protected DateTime? _適用終了日;
-
-        /// <summary>職位code: {NotNull, bpchar(3), FK to kbn職位区分, classification=職位区分}</summary>
-        protected String _職位code;
 
         protected EntityModifiedProperties __modifiedProperties = new EntityModifiedProperties();
         #endregion
@@ -88,10 +90,10 @@ namespace Dbflute.ExEntity {
         //                                                         Classification Property
         //                                                         =======================
         #region Classification Property
-        public CDef.職位区分 職位codeAs職位区分 { get {
-            return CDef.職位区分.CodeOf(_職位code);
+        public CDef.職位区分 職位コードAs職位区分 { get {
+            return CDef.職位区分.CodeOf(_職位コード);
         } set {
-            職位code = value != null ? value.Code : null;
+            職位コード = value != null ? value.Code : null;
         }}
 
         #endregion
@@ -101,43 +103,43 @@ namespace Dbflute.ExEntity {
         //                                                          ======================
         #region Classification Setting
         /// <summary>
-        /// Set the value of 職位code as システム保守.
+        /// Set the value of 職位コード as システム保守.
         /// <![CDATA[
         /// システム保守: System Maintenancer
         /// ]]>
         /// </summary>
-        public void Set職位code_システム保守() {
-            職位codeAs職位区分 = CDef.職位区分.システム保守;
+        public void Set職位コード_システム保守() {
+            職位コードAs職位区分 = CDef.職位区分.システム保守;
         }
 
         /// <summary>
-        /// Set the value of 職位code as アシスタントマネージャー.
+        /// Set the value of 職位コード as アシスタントマネージャー.
         /// <![CDATA[
         /// アシスタントマネージャー: Assistant Manager
         /// ]]>
         /// </summary>
-        public void Set職位code_アシスタントマネージャー() {
-            職位codeAs職位区分 = CDef.職位区分.アシスタントマネージャー;
+        public void Set職位コード_アシスタントマネージャー() {
+            職位コードAs職位区分 = CDef.職位区分.アシスタントマネージャー;
         }
 
         /// <summary>
-        /// Set the value of 職位code as ファイナンシャルコントローラー.
+        /// Set the value of 職位コード as ファイナンシャルコントローラー.
         /// <![CDATA[
         /// ファイナンシャルコントローラー: Financial Controller
         /// ]]>
         /// </summary>
-        public void Set職位code_ファイナンシャルコントローラー() {
-            職位codeAs職位区分 = CDef.職位区分.ファイナンシャルコントローラー;
+        public void Set職位コード_ファイナンシャルコントローラー() {
+            職位コードAs職位区分 = CDef.職位区分.ファイナンシャルコントローラー;
         }
 
         /// <summary>
-        /// Set the value of 職位code as フロントクラーク.
+        /// Set the value of 職位コード as フロントクラーク.
         /// <![CDATA[
         /// フロントクラーク: Front Clerk
         /// ]]>
         /// </summary>
-        public void Set職位code_フロントクラーク() {
-            職位codeAs職位区分 = CDef.職位区分.フロントクラーク;
+        public void Set職位コード_フロントクラーク() {
+            職位コードAs職位区分 = CDef.職位区分.フロントクラーク;
         }
 
         #endregion
@@ -147,61 +149,61 @@ namespace Dbflute.ExEntity {
         //                                                    ============================
         #region Classification Determination
         /// <summary>
-        /// Is the value of 職位code 'システム保守'?
+        /// Is the value of 職位コード 'システム保守'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// システム保守: System Maintenancer
         /// ]]>
         /// </summary>
-        public bool Is職位codeシステム保守 {
+        public bool Is職位コードシステム保守 {
             get {
-                CDef.職位区分 cls = 職位codeAs職位区分;
+                CDef.職位区分 cls = 職位コードAs職位区分;
                 return cls != null ? cls.Equals(CDef.職位区分.システム保守) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of 職位code 'アシスタントマネージャー'?
+        /// Is the value of 職位コード 'アシスタントマネージャー'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// アシスタントマネージャー: Assistant Manager
         /// ]]>
         /// </summary>
-        public bool Is職位codeアシスタントマネージャー {
+        public bool Is職位コードアシスタントマネージャー {
             get {
-                CDef.職位区分 cls = 職位codeAs職位区分;
+                CDef.職位区分 cls = 職位コードAs職位区分;
                 return cls != null ? cls.Equals(CDef.職位区分.アシスタントマネージャー) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of 職位code 'ファイナンシャルコントローラー'?
+        /// Is the value of 職位コード 'ファイナンシャルコントローラー'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// ファイナンシャルコントローラー: Financial Controller
         /// ]]>
         /// </summary>
-        public bool Is職位codeファイナンシャルコントローラー {
+        public bool Is職位コードファイナンシャルコントローラー {
             get {
-                CDef.職位区分 cls = 職位codeAs職位区分;
+                CDef.職位区分 cls = 職位コードAs職位区分;
                 return cls != null ? cls.Equals(CDef.職位区分.ファイナンシャルコントローラー) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of 職位code 'フロントクラーク'?
+        /// Is the value of 職位コード 'フロントクラーク'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// フロントクラーク: Front Clerk
         /// ]]>
         /// </summary>
-        public bool Is職位codeフロントクラーク {
+        public bool Is職位コードフロントクラーク {
             get {
-                CDef.職位区分 cls = 職位codeAs職位区分;
+                CDef.職位区分 cls = 職位コードAs職位区分;
                 return cls != null ? cls.Equals(CDef.職位区分.フロントクラーク) : false;
             }
         }
@@ -215,7 +217,7 @@ namespace Dbflute.ExEntity {
         protected Mst従業員マスタ _mst従業員マスタ;
 
         /// <summary>mst従業員マスタ as 'Mst従業員マスタ'.</summary>
-        [Seasar.Dao.Attrs.Relno(0), Seasar.Dao.Attrs.Relkeys("従業員id:id")]
+        [Seasar.Dao.Attrs.Relno(0), Seasar.Dao.Attrs.Relkeys("従業員コード:従業員コード")]
         public Mst従業員マスタ Mst従業員マスタ {
             get { return _mst従業員マスタ; }
             set { _mst従業員マスタ = value; }
@@ -224,7 +226,7 @@ namespace Dbflute.ExEntity {
         protected Kbn職位区分 _kbn職位区分;
 
         /// <summary>kbn職位区分 as 'Kbn職位区分'.</summary>
-        [Seasar.Dao.Attrs.Relno(1), Seasar.Dao.Attrs.Relkeys("職位code:code")]
+        [Seasar.Dao.Attrs.Relno(1), Seasar.Dao.Attrs.Relkeys("職位コード:職位コード")]
         public Kbn職位区分 Kbn職位区分 {
             get { return _kbn職位区分; }
             set { _kbn職位区分 = value; }
@@ -314,10 +316,10 @@ namespace Dbflute.ExEntity {
             String c = ", ";
             StringBuilder sb = new StringBuilder();
             sb.Append(c).Append(this.Id);
-            sb.Append(c).Append(this.従業員id);
+            sb.Append(c).Append(this.従業員コード);
+            sb.Append(c).Append(this.職位コード);
             sb.Append(c).Append(this.適用開始日);
             sb.Append(c).Append(this.適用終了日);
-            sb.Append(c).Append(this.職位code);
             if (sb.Length > 0) { sb.Remove(0, c.Length); }
             sb.Insert(0, "{").Append("}");
             return sb.ToString();
@@ -337,6 +339,9 @@ namespace Dbflute.ExEntity {
         //                                                                        ========
         #region Accessor
         /// <summary>id: {PK, ID, NotNull, bigserial(19)}</summary>
+        /// <remarks>
+        /// 従業員職位履歴台帳ID
+        /// </remarks>
         [Seasar.Dao.Attrs.ID("identity")]
         [Seasar.Dao.Attrs.Column("id")]
         public long? Id {
@@ -347,17 +352,36 @@ namespace Dbflute.ExEntity {
             }
         }
 
-        /// <summary>従業員id: {NotNull, int8(19), FK to mst従業員マスタ}</summary>
-        [Seasar.Dao.Attrs.Column("従業員id")]
-        public long? 従業員id {
-            get { return _従業員id; }
+        /// <summary>従業員コード: {NotNull, bpchar(10), FK to mst従業員マスタ}</summary>
+        /// <remarks>
+        /// 従業員コード
+        /// </remarks>
+        [Seasar.Dao.Attrs.Column("従業員コード")]
+        public String 従業員コード {
+            get { return _従業員コード; }
             set {
-                __modifiedProperties.AddPropertyName("従業員id");
-                _従業員id = value;
+                __modifiedProperties.AddPropertyName("従業員コード");
+                _従業員コード = value;
+            }
+        }
+
+        /// <summary>職位コード: {NotNull, bpchar(3), FK to kbn職位区分, classification=職位区分}</summary>
+        /// <remarks>
+        /// 職位コード
+        /// </remarks>
+        [Seasar.Dao.Attrs.Column("職位コード")]
+        public String 職位コード {
+            get { return _職位コード; }
+            set {
+                __modifiedProperties.AddPropertyName("職位コード");
+                _職位コード = value;
             }
         }
 
         /// <summary>適用開始日: {NotNull, timestamp(26, 3)}</summary>
+        /// <remarks>
+        /// 適用開始日
+        /// </remarks>
         [Seasar.Dao.Attrs.Column("適用開始日")]
         public DateTime? 適用開始日 {
             get { return _適用開始日; }
@@ -368,22 +392,15 @@ namespace Dbflute.ExEntity {
         }
 
         /// <summary>適用終了日: {NotNull, timestamp(26, 3)}</summary>
+        /// <remarks>
+        /// 適用終了日
+        /// </remarks>
         [Seasar.Dao.Attrs.Column("適用終了日")]
         public DateTime? 適用終了日 {
             get { return _適用終了日; }
             set {
                 __modifiedProperties.AddPropertyName("適用終了日");
                 _適用終了日 = value;
-            }
-        }
-
-        /// <summary>職位code: {NotNull, bpchar(3), FK to kbn職位区分, classification=職位区分}</summary>
-        [Seasar.Dao.Attrs.Column("職位code")]
-        public String 職位code {
-            get { return _職位code; }
-            set {
-                __modifiedProperties.AddPropertyName("職位code");
-                _職位code = value;
             }
         }
 

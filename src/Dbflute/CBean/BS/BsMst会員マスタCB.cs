@@ -29,19 +29,19 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                             PrimaryKey Handling
         //                                                             ===================
-        public void AcceptPrimaryKey(long? id) {
-            assertObjectNotNull("id", id);
+        public void AcceptPrimaryKey(String 会員コード) {
+            assertObjectNotNull("会員コード", 会員コード);
             BsMst会員マスタCB cb = this;
-            cb.Query().SetId_Equal(id);
+            cb.Query().Set会員コード_Equal(会員コード);
         }
 
         public override ConditionBean AddOrderBy_PK_Asc() {
-            Query().AddOrderBy_Id_Asc();
+            Query().AddOrderBy_会員コード_Asc();
             return this;
         }
 
         public override ConditionBean AddOrderBy_PK_Desc() {
-            Query().AddOrderBy_Id_Desc();
+            Query().AddOrderBy_会員コード_Desc();
             return this;
         }
 
@@ -165,21 +165,26 @@ namespace Dbflute.CBean.BS {
         public Mst会員マスタCBSpecification(ConditionBean baseCB, HpSpQyCall<Mst会員マスタCQ> qyCall
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
-        public void ColumnId() { doColumn("id"); }
+        public void Column会員コード() { doColumn("会員コード"); }
         public void Column会員番号() { doColumn("会員番号"); }
-        public void Column氏名姓() { doColumn("氏名_姓"); }
-        public void Column氏名名() { doColumn("氏名_名"); }
-        public void Column氏名カナ() { doColumn("氏名_カナ"); }
+        public void Column名字() { doColumn("名字"); }
+        public void Column名前() { doColumn("名前"); }
+        public void Column氏名カナ() { doColumn("氏名カナ"); }
         public void Column会社名() { doColumn("会社名"); }
-        public void Column会社名カナ() { doColumn("会社名_カナ"); }
+        public void Column会社名カナ() { doColumn("会社名カナ"); }
         public void Column電話番号() { doColumn("電話番号"); }
         public void Columnメールアドレス() { doColumn("メールアドレス"); }
         public void Column入会年月日() { doColumn("入会年月日"); }
         public void Column退会年月日() { doColumn("退会年月日"); }
         public void Column備考() { doColumn("備考"); }
         protected override void doSpecifyRequiredColumn() {
-            ColumnId(); // PK
+            Column会員コード(); // PK
         }
         protected override String getTableDbName() { return "mst会員マスタ"; }
+        public RAFunction<Dch宿泊利用台帳CB, Mst会員マスタCQ> DerivedDch宿泊利用台帳List() {
+            if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
+            return new RAFunction<Dch宿泊利用台帳CB, Mst会員マスタCQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Dch宿泊利用台帳CB> subQuery, Mst会員マスタCQ cq, String aliasName)
+                { cq.xsderiveDch宿泊利用台帳List(function, subQuery, aliasName); });
+        }
     }
 }

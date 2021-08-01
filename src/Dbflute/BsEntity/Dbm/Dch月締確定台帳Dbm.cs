@@ -38,20 +38,16 @@ namespace Dbflute.BsEntity.Dbm {
         // ===============================================================================
         //                                                                     Column Info
         //                                                                     ===========
-        protected ColumnInfo _columnId;
         protected ColumnInfo _column対象年月;
 
-        public ColumnInfo ColumnId { get { return _columnId; } }
         public ColumnInfo Column対象年月 { get { return _column対象年月; } }
 
         protected void InitializeColumnInfo() {
-            _columnId = cci("id", "id", null, null, true, "Id", typeof(long?), true, "bigserial", 19, 0, false, OptimisticLockType.NONE, null, null, null);
-            _column対象年月 = cci("対象年月", "対象年月", null, null, true, "対象年月", typeof(DateTime?), false, "timestamp", 26, 3, false, OptimisticLockType.NONE, null, null, null);
+            _column対象年月 = cci("対象年月", "対象年月", null, null, true, "対象年月", typeof(String), true, "bpchar", 6, 0, false, OptimisticLockType.NONE, null, null, null);
         }
 
         protected void InitializeColumnInfoList() {
             _columnInfoList = new ArrayList<ColumnInfo>();
-            _columnInfoList.add(ColumnId);
             _columnInfoList.add(Column対象年月);
         }
 
@@ -59,7 +55,7 @@ namespace Dbflute.BsEntity.Dbm {
         //                                                                     Unique Info
         //                                                                     ===========
         public override UniqueInfo PrimaryUniqueInfo { get {
-            return cpui(ColumnId);
+            return cpui(Column対象年月);
         }}
 
         // -------------------------------------------------
@@ -83,11 +79,6 @@ namespace Dbflute.BsEntity.Dbm {
         // ===============================================================================
         //                                                                    Various Info
         //                                                                    ============
-        public override bool HasSequence { get { return true; } }
-        public override String SequenceName { get { return "dch002_id_seq"; } }
-        public override String SequenceNextValSql { get { return "select nextval ('dch002_id_seq')"; } }
-        public override int? SequenceIncrementSize { get { return 1; } }
-        public override int? SequenceCacheSize { get { return null; } }
         public override bool HasCommonColumn { get { return false; } }
 
         // ===============================================================================
@@ -104,13 +95,11 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                    Column DB-Name
         //                                    --------------
-        public static readonly String DB_NAME_id = "id";
         public static readonly String DB_NAME_対象年月 = "対象年月";
 
         // -------------------------------------------------
         //                              Column Property-Name
         //                              --------------------
-        public static readonly String PROPERTY_NAME_id = "Id";
         public static readonly String PROPERTY_NAME_対象年月 = "対象年月";
 
         // -------------------------------------------------
@@ -130,7 +119,6 @@ namespace Dbflute.BsEntity.Dbm {
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_DB_NAME.ToLower(), TABLE_PROPERTY_NAME);
-                map.put(DB_NAME_id.ToLower(), PROPERTY_NAME_id);
                 map.put(DB_NAME_対象年月.ToLower(), PROPERTY_NAME_対象年月);
                 _dbNamePropertyNameKeyToLowerMap = map;
             }
@@ -138,7 +126,6 @@ namespace Dbflute.BsEntity.Dbm {
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_PROPERTY_NAME.ToLower(), TABLE_DB_NAME);
-                map.put(PROPERTY_NAME_id.ToLower(), DB_NAME_id);
                 map.put(PROPERTY_NAME_対象年月.ToLower(), DB_NAME_対象年月);
                 _propertyNameDbNameKeyToLowerMap = map;
             }
@@ -181,7 +168,6 @@ namespace Dbflute.BsEntity.Dbm {
         protected Map<String, EntityPropertySetupper<Dch月締確定台帳>> _entityPropertySetupperMap = new LinkedHashMap<String, EntityPropertySetupper<Dch月締確定台帳>>();
 
         protected void InitializeEntityPropertySetupper() {
-            RegisterEntityPropertySetupper("id", "Id", new EntityPropertyIdSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("対象年月", "対象年月", new EntityProperty対象年月Setupper(), _entityPropertySetupperMap);
         }
 
@@ -194,11 +180,8 @@ namespace Dbflute.BsEntity.Dbm {
             callback.Setup((Dch月締確定台帳)entity, value);
         }
 
-        public class EntityPropertyIdSetupper : EntityPropertySetupper<Dch月締確定台帳> {
-            public void Setup(Dch月締確定台帳 entity, Object value) { entity.Id = (value != null) ? (long?)value : null; }
-        }
         public class EntityProperty対象年月Setupper : EntityPropertySetupper<Dch月締確定台帳> {
-            public void Setup(Dch月締確定台帳 entity, Object value) { entity.対象年月 = (value != null) ? (DateTime?)value : null; }
+            public void Setup(Dch月締確定台帳 entity, Object value) { entity.対象年月 = (value != null) ? (String)value : null; }
         }
     }
 }

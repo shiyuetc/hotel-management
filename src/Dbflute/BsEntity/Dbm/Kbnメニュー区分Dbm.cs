@@ -38,24 +38,24 @@ namespace Dbflute.BsEntity.Dbm {
         // ===============================================================================
         //                                                                     Column Info
         //                                                                     ===========
-        protected ColumnInfo _columnCode;
-        protected ColumnInfo _columnメニュー名;
+        protected ColumnInfo _columnメニューコード;
+        protected ColumnInfo _columnメニュー名称;
         protected ColumnInfo _column優先順位;
 
-        public ColumnInfo ColumnCode { get { return _columnCode; } }
-        public ColumnInfo Columnメニュー名 { get { return _columnメニュー名; } }
+        public ColumnInfo Columnメニューコード { get { return _columnメニューコード; } }
+        public ColumnInfo Columnメニュー名称 { get { return _columnメニュー名称; } }
         public ColumnInfo Column優先順位 { get { return _column優先順位; } }
 
         protected void InitializeColumnInfo() {
-            _columnCode = cci("code", "code", null, null, true, "Code", typeof(String), true, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, null, "mst制御画面マスタList");
-            _columnメニュー名 = cci("メニュー名", "メニュー名", null, null, true, "メニュー名", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
+            _columnメニューコード = cci("メニューコード", "メニューコード", null, null, true, "メニューコード", typeof(String), true, "bpchar", 2, 0, false, OptimisticLockType.NONE, null, null, "mst画面マスタList");
+            _columnメニュー名称 = cci("メニュー名称", "メニュー名称", null, null, true, "メニュー名称", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
             _column優先順位 = cci("優先順位", "優先順位", null, null, true, "優先順位", typeof(int?), false, "int4", 10, 0, false, OptimisticLockType.NONE, null, null, null);
         }
 
         protected void InitializeColumnInfoList() {
             _columnInfoList = new ArrayList<ColumnInfo>();
-            _columnInfoList.add(ColumnCode);
-            _columnInfoList.add(Columnメニュー名);
+            _columnInfoList.add(Columnメニューコード);
+            _columnInfoList.add(Columnメニュー名称);
             _columnInfoList.add(Column優先順位);
         }
 
@@ -63,7 +63,7 @@ namespace Dbflute.BsEntity.Dbm {
         //                                                                     Unique Info
         //                                                                     ===========
         public override UniqueInfo PrimaryUniqueInfo { get {
-            return cpui(ColumnCode);
+            return cpui(Columnメニューコード);
         }}
 
         // -------------------------------------------------
@@ -83,10 +83,10 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                  Referrer Element
         //                                  ----------------
-        public ReferrerInfo ReferrerMst制御画面マスタList { get {
+        public ReferrerInfo ReferrerMst画面マスタList { get {
             Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(ColumnCode, Mst制御画面マスタDbm.GetInstance().Columnメニューcode);
-            return cri("Mst制御画面マスタList", this, Mst制御画面マスタDbm.GetInstance(), map, false);
+            map.put(Columnメニューコード, Mst画面マスタDbm.GetInstance().Columnメニューコード);
+            return cri("Mst画面マスタList", this, Mst画面マスタDbm.GetInstance(), map, false);
         }}
 
         // ===============================================================================
@@ -108,15 +108,15 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                    Column DB-Name
         //                                    --------------
-        public static readonly String DB_NAME_code = "code";
-        public static readonly String DB_NAME_メニュー名 = "メニュー名";
+        public static readonly String DB_NAME_メニューコード = "メニューコード";
+        public static readonly String DB_NAME_メニュー名称 = "メニュー名称";
         public static readonly String DB_NAME_優先順位 = "優先順位";
 
         // -------------------------------------------------
         //                              Column Property-Name
         //                              --------------------
-        public static readonly String PROPERTY_NAME_code = "Code";
-        public static readonly String PROPERTY_NAME_メニュー名 = "メニュー名";
+        public static readonly String PROPERTY_NAME_メニューコード = "メニューコード";
+        public static readonly String PROPERTY_NAME_メニュー名称 = "メニュー名称";
         public static readonly String PROPERTY_NAME_優先順位 = "優先順位";
 
         // -------------------------------------------------
@@ -125,7 +125,7 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                     Referrer Name
         //                                     -------------
-        public static readonly String REFERRER_PROPERTY_NAME_Mst制御画面マスタList = "Mst制御画面マスタList";
+        public static readonly String REFERRER_PROPERTY_NAME_Mst画面マスタList = "Mst画面マスタList";
 
         // -------------------------------------------------
         //                               DB-Property Mapping
@@ -137,8 +137,8 @@ namespace Dbflute.BsEntity.Dbm {
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_DB_NAME.ToLower(), TABLE_PROPERTY_NAME);
-                map.put(DB_NAME_code.ToLower(), PROPERTY_NAME_code);
-                map.put(DB_NAME_メニュー名.ToLower(), PROPERTY_NAME_メニュー名);
+                map.put(DB_NAME_メニューコード.ToLower(), PROPERTY_NAME_メニューコード);
+                map.put(DB_NAME_メニュー名称.ToLower(), PROPERTY_NAME_メニュー名称);
                 map.put(DB_NAME_優先順位.ToLower(), PROPERTY_NAME_優先順位);
                 _dbNamePropertyNameKeyToLowerMap = map;
             }
@@ -146,8 +146,8 @@ namespace Dbflute.BsEntity.Dbm {
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_PROPERTY_NAME.ToLower(), TABLE_DB_NAME);
-                map.put(PROPERTY_NAME_code.ToLower(), DB_NAME_code);
-                map.put(PROPERTY_NAME_メニュー名.ToLower(), DB_NAME_メニュー名);
+                map.put(PROPERTY_NAME_メニューコード.ToLower(), DB_NAME_メニューコード);
+                map.put(PROPERTY_NAME_メニュー名称.ToLower(), DB_NAME_メニュー名称);
                 map.put(PROPERTY_NAME_優先順位.ToLower(), DB_NAME_優先順位);
                 _propertyNameDbNameKeyToLowerMap = map;
             }
@@ -190,8 +190,8 @@ namespace Dbflute.BsEntity.Dbm {
         protected Map<String, EntityPropertySetupper<Kbnメニュー区分>> _entityPropertySetupperMap = new LinkedHashMap<String, EntityPropertySetupper<Kbnメニュー区分>>();
 
         protected void InitializeEntityPropertySetupper() {
-            RegisterEntityPropertySetupper("code", "Code", new EntityPropertyCodeSetupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("メニュー名", "メニュー名", new EntityPropertyメニュー名Setupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("メニューコード", "メニューコード", new EntityPropertyメニューコードSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("メニュー名称", "メニュー名称", new EntityPropertyメニュー名称Setupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("優先順位", "優先順位", new EntityProperty優先順位Setupper(), _entityPropertySetupperMap);
         }
 
@@ -204,11 +204,11 @@ namespace Dbflute.BsEntity.Dbm {
             callback.Setup((Kbnメニュー区分)entity, value);
         }
 
-        public class EntityPropertyCodeSetupper : EntityPropertySetupper<Kbnメニュー区分> {
-            public void Setup(Kbnメニュー区分 entity, Object value) { entity.Code = (value != null) ? (String)value : null; }
+        public class EntityPropertyメニューコードSetupper : EntityPropertySetupper<Kbnメニュー区分> {
+            public void Setup(Kbnメニュー区分 entity, Object value) { entity.メニューコード = (value != null) ? (String)value : null; }
         }
-        public class EntityPropertyメニュー名Setupper : EntityPropertySetupper<Kbnメニュー区分> {
-            public void Setup(Kbnメニュー区分 entity, Object value) { entity.メニュー名 = (value != null) ? (String)value : null; }
+        public class EntityPropertyメニュー名称Setupper : EntityPropertySetupper<Kbnメニュー区分> {
+            public void Setup(Kbnメニュー区分 entity, Object value) { entity.メニュー名称 = (value != null) ? (String)value : null; }
         }
         public class EntityProperty優先順位Setupper : EntityPropertySetupper<Kbnメニュー区分> {
             public void Setup(Kbnメニュー区分 entity, Object value) { entity.優先順位 = (value != null) ? (int?)value : null; }

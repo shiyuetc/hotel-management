@@ -63,49 +63,30 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        protected override ConditionValue getCValueId() {
-            return _myCQ.Id;
+        protected override ConditionValue getCValue職位コード() {
+            return _myCQ.職位コード;
         }
 
 
-        protected override ConditionValue getCValue職位code() {
-            return _myCQ.職位code;
+        public override String keep職位コード_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
+            return _myCQ.keep職位コード_InScopeSubQuery_Kbn職位区分(subQuery);
+        }
+
+        public override String keep職位コード_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
+            return _myCQ.keep職位コード_NotInScopeSubQuery_Kbn職位区分(subQuery);
+        }
+
+        protected override ConditionValue getCValue画面コード() {
+            return _myCQ.画面コード;
         }
 
 
-        public override String keep職位code_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
-            return _myCQ.keep職位code_InScopeSubQuery_Kbn職位区分(subQuery);
+        public override String keep画面コード_InScopeSubQuery_Mst画面マスタ(Mst画面マスタCQ subQuery) {
+            return _myCQ.keep画面コード_InScopeSubQuery_Mst画面マスタ(subQuery);
         }
 
-        public override String keep職位code_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
-            return _myCQ.keep職位code_NotInScopeSubQuery_Kbn職位区分(subQuery);
-        }
-
-        protected override ConditionValue getCValue制御画面id() {
-            return _myCQ.制御画面id;
-        }
-
-
-        public override String keep制御画面id_InScopeSubQuery_Mst制御画面マスタ(Mst制御画面マスタCQ subQuery) {
-            return _myCQ.keep制御画面id_InScopeSubQuery_Mst制御画面マスタ(subQuery);
-        }
-
-        public override String keep制御画面id_NotInScopeSubQuery_Mst制御画面マスタ(Mst制御画面マスタCQ subQuery) {
-            return _myCQ.keep制御画面id_NotInScopeSubQuery_Mst制御画面マスタ(subQuery);
-        }
-
-        // ===================================================================================
-        //                                                                     Scalar SubQuery
-        //                                                                     ===============
-        public override String keepScalarSubQuery(Mst権限マスタCQ subQuery) {
-            throw new UnsupportedOperationException("ScalarSubQuery at inline() is unsupported! Sorry!");
-        }
-
-        // ===============================================================================
-        //                                                         Myself InScope SubQuery
-        //                                                         =======================
-        public override String keepMyselfInScopeSubQuery(Mst権限マスタCQ subQuery) {
-            throw new UnsupportedOperationException("MyselfInScopeSubQuery at inline() is unsupported! Sorry!");
+        public override String keep画面コード_NotInScopeSubQuery_Mst画面マスタ(Mst画面マスタCQ subQuery) {
+            return _myCQ.keep画面コード_NotInScopeSubQuery_Mst画面マスタ(subQuery);
         }
     }
 }

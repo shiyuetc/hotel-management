@@ -119,18 +119,18 @@ namespace Dbflute.ExBhv {
             return SelectEntityWithDeletedCheck(Downcast(cb));
         }
 
-        public virtual Kbnメニュー区分 SelectByPKValue(String code) {
-            return SelectEntity(BuildPKCB(code));
+        public virtual Kbnメニュー区分 SelectByPKValue(String メニューコード) {
+            return SelectEntity(BuildPKCB(メニューコード));
         }
 
-        public virtual Kbnメニュー区分 SelectByPKValueWithDeletedCheck(String code) {
-            return SelectEntityWithDeletedCheck(BuildPKCB(code));
+        public virtual Kbnメニュー区分 SelectByPKValueWithDeletedCheck(String メニューコード) {
+            return SelectEntityWithDeletedCheck(BuildPKCB(メニューコード));
         }
 
-        private Kbnメニュー区分CB BuildPKCB(String code) {
-            AssertObjectNotNull("code", code);
+        private Kbnメニュー区分CB BuildPKCB(String メニューコード) {
+            AssertObjectNotNull("メニューコード", メニューコード);
             Kbnメニュー区分CB cb = NewMyConditionBean();
-            cb.Query().SetCode_Equal(code);
+            cb.Query().Setメニューコード_Equal(メニューコード);
             return cb;            
         }
         #endregion
@@ -168,37 +168,37 @@ namespace Dbflute.ExBhv {
         //                                                                   Load Referrer
         //                                                                   =============
         #region Load Referrer
-        public virtual void LoadMst制御画面マスタList(Kbnメニュー区分 kbnメニュー区分, ConditionBeanSetupper<Mst制御画面マスタCB> conditionBeanSetupper) {
+        public virtual void LoadMst画面マスタList(Kbnメニュー区分 kbnメニュー区分, ConditionBeanSetupper<Mst画面マスタCB> conditionBeanSetupper) {
             AssertObjectNotNull("kbnメニュー区分", kbnメニュー区分); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
-            LoadMst制御画面マスタList(xnewLRLs<Kbnメニュー区分>(kbnメニュー区分), conditionBeanSetupper);
+            LoadMst画面マスタList(xnewLRLs<Kbnメニュー区分>(kbnメニュー区分), conditionBeanSetupper);
         }
-        public virtual void LoadMst制御画面マスタList(IList<Kbnメニュー区分> kbnメニュー区分List, ConditionBeanSetupper<Mst制御画面マスタCB> conditionBeanSetupper) {
+        public virtual void LoadMst画面マスタList(IList<Kbnメニュー区分> kbnメニュー区分List, ConditionBeanSetupper<Mst画面マスタCB> conditionBeanSetupper) {
             AssertObjectNotNull("kbnメニュー区分List", kbnメニュー区分List); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
-            LoadMst制御画面マスタList(kbnメニュー区分List, new LoadReferrerOption<Mst制御画面マスタCB, Mst制御画面マスタ>().xinit(conditionBeanSetupper));
+            LoadMst画面マスタList(kbnメニュー区分List, new LoadReferrerOption<Mst画面マスタCB, Mst画面マスタ>().xinit(conditionBeanSetupper));
         }
-        public virtual void LoadMst制御画面マスタList(Kbnメニュー区分 kbnメニュー区分, LoadReferrerOption<Mst制御画面マスタCB, Mst制御画面マスタ> loadReferrerOption) {
+        public virtual void LoadMst画面マスタList(Kbnメニュー区分 kbnメニュー区分, LoadReferrerOption<Mst画面マスタCB, Mst画面マスタ> loadReferrerOption) {
             AssertObjectNotNull("kbnメニュー区分", kbnメニュー区分); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
-            LoadMst制御画面マスタList(xnewLRLs<Kbnメニュー区分>(kbnメニュー区分), loadReferrerOption);
+            LoadMst画面マスタList(xnewLRLs<Kbnメニュー区分>(kbnメニュー区分), loadReferrerOption);
         }
-        public virtual void LoadMst制御画面マスタList(IList<Kbnメニュー区分> kbnメニュー区分List, LoadReferrerOption<Mst制御画面マスタCB, Mst制御画面マスタ> loadReferrerOption) {
+        public virtual void LoadMst画面マスタList(IList<Kbnメニュー区分> kbnメニュー区分List, LoadReferrerOption<Mst画面マスタCB, Mst画面マスタ> loadReferrerOption) {
             AssertObjectNotNull("kbnメニュー区分List", kbnメニュー区分List); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
             if (kbnメニュー区分List.Count == 0) { return; }
-            Mst制御画面マスタBhv referrerBhv = xgetBSFLR().Select<Mst制御画面マスタBhv>();
-            HelpLoadReferrerInternally<Kbnメニュー区分, String, Mst制御画面マスタCB, Mst制御画面マスタ>
-                    (kbnメニュー区分List, loadReferrerOption, new MyInternalLoadMst制御画面マスタListCallback(referrerBhv));
+            Mst画面マスタBhv referrerBhv = xgetBSFLR().Select<Mst画面マスタBhv>();
+            HelpLoadReferrerInternally<Kbnメニュー区分, String, Mst画面マスタCB, Mst画面マスタ>
+                    (kbnメニュー区分List, loadReferrerOption, new MyInternalLoadMst画面マスタListCallback(referrerBhv));
         }
-        protected class MyInternalLoadMst制御画面マスタListCallback : InternalLoadReferrerCallback<Kbnメニュー区分, String, Mst制御画面マスタCB, Mst制御画面マスタ> {
-            protected Mst制御画面マスタBhv referrerBhv;
-            public MyInternalLoadMst制御画面マスタListCallback(Mst制御画面マスタBhv referrerBhv) { this.referrerBhv = referrerBhv; }
-            public String getPKVal(Kbnメニュー区分 e) { return e.Code; }
-            public void setRfLs(Kbnメニュー区分 e, IList<Mst制御画面マスタ> ls) { e.Mst制御画面マスタList = ls; }
-            public Mst制御画面マスタCB newMyCB() { return referrerBhv.NewMyConditionBean(); }
-            public void qyFKIn(Mst制御画面マスタCB cb, IList<String> ls) { cb.Query().Setメニューcode_InScope(ls); }
-            public void qyOdFKAsc(Mst制御画面マスタCB cb) { cb.Query().AddOrderBy_メニューcode_Asc(); }
-            public void spFKCol(Mst制御画面マスタCB cb) { cb.Specify().Columnメニューcode(); }
-            public IList<Mst制御画面マスタ> selRfLs(Mst制御画面マスタCB cb) { return referrerBhv.SelectList(cb); }
-            public String getFKVal(Mst制御画面マスタ e) { return e.メニューcode; }
-            public void setlcEt(Mst制御画面マスタ re, Kbnメニュー区分 be) { re.Kbnメニュー区分 = be; }
+        protected class MyInternalLoadMst画面マスタListCallback : InternalLoadReferrerCallback<Kbnメニュー区分, String, Mst画面マスタCB, Mst画面マスタ> {
+            protected Mst画面マスタBhv referrerBhv;
+            public MyInternalLoadMst画面マスタListCallback(Mst画面マスタBhv referrerBhv) { this.referrerBhv = referrerBhv; }
+            public String getPKVal(Kbnメニュー区分 e) { return e.メニューコード; }
+            public void setRfLs(Kbnメニュー区分 e, IList<Mst画面マスタ> ls) { e.Mst画面マスタList = ls; }
+            public Mst画面マスタCB newMyCB() { return referrerBhv.NewMyConditionBean(); }
+            public void qyFKIn(Mst画面マスタCB cb, IList<String> ls) { cb.Query().Setメニューコード_InScope(ls); }
+            public void qyOdFKAsc(Mst画面マスタCB cb) { cb.Query().AddOrderBy_メニューコード_Asc(); }
+            public void spFKCol(Mst画面マスタCB cb) { cb.Specify().Columnメニューコード(); }
+            public IList<Mst画面マスタ> selRfLs(Mst画面マスタCB cb) { return referrerBhv.SelectList(cb); }
+            public String getFKVal(Mst画面マスタ e) { return e.メニューコード; }
+            public void setlcEt(Mst画面マスタ re, Kbnメニュー区分 be) { re.Kbnメニュー区分 = be; }
         }
         #endregion
 
@@ -244,7 +244,7 @@ namespace Dbflute.ExBhv {
             public void CallbackUpdate(Kbnメニュー区分 entity) { _bhv.Update(entity); }
             public Kbnメニュー区分CB CallbackNewMyConditionBean() { return _bhv.NewMyConditionBean(); }
             public void CallbackSetupPrimaryKeyCondition(Kbnメニュー区分CB cb, Kbnメニュー区分 entity) {
-                cb.Query().SetCode_Equal(entity.Code);
+                cb.Query().Setメニューコード_Equal(entity.メニューコード);
             }
             public int CallbackSelectCount(Kbnメニュー区分CB cb) { return _bhv.SelectCount(cb); }
         }

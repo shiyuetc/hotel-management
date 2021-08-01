@@ -63,99 +63,99 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        protected override ConditionValue getCValueCode() {
-            return _myCQ.Code;
+        protected override ConditionValue getCValue職位コード() {
+            return _myCQ.職位コード;
         }
 
 
-        public override String keepCode_ExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+        public override String keep職位コード_ExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
             throw new SystemException("ExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepCode_ExistsSubQuery_Dch従業員職位履歴台帳List(subQuery);
+            // _myCQ.keep職位コード_ExistsSubQuery_Dch従業員職位履歴台帳List(subQuery);
         }
 
-        public override String keepCode_ExistsSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
+        public override String keep職位コード_ExistsSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
             throw new SystemException("ExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepCode_ExistsSubQuery_Mst従業員マスタList(subQuery);
+            // _myCQ.keep職位コード_ExistsSubQuery_Mst従業員マスタList(subQuery);
         }
 
-        public override String keepCode_ExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
+        public override String keep職位コード_ExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
             throw new SystemException("ExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepCode_ExistsSubQuery_Mst権限マスタList(subQuery);
+            // _myCQ.keep職位コード_ExistsSubQuery_Mst権限マスタList(subQuery);
         }
 
-        public override String keepCode_NotExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+        public override String keep職位コード_NotExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
             throw new SystemException("NotExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepCode_NotExistsSubQuery_Dch従業員職位履歴台帳List(subQuery);
+            // _myCQ.keep職位コード_NotExistsSubQuery_Dch従業員職位履歴台帳List(subQuery);
         }
 
-        public override String keepCode_NotExistsSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
+        public override String keep職位コード_NotExistsSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
             throw new SystemException("NotExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepCode_NotExistsSubQuery_Mst従業員マスタList(subQuery);
+            // _myCQ.keep職位コード_NotExistsSubQuery_Mst従業員マスタList(subQuery);
         }
 
-        public override String keepCode_NotExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
+        public override String keep職位コード_NotExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
             throw new SystemException("NotExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepCode_NotExistsSubQuery_Mst権限マスタList(subQuery);
+            // _myCQ.keep職位コード_NotExistsSubQuery_Mst権限マスタList(subQuery);
         }
 
-        public override String keepCode_InScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
-            return _myCQ.keepCode_InScopeSubQuery_Dch従業員職位履歴台帳List(subQuery);
+        public override String keep職位コード_InScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+            return _myCQ.keep職位コード_InScopeSubQuery_Dch従業員職位履歴台帳List(subQuery);
         }
 
-        public override String keepCode_InScopeSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
-            return _myCQ.keepCode_InScopeSubQuery_Mst従業員マスタList(subQuery);
+        public override String keep職位コード_InScopeSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
+            return _myCQ.keep職位コード_InScopeSubQuery_Mst従業員マスタList(subQuery);
         }
 
-        public override String keepCode_InScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
-            return _myCQ.keepCode_InScopeSubQuery_Mst権限マスタList(subQuery);
+        public override String keep職位コード_InScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
+            return _myCQ.keep職位コード_InScopeSubQuery_Mst権限マスタList(subQuery);
         }
 
-        public override String keepCode_NotInScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
-            return _myCQ.keepCode_NotInScopeSubQuery_Dch従業員職位履歴台帳List(subQuery);
+        public override String keep職位コード_NotInScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+            return _myCQ.keep職位コード_NotInScopeSubQuery_Dch従業員職位履歴台帳List(subQuery);
         }
 
-        public override String keepCode_NotInScopeSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
-            return _myCQ.keepCode_NotInScopeSubQuery_Mst従業員マスタList(subQuery);
+        public override String keep職位コード_NotInScopeSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
+            return _myCQ.keep職位コード_NotInScopeSubQuery_Mst従業員マスタList(subQuery);
         }
 
-        public override String keepCode_NotInScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
-            return _myCQ.keepCode_NotInScopeSubQuery_Mst権限マスタList(subQuery);
+        public override String keep職位コード_NotInScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery) {
+            return _myCQ.keep職位コード_NotInScopeSubQuery_Mst権限マスタList(subQuery);
         }
-        public override String keepCode_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+        public override String keep職位コード_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
             throw new UnsupportedOperationException("(Specify)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepCode_SpecifyDerivedReferrer_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
+        public override String keep職位コード_SpecifyDerivedReferrer_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
             throw new UnsupportedOperationException("(Specify)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepCode_SpecifyDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery) {
+        public override String keep職位コード_SpecifyDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery) {
             throw new UnsupportedOperationException("(Specify)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepCode_QueryDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
+        public override String keep職位コード_QueryDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepCode_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter(Object parameterValue) {
+        public override String keep職位コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter(Object parameterValue) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepCode_QueryDerivedReferrer_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
+        public override String keep職位コード_QueryDerivedReferrer_Mst従業員マスタList(Mst従業員マスタCQ subQuery) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepCode_QueryDerivedReferrer_Mst従業員マスタListParameter(Object parameterValue) {
+        public override String keep職位コード_QueryDerivedReferrer_Mst従業員マスタListParameter(Object parameterValue) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepCode_QueryDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery) {
+        public override String keep職位コード_QueryDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepCode_QueryDerivedReferrer_Mst権限マスタListParameter(Object parameterValue) {
+        public override String keep職位コード_QueryDerivedReferrer_Mst権限マスタListParameter(Object parameterValue) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
 
-        protected override ConditionValue getCValue名称() {
-            return _myCQ.名称;
+        protected override ConditionValue getCValue職位名称() {
+            return _myCQ.職位名称;
         }
 
 
-        protected override ConditionValue getCValue名称英字() {
-            return _myCQ.名称英字;
+        protected override ConditionValue getCValue職位英字名称() {
+            return _myCQ.職位英字名称;
         }
 
 

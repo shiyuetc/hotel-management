@@ -119,18 +119,18 @@ namespace Dbflute.ExBhv {
             return SelectEntityWithDeletedCheck(Downcast(cb));
         }
 
-        public virtual Mst会員マスタ SelectByPKValue(long? id) {
-            return SelectEntity(BuildPKCB(id));
+        public virtual Mst会員マスタ SelectByPKValue(String 会員コード) {
+            return SelectEntity(BuildPKCB(会員コード));
         }
 
-        public virtual Mst会員マスタ SelectByPKValueWithDeletedCheck(long? id) {
-            return SelectEntityWithDeletedCheck(BuildPKCB(id));
+        public virtual Mst会員マスタ SelectByPKValueWithDeletedCheck(String 会員コード) {
+            return SelectEntityWithDeletedCheck(BuildPKCB(会員コード));
         }
 
-        private Mst会員マスタCB BuildPKCB(long? id) {
-            AssertObjectNotNull("id", id);
+        private Mst会員マスタCB BuildPKCB(String 会員コード) {
+            AssertObjectNotNull("会員コード", 会員コード);
             Mst会員マスタCB cb = NewMyConditionBean();
-            cb.Query().SetId_Equal(id);
+            cb.Query().Set会員コード_Equal(会員コード);
             return cb;            
         }
         #endregion
@@ -165,20 +165,41 @@ namespace Dbflute.ExBhv {
         #endregion
 
         // ===============================================================================
-        //                                                                        Sequence
-        //                                                                        ========
-        public long? SelectNextVal() {
-            return DelegateSelectNextVal();
-        }
-        protected override void SetupNextValueToPrimaryKey(Entity entity) {// Very Internal
-            Mst会員マスタ myEntity = (Mst会員マスタ)entity;
-            myEntity.Id = SelectNextVal();
-        }
-
-        // ===============================================================================
         //                                                                   Load Referrer
         //                                                                   =============
         #region Load Referrer
+        public virtual void LoadDch宿泊利用台帳List(Mst会員マスタ mst会員マスタ, ConditionBeanSetupper<Dch宿泊利用台帳CB> conditionBeanSetupper) {
+            AssertObjectNotNull("mst会員マスタ", mst会員マスタ); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
+            LoadDch宿泊利用台帳List(xnewLRLs<Mst会員マスタ>(mst会員マスタ), conditionBeanSetupper);
+        }
+        public virtual void LoadDch宿泊利用台帳List(IList<Mst会員マスタ> mst会員マスタList, ConditionBeanSetupper<Dch宿泊利用台帳CB> conditionBeanSetupper) {
+            AssertObjectNotNull("mst会員マスタList", mst会員マスタList); AssertObjectNotNull("conditionBeanSetupper", conditionBeanSetupper);
+            LoadDch宿泊利用台帳List(mst会員マスタList, new LoadReferrerOption<Dch宿泊利用台帳CB, Dch宿泊利用台帳>().xinit(conditionBeanSetupper));
+        }
+        public virtual void LoadDch宿泊利用台帳List(Mst会員マスタ mst会員マスタ, LoadReferrerOption<Dch宿泊利用台帳CB, Dch宿泊利用台帳> loadReferrerOption) {
+            AssertObjectNotNull("mst会員マスタ", mst会員マスタ); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
+            LoadDch宿泊利用台帳List(xnewLRLs<Mst会員マスタ>(mst会員マスタ), loadReferrerOption);
+        }
+        public virtual void LoadDch宿泊利用台帳List(IList<Mst会員マスタ> mst会員マスタList, LoadReferrerOption<Dch宿泊利用台帳CB, Dch宿泊利用台帳> loadReferrerOption) {
+            AssertObjectNotNull("mst会員マスタList", mst会員マスタList); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
+            if (mst会員マスタList.Count == 0) { return; }
+            Dch宿泊利用台帳Bhv referrerBhv = xgetBSFLR().Select<Dch宿泊利用台帳Bhv>();
+            HelpLoadReferrerInternally<Mst会員マスタ, String, Dch宿泊利用台帳CB, Dch宿泊利用台帳>
+                    (mst会員マスタList, loadReferrerOption, new MyInternalLoadDch宿泊利用台帳ListCallback(referrerBhv));
+        }
+        protected class MyInternalLoadDch宿泊利用台帳ListCallback : InternalLoadReferrerCallback<Mst会員マスタ, String, Dch宿泊利用台帳CB, Dch宿泊利用台帳> {
+            protected Dch宿泊利用台帳Bhv referrerBhv;
+            public MyInternalLoadDch宿泊利用台帳ListCallback(Dch宿泊利用台帳Bhv referrerBhv) { this.referrerBhv = referrerBhv; }
+            public String getPKVal(Mst会員マスタ e) { return e.会員コード; }
+            public void setRfLs(Mst会員マスタ e, IList<Dch宿泊利用台帳> ls) { e.Dch宿泊利用台帳List = ls; }
+            public Dch宿泊利用台帳CB newMyCB() { return referrerBhv.NewMyConditionBean(); }
+            public void qyFKIn(Dch宿泊利用台帳CB cb, IList<String> ls) { cb.Query().Set会員コード_InScope(ls); }
+            public void qyOdFKAsc(Dch宿泊利用台帳CB cb) { cb.Query().AddOrderBy_会員コード_Asc(); }
+            public void spFKCol(Dch宿泊利用台帳CB cb) { cb.Specify().Column会員コード(); }
+            public IList<Dch宿泊利用台帳> selRfLs(Dch宿泊利用台帳CB cb) { return referrerBhv.SelectList(cb); }
+            public String getFKVal(Dch宿泊利用台帳 e) { return e.会員コード; }
+            public void setlcEt(Dch宿泊利用台帳 re, Mst会員マスタ be) { re.Mst会員マスタ = be; }
+        }
         #endregion
 
         // ===============================================================================
@@ -223,7 +244,7 @@ namespace Dbflute.ExBhv {
             public void CallbackUpdate(Mst会員マスタ entity) { _bhv.Update(entity); }
             public Mst会員マスタCB CallbackNewMyConditionBean() { return _bhv.NewMyConditionBean(); }
             public void CallbackSetupPrimaryKeyCondition(Mst会員マスタCB cb, Mst会員マスタ entity) {
-                cb.Query().SetId_Equal(entity.Id);
+                cb.Query().Set会員コード_Equal(entity.会員コード);
             }
             public int CallbackSelectCount(Mst会員マスタCB cb) { return _bhv.SelectCount(cb); }
         }
@@ -275,7 +296,6 @@ namespace Dbflute.ExBhv {
         #region Delegate Method
         protected int DelegateSelectCount(Mst会員マスタCB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectCount(cb); }
         protected IList<Mst会員マスタ> DelegateSelectList(Mst会員マスタCB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectList(cb); }
-        protected long? DelegateSelectNextVal() { return this.Dao.SelectNextVal(); }
 
         protected int DelegateInsert(Mst会員マスタ e) { if (!ProcessBeforeInsert(e)) { return 1; } return this.Dao.Insert(e); }
         protected int DelegateUpdate(Mst会員マスタ e)

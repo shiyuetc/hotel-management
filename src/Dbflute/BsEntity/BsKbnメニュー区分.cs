@@ -18,11 +18,13 @@ namespace Dbflute.ExEntity {
     /// <summary>
     /// The entity of kbnメニュー区分 as TABLE. (partial class for auto-generation)
     /// <![CDATA[
+    /// メニュー区分
+    /// 
     /// [primary-key]
-    ///     code
+    ///     メニューコード
     /// 
     /// [column]
-    ///     code, メニュー名, 優先順位
+    ///     メニューコード, メニュー名称, 優先順位
     /// 
     /// [sequence]
     ///     
@@ -37,13 +39,13 @@ namespace Dbflute.ExEntity {
     ///     
     /// 
     /// [referrer-table]
-    ///     mst制御画面マスタ
+    ///     mst画面マスタ
     /// 
     /// [foreign-property]
     ///     
     /// 
     /// [referrer-property]
-    ///     mst制御画面マスタList
+    ///     mst画面マスタList
     /// ]]>
     /// Author: DBFlute(AutoGenerator)
     /// </summary>
@@ -55,11 +57,11 @@ namespace Dbflute.ExEntity {
         //                                                                       Attribute
         //                                                                       =========
         #region Attribute
-        /// <summary>code: {PK, NotNull, bpchar(3), classification=メニュー区分}</summary>
-        protected String _code;
+        /// <summary>メニューコード: {PK, NotNull, bpchar(2), classification=メニュー区分}</summary>
+        protected String _メニューコード;
 
-        /// <summary>メニュー名: {NotNull, varchar(20)}</summary>
-        protected String _メニュー名;
+        /// <summary>メニュー名称: {NotNull, varchar(20)}</summary>
+        protected String _メニュー名称;
 
         /// <summary>優先順位: {NotNull, int4(10)}</summary>
         protected int? _優先順位;
@@ -82,10 +84,10 @@ namespace Dbflute.ExEntity {
         //                                                         Classification Property
         //                                                         =======================
         #region Classification Property
-        public CDef.メニュー区分 CodeAsメニュー区分 { get {
-            return CDef.メニュー区分.CodeOf(_code);
+        public CDef.メニュー区分 メニューコードAsメニュー区分 { get {
+            return CDef.メニュー区分.CodeOf(_メニューコード);
         } set {
-            Code = value != null ? value.Code : null;
+            メニューコード = value != null ? value.Code : null;
         }}
 
         #endregion
@@ -95,63 +97,63 @@ namespace Dbflute.ExEntity {
         //                                                          ======================
         #region Classification Setting
         /// <summary>
-        /// Set the value of code as ログアウト.
+        /// Set the value of メニューコード as ログアウト.
         /// <![CDATA[
         /// ログアウト: 9999
         /// ]]>
         /// </summary>
-        public void SetCode_ログアウト() {
-            CodeAsメニュー区分 = CDef.メニュー区分.ログアウト;
+        public void Setメニューコード_ログアウト() {
+            メニューコードAsメニュー区分 = CDef.メニュー区分.ログアウト;
         }
 
         /// <summary>
-        /// Set the value of code as 予約管理.
+        /// Set the value of メニューコード as 予約管理.
         /// <![CDATA[
         /// 予約管理: 10
         /// ]]>
         /// </summary>
-        public void SetCode_予約管理() {
-            CodeAsメニュー区分 = CDef.メニュー区分.予約管理;
+        public void Setメニューコード_予約管理() {
+            メニューコードAsメニュー区分 = CDef.メニュー区分.予約管理;
         }
 
         /// <summary>
-        /// Set the value of code as 宿泊履歴.
+        /// Set the value of メニューコード as 宿泊履歴.
         /// <![CDATA[
         /// 宿泊履歴: 20
         /// ]]>
         /// </summary>
-        public void SetCode_宿泊履歴() {
-            CodeAsメニュー区分 = CDef.メニュー区分.宿泊履歴;
+        public void Setメニューコード_宿泊履歴() {
+            メニューコードAsメニュー区分 = CDef.メニュー区分.宿泊履歴;
         }
 
         /// <summary>
-        /// Set the value of code as 顧客管理.
+        /// Set the value of メニューコード as 顧客管理.
         /// <![CDATA[
         /// 顧客管理: 30
         /// ]]>
         /// </summary>
-        public void SetCode_顧客管理() {
-            CodeAsメニュー区分 = CDef.メニュー区分.顧客管理;
+        public void Setメニューコード_顧客管理() {
+            メニューコードAsメニュー区分 = CDef.メニュー区分.顧客管理;
         }
 
         /// <summary>
-        /// Set the value of code as 従業員管理.
+        /// Set the value of メニューコード as 従業員管理.
         /// <![CDATA[
         /// 従業員管理: 40
         /// ]]>
         /// </summary>
-        public void SetCode_従業員管理() {
-            CodeAsメニュー区分 = CDef.メニュー区分.従業員管理;
+        public void Setメニューコード_従業員管理() {
+            メニューコードAsメニュー区分 = CDef.メニュー区分.従業員管理;
         }
 
         /// <summary>
-        /// Set the value of code as 客室管理.
+        /// Set the value of メニューコード as 客室管理.
         /// <![CDATA[
         /// 客室管理: 50
         /// ]]>
         /// </summary>
-        public void SetCode_客室管理() {
-            CodeAsメニュー区分 = CDef.メニュー区分.客室管理;
+        public void Setメニューコード_客室管理() {
+            メニューコードAsメニュー区分 = CDef.メニュー区分.客室管理;
         }
 
         #endregion
@@ -161,91 +163,91 @@ namespace Dbflute.ExEntity {
         //                                                    ============================
         #region Classification Determination
         /// <summary>
-        /// Is the value of code 'ログアウト'?
+        /// Is the value of メニューコード 'ログアウト'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// ログアウト: 9999
         /// ]]>
         /// </summary>
-        public bool IsCodeログアウト {
+        public bool Isメニューコードログアウト {
             get {
-                CDef.メニュー区分 cls = CodeAsメニュー区分;
+                CDef.メニュー区分 cls = メニューコードAsメニュー区分;
                 return cls != null ? cls.Equals(CDef.メニュー区分.ログアウト) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of code '予約管理'?
+        /// Is the value of メニューコード '予約管理'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// 予約管理: 10
         /// ]]>
         /// </summary>
-        public bool IsCode予約管理 {
+        public bool Isメニューコード予約管理 {
             get {
-                CDef.メニュー区分 cls = CodeAsメニュー区分;
+                CDef.メニュー区分 cls = メニューコードAsメニュー区分;
                 return cls != null ? cls.Equals(CDef.メニュー区分.予約管理) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of code '宿泊履歴'?
+        /// Is the value of メニューコード '宿泊履歴'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// 宿泊履歴: 20
         /// ]]>
         /// </summary>
-        public bool IsCode宿泊履歴 {
+        public bool Isメニューコード宿泊履歴 {
             get {
-                CDef.メニュー区分 cls = CodeAsメニュー区分;
+                CDef.メニュー区分 cls = メニューコードAsメニュー区分;
                 return cls != null ? cls.Equals(CDef.メニュー区分.宿泊履歴) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of code '顧客管理'?
+        /// Is the value of メニューコード '顧客管理'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// 顧客管理: 30
         /// ]]>
         /// </summary>
-        public bool IsCode顧客管理 {
+        public bool Isメニューコード顧客管理 {
             get {
-                CDef.メニュー区分 cls = CodeAsメニュー区分;
+                CDef.メニュー区分 cls = メニューコードAsメニュー区分;
                 return cls != null ? cls.Equals(CDef.メニュー区分.顧客管理) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of code '従業員管理'?
+        /// Is the value of メニューコード '従業員管理'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// 従業員管理: 40
         /// ]]>
         /// </summary>
-        public bool IsCode従業員管理 {
+        public bool Isメニューコード従業員管理 {
             get {
-                CDef.メニュー区分 cls = CodeAsメニュー区分;
+                CDef.メニュー区分 cls = メニューコードAsメニュー区分;
                 return cls != null ? cls.Equals(CDef.メニュー区分.従業員管理) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of code '客室管理'?
+        /// Is the value of メニューコード '客室管理'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// 客室管理: 50
         /// ]]>
         /// </summary>
-        public bool IsCode客室管理 {
+        public bool Isメニューコード客室管理 {
             get {
-                CDef.メニュー区分 cls = CodeAsメニュー区分;
+                CDef.メニュー区分 cls = メニューコードAsメニュー区分;
                 return cls != null ? cls.Equals(CDef.メニュー区分.客室管理) : false;
             }
         }
@@ -262,12 +264,12 @@ namespace Dbflute.ExEntity {
         //                                                               Referrer Property
         //                                                               =================
         #region Referrer Property
-        protected IList<Mst制御画面マスタ> _mst制御画面マスタList;
+        protected IList<Mst画面マスタ> _mst画面マスタList;
 
-        /// <summary>mst制御画面マスタ as 'Mst制御画面マスタList'.</summary>
-        public IList<Mst制御画面マスタ> Mst制御画面マスタList {
-            get { if (_mst制御画面マスタList == null) { _mst制御画面マスタList = new List<Mst制御画面マスタ>(); } return _mst制御画面マスタList; }
-            set { _mst制御画面マスタList = value; }
+        /// <summary>mst画面マスタ as 'Mst画面マスタList'.</summary>
+        public IList<Mst画面マスタ> Mst画面マスタList {
+            get { if (_mst画面マスタList == null) { _mst画面マスタList = new List<Mst画面マスタ>(); } return _mst画面マスタList; }
+            set { _mst画面マスタList = value; }
         }
 
         #endregion
@@ -277,7 +279,7 @@ namespace Dbflute.ExEntity {
         //                                                                   =============
         public virtual bool HasPrimaryKeyValue {
             get {
-                if (_code == null) { return false; }
+                if (_メニューコード == null) { return false; }
                 return true;
             }
         }
@@ -300,7 +302,7 @@ namespace Dbflute.ExEntity {
         public override bool Equals(Object other) {
             if (other == null || !(other is Kbnメニュー区分)) { return false; }
             Kbnメニュー区分 otherEntity = (Kbnメニュー区分)other;
-            if (!xSV(this.Code, otherEntity.Code)) { return false; }
+            if (!xSV(this.メニューコード, otherEntity.メニューコード)) { return false; }
             return true;
         }
         protected bool xSV(Object value1, Object value2) { // isSameValue()
@@ -311,7 +313,7 @@ namespace Dbflute.ExEntity {
 
         public override int GetHashCode() {
             int result = 17;
-            result = xCH(result, _code);
+            result = xCH(result, _メニューコード);
             return result;
         }
         protected int xCH(int result, Object value) { // calculateHashcode()
@@ -327,8 +329,8 @@ namespace Dbflute.ExEntity {
             StringBuilder sb = new StringBuilder();
             sb.Append(ToString());
             String l = "\n  ";
-            if (_mst制御画面マスタList != null) { foreach (Entity e in _mst制御画面マスタList)
-            { if (e != null) { sb.Append(l).Append(xbRDS(e, "Mst制御画面マスタList")); } } }
+            if (_mst画面マスタList != null) { foreach (Entity e in _mst画面マスタList)
+            { if (e != null) { sb.Append(l).Append(xbRDS(e, "Mst画面マスタList")); } } }
             return sb.ToString();
         }
         protected String xbRDS(Entity e, String name) { // buildRelationDisplayString()
@@ -345,8 +347,8 @@ namespace Dbflute.ExEntity {
         protected virtual String BuildColumnString() {
             String c = ", ";
             StringBuilder sb = new StringBuilder();
-            sb.Append(c).Append(this.Code);
-            sb.Append(c).Append(this.メニュー名);
+            sb.Append(c).Append(this.メニューコード);
+            sb.Append(c).Append(this.メニュー名称);
             sb.Append(c).Append(this.優先順位);
             if (sb.Length > 0) { sb.Remove(0, c.Length); }
             sb.Insert(0, "{").Append("}");
@@ -355,8 +357,8 @@ namespace Dbflute.ExEntity {
         protected virtual String BuildRelationString() {
             StringBuilder sb = new StringBuilder();
             String c = ",";
-            if (_mst制御画面マスタList != null && _mst制御画面マスタList.Count > 0)
-            { sb.Append(c).Append("Mst制御画面マスタList"); }
+            if (_mst画面マスタList != null && _mst画面マスタList.Count > 0)
+            { sb.Append(c).Append("Mst画面マスタList"); }
             if (sb.Length > 0) { sb.Remove(0, c.Length).Insert(0, "(").Append(")"); }
             return sb.ToString();
         }
@@ -366,27 +368,36 @@ namespace Dbflute.ExEntity {
         //                                                                        Accessor
         //                                                                        ========
         #region Accessor
-        /// <summary>code: {PK, NotNull, bpchar(3), classification=メニュー区分}</summary>
-        [Seasar.Dao.Attrs.Column("code")]
-        public String Code {
-            get { return _code; }
+        /// <summary>メニューコード: {PK, NotNull, bpchar(2), classification=メニュー区分}</summary>
+        /// <remarks>
+        /// メニューコード
+        /// </remarks>
+        [Seasar.Dao.Attrs.Column("メニューコード")]
+        public String メニューコード {
+            get { return _メニューコード; }
             set {
-                __modifiedProperties.AddPropertyName("Code");
-                _code = value;
+                __modifiedProperties.AddPropertyName("メニューコード");
+                _メニューコード = value;
             }
         }
 
-        /// <summary>メニュー名: {NotNull, varchar(20)}</summary>
-        [Seasar.Dao.Attrs.Column("メニュー名")]
-        public String メニュー名 {
-            get { return _メニュー名; }
+        /// <summary>メニュー名称: {NotNull, varchar(20)}</summary>
+        /// <remarks>
+        /// メニュー名称
+        /// </remarks>
+        [Seasar.Dao.Attrs.Column("メニュー名称")]
+        public String メニュー名称 {
+            get { return _メニュー名称; }
             set {
-                __modifiedProperties.AddPropertyName("メニュー名");
-                _メニュー名 = value;
+                __modifiedProperties.AddPropertyName("メニュー名称");
+                _メニュー名称 = value;
             }
         }
 
         /// <summary>優先順位: {NotNull, int4(10)}</summary>
+        /// <remarks>
+        /// 優先順位
+        /// </remarks>
         [Seasar.Dao.Attrs.Column("優先順位")]
         public int? 優先順位 {
             get { return _優先順位; }

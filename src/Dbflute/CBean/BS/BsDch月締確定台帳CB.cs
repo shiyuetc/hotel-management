@@ -29,19 +29,19 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                             PrimaryKey Handling
         //                                                             ===================
-        public void AcceptPrimaryKey(long? id) {
-            assertObjectNotNull("id", id);
+        public void AcceptPrimaryKey(String 対象年月) {
+            assertObjectNotNull("対象年月", 対象年月);
             BsDch月締確定台帳CB cb = this;
-            cb.Query().SetId_Equal(id);
+            cb.Query().Set対象年月_Equal(対象年月);
         }
 
         public override ConditionBean AddOrderBy_PK_Asc() {
-            Query().AddOrderBy_Id_Asc();
+            Query().AddOrderBy_対象年月_Asc();
             return this;
         }
 
         public override ConditionBean AddOrderBy_PK_Desc() {
-            Query().AddOrderBy_Id_Desc();
+            Query().AddOrderBy_対象年月_Desc();
             return this;
         }
 
@@ -165,10 +165,9 @@ namespace Dbflute.CBean.BS {
         public Dch月締確定台帳CBSpecification(ConditionBean baseCB, HpSpQyCall<Dch月締確定台帳CQ> qyCall
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
-        public void ColumnId() { doColumn("id"); }
         public void Column対象年月() { doColumn("対象年月"); }
         protected override void doSpecifyRequiredColumn() {
-            ColumnId(); // PK
+            Column対象年月(); // PK
         }
         protected override String getTableDbName() { return "dch月締確定台帳"; }
     }

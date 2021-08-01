@@ -20,27 +20,23 @@ namespace Dbflute.CBean.CQ.BS {
         public override String getTableDbName() { return "dch月締確定台帳"; }
         public override String getTableSqlName() { return "dch月締確定台帳"; }
 
-        public void SetId_Equal(long? v) { regId(CK_EQ, v); }
-        public void SetId_NotEqual(long? v) { regId(CK_NES, v); }
-        public void SetId_GreaterThan(long? v) { regId(CK_GT, v); }
-        public void SetId_LessThan(long? v) { regId(CK_LT, v); }
-        public void SetId_GreaterEqual(long? v) { regId(CK_GE, v); }
-        public void SetId_LessEqual(long? v) { regId(CK_LE, v); }
-        public void SetId_InScope(IList<long?> ls) { regINS<long?>(CK_INS, cTL<long?>(ls), getCValueId(), "id"); }
-        public void SetId_NotInScope(IList<long?> ls) { regINS<long?>(CK_NINS, cTL<long?>(ls), getCValueId(), "id"); }
-        public void SetId_IsNull() { regId(CK_ISN, DUMMY_OBJECT); }
-        public void SetId_IsNotNull() { regId(CK_ISNN, DUMMY_OBJECT); }
-        protected void regId(ConditionKey k, Object v) { regQ(k, v, getCValueId(), "id"); }
-        protected abstract ConditionValue getCValueId();
-
-        public void Set対象年月_Equal(DateTime? v) { reg対象年月(CK_EQ, v); }
-        public void Set対象年月_GreaterThan(DateTime? v) { reg対象年月(CK_GT, v); }
-        public void Set対象年月_LessThan(DateTime? v) { reg対象年月(CK_LT, v); }
-        public void Set対象年月_GreaterEqual(DateTime? v) { reg対象年月(CK_GE, v); }
-        public void Set対象年月_LessEqual(DateTime? v) { reg対象年月(CK_LE, v); }
-        public void Set対象年月_FromTo(DateTime? from, DateTime? to, FromToOption option)
-        { regFTQ(from, to, getCValue対象年月(), "対象年月", option); }
-        public void Set対象年月_DateFromTo(DateTime? from, DateTime? to) { Set対象年月_FromTo(from, to, new DateFromToOption()); }
+        public void Set対象年月_Equal(String v) { DoSet対象年月_Equal(fRES(v)); }
+        protected void DoSet対象年月_Equal(String v) { reg対象年月(CK_EQ, v); }
+        public void Set対象年月_NotEqual(String v) { DoSet対象年月_NotEqual(fRES(v)); }
+        protected void DoSet対象年月_NotEqual(String v) { reg対象年月(CK_NES, v); }
+        public void Set対象年月_GreaterThan(String v) { reg対象年月(CK_GT, fRES(v)); }
+        public void Set対象年月_LessThan(String v) { reg対象年月(CK_LT, fRES(v)); }
+        public void Set対象年月_GreaterEqual(String v) { reg対象年月(CK_GE, fRES(v)); }
+        public void Set対象年月_LessEqual(String v) { reg対象年月(CK_LE, fRES(v)); }
+        public void Set対象年月_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue対象年月(), "対象年月"); }
+        public void Set対象年月_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue対象年月(), "対象年月"); }
+        public void Set対象年月_PrefixSearch(String v) { Set対象年月_LikeSearch(v, cLSOP()); }
+        public void Set対象年月_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValue対象年月(), "対象年月", option); }
+        public void Set対象年月_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValue対象年月(), "対象年月", option); }
+        public void Set対象年月_IsNull() { reg対象年月(CK_ISN, DUMMY_OBJECT); }
+        public void Set対象年月_IsNotNull() { reg対象年月(CK_ISNN, DUMMY_OBJECT); }
         protected void reg対象年月(ConditionKey k, Object v) { regQ(k, v, getCValue対象年月(), "対象年月"); }
         protected abstract ConditionValue getCValue対象年月();
 
@@ -92,7 +88,7 @@ namespace Dbflute.CBean.CQ.BS {
             assertObjectNotNull("subQuery<Dch月締確定台帳CB>", subQuery);
             Dch月締確定台帳CB cb = new Dch月締確定台帳CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
             String subQueryPropertyName = keepMyselfInScopeSubQuery(cb.Query()); // for saving query-value.
-            registerInScopeSubQuery(cb.Query(), "id", "id", subQueryPropertyName);
+            registerInScopeSubQuery(cb.Query(), "対象年月", "対象年月", subQueryPropertyName);
         }
         public abstract String keepMyselfInScopeSubQuery(Dch月締確定台帳CQ subQuery);
 

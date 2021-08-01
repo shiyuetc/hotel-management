@@ -38,10 +38,10 @@ namespace Dbflute.BsEntity.Dbm {
         // ===============================================================================
         //                                                                     Column Info
         //                                                                     ===========
-        protected ColumnInfo _columnId;
+        protected ColumnInfo _column会員コード;
         protected ColumnInfo _column会員番号;
-        protected ColumnInfo _column氏名姓;
-        protected ColumnInfo _column氏名名;
+        protected ColumnInfo _column名字;
+        protected ColumnInfo _column名前;
         protected ColumnInfo _column氏名カナ;
         protected ColumnInfo _column会社名;
         protected ColumnInfo _column会社名カナ;
@@ -51,10 +51,10 @@ namespace Dbflute.BsEntity.Dbm {
         protected ColumnInfo _column退会年月日;
         protected ColumnInfo _column備考;
 
-        public ColumnInfo ColumnId { get { return _columnId; } }
+        public ColumnInfo Column会員コード { get { return _column会員コード; } }
         public ColumnInfo Column会員番号 { get { return _column会員番号; } }
-        public ColumnInfo Column氏名姓 { get { return _column氏名姓; } }
-        public ColumnInfo Column氏名名 { get { return _column氏名名; } }
+        public ColumnInfo Column名字 { get { return _column名字; } }
+        public ColumnInfo Column名前 { get { return _column名前; } }
         public ColumnInfo Column氏名カナ { get { return _column氏名カナ; } }
         public ColumnInfo Column会社名 { get { return _column会社名; } }
         public ColumnInfo Column会社名カナ { get { return _column会社名カナ; } }
@@ -65,13 +65,13 @@ namespace Dbflute.BsEntity.Dbm {
         public ColumnInfo Column備考 { get { return _column備考; } }
 
         protected void InitializeColumnInfo() {
-            _columnId = cci("id", "id", null, null, true, "Id", typeof(long?), true, "bigserial", 19, 0, false, OptimisticLockType.NONE, null, null, null);
-            _column会員番号 = cci("会員番号", "会員番号", null, null, true, "会員番号", typeof(String), false, "varchar", 9, 0, false, OptimisticLockType.NONE, null, null, null);
-            _column氏名姓 = cci("氏名_姓", "氏名_姓", null, null, true, "氏名姓", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
-            _column氏名名 = cci("氏名_名", "氏名_名", null, null, true, "氏名名", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
-            _column氏名カナ = cci("氏名_カナ", "氏名_カナ", null, null, true, "氏名カナ", typeof(String), false, "varchar", 50, 0, false, OptimisticLockType.NONE, null, null, null);
+            _column会員コード = cci("会員コード", "会員コード", null, null, true, "会員コード", typeof(String), true, "bpchar", 10, 0, false, OptimisticLockType.NONE, null, null, "dch宿泊利用台帳List");
+            _column会員番号 = cci("会員番号", "会員番号", null, null, true, "会員番号", typeof(String), false, "varchar", 12, 0, false, OptimisticLockType.NONE, null, null, null);
+            _column名字 = cci("名字", "名字", null, null, true, "名字", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
+            _column名前 = cci("名前", "名前", null, null, true, "名前", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
+            _column氏名カナ = cci("氏名カナ", "氏名カナ", null, null, true, "氏名カナ", typeof(String), false, "varchar", 50, 0, false, OptimisticLockType.NONE, null, null, null);
             _column会社名 = cci("会社名", "会社名", null, null, false, "会社名", typeof(String), false, "varchar", 50, 0, false, OptimisticLockType.NONE, null, null, null);
-            _column会社名カナ = cci("会社名_カナ", "会社名_カナ", null, null, false, "会社名カナ", typeof(String), false, "varchar", 50, 0, false, OptimisticLockType.NONE, null, null, null);
+            _column会社名カナ = cci("会社名カナ", "会社名カナ", null, null, false, "会社名カナ", typeof(String), false, "varchar", 50, 0, false, OptimisticLockType.NONE, null, null, null);
             _column電話番号 = cci("電話番号", "電話番号", null, null, false, "電話番号", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
             _columnメールアドレス = cci("メールアドレス", "メールアドレス", null, null, false, "メールアドレス", typeof(String), false, "varchar", 255, 0, false, OptimisticLockType.NONE, null, null, null);
             _column入会年月日 = cci("入会年月日", "入会年月日", null, null, true, "入会年月日", typeof(DateTime?), false, "timestamp", 26, 3, false, OptimisticLockType.NONE, null, null, null);
@@ -81,10 +81,10 @@ namespace Dbflute.BsEntity.Dbm {
 
         protected void InitializeColumnInfoList() {
             _columnInfoList = new ArrayList<ColumnInfo>();
-            _columnInfoList.add(ColumnId);
+            _columnInfoList.add(Column会員コード);
             _columnInfoList.add(Column会員番号);
-            _columnInfoList.add(Column氏名姓);
-            _columnInfoList.add(Column氏名名);
+            _columnInfoList.add(Column名字);
+            _columnInfoList.add(Column名前);
             _columnInfoList.add(Column氏名カナ);
             _columnInfoList.add(Column会社名);
             _columnInfoList.add(Column会社名カナ);
@@ -99,7 +99,7 @@ namespace Dbflute.BsEntity.Dbm {
         //                                                                     Unique Info
         //                                                                     ===========
         public override UniqueInfo PrimaryUniqueInfo { get {
-            return cpui(ColumnId);
+            return cpui(Column会員コード);
         }}
 
         // -------------------------------------------------
@@ -119,15 +119,15 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                  Referrer Element
         //                                  ----------------
+        public ReferrerInfo ReferrerDch宿泊利用台帳List { get {
+            Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
+            map.put(Column会員コード, Dch宿泊利用台帳Dbm.GetInstance().Column会員コード);
+            return cri("Dch宿泊利用台帳List", this, Dch宿泊利用台帳Dbm.GetInstance(), map, false);
+        }}
 
         // ===============================================================================
         //                                                                    Various Info
         //                                                                    ============
-        public override bool HasSequence { get { return true; } }
-        public override String SequenceName { get { return "mst004_id_seq"; } }
-        public override String SequenceNextValSql { get { return "select nextval ('mst004_id_seq')"; } }
-        public override int? SequenceIncrementSize { get { return 1; } }
-        public override int? SequenceCacheSize { get { return null; } }
         public override bool HasCommonColumn { get { return false; } }
 
         // ===============================================================================
@@ -144,13 +144,13 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                    Column DB-Name
         //                                    --------------
-        public static readonly String DB_NAME_id = "id";
+        public static readonly String DB_NAME_会員コード = "会員コード";
         public static readonly String DB_NAME_会員番号 = "会員番号";
-        public static readonly String DB_NAME_氏名_姓 = "氏名_姓";
-        public static readonly String DB_NAME_氏名_名 = "氏名_名";
-        public static readonly String DB_NAME_氏名_カナ = "氏名_カナ";
+        public static readonly String DB_NAME_名字 = "名字";
+        public static readonly String DB_NAME_名前 = "名前";
+        public static readonly String DB_NAME_氏名カナ = "氏名カナ";
         public static readonly String DB_NAME_会社名 = "会社名";
-        public static readonly String DB_NAME_会社名_カナ = "会社名_カナ";
+        public static readonly String DB_NAME_会社名カナ = "会社名カナ";
         public static readonly String DB_NAME_電話番号 = "電話番号";
         public static readonly String DB_NAME_メールアドレス = "メールアドレス";
         public static readonly String DB_NAME_入会年月日 = "入会年月日";
@@ -160,13 +160,13 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                              Column Property-Name
         //                              --------------------
-        public static readonly String PROPERTY_NAME_id = "Id";
+        public static readonly String PROPERTY_NAME_会員コード = "会員コード";
         public static readonly String PROPERTY_NAME_会員番号 = "会員番号";
-        public static readonly String PROPERTY_NAME_氏名_姓 = "氏名姓";
-        public static readonly String PROPERTY_NAME_氏名_名 = "氏名名";
-        public static readonly String PROPERTY_NAME_氏名_カナ = "氏名カナ";
+        public static readonly String PROPERTY_NAME_名字 = "名字";
+        public static readonly String PROPERTY_NAME_名前 = "名前";
+        public static readonly String PROPERTY_NAME_氏名カナ = "氏名カナ";
         public static readonly String PROPERTY_NAME_会社名 = "会社名";
-        public static readonly String PROPERTY_NAME_会社名_カナ = "会社名カナ";
+        public static readonly String PROPERTY_NAME_会社名カナ = "会社名カナ";
         public static readonly String PROPERTY_NAME_電話番号 = "電話番号";
         public static readonly String PROPERTY_NAME_メールアドレス = "メールアドレス";
         public static readonly String PROPERTY_NAME_入会年月日 = "入会年月日";
@@ -179,6 +179,7 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                     Referrer Name
         //                                     -------------
+        public static readonly String REFERRER_PROPERTY_NAME_Dch宿泊利用台帳List = "Dch宿泊利用台帳List";
 
         // -------------------------------------------------
         //                               DB-Property Mapping
@@ -190,13 +191,13 @@ namespace Dbflute.BsEntity.Dbm {
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_DB_NAME.ToLower(), TABLE_PROPERTY_NAME);
-                map.put(DB_NAME_id.ToLower(), PROPERTY_NAME_id);
+                map.put(DB_NAME_会員コード.ToLower(), PROPERTY_NAME_会員コード);
                 map.put(DB_NAME_会員番号.ToLower(), PROPERTY_NAME_会員番号);
-                map.put(DB_NAME_氏名_姓.ToLower(), PROPERTY_NAME_氏名_姓);
-                map.put(DB_NAME_氏名_名.ToLower(), PROPERTY_NAME_氏名_名);
-                map.put(DB_NAME_氏名_カナ.ToLower(), PROPERTY_NAME_氏名_カナ);
+                map.put(DB_NAME_名字.ToLower(), PROPERTY_NAME_名字);
+                map.put(DB_NAME_名前.ToLower(), PROPERTY_NAME_名前);
+                map.put(DB_NAME_氏名カナ.ToLower(), PROPERTY_NAME_氏名カナ);
                 map.put(DB_NAME_会社名.ToLower(), PROPERTY_NAME_会社名);
-                map.put(DB_NAME_会社名_カナ.ToLower(), PROPERTY_NAME_会社名_カナ);
+                map.put(DB_NAME_会社名カナ.ToLower(), PROPERTY_NAME_会社名カナ);
                 map.put(DB_NAME_電話番号.ToLower(), PROPERTY_NAME_電話番号);
                 map.put(DB_NAME_メールアドレス.ToLower(), PROPERTY_NAME_メールアドレス);
                 map.put(DB_NAME_入会年月日.ToLower(), PROPERTY_NAME_入会年月日);
@@ -208,13 +209,13 @@ namespace Dbflute.BsEntity.Dbm {
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_PROPERTY_NAME.ToLower(), TABLE_DB_NAME);
-                map.put(PROPERTY_NAME_id.ToLower(), DB_NAME_id);
+                map.put(PROPERTY_NAME_会員コード.ToLower(), DB_NAME_会員コード);
                 map.put(PROPERTY_NAME_会員番号.ToLower(), DB_NAME_会員番号);
-                map.put(PROPERTY_NAME_氏名_姓.ToLower(), DB_NAME_氏名_姓);
-                map.put(PROPERTY_NAME_氏名_名.ToLower(), DB_NAME_氏名_名);
-                map.put(PROPERTY_NAME_氏名_カナ.ToLower(), DB_NAME_氏名_カナ);
+                map.put(PROPERTY_NAME_名字.ToLower(), DB_NAME_名字);
+                map.put(PROPERTY_NAME_名前.ToLower(), DB_NAME_名前);
+                map.put(PROPERTY_NAME_氏名カナ.ToLower(), DB_NAME_氏名カナ);
                 map.put(PROPERTY_NAME_会社名.ToLower(), DB_NAME_会社名);
-                map.put(PROPERTY_NAME_会社名_カナ.ToLower(), DB_NAME_会社名_カナ);
+                map.put(PROPERTY_NAME_会社名カナ.ToLower(), DB_NAME_会社名カナ);
                 map.put(PROPERTY_NAME_電話番号.ToLower(), DB_NAME_電話番号);
                 map.put(PROPERTY_NAME_メールアドレス.ToLower(), DB_NAME_メールアドレス);
                 map.put(PROPERTY_NAME_入会年月日.ToLower(), DB_NAME_入会年月日);
@@ -261,13 +262,13 @@ namespace Dbflute.BsEntity.Dbm {
         protected Map<String, EntityPropertySetupper<Mst会員マスタ>> _entityPropertySetupperMap = new LinkedHashMap<String, EntityPropertySetupper<Mst会員マスタ>>();
 
         protected void InitializeEntityPropertySetupper() {
-            RegisterEntityPropertySetupper("id", "Id", new EntityPropertyIdSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("会員コード", "会員コード", new EntityProperty会員コードSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("会員番号", "会員番号", new EntityProperty会員番号Setupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("氏名_姓", "氏名姓", new EntityProperty氏名姓Setupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("氏名_名", "氏名名", new EntityProperty氏名名Setupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("氏名_カナ", "氏名カナ", new EntityProperty氏名カナSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("名字", "名字", new EntityProperty名字Setupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("名前", "名前", new EntityProperty名前Setupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("氏名カナ", "氏名カナ", new EntityProperty氏名カナSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("会社名", "会社名", new EntityProperty会社名Setupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("会社名_カナ", "会社名カナ", new EntityProperty会社名カナSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("会社名カナ", "会社名カナ", new EntityProperty会社名カナSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("電話番号", "電話番号", new EntityProperty電話番号Setupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("メールアドレス", "メールアドレス", new EntityPropertyメールアドレスSetupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("入会年月日", "入会年月日", new EntityProperty入会年月日Setupper(), _entityPropertySetupperMap);
@@ -284,17 +285,17 @@ namespace Dbflute.BsEntity.Dbm {
             callback.Setup((Mst会員マスタ)entity, value);
         }
 
-        public class EntityPropertyIdSetupper : EntityPropertySetupper<Mst会員マスタ> {
-            public void Setup(Mst会員マスタ entity, Object value) { entity.Id = (value != null) ? (long?)value : null; }
+        public class EntityProperty会員コードSetupper : EntityPropertySetupper<Mst会員マスタ> {
+            public void Setup(Mst会員マスタ entity, Object value) { entity.会員コード = (value != null) ? (String)value : null; }
         }
         public class EntityProperty会員番号Setupper : EntityPropertySetupper<Mst会員マスタ> {
             public void Setup(Mst会員マスタ entity, Object value) { entity.会員番号 = (value != null) ? (String)value : null; }
         }
-        public class EntityProperty氏名姓Setupper : EntityPropertySetupper<Mst会員マスタ> {
-            public void Setup(Mst会員マスタ entity, Object value) { entity.氏名姓 = (value != null) ? (String)value : null; }
+        public class EntityProperty名字Setupper : EntityPropertySetupper<Mst会員マスタ> {
+            public void Setup(Mst会員マスタ entity, Object value) { entity.名字 = (value != null) ? (String)value : null; }
         }
-        public class EntityProperty氏名名Setupper : EntityPropertySetupper<Mst会員マスタ> {
-            public void Setup(Mst会員マスタ entity, Object value) { entity.氏名名 = (value != null) ? (String)value : null; }
+        public class EntityProperty名前Setupper : EntityPropertySetupper<Mst会員マスタ> {
+            public void Setup(Mst会員マスタ entity, Object value) { entity.名前 = (value != null) ? (String)value : null; }
         }
         public class EntityProperty氏名カナSetupper : EntityPropertySetupper<Mst会員マスタ> {
             public void Setup(Mst会員マスタ entity, Object value) { entity.氏名カナ = (value != null) ? (String)value : null; }

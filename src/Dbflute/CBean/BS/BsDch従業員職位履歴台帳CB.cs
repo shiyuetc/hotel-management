@@ -102,7 +102,7 @@ namespace Dbflute.CBean.BS {
         }}
         public Mst従業員マスタNss SetupSelect_Mst従業員マスタ() {
             if (HasSpecifiedColumn) { // if reverse call
-                Specify().Column従業員id();
+                Specify().Column従業員コード();
             }
             doSetupSelect(delegate { return Query().QueryMst従業員マスタ(); });
             if (_nssMst従業員マスタ == null || !_nssMst従業員マスタ.HasConditionQuery)
@@ -116,7 +116,7 @@ namespace Dbflute.CBean.BS {
         }}
         public Kbn職位区分Nss SetupSelect_Kbn職位区分() {
             if (HasSpecifiedColumn) { // if reverse call
-                Specify().Column職位code();
+                Specify().Column職位コード();
             }
             doSetupSelect(delegate { return Query().QueryKbn職位区分(); });
             if (_nssKbn職位区分 == null || !_nssKbn職位区分.HasConditionQuery)
@@ -196,19 +196,19 @@ namespace Dbflute.CBean.BS {
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
         public void ColumnId() { doColumn("id"); }
-        public void Column従業員id() { doColumn("従業員id"); }
+        public void Column従業員コード() { doColumn("従業員コード"); }
+        public void Column職位コード() { doColumn("職位コード"); }
         public void Column適用開始日() { doColumn("適用開始日"); }
         public void Column適用終了日() { doColumn("適用終了日"); }
-        public void Column職位code() { doColumn("職位code"); }
         protected override void doSpecifyRequiredColumn() {
             ColumnId(); // PK
             if (qyCall().qy().hasConditionQueryMst従業員マスタ()
                     || qyCall().qy().xgetReferrerQuery() is Mst従業員マスタCQ) {
-                Column従業員id(); // FK or one-to-one referrer
+                Column従業員コード(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryKbn職位区分()
                     || qyCall().qy().xgetReferrerQuery() is Kbn職位区分CQ) {
-                Column職位code(); // FK or one-to-one referrer
+                Column職位コード(); // FK or one-to-one referrer
             }
         }
         protected override String getTableDbName() { return "dch従業員職位履歴台帳"; }

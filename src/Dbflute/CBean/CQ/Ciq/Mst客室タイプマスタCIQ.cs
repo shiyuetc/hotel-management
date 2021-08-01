@@ -63,40 +63,40 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        protected override ConditionValue getCValueId() {
-            return _myCQ.Id;
+        protected override ConditionValue getCValue客室タイプコード() {
+            return _myCQ.客室タイプコード;
         }
 
 
-        public override String keepId_ExistsSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery) {
+        public override String keep客室タイプコード_ExistsSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery) {
             throw new SystemException("ExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepId_ExistsSubQuery_Mst客室マスタList(subQuery);
+            // _myCQ.keep客室タイプコード_ExistsSubQuery_Mst客室マスタList(subQuery);
         }
 
-        public override String keepId_NotExistsSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery) {
+        public override String keep客室タイプコード_NotExistsSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery) {
             throw new SystemException("NotExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepId_NotExistsSubQuery_Mst客室マスタList(subQuery);
+            // _myCQ.keep客室タイプコード_NotExistsSubQuery_Mst客室マスタList(subQuery);
         }
 
-        public override String keepId_InScopeSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery) {
-            return _myCQ.keepId_InScopeSubQuery_Mst客室マスタList(subQuery);
+        public override String keep客室タイプコード_InScopeSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery) {
+            return _myCQ.keep客室タイプコード_InScopeSubQuery_Mst客室マスタList(subQuery);
         }
 
-        public override String keepId_NotInScopeSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery) {
-            return _myCQ.keepId_NotInScopeSubQuery_Mst客室マスタList(subQuery);
+        public override String keep客室タイプコード_NotInScopeSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery) {
+            return _myCQ.keep客室タイプコード_NotInScopeSubQuery_Mst客室マスタList(subQuery);
         }
-        public override String keepId_SpecifyDerivedReferrer_Mst客室マスタList(Mst客室マスタCQ subQuery) {
+        public override String keep客室タイプコード_SpecifyDerivedReferrer_Mst客室マスタList(Mst客室マスタCQ subQuery) {
             throw new UnsupportedOperationException("(Specify)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepId_QueryDerivedReferrer_Mst客室マスタList(Mst客室マスタCQ subQuery) {
+        public override String keep客室タイプコード_QueryDerivedReferrer_Mst客室マスタList(Mst客室マスタCQ subQuery) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepId_QueryDerivedReferrer_Mst客室マスタListParameter(Object parameterValue) {
+        public override String keep客室タイプコード_QueryDerivedReferrer_Mst客室マスタListParameter(Object parameterValue) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
 
-        protected override ConditionValue getCValue名称() {
-            return _myCQ.名称;
+        protected override ConditionValue getCValue客室タイプ名称() {
+            return _myCQ.客室タイプ名称;
         }
 
 

@@ -20,49 +20,56 @@ namespace Dbflute.CBean.CQ.BS {
         public override String getTableDbName() { return "mst客室タイプマスタ"; }
         public override String getTableSqlName() { return "mst客室タイプマスタ"; }
 
-        public void SetId_Equal(long? v) { regId(CK_EQ, v); }
-        public void SetId_NotEqual(long? v) { regId(CK_NES, v); }
-        public void SetId_GreaterThan(long? v) { regId(CK_GT, v); }
-        public void SetId_LessThan(long? v) { regId(CK_LT, v); }
-        public void SetId_GreaterEqual(long? v) { regId(CK_GE, v); }
-        public void SetId_LessEqual(long? v) { regId(CK_LE, v); }
-        public void SetId_InScope(IList<long?> ls) { regINS<long?>(CK_INS, cTL<long?>(ls), getCValueId(), "id"); }
-        public void SetId_NotInScope(IList<long?> ls) { regINS<long?>(CK_NINS, cTL<long?>(ls), getCValueId(), "id"); }
+        public void Set客室タイプコード_Equal(String v) { DoSet客室タイプコード_Equal(fRES(v)); }
+        protected void DoSet客室タイプコード_Equal(String v) { reg客室タイプコード(CK_EQ, v); }
+        public void Set客室タイプコード_NotEqual(String v) { DoSet客室タイプコード_NotEqual(fRES(v)); }
+        protected void DoSet客室タイプコード_NotEqual(String v) { reg客室タイプコード(CK_NES, v); }
+        public void Set客室タイプコード_GreaterThan(String v) { reg客室タイプコード(CK_GT, fRES(v)); }
+        public void Set客室タイプコード_LessThan(String v) { reg客室タイプコード(CK_LT, fRES(v)); }
+        public void Set客室タイプコード_GreaterEqual(String v) { reg客室タイプコード(CK_GE, fRES(v)); }
+        public void Set客室タイプコード_LessEqual(String v) { reg客室タイプコード(CK_LE, fRES(v)); }
+        public void Set客室タイプコード_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue客室タイプコード(), "客室タイプコード"); }
+        public void Set客室タイプコード_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue客室タイプコード(), "客室タイプコード"); }
+        public void Set客室タイプコード_PrefixSearch(String v) { Set客室タイプコード_LikeSearch(v, cLSOP()); }
+        public void Set客室タイプコード_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValue客室タイプコード(), "客室タイプコード", option); }
+        public void Set客室タイプコード_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValue客室タイプコード(), "客室タイプコード", option); }
         public void ExistsMst客室マスタList(SubQuery<Mst客室マスタCB> subQuery) {
             assertObjectNotNull("subQuery<Mst客室マスタCB>", subQuery);
             Mst客室マスタCB cb = new Mst客室マスタCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_ExistsSubQuery_Mst客室マスタList(cb.Query());
-            registerExistsSubQuery(cb.Query(), "id", "客室タイプid", subQueryPropertyName);
+            String subQueryPropertyName = keep客室タイプコード_ExistsSubQuery_Mst客室マスタList(cb.Query());
+            registerExistsSubQuery(cb.Query(), "客室タイプコード", "客室タイプコード", subQueryPropertyName);
         }
-        public abstract String keepId_ExistsSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery);
+        public abstract String keep客室タイプコード_ExistsSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery);
         public void NotExistsMst客室マスタList(SubQuery<Mst客室マスタCB> subQuery) {
             assertObjectNotNull("subQuery<Mst客室マスタCB>", subQuery);
             Mst客室マスタCB cb = new Mst客室マスタCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_NotExistsSubQuery_Mst客室マスタList(cb.Query());
-            registerNotExistsSubQuery(cb.Query(), "id", "客室タイプid", subQueryPropertyName);
+            String subQueryPropertyName = keep客室タイプコード_NotExistsSubQuery_Mst客室マスタList(cb.Query());
+            registerNotExistsSubQuery(cb.Query(), "客室タイプコード", "客室タイプコード", subQueryPropertyName);
         }
-        public abstract String keepId_NotExistsSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery);
+        public abstract String keep客室タイプコード_NotExistsSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery);
         public void InScopeMst客室マスタList(SubQuery<Mst客室マスタCB> subQuery) {
             assertObjectNotNull("subQuery<Mst客室マスタCB>", subQuery);
             Mst客室マスタCB cb = new Mst客室マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_InScopeSubQuery_Mst客室マスタList(cb.Query());
-            registerInScopeSubQuery(cb.Query(), "id", "客室タイプid", subQueryPropertyName);
+            String subQueryPropertyName = keep客室タイプコード_InScopeSubQuery_Mst客室マスタList(cb.Query());
+            registerInScopeSubQuery(cb.Query(), "客室タイプコード", "客室タイプコード", subQueryPropertyName);
         }
-        public abstract String keepId_InScopeSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery);
+        public abstract String keep客室タイプコード_InScopeSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery);
         public void NotInScopeMst客室マスタList(SubQuery<Mst客室マスタCB> subQuery) {
             assertObjectNotNull("subQuery<Mst客室マスタCB>", subQuery);
             Mst客室マスタCB cb = new Mst客室マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_NotInScopeSubQuery_Mst客室マスタList(cb.Query());
-            registerNotInScopeSubQuery(cb.Query(), "id", "客室タイプid", subQueryPropertyName);
+            String subQueryPropertyName = keep客室タイプコード_NotInScopeSubQuery_Mst客室マスタList(cb.Query());
+            registerNotInScopeSubQuery(cb.Query(), "客室タイプコード", "客室タイプコード", subQueryPropertyName);
         }
-        public abstract String keepId_NotInScopeSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery);
+        public abstract String keep客室タイプコード_NotInScopeSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery);
         public void xsderiveMst客室マスタList(String function, SubQuery<Mst客室マスタCB> subQuery, String aliasName) {
             assertObjectNotNull("subQuery<Mst客室マスタCB>", subQuery);
             Mst客室マスタCB cb = new Mst客室マスタCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_SpecifyDerivedReferrer_Mst客室マスタList(cb.Query());
-            registerSpecifyDerivedReferrer(function, cb.Query(), "id", "客室タイプid", subQueryPropertyName, aliasName);
+            String subQueryPropertyName = keep客室タイプコード_SpecifyDerivedReferrer_Mst客室マスタList(cb.Query());
+            registerSpecifyDerivedReferrer(function, cb.Query(), "客室タイプコード", "客室タイプコード", subQueryPropertyName, aliasName);
         }
-        abstract public String keepId_SpecifyDerivedReferrer_Mst客室マスタList(Mst客室マスタCQ subQuery);
+        abstract public String keep客室タイプコード_SpecifyDerivedReferrer_Mst客室マスタList(Mst客室マスタCQ subQuery);
 
         public QDRFunction<Mst客室マスタCB> DerivedMst客室マスタList() {
             return xcreateQDRFunctionMst客室マスタList();
@@ -75,34 +82,34 @@ namespace Dbflute.CBean.CQ.BS {
         public void xqderiveMst客室マスタList(String function, SubQuery<Mst客室マスタCB> subQuery, String operand, Object value) {
             assertObjectNotNull("subQuery<Mst客室マスタCB>", subQuery);
             Mst客室マスタCB cb = new Mst客室マスタCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepId_QueryDerivedReferrer_Mst客室マスタList(cb.Query()); // for saving query-value.
-            String parameterPropertyName = keepId_QueryDerivedReferrer_Mst客室マスタListParameter(value);
-            registerQueryDerivedReferrer(function, cb.Query(), "id", "客室タイプid", subQueryPropertyName, operand, value, parameterPropertyName);
+            String subQueryPropertyName = keep客室タイプコード_QueryDerivedReferrer_Mst客室マスタList(cb.Query()); // for saving query-value.
+            String parameterPropertyName = keep客室タイプコード_QueryDerivedReferrer_Mst客室マスタListParameter(value);
+            registerQueryDerivedReferrer(function, cb.Query(), "客室タイプコード", "客室タイプコード", subQueryPropertyName, operand, value, parameterPropertyName);
         }
-        public abstract String keepId_QueryDerivedReferrer_Mst客室マスタList(Mst客室マスタCQ subQuery);
-        public abstract String keepId_QueryDerivedReferrer_Mst客室マスタListParameter(Object parameterValue);
-        public void SetId_IsNull() { regId(CK_ISN, DUMMY_OBJECT); }
-        public void SetId_IsNotNull() { regId(CK_ISNN, DUMMY_OBJECT); }
-        protected void regId(ConditionKey k, Object v) { regQ(k, v, getCValueId(), "id"); }
-        protected abstract ConditionValue getCValueId();
+        public abstract String keep客室タイプコード_QueryDerivedReferrer_Mst客室マスタList(Mst客室マスタCQ subQuery);
+        public abstract String keep客室タイプコード_QueryDerivedReferrer_Mst客室マスタListParameter(Object parameterValue);
+        public void Set客室タイプコード_IsNull() { reg客室タイプコード(CK_ISN, DUMMY_OBJECT); }
+        public void Set客室タイプコード_IsNotNull() { reg客室タイプコード(CK_ISNN, DUMMY_OBJECT); }
+        protected void reg客室タイプコード(ConditionKey k, Object v) { regQ(k, v, getCValue客室タイプコード(), "客室タイプコード"); }
+        protected abstract ConditionValue getCValue客室タイプコード();
 
-        public void Set名称_Equal(String v) { DoSet名称_Equal(fRES(v)); }
-        protected void DoSet名称_Equal(String v) { reg名称(CK_EQ, v); }
-        public void Set名称_NotEqual(String v) { DoSet名称_NotEqual(fRES(v)); }
-        protected void DoSet名称_NotEqual(String v) { reg名称(CK_NES, v); }
-        public void Set名称_GreaterThan(String v) { reg名称(CK_GT, fRES(v)); }
-        public void Set名称_LessThan(String v) { reg名称(CK_LT, fRES(v)); }
-        public void Set名称_GreaterEqual(String v) { reg名称(CK_GE, fRES(v)); }
-        public void Set名称_LessEqual(String v) { reg名称(CK_LE, fRES(v)); }
-        public void Set名称_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue名称(), "名称"); }
-        public void Set名称_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue名称(), "名称"); }
-        public void Set名称_PrefixSearch(String v) { Set名称_LikeSearch(v, cLSOP()); }
-        public void Set名称_LikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_LS, fRES(v), getCValue名称(), "名称", option); }
-        public void Set名称_NotLikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_NLS, fRES(v), getCValue名称(), "名称", option); }
-        protected void reg名称(ConditionKey k, Object v) { regQ(k, v, getCValue名称(), "名称"); }
-        protected abstract ConditionValue getCValue名称();
+        public void Set客室タイプ名称_Equal(String v) { DoSet客室タイプ名称_Equal(fRES(v)); }
+        protected void DoSet客室タイプ名称_Equal(String v) { reg客室タイプ名称(CK_EQ, v); }
+        public void Set客室タイプ名称_NotEqual(String v) { DoSet客室タイプ名称_NotEqual(fRES(v)); }
+        protected void DoSet客室タイプ名称_NotEqual(String v) { reg客室タイプ名称(CK_NES, v); }
+        public void Set客室タイプ名称_GreaterThan(String v) { reg客室タイプ名称(CK_GT, fRES(v)); }
+        public void Set客室タイプ名称_LessThan(String v) { reg客室タイプ名称(CK_LT, fRES(v)); }
+        public void Set客室タイプ名称_GreaterEqual(String v) { reg客室タイプ名称(CK_GE, fRES(v)); }
+        public void Set客室タイプ名称_LessEqual(String v) { reg客室タイプ名称(CK_LE, fRES(v)); }
+        public void Set客室タイプ名称_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue客室タイプ名称(), "客室タイプ名称"); }
+        public void Set客室タイプ名称_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue客室タイプ名称(), "客室タイプ名称"); }
+        public void Set客室タイプ名称_PrefixSearch(String v) { Set客室タイプ名称_LikeSearch(v, cLSOP()); }
+        public void Set客室タイプ名称_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValue客室タイプ名称(), "客室タイプ名称", option); }
+        public void Set客室タイプ名称_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValue客室タイプ名称(), "客室タイプ名称", option); }
+        protected void reg客室タイプ名称(ConditionKey k, Object v) { regQ(k, v, getCValue客室タイプ名称(), "客室タイプ名称"); }
+        protected abstract ConditionValue getCValue客室タイプ名称();
 
         public void Set料金_Equal(int? v) { reg料金(CK_EQ, v); }
         public void Set料金_NotEqual(int? v) { reg料金(CK_NES, v); }
@@ -194,7 +201,7 @@ namespace Dbflute.CBean.CQ.BS {
             assertObjectNotNull("subQuery<Mst客室タイプマスタCB>", subQuery);
             Mst客室タイプマスタCB cb = new Mst客室タイプマスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
             String subQueryPropertyName = keepMyselfInScopeSubQuery(cb.Query()); // for saving query-value.
-            registerInScopeSubQuery(cb.Query(), "id", "id", subQueryPropertyName);
+            registerInScopeSubQuery(cb.Query(), "客室タイプコード", "客室タイプコード", subQueryPropertyName);
         }
         public abstract String keepMyselfInScopeSubQuery(Mst客室タイプマスタCQ subQuery);
 

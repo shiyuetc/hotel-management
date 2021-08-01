@@ -63,40 +63,40 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        protected override ConditionValue getCValueCode() {
-            return _myCQ.Code;
+        protected override ConditionValue getCValueメニューコード() {
+            return _myCQ.メニューコード;
         }
 
 
-        public override String keepCode_ExistsSubQuery_Mst制御画面マスタList(Mst制御画面マスタCQ subQuery) {
+        public override String keepメニューコード_ExistsSubQuery_Mst画面マスタList(Mst画面マスタCQ subQuery) {
             throw new SystemException("ExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepCode_ExistsSubQuery_Mst制御画面マスタList(subQuery);
+            // _myCQ.keepメニューコード_ExistsSubQuery_Mst画面マスタList(subQuery);
         }
 
-        public override String keepCode_NotExistsSubQuery_Mst制御画面マスタList(Mst制御画面マスタCQ subQuery) {
+        public override String keepメニューコード_NotExistsSubQuery_Mst画面マスタList(Mst画面マスタCQ subQuery) {
             throw new SystemException("NotExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepCode_NotExistsSubQuery_Mst制御画面マスタList(subQuery);
+            // _myCQ.keepメニューコード_NotExistsSubQuery_Mst画面マスタList(subQuery);
         }
 
-        public override String keepCode_InScopeSubQuery_Mst制御画面マスタList(Mst制御画面マスタCQ subQuery) {
-            return _myCQ.keepCode_InScopeSubQuery_Mst制御画面マスタList(subQuery);
+        public override String keepメニューコード_InScopeSubQuery_Mst画面マスタList(Mst画面マスタCQ subQuery) {
+            return _myCQ.keepメニューコード_InScopeSubQuery_Mst画面マスタList(subQuery);
         }
 
-        public override String keepCode_NotInScopeSubQuery_Mst制御画面マスタList(Mst制御画面マスタCQ subQuery) {
-            return _myCQ.keepCode_NotInScopeSubQuery_Mst制御画面マスタList(subQuery);
+        public override String keepメニューコード_NotInScopeSubQuery_Mst画面マスタList(Mst画面マスタCQ subQuery) {
+            return _myCQ.keepメニューコード_NotInScopeSubQuery_Mst画面マスタList(subQuery);
         }
-        public override String keepCode_SpecifyDerivedReferrer_Mst制御画面マスタList(Mst制御画面マスタCQ subQuery) {
+        public override String keepメニューコード_SpecifyDerivedReferrer_Mst画面マスタList(Mst画面マスタCQ subQuery) {
             throw new UnsupportedOperationException("(Specify)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepCode_QueryDerivedReferrer_Mst制御画面マスタList(Mst制御画面マスタCQ subQuery) {
+        public override String keepメニューコード_QueryDerivedReferrer_Mst画面マスタList(Mst画面マスタCQ subQuery) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepCode_QueryDerivedReferrer_Mst制御画面マスタListParameter(Object parameterValue) {
+        public override String keepメニューコード_QueryDerivedReferrer_Mst画面マスタListParameter(Object parameterValue) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
 
-        protected override ConditionValue getCValueメニュー名() {
-            return _myCQ.メニュー名;
+        protected override ConditionValue getCValueメニュー名称() {
+            return _myCQ.メニュー名称;
         }
 
 

@@ -28,7 +28,5 @@ namespace Dbflute.ExDao {
         int Delete(Mst客室マスタ entity);
         int DeleteNonstrict(Mst客室マスタ entity);
         int DeleteByQuery(Mst客室マスタCB cb);// {DBFlute-0.7.9}
-
-        long? SelectNextVal();
     }
 }

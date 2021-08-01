@@ -29,19 +29,19 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                             PrimaryKey Handling
         //                                                             ===================
-        public void AcceptPrimaryKey(String code) {
-            assertObjectNotNull("code", code);
+        public void AcceptPrimaryKey(String 職位コード) {
+            assertObjectNotNull("職位コード", 職位コード);
             BsKbn職位区分CB cb = this;
-            cb.Query().SetCode_Equal(code);
+            cb.Query().Set職位コード_Equal(職位コード);
         }
 
         public override ConditionBean AddOrderBy_PK_Asc() {
-            Query().AddOrderBy_Code_Asc();
+            Query().AddOrderBy_職位コード_Asc();
             return this;
         }
 
         public override ConditionBean AddOrderBy_PK_Desc() {
-            Query().AddOrderBy_Code_Desc();
+            Query().AddOrderBy_職位コード_Desc();
             return this;
         }
 
@@ -165,11 +165,11 @@ namespace Dbflute.CBean.BS {
         public Kbn職位区分CBSpecification(ConditionBean baseCB, HpSpQyCall<Kbn職位区分CQ> qyCall
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
-        public void ColumnCode() { doColumn("code"); }
-        public void Column名称() { doColumn("名称"); }
-        public void Column名称英字() { doColumn("名称_英字"); }
+        public void Column職位コード() { doColumn("職位コード"); }
+        public void Column職位名称() { doColumn("職位名称"); }
+        public void Column職位英字名称() { doColumn("職位英字名称"); }
         protected override void doSpecifyRequiredColumn() {
-            ColumnCode(); // PK
+            Column職位コード(); // PK
         }
         protected override String getTableDbName() { return "kbn職位区分"; }
         public RAFunction<Dch従業員職位履歴台帳CB, Kbn職位区分CQ> DerivedDch従業員職位履歴台帳List() {

@@ -38,39 +38,38 @@ namespace Dbflute.BsEntity.Dbm {
         // ===============================================================================
         //                                                                     Column Info
         //                                                                     ===========
-        protected ColumnInfo _columnId;
-        protected ColumnInfo _column職位code;
-        protected ColumnInfo _column制御画面id;
+        protected ColumnInfo _column職位コード;
+        protected ColumnInfo _column画面コード;
 
-        public ColumnInfo ColumnId { get { return _columnId; } }
-        public ColumnInfo Column職位code { get { return _column職位code; } }
-        public ColumnInfo Column制御画面id { get { return _column制御画面id; } }
+        public ColumnInfo Column職位コード { get { return _column職位コード; } }
+        public ColumnInfo Column画面コード { get { return _column画面コード; } }
 
         protected void InitializeColumnInfo() {
-            _columnId = cci("id", "id", null, null, true, "Id", typeof(long?), true, "bigserial", 19, 0, false, OptimisticLockType.NONE, null, null, null);
-            _column職位code = cci("職位code", "職位code", null, null, true, "職位code", typeof(String), false, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, "kbn職位区分", null);
-            _column制御画面id = cci("制御画面id", "制御画面id", null, null, true, "制御画面id", typeof(long?), false, "int8", 19, 0, false, OptimisticLockType.NONE, null, "mst制御画面マスタ", null);
+            _column職位コード = cci("職位コード", "職位コード", null, null, true, "職位コード", typeof(String), true, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, "kbn職位区分", null);
+            _column画面コード = cci("画面コード", "画面コード", null, null, true, "画面コード", typeof(String), true, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, "mst画面マスタ", null);
         }
 
         protected void InitializeColumnInfoList() {
             _columnInfoList = new ArrayList<ColumnInfo>();
-            _columnInfoList.add(ColumnId);
-            _columnInfoList.add(Column職位code);
-            _columnInfoList.add(Column制御画面id);
+            _columnInfoList.add(Column職位コード);
+            _columnInfoList.add(Column画面コード);
         }
 
         // ===============================================================================
         //                                                                     Unique Info
         //                                                                     ===========
         public override UniqueInfo PrimaryUniqueInfo { get {
-            return cpui(ColumnId);
+            List<ColumnInfo> ls = new ArrayList<ColumnInfo>();
+            ls.add(Column職位コード);
+            ls.add(Column画面コード);
+            return cpui(ls);
         }}
 
         // -------------------------------------------------
         //                                   Primary Element
         //                                   ---------------
         public override bool HasPrimaryKey { get { return true; } }
-        public override bool HasCompoundPrimaryKey { get { return false; } }
+        public override bool HasCompoundPrimaryKey { get { return true; } }
 
         // ===============================================================================
         //                                                                   Relation Info
@@ -78,14 +77,14 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                   Foreign Element
         //                                   ---------------
-        public ForeignInfo ForeignMst制御画面マスタ { get {
+        public ForeignInfo ForeignMst画面マスタ { get {
             Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(Column制御画面id, Mst制御画面マスタDbm.GetInstance().ColumnId);
-            return cfi("Mst制御画面マスタ", this, Mst制御画面マスタDbm.GetInstance(), map, 0, false, false);
+            map.put(Column画面コード, Mst画面マスタDbm.GetInstance().Column画面コード);
+            return cfi("Mst画面マスタ", this, Mst画面マスタDbm.GetInstance(), map, 0, false, false);
         }}
         public ForeignInfo ForeignKbn職位区分 { get {
             Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(Column職位code, Kbn職位区分Dbm.GetInstance().ColumnCode);
+            map.put(Column職位コード, Kbn職位区分Dbm.GetInstance().Column職位コード);
             return cfi("Kbn職位区分", this, Kbn職位区分Dbm.GetInstance(), map, 1, false, false);
         }}
 
@@ -97,11 +96,6 @@ namespace Dbflute.BsEntity.Dbm {
         // ===============================================================================
         //                                                                    Various Info
         //                                                                    ============
-        public override bool HasSequence { get { return true; } }
-        public override String SequenceName { get { return "mst002_id_seq"; } }
-        public override String SequenceNextValSql { get { return "select nextval ('mst002_id_seq')"; } }
-        public override int? SequenceIncrementSize { get { return 1; } }
-        public override int? SequenceCacheSize { get { return null; } }
         public override bool HasCommonColumn { get { return false; } }
 
         // ===============================================================================
@@ -118,21 +112,19 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                    Column DB-Name
         //                                    --------------
-        public static readonly String DB_NAME_id = "id";
-        public static readonly String DB_NAME_職位code = "職位code";
-        public static readonly String DB_NAME_制御画面id = "制御画面id";
+        public static readonly String DB_NAME_職位コード = "職位コード";
+        public static readonly String DB_NAME_画面コード = "画面コード";
 
         // -------------------------------------------------
         //                              Column Property-Name
         //                              --------------------
-        public static readonly String PROPERTY_NAME_id = "Id";
-        public static readonly String PROPERTY_NAME_職位code = "職位code";
-        public static readonly String PROPERTY_NAME_制御画面id = "制御画面id";
+        public static readonly String PROPERTY_NAME_職位コード = "職位コード";
+        public static readonly String PROPERTY_NAME_画面コード = "画面コード";
 
         // -------------------------------------------------
         //                                      Foreign Name
         //                                      ------------
-        public static readonly String FOREIGN_PROPERTY_NAME_Mst制御画面マスタ = "Mst制御画面マスタ";
+        public static readonly String FOREIGN_PROPERTY_NAME_Mst画面マスタ = "Mst画面マスタ";
         public static readonly String FOREIGN_PROPERTY_NAME_Kbn職位区分 = "Kbn職位区分";
         // -------------------------------------------------
         //                                     Referrer Name
@@ -148,18 +140,16 @@ namespace Dbflute.BsEntity.Dbm {
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_DB_NAME.ToLower(), TABLE_PROPERTY_NAME);
-                map.put(DB_NAME_id.ToLower(), PROPERTY_NAME_id);
-                map.put(DB_NAME_職位code.ToLower(), PROPERTY_NAME_職位code);
-                map.put(DB_NAME_制御画面id.ToLower(), PROPERTY_NAME_制御画面id);
+                map.put(DB_NAME_職位コード.ToLower(), PROPERTY_NAME_職位コード);
+                map.put(DB_NAME_画面コード.ToLower(), PROPERTY_NAME_画面コード);
                 _dbNamePropertyNameKeyToLowerMap = map;
             }
 
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_PROPERTY_NAME.ToLower(), TABLE_DB_NAME);
-                map.put(PROPERTY_NAME_id.ToLower(), DB_NAME_id);
-                map.put(PROPERTY_NAME_職位code.ToLower(), DB_NAME_職位code);
-                map.put(PROPERTY_NAME_制御画面id.ToLower(), DB_NAME_制御画面id);
+                map.put(PROPERTY_NAME_職位コード.ToLower(), DB_NAME_職位コード);
+                map.put(PROPERTY_NAME_画面コード.ToLower(), DB_NAME_画面コード);
                 _propertyNameDbNameKeyToLowerMap = map;
             }
         }
@@ -201,9 +191,8 @@ namespace Dbflute.BsEntity.Dbm {
         protected Map<String, EntityPropertySetupper<Mst権限マスタ>> _entityPropertySetupperMap = new LinkedHashMap<String, EntityPropertySetupper<Mst権限マスタ>>();
 
         protected void InitializeEntityPropertySetupper() {
-            RegisterEntityPropertySetupper("id", "Id", new EntityPropertyIdSetupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("職位code", "職位code", new EntityProperty職位codeSetupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("制御画面id", "制御画面id", new EntityProperty制御画面idSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("職位コード", "職位コード", new EntityProperty職位コードSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("画面コード", "画面コード", new EntityProperty画面コードSetupper(), _entityPropertySetupperMap);
         }
 
         public override bool HasEntityPropertySetupper(String propertyName) {
@@ -215,14 +204,11 @@ namespace Dbflute.BsEntity.Dbm {
             callback.Setup((Mst権限マスタ)entity, value);
         }
 
-        public class EntityPropertyIdSetupper : EntityPropertySetupper<Mst権限マスタ> {
-            public void Setup(Mst権限マスタ entity, Object value) { entity.Id = (value != null) ? (long?)value : null; }
+        public class EntityProperty職位コードSetupper : EntityPropertySetupper<Mst権限マスタ> {
+            public void Setup(Mst権限マスタ entity, Object value) { entity.職位コード = (value != null) ? (String)value : null; }
         }
-        public class EntityProperty職位codeSetupper : EntityPropertySetupper<Mst権限マスタ> {
-            public void Setup(Mst権限マスタ entity, Object value) { entity.職位code = (value != null) ? (String)value : null; }
-        }
-        public class EntityProperty制御画面idSetupper : EntityPropertySetupper<Mst権限マスタ> {
-            public void Setup(Mst権限マスタ entity, Object value) { entity.制御画面id = (value != null) ? (long?)value : null; }
+        public class EntityProperty画面コードSetupper : EntityPropertySetupper<Mst権限マスタ> {
+            public void Setup(Mst権限マスタ entity, Object value) { entity.画面コード = (value != null) ? (String)value : null; }
         }
     }
 }

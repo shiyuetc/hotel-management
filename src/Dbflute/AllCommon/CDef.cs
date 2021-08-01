@@ -12,17 +12,17 @@ namespace Dbflute.AllCommon {
          */
         public class メニュー区分 {
             /** ログアウト: 9999 */
-            public static readonly メニュー区分 ログアウト = new メニュー区分("001", "ログアウト", "ログアウト");
+            public static readonly メニュー区分 ログアウト = new メニュー区分("01", "ログアウト", "ログアウト");
             /** 予約管理: 10 */
-            public static readonly メニュー区分 予約管理 = new メニュー区分("002", "予約管理", "予約管理");
+            public static readonly メニュー区分 予約管理 = new メニュー区分("02", "予約管理", "予約管理");
             /** 宿泊履歴: 20 */
-            public static readonly メニュー区分 宿泊履歴 = new メニュー区分("003", "宿泊履歴", "宿泊履歴");
+            public static readonly メニュー区分 宿泊履歴 = new メニュー区分("03", "宿泊履歴", "宿泊履歴");
             /** 顧客管理: 30 */
-            public static readonly メニュー区分 顧客管理 = new メニュー区分("004", "顧客管理", "顧客管理");
+            public static readonly メニュー区分 顧客管理 = new メニュー区分("04", "顧客管理", "顧客管理");
             /** 従業員管理: 40 */
-            public static readonly メニュー区分 従業員管理 = new メニュー区分("005", "従業員管理", "従業員管理");
+            public static readonly メニュー区分 従業員管理 = new メニュー区分("05", "従業員管理", "従業員管理");
             /** 客室管理: 50 */
-            public static readonly メニュー区分 客室管理 = new メニュー区分("006", "客室管理", "客室管理");
+            public static readonly メニュー区分 客室管理 = new メニュー区分("06", "客室管理", "客室管理");
             private static readonly Map<String, メニュー区分> _codeValueMap = new LinkedHashMap<String, メニュー区分>();
             static メニュー区分() {
                 _codeValueMap.put(ログアウト.Code.ToLower(), ログアウト);
@@ -114,13 +114,13 @@ namespace Dbflute.AllCommon {
          */
         public class 客室利用区分 {
             /** 宿泊 */
-            public static readonly 客室利用区分 宿泊 = new 客室利用区分("001", "宿泊", "宿泊");
+            public static readonly 客室利用区分 宿泊 = new 客室利用区分("01", "宿泊", "宿泊");
             /** 清掃 */
-            public static readonly 客室利用区分 清掃 = new 客室利用区分("002", "清掃", "清掃");
+            public static readonly 客室利用区分 清掃 = new 客室利用区分("02", "清掃", "清掃");
             /** 工事 */
-            public static readonly 客室利用区分 工事 = new 客室利用区分("003", "工事", "工事");
+            public static readonly 客室利用区分 工事 = new 客室利用区分("03", "工事", "工事");
             /** その他 */
-            public static readonly 客室利用区分 その他 = new 客室利用区分("004", "その他", "その他");
+            public static readonly 客室利用区分 その他 = new 客室利用区分("04", "その他", "その他");
             private static readonly Map<String, 客室利用区分> _codeValueMap = new LinkedHashMap<String, 客室利用区分>();
             static 客室利用区分() {
                 _codeValueMap.put(宿泊.Code.ToLower(), 宿泊);

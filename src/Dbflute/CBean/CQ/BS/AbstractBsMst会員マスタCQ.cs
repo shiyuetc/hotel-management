@@ -20,18 +20,78 @@ namespace Dbflute.CBean.CQ.BS {
         public override String getTableDbName() { return "mst会員マスタ"; }
         public override String getTableSqlName() { return "mst会員マスタ"; }
 
-        public void SetId_Equal(long? v) { regId(CK_EQ, v); }
-        public void SetId_NotEqual(long? v) { regId(CK_NES, v); }
-        public void SetId_GreaterThan(long? v) { regId(CK_GT, v); }
-        public void SetId_LessThan(long? v) { regId(CK_LT, v); }
-        public void SetId_GreaterEqual(long? v) { regId(CK_GE, v); }
-        public void SetId_LessEqual(long? v) { regId(CK_LE, v); }
-        public void SetId_InScope(IList<long?> ls) { regINS<long?>(CK_INS, cTL<long?>(ls), getCValueId(), "id"); }
-        public void SetId_NotInScope(IList<long?> ls) { regINS<long?>(CK_NINS, cTL<long?>(ls), getCValueId(), "id"); }
-        public void SetId_IsNull() { regId(CK_ISN, DUMMY_OBJECT); }
-        public void SetId_IsNotNull() { regId(CK_ISNN, DUMMY_OBJECT); }
-        protected void regId(ConditionKey k, Object v) { regQ(k, v, getCValueId(), "id"); }
-        protected abstract ConditionValue getCValueId();
+        public void Set会員コード_Equal(String v) { DoSet会員コード_Equal(fRES(v)); }
+        protected void DoSet会員コード_Equal(String v) { reg会員コード(CK_EQ, v); }
+        public void Set会員コード_NotEqual(String v) { DoSet会員コード_NotEqual(fRES(v)); }
+        protected void DoSet会員コード_NotEqual(String v) { reg会員コード(CK_NES, v); }
+        public void Set会員コード_GreaterThan(String v) { reg会員コード(CK_GT, fRES(v)); }
+        public void Set会員コード_LessThan(String v) { reg会員コード(CK_LT, fRES(v)); }
+        public void Set会員コード_GreaterEqual(String v) { reg会員コード(CK_GE, fRES(v)); }
+        public void Set会員コード_LessEqual(String v) { reg会員コード(CK_LE, fRES(v)); }
+        public void Set会員コード_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue会員コード(), "会員コード"); }
+        public void Set会員コード_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue会員コード(), "会員コード"); }
+        public void Set会員コード_PrefixSearch(String v) { Set会員コード_LikeSearch(v, cLSOP()); }
+        public void Set会員コード_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValue会員コード(), "会員コード", option); }
+        public void Set会員コード_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValue会員コード(), "会員コード", option); }
+        public void ExistsDch宿泊利用台帳List(SubQuery<Dch宿泊利用台帳CB> subQuery) {
+            assertObjectNotNull("subQuery<Dch宿泊利用台帳CB>", subQuery);
+            Dch宿泊利用台帳CB cb = new Dch宿泊利用台帳CB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keep会員コード_ExistsSubQuery_Dch宿泊利用台帳List(cb.Query());
+            registerExistsSubQuery(cb.Query(), "会員コード", "会員コード", subQueryPropertyName);
+        }
+        public abstract String keep会員コード_ExistsSubQuery_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery);
+        public void NotExistsDch宿泊利用台帳List(SubQuery<Dch宿泊利用台帳CB> subQuery) {
+            assertObjectNotNull("subQuery<Dch宿泊利用台帳CB>", subQuery);
+            Dch宿泊利用台帳CB cb = new Dch宿泊利用台帳CB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keep会員コード_NotExistsSubQuery_Dch宿泊利用台帳List(cb.Query());
+            registerNotExistsSubQuery(cb.Query(), "会員コード", "会員コード", subQueryPropertyName);
+        }
+        public abstract String keep会員コード_NotExistsSubQuery_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery);
+        public void InScopeDch宿泊利用台帳List(SubQuery<Dch宿泊利用台帳CB> subQuery) {
+            assertObjectNotNull("subQuery<Dch宿泊利用台帳CB>", subQuery);
+            Dch宿泊利用台帳CB cb = new Dch宿泊利用台帳CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keep会員コード_InScopeSubQuery_Dch宿泊利用台帳List(cb.Query());
+            registerInScopeSubQuery(cb.Query(), "会員コード", "会員コード", subQueryPropertyName);
+        }
+        public abstract String keep会員コード_InScopeSubQuery_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery);
+        public void NotInScopeDch宿泊利用台帳List(SubQuery<Dch宿泊利用台帳CB> subQuery) {
+            assertObjectNotNull("subQuery<Dch宿泊利用台帳CB>", subQuery);
+            Dch宿泊利用台帳CB cb = new Dch宿泊利用台帳CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keep会員コード_NotInScopeSubQuery_Dch宿泊利用台帳List(cb.Query());
+            registerNotInScopeSubQuery(cb.Query(), "会員コード", "会員コード", subQueryPropertyName);
+        }
+        public abstract String keep会員コード_NotInScopeSubQuery_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery);
+        public void xsderiveDch宿泊利用台帳List(String function, SubQuery<Dch宿泊利用台帳CB> subQuery, String aliasName) {
+            assertObjectNotNull("subQuery<Dch宿泊利用台帳CB>", subQuery);
+            Dch宿泊利用台帳CB cb = new Dch宿泊利用台帳CB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keep会員コード_SpecifyDerivedReferrer_Dch宿泊利用台帳List(cb.Query());
+            registerSpecifyDerivedReferrer(function, cb.Query(), "会員コード", "会員コード", subQueryPropertyName, aliasName);
+        }
+        abstract public String keep会員コード_SpecifyDerivedReferrer_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery);
+
+        public QDRFunction<Dch宿泊利用台帳CB> DerivedDch宿泊利用台帳List() {
+            return xcreateQDRFunctionDch宿泊利用台帳List();
+        }
+        protected QDRFunction<Dch宿泊利用台帳CB> xcreateQDRFunctionDch宿泊利用台帳List() {
+            return new QDRFunction<Dch宿泊利用台帳CB>(delegate(String function, SubQuery<Dch宿泊利用台帳CB> subQuery, String operand, Object value) {
+                xqderiveDch宿泊利用台帳List(function, subQuery, operand, value);
+            });
+        }
+        public void xqderiveDch宿泊利用台帳List(String function, SubQuery<Dch宿泊利用台帳CB> subQuery, String operand, Object value) {
+            assertObjectNotNull("subQuery<Dch宿泊利用台帳CB>", subQuery);
+            Dch宿泊利用台帳CB cb = new Dch宿泊利用台帳CB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
+            String subQueryPropertyName = keep会員コード_QueryDerivedReferrer_Dch宿泊利用台帳List(cb.Query()); // for saving query-value.
+            String parameterPropertyName = keep会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListParameter(value);
+            registerQueryDerivedReferrer(function, cb.Query(), "会員コード", "会員コード", subQueryPropertyName, operand, value, parameterPropertyName);
+        }
+        public abstract String keep会員コード_QueryDerivedReferrer_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery);
+        public abstract String keep会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListParameter(Object parameterValue);
+        public void Set会員コード_IsNull() { reg会員コード(CK_ISN, DUMMY_OBJECT); }
+        public void Set会員コード_IsNotNull() { reg会員コード(CK_ISNN, DUMMY_OBJECT); }
+        protected void reg会員コード(ConditionKey k, Object v) { regQ(k, v, getCValue会員コード(), "会員コード"); }
+        protected abstract ConditionValue getCValue会員コード();
 
         public void Set会員番号_Equal(String v) { DoSet会員番号_Equal(fRES(v)); }
         protected void DoSet会員番号_Equal(String v) { reg会員番号(CK_EQ, v); }
@@ -51,41 +111,41 @@ namespace Dbflute.CBean.CQ.BS {
         protected void reg会員番号(ConditionKey k, Object v) { regQ(k, v, getCValue会員番号(), "会員番号"); }
         protected abstract ConditionValue getCValue会員番号();
 
-        public void Set氏名姓_Equal(String v) { DoSet氏名姓_Equal(fRES(v)); }
-        protected void DoSet氏名姓_Equal(String v) { reg氏名姓(CK_EQ, v); }
-        public void Set氏名姓_NotEqual(String v) { DoSet氏名姓_NotEqual(fRES(v)); }
-        protected void DoSet氏名姓_NotEqual(String v) { reg氏名姓(CK_NES, v); }
-        public void Set氏名姓_GreaterThan(String v) { reg氏名姓(CK_GT, fRES(v)); }
-        public void Set氏名姓_LessThan(String v) { reg氏名姓(CK_LT, fRES(v)); }
-        public void Set氏名姓_GreaterEqual(String v) { reg氏名姓(CK_GE, fRES(v)); }
-        public void Set氏名姓_LessEqual(String v) { reg氏名姓(CK_LE, fRES(v)); }
-        public void Set氏名姓_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue氏名姓(), "氏名_姓"); }
-        public void Set氏名姓_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue氏名姓(), "氏名_姓"); }
-        public void Set氏名姓_PrefixSearch(String v) { Set氏名姓_LikeSearch(v, cLSOP()); }
-        public void Set氏名姓_LikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_LS, fRES(v), getCValue氏名姓(), "氏名_姓", option); }
-        public void Set氏名姓_NotLikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_NLS, fRES(v), getCValue氏名姓(), "氏名_姓", option); }
-        protected void reg氏名姓(ConditionKey k, Object v) { regQ(k, v, getCValue氏名姓(), "氏名_姓"); }
-        protected abstract ConditionValue getCValue氏名姓();
+        public void Set名字_Equal(String v) { DoSet名字_Equal(fRES(v)); }
+        protected void DoSet名字_Equal(String v) { reg名字(CK_EQ, v); }
+        public void Set名字_NotEqual(String v) { DoSet名字_NotEqual(fRES(v)); }
+        protected void DoSet名字_NotEqual(String v) { reg名字(CK_NES, v); }
+        public void Set名字_GreaterThan(String v) { reg名字(CK_GT, fRES(v)); }
+        public void Set名字_LessThan(String v) { reg名字(CK_LT, fRES(v)); }
+        public void Set名字_GreaterEqual(String v) { reg名字(CK_GE, fRES(v)); }
+        public void Set名字_LessEqual(String v) { reg名字(CK_LE, fRES(v)); }
+        public void Set名字_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue名字(), "名字"); }
+        public void Set名字_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue名字(), "名字"); }
+        public void Set名字_PrefixSearch(String v) { Set名字_LikeSearch(v, cLSOP()); }
+        public void Set名字_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValue名字(), "名字", option); }
+        public void Set名字_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValue名字(), "名字", option); }
+        protected void reg名字(ConditionKey k, Object v) { regQ(k, v, getCValue名字(), "名字"); }
+        protected abstract ConditionValue getCValue名字();
 
-        public void Set氏名名_Equal(String v) { DoSet氏名名_Equal(fRES(v)); }
-        protected void DoSet氏名名_Equal(String v) { reg氏名名(CK_EQ, v); }
-        public void Set氏名名_NotEqual(String v) { DoSet氏名名_NotEqual(fRES(v)); }
-        protected void DoSet氏名名_NotEqual(String v) { reg氏名名(CK_NES, v); }
-        public void Set氏名名_GreaterThan(String v) { reg氏名名(CK_GT, fRES(v)); }
-        public void Set氏名名_LessThan(String v) { reg氏名名(CK_LT, fRES(v)); }
-        public void Set氏名名_GreaterEqual(String v) { reg氏名名(CK_GE, fRES(v)); }
-        public void Set氏名名_LessEqual(String v) { reg氏名名(CK_LE, fRES(v)); }
-        public void Set氏名名_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue氏名名(), "氏名_名"); }
-        public void Set氏名名_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue氏名名(), "氏名_名"); }
-        public void Set氏名名_PrefixSearch(String v) { Set氏名名_LikeSearch(v, cLSOP()); }
-        public void Set氏名名_LikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_LS, fRES(v), getCValue氏名名(), "氏名_名", option); }
-        public void Set氏名名_NotLikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_NLS, fRES(v), getCValue氏名名(), "氏名_名", option); }
-        protected void reg氏名名(ConditionKey k, Object v) { regQ(k, v, getCValue氏名名(), "氏名_名"); }
-        protected abstract ConditionValue getCValue氏名名();
+        public void Set名前_Equal(String v) { DoSet名前_Equal(fRES(v)); }
+        protected void DoSet名前_Equal(String v) { reg名前(CK_EQ, v); }
+        public void Set名前_NotEqual(String v) { DoSet名前_NotEqual(fRES(v)); }
+        protected void DoSet名前_NotEqual(String v) { reg名前(CK_NES, v); }
+        public void Set名前_GreaterThan(String v) { reg名前(CK_GT, fRES(v)); }
+        public void Set名前_LessThan(String v) { reg名前(CK_LT, fRES(v)); }
+        public void Set名前_GreaterEqual(String v) { reg名前(CK_GE, fRES(v)); }
+        public void Set名前_LessEqual(String v) { reg名前(CK_LE, fRES(v)); }
+        public void Set名前_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue名前(), "名前"); }
+        public void Set名前_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue名前(), "名前"); }
+        public void Set名前_PrefixSearch(String v) { Set名前_LikeSearch(v, cLSOP()); }
+        public void Set名前_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValue名前(), "名前", option); }
+        public void Set名前_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValue名前(), "名前", option); }
+        protected void reg名前(ConditionKey k, Object v) { regQ(k, v, getCValue名前(), "名前"); }
+        protected abstract ConditionValue getCValue名前();
 
         public void Set氏名カナ_Equal(String v) { DoSet氏名カナ_Equal(fRES(v)); }
         protected void DoSet氏名カナ_Equal(String v) { reg氏名カナ(CK_EQ, v); }
@@ -95,14 +155,14 @@ namespace Dbflute.CBean.CQ.BS {
         public void Set氏名カナ_LessThan(String v) { reg氏名カナ(CK_LT, fRES(v)); }
         public void Set氏名カナ_GreaterEqual(String v) { reg氏名カナ(CK_GE, fRES(v)); }
         public void Set氏名カナ_LessEqual(String v) { reg氏名カナ(CK_LE, fRES(v)); }
-        public void Set氏名カナ_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue氏名カナ(), "氏名_カナ"); }
-        public void Set氏名カナ_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue氏名カナ(), "氏名_カナ"); }
+        public void Set氏名カナ_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue氏名カナ(), "氏名カナ"); }
+        public void Set氏名カナ_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue氏名カナ(), "氏名カナ"); }
         public void Set氏名カナ_PrefixSearch(String v) { Set氏名カナ_LikeSearch(v, cLSOP()); }
         public void Set氏名カナ_LikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_LS, fRES(v), getCValue氏名カナ(), "氏名_カナ", option); }
+        { regLSQ(CK_LS, fRES(v), getCValue氏名カナ(), "氏名カナ", option); }
         public void Set氏名カナ_NotLikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_NLS, fRES(v), getCValue氏名カナ(), "氏名_カナ", option); }
-        protected void reg氏名カナ(ConditionKey k, Object v) { regQ(k, v, getCValue氏名カナ(), "氏名_カナ"); }
+        { regLSQ(CK_NLS, fRES(v), getCValue氏名カナ(), "氏名カナ", option); }
+        protected void reg氏名カナ(ConditionKey k, Object v) { regQ(k, v, getCValue氏名カナ(), "氏名カナ"); }
         protected abstract ConditionValue getCValue氏名カナ();
 
         public void Set会社名_Equal(String v) { DoSet会社名_Equal(fRES(v)); }
@@ -133,16 +193,16 @@ namespace Dbflute.CBean.CQ.BS {
         public void Set会社名カナ_LessThan(String v) { reg会社名カナ(CK_LT, fRES(v)); }
         public void Set会社名カナ_GreaterEqual(String v) { reg会社名カナ(CK_GE, fRES(v)); }
         public void Set会社名カナ_LessEqual(String v) { reg会社名カナ(CK_LE, fRES(v)); }
-        public void Set会社名カナ_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue会社名カナ(), "会社名_カナ"); }
-        public void Set会社名カナ_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue会社名カナ(), "会社名_カナ"); }
+        public void Set会社名カナ_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue会社名カナ(), "会社名カナ"); }
+        public void Set会社名カナ_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue会社名カナ(), "会社名カナ"); }
         public void Set会社名カナ_PrefixSearch(String v) { Set会社名カナ_LikeSearch(v, cLSOP()); }
         public void Set会社名カナ_LikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_LS, fRES(v), getCValue会社名カナ(), "会社名_カナ", option); }
+        { regLSQ(CK_LS, fRES(v), getCValue会社名カナ(), "会社名カナ", option); }
         public void Set会社名カナ_NotLikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_NLS, fRES(v), getCValue会社名カナ(), "会社名_カナ", option); }
+        { regLSQ(CK_NLS, fRES(v), getCValue会社名カナ(), "会社名カナ", option); }
         public void Set会社名カナ_IsNull() { reg会社名カナ(CK_ISN, DUMMY_OBJECT); }
         public void Set会社名カナ_IsNotNull() { reg会社名カナ(CK_ISNN, DUMMY_OBJECT); }
-        protected void reg会社名カナ(ConditionKey k, Object v) { regQ(k, v, getCValue会社名カナ(), "会社名_カナ"); }
+        protected void reg会社名カナ(ConditionKey k, Object v) { regQ(k, v, getCValue会社名カナ(), "会社名カナ"); }
         protected abstract ConditionValue getCValue会社名カナ();
 
         public void Set電話番号_Equal(String v) { DoSet電話番号_Equal(fRES(v)); }
@@ -277,7 +337,7 @@ namespace Dbflute.CBean.CQ.BS {
             assertObjectNotNull("subQuery<Mst会員マスタCB>", subQuery);
             Mst会員マスタCB cb = new Mst会員マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
             String subQueryPropertyName = keepMyselfInScopeSubQuery(cb.Query()); // for saving query-value.
-            registerInScopeSubQuery(cb.Query(), "id", "id", subQueryPropertyName);
+            registerInScopeSubQuery(cb.Query(), "会員コード", "会員コード", subQueryPropertyName);
         }
         public abstract String keepMyselfInScopeSubQuery(Mst会員マスタCQ subQuery);
 

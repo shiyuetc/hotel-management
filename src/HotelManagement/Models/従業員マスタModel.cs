@@ -37,29 +37,23 @@ namespace HotelManagement.Models
         #region データ取得
 
         /// <summary>
-        /// 指定したIDと一致する従業員マスタを取得します。
+        /// 指定した従業員コードまたは従業員番号と一致する従業員マスタを取得します。
         /// </summary>
-        /// <param name="id">ID</param>
-        /// <returns>取得した従業員マスタを返す</returns>
-        public Mst従業員マスタ Get従業員マスタ(long id)
-        {
-            var 従業員マスタcb = new Mst従業員マスタCB();
-            従業員マスタcb.SetupSelect_Kbn職位区分();
-            従業員マスタcb.Query().SetId_Equal(id);
-
-            return this.従業員マスタBhv.SelectEntity(従業員マスタcb);
-        }
-
-        /// <summary>
-        /// 指定した従業員番号と一致する従業員マスタを取得します。
-        /// </summary>
-        /// <param name="従業員番号">従業員番号</param>
+        /// <param name="従業員コード">従業員コードまたは従業員番号</param>
+        /// <param name="Is従業員番号">1つめの引数が従業員番号であるか</param>
         /// <returns>取得した従業員を返す</returns>
-        public Mst従業員マスタ Get従業員マスタ(string 従業員番号)
+        public Mst従業員マスタ Get従業員マスタ(string 従業員コード, bool Is従業員番号)
         {
             var 従業員マスタcb = new Mst従業員マスタCB();
             従業員マスタcb.SetupSelect_Kbn職位区分();
-            従業員マスタcb.Query().Set従業員番号_Equal(従業員番号);
+            if(!Is従業員番号)
+            {
+                従業員マスタcb.Query().Set従業員コード_Equal(従業員コード);
+            }
+            else
+            {
+                従業員マスタcb.Query().Set従業員番号_Equal(従業員コード);
+            }
 
             return this.従業員マスタBhv.SelectEntity(従業員マスタcb);
         }

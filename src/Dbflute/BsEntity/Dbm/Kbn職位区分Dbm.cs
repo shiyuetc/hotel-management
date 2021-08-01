@@ -38,32 +38,32 @@ namespace Dbflute.BsEntity.Dbm {
         // ===============================================================================
         //                                                                     Column Info
         //                                                                     ===========
-        protected ColumnInfo _columnCode;
-        protected ColumnInfo _column名称;
-        protected ColumnInfo _column名称英字;
+        protected ColumnInfo _column職位コード;
+        protected ColumnInfo _column職位名称;
+        protected ColumnInfo _column職位英字名称;
 
-        public ColumnInfo ColumnCode { get { return _columnCode; } }
-        public ColumnInfo Column名称 { get { return _column名称; } }
-        public ColumnInfo Column名称英字 { get { return _column名称英字; } }
+        public ColumnInfo Column職位コード { get { return _column職位コード; } }
+        public ColumnInfo Column職位名称 { get { return _column職位名称; } }
+        public ColumnInfo Column職位英字名称 { get { return _column職位英字名称; } }
 
         protected void InitializeColumnInfo() {
-            _columnCode = cci("code", "code", null, null, true, "Code", typeof(String), true, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, null, "dch従業員職位履歴台帳List,mst従業員マスタList,mst権限マスタList");
-            _column名称 = cci("名称", "名称", null, null, true, "名称", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
-            _column名称英字 = cci("名称_英字", "名称_英字", null, null, true, "名称英字", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
+            _column職位コード = cci("職位コード", "職位コード", null, null, true, "職位コード", typeof(String), true, "bpchar", 3, 0, false, OptimisticLockType.NONE, null, null, "dch従業員職位履歴台帳List,mst従業員マスタList,mst権限マスタList");
+            _column職位名称 = cci("職位名称", "職位名称", null, null, true, "職位名称", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
+            _column職位英字名称 = cci("職位英字名称", "職位英字名称", null, null, true, "職位英字名称", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
         }
 
         protected void InitializeColumnInfoList() {
             _columnInfoList = new ArrayList<ColumnInfo>();
-            _columnInfoList.add(ColumnCode);
-            _columnInfoList.add(Column名称);
-            _columnInfoList.add(Column名称英字);
+            _columnInfoList.add(Column職位コード);
+            _columnInfoList.add(Column職位名称);
+            _columnInfoList.add(Column職位英字名称);
         }
 
         // ===============================================================================
         //                                                                     Unique Info
         //                                                                     ===========
         public override UniqueInfo PrimaryUniqueInfo { get {
-            return cpui(ColumnCode);
+            return cpui(Column職位コード);
         }}
 
         // -------------------------------------------------
@@ -85,17 +85,17 @@ namespace Dbflute.BsEntity.Dbm {
         //                                  ----------------
         public ReferrerInfo ReferrerDch従業員職位履歴台帳List { get {
             Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(ColumnCode, Dch従業員職位履歴台帳Dbm.GetInstance().Column職位code);
+            map.put(Column職位コード, Dch従業員職位履歴台帳Dbm.GetInstance().Column職位コード);
             return cri("Dch従業員職位履歴台帳List", this, Dch従業員職位履歴台帳Dbm.GetInstance(), map, false);
         }}
         public ReferrerInfo ReferrerMst従業員マスタList { get {
             Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(ColumnCode, Mst従業員マスタDbm.GetInstance().Column職位code);
+            map.put(Column職位コード, Mst従業員マスタDbm.GetInstance().Column職位コード);
             return cri("Mst従業員マスタList", this, Mst従業員マスタDbm.GetInstance(), map, false);
         }}
         public ReferrerInfo ReferrerMst権限マスタList { get {
             Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(ColumnCode, Mst権限マスタDbm.GetInstance().Column職位code);
+            map.put(Column職位コード, Mst権限マスタDbm.GetInstance().Column職位コード);
             return cri("Mst権限マスタList", this, Mst権限マスタDbm.GetInstance(), map, false);
         }}
 
@@ -118,16 +118,16 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                    Column DB-Name
         //                                    --------------
-        public static readonly String DB_NAME_code = "code";
-        public static readonly String DB_NAME_名称 = "名称";
-        public static readonly String DB_NAME_名称_英字 = "名称_英字";
+        public static readonly String DB_NAME_職位コード = "職位コード";
+        public static readonly String DB_NAME_職位名称 = "職位名称";
+        public static readonly String DB_NAME_職位英字名称 = "職位英字名称";
 
         // -------------------------------------------------
         //                              Column Property-Name
         //                              --------------------
-        public static readonly String PROPERTY_NAME_code = "Code";
-        public static readonly String PROPERTY_NAME_名称 = "名称";
-        public static readonly String PROPERTY_NAME_名称_英字 = "名称英字";
+        public static readonly String PROPERTY_NAME_職位コード = "職位コード";
+        public static readonly String PROPERTY_NAME_職位名称 = "職位名称";
+        public static readonly String PROPERTY_NAME_職位英字名称 = "職位英字名称";
 
         // -------------------------------------------------
         //                                      Foreign Name
@@ -149,18 +149,18 @@ namespace Dbflute.BsEntity.Dbm {
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_DB_NAME.ToLower(), TABLE_PROPERTY_NAME);
-                map.put(DB_NAME_code.ToLower(), PROPERTY_NAME_code);
-                map.put(DB_NAME_名称.ToLower(), PROPERTY_NAME_名称);
-                map.put(DB_NAME_名称_英字.ToLower(), PROPERTY_NAME_名称_英字);
+                map.put(DB_NAME_職位コード.ToLower(), PROPERTY_NAME_職位コード);
+                map.put(DB_NAME_職位名称.ToLower(), PROPERTY_NAME_職位名称);
+                map.put(DB_NAME_職位英字名称.ToLower(), PROPERTY_NAME_職位英字名称);
                 _dbNamePropertyNameKeyToLowerMap = map;
             }
 
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_PROPERTY_NAME.ToLower(), TABLE_DB_NAME);
-                map.put(PROPERTY_NAME_code.ToLower(), DB_NAME_code);
-                map.put(PROPERTY_NAME_名称.ToLower(), DB_NAME_名称);
-                map.put(PROPERTY_NAME_名称_英字.ToLower(), DB_NAME_名称_英字);
+                map.put(PROPERTY_NAME_職位コード.ToLower(), DB_NAME_職位コード);
+                map.put(PROPERTY_NAME_職位名称.ToLower(), DB_NAME_職位名称);
+                map.put(PROPERTY_NAME_職位英字名称.ToLower(), DB_NAME_職位英字名称);
                 _propertyNameDbNameKeyToLowerMap = map;
             }
         }
@@ -202,9 +202,9 @@ namespace Dbflute.BsEntity.Dbm {
         protected Map<String, EntityPropertySetupper<Kbn職位区分>> _entityPropertySetupperMap = new LinkedHashMap<String, EntityPropertySetupper<Kbn職位区分>>();
 
         protected void InitializeEntityPropertySetupper() {
-            RegisterEntityPropertySetupper("code", "Code", new EntityPropertyCodeSetupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("名称", "名称", new EntityProperty名称Setupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("名称_英字", "名称英字", new EntityProperty名称英字Setupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("職位コード", "職位コード", new EntityProperty職位コードSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("職位名称", "職位名称", new EntityProperty職位名称Setupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("職位英字名称", "職位英字名称", new EntityProperty職位英字名称Setupper(), _entityPropertySetupperMap);
         }
 
         public override bool HasEntityPropertySetupper(String propertyName) {
@@ -216,14 +216,14 @@ namespace Dbflute.BsEntity.Dbm {
             callback.Setup((Kbn職位区分)entity, value);
         }
 
-        public class EntityPropertyCodeSetupper : EntityPropertySetupper<Kbn職位区分> {
-            public void Setup(Kbn職位区分 entity, Object value) { entity.Code = (value != null) ? (String)value : null; }
+        public class EntityProperty職位コードSetupper : EntityPropertySetupper<Kbn職位区分> {
+            public void Setup(Kbn職位区分 entity, Object value) { entity.職位コード = (value != null) ? (String)value : null; }
         }
-        public class EntityProperty名称Setupper : EntityPropertySetupper<Kbn職位区分> {
-            public void Setup(Kbn職位区分 entity, Object value) { entity.名称 = (value != null) ? (String)value : null; }
+        public class EntityProperty職位名称Setupper : EntityPropertySetupper<Kbn職位区分> {
+            public void Setup(Kbn職位区分 entity, Object value) { entity.職位名称 = (value != null) ? (String)value : null; }
         }
-        public class EntityProperty名称英字Setupper : EntityPropertySetupper<Kbn職位区分> {
-            public void Setup(Kbn職位区分 entity, Object value) { entity.名称英字 = (value != null) ? (String)value : null; }
+        public class EntityProperty職位英字名称Setupper : EntityPropertySetupper<Kbn職位区分> {
+            public void Setup(Kbn職位区分 entity, Object value) { entity.職位英字名称 = (value != null) ? (String)value : null; }
         }
     }
 }

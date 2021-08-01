@@ -38,21 +38,21 @@ namespace Dbflute.BsEntity.Dbm {
         // ===============================================================================
         //                                                                     Column Info
         //                                                                     ===========
-        protected ColumnInfo _columnId;
-        protected ColumnInfo _column名称;
+        protected ColumnInfo _column客室タイプコード;
+        protected ColumnInfo _column客室タイプ名称;
         protected ColumnInfo _column料金;
         protected ColumnInfo _column宿泊人数;
         protected ColumnInfo _column備考;
 
-        public ColumnInfo ColumnId { get { return _columnId; } }
-        public ColumnInfo Column名称 { get { return _column名称; } }
+        public ColumnInfo Column客室タイプコード { get { return _column客室タイプコード; } }
+        public ColumnInfo Column客室タイプ名称 { get { return _column客室タイプ名称; } }
         public ColumnInfo Column料金 { get { return _column料金; } }
         public ColumnInfo Column宿泊人数 { get { return _column宿泊人数; } }
         public ColumnInfo Column備考 { get { return _column備考; } }
 
         protected void InitializeColumnInfo() {
-            _columnId = cci("id", "id", null, null, true, "Id", typeof(long?), true, "bigserial", 19, 0, false, OptimisticLockType.NONE, null, null, "mst客室マスタList");
-            _column名称 = cci("名称", "名称", null, null, true, "名称", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
+            _column客室タイプコード = cci("客室タイプコード", "客室タイプコード", null, null, true, "客室タイプコード", typeof(String), true, "bpchar", 4, 0, false, OptimisticLockType.NONE, null, null, "mst客室マスタList");
+            _column客室タイプ名称 = cci("客室タイプ名称", "客室タイプ名称", null, null, true, "客室タイプ名称", typeof(String), false, "varchar", 20, 0, false, OptimisticLockType.NONE, null, null, null);
             _column料金 = cci("料金", "料金", null, null, true, "料金", typeof(int?), false, "int4", 10, 0, false, OptimisticLockType.NONE, null, null, null);
             _column宿泊人数 = cci("宿泊人数", "宿泊人数", null, null, true, "宿泊人数", typeof(int?), false, "int4", 10, 0, false, OptimisticLockType.NONE, null, null, null);
             _column備考 = cci("備考", "備考", null, null, false, "備考", typeof(String), false, "varchar", 255, 0, false, OptimisticLockType.NONE, null, null, null);
@@ -60,8 +60,8 @@ namespace Dbflute.BsEntity.Dbm {
 
         protected void InitializeColumnInfoList() {
             _columnInfoList = new ArrayList<ColumnInfo>();
-            _columnInfoList.add(ColumnId);
-            _columnInfoList.add(Column名称);
+            _columnInfoList.add(Column客室タイプコード);
+            _columnInfoList.add(Column客室タイプ名称);
             _columnInfoList.add(Column料金);
             _columnInfoList.add(Column宿泊人数);
             _columnInfoList.add(Column備考);
@@ -71,7 +71,7 @@ namespace Dbflute.BsEntity.Dbm {
         //                                                                     Unique Info
         //                                                                     ===========
         public override UniqueInfo PrimaryUniqueInfo { get {
-            return cpui(ColumnId);
+            return cpui(Column客室タイプコード);
         }}
 
         // -------------------------------------------------
@@ -93,18 +93,13 @@ namespace Dbflute.BsEntity.Dbm {
         //                                  ----------------
         public ReferrerInfo ReferrerMst客室マスタList { get {
             Map<ColumnInfo, ColumnInfo> map = new LinkedHashMap<ColumnInfo, ColumnInfo>();
-            map.put(ColumnId, Mst客室マスタDbm.GetInstance().Column客室タイプid);
+            map.put(Column客室タイプコード, Mst客室マスタDbm.GetInstance().Column客室タイプコード);
             return cri("Mst客室マスタList", this, Mst客室マスタDbm.GetInstance(), map, false);
         }}
 
         // ===============================================================================
         //                                                                    Various Info
         //                                                                    ============
-        public override bool HasSequence { get { return true; } }
-        public override String SequenceName { get { return "mst005_id_seq"; } }
-        public override String SequenceNextValSql { get { return "select nextval ('mst005_id_seq')"; } }
-        public override int? SequenceIncrementSize { get { return 1; } }
-        public override int? SequenceCacheSize { get { return null; } }
         public override bool HasCommonColumn { get { return false; } }
 
         // ===============================================================================
@@ -121,8 +116,8 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                                    Column DB-Name
         //                                    --------------
-        public static readonly String DB_NAME_id = "id";
-        public static readonly String DB_NAME_名称 = "名称";
+        public static readonly String DB_NAME_客室タイプコード = "客室タイプコード";
+        public static readonly String DB_NAME_客室タイプ名称 = "客室タイプ名称";
         public static readonly String DB_NAME_料金 = "料金";
         public static readonly String DB_NAME_宿泊人数 = "宿泊人数";
         public static readonly String DB_NAME_備考 = "備考";
@@ -130,8 +125,8 @@ namespace Dbflute.BsEntity.Dbm {
         // -------------------------------------------------
         //                              Column Property-Name
         //                              --------------------
-        public static readonly String PROPERTY_NAME_id = "Id";
-        public static readonly String PROPERTY_NAME_名称 = "名称";
+        public static readonly String PROPERTY_NAME_客室タイプコード = "客室タイプコード";
+        public static readonly String PROPERTY_NAME_客室タイプ名称 = "客室タイプ名称";
         public static readonly String PROPERTY_NAME_料金 = "料金";
         public static readonly String PROPERTY_NAME_宿泊人数 = "宿泊人数";
         public static readonly String PROPERTY_NAME_備考 = "備考";
@@ -154,8 +149,8 @@ namespace Dbflute.BsEntity.Dbm {
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_DB_NAME.ToLower(), TABLE_PROPERTY_NAME);
-                map.put(DB_NAME_id.ToLower(), PROPERTY_NAME_id);
-                map.put(DB_NAME_名称.ToLower(), PROPERTY_NAME_名称);
+                map.put(DB_NAME_客室タイプコード.ToLower(), PROPERTY_NAME_客室タイプコード);
+                map.put(DB_NAME_客室タイプ名称.ToLower(), PROPERTY_NAME_客室タイプ名称);
                 map.put(DB_NAME_料金.ToLower(), PROPERTY_NAME_料金);
                 map.put(DB_NAME_宿泊人数.ToLower(), PROPERTY_NAME_宿泊人数);
                 map.put(DB_NAME_備考.ToLower(), PROPERTY_NAME_備考);
@@ -165,8 +160,8 @@ namespace Dbflute.BsEntity.Dbm {
             {
                 Map<String, String> map = new LinkedHashMap<String, String>();
                 map.put(TABLE_PROPERTY_NAME.ToLower(), TABLE_DB_NAME);
-                map.put(PROPERTY_NAME_id.ToLower(), DB_NAME_id);
-                map.put(PROPERTY_NAME_名称.ToLower(), DB_NAME_名称);
+                map.put(PROPERTY_NAME_客室タイプコード.ToLower(), DB_NAME_客室タイプコード);
+                map.put(PROPERTY_NAME_客室タイプ名称.ToLower(), DB_NAME_客室タイプ名称);
                 map.put(PROPERTY_NAME_料金.ToLower(), DB_NAME_料金);
                 map.put(PROPERTY_NAME_宿泊人数.ToLower(), DB_NAME_宿泊人数);
                 map.put(PROPERTY_NAME_備考.ToLower(), DB_NAME_備考);
@@ -211,8 +206,8 @@ namespace Dbflute.BsEntity.Dbm {
         protected Map<String, EntityPropertySetupper<Mst客室タイプマスタ>> _entityPropertySetupperMap = new LinkedHashMap<String, EntityPropertySetupper<Mst客室タイプマスタ>>();
 
         protected void InitializeEntityPropertySetupper() {
-            RegisterEntityPropertySetupper("id", "Id", new EntityPropertyIdSetupper(), _entityPropertySetupperMap);
-            RegisterEntityPropertySetupper("名称", "名称", new EntityProperty名称Setupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("客室タイプコード", "客室タイプコード", new EntityProperty客室タイプコードSetupper(), _entityPropertySetupperMap);
+            RegisterEntityPropertySetupper("客室タイプ名称", "客室タイプ名称", new EntityProperty客室タイプ名称Setupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("料金", "料金", new EntityProperty料金Setupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("宿泊人数", "宿泊人数", new EntityProperty宿泊人数Setupper(), _entityPropertySetupperMap);
             RegisterEntityPropertySetupper("備考", "備考", new EntityProperty備考Setupper(), _entityPropertySetupperMap);
@@ -227,11 +222,11 @@ namespace Dbflute.BsEntity.Dbm {
             callback.Setup((Mst客室タイプマスタ)entity, value);
         }
 
-        public class EntityPropertyIdSetupper : EntityPropertySetupper<Mst客室タイプマスタ> {
-            public void Setup(Mst客室タイプマスタ entity, Object value) { entity.Id = (value != null) ? (long?)value : null; }
+        public class EntityProperty客室タイプコードSetupper : EntityPropertySetupper<Mst客室タイプマスタ> {
+            public void Setup(Mst客室タイプマスタ entity, Object value) { entity.客室タイプコード = (value != null) ? (String)value : null; }
         }
-        public class EntityProperty名称Setupper : EntityPropertySetupper<Mst客室タイプマスタ> {
-            public void Setup(Mst客室タイプマスタ entity, Object value) { entity.名称 = (value != null) ? (String)value : null; }
+        public class EntityProperty客室タイプ名称Setupper : EntityPropertySetupper<Mst客室タイプマスタ> {
+            public void Setup(Mst客室タイプマスタ entity, Object value) { entity.客室タイプ名称 = (value != null) ? (String)value : null; }
         }
         public class EntityProperty料金Setupper : EntityPropertySetupper<Mst客室タイプマスタ> {
             public void Setup(Mst客室タイプマスタ entity, Object value) { entity.料金 = (value != null) ? (int?)value : null; }

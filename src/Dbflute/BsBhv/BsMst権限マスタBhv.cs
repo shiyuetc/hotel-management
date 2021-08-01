@@ -119,18 +119,18 @@ namespace Dbflute.ExBhv {
             return SelectEntityWithDeletedCheck(Downcast(cb));
         }
 
-        public virtual Mst権限マスタ SelectByPKValue(long? id) {
-            return SelectEntity(BuildPKCB(id));
+        public virtual Mst権限マスタ SelectByPKValue(String 職位コード, String 画面コード) {
+            return SelectEntity(BuildPKCB(職位コード, 画面コード));
         }
 
-        public virtual Mst権限マスタ SelectByPKValueWithDeletedCheck(long? id) {
-            return SelectEntityWithDeletedCheck(BuildPKCB(id));
+        public virtual Mst権限マスタ SelectByPKValueWithDeletedCheck(String 職位コード, String 画面コード) {
+            return SelectEntityWithDeletedCheck(BuildPKCB(職位コード, 画面コード));
         }
 
-        private Mst権限マスタCB BuildPKCB(long? id) {
-            AssertObjectNotNull("id", id);
+        private Mst権限マスタCB BuildPKCB(String 職位コード, String 画面コード) {
+            AssertObjectNotNull("職位コード", 職位コード);AssertObjectNotNull("画面コード", 画面コード);
             Mst権限マスタCB cb = NewMyConditionBean();
-            cb.Query().SetId_Equal(id);
+            cb.Query().Set職位コード_Equal(職位コード);cb.Query().Set画面コード_Equal(画面コード);
             return cb;            
         }
         #endregion
@@ -164,32 +164,16 @@ namespace Dbflute.ExBhv {
         }
         #endregion
 
-        // ===============================================================================
-        //                                                                        Sequence
-        //                                                                        ========
-        public long? SelectNextVal() {
-            return DelegateSelectNextVal();
-        }
-        protected override void SetupNextValueToPrimaryKey(Entity entity) {// Very Internal
-            Mst権限マスタ myEntity = (Mst権限マスタ)entity;
-            myEntity.Id = SelectNextVal();
-        }
-
-        // ===============================================================================
-        //                                                                   Load Referrer
-        //                                                                   =============
-        #region Load Referrer
-        #endregion
 
         // ===============================================================================
         //                                                                Pull out Foreign
         //                                                                ================
         #region Pullout Foreign
-        public IList<Mst制御画面マスタ> PulloutMst制御画面マスタ(IList<Mst権限マスタ> mst権限マスタList) {
-            return HelpPulloutInternally<Mst権限マスタ, Mst制御画面マスタ>(mst権限マスタList, new MyInternalPulloutMst制御画面マスタCallback());
+        public IList<Mst画面マスタ> PulloutMst画面マスタ(IList<Mst権限マスタ> mst権限マスタList) {
+            return HelpPulloutInternally<Mst権限マスタ, Mst画面マスタ>(mst権限マスタList, new MyInternalPulloutMst画面マスタCallback());
         }
-        protected class MyInternalPulloutMst制御画面マスタCallback : InternalPulloutCallback<Mst権限マスタ, Mst制御画面マスタ> {
-            public Mst制御画面マスタ getFr(Mst権限マスタ entity) { return entity.Mst制御画面マスタ; }
+        protected class MyInternalPulloutMst画面マスタCallback : InternalPulloutCallback<Mst権限マスタ, Mst画面マスタ> {
+            public Mst画面マスタ getFr(Mst権限マスタ entity) { return entity.Mst画面マスタ; }
         }
         public IList<Kbn職位区分> PulloutKbn職位区分(IList<Mst権限マスタ> mst権限マスタList) {
             return HelpPulloutInternally<Mst権限マスタ, Kbn職位区分>(mst権限マスタList, new MyInternalPulloutKbn職位区分Callback());
@@ -235,7 +219,8 @@ namespace Dbflute.ExBhv {
             public void CallbackUpdate(Mst権限マスタ entity) { _bhv.Update(entity); }
             public Mst権限マスタCB CallbackNewMyConditionBean() { return _bhv.NewMyConditionBean(); }
             public void CallbackSetupPrimaryKeyCondition(Mst権限マスタCB cb, Mst権限マスタ entity) {
-                cb.Query().SetId_Equal(entity.Id);
+                cb.Query().Set職位コード_Equal(entity.職位コード);
+                cb.Query().Set画面コード_Equal(entity.画面コード);
             }
             public int CallbackSelectCount(Mst権限マスタCB cb) { return _bhv.SelectCount(cb); }
         }
@@ -258,17 +243,6 @@ namespace Dbflute.ExBhv {
         // ===============================================================================
         //                                                                    Query Update
         //                                                                    ============
-        public int QueryUpdate(Mst権限マスタ mst権限マスタ, Mst権限マスタCB cb) {
-            AssertObjectNotNull("mst権限マスタ", mst権限マスタ); AssertConditionBeanNotNull(cb);
-            SetupCommonColumnOfUpdateIfNeeds(mst権限マスタ);
-            FilterEntityOfUpdate(mst権限マスタ); AssertEntityOfUpdate(mst権限マスタ);
-            return this.Dao.UpdateByQuery(cb, mst権限マスタ);
-        }
-
-        public int QueryDelete(Mst権限マスタCB cb) {
-            AssertConditionBeanNotNull(cb);
-            return this.Dao.DeleteByQuery(cb);
-        }
 
         // ===============================================================================
         //                                                            Optimistic Lock Info
@@ -287,7 +261,6 @@ namespace Dbflute.ExBhv {
         #region Delegate Method
         protected int DelegateSelectCount(Mst権限マスタCB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectCount(cb); }
         protected IList<Mst権限マスタ> DelegateSelectList(Mst権限マスタCB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectList(cb); }
-        protected long? DelegateSelectNextVal() { return this.Dao.SelectNextVal(); }
 
         protected int DelegateInsert(Mst権限マスタ e) { if (!ProcessBeforeInsert(e)) { return 1; } return this.Dao.Insert(e); }
         protected int DelegateUpdate(Mst権限マスタ e)

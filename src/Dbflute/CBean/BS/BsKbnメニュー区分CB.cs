@@ -29,19 +29,19 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                             PrimaryKey Handling
         //                                                             ===================
-        public void AcceptPrimaryKey(String code) {
-            assertObjectNotNull("code", code);
+        public void AcceptPrimaryKey(String メニューコード) {
+            assertObjectNotNull("メニューコード", メニューコード);
             BsKbnメニュー区分CB cb = this;
-            cb.Query().SetCode_Equal(code);
+            cb.Query().Setメニューコード_Equal(メニューコード);
         }
 
         public override ConditionBean AddOrderBy_PK_Asc() {
-            Query().AddOrderBy_Code_Asc();
+            Query().AddOrderBy_メニューコード_Asc();
             return this;
         }
 
         public override ConditionBean AddOrderBy_PK_Desc() {
-            Query().AddOrderBy_Code_Desc();
+            Query().AddOrderBy_メニューコード_Desc();
             return this;
         }
 
@@ -165,17 +165,17 @@ namespace Dbflute.CBean.BS {
         public Kbnメニュー区分CBSpecification(ConditionBean baseCB, HpSpQyCall<Kbnメニュー区分CQ> qyCall
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
-        public void ColumnCode() { doColumn("code"); }
-        public void Columnメニュー名() { doColumn("メニュー名"); }
+        public void Columnメニューコード() { doColumn("メニューコード"); }
+        public void Columnメニュー名称() { doColumn("メニュー名称"); }
         public void Column優先順位() { doColumn("優先順位"); }
         protected override void doSpecifyRequiredColumn() {
-            ColumnCode(); // PK
+            Columnメニューコード(); // PK
         }
         protected override String getTableDbName() { return "kbnメニュー区分"; }
-        public RAFunction<Mst制御画面マスタCB, Kbnメニュー区分CQ> DerivedMst制御画面マスタList() {
+        public RAFunction<Mst画面マスタCB, Kbnメニュー区分CQ> DerivedMst画面マスタList() {
             if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return new RAFunction<Mst制御画面マスタCB, Kbnメニュー区分CQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Mst制御画面マスタCB> subQuery, Kbnメニュー区分CQ cq, String aliasName)
-                { cq.xsderiveMst制御画面マスタList(function, subQuery, aliasName); });
+            return new RAFunction<Mst画面マスタCB, Kbnメニュー区分CQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Mst画面マスタCB> subQuery, Kbnメニュー区分CQ cq, String aliasName)
+                { cq.xsderiveMst画面マスタList(function, subQuery, aliasName); });
         }
     }
 }

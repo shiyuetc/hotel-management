@@ -18,14 +18,16 @@ namespace Dbflute.ExEntity {
     /// <summary>
     /// The entity of dch月締確定台帳 as TABLE. (partial class for auto-generation)
     /// <![CDATA[
+    /// 月締確定台帳
+    /// 
     /// [primary-key]
-    ///     id
+    ///     対象年月
     /// 
     /// [column]
-    ///     id, 対象年月
+    ///     対象年月
     /// 
     /// [sequence]
-    ///     dch002_id_seq
+    ///     
     /// 
     /// [identity]
     ///     
@@ -55,11 +57,8 @@ namespace Dbflute.ExEntity {
         //                                                                       Attribute
         //                                                                       =========
         #region Attribute
-        /// <summary>id: {PK, ID, NotNull, bigserial(19)}</summary>
-        protected long? _id;
-
-        /// <summary>対象年月: {UQ, NotNull, timestamp(26, 3)}</summary>
-        protected DateTime? _対象年月;
+        /// <summary>対象年月: {PK, NotNull, bpchar(6)}</summary>
+        protected String _対象年月;
 
         protected EntityModifiedProperties __modifiedProperties = new EntityModifiedProperties();
         #endregion
@@ -92,7 +91,7 @@ namespace Dbflute.ExEntity {
         //                                                                   =============
         public virtual bool HasPrimaryKeyValue {
             get {
-                if (_id == null) { return false; }
+                if (_対象年月 == null) { return false; }
                 return true;
             }
         }
@@ -115,7 +114,7 @@ namespace Dbflute.ExEntity {
         public override bool Equals(Object other) {
             if (other == null || !(other is Dch月締確定台帳)) { return false; }
             Dch月締確定台帳 otherEntity = (Dch月締確定台帳)other;
-            if (!xSV(this.Id, otherEntity.Id)) { return false; }
+            if (!xSV(this.対象年月, otherEntity.対象年月)) { return false; }
             return true;
         }
         protected bool xSV(Object value1, Object value2) { // isSameValue()
@@ -126,7 +125,7 @@ namespace Dbflute.ExEntity {
 
         public override int GetHashCode() {
             int result = 17;
-            result = xCH(result, _id);
+            result = xCH(result, _対象年月);
             return result;
         }
         protected int xCH(int result, Object value) { // calculateHashcode()
@@ -154,7 +153,6 @@ namespace Dbflute.ExEntity {
         protected virtual String BuildColumnString() {
             String c = ", ";
             StringBuilder sb = new StringBuilder();
-            sb.Append(c).Append(this.Id);
             sb.Append(c).Append(this.対象年月);
             if (sb.Length > 0) { sb.Remove(0, c.Length); }
             sb.Insert(0, "{").Append("}");
@@ -169,20 +167,12 @@ namespace Dbflute.ExEntity {
         //                                                                        Accessor
         //                                                                        ========
         #region Accessor
-        /// <summary>id: {PK, ID, NotNull, bigserial(19)}</summary>
-        [Seasar.Dao.Attrs.ID("identity")]
-        [Seasar.Dao.Attrs.Column("id")]
-        public long? Id {
-            get { return _id; }
-            set {
-                __modifiedProperties.AddPropertyName("Id");
-                _id = value;
-            }
-        }
-
-        /// <summary>対象年月: {UQ, NotNull, timestamp(26, 3)}</summary>
+        /// <summary>対象年月: {PK, NotNull, bpchar(6)}</summary>
+        /// <remarks>
+        /// 対象年月
+        /// </remarks>
         [Seasar.Dao.Attrs.Column("対象年月")]
-        public DateTime? 対象年月 {
+        public String 対象年月 {
             get { return _対象年月; }
             set {
                 __modifiedProperties.AddPropertyName("対象年月");

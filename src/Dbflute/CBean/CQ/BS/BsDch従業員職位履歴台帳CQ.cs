@@ -44,31 +44,57 @@ namespace Dbflute.CBean.CQ.BS {
         public BsDch従業員職位履歴台帳CQ AddOrderBy_Id_Asc() { regOBA("id");return this; }
         public BsDch従業員職位履歴台帳CQ AddOrderBy_Id_Desc() { regOBD("id");return this; }
 
-        protected ConditionValue _従業員id;
-        public ConditionValue 従業員id {
-            get { if (_従業員id == null) { _従業員id = new ConditionValue(); } return _従業員id; }
+        protected ConditionValue _従業員コード;
+        public ConditionValue 従業員コード {
+            get { if (_従業員コード == null) { _従業員コード = new ConditionValue(); } return _従業員コード; }
         }
-        protected override ConditionValue getCValue従業員id() { return this.従業員id; }
+        protected override ConditionValue getCValue従業員コード() { return this.従業員コード; }
 
 
-        protected Map<String, Mst従業員マスタCQ> _従業員id_InScopeSubQuery_Mst従業員マスタMap;
-        public Map<String, Mst従業員マスタCQ> 従業員id_InScopeSubQuery_Mst従業員マスタ { get { return _従業員id_InScopeSubQuery_Mst従業員マスタMap; }}
-        public override String keep従業員id_InScopeSubQuery_Mst従業員マスタ(Mst従業員マスタCQ subQuery) {
-            if (_従業員id_InScopeSubQuery_Mst従業員マスタMap == null) { _従業員id_InScopeSubQuery_Mst従業員マスタMap = new LinkedHashMap<String, Mst従業員マスタCQ>(); }
-            String key = "subQueryMapKey" + (_従業員id_InScopeSubQuery_Mst従業員マスタMap.size() + 1);
-            _従業員id_InScopeSubQuery_Mst従業員マスタMap.put(key, subQuery); return "従業員id_InScopeSubQuery_Mst従業員マスタ." + key;
-        }
-
-        protected Map<String, Mst従業員マスタCQ> _従業員id_NotInScopeSubQuery_Mst従業員マスタMap;
-        public Map<String, Mst従業員マスタCQ> 従業員id_NotInScopeSubQuery_Mst従業員マスタ { get { return _従業員id_NotInScopeSubQuery_Mst従業員マスタMap; }}
-        public override String keep従業員id_NotInScopeSubQuery_Mst従業員マスタ(Mst従業員マスタCQ subQuery) {
-            if (_従業員id_NotInScopeSubQuery_Mst従業員マスタMap == null) { _従業員id_NotInScopeSubQuery_Mst従業員マスタMap = new LinkedHashMap<String, Mst従業員マスタCQ>(); }
-            String key = "subQueryMapKey" + (_従業員id_NotInScopeSubQuery_Mst従業員マスタMap.size() + 1);
-            _従業員id_NotInScopeSubQuery_Mst従業員マスタMap.put(key, subQuery); return "従業員id_NotInScopeSubQuery_Mst従業員マスタ." + key;
+        protected Map<String, Mst従業員マスタCQ> _従業員コード_InScopeSubQuery_Mst従業員マスタMap;
+        public Map<String, Mst従業員マスタCQ> 従業員コード_InScopeSubQuery_Mst従業員マスタ { get { return _従業員コード_InScopeSubQuery_Mst従業員マスタMap; }}
+        public override String keep従業員コード_InScopeSubQuery_Mst従業員マスタ(Mst従業員マスタCQ subQuery) {
+            if (_従業員コード_InScopeSubQuery_Mst従業員マスタMap == null) { _従業員コード_InScopeSubQuery_Mst従業員マスタMap = new LinkedHashMap<String, Mst従業員マスタCQ>(); }
+            String key = "subQueryMapKey" + (_従業員コード_InScopeSubQuery_Mst従業員マスタMap.size() + 1);
+            _従業員コード_InScopeSubQuery_Mst従業員マスタMap.put(key, subQuery); return "従業員コード_InScopeSubQuery_Mst従業員マスタ." + key;
         }
 
-        public BsDch従業員職位履歴台帳CQ AddOrderBy_従業員id_Asc() { regOBA("従業員id");return this; }
-        public BsDch従業員職位履歴台帳CQ AddOrderBy_従業員id_Desc() { regOBD("従業員id");return this; }
+        protected Map<String, Mst従業員マスタCQ> _従業員コード_NotInScopeSubQuery_Mst従業員マスタMap;
+        public Map<String, Mst従業員マスタCQ> 従業員コード_NotInScopeSubQuery_Mst従業員マスタ { get { return _従業員コード_NotInScopeSubQuery_Mst従業員マスタMap; }}
+        public override String keep従業員コード_NotInScopeSubQuery_Mst従業員マスタ(Mst従業員マスタCQ subQuery) {
+            if (_従業員コード_NotInScopeSubQuery_Mst従業員マスタMap == null) { _従業員コード_NotInScopeSubQuery_Mst従業員マスタMap = new LinkedHashMap<String, Mst従業員マスタCQ>(); }
+            String key = "subQueryMapKey" + (_従業員コード_NotInScopeSubQuery_Mst従業員マスタMap.size() + 1);
+            _従業員コード_NotInScopeSubQuery_Mst従業員マスタMap.put(key, subQuery); return "従業員コード_NotInScopeSubQuery_Mst従業員マスタ." + key;
+        }
+
+        public BsDch従業員職位履歴台帳CQ AddOrderBy_従業員コード_Asc() { regOBA("従業員コード");return this; }
+        public BsDch従業員職位履歴台帳CQ AddOrderBy_従業員コード_Desc() { regOBD("従業員コード");return this; }
+
+        protected ConditionValue _職位コード;
+        public ConditionValue 職位コード {
+            get { if (_職位コード == null) { _職位コード = new ConditionValue(); } return _職位コード; }
+        }
+        protected override ConditionValue getCValue職位コード() { return this.職位コード; }
+
+
+        protected Map<String, Kbn職位区分CQ> _職位コード_InScopeSubQuery_Kbn職位区分Map;
+        public Map<String, Kbn職位区分CQ> 職位コード_InScopeSubQuery_Kbn職位区分 { get { return _職位コード_InScopeSubQuery_Kbn職位区分Map; }}
+        public override String keep職位コード_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
+            if (_職位コード_InScopeSubQuery_Kbn職位区分Map == null) { _職位コード_InScopeSubQuery_Kbn職位区分Map = new LinkedHashMap<String, Kbn職位区分CQ>(); }
+            String key = "subQueryMapKey" + (_職位コード_InScopeSubQuery_Kbn職位区分Map.size() + 1);
+            _職位コード_InScopeSubQuery_Kbn職位区分Map.put(key, subQuery); return "職位コード_InScopeSubQuery_Kbn職位区分." + key;
+        }
+
+        protected Map<String, Kbn職位区分CQ> _職位コード_NotInScopeSubQuery_Kbn職位区分Map;
+        public Map<String, Kbn職位区分CQ> 職位コード_NotInScopeSubQuery_Kbn職位区分 { get { return _職位コード_NotInScopeSubQuery_Kbn職位区分Map; }}
+        public override String keep職位コード_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
+            if (_職位コード_NotInScopeSubQuery_Kbn職位区分Map == null) { _職位コード_NotInScopeSubQuery_Kbn職位区分Map = new LinkedHashMap<String, Kbn職位区分CQ>(); }
+            String key = "subQueryMapKey" + (_職位コード_NotInScopeSubQuery_Kbn職位区分Map.size() + 1);
+            _職位コード_NotInScopeSubQuery_Kbn職位区分Map.put(key, subQuery); return "職位コード_NotInScopeSubQuery_Kbn職位区分." + key;
+        }
+
+        public BsDch従業員職位履歴台帳CQ AddOrderBy_職位コード_Asc() { regOBA("職位コード");return this; }
+        public BsDch従業員職位履歴台帳CQ AddOrderBy_職位コード_Desc() { regOBD("職位コード");return this; }
 
         protected ConditionValue _適用開始日;
         public ConditionValue 適用開始日 {
@@ -89,32 +115,6 @@ namespace Dbflute.CBean.CQ.BS {
 
         public BsDch従業員職位履歴台帳CQ AddOrderBy_適用終了日_Asc() { regOBA("適用終了日");return this; }
         public BsDch従業員職位履歴台帳CQ AddOrderBy_適用終了日_Desc() { regOBD("適用終了日");return this; }
-
-        protected ConditionValue _職位code;
-        public ConditionValue 職位code {
-            get { if (_職位code == null) { _職位code = new ConditionValue(); } return _職位code; }
-        }
-        protected override ConditionValue getCValue職位code() { return this.職位code; }
-
-
-        protected Map<String, Kbn職位区分CQ> _職位code_InScopeSubQuery_Kbn職位区分Map;
-        public Map<String, Kbn職位区分CQ> 職位code_InScopeSubQuery_Kbn職位区分 { get { return _職位code_InScopeSubQuery_Kbn職位区分Map; }}
-        public override String keep職位code_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
-            if (_職位code_InScopeSubQuery_Kbn職位区分Map == null) { _職位code_InScopeSubQuery_Kbn職位区分Map = new LinkedHashMap<String, Kbn職位区分CQ>(); }
-            String key = "subQueryMapKey" + (_職位code_InScopeSubQuery_Kbn職位区分Map.size() + 1);
-            _職位code_InScopeSubQuery_Kbn職位区分Map.put(key, subQuery); return "職位code_InScopeSubQuery_Kbn職位区分." + key;
-        }
-
-        protected Map<String, Kbn職位区分CQ> _職位code_NotInScopeSubQuery_Kbn職位区分Map;
-        public Map<String, Kbn職位区分CQ> 職位code_NotInScopeSubQuery_Kbn職位区分 { get { return _職位code_NotInScopeSubQuery_Kbn職位区分Map; }}
-        public override String keep職位code_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
-            if (_職位code_NotInScopeSubQuery_Kbn職位区分Map == null) { _職位code_NotInScopeSubQuery_Kbn職位区分Map = new LinkedHashMap<String, Kbn職位区分CQ>(); }
-            String key = "subQueryMapKey" + (_職位code_NotInScopeSubQuery_Kbn職位区分Map.size() + 1);
-            _職位code_NotInScopeSubQuery_Kbn職位区分Map.put(key, subQuery); return "職位code_NotInScopeSubQuery_Kbn職位区分." + key;
-        }
-
-        public BsDch従業員職位履歴台帳CQ AddOrderBy_職位code_Asc() { regOBA("職位code");return this; }
-        public BsDch従業員職位履歴台帳CQ AddOrderBy_職位code_Desc() { regOBD("職位code");return this; }
 
         public BsDch従業員職位履歴台帳CQ AddSpecifiedDerivedOrderBy_Asc(String aliasName) { registerSpecifiedDerivedOrderBy_Asc(aliasName); return this; }
         public BsDch従業員職位履歴台帳CQ AddSpecifiedDerivedOrderBy_Desc(String aliasName) { registerSpecifiedDerivedOrderBy_Desc(aliasName); return this; }
@@ -153,7 +153,7 @@ namespace Dbflute.CBean.CQ.BS {
         public void xsetupOuterJoin_Mst従業員マスタ() {
             Mst従業員マスタCQ cq = ConditionQueryMst従業員マスタ;
             Map<String, String> joinOnMap = new LinkedHashMap<String, String>();
-            joinOnMap.put("従業員id", "id");
+            joinOnMap.put("従業員コード", "従業員コード");
             registerOuterJoin(cq, joinOnMap);
         }
         protected String resolveNextRelationPathMst従業員マスタ() {
@@ -184,7 +184,7 @@ namespace Dbflute.CBean.CQ.BS {
         public void xsetupOuterJoin_Kbn職位区分() {
             Kbn職位区分CQ cq = ConditionQueryKbn職位区分;
             Map<String, String> joinOnMap = new LinkedHashMap<String, String>();
-            joinOnMap.put("職位code", "code");
+            joinOnMap.put("職位コード", "職位コード");
             registerOuterJoin(cq, joinOnMap);
         }
         protected String resolveNextRelationPathKbn職位区分() {

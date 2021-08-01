@@ -48,18 +48,18 @@ namespace HotelManagement.Controls.CustomControls
         /// <summary>
         /// メニューを設定します。
         /// </summary>
-        /// <param name="制御画面マスタ">制御画面マスタ</param>
-        public void SetMenu(Mst制御画面マスタ 制御画面マスタ)
+        /// <param name="画面マスタ">画面マスタ</param>
+        public void SetMenu(Mst画面マスタ 画面マスタ)
         {
-            var 制御画面マスタList = new List<Mst制御画面マスタ>() { 制御画面マスタ };
-            this.SetMenu(制御画面マスタList);
+            var 画面マスタList = new List<Mst画面マスタ>() { 画面マスタ };
+            this.SetMenu(画面マスタList);
         }
 
         /// <summary>
         /// メニューを設定します。
         /// </summary>
-        /// <param name="制御画面マスタList">制御画面マスタのリスト</param>
-        public void SetMenu(List<Mst制御画面マスタ> 制御画面マスタList)
+        /// <param name="画面マスタList">画面マスタのリスト</param>
+        public void SetMenu(List<Mst画面マスタ> 画面マスタList)
         {
             // メニューをクリア
             this.Controls.Clear();
@@ -67,9 +67,9 @@ namespace HotelManagement.Controls.CustomControls
             // メニューを作成
             int cnt = 0;
             var menuButtonList = new List<MenuButton>();
-            foreach (var メニュー区分 in 制御画面マスタList.Select(x => x.Kbnメニュー区分).Distinct().OrderBy(x => x.優先順位))
+            foreach (var メニュー区分 in 画面マスタList.Select(x => x.Kbnメニュー区分).Distinct().OrderBy(x => x.優先順位))
             {
-                var menuButton = new MenuButton(メニュー区分, 制御画面マスタList.Where(x => x.Kbnメニュー区分.Code == メニュー区分.Code).ToList());
+                var menuButton = new MenuButton(メニュー区分, 画面マスタList.Where(x => x.Kbnメニュー区分.メニューコード == メニュー区分.メニューコード).ToList());
                 menuButton.Location = new Point(2 + (menuButton.Width * cnt), 2);
                 menuButton.Size = new Size(74, this.Height - 4);
                 menuButton.Click += this.MenuButton_Click;
@@ -103,8 +103,8 @@ namespace HotelManagement.Controls.CustomControls
             }
 
             // アクティブ・非アクティブを設定
-            menuButtonList.Where(x => x.メニュー区分.Code != メニュー区分.Code).ForEach(x => x.Activate = false);
-            menuButtonList.Where(x => x.メニュー区分.Code == メニュー区分.Code).ForEach(x => x.Activate = true);
+            menuButtonList.Where(x => x.メニュー区分.メニューコード != メニュー区分.メニューコード).ForEach(x => x.Activate = false);
+            menuButtonList.Where(x => x.メニュー区分.メニューコード == メニュー区分.メニューコード).ForEach(x => x.Activate = true);
         }
     }
 }

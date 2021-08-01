@@ -20,173 +20,173 @@ namespace Dbflute.CBean.CQ.BS {
         public override String getTableDbName() { return "kbn職位区分"; }
         public override String getTableSqlName() { return "kbn職位区分"; }
 
-        public void SetCode_Equal(String v) { DoSetCode_Equal(fRES(v)); }
+        public void Set職位コード_Equal(String v) { DoSet職位コード_Equal(fRES(v)); }
         /// <summary>
-        /// Set the value of システム保守 of code as equal. { = }
+        /// Set the value of システム保守 of 職位コード as equal. { = }
         /// システム保守: System Maintenancer
         /// </summary>
-        public void SetCode_Equal_システム保守() {
-            DoSetCode_Equal(CDef.職位区分.システム保守.Code);
+        public void Set職位コード_Equal_システム保守() {
+            DoSet職位コード_Equal(CDef.職位区分.システム保守.Code);
         }
         /// <summary>
-        /// Set the value of アシスタントマネージャー of code as equal. { = }
+        /// Set the value of アシスタントマネージャー of 職位コード as equal. { = }
         /// アシスタントマネージャー: Assistant Manager
         /// </summary>
-        public void SetCode_Equal_アシスタントマネージャー() {
-            DoSetCode_Equal(CDef.職位区分.アシスタントマネージャー.Code);
+        public void Set職位コード_Equal_アシスタントマネージャー() {
+            DoSet職位コード_Equal(CDef.職位区分.アシスタントマネージャー.Code);
         }
         /// <summary>
-        /// Set the value of ファイナンシャルコントローラー of code as equal. { = }
+        /// Set the value of ファイナンシャルコントローラー of 職位コード as equal. { = }
         /// ファイナンシャルコントローラー: Financial Controller
         /// </summary>
-        public void SetCode_Equal_ファイナンシャルコントローラー() {
-            DoSetCode_Equal(CDef.職位区分.ファイナンシャルコントローラー.Code);
+        public void Set職位コード_Equal_ファイナンシャルコントローラー() {
+            DoSet職位コード_Equal(CDef.職位区分.ファイナンシャルコントローラー.Code);
         }
         /// <summary>
-        /// Set the value of フロントクラーク of code as equal. { = }
+        /// Set the value of フロントクラーク of 職位コード as equal. { = }
         /// フロントクラーク: Front Clerk
         /// </summary>
-        public void SetCode_Equal_フロントクラーク() {
-            DoSetCode_Equal(CDef.職位区分.フロントクラーク.Code);
+        public void Set職位コード_Equal_フロントクラーク() {
+            DoSet職位コード_Equal(CDef.職位区分.フロントクラーク.Code);
         }
-        protected void DoSetCode_Equal(String v) { regCode(CK_EQ, v); }
-        public void SetCode_NotEqual(String v) { DoSetCode_NotEqual(fRES(v)); }
+        protected void DoSet職位コード_Equal(String v) { reg職位コード(CK_EQ, v); }
+        public void Set職位コード_NotEqual(String v) { DoSet職位コード_NotEqual(fRES(v)); }
         /// <summary>
-        /// Set the value of システム保守 of code as notEqual. { &lt;&gt; }
+        /// Set the value of システム保守 of 職位コード as notEqual. { &lt;&gt; }
         /// システム保守: System Maintenancer
         /// </summary>
-        public void SetCode_NotEqual_システム保守() {
-            DoSetCode_NotEqual(CDef.職位区分.システム保守.Code);
+        public void Set職位コード_NotEqual_システム保守() {
+            DoSet職位コード_NotEqual(CDef.職位区分.システム保守.Code);
         }
         /// <summary>
-        /// Set the value of アシスタントマネージャー of code as notEqual. { &lt;&gt; }
+        /// Set the value of アシスタントマネージャー of 職位コード as notEqual. { &lt;&gt; }
         /// アシスタントマネージャー: Assistant Manager
         /// </summary>
-        public void SetCode_NotEqual_アシスタントマネージャー() {
-            DoSetCode_NotEqual(CDef.職位区分.アシスタントマネージャー.Code);
+        public void Set職位コード_NotEqual_アシスタントマネージャー() {
+            DoSet職位コード_NotEqual(CDef.職位区分.アシスタントマネージャー.Code);
         }
         /// <summary>
-        /// Set the value of ファイナンシャルコントローラー of code as notEqual. { &lt;&gt; }
+        /// Set the value of ファイナンシャルコントローラー of 職位コード as notEqual. { &lt;&gt; }
         /// ファイナンシャルコントローラー: Financial Controller
         /// </summary>
-        public void SetCode_NotEqual_ファイナンシャルコントローラー() {
-            DoSetCode_NotEqual(CDef.職位区分.ファイナンシャルコントローラー.Code);
+        public void Set職位コード_NotEqual_ファイナンシャルコントローラー() {
+            DoSet職位コード_NotEqual(CDef.職位区分.ファイナンシャルコントローラー.Code);
         }
         /// <summary>
-        /// Set the value of フロントクラーク of code as notEqual. { &lt;&gt; }
+        /// Set the value of フロントクラーク of 職位コード as notEqual. { &lt;&gt; }
         /// フロントクラーク: Front Clerk
         /// </summary>
-        public void SetCode_NotEqual_フロントクラーク() {
-            DoSetCode_NotEqual(CDef.職位区分.フロントクラーク.Code);
+        public void Set職位コード_NotEqual_フロントクラーク() {
+            DoSet職位コード_NotEqual(CDef.職位区分.フロントクラーク.Code);
         }
-        protected void DoSetCode_NotEqual(String v) { regCode(CK_NES, v); }
-        public void SetCode_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValueCode(), "code"); }
-        public void SetCode_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValueCode(), "code"); }
+        protected void DoSet職位コード_NotEqual(String v) { reg職位コード(CK_NES, v); }
+        public void Set職位コード_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue職位コード(), "職位コード"); }
+        public void Set職位コード_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue職位コード(), "職位コード"); }
         public void ExistsDch従業員職位履歴台帳List(SubQuery<Dch従業員職位履歴台帳CB> subQuery) {
             assertObjectNotNull("subQuery<Dch従業員職位履歴台帳CB>", subQuery);
             Dch従業員職位履歴台帳CB cb = new Dch従業員職位履歴台帳CB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_ExistsSubQuery_Dch従業員職位履歴台帳List(cb.Query());
-            registerExistsSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
+            String subQueryPropertyName = keep職位コード_ExistsSubQuery_Dch従業員職位履歴台帳List(cb.Query());
+            registerExistsSubQuery(cb.Query(), "職位コード", "職位コード", subQueryPropertyName);
         }
-        public abstract String keepCode_ExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
+        public abstract String keep職位コード_ExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
         public void ExistsMst従業員マスタList(SubQuery<Mst従業員マスタCB> subQuery) {
             assertObjectNotNull("subQuery<Mst従業員マスタCB>", subQuery);
             Mst従業員マスタCB cb = new Mst従業員マスタCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_ExistsSubQuery_Mst従業員マスタList(cb.Query());
-            registerExistsSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
+            String subQueryPropertyName = keep職位コード_ExistsSubQuery_Mst従業員マスタList(cb.Query());
+            registerExistsSubQuery(cb.Query(), "職位コード", "職位コード", subQueryPropertyName);
         }
-        public abstract String keepCode_ExistsSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
+        public abstract String keep職位コード_ExistsSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
         public void ExistsMst権限マスタList(SubQuery<Mst権限マスタCB> subQuery) {
             assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
             Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_ExistsSubQuery_Mst権限マスタList(cb.Query());
-            registerExistsSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
+            String subQueryPropertyName = keep職位コード_ExistsSubQuery_Mst権限マスタList(cb.Query());
+            registerExistsSubQuery(cb.Query(), "職位コード", "職位コード", subQueryPropertyName);
         }
-        public abstract String keepCode_ExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery);
+        public abstract String keep職位コード_ExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery);
         public void NotExistsDch従業員職位履歴台帳List(SubQuery<Dch従業員職位履歴台帳CB> subQuery) {
             assertObjectNotNull("subQuery<Dch従業員職位履歴台帳CB>", subQuery);
             Dch従業員職位履歴台帳CB cb = new Dch従業員職位履歴台帳CB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_NotExistsSubQuery_Dch従業員職位履歴台帳List(cb.Query());
-            registerNotExistsSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
+            String subQueryPropertyName = keep職位コード_NotExistsSubQuery_Dch従業員職位履歴台帳List(cb.Query());
+            registerNotExistsSubQuery(cb.Query(), "職位コード", "職位コード", subQueryPropertyName);
         }
-        public abstract String keepCode_NotExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
+        public abstract String keep職位コード_NotExistsSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
         public void NotExistsMst従業員マスタList(SubQuery<Mst従業員マスタCB> subQuery) {
             assertObjectNotNull("subQuery<Mst従業員マスタCB>", subQuery);
             Mst従業員マスタCB cb = new Mst従業員マスタCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_NotExistsSubQuery_Mst従業員マスタList(cb.Query());
-            registerNotExistsSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
+            String subQueryPropertyName = keep職位コード_NotExistsSubQuery_Mst従業員マスタList(cb.Query());
+            registerNotExistsSubQuery(cb.Query(), "職位コード", "職位コード", subQueryPropertyName);
         }
-        public abstract String keepCode_NotExistsSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
+        public abstract String keep職位コード_NotExistsSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
         public void NotExistsMst権限マスタList(SubQuery<Mst権限マスタCB> subQuery) {
             assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
             Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForExistsReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_NotExistsSubQuery_Mst権限マスタList(cb.Query());
-            registerNotExistsSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
+            String subQueryPropertyName = keep職位コード_NotExistsSubQuery_Mst権限マスタList(cb.Query());
+            registerNotExistsSubQuery(cb.Query(), "職位コード", "職位コード", subQueryPropertyName);
         }
-        public abstract String keepCode_NotExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery);
+        public abstract String keep職位コード_NotExistsSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery);
         public void InScopeDch従業員職位履歴台帳List(SubQuery<Dch従業員職位履歴台帳CB> subQuery) {
             assertObjectNotNull("subQuery<Dch従業員職位履歴台帳CB>", subQuery);
             Dch従業員職位履歴台帳CB cb = new Dch従業員職位履歴台帳CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_InScopeSubQuery_Dch従業員職位履歴台帳List(cb.Query());
-            registerInScopeSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
+            String subQueryPropertyName = keep職位コード_InScopeSubQuery_Dch従業員職位履歴台帳List(cb.Query());
+            registerInScopeSubQuery(cb.Query(), "職位コード", "職位コード", subQueryPropertyName);
         }
-        public abstract String keepCode_InScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
+        public abstract String keep職位コード_InScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
         public void InScopeMst従業員マスタList(SubQuery<Mst従業員マスタCB> subQuery) {
             assertObjectNotNull("subQuery<Mst従業員マスタCB>", subQuery);
             Mst従業員マスタCB cb = new Mst従業員マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_InScopeSubQuery_Mst従業員マスタList(cb.Query());
-            registerInScopeSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
+            String subQueryPropertyName = keep職位コード_InScopeSubQuery_Mst従業員マスタList(cb.Query());
+            registerInScopeSubQuery(cb.Query(), "職位コード", "職位コード", subQueryPropertyName);
         }
-        public abstract String keepCode_InScopeSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
+        public abstract String keep職位コード_InScopeSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
         public void InScopeMst権限マスタList(SubQuery<Mst権限マスタCB> subQuery) {
             assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
             Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_InScopeSubQuery_Mst権限マスタList(cb.Query());
-            registerInScopeSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
+            String subQueryPropertyName = keep職位コード_InScopeSubQuery_Mst権限マスタList(cb.Query());
+            registerInScopeSubQuery(cb.Query(), "職位コード", "職位コード", subQueryPropertyName);
         }
-        public abstract String keepCode_InScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery);
+        public abstract String keep職位コード_InScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery);
         public void NotInScopeDch従業員職位履歴台帳List(SubQuery<Dch従業員職位履歴台帳CB> subQuery) {
             assertObjectNotNull("subQuery<Dch従業員職位履歴台帳CB>", subQuery);
             Dch従業員職位履歴台帳CB cb = new Dch従業員職位履歴台帳CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_NotInScopeSubQuery_Dch従業員職位履歴台帳List(cb.Query());
-            registerNotInScopeSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
+            String subQueryPropertyName = keep職位コード_NotInScopeSubQuery_Dch従業員職位履歴台帳List(cb.Query());
+            registerNotInScopeSubQuery(cb.Query(), "職位コード", "職位コード", subQueryPropertyName);
         }
-        public abstract String keepCode_NotInScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
+        public abstract String keep職位コード_NotInScopeSubQuery_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
         public void NotInScopeMst従業員マスタList(SubQuery<Mst従業員マスタCB> subQuery) {
             assertObjectNotNull("subQuery<Mst従業員マスタCB>", subQuery);
             Mst従業員マスタCB cb = new Mst従業員マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_NotInScopeSubQuery_Mst従業員マスタList(cb.Query());
-            registerNotInScopeSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
+            String subQueryPropertyName = keep職位コード_NotInScopeSubQuery_Mst従業員マスタList(cb.Query());
+            registerNotInScopeSubQuery(cb.Query(), "職位コード", "職位コード", subQueryPropertyName);
         }
-        public abstract String keepCode_NotInScopeSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
+        public abstract String keep職位コード_NotInScopeSubQuery_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
         public void NotInScopeMst権限マスタList(SubQuery<Mst権限マスタCB> subQuery) {
             assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
             Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_NotInScopeSubQuery_Mst権限マスタList(cb.Query());
-            registerNotInScopeSubQuery(cb.Query(), "code", "職位code", subQueryPropertyName);
+            String subQueryPropertyName = keep職位コード_NotInScopeSubQuery_Mst権限マスタList(cb.Query());
+            registerNotInScopeSubQuery(cb.Query(), "職位コード", "職位コード", subQueryPropertyName);
         }
-        public abstract String keepCode_NotInScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery);
+        public abstract String keep職位コード_NotInScopeSubQuery_Mst権限マスタList(Mst権限マスタCQ subQuery);
         public void xsderiveDch従業員職位履歴台帳List(String function, SubQuery<Dch従業員職位履歴台帳CB> subQuery, String aliasName) {
             assertObjectNotNull("subQuery<Dch従業員職位履歴台帳CB>", subQuery);
             Dch従業員職位履歴台帳CB cb = new Dch従業員職位履歴台帳CB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List(cb.Query());
-            registerSpecifyDerivedReferrer(function, cb.Query(), "code", "職位code", subQueryPropertyName, aliasName);
+            String subQueryPropertyName = keep職位コード_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List(cb.Query());
+            registerSpecifyDerivedReferrer(function, cb.Query(), "職位コード", "職位コード", subQueryPropertyName, aliasName);
         }
-        abstract public String keepCode_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
+        abstract public String keep職位コード_SpecifyDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
         public void xsderiveMst従業員マスタList(String function, SubQuery<Mst従業員マスタCB> subQuery, String aliasName) {
             assertObjectNotNull("subQuery<Mst従業員マスタCB>", subQuery);
             Mst従業員マスタCB cb = new Mst従業員マスタCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_SpecifyDerivedReferrer_Mst従業員マスタList(cb.Query());
-            registerSpecifyDerivedReferrer(function, cb.Query(), "code", "職位code", subQueryPropertyName, aliasName);
+            String subQueryPropertyName = keep職位コード_SpecifyDerivedReferrer_Mst従業員マスタList(cb.Query());
+            registerSpecifyDerivedReferrer(function, cb.Query(), "職位コード", "職位コード", subQueryPropertyName, aliasName);
         }
-        abstract public String keepCode_SpecifyDerivedReferrer_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
+        abstract public String keep職位コード_SpecifyDerivedReferrer_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
         public void xsderiveMst権限マスタList(String function, SubQuery<Mst権限マスタCB> subQuery, String aliasName) {
             assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
             Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_SpecifyDerivedReferrer_Mst権限マスタList(cb.Query());
-            registerSpecifyDerivedReferrer(function, cb.Query(), "code", "職位code", subQueryPropertyName, aliasName);
+            String subQueryPropertyName = keep職位コード_SpecifyDerivedReferrer_Mst権限マスタList(cb.Query());
+            registerSpecifyDerivedReferrer(function, cb.Query(), "職位コード", "職位コード", subQueryPropertyName, aliasName);
         }
-        abstract public String keepCode_SpecifyDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery);
+        abstract public String keep職位コード_SpecifyDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery);
 
         public QDRFunction<Dch従業員職位履歴台帳CB> DerivedDch従業員職位履歴台帳List() {
             return xcreateQDRFunctionDch従業員職位履歴台帳List();
@@ -199,12 +199,12 @@ namespace Dbflute.CBean.CQ.BS {
         public void xqderiveDch従業員職位履歴台帳List(String function, SubQuery<Dch従業員職位履歴台帳CB> subQuery, String operand, Object value) {
             assertObjectNotNull("subQuery<Dch従業員職位履歴台帳CB>", subQuery);
             Dch従業員職位履歴台帳CB cb = new Dch従業員職位履歴台帳CB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_QueryDerivedReferrer_Dch従業員職位履歴台帳List(cb.Query()); // for saving query-value.
-            String parameterPropertyName = keepCode_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter(value);
-            registerQueryDerivedReferrer(function, cb.Query(), "code", "職位code", subQueryPropertyName, operand, value, parameterPropertyName);
+            String subQueryPropertyName = keep職位コード_QueryDerivedReferrer_Dch従業員職位履歴台帳List(cb.Query()); // for saving query-value.
+            String parameterPropertyName = keep職位コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter(value);
+            registerQueryDerivedReferrer(function, cb.Query(), "職位コード", "職位コード", subQueryPropertyName, operand, value, parameterPropertyName);
         }
-        public abstract String keepCode_QueryDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
-        public abstract String keepCode_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter(Object parameterValue);
+        public abstract String keep職位コード_QueryDerivedReferrer_Dch従業員職位履歴台帳List(Dch従業員職位履歴台帳CQ subQuery);
+        public abstract String keep職位コード_QueryDerivedReferrer_Dch従業員職位履歴台帳ListParameter(Object parameterValue);
 
         public QDRFunction<Mst従業員マスタCB> DerivedMst従業員マスタList() {
             return xcreateQDRFunctionMst従業員マスタList();
@@ -217,12 +217,12 @@ namespace Dbflute.CBean.CQ.BS {
         public void xqderiveMst従業員マスタList(String function, SubQuery<Mst従業員マスタCB> subQuery, String operand, Object value) {
             assertObjectNotNull("subQuery<Mst従業員マスタCB>", subQuery);
             Mst従業員マスタCB cb = new Mst従業員マスタCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_QueryDerivedReferrer_Mst従業員マスタList(cb.Query()); // for saving query-value.
-            String parameterPropertyName = keepCode_QueryDerivedReferrer_Mst従業員マスタListParameter(value);
-            registerQueryDerivedReferrer(function, cb.Query(), "code", "職位code", subQueryPropertyName, operand, value, parameterPropertyName);
+            String subQueryPropertyName = keep職位コード_QueryDerivedReferrer_Mst従業員マスタList(cb.Query()); // for saving query-value.
+            String parameterPropertyName = keep職位コード_QueryDerivedReferrer_Mst従業員マスタListParameter(value);
+            registerQueryDerivedReferrer(function, cb.Query(), "職位コード", "職位コード", subQueryPropertyName, operand, value, parameterPropertyName);
         }
-        public abstract String keepCode_QueryDerivedReferrer_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
-        public abstract String keepCode_QueryDerivedReferrer_Mst従業員マスタListParameter(Object parameterValue);
+        public abstract String keep職位コード_QueryDerivedReferrer_Mst従業員マスタList(Mst従業員マスタCQ subQuery);
+        public abstract String keep職位コード_QueryDerivedReferrer_Mst従業員マスタListParameter(Object parameterValue);
 
         public QDRFunction<Mst権限マスタCB> DerivedMst権限マスタList() {
             return xcreateQDRFunctionMst権限マスタList();
@@ -235,52 +235,52 @@ namespace Dbflute.CBean.CQ.BS {
         public void xqderiveMst権限マスタList(String function, SubQuery<Mst権限マスタCB> subQuery, String operand, Object value) {
             assertObjectNotNull("subQuery<Mst権限マスタCB>", subQuery);
             Mst権限マスタCB cb = new Mst権限マスタCB(); cb.xsetupForDerivedReferrer(this); subQuery.Invoke(cb);
-            String subQueryPropertyName = keepCode_QueryDerivedReferrer_Mst権限マスタList(cb.Query()); // for saving query-value.
-            String parameterPropertyName = keepCode_QueryDerivedReferrer_Mst権限マスタListParameter(value);
-            registerQueryDerivedReferrer(function, cb.Query(), "code", "職位code", subQueryPropertyName, operand, value, parameterPropertyName);
+            String subQueryPropertyName = keep職位コード_QueryDerivedReferrer_Mst権限マスタList(cb.Query()); // for saving query-value.
+            String parameterPropertyName = keep職位コード_QueryDerivedReferrer_Mst権限マスタListParameter(value);
+            registerQueryDerivedReferrer(function, cb.Query(), "職位コード", "職位コード", subQueryPropertyName, operand, value, parameterPropertyName);
         }
-        public abstract String keepCode_QueryDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery);
-        public abstract String keepCode_QueryDerivedReferrer_Mst権限マスタListParameter(Object parameterValue);
-        public void SetCode_IsNull() { regCode(CK_ISN, DUMMY_OBJECT); }
-        public void SetCode_IsNotNull() { regCode(CK_ISNN, DUMMY_OBJECT); }
-        protected void regCode(ConditionKey k, Object v) { regQ(k, v, getCValueCode(), "code"); }
-        protected abstract ConditionValue getCValueCode();
+        public abstract String keep職位コード_QueryDerivedReferrer_Mst権限マスタList(Mst権限マスタCQ subQuery);
+        public abstract String keep職位コード_QueryDerivedReferrer_Mst権限マスタListParameter(Object parameterValue);
+        public void Set職位コード_IsNull() { reg職位コード(CK_ISN, DUMMY_OBJECT); }
+        public void Set職位コード_IsNotNull() { reg職位コード(CK_ISNN, DUMMY_OBJECT); }
+        protected void reg職位コード(ConditionKey k, Object v) { regQ(k, v, getCValue職位コード(), "職位コード"); }
+        protected abstract ConditionValue getCValue職位コード();
 
-        public void Set名称_Equal(String v) { DoSet名称_Equal(fRES(v)); }
-        protected void DoSet名称_Equal(String v) { reg名称(CK_EQ, v); }
-        public void Set名称_NotEqual(String v) { DoSet名称_NotEqual(fRES(v)); }
-        protected void DoSet名称_NotEqual(String v) { reg名称(CK_NES, v); }
-        public void Set名称_GreaterThan(String v) { reg名称(CK_GT, fRES(v)); }
-        public void Set名称_LessThan(String v) { reg名称(CK_LT, fRES(v)); }
-        public void Set名称_GreaterEqual(String v) { reg名称(CK_GE, fRES(v)); }
-        public void Set名称_LessEqual(String v) { reg名称(CK_LE, fRES(v)); }
-        public void Set名称_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue名称(), "名称"); }
-        public void Set名称_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue名称(), "名称"); }
-        public void Set名称_PrefixSearch(String v) { Set名称_LikeSearch(v, cLSOP()); }
-        public void Set名称_LikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_LS, fRES(v), getCValue名称(), "名称", option); }
-        public void Set名称_NotLikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_NLS, fRES(v), getCValue名称(), "名称", option); }
-        protected void reg名称(ConditionKey k, Object v) { regQ(k, v, getCValue名称(), "名称"); }
-        protected abstract ConditionValue getCValue名称();
+        public void Set職位名称_Equal(String v) { DoSet職位名称_Equal(fRES(v)); }
+        protected void DoSet職位名称_Equal(String v) { reg職位名称(CK_EQ, v); }
+        public void Set職位名称_NotEqual(String v) { DoSet職位名称_NotEqual(fRES(v)); }
+        protected void DoSet職位名称_NotEqual(String v) { reg職位名称(CK_NES, v); }
+        public void Set職位名称_GreaterThan(String v) { reg職位名称(CK_GT, fRES(v)); }
+        public void Set職位名称_LessThan(String v) { reg職位名称(CK_LT, fRES(v)); }
+        public void Set職位名称_GreaterEqual(String v) { reg職位名称(CK_GE, fRES(v)); }
+        public void Set職位名称_LessEqual(String v) { reg職位名称(CK_LE, fRES(v)); }
+        public void Set職位名称_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue職位名称(), "職位名称"); }
+        public void Set職位名称_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue職位名称(), "職位名称"); }
+        public void Set職位名称_PrefixSearch(String v) { Set職位名称_LikeSearch(v, cLSOP()); }
+        public void Set職位名称_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValue職位名称(), "職位名称", option); }
+        public void Set職位名称_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValue職位名称(), "職位名称", option); }
+        protected void reg職位名称(ConditionKey k, Object v) { regQ(k, v, getCValue職位名称(), "職位名称"); }
+        protected abstract ConditionValue getCValue職位名称();
 
-        public void Set名称英字_Equal(String v) { DoSet名称英字_Equal(fRES(v)); }
-        protected void DoSet名称英字_Equal(String v) { reg名称英字(CK_EQ, v); }
-        public void Set名称英字_NotEqual(String v) { DoSet名称英字_NotEqual(fRES(v)); }
-        protected void DoSet名称英字_NotEqual(String v) { reg名称英字(CK_NES, v); }
-        public void Set名称英字_GreaterThan(String v) { reg名称英字(CK_GT, fRES(v)); }
-        public void Set名称英字_LessThan(String v) { reg名称英字(CK_LT, fRES(v)); }
-        public void Set名称英字_GreaterEqual(String v) { reg名称英字(CK_GE, fRES(v)); }
-        public void Set名称英字_LessEqual(String v) { reg名称英字(CK_LE, fRES(v)); }
-        public void Set名称英字_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue名称英字(), "名称_英字"); }
-        public void Set名称英字_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue名称英字(), "名称_英字"); }
-        public void Set名称英字_PrefixSearch(String v) { Set名称英字_LikeSearch(v, cLSOP()); }
-        public void Set名称英字_LikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_LS, fRES(v), getCValue名称英字(), "名称_英字", option); }
-        public void Set名称英字_NotLikeSearch(String v, LikeSearchOption option)
-        { regLSQ(CK_NLS, fRES(v), getCValue名称英字(), "名称_英字", option); }
-        protected void reg名称英字(ConditionKey k, Object v) { regQ(k, v, getCValue名称英字(), "名称_英字"); }
-        protected abstract ConditionValue getCValue名称英字();
+        public void Set職位英字名称_Equal(String v) { DoSet職位英字名称_Equal(fRES(v)); }
+        protected void DoSet職位英字名称_Equal(String v) { reg職位英字名称(CK_EQ, v); }
+        public void Set職位英字名称_NotEqual(String v) { DoSet職位英字名称_NotEqual(fRES(v)); }
+        protected void DoSet職位英字名称_NotEqual(String v) { reg職位英字名称(CK_NES, v); }
+        public void Set職位英字名称_GreaterThan(String v) { reg職位英字名称(CK_GT, fRES(v)); }
+        public void Set職位英字名称_LessThan(String v) { reg職位英字名称(CK_LT, fRES(v)); }
+        public void Set職位英字名称_GreaterEqual(String v) { reg職位英字名称(CK_GE, fRES(v)); }
+        public void Set職位英字名称_LessEqual(String v) { reg職位英字名称(CK_LE, fRES(v)); }
+        public void Set職位英字名称_InScope(IList<String> ls) { regINS<String>(CK_INS, cTL<String>(ls), getCValue職位英字名称(), "職位英字名称"); }
+        public void Set職位英字名称_NotInScope(IList<String> ls) { regINS<String>(CK_NINS, cTL<String>(ls), getCValue職位英字名称(), "職位英字名称"); }
+        public void Set職位英字名称_PrefixSearch(String v) { Set職位英字名称_LikeSearch(v, cLSOP()); }
+        public void Set職位英字名称_LikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_LS, fRES(v), getCValue職位英字名称(), "職位英字名称", option); }
+        public void Set職位英字名称_NotLikeSearch(String v, LikeSearchOption option)
+        { regLSQ(CK_NLS, fRES(v), getCValue職位英字名称(), "職位英字名称", option); }
+        protected void reg職位英字名称(ConditionKey k, Object v) { regQ(k, v, getCValue職位英字名称(), "職位英字名称"); }
+        protected abstract ConditionValue getCValue職位英字名称();
 
         // ===================================================================================
         //                                                                    Scalar Condition
@@ -330,7 +330,7 @@ namespace Dbflute.CBean.CQ.BS {
             assertObjectNotNull("subQuery<Kbn職位区分CB>", subQuery);
             Kbn職位区分CB cb = new Kbn職位区分CB(); cb.xsetupForInScopeRelation(this); subQuery.Invoke(cb);
             String subQueryPropertyName = keepMyselfInScopeSubQuery(cb.Query()); // for saving query-value.
-            registerInScopeSubQuery(cb.Query(), "code", "code", subQueryPropertyName);
+            registerInScopeSubQuery(cb.Query(), "職位コード", "職位コード", subQueryPropertyName);
         }
         public abstract String keepMyselfInScopeSubQuery(Kbn職位区分CQ subQuery);
 

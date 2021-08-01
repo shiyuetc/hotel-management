@@ -18,14 +18,16 @@ namespace Dbflute.ExEntity {
     /// <summary>
     /// The entity of mst会員マスタ as TABLE. (partial class for auto-generation)
     /// <![CDATA[
+    /// 会員マスタ
+    /// 
     /// [primary-key]
-    ///     id
+    ///     会員コード
     /// 
     /// [column]
-    ///     id, 会員番号, 氏名_姓, 氏名_名, 氏名_カナ, 会社名, 会社名_カナ, 電話番号, メールアドレス, 入会年月日, 退会年月日, 備考
+    ///     会員コード, 会員番号, 名字, 名前, 氏名カナ, 会社名, 会社名カナ, 電話番号, メールアドレス, 入会年月日, 退会年月日, 備考
     /// 
     /// [sequence]
-    ///     mst004_id_seq
+    ///     
     /// 
     /// [identity]
     ///     
@@ -37,13 +39,13 @@ namespace Dbflute.ExEntity {
     ///     
     /// 
     /// [referrer-table]
-    ///     
+    ///     dch宿泊利用台帳
     /// 
     /// [foreign-property]
     ///     
     /// 
     /// [referrer-property]
-    ///     
+    ///     dch宿泊利用台帳List
     /// ]]>
     /// Author: DBFlute(AutoGenerator)
     /// </summary>
@@ -55,25 +57,25 @@ namespace Dbflute.ExEntity {
         //                                                                       Attribute
         //                                                                       =========
         #region Attribute
-        /// <summary>id: {PK, ID, NotNull, bigserial(19)}</summary>
-        protected long? _id;
+        /// <summary>会員コード: {PK, NotNull, bpchar(10)}</summary>
+        protected String _会員コード;
 
-        /// <summary>会員番号: {UQ, NotNull, varchar(9)}</summary>
+        /// <summary>会員番号: {UQ, NotNull, varchar(12)}</summary>
         protected String _会員番号;
 
-        /// <summary>氏名_姓: {NotNull, varchar(20)}</summary>
-        protected String _氏名姓;
+        /// <summary>名字: {NotNull, varchar(20)}</summary>
+        protected String _名字;
 
-        /// <summary>氏名_名: {NotNull, varchar(20)}</summary>
-        protected String _氏名名;
+        /// <summary>名前: {NotNull, varchar(20)}</summary>
+        protected String _名前;
 
-        /// <summary>氏名_カナ: {NotNull, varchar(50)}</summary>
+        /// <summary>氏名カナ: {NotNull, varchar(50)}</summary>
         protected String _氏名カナ;
 
         /// <summary>会社名: {varchar(50)}</summary>
         protected String _会社名;
 
-        /// <summary>会社名_カナ: {varchar(50)}</summary>
+        /// <summary>会社名カナ: {varchar(50)}</summary>
         protected String _会社名カナ;
 
         /// <summary>電話番号: {varchar(20)}</summary>
@@ -115,6 +117,14 @@ namespace Dbflute.ExEntity {
         //                                                               Referrer Property
         //                                                               =================
         #region Referrer Property
+        protected IList<Dch宿泊利用台帳> _dch宿泊利用台帳List;
+
+        /// <summary>dch宿泊利用台帳 as 'Dch宿泊利用台帳List'.</summary>
+        public IList<Dch宿泊利用台帳> Dch宿泊利用台帳List {
+            get { if (_dch宿泊利用台帳List == null) { _dch宿泊利用台帳List = new List<Dch宿泊利用台帳>(); } return _dch宿泊利用台帳List; }
+            set { _dch宿泊利用台帳List = value; }
+        }
+
         #endregion
 
         // ===============================================================================
@@ -122,7 +132,7 @@ namespace Dbflute.ExEntity {
         //                                                                   =============
         public virtual bool HasPrimaryKeyValue {
             get {
-                if (_id == null) { return false; }
+                if (_会員コード == null) { return false; }
                 return true;
             }
         }
@@ -145,7 +155,7 @@ namespace Dbflute.ExEntity {
         public override bool Equals(Object other) {
             if (other == null || !(other is Mst会員マスタ)) { return false; }
             Mst会員マスタ otherEntity = (Mst会員マスタ)other;
-            if (!xSV(this.Id, otherEntity.Id)) { return false; }
+            if (!xSV(this.会員コード, otherEntity.会員コード)) { return false; }
             return true;
         }
         protected bool xSV(Object value1, Object value2) { // isSameValue()
@@ -156,7 +166,7 @@ namespace Dbflute.ExEntity {
 
         public override int GetHashCode() {
             int result = 17;
-            result = xCH(result, _id);
+            result = xCH(result, _会員コード);
             return result;
         }
         protected int xCH(int result, Object value) { // calculateHashcode()
@@ -171,7 +181,13 @@ namespace Dbflute.ExEntity {
         public virtual String ToStringWithRelation() {
             StringBuilder sb = new StringBuilder();
             sb.Append(ToString());
+            String l = "\n  ";
+            if (_dch宿泊利用台帳List != null) { foreach (Entity e in _dch宿泊利用台帳List)
+            { if (e != null) { sb.Append(l).Append(xbRDS(e, "Dch宿泊利用台帳List")); } } }
             return sb.ToString();
+        }
+        protected String xbRDS(Entity e, String name) { // buildRelationDisplayString()
+            return e.BuildDisplayString(name, true, true);
         }
 
         public virtual String BuildDisplayString(String name, bool column, bool relation) {
@@ -184,10 +200,10 @@ namespace Dbflute.ExEntity {
         protected virtual String BuildColumnString() {
             String c = ", ";
             StringBuilder sb = new StringBuilder();
-            sb.Append(c).Append(this.Id);
+            sb.Append(c).Append(this.会員コード);
             sb.Append(c).Append(this.会員番号);
-            sb.Append(c).Append(this.氏名姓);
-            sb.Append(c).Append(this.氏名名);
+            sb.Append(c).Append(this.名字);
+            sb.Append(c).Append(this.名前);
             sb.Append(c).Append(this.氏名カナ);
             sb.Append(c).Append(this.会社名);
             sb.Append(c).Append(this.会社名カナ);
@@ -201,7 +217,12 @@ namespace Dbflute.ExEntity {
             return sb.ToString();
         }
         protected virtual String BuildRelationString() {
-            return "";
+            StringBuilder sb = new StringBuilder();
+            String c = ",";
+            if (_dch宿泊利用台帳List != null && _dch宿泊利用台帳List.Count > 0)
+            { sb.Append(c).Append("Dch宿泊利用台帳List"); }
+            if (sb.Length > 0) { sb.Remove(0, c.Length).Insert(0, "(").Append(")"); }
+            return sb.ToString();
         }
         #endregion
 
@@ -209,18 +230,20 @@ namespace Dbflute.ExEntity {
         //                                                                        Accessor
         //                                                                        ========
         #region Accessor
-        /// <summary>id: {PK, ID, NotNull, bigserial(19)}</summary>
-        [Seasar.Dao.Attrs.ID("identity")]
-        [Seasar.Dao.Attrs.Column("id")]
-        public long? Id {
-            get { return _id; }
+        /// <summary>会員コード: {PK, NotNull, bpchar(10)}</summary>
+        /// <remarks>
+        /// 会員コード
+        /// </remarks>
+        [Seasar.Dao.Attrs.Column("会員コード")]
+        public String 会員コード {
+            get { return _会員コード; }
             set {
-                __modifiedProperties.AddPropertyName("Id");
-                _id = value;
+                __modifiedProperties.AddPropertyName("会員コード");
+                _会員コード = value;
             }
         }
 
-        /// <summary>会員番号: {UQ, NotNull, varchar(9)}</summary>
+        /// <summary>会員番号: {UQ, NotNull, varchar(12)}</summary>
         [Seasar.Dao.Attrs.Column("会員番号")]
         public String 会員番号 {
             get { return _会員番号; }
@@ -230,28 +253,37 @@ namespace Dbflute.ExEntity {
             }
         }
 
-        /// <summary>氏名_姓: {NotNull, varchar(20)}</summary>
-        [Seasar.Dao.Attrs.Column("氏名_姓")]
-        public String 氏名姓 {
-            get { return _氏名姓; }
+        /// <summary>名字: {NotNull, varchar(20)}</summary>
+        /// <remarks>
+        /// 名字
+        /// </remarks>
+        [Seasar.Dao.Attrs.Column("名字")]
+        public String 名字 {
+            get { return _名字; }
             set {
-                __modifiedProperties.AddPropertyName("氏名姓");
-                _氏名姓 = value;
+                __modifiedProperties.AddPropertyName("名字");
+                _名字 = value;
             }
         }
 
-        /// <summary>氏名_名: {NotNull, varchar(20)}</summary>
-        [Seasar.Dao.Attrs.Column("氏名_名")]
-        public String 氏名名 {
-            get { return _氏名名; }
+        /// <summary>名前: {NotNull, varchar(20)}</summary>
+        /// <remarks>
+        /// 名前
+        /// </remarks>
+        [Seasar.Dao.Attrs.Column("名前")]
+        public String 名前 {
+            get { return _名前; }
             set {
-                __modifiedProperties.AddPropertyName("氏名名");
-                _氏名名 = value;
+                __modifiedProperties.AddPropertyName("名前");
+                _名前 = value;
             }
         }
 
-        /// <summary>氏名_カナ: {NotNull, varchar(50)}</summary>
-        [Seasar.Dao.Attrs.Column("氏名_カナ")]
+        /// <summary>氏名カナ: {NotNull, varchar(50)}</summary>
+        /// <remarks>
+        /// 氏名カナ
+        /// </remarks>
+        [Seasar.Dao.Attrs.Column("氏名カナ")]
         public String 氏名カナ {
             get { return _氏名カナ; }
             set {
@@ -261,6 +293,9 @@ namespace Dbflute.ExEntity {
         }
 
         /// <summary>会社名: {varchar(50)}</summary>
+        /// <remarks>
+        /// 会社名
+        /// </remarks>
         [Seasar.Dao.Attrs.Column("会社名")]
         public String 会社名 {
             get { return _会社名; }
@@ -270,8 +305,11 @@ namespace Dbflute.ExEntity {
             }
         }
 
-        /// <summary>会社名_カナ: {varchar(50)}</summary>
-        [Seasar.Dao.Attrs.Column("会社名_カナ")]
+        /// <summary>会社名カナ: {varchar(50)}</summary>
+        /// <remarks>
+        /// 会社名カナ
+        /// </remarks>
+        [Seasar.Dao.Attrs.Column("会社名カナ")]
         public String 会社名カナ {
             get { return _会社名カナ; }
             set {
@@ -281,6 +319,9 @@ namespace Dbflute.ExEntity {
         }
 
         /// <summary>電話番号: {varchar(20)}</summary>
+        /// <remarks>
+        /// 電話番号
+        /// </remarks>
         [Seasar.Dao.Attrs.Column("電話番号")]
         public String 電話番号 {
             get { return _電話番号; }
@@ -291,6 +332,9 @@ namespace Dbflute.ExEntity {
         }
 
         /// <summary>メールアドレス: {varchar(255)}</summary>
+        /// <remarks>
+        /// メールアドレス
+        /// </remarks>
         [Seasar.Dao.Attrs.Column("メールアドレス")]
         public String メールアドレス {
             get { return _メールアドレス; }
@@ -301,6 +345,9 @@ namespace Dbflute.ExEntity {
         }
 
         /// <summary>入会年月日: {NotNull, timestamp(26, 3)}</summary>
+        /// <remarks>
+        /// 入会年月日
+        /// </remarks>
         [Seasar.Dao.Attrs.Column("入会年月日")]
         public DateTime? 入会年月日 {
             get { return _入会年月日; }
@@ -311,6 +358,9 @@ namespace Dbflute.ExEntity {
         }
 
         /// <summary>退会年月日: {timestamp(26, 3)}</summary>
+        /// <remarks>
+        /// 退会年月日
+        /// </remarks>
         [Seasar.Dao.Attrs.Column("退会年月日")]
         public DateTime? 退会年月日 {
             get { return _退会年月日; }
@@ -321,6 +371,9 @@ namespace Dbflute.ExEntity {
         }
 
         /// <summary>備考: {varchar(255)}</summary>
+        /// <remarks>
+        /// 備考
+        /// </remarks>
         [Seasar.Dao.Attrs.Column("備考")]
         public String 備考 {
             get { return _備考; }

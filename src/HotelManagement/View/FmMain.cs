@@ -44,9 +44,9 @@ namespace HotelManagement.View
 
             // ログイン画面に遷移
             var vm = new ModelQuillInjector<ベース画面処理Model>();
-            var 制御画面マスタ = vm.Model.Getログイン制御画面マスタ();
+            var 画面マスタ = vm.Model.Getログイン画面マスタ();
             
-            this.MenuTab.SetMenu(制御画面マスタ);
+            this.MenuTab.SetMenu(画面マスタ);
         }
 
         #endregion
@@ -60,7 +60,7 @@ namespace HotelManagement.View
         private void MenuButton_Click(MenuButton menuButton)
         {
             // ログアウトボタンが押下された
-            if (menuButton.メニュー区分.Code == CDef.メニュー区分.ログアウト.Code)
+            if (menuButton.メニュー区分.メニューコード == CDef.メニュー区分.ログアウト.Code)
             {
                 if (Messages.ShowConfirm("ログアウトしますか？"))
                 {
@@ -76,7 +76,7 @@ namespace HotelManagement.View
             this.MenuBar.SetActivate(menuButton.メニュー区分);
 
             // メニューバーを設定
-            this.MenuTab.SetMenu(menuButton.制御画面マスタList);
+            this.MenuTab.SetMenu(menuButton.画面マスタList);
         }
 
         /// <summary>
@@ -88,11 +88,11 @@ namespace HotelManagement.View
             // 表示画面を破棄
             this.UcPanel.Controls.Clear();
 
-            var uc = (UcBase)Activator.CreateInstance(Type.GetType($"{this.GetType().Namespace}.{menuPage.制御画面マスタ.画面名}"), this);
+            var uc = (UcBase)Activator.CreateInstance(Type.GetType($"{this.GetType().Namespace}.{menuPage.画面マスタ.画面名称}画面"), this);
             this.UcPanel.Controls.Add(uc);
 
             // 表示画面名を設定
-            this.DisplayNameLabel.Text = $"{menuPage.制御画面マスタ.画面名}";
+            this.DisplayNameLabel.Text = $"{menuPage.画面マスタ.画面名称}";
         }
 
         /// <summary>
@@ -103,14 +103,14 @@ namespace HotelManagement.View
         {
             // ログイン情報を設定
             AppState.ログイン従業員 = 従業員マスタ;
-            this.LoginInfoLabel.Text = $"ユーザー情報：{従業員マスタ.氏名姓}｜職位：{従業員マスタ.Kbn職位区分.名称}({従業員マスタ.Kbn職位区分.名称英字})";
+            this.LoginInfoLabel.Text = $"ユーザー情報：{従業員マスタ.名字} {従業員マスタ.名前}｜職位：{従業員マスタ.Kbn職位区分.職位名称}({従業員マスタ.Kbn職位区分.職位英字名称})";
 
             // 取得した権限を設定
             var vm = new ModelQuillInjector<ベース画面処理Model>();
-            var 制御画面マスタList = vm.Model.Get制御画面マスタListt(従業員マスタ.Kbn職位区分).ToList();
+            var 画面マスタList = vm.Model.Get画面マスタListt(従業員マスタ.Kbn職位区分).ToList();
 
             // メニューバーを設定
-            this.MenuBar.SetMenu(制御画面マスタList);
+            this.MenuBar.SetMenu(画面マスタList);
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace HotelManagement.View
             this.LoginInfoLabel.Text = "ユーザー情報：ログインなし";
 
             // メニューバーを初期化
-            this.MenuBar.SetMenu(new List<Mst制御画面マスタ>());
+            this.MenuBar.SetMenu(new List<Mst画面マスタ>());
         }
 
         #endregion

@@ -29,19 +29,19 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                             PrimaryKey Handling
         //                                                             ===================
-        public void AcceptPrimaryKey(long? id) {
-            assertObjectNotNull("id", id);
+        public void AcceptPrimaryKey(String 客室コード) {
+            assertObjectNotNull("客室コード", 客室コード);
             BsMst客室マスタCB cb = this;
-            cb.Query().SetId_Equal(id);
+            cb.Query().Set客室コード_Equal(客室コード);
         }
 
         public override ConditionBean AddOrderBy_PK_Asc() {
-            Query().AddOrderBy_Id_Asc();
+            Query().AddOrderBy_客室コード_Asc();
             return this;
         }
 
         public override ConditionBean AddOrderBy_PK_Desc() {
-            Query().AddOrderBy_Id_Desc();
+            Query().AddOrderBy_客室コード_Desc();
             return this;
         }
 
@@ -102,7 +102,7 @@ namespace Dbflute.CBean.BS {
         }}
         public Mst客室タイプマスタNss SetupSelect_Mst客室タイプマスタ() {
             if (HasSpecifiedColumn) { // if reverse call
-                Specify().Column客室タイプid();
+                Specify().Column客室タイプコード();
             }
             doSetupSelect(delegate { return Query().QueryMst客室タイプマスタ(); });
             if (_nssMst客室タイプマスタ == null || !_nssMst客室タイプマスタ.HasConditionQuery)
@@ -180,16 +180,16 @@ namespace Dbflute.CBean.BS {
         public Mst客室マスタCBSpecification(ConditionBean baseCB, HpSpQyCall<Mst客室マスタCQ> qyCall
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
-        public void ColumnId() { doColumn("id"); }
+        public void Column客室コード() { doColumn("客室コード"); }
         public void Column客室番号() { doColumn("客室番号"); }
-        public void Column客室タイプid() { doColumn("客室タイプid"); }
+        public void Column客室タイプコード() { doColumn("客室タイプコード"); }
         public void Column喫煙() { doColumn("喫煙"); }
         public void Column備考() { doColumn("備考"); }
         protected override void doSpecifyRequiredColumn() {
-            ColumnId(); // PK
+            Column客室コード(); // PK
             if (qyCall().qy().hasConditionQueryMst客室タイプマスタ()
                     || qyCall().qy().xgetReferrerQuery() is Mst客室タイプマスタCQ) {
-                Column客室タイプid(); // FK or one-to-one referrer
+                Column客室タイプコード(); // FK or one-to-one referrer
             }
         }
         protected override String getTableDbName() { return "mst客室マスタ"; }
@@ -208,15 +208,10 @@ namespace Dbflute.CBean.BS {
 		    public bool has() { return _qyCall.has() && _qyCall.qy().hasConditionQueryMst客室タイプマスタ(); }
 			public Mst客室タイプマスタCQ qy() { return _qyCall.qy().QueryMst客室タイプマスタ(); }
 		}
-        public RAFunction<Dch客室利用予定台帳CB, Mst客室マスタCQ> DerivedDch客室利用予定台帳List() {
+        public RAFunction<Dch客室利用台帳CB, Mst客室マスタCQ> DerivedDch客室利用台帳List() {
             if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return new RAFunction<Dch客室利用予定台帳CB, Mst客室マスタCQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Dch客室利用予定台帳CB> subQuery, Mst客室マスタCQ cq, String aliasName)
-                { cq.xsderiveDch客室利用予定台帳List(function, subQuery, aliasName); });
-        }
-        public RAFunction<Dch客室利用実績台帳CB, Mst客室マスタCQ> DerivedDch客室利用実績台帳List() {
-            if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return new RAFunction<Dch客室利用実績台帳CB, Mst客室マスタCQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Dch客室利用実績台帳CB> subQuery, Mst客室マスタCQ cq, String aliasName)
-                { cq.xsderiveDch客室利用実績台帳List(function, subQuery, aliasName); });
+            return new RAFunction<Dch客室利用台帳CB, Mst客室マスタCQ>(_baseCB, _qyCall.qy(), delegate(String function, SubQuery<Dch客室利用台帳CB> subQuery, Mst客室マスタCQ cq, String aliasName)
+                { cq.xsderiveDch客室利用台帳List(function, subQuery, aliasName); });
         }
     }
 }

@@ -91,27 +91,27 @@ namespace HotelManagement.Controls.CustomControls
         /// <summary>
         /// メニューを設定します。
         /// </summary>
-        /// <param name="制御画面マスタ">制御画面マスタ</param>
-        public void SetMenu(Mst制御画面マスタ 制御画面マスタ)
+        /// <param name="画面マスタ">画面マスタ</param>
+        public void SetMenu(Mst画面マスタ 画面マスタ)
         {
-            var 制御画面マスタList = new List<Mst制御画面マスタ>() { 制御画面マスタ };
-            this.SetMenu(制御画面マスタList);
+            var 画面マスタList = new List<Mst画面マスタ>() { 画面マスタ };
+            this.SetMenu(画面マスタList);
         }
 
         /// <summary>
         /// メニューを設定します。
         /// </summary>
-        /// <param name="制御画面マスタList">制御画面マスタのリスト</param>
-        public void SetMenu(List<Mst制御画面マスタ> 制御画面マスタList)
+        /// <param name="画面マスタList">画面マスタのリスト</param>
+        public void SetMenu(List<Mst画面マスタ> 画面マスタList)
         {
             // メニューをクリア
             this.TabPages.Clear();
 
             // メニューを作成
             var menuTabList = new List<MenuPage>() { new MenuPage(null) };
-            foreach (var 制御画面マスタ in 制御画面マスタList.OrderBy(x => x.優先順位))
+            foreach (var 画面マスタ in 画面マスタList.OrderBy(x => x.優先順位))
             {
-                var menuTab = new MenuPage(制御画面マスタ);
+                var menuTab = new MenuPage(画面マスタ);
                 menuTabList.Add(menuTab);
             }
 

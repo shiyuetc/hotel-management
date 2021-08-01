@@ -31,9 +31,9 @@ namespace HotelManagement.Controls.CustomControls
         public Kbnメニュー区分 メニュー区分 { get; private set; }
 
         /// <summary>
-        /// 制御画面マスタのリスト
+        /// 画面マスタのリスト
         /// </summary>
-        public List<Mst制御画面マスタ> 制御画面マスタList { get; private set; }
+        public List<Mst画面マスタ> 画面マスタList { get; private set; }
 
         /// <summary>
         /// ボタンのアクティブ/非アクティブ
@@ -61,17 +61,17 @@ namespace HotelManagement.Controls.CustomControls
         /// MenuButtonクラスを初期化します。
         /// </summary>
         /// <param name="メニュー区分">メニュー区分</param>
-        /// <param name="制御画面マスタリスト">制御画面マスタリスト</param>
-        public MenuButton(Kbnメニュー区分 メニュー区分, List<Mst制御画面マスタ> 制御画面マスタList)
+        /// <param name="画面マスタリスト">画面マスタリスト</param>
+        public MenuButton(Kbnメニュー区分 メニュー区分, List<Mst画面マスタ> 画面マスタList)
         {
             this.メニュー区分 = メニュー区分;
-            this.制御画面マスタList = 制御画面マスタList;
+            this.画面マスタList = 画面マスタList;
 
             // プロパティを設定
-            this.Image = ResourceUtil.GetMenuIcon(メニュー区分.メニュー名);
+            this.Image = ResourceUtil.GetMenuIcon(メニュー区分.メニュー名称);
             this.TextAlign = ContentAlignment.BottomCenter;
             this.TextImageRelation = TextImageRelation.ImageAboveText;
-            this.Text = メニュー区分.メニュー名;
+            this.Text = メニュー区分.メニュー名称;
 
             this.BackColor = this.InactiveColor;
         }

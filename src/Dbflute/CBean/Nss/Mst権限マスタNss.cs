@@ -13,9 +13,9 @@ namespace Dbflute.CBean.Nss {
         // ===============================================================================
         //                                                       With Nested Foreign Table
         //                                                       =========================
-        public Mst制御画面マスタNss WithMst制御画面マスタ() {
-            _query.doNss(delegate() { return _query.QueryMst制御画面マスタ(); });
-            return new Mst制御画面マスタNss(_query.QueryMst制御画面マスタ());
+        public Mst画面マスタNss WithMst画面マスタ() {
+            _query.doNss(delegate() { return _query.QueryMst画面マスタ(); });
+            return new Mst画面マスタNss(_query.QueryMst画面マスタ());
         }
 
         public Kbn職位区分Nss WithKbn職位区分() {

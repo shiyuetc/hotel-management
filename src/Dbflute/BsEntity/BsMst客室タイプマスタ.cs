@@ -18,14 +18,16 @@ namespace Dbflute.ExEntity {
     /// <summary>
     /// The entity of mst客室タイプマスタ as TABLE. (partial class for auto-generation)
     /// <![CDATA[
+    /// 客室タイプマスタ
+    /// 
     /// [primary-key]
-    ///     id
+    ///     客室タイプコード
     /// 
     /// [column]
-    ///     id, 名称, 料金, 宿泊人数, 備考
+    ///     客室タイプコード, 客室タイプ名称, 料金, 宿泊人数, 備考
     /// 
     /// [sequence]
-    ///     mst005_id_seq
+    ///     
     /// 
     /// [identity]
     ///     
@@ -55,11 +57,11 @@ namespace Dbflute.ExEntity {
         //                                                                       Attribute
         //                                                                       =========
         #region Attribute
-        /// <summary>id: {PK, ID, NotNull, bigserial(19)}</summary>
-        protected long? _id;
+        /// <summary>客室タイプコード: {PK, NotNull, bpchar(4)}</summary>
+        protected String _客室タイプコード;
 
-        /// <summary>名称: {NotNull, varchar(20)}</summary>
-        protected String _名称;
+        /// <summary>客室タイプ名称: {NotNull, varchar(20)}</summary>
+        protected String _客室タイプ名称;
 
         /// <summary>料金: {NotNull, int4(10)}</summary>
         protected int? _料金;
@@ -109,7 +111,7 @@ namespace Dbflute.ExEntity {
         //                                                                   =============
         public virtual bool HasPrimaryKeyValue {
             get {
-                if (_id == null) { return false; }
+                if (_客室タイプコード == null) { return false; }
                 return true;
             }
         }
@@ -132,7 +134,7 @@ namespace Dbflute.ExEntity {
         public override bool Equals(Object other) {
             if (other == null || !(other is Mst客室タイプマスタ)) { return false; }
             Mst客室タイプマスタ otherEntity = (Mst客室タイプマスタ)other;
-            if (!xSV(this.Id, otherEntity.Id)) { return false; }
+            if (!xSV(this.客室タイプコード, otherEntity.客室タイプコード)) { return false; }
             return true;
         }
         protected bool xSV(Object value1, Object value2) { // isSameValue()
@@ -143,7 +145,7 @@ namespace Dbflute.ExEntity {
 
         public override int GetHashCode() {
             int result = 17;
-            result = xCH(result, _id);
+            result = xCH(result, _客室タイプコード);
             return result;
         }
         protected int xCH(int result, Object value) { // calculateHashcode()
@@ -177,8 +179,8 @@ namespace Dbflute.ExEntity {
         protected virtual String BuildColumnString() {
             String c = ", ";
             StringBuilder sb = new StringBuilder();
-            sb.Append(c).Append(this.Id);
-            sb.Append(c).Append(this.名称);
+            sb.Append(c).Append(this.客室タイプコード);
+            sb.Append(c).Append(this.客室タイプ名称);
             sb.Append(c).Append(this.料金);
             sb.Append(c).Append(this.宿泊人数);
             sb.Append(c).Append(this.備考);
@@ -200,28 +202,36 @@ namespace Dbflute.ExEntity {
         //                                                                        Accessor
         //                                                                        ========
         #region Accessor
-        /// <summary>id: {PK, ID, NotNull, bigserial(19)}</summary>
-        [Seasar.Dao.Attrs.ID("identity")]
-        [Seasar.Dao.Attrs.Column("id")]
-        public long? Id {
-            get { return _id; }
+        /// <summary>客室タイプコード: {PK, NotNull, bpchar(4)}</summary>
+        /// <remarks>
+        /// 客室タイプコード
+        /// </remarks>
+        [Seasar.Dao.Attrs.Column("客室タイプコード")]
+        public String 客室タイプコード {
+            get { return _客室タイプコード; }
             set {
-                __modifiedProperties.AddPropertyName("Id");
-                _id = value;
+                __modifiedProperties.AddPropertyName("客室タイプコード");
+                _客室タイプコード = value;
             }
         }
 
-        /// <summary>名称: {NotNull, varchar(20)}</summary>
-        [Seasar.Dao.Attrs.Column("名称")]
-        public String 名称 {
-            get { return _名称; }
+        /// <summary>客室タイプ名称: {NotNull, varchar(20)}</summary>
+        /// <remarks>
+        /// 客室タイプ名称
+        /// </remarks>
+        [Seasar.Dao.Attrs.Column("客室タイプ名称")]
+        public String 客室タイプ名称 {
+            get { return _客室タイプ名称; }
             set {
-                __modifiedProperties.AddPropertyName("名称");
-                _名称 = value;
+                __modifiedProperties.AddPropertyName("客室タイプ名称");
+                _客室タイプ名称 = value;
             }
         }
 
         /// <summary>料金: {NotNull, int4(10)}</summary>
+        /// <remarks>
+        /// 料金
+        /// </remarks>
         [Seasar.Dao.Attrs.Column("料金")]
         public int? 料金 {
             get { return _料金; }
@@ -232,6 +242,9 @@ namespace Dbflute.ExEntity {
         }
 
         /// <summary>宿泊人数: {NotNull, int4(10)}</summary>
+        /// <remarks>
+        /// 宿泊人数
+        /// </remarks>
         [Seasar.Dao.Attrs.Column("宿泊人数")]
         public int? 宿泊人数 {
             get { return _宿泊人数; }
@@ -242,6 +255,9 @@ namespace Dbflute.ExEntity {
         }
 
         /// <summary>備考: {varchar(255)}</summary>
+        /// <remarks>
+        /// 備考
+        /// </remarks>
         [Seasar.Dao.Attrs.Column("備考")]
         public String 備考 {
             get { return _備考; }

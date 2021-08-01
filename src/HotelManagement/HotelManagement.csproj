@@ -125,6 +125,7 @@
     <Compile Include="Common\Functions\BcryptUtil.cs" />
     <Compile Include="Common\Functions\ResourceUtil.cs" />
     <Compile Include="Common\Const\Message.cs" />
+    <Compile Include="Common\Functions\共通チェック処理.cs" />
     <Compile Include="Controls\CustomControls\ConstantComboBox\ConstantComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -133,6 +134,18 @@
     </Compile>
     <Compile Include="Controls\CustomControls\MenuBar\MenuBar.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\UserContols\ColorBlockLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserContols\ColorBlockLabel.Designer.cs">
+      <DependentUpon>ColorBlockLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserContols\RoomGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserContols\RoomGrid.Designer.cs">
+      <DependentUpon>RoomGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\CustomControls\TabMenu\MenuPage.cs">
       <SubType>Component</SubType>
@@ -162,6 +175,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="Models\UcProc\客室状態画面処理Model.cs" />
     <Compile Include="Models\従業員マスタModel.cs" />
     <Compile Include="Models\UcProc\ログイン画面処理Model.cs" />
     <Compile Include="Models\UcProc\ベース画面処理Model.cs" />
@@ -197,11 +211,11 @@
     <Compile Include="View\従業員管理画面.Designer.cs">
       <DependentUpon>従業員管理画面.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\予約管理画面.cs">
+    <Compile Include="View\客室状態画面.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\予約管理画面.Designer.cs">
-      <DependentUpon>予約管理画面.cs</DependentUpon>
+    <Compile Include="View\客室状態画面.Designer.cs">
+      <DependentUpon>客室状態画面.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UcBase.cs">
       <SubType>UserControl</SubType>
@@ -215,6 +229,12 @@
     <Compile Include="View\ログイン画面.Designer.cs">
       <DependentUpon>ログイン画面.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\UserContols\ColorBlockLabel.resx">
+      <DependentUpon>ColorBlockLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserContols\RoomGrid.resx">
+      <DependentUpon>RoomGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\UserContols\TickDate.resx">
       <DependentUpon>TickDate.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,8 +263,8 @@
     <EmbeddedResource Include="View\従業員管理画面.resx">
       <DependentUpon>従業員管理画面.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\予約管理画面.resx">
-      <DependentUpon>予約管理画面.cs</DependentUpon>
+    <EmbeddedResource Include="View\客室状態画面.resx">
+      <DependentUpon>客室状態画面.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UcBase.resx">
       <DependentUpon>UcBase.cs</DependentUpon>
@@ -287,6 +307,8 @@
       <Name>Dbflute</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Common\Entities\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

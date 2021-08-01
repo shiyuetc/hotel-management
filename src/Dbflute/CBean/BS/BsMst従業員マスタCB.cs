@@ -29,19 +29,19 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                             PrimaryKey Handling
         //                                                             ===================
-        public void AcceptPrimaryKey(long? id) {
-            assertObjectNotNull("id", id);
+        public void AcceptPrimaryKey(String 従業員コード) {
+            assertObjectNotNull("従業員コード", 従業員コード);
             BsMst従業員マスタCB cb = this;
-            cb.Query().SetId_Equal(id);
+            cb.Query().Set従業員コード_Equal(従業員コード);
         }
 
         public override ConditionBean AddOrderBy_PK_Asc() {
-            Query().AddOrderBy_Id_Asc();
+            Query().AddOrderBy_従業員コード_Asc();
             return this;
         }
 
         public override ConditionBean AddOrderBy_PK_Desc() {
-            Query().AddOrderBy_Id_Desc();
+            Query().AddOrderBy_従業員コード_Desc();
             return this;
         }
 
@@ -102,7 +102,7 @@ namespace Dbflute.CBean.BS {
         }}
         public Kbn職位区分Nss SetupSelect_Kbn職位区分() {
             if (HasSpecifiedColumn) { // if reverse call
-                Specify().Column職位code();
+                Specify().Column職位コード();
             }
             doSetupSelect(delegate { return Query().QueryKbn職位区分(); });
             if (_nssKbn職位区分 == null || !_nssKbn職位区分.HasConditionQuery)
@@ -180,24 +180,24 @@ namespace Dbflute.CBean.BS {
         public Mst従業員マスタCBSpecification(ConditionBean baseCB, HpSpQyCall<Mst従業員マスタCQ> qyCall
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
-        public void ColumnId() { doColumn("id"); }
+        public void Column従業員コード() { doColumn("従業員コード"); }
         public void Column従業員番号() { doColumn("従業員番号"); }
-        public void Column氏名姓() { doColumn("氏名_姓"); }
-        public void Column氏名名() { doColumn("氏名_名"); }
-        public void Column氏名カナ() { doColumn("氏名_カナ"); }
+        public void Column名字() { doColumn("名字"); }
+        public void Column名前() { doColumn("名前"); }
+        public void Column氏名カナ() { doColumn("氏名カナ"); }
         public void Columnメールアドレス() { doColumn("メールアドレス"); }
         public void Columnパスワード() { doColumn("パスワード"); }
         public void Column生年月日() { doColumn("生年月日"); }
         public void Column入社年月日() { doColumn("入社年月日"); }
         public void Column退社年月日() { doColumn("退社年月日"); }
-        public void Column職位code() { doColumn("職位code"); }
+        public void Column職位コード() { doColumn("職位コード"); }
         public void Column最終ログイン日時() { doColumn("最終ログイン日時"); }
         public void Column備考() { doColumn("備考"); }
         protected override void doSpecifyRequiredColumn() {
-            ColumnId(); // PK
+            Column従業員コード(); // PK
             if (qyCall().qy().hasConditionQueryKbn職位区分()
                     || qyCall().qy().xgetReferrerQuery() is Kbn職位区分CQ) {
-                Column職位code(); // FK or one-to-one referrer
+                Column職位コード(); // FK or one-to-one referrer
             }
         }
         protected override String getTableDbName() { return "mst従業員マスタ"; }

@@ -82,10 +82,10 @@ namespace HotelManagement.View
         private ListViewItem CreateEmployeeListViewItem(Mst従業員マスタ 従業員マスタ)
         {
             return new ListViewItem(new string[] {
-                従業員マスタ.Id.ToString(),
+                従業員マスタ.従業員コード.ToString(),
                 従業員マスタ.従業員番号,
-                $"{従業員マスタ.氏名姓} {従業員マスタ.氏名名}",
-                従業員マスタ.Kbn職位区分.名称,
+                $"{従業員マスタ.名字} {従業員マスタ.名前}",
+                従業員マスタ.Kbn職位区分.職位名称,
                 従業員マスタ.メールアドレス,
                 従業員マスタ.入社年月日.Value.ToShortDateString(),
                 //従業員マスタ.退社年月日 ? 従業員マスタ.退社年月日.Value.ToShortDateString() : string.Empty

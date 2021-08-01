@@ -63,11 +63,6 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        protected override ConditionValue getCValueId() {
-            return _myCQ.Id;
-        }
-
-
         protected override ConditionValue getCValue対象年月() {
             return _myCQ.対象年月;
         }

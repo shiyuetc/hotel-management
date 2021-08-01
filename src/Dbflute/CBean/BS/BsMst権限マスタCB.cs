@@ -29,19 +29,21 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                             PrimaryKey Handling
         //                                                             ===================
-        public void AcceptPrimaryKey(long? id) {
-            assertObjectNotNull("id", id);
+        public void AcceptPrimaryKey(String 職位コード, String 画面コード) {
+            assertObjectNotNull("職位コード", 職位コード);assertObjectNotNull("画面コード", 画面コード);
             BsMst権限マスタCB cb = this;
-            cb.Query().SetId_Equal(id);
+            cb.Query().Set職位コード_Equal(職位コード);cb.Query().Set画面コード_Equal(画面コード);
         }
 
         public override ConditionBean AddOrderBy_PK_Asc() {
-            Query().AddOrderBy_Id_Asc();
+            Query().AddOrderBy_職位コード_Asc();
+            Query().AddOrderBy_画面コード_Asc();
             return this;
         }
 
         public override ConditionBean AddOrderBy_PK_Desc() {
-            Query().AddOrderBy_Id_Desc();
+            Query().AddOrderBy_職位コード_Desc();
+            Query().AddOrderBy_画面コード_Desc();
             return this;
         }
 
@@ -95,19 +97,16 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                                    Setup Select
         //                                                                    ============
-        protected Mst制御画面マスタNss _nssMst制御画面マスタ;
-        public Mst制御画面マスタNss NssMst制御画面マスタ { get {
-            if (_nssMst制御画面マスタ == null) { _nssMst制御画面マスタ = new Mst制御画面マスタNss(null); }
-            return _nssMst制御画面マスタ;
+        protected Mst画面マスタNss _nssMst画面マスタ;
+        public Mst画面マスタNss NssMst画面マスタ { get {
+            if (_nssMst画面マスタ == null) { _nssMst画面マスタ = new Mst画面マスタNss(null); }
+            return _nssMst画面マスタ;
         }}
-        public Mst制御画面マスタNss SetupSelect_Mst制御画面マスタ() {
-            if (HasSpecifiedColumn) { // if reverse call
-                Specify().Column制御画面id();
-            }
-            doSetupSelect(delegate { return Query().QueryMst制御画面マスタ(); });
-            if (_nssMst制御画面マスタ == null || !_nssMst制御画面マスタ.HasConditionQuery)
-            { _nssMst制御画面マスタ = new Mst制御画面マスタNss(Query().QueryMst制御画面マスタ()); }
-            return _nssMst制御画面マスタ;
+        public Mst画面マスタNss SetupSelect_Mst画面マスタ() {
+            doSetupSelect(delegate { return Query().QueryMst画面マスタ(); });
+            if (_nssMst画面マスタ == null || !_nssMst画面マスタ.HasConditionQuery)
+            { _nssMst画面マスタ = new Mst画面マスタNss(Query().QueryMst画面マスタ()); }
+            return _nssMst画面マスタ;
         }
         protected Kbn職位区分Nss _nssKbn職位区分;
         public Kbn職位区分Nss NssKbn職位区分 { get {
@@ -115,9 +114,6 @@ namespace Dbflute.CBean.BS {
             return _nssKbn職位区分;
         }}
         public Kbn職位区分Nss SetupSelect_Kbn職位区分() {
-            if (HasSpecifiedColumn) { // if reverse call
-                Specify().Column職位code();
-            }
             doSetupSelect(delegate { return Query().QueryKbn職位区分(); });
             if (_nssKbn職位区分 == null || !_nssKbn職位区分.HasConditionQuery)
             { _nssKbn職位区分 = new Kbn職位区分Nss(Query().QueryKbn職位区分()); }
@@ -190,40 +186,32 @@ namespace Dbflute.CBean.BS {
     }
 
     public class Mst権限マスタCBSpecification : AbstractSpecification<Mst権限マスタCQ> {
-        protected Mst制御画面マスタCBSpecification _mst制御画面マスタ;
+        protected Mst画面マスタCBSpecification _mst画面マスタ;
         protected Kbn職位区分CBSpecification _kbn職位区分;
         public Mst権限マスタCBSpecification(ConditionBean baseCB, HpSpQyCall<Mst権限マスタCQ> qyCall
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
-        public void ColumnId() { doColumn("id"); }
-        public void Column職位code() { doColumn("職位code"); }
-        public void Column制御画面id() { doColumn("制御画面id"); }
+        public void Column職位コード() { doColumn("職位コード"); }
+        public void Column画面コード() { doColumn("画面コード"); }
         protected override void doSpecifyRequiredColumn() {
-            ColumnId(); // PK
-            if (qyCall().qy().hasConditionQueryMst制御画面マスタ()
-                    || qyCall().qy().xgetReferrerQuery() is Mst制御画面マスタCQ) {
-                Column制御画面id(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryKbn職位区分()
-                    || qyCall().qy().xgetReferrerQuery() is Kbn職位区分CQ) {
-                Column職位code(); // FK or one-to-one referrer
-            }
+            Column職位コード(); // PK
+            Column画面コード(); // PK
         }
         protected override String getTableDbName() { return "mst権限マスタ"; }
-        public Mst制御画面マスタCBSpecification SpecifyMst制御画面マスタ() {
-            assertForeign("mst制御画面マスタ");
-            if (_mst制御画面マスタ == null) {
-                _mst制御画面マスタ = new Mst制御画面マスタCBSpecification(_baseCB, new Mst制御画面マスタSpQyCall(_qyCall), _forDerivedReferrer, _forScalarSelect, _forScalarCondition, _forColumnQuery);
+        public Mst画面マスタCBSpecification SpecifyMst画面マスタ() {
+            assertForeign("mst画面マスタ");
+            if (_mst画面マスタ == null) {
+                _mst画面マスタ = new Mst画面マスタCBSpecification(_baseCB, new Mst画面マスタSpQyCall(_qyCall), _forDerivedReferrer, _forScalarSelect, _forScalarCondition, _forColumnQuery);
                 if (xhasSyncQyCall()) // inherits it
-                { _mst制御画面マスタ.xsetSyncQyCall(new Mst制御画面マスタSpQyCall(xsyncQyCall())); }
+                { _mst画面マスタ.xsetSyncQyCall(new Mst画面マスタSpQyCall(xsyncQyCall())); }
             }
-            return _mst制御画面マスタ;
+            return _mst画面マスタ;
         }
-		public class Mst制御画面マスタSpQyCall : HpSpQyCall<Mst制御画面マスタCQ> {
+		public class Mst画面マスタSpQyCall : HpSpQyCall<Mst画面マスタCQ> {
 		    protected HpSpQyCall<Mst権限マスタCQ> _qyCall;
-		    public Mst制御画面マスタSpQyCall(HpSpQyCall<Mst権限マスタCQ> myQyCall) { _qyCall = myQyCall; }
-		    public bool has() { return _qyCall.has() && _qyCall.qy().hasConditionQueryMst制御画面マスタ(); }
-			public Mst制御画面マスタCQ qy() { return _qyCall.qy().QueryMst制御画面マスタ(); }
+		    public Mst画面マスタSpQyCall(HpSpQyCall<Mst権限マスタCQ> myQyCall) { _qyCall = myQyCall; }
+		    public bool has() { return _qyCall.has() && _qyCall.qy().hasConditionQueryMst画面マスタ(); }
+			public Mst画面マスタCQ qy() { return _qyCall.qy().QueryMst画面マスタ(); }
 		}
         public Kbn職位区分CBSpecification SpecifyKbn職位区分() {
             assertForeign("kbn職位区分");

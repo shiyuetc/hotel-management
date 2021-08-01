@@ -18,6 +18,8 @@ namespace Dbflute.ExEntity {
     /// <summary>
     /// The entity of dmyプロシージャ as TABLE. (partial class for auto-generation)
     /// <![CDATA[
+    /// プロシージャ
+    /// 
     /// [primary-key]
     ///     
     /// 
@@ -165,6 +167,9 @@ namespace Dbflute.ExEntity {
         //                                                                        ========
         #region Accessor
         /// <summary>dummy: {bpchar(1)}</summary>
+        /// <remarks>
+        /// ダミー
+        /// </remarks>
         [Seasar.Dao.Attrs.Column("dummy")]
         public String Dummy {
             get { return _dummy; }

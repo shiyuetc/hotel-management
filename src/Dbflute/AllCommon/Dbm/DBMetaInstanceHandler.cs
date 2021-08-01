@@ -25,10 +25,8 @@ namespace Dbflute.AllCommon.Dbm {
         static DBMetaInstanceHandler() {
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
-                tmpMap.put("dch客室利用予定台帳", "Dbflute.BsEntity.Dbm.Dch客室利用予定台帳Dbm");
-                tmpMap.put("dch客室利用実績台帳", "Dbflute.BsEntity.Dbm.Dch客室利用実績台帳Dbm");
-                tmpMap.put("dch宿泊予定台帳", "Dbflute.BsEntity.Dbm.Dch宿泊予定台帳Dbm");
-                tmpMap.put("dch宿泊実績台帳", "Dbflute.BsEntity.Dbm.Dch宿泊実績台帳Dbm");
+                tmpMap.put("dch客室利用台帳", "Dbflute.BsEntity.Dbm.Dch客室利用台帳Dbm");
+                tmpMap.put("dch宿泊利用台帳", "Dbflute.BsEntity.Dbm.Dch宿泊利用台帳Dbm");
                 tmpMap.put("dch従業員職位履歴台帳", "Dbflute.BsEntity.Dbm.Dch従業員職位履歴台帳Dbm");
                 tmpMap.put("dch月締確定台帳", "Dbflute.BsEntity.Dbm.Dch月締確定台帳Dbm");
                 tmpMap.put("dmyプロシージャ", "Dbflute.BsEntity.Dbm.DmyプロシージャDbm");
@@ -36,20 +34,18 @@ namespace Dbflute.AllCommon.Dbm {
                 tmpMap.put("kbn客室利用区分", "Dbflute.BsEntity.Dbm.Kbn客室利用区分Dbm");
                 tmpMap.put("kbn職位区分", "Dbflute.BsEntity.Dbm.Kbn職位区分Dbm");
                 tmpMap.put("mst会員マスタ", "Dbflute.BsEntity.Dbm.Mst会員マスタDbm");
-                tmpMap.put("mst制御画面マスタ", "Dbflute.BsEntity.Dbm.Mst制御画面マスタDbm");
                 tmpMap.put("mst客室タイプマスタ", "Dbflute.BsEntity.Dbm.Mst客室タイプマスタDbm");
                 tmpMap.put("mst客室マスタ", "Dbflute.BsEntity.Dbm.Mst客室マスタDbm");
                 tmpMap.put("mst従業員マスタ", "Dbflute.BsEntity.Dbm.Mst従業員マスタDbm");
                 tmpMap.put("mst権限マスタ", "Dbflute.BsEntity.Dbm.Mst権限マスタDbm");
+                tmpMap.put("mst画面マスタ", "Dbflute.BsEntity.Dbm.Mst画面マスタDbm");
                 _tableDbNameClassNameMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
 
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
-                tmpMap.put("dch客室利用予定台帳".ToLower(), "dch客室利用予定台帳");
-                tmpMap.put("dch客室利用実績台帳".ToLower(), "dch客室利用実績台帳");
-                tmpMap.put("dch宿泊予定台帳".ToLower(), "dch宿泊予定台帳");
-                tmpMap.put("dch宿泊実績台帳".ToLower(), "dch宿泊実績台帳");
+                tmpMap.put("dch客室利用台帳".ToLower(), "dch客室利用台帳");
+                tmpMap.put("dch宿泊利用台帳".ToLower(), "dch宿泊利用台帳");
                 tmpMap.put("dch従業員職位履歴台帳".ToLower(), "dch従業員職位履歴台帳");
                 tmpMap.put("dch月締確定台帳".ToLower(), "dch月締確定台帳");
                 tmpMap.put("dmyプロシージャ".ToLower(), "dmyプロシージャ");
@@ -57,20 +53,18 @@ namespace Dbflute.AllCommon.Dbm {
                 tmpMap.put("kbn客室利用区分".ToLower(), "kbn客室利用区分");
                 tmpMap.put("kbn職位区分".ToLower(), "kbn職位区分");
                 tmpMap.put("mst会員マスタ".ToLower(), "mst会員マスタ");
-                tmpMap.put("mst制御画面マスタ".ToLower(), "mst制御画面マスタ");
                 tmpMap.put("mst客室タイプマスタ".ToLower(), "mst客室タイプマスタ");
                 tmpMap.put("mst客室マスタ".ToLower(), "mst客室マスタ");
                 tmpMap.put("mst従業員マスタ".ToLower(), "mst従業員マスタ");
                 tmpMap.put("mst権限マスタ".ToLower(), "mst権限マスタ");
+                tmpMap.put("mst画面マスタ".ToLower(), "mst画面マスタ");
                 _tableDbNamePropertyNameKeyToLowerMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
 
             {
                 Map<String, String> tmpMap = new HashMap<String, String>();
-                tmpMap.put("Dch客室利用予定台帳".ToLower(), "dch客室利用予定台帳");
-                tmpMap.put("Dch客室利用実績台帳".ToLower(), "dch客室利用実績台帳");
-                tmpMap.put("Dch宿泊予定台帳".ToLower(), "dch宿泊予定台帳");
-                tmpMap.put("Dch宿泊実績台帳".ToLower(), "dch宿泊実績台帳");
+                tmpMap.put("Dch客室利用台帳".ToLower(), "dch客室利用台帳");
+                tmpMap.put("Dch宿泊利用台帳".ToLower(), "dch宿泊利用台帳");
                 tmpMap.put("Dch従業員職位履歴台帳".ToLower(), "dch従業員職位履歴台帳");
                 tmpMap.put("Dch月締確定台帳".ToLower(), "dch月締確定台帳");
                 tmpMap.put("Dmyプロシージャ".ToLower(), "dmyプロシージャ");
@@ -78,11 +72,11 @@ namespace Dbflute.AllCommon.Dbm {
                 tmpMap.put("Kbn客室利用区分".ToLower(), "kbn客室利用区分");
                 tmpMap.put("Kbn職位区分".ToLower(), "kbn職位区分");
                 tmpMap.put("Mst会員マスタ".ToLower(), "mst会員マスタ");
-                tmpMap.put("Mst制御画面マスタ".ToLower(), "mst制御画面マスタ");
                 tmpMap.put("Mst客室タイプマスタ".ToLower(), "mst客室タイプマスタ");
                 tmpMap.put("Mst客室マスタ".ToLower(), "mst客室マスタ");
                 tmpMap.put("Mst従業員マスタ".ToLower(), "mst従業員マスタ");
                 tmpMap.put("Mst権限マスタ".ToLower(), "mst権限マスタ");
+                tmpMap.put("Mst画面マスタ".ToLower(), "mst画面マスタ");
                 _tablePropertyNameDbNameKeyToLowerMap = tmpMap;//java.util.Collections.unmodifiableMap(tmpMap);
             }
         }

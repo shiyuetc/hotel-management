@@ -18,11 +18,13 @@ namespace Dbflute.ExEntity {
     /// <summary>
     /// The entity of kbn客室利用区分 as TABLE. (partial class for auto-generation)
     /// <![CDATA[
+    /// 客室利用区分
+    /// 
     /// [primary-key]
-    ///     code
+    ///     客室利用コード
     /// 
     /// [column]
-    ///     code, 名称
+    ///     客室利用コード, 客室利用名称
     /// 
     /// [sequence]
     ///     
@@ -37,13 +39,13 @@ namespace Dbflute.ExEntity {
     ///     
     /// 
     /// [referrer-table]
-    ///     dch客室利用予定台帳, dch客室利用実績台帳
+    ///     dch客室利用台帳
     /// 
     /// [foreign-property]
     ///     
     /// 
     /// [referrer-property]
-    ///     dch客室利用予定台帳List, dch客室利用実績台帳List
+    ///     dch客室利用台帳List
     /// ]]>
     /// Author: DBFlute(AutoGenerator)
     /// </summary>
@@ -55,11 +57,11 @@ namespace Dbflute.ExEntity {
         //                                                                       Attribute
         //                                                                       =========
         #region Attribute
-        /// <summary>code: {PK, NotNull, bpchar(3), classification=客室利用区分}</summary>
-        protected String _code;
+        /// <summary>客室利用コード: {PK, NotNull, bpchar(2), classification=客室利用区分}</summary>
+        protected String _客室利用コード;
 
-        /// <summary>名称: {NotNull, varchar(20)}</summary>
-        protected String _名称;
+        /// <summary>客室利用名称: {NotNull, varchar(20)}</summary>
+        protected String _客室利用名称;
 
         protected EntityModifiedProperties __modifiedProperties = new EntityModifiedProperties();
         #endregion
@@ -79,10 +81,10 @@ namespace Dbflute.ExEntity {
         //                                                         Classification Property
         //                                                         =======================
         #region Classification Property
-        public CDef.客室利用区分 CodeAs客室利用区分 { get {
-            return CDef.客室利用区分.CodeOf(_code);
+        public CDef.客室利用区分 客室利用コードAs客室利用区分 { get {
+            return CDef.客室利用区分.CodeOf(_客室利用コード);
         } set {
-            Code = value != null ? value.Code : null;
+            客室利用コード = value != null ? value.Code : null;
         }}
 
         #endregion
@@ -92,43 +94,43 @@ namespace Dbflute.ExEntity {
         //                                                          ======================
         #region Classification Setting
         /// <summary>
-        /// Set the value of code as 宿泊.
+        /// Set the value of 客室利用コード as 宿泊.
         /// <![CDATA[
         /// 宿泊
         /// ]]>
         /// </summary>
-        public void SetCode_宿泊() {
-            CodeAs客室利用区分 = CDef.客室利用区分.宿泊;
+        public void Set客室利用コード_宿泊() {
+            客室利用コードAs客室利用区分 = CDef.客室利用区分.宿泊;
         }
 
         /// <summary>
-        /// Set the value of code as 清掃.
+        /// Set the value of 客室利用コード as 清掃.
         /// <![CDATA[
         /// 清掃
         /// ]]>
         /// </summary>
-        public void SetCode_清掃() {
-            CodeAs客室利用区分 = CDef.客室利用区分.清掃;
+        public void Set客室利用コード_清掃() {
+            客室利用コードAs客室利用区分 = CDef.客室利用区分.清掃;
         }
 
         /// <summary>
-        /// Set the value of code as 工事.
+        /// Set the value of 客室利用コード as 工事.
         /// <![CDATA[
         /// 工事
         /// ]]>
         /// </summary>
-        public void SetCode_工事() {
-            CodeAs客室利用区分 = CDef.客室利用区分.工事;
+        public void Set客室利用コード_工事() {
+            客室利用コードAs客室利用区分 = CDef.客室利用区分.工事;
         }
 
         /// <summary>
-        /// Set the value of code as その他.
+        /// Set the value of 客室利用コード as その他.
         /// <![CDATA[
         /// その他
         /// ]]>
         /// </summary>
-        public void SetCode_その他() {
-            CodeAs客室利用区分 = CDef.客室利用区分.その他;
+        public void Set客室利用コード_その他() {
+            客室利用コードAs客室利用区分 = CDef.客室利用区分.その他;
         }
 
         #endregion
@@ -138,61 +140,61 @@ namespace Dbflute.ExEntity {
         //                                                    ============================
         #region Classification Determination
         /// <summary>
-        /// Is the value of code '宿泊'?
+        /// Is the value of 客室利用コード '宿泊'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// 宿泊
         /// ]]>
         /// </summary>
-        public bool IsCode宿泊 {
+        public bool Is客室利用コード宿泊 {
             get {
-                CDef.客室利用区分 cls = CodeAs客室利用区分;
+                CDef.客室利用区分 cls = 客室利用コードAs客室利用区分;
                 return cls != null ? cls.Equals(CDef.客室利用区分.宿泊) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of code '清掃'?
+        /// Is the value of 客室利用コード '清掃'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// 清掃
         /// ]]>
         /// </summary>
-        public bool IsCode清掃 {
+        public bool Is客室利用コード清掃 {
             get {
-                CDef.客室利用区分 cls = CodeAs客室利用区分;
+                CDef.客室利用区分 cls = 客室利用コードAs客室利用区分;
                 return cls != null ? cls.Equals(CDef.客室利用区分.清掃) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of code '工事'?
+        /// Is the value of 客室利用コード '工事'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// 工事
         /// ]]>
         /// </summary>
-        public bool IsCode工事 {
+        public bool Is客室利用コード工事 {
             get {
-                CDef.客室利用区分 cls = CodeAs客室利用区分;
+                CDef.客室利用区分 cls = 客室利用コードAs客室利用区分;
                 return cls != null ? cls.Equals(CDef.客室利用区分.工事) : false;
             }
         }
 
         /// <summary>
-        /// Is the value of code 'その他'?
+        /// Is the value of 客室利用コード 'その他'?
         /// <![CDATA[
         /// The difference of capital letters and small letters is NOT distinguished.
         /// If the value is null, this method returns false!
         /// その他
         /// ]]>
         /// </summary>
-        public bool IsCodeその他 {
+        public bool Is客室利用コードその他 {
             get {
-                CDef.客室利用区分 cls = CodeAs客室利用区分;
+                CDef.客室利用区分 cls = 客室利用コードAs客室利用区分;
                 return cls != null ? cls.Equals(CDef.客室利用区分.その他) : false;
             }
         }
@@ -209,20 +211,12 @@ namespace Dbflute.ExEntity {
         //                                                               Referrer Property
         //                                                               =================
         #region Referrer Property
-        protected IList<Dch客室利用予定台帳> _dch客室利用予定台帳List;
+        protected IList<Dch客室利用台帳> _dch客室利用台帳List;
 
-        /// <summary>dch客室利用予定台帳 as 'Dch客室利用予定台帳List'.</summary>
-        public IList<Dch客室利用予定台帳> Dch客室利用予定台帳List {
-            get { if (_dch客室利用予定台帳List == null) { _dch客室利用予定台帳List = new List<Dch客室利用予定台帳>(); } return _dch客室利用予定台帳List; }
-            set { _dch客室利用予定台帳List = value; }
-        }
-
-        protected IList<Dch客室利用実績台帳> _dch客室利用実績台帳List;
-
-        /// <summary>dch客室利用実績台帳 as 'Dch客室利用実績台帳List'.</summary>
-        public IList<Dch客室利用実績台帳> Dch客室利用実績台帳List {
-            get { if (_dch客室利用実績台帳List == null) { _dch客室利用実績台帳List = new List<Dch客室利用実績台帳>(); } return _dch客室利用実績台帳List; }
-            set { _dch客室利用実績台帳List = value; }
+        /// <summary>dch客室利用台帳 as 'Dch客室利用台帳List'.</summary>
+        public IList<Dch客室利用台帳> Dch客室利用台帳List {
+            get { if (_dch客室利用台帳List == null) { _dch客室利用台帳List = new List<Dch客室利用台帳>(); } return _dch客室利用台帳List; }
+            set { _dch客室利用台帳List = value; }
         }
 
         #endregion
@@ -232,7 +226,7 @@ namespace Dbflute.ExEntity {
         //                                                                   =============
         public virtual bool HasPrimaryKeyValue {
             get {
-                if (_code == null) { return false; }
+                if (_客室利用コード == null) { return false; }
                 return true;
             }
         }
@@ -255,7 +249,7 @@ namespace Dbflute.ExEntity {
         public override bool Equals(Object other) {
             if (other == null || !(other is Kbn客室利用区分)) { return false; }
             Kbn客室利用区分 otherEntity = (Kbn客室利用区分)other;
-            if (!xSV(this.Code, otherEntity.Code)) { return false; }
+            if (!xSV(this.客室利用コード, otherEntity.客室利用コード)) { return false; }
             return true;
         }
         protected bool xSV(Object value1, Object value2) { // isSameValue()
@@ -266,7 +260,7 @@ namespace Dbflute.ExEntity {
 
         public override int GetHashCode() {
             int result = 17;
-            result = xCH(result, _code);
+            result = xCH(result, _客室利用コード);
             return result;
         }
         protected int xCH(int result, Object value) { // calculateHashcode()
@@ -282,10 +276,8 @@ namespace Dbflute.ExEntity {
             StringBuilder sb = new StringBuilder();
             sb.Append(ToString());
             String l = "\n  ";
-            if (_dch客室利用予定台帳List != null) { foreach (Entity e in _dch客室利用予定台帳List)
-            { if (e != null) { sb.Append(l).Append(xbRDS(e, "Dch客室利用予定台帳List")); } } }
-            if (_dch客室利用実績台帳List != null) { foreach (Entity e in _dch客室利用実績台帳List)
-            { if (e != null) { sb.Append(l).Append(xbRDS(e, "Dch客室利用実績台帳List")); } } }
+            if (_dch客室利用台帳List != null) { foreach (Entity e in _dch客室利用台帳List)
+            { if (e != null) { sb.Append(l).Append(xbRDS(e, "Dch客室利用台帳List")); } } }
             return sb.ToString();
         }
         protected String xbRDS(Entity e, String name) { // buildRelationDisplayString()
@@ -302,8 +294,8 @@ namespace Dbflute.ExEntity {
         protected virtual String BuildColumnString() {
             String c = ", ";
             StringBuilder sb = new StringBuilder();
-            sb.Append(c).Append(this.Code);
-            sb.Append(c).Append(this.名称);
+            sb.Append(c).Append(this.客室利用コード);
+            sb.Append(c).Append(this.客室利用名称);
             if (sb.Length > 0) { sb.Remove(0, c.Length); }
             sb.Insert(0, "{").Append("}");
             return sb.ToString();
@@ -311,10 +303,8 @@ namespace Dbflute.ExEntity {
         protected virtual String BuildRelationString() {
             StringBuilder sb = new StringBuilder();
             String c = ",";
-            if (_dch客室利用予定台帳List != null && _dch客室利用予定台帳List.Count > 0)
-            { sb.Append(c).Append("Dch客室利用予定台帳List"); }
-            if (_dch客室利用実績台帳List != null && _dch客室利用実績台帳List.Count > 0)
-            { sb.Append(c).Append("Dch客室利用実績台帳List"); }
+            if (_dch客室利用台帳List != null && _dch客室利用台帳List.Count > 0)
+            { sb.Append(c).Append("Dch客室利用台帳List"); }
             if (sb.Length > 0) { sb.Remove(0, c.Length).Insert(0, "(").Append(")"); }
             return sb.ToString();
         }
@@ -324,23 +314,29 @@ namespace Dbflute.ExEntity {
         //                                                                        Accessor
         //                                                                        ========
         #region Accessor
-        /// <summary>code: {PK, NotNull, bpchar(3), classification=客室利用区分}</summary>
-        [Seasar.Dao.Attrs.Column("code")]
-        public String Code {
-            get { return _code; }
+        /// <summary>客室利用コード: {PK, NotNull, bpchar(2), classification=客室利用区分}</summary>
+        /// <remarks>
+        /// 客室利用コード
+        /// </remarks>
+        [Seasar.Dao.Attrs.Column("客室利用コード")]
+        public String 客室利用コード {
+            get { return _客室利用コード; }
             set {
-                __modifiedProperties.AddPropertyName("Code");
-                _code = value;
+                __modifiedProperties.AddPropertyName("客室利用コード");
+                _客室利用コード = value;
             }
         }
 
-        /// <summary>名称: {NotNull, varchar(20)}</summary>
-        [Seasar.Dao.Attrs.Column("名称")]
-        public String 名称 {
-            get { return _名称; }
+        /// <summary>客室利用名称: {NotNull, varchar(20)}</summary>
+        /// <remarks>
+        /// 客室利用名称
+        /// </remarks>
+        [Seasar.Dao.Attrs.Column("客室利用名称")]
+        public String 客室利用名称 {
+            get { return _客室利用名称; }
             set {
-                __modifiedProperties.AddPropertyName("名称");
-                _名称 = value;
+                __modifiedProperties.AddPropertyName("客室利用名称");
+                _客室利用名称 = value;
             }
         }
 

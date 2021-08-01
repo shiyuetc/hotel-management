@@ -68,17 +68,30 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        protected override ConditionValue getCValue従業員id() {
-            return _myCQ.従業員id;
+        protected override ConditionValue getCValue従業員コード() {
+            return _myCQ.従業員コード;
         }
 
 
-        public override String keep従業員id_InScopeSubQuery_Mst従業員マスタ(Mst従業員マスタCQ subQuery) {
-            return _myCQ.keep従業員id_InScopeSubQuery_Mst従業員マスタ(subQuery);
+        public override String keep従業員コード_InScopeSubQuery_Mst従業員マスタ(Mst従業員マスタCQ subQuery) {
+            return _myCQ.keep従業員コード_InScopeSubQuery_Mst従業員マスタ(subQuery);
         }
 
-        public override String keep従業員id_NotInScopeSubQuery_Mst従業員マスタ(Mst従業員マスタCQ subQuery) {
-            return _myCQ.keep従業員id_NotInScopeSubQuery_Mst従業員マスタ(subQuery);
+        public override String keep従業員コード_NotInScopeSubQuery_Mst従業員マスタ(Mst従業員マスタCQ subQuery) {
+            return _myCQ.keep従業員コード_NotInScopeSubQuery_Mst従業員マスタ(subQuery);
+        }
+
+        protected override ConditionValue getCValue職位コード() {
+            return _myCQ.職位コード;
+        }
+
+
+        public override String keep職位コード_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
+            return _myCQ.keep職位コード_InScopeSubQuery_Kbn職位区分(subQuery);
+        }
+
+        public override String keep職位コード_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
+            return _myCQ.keep職位コード_NotInScopeSubQuery_Kbn職位区分(subQuery);
         }
 
         protected override ConditionValue getCValue適用開始日() {
@@ -90,19 +103,6 @@ namespace Dbflute.CBean.CQ.Ciq {
             return _myCQ.適用終了日;
         }
 
-
-        protected override ConditionValue getCValue職位code() {
-            return _myCQ.職位code;
-        }
-
-
-        public override String keep職位code_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
-            return _myCQ.keep職位code_InScopeSubQuery_Kbn職位区分(subQuery);
-        }
-
-        public override String keep職位code_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
-            return _myCQ.keep職位code_NotInScopeSubQuery_Kbn職位区分(subQuery);
-        }
 
         // ===================================================================================
         //                                                                     Scalar SubQuery

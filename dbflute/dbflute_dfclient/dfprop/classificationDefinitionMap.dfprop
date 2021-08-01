@@ -60,11 +60,11 @@ map:{
         }
         ; map:{
             ; table=kbnメニュー区分
-            ; code=code
-            ; name=メニュー名
-            ; alias=メニュー名
+            ; code=メニューコード
+            ; name=メニュー名称
+            ; alias=メニュー名称
             ; comment=優先順位
-            ; orderBy=code
+            ; orderBy=メニューコード
         }
     }
     ; 職位区分 = list:{
@@ -74,11 +74,11 @@ map:{
         }
         ; map:{
             ; table=kbn職位区分
-            ; code=code
-            ; name=名称
-            ; alias=名称
-            ; comment=名称_英字
-            ; orderBy=code
+            ; code=職位コード
+            ; name=職位名称
+            ; alias=職位名称
+            ; comment=職位英字名称
+            ; orderBy=職位コード
         }
     }
     ; 客室利用区分 = list:{
@@ -88,10 +88,10 @@ map:{
         }
         ; map:{
             ; table=kbn客室利用区分
-            ; code=code
-            ; name=名称
-            ; alias=名称
-            ; orderBy=code
+            ; code=客室利用コード
+            ; name=客室利用名称
+            ; alias=客室利用名称
+            ; orderBy=客室利用コード
         }
     }
 }

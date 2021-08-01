@@ -33,7 +33,7 @@ namespace HotelManagement.Controls.UserContols
         /// </summary>
         [Browsable(true)]
         [Category("表示")]
-        public override string Text
+        public string LabelText
         {
             get
             {

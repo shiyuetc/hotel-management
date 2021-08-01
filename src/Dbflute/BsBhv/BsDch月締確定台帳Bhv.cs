@@ -119,18 +119,18 @@ namespace Dbflute.ExBhv {
             return SelectEntityWithDeletedCheck(Downcast(cb));
         }
 
-        public virtual Dch月締確定台帳 SelectByPKValue(long? id) {
-            return SelectEntity(BuildPKCB(id));
+        public virtual Dch月締確定台帳 SelectByPKValue(String 対象年月) {
+            return SelectEntity(BuildPKCB(対象年月));
         }
 
-        public virtual Dch月締確定台帳 SelectByPKValueWithDeletedCheck(long? id) {
-            return SelectEntityWithDeletedCheck(BuildPKCB(id));
+        public virtual Dch月締確定台帳 SelectByPKValueWithDeletedCheck(String 対象年月) {
+            return SelectEntityWithDeletedCheck(BuildPKCB(対象年月));
         }
 
-        private Dch月締確定台帳CB BuildPKCB(long? id) {
-            AssertObjectNotNull("id", id);
+        private Dch月締確定台帳CB BuildPKCB(String 対象年月) {
+            AssertObjectNotNull("対象年月", 対象年月);
             Dch月締確定台帳CB cb = NewMyConditionBean();
-            cb.Query().SetId_Equal(id);
+            cb.Query().Set対象年月_Equal(対象年月);
             return cb;            
         }
         #endregion
@@ -163,17 +163,6 @@ namespace Dbflute.ExBhv {
             public IList<Dch月締確定台帳> Paging() { return _bhv.SelectList(_cb); }
         }
         #endregion
-
-        // ===============================================================================
-        //                                                                        Sequence
-        //                                                                        ========
-        public long? SelectNextVal() {
-            return DelegateSelectNextVal();
-        }
-        protected override void SetupNextValueToPrimaryKey(Entity entity) {// Very Internal
-            Dch月締確定台帳 myEntity = (Dch月締確定台帳)entity;
-            myEntity.Id = SelectNextVal();
-        }
 
         // ===============================================================================
         //                                                                   Load Referrer
@@ -223,7 +212,7 @@ namespace Dbflute.ExBhv {
             public void CallbackUpdate(Dch月締確定台帳 entity) { _bhv.Update(entity); }
             public Dch月締確定台帳CB CallbackNewMyConditionBean() { return _bhv.NewMyConditionBean(); }
             public void CallbackSetupPrimaryKeyCondition(Dch月締確定台帳CB cb, Dch月締確定台帳 entity) {
-                cb.Query().SetId_Equal(entity.Id);
+                cb.Query().Set対象年月_Equal(entity.対象年月);
             }
             public int CallbackSelectCount(Dch月締確定台帳CB cb) { return _bhv.SelectCount(cb); }
         }
@@ -275,7 +264,6 @@ namespace Dbflute.ExBhv {
         #region Delegate Method
         protected int DelegateSelectCount(Dch月締確定台帳CB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectCount(cb); }
         protected IList<Dch月締確定台帳> DelegateSelectList(Dch月締確定台帳CB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectList(cb); }
-        protected long? DelegateSelectNextVal() { return this.Dao.SelectNextVal(); }
 
         protected int DelegateInsert(Dch月締確定台帳 e) { if (!ProcessBeforeInsert(e)) { return 1; } return this.Dao.Insert(e); }
         protected int DelegateUpdate(Dch月締確定台帳 e)

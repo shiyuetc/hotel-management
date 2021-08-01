@@ -15,7 +15,7 @@ namespace HotelManagement.Models
     {
         #region 使用するテーブル
 
-        protected Mst制御画面マスタBhv 制御画面マスタBhv;
+        protected Mst画面マスタBhv 画面マスタBhv;
 
         protected Mst権限マスタBhv 権限マスタBhv;
 
@@ -24,33 +24,33 @@ namespace HotelManagement.Models
         #region メソッド
 
         /// <summary>
-        /// "ログイン"制御画面マスタを返します。
+        /// "ログイン"画面マスタを返します。
         /// </summary>
-        /// <returns>制御画面マスタ</returns>
-        public Mst制御画面マスタ Getログイン制御画面マスタ()
+        /// <returns>画面マスタ</returns>
+        public Mst画面マスタ Getログイン画面マスタ()
         {
-            var 制御画面マスタcb = new Mst制御画面マスタCB();
-            制御画面マスタcb.Query().QueryKbnメニュー区分().Set優先順位_Equal(9999);
-            var 制御画面マスタ = 制御画面マスタBhv.SelectEntity(制御画面マスタcb);
+            var 画面マスタcb = new Mst画面マスタCB();
+            画面マスタcb.Query().QueryKbnメニュー区分().Set優先順位_Equal(9999);
+            var 画面マスタ = 画面マスタBhv.SelectEntity(画面マスタcb);
 
-            return 制御画面マスタ;
+            return 画面マスタ;
         }
 
         /// <summary>
-        /// 権限区分に紐づいた制御画面マスタのリストを返します。
+        /// 権限区分に紐づいた画面マスタのリストを返します。
         /// </summary>
-        /// <param name="権限区分">権限区分</param>
-        /// <returns>制御画面マスタのリスト</returns>
-        public List<Mst制御画面マスタ> Get制御画面マスタListt(Kbn職位区分 権限区分)
+        /// <param name="職位区分">職位区分</param>
+        /// <returns>画面マスタのリスト</returns>
+        public List<Mst画面マスタ> Get画面マスタListt(Kbn職位区分 職位区分)
         {
             var 権限マスタcb = new Mst権限マスタCB();
-            権限マスタcb.SetupSelect_Mst制御画面マスタ().WithKbnメニュー区分();
-            権限マスタcb.Query().ConditionQueryKbn職位区分.SetCode_Equal(権限区分.Code);
-            権限マスタcb.Query().ConditionQueryMst制御画面マスタ.AddOrderBy_優先順位_Asc();
+            権限マスタcb.SetupSelect_Mst画面マスタ().WithKbnメニュー区分();
+            権限マスタcb.Query().ConditionQueryKbn職位区分.Set職位コード_Equal(職位区分.職位コード);
+            権限マスタcb.Query().ConditionQueryMst画面マスタ.AddOrderBy_優先順位_Asc();
             var 権限マスタList = 権限マスタBhv.SelectList(権限マスタcb);
-            var 制御画面マスタList = 権限マスタList.Select(x => x.Mst制御画面マスタ).ToList();
+            var 画面マスタList = 権限マスタList.Select(x => x.Mst画面マスタ).ToList();
 
-            return 制御画面マスタList.Any() ? 制御画面マスタList : new List<Mst制御画面マスタ>();
+            return 画面マスタList.Any() ? 画面マスタList : new List<Mst画面マスタ>();
         }
 
         #endregion

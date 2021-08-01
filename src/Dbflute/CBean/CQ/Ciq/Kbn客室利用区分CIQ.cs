@@ -63,67 +63,40 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        protected override ConditionValue getCValueCode() {
-            return _myCQ.Code;
+        protected override ConditionValue getCValue客室利用コード() {
+            return _myCQ.客室利用コード;
         }
 
 
-        public override String keepCode_ExistsSubQuery_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
+        public override String keep客室利用コード_ExistsSubQuery_Dch客室利用台帳List(Dch客室利用台帳CQ subQuery) {
             throw new SystemException("ExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepCode_ExistsSubQuery_Dch客室利用予定台帳List(subQuery);
+            // _myCQ.keep客室利用コード_ExistsSubQuery_Dch客室利用台帳List(subQuery);
         }
 
-        public override String keepCode_ExistsSubQuery_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
-            throw new SystemException("ExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepCode_ExistsSubQuery_Dch客室利用実績台帳List(subQuery);
-        }
-
-        public override String keepCode_NotExistsSubQuery_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
+        public override String keep客室利用コード_NotExistsSubQuery_Dch客室利用台帳List(Dch客室利用台帳CQ subQuery) {
             throw new SystemException("NotExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepCode_NotExistsSubQuery_Dch客室利用予定台帳List(subQuery);
+            // _myCQ.keep客室利用コード_NotExistsSubQuery_Dch客室利用台帳List(subQuery);
         }
 
-        public override String keepCode_NotExistsSubQuery_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
-            throw new SystemException("NotExistsSubQuery at inline() is unsupported! Sorry!");
-            // _myCQ.keepCode_NotExistsSubQuery_Dch客室利用実績台帳List(subQuery);
+        public override String keep客室利用コード_InScopeSubQuery_Dch客室利用台帳List(Dch客室利用台帳CQ subQuery) {
+            return _myCQ.keep客室利用コード_InScopeSubQuery_Dch客室利用台帳List(subQuery);
         }
 
-        public override String keepCode_InScopeSubQuery_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
-            return _myCQ.keepCode_InScopeSubQuery_Dch客室利用予定台帳List(subQuery);
+        public override String keep客室利用コード_NotInScopeSubQuery_Dch客室利用台帳List(Dch客室利用台帳CQ subQuery) {
+            return _myCQ.keep客室利用コード_NotInScopeSubQuery_Dch客室利用台帳List(subQuery);
         }
-
-        public override String keepCode_InScopeSubQuery_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
-            return _myCQ.keepCode_InScopeSubQuery_Dch客室利用実績台帳List(subQuery);
-        }
-
-        public override String keepCode_NotInScopeSubQuery_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
-            return _myCQ.keepCode_NotInScopeSubQuery_Dch客室利用予定台帳List(subQuery);
-        }
-
-        public override String keepCode_NotInScopeSubQuery_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
-            return _myCQ.keepCode_NotInScopeSubQuery_Dch客室利用実績台帳List(subQuery);
-        }
-        public override String keepCode_SpecifyDerivedReferrer_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
+        public override String keep客室利用コード_SpecifyDerivedReferrer_Dch客室利用台帳List(Dch客室利用台帳CQ subQuery) {
             throw new UnsupportedOperationException("(Specify)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepCode_SpecifyDerivedReferrer_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
-            throw new UnsupportedOperationException("(Specify)DerivedReferrer at inline() is unsupported! Sorry!");
-        }
-        public override String keepCode_QueryDerivedReferrer_Dch客室利用予定台帳List(Dch客室利用予定台帳CQ subQuery) {
+        public override String keep客室利用コード_QueryDerivedReferrer_Dch客室利用台帳List(Dch客室利用台帳CQ subQuery) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
-        public override String keepCode_QueryDerivedReferrer_Dch客室利用予定台帳ListParameter(Object parameterValue) {
-            throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
-        }
-        public override String keepCode_QueryDerivedReferrer_Dch客室利用実績台帳List(Dch客室利用実績台帳CQ subQuery) {
-            throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
-        }
-        public override String keepCode_QueryDerivedReferrer_Dch客室利用実績台帳ListParameter(Object parameterValue) {
+        public override String keep客室利用コード_QueryDerivedReferrer_Dch客室利用台帳ListParameter(Object parameterValue) {
             throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
         }
 
-        protected override ConditionValue getCValue名称() {
-            return _myCQ.名称;
+        protected override ConditionValue getCValue客室利用名称() {
+            return _myCQ.客室利用名称;
         }
 
 

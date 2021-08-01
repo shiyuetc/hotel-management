@@ -1,5 +1,4 @@
 ﻿using Dbflute.ExEntity;
-using System.Collections.Generic;
 
 namespace HotelManagement.Common
 {

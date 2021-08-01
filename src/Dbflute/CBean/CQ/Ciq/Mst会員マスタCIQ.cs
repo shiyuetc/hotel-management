@@ -63,23 +63,50 @@ namespace Dbflute.CBean.CQ.Ciq {
         }
 
 
-        protected override ConditionValue getCValueId() {
-            return _myCQ.Id;
+        protected override ConditionValue getCValue会員コード() {
+            return _myCQ.会員コード;
         }
 
+
+        public override String keep会員コード_ExistsSubQuery_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery) {
+            throw new SystemException("ExistsSubQuery at inline() is unsupported! Sorry!");
+            // _myCQ.keep会員コード_ExistsSubQuery_Dch宿泊利用台帳List(subQuery);
+        }
+
+        public override String keep会員コード_NotExistsSubQuery_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery) {
+            throw new SystemException("NotExistsSubQuery at inline() is unsupported! Sorry!");
+            // _myCQ.keep会員コード_NotExistsSubQuery_Dch宿泊利用台帳List(subQuery);
+        }
+
+        public override String keep会員コード_InScopeSubQuery_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery) {
+            return _myCQ.keep会員コード_InScopeSubQuery_Dch宿泊利用台帳List(subQuery);
+        }
+
+        public override String keep会員コード_NotInScopeSubQuery_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery) {
+            return _myCQ.keep会員コード_NotInScopeSubQuery_Dch宿泊利用台帳List(subQuery);
+        }
+        public override String keep会員コード_SpecifyDerivedReferrer_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery) {
+            throw new UnsupportedOperationException("(Specify)DerivedReferrer at inline() is unsupported! Sorry!");
+        }
+        public override String keep会員コード_QueryDerivedReferrer_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery) {
+            throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
+        }
+        public override String keep会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListParameter(Object parameterValue) {
+            throw new UnsupportedOperationException("(Query)DerivedReferrer at inline() is unsupported! Sorry!");
+        }
 
         protected override ConditionValue getCValue会員番号() {
             return _myCQ.会員番号;
         }
 
 
-        protected override ConditionValue getCValue氏名姓() {
-            return _myCQ.氏名姓;
+        protected override ConditionValue getCValue名字() {
+            return _myCQ.名字;
         }
 
 
-        protected override ConditionValue getCValue氏名名() {
-            return _myCQ.氏名名;
+        protected override ConditionValue getCValue名前() {
+            return _myCQ.名前;
         }
 
 

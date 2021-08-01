@@ -119,18 +119,18 @@ namespace Dbflute.ExBhv {
             return SelectEntityWithDeletedCheck(Downcast(cb));
         }
 
-        public virtual Mst客室タイプマスタ SelectByPKValue(long? id) {
-            return SelectEntity(BuildPKCB(id));
+        public virtual Mst客室タイプマスタ SelectByPKValue(String 客室タイプコード) {
+            return SelectEntity(BuildPKCB(客室タイプコード));
         }
 
-        public virtual Mst客室タイプマスタ SelectByPKValueWithDeletedCheck(long? id) {
-            return SelectEntityWithDeletedCheck(BuildPKCB(id));
+        public virtual Mst客室タイプマスタ SelectByPKValueWithDeletedCheck(String 客室タイプコード) {
+            return SelectEntityWithDeletedCheck(BuildPKCB(客室タイプコード));
         }
 
-        private Mst客室タイプマスタCB BuildPKCB(long? id) {
-            AssertObjectNotNull("id", id);
+        private Mst客室タイプマスタCB BuildPKCB(String 客室タイプコード) {
+            AssertObjectNotNull("客室タイプコード", 客室タイプコード);
             Mst客室タイプマスタCB cb = NewMyConditionBean();
-            cb.Query().SetId_Equal(id);
+            cb.Query().Set客室タイプコード_Equal(客室タイプコード);
             return cb;            
         }
         #endregion
@@ -165,17 +165,6 @@ namespace Dbflute.ExBhv {
         #endregion
 
         // ===============================================================================
-        //                                                                        Sequence
-        //                                                                        ========
-        public long? SelectNextVal() {
-            return DelegateSelectNextVal();
-        }
-        protected override void SetupNextValueToPrimaryKey(Entity entity) {// Very Internal
-            Mst客室タイプマスタ myEntity = (Mst客室タイプマスタ)entity;
-            myEntity.Id = SelectNextVal();
-        }
-
-        // ===============================================================================
         //                                                                   Load Referrer
         //                                                                   =============
         #region Load Referrer
@@ -195,20 +184,20 @@ namespace Dbflute.ExBhv {
             AssertObjectNotNull("mst客室タイプマスタList", mst客室タイプマスタList); AssertObjectNotNull("loadReferrerOption", loadReferrerOption);
             if (mst客室タイプマスタList.Count == 0) { return; }
             Mst客室マスタBhv referrerBhv = xgetBSFLR().Select<Mst客室マスタBhv>();
-            HelpLoadReferrerInternally<Mst客室タイプマスタ, long?, Mst客室マスタCB, Mst客室マスタ>
+            HelpLoadReferrerInternally<Mst客室タイプマスタ, String, Mst客室マスタCB, Mst客室マスタ>
                     (mst客室タイプマスタList, loadReferrerOption, new MyInternalLoadMst客室マスタListCallback(referrerBhv));
         }
-        protected class MyInternalLoadMst客室マスタListCallback : InternalLoadReferrerCallback<Mst客室タイプマスタ, long?, Mst客室マスタCB, Mst客室マスタ> {
+        protected class MyInternalLoadMst客室マスタListCallback : InternalLoadReferrerCallback<Mst客室タイプマスタ, String, Mst客室マスタCB, Mst客室マスタ> {
             protected Mst客室マスタBhv referrerBhv;
             public MyInternalLoadMst客室マスタListCallback(Mst客室マスタBhv referrerBhv) { this.referrerBhv = referrerBhv; }
-            public long? getPKVal(Mst客室タイプマスタ e) { return e.Id; }
+            public String getPKVal(Mst客室タイプマスタ e) { return e.客室タイプコード; }
             public void setRfLs(Mst客室タイプマスタ e, IList<Mst客室マスタ> ls) { e.Mst客室マスタList = ls; }
             public Mst客室マスタCB newMyCB() { return referrerBhv.NewMyConditionBean(); }
-            public void qyFKIn(Mst客室マスタCB cb, IList<long?> ls) { cb.Query().Set客室タイプid_InScope(ls); }
-            public void qyOdFKAsc(Mst客室マスタCB cb) { cb.Query().AddOrderBy_客室タイプid_Asc(); }
-            public void spFKCol(Mst客室マスタCB cb) { cb.Specify().Column客室タイプid(); }
+            public void qyFKIn(Mst客室マスタCB cb, IList<String> ls) { cb.Query().Set客室タイプコード_InScope(ls); }
+            public void qyOdFKAsc(Mst客室マスタCB cb) { cb.Query().AddOrderBy_客室タイプコード_Asc(); }
+            public void spFKCol(Mst客室マスタCB cb) { cb.Specify().Column客室タイプコード(); }
             public IList<Mst客室マスタ> selRfLs(Mst客室マスタCB cb) { return referrerBhv.SelectList(cb); }
-            public long? getFKVal(Mst客室マスタ e) { return e.客室タイプid; }
+            public String getFKVal(Mst客室マスタ e) { return e.客室タイプコード; }
             public void setlcEt(Mst客室マスタ re, Mst客室タイプマスタ be) { re.Mst客室タイプマスタ = be; }
         }
         #endregion
@@ -255,7 +244,7 @@ namespace Dbflute.ExBhv {
             public void CallbackUpdate(Mst客室タイプマスタ entity) { _bhv.Update(entity); }
             public Mst客室タイプマスタCB CallbackNewMyConditionBean() { return _bhv.NewMyConditionBean(); }
             public void CallbackSetupPrimaryKeyCondition(Mst客室タイプマスタCB cb, Mst客室タイプマスタ entity) {
-                cb.Query().SetId_Equal(entity.Id);
+                cb.Query().Set客室タイプコード_Equal(entity.客室タイプコード);
             }
             public int CallbackSelectCount(Mst客室タイプマスタCB cb) { return _bhv.SelectCount(cb); }
         }
@@ -307,7 +296,6 @@ namespace Dbflute.ExBhv {
         #region Delegate Method
         protected int DelegateSelectCount(Mst客室タイプマスタCB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectCount(cb); }
         protected IList<Mst客室タイプマスタ> DelegateSelectList(Mst客室タイプマスタCB cb) { AssertConditionBeanNotNull(cb); return this.Dao.SelectList(cb); }
-        protected long? DelegateSelectNextVal() { return this.Dao.SelectNextVal(); }
 
         protected int DelegateInsert(Mst客室タイプマスタ e) { if (!ProcessBeforeInsert(e)) { return 1; } return this.Dao.Insert(e); }
         protected int DelegateUpdate(Mst客室タイプマスタ e)

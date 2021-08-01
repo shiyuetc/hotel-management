@@ -34,15 +34,70 @@ namespace Dbflute.CBean.CQ.BS {
         }
 
 
-        protected ConditionValue _id;
-        public ConditionValue Id {
-            get { if (_id == null) { _id = new ConditionValue(); } return _id; }
+        protected ConditionValue _会員コード;
+        public ConditionValue 会員コード {
+            get { if (_会員コード == null) { _会員コード = new ConditionValue(); } return _会員コード; }
         }
-        protected override ConditionValue getCValueId() { return this.Id; }
+        protected override ConditionValue getCValue会員コード() { return this.会員コード; }
 
 
-        public BsMst会員マスタCQ AddOrderBy_Id_Asc() { regOBA("id");return this; }
-        public BsMst会員マスタCQ AddOrderBy_Id_Desc() { regOBD("id");return this; }
+        protected Map<String, Dch宿泊利用台帳CQ> _会員コード_ExistsSubQuery_Dch宿泊利用台帳ListMap;
+        public Map<String, Dch宿泊利用台帳CQ> 会員コード_ExistsSubQuery_Dch宿泊利用台帳List { get { return _会員コード_ExistsSubQuery_Dch宿泊利用台帳ListMap; }}
+        public override String keep会員コード_ExistsSubQuery_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery) {
+            if (_会員コード_ExistsSubQuery_Dch宿泊利用台帳ListMap == null) { _会員コード_ExistsSubQuery_Dch宿泊利用台帳ListMap = new LinkedHashMap<String, Dch宿泊利用台帳CQ>(); }
+            String key = "subQueryMapKey" + (_会員コード_ExistsSubQuery_Dch宿泊利用台帳ListMap.size() + 1);
+            _会員コード_ExistsSubQuery_Dch宿泊利用台帳ListMap.put(key, subQuery); return "会員コード_ExistsSubQuery_Dch宿泊利用台帳List." + key;
+        }
+
+        protected Map<String, Dch宿泊利用台帳CQ> _会員コード_NotExistsSubQuery_Dch宿泊利用台帳ListMap;
+        public Map<String, Dch宿泊利用台帳CQ> 会員コード_NotExistsSubQuery_Dch宿泊利用台帳List { get { return _会員コード_NotExistsSubQuery_Dch宿泊利用台帳ListMap; }}
+        public override String keep会員コード_NotExistsSubQuery_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery) {
+            if (_会員コード_NotExistsSubQuery_Dch宿泊利用台帳ListMap == null) { _会員コード_NotExistsSubQuery_Dch宿泊利用台帳ListMap = new LinkedHashMap<String, Dch宿泊利用台帳CQ>(); }
+            String key = "subQueryMapKey" + (_会員コード_NotExistsSubQuery_Dch宿泊利用台帳ListMap.size() + 1);
+            _会員コード_NotExistsSubQuery_Dch宿泊利用台帳ListMap.put(key, subQuery); return "会員コード_NotExistsSubQuery_Dch宿泊利用台帳List." + key;
+        }
+
+        protected Map<String, Dch宿泊利用台帳CQ> _会員コード_InScopeSubQuery_Dch宿泊利用台帳ListMap;
+        public Map<String, Dch宿泊利用台帳CQ> 会員コード_InScopeSubQuery_Dch宿泊利用台帳List { get { return _会員コード_InScopeSubQuery_Dch宿泊利用台帳ListMap; }}
+        public override String keep会員コード_InScopeSubQuery_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery) {
+            if (_会員コード_InScopeSubQuery_Dch宿泊利用台帳ListMap == null) { _会員コード_InScopeSubQuery_Dch宿泊利用台帳ListMap = new LinkedHashMap<String, Dch宿泊利用台帳CQ>(); }
+            String key = "subQueryMapKey" + (_会員コード_InScopeSubQuery_Dch宿泊利用台帳ListMap.size() + 1);
+            _会員コード_InScopeSubQuery_Dch宿泊利用台帳ListMap.put(key, subQuery); return "会員コード_InScopeSubQuery_Dch宿泊利用台帳List." + key;
+        }
+
+        protected Map<String, Dch宿泊利用台帳CQ> _会員コード_NotInScopeSubQuery_Dch宿泊利用台帳ListMap;
+        public Map<String, Dch宿泊利用台帳CQ> 会員コード_NotInScopeSubQuery_Dch宿泊利用台帳List { get { return _会員コード_NotInScopeSubQuery_Dch宿泊利用台帳ListMap; }}
+        public override String keep会員コード_NotInScopeSubQuery_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery) {
+            if (_会員コード_NotInScopeSubQuery_Dch宿泊利用台帳ListMap == null) { _会員コード_NotInScopeSubQuery_Dch宿泊利用台帳ListMap = new LinkedHashMap<String, Dch宿泊利用台帳CQ>(); }
+            String key = "subQueryMapKey" + (_会員コード_NotInScopeSubQuery_Dch宿泊利用台帳ListMap.size() + 1);
+            _会員コード_NotInScopeSubQuery_Dch宿泊利用台帳ListMap.put(key, subQuery); return "会員コード_NotInScopeSubQuery_Dch宿泊利用台帳List." + key;
+        }
+
+        protected Map<String, Dch宿泊利用台帳CQ> _会員コード_SpecifyDerivedReferrer_Dch宿泊利用台帳ListMap;
+        public Map<String, Dch宿泊利用台帳CQ> 会員コード_SpecifyDerivedReferrer_Dch宿泊利用台帳List { get { return _会員コード_SpecifyDerivedReferrer_Dch宿泊利用台帳ListMap; }}
+        public override String keep会員コード_SpecifyDerivedReferrer_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery) {
+            if (_会員コード_SpecifyDerivedReferrer_Dch宿泊利用台帳ListMap == null) { _会員コード_SpecifyDerivedReferrer_Dch宿泊利用台帳ListMap = new LinkedHashMap<String, Dch宿泊利用台帳CQ>(); }
+            String key = "subQueryMapKey" + (_会員コード_SpecifyDerivedReferrer_Dch宿泊利用台帳ListMap.size() + 1);
+           _会員コード_SpecifyDerivedReferrer_Dch宿泊利用台帳ListMap.put(key, subQuery); return "会員コード_SpecifyDerivedReferrer_Dch宿泊利用台帳List." + key;
+        }
+
+        protected Map<String, Dch宿泊利用台帳CQ> _会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListMap;
+        public Map<String, Dch宿泊利用台帳CQ> 会員コード_QueryDerivedReferrer_Dch宿泊利用台帳List { get { return _会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListMap; } }
+        public override String keep会員コード_QueryDerivedReferrer_Dch宿泊利用台帳List(Dch宿泊利用台帳CQ subQuery) {
+            if (_会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListMap == null) { _会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListMap = new LinkedHashMap<String, Dch宿泊利用台帳CQ>(); }
+            String key = "subQueryMapKey" + (_会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListMap.size() + 1);
+            _会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListMap.put(key, subQuery); return "会員コード_QueryDerivedReferrer_Dch宿泊利用台帳List." + key;
+        }
+        protected Map<String, Object> _会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListParameterMap;
+        public Map<String, Object> 会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListParameter { get { return _会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListParameterMap; } }
+        public override String keep会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListParameter(Object parameterValue) {
+            if (_会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListParameterMap == null) { _会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListParameterMap = new LinkedHashMap<String, Object>(); }
+            String key = "subQueryParameterKey" + (_会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListParameterMap.size() + 1);
+            _会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListParameterMap.put(key, parameterValue); return "会員コード_QueryDerivedReferrer_Dch宿泊利用台帳ListParameter." + key;
+        }
+
+        public BsMst会員マスタCQ AddOrderBy_会員コード_Asc() { regOBA("会員コード");return this; }
+        public BsMst会員マスタCQ AddOrderBy_会員コード_Desc() { regOBD("会員コード");return this; }
 
         protected ConditionValue _会員番号;
         public ConditionValue 会員番号 {
@@ -54,25 +109,25 @@ namespace Dbflute.CBean.CQ.BS {
         public BsMst会員マスタCQ AddOrderBy_会員番号_Asc() { regOBA("会員番号");return this; }
         public BsMst会員マスタCQ AddOrderBy_会員番号_Desc() { regOBD("会員番号");return this; }
 
-        protected ConditionValue _氏名姓;
-        public ConditionValue 氏名姓 {
-            get { if (_氏名姓 == null) { _氏名姓 = new ConditionValue(); } return _氏名姓; }
+        protected ConditionValue _名字;
+        public ConditionValue 名字 {
+            get { if (_名字 == null) { _名字 = new ConditionValue(); } return _名字; }
         }
-        protected override ConditionValue getCValue氏名姓() { return this.氏名姓; }
+        protected override ConditionValue getCValue名字() { return this.名字; }
 
 
-        public BsMst会員マスタCQ AddOrderBy_氏名姓_Asc() { regOBA("氏名_姓");return this; }
-        public BsMst会員マスタCQ AddOrderBy_氏名姓_Desc() { regOBD("氏名_姓");return this; }
+        public BsMst会員マスタCQ AddOrderBy_名字_Asc() { regOBA("名字");return this; }
+        public BsMst会員マスタCQ AddOrderBy_名字_Desc() { regOBD("名字");return this; }
 
-        protected ConditionValue _氏名名;
-        public ConditionValue 氏名名 {
-            get { if (_氏名名 == null) { _氏名名 = new ConditionValue(); } return _氏名名; }
+        protected ConditionValue _名前;
+        public ConditionValue 名前 {
+            get { if (_名前 == null) { _名前 = new ConditionValue(); } return _名前; }
         }
-        protected override ConditionValue getCValue氏名名() { return this.氏名名; }
+        protected override ConditionValue getCValue名前() { return this.名前; }
 
 
-        public BsMst会員マスタCQ AddOrderBy_氏名名_Asc() { regOBA("氏名_名");return this; }
-        public BsMst会員マスタCQ AddOrderBy_氏名名_Desc() { regOBD("氏名_名");return this; }
+        public BsMst会員マスタCQ AddOrderBy_名前_Asc() { regOBA("名前");return this; }
+        public BsMst会員マスタCQ AddOrderBy_名前_Desc() { regOBD("名前");return this; }
 
         protected ConditionValue _氏名カナ;
         public ConditionValue 氏名カナ {
@@ -81,8 +136,8 @@ namespace Dbflute.CBean.CQ.BS {
         protected override ConditionValue getCValue氏名カナ() { return this.氏名カナ; }
 
 
-        public BsMst会員マスタCQ AddOrderBy_氏名カナ_Asc() { regOBA("氏名_カナ");return this; }
-        public BsMst会員マスタCQ AddOrderBy_氏名カナ_Desc() { regOBD("氏名_カナ");return this; }
+        public BsMst会員マスタCQ AddOrderBy_氏名カナ_Asc() { regOBA("氏名カナ");return this; }
+        public BsMst会員マスタCQ AddOrderBy_氏名カナ_Desc() { regOBD("氏名カナ");return this; }
 
         protected ConditionValue _会社名;
         public ConditionValue 会社名 {
@@ -101,8 +156,8 @@ namespace Dbflute.CBean.CQ.BS {
         protected override ConditionValue getCValue会社名カナ() { return this.会社名カナ; }
 
 
-        public BsMst会員マスタCQ AddOrderBy_会社名カナ_Asc() { regOBA("会社名_カナ");return this; }
-        public BsMst会員マスタCQ AddOrderBy_会社名カナ_Desc() { regOBD("会社名_カナ");return this; }
+        public BsMst会員マスタCQ AddOrderBy_会社名カナ_Asc() { regOBA("会社名カナ");return this; }
+        public BsMst会員マスタCQ AddOrderBy_会社名カナ_Desc() { regOBD("会社名カナ");return this; }
 
         protected ConditionValue _電話番号;
         public ConditionValue 電話番号 {

@@ -29,19 +29,19 @@ namespace Dbflute.CBean.BS {
         // ===============================================================================
         //                                                             PrimaryKey Handling
         //                                                             ===================
-        public void AcceptPrimaryKey(long? id) {
-            assertObjectNotNull("id", id);
+        public void AcceptPrimaryKey(String 客室タイプコード) {
+            assertObjectNotNull("客室タイプコード", 客室タイプコード);
             BsMst客室タイプマスタCB cb = this;
-            cb.Query().SetId_Equal(id);
+            cb.Query().Set客室タイプコード_Equal(客室タイプコード);
         }
 
         public override ConditionBean AddOrderBy_PK_Asc() {
-            Query().AddOrderBy_Id_Asc();
+            Query().AddOrderBy_客室タイプコード_Asc();
             return this;
         }
 
         public override ConditionBean AddOrderBy_PK_Desc() {
-            Query().AddOrderBy_Id_Desc();
+            Query().AddOrderBy_客室タイプコード_Desc();
             return this;
         }
 
@@ -165,13 +165,13 @@ namespace Dbflute.CBean.BS {
         public Mst客室タイプマスタCBSpecification(ConditionBean baseCB, HpSpQyCall<Mst客室タイプマスタCQ> qyCall
                                                       , bool forDerivedReferrer, bool forScalarSelect, bool forScalarSubQuery, bool forColumnQuery)
         : base(baseCB, qyCall, forDerivedReferrer, forScalarSelect, forScalarSubQuery, forColumnQuery) { }
-        public void ColumnId() { doColumn("id"); }
-        public void Column名称() { doColumn("名称"); }
+        public void Column客室タイプコード() { doColumn("客室タイプコード"); }
+        public void Column客室タイプ名称() { doColumn("客室タイプ名称"); }
         public void Column料金() { doColumn("料金"); }
         public void Column宿泊人数() { doColumn("宿泊人数"); }
         public void Column備考() { doColumn("備考"); }
         protected override void doSpecifyRequiredColumn() {
-            ColumnId(); // PK
+            Column客室タイプコード(); // PK
         }
         protected override String getTableDbName() { return "mst客室タイプマスタ"; }
         public RAFunction<Mst客室マスタCB, Mst客室タイプマスタCQ> DerivedMst客室マスタList() {

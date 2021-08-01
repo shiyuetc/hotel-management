@@ -34,67 +34,57 @@ namespace Dbflute.CBean.CQ.BS {
         }
 
 
-        protected ConditionValue _id;
-        public ConditionValue Id {
-            get { if (_id == null) { _id = new ConditionValue(); } return _id; }
+        protected ConditionValue _職位コード;
+        public ConditionValue 職位コード {
+            get { if (_職位コード == null) { _職位コード = new ConditionValue(); } return _職位コード; }
         }
-        protected override ConditionValue getCValueId() { return this.Id; }
+        protected override ConditionValue getCValue職位コード() { return this.職位コード; }
 
 
-        public BsMst権限マスタCQ AddOrderBy_Id_Asc() { regOBA("id");return this; }
-        public BsMst権限マスタCQ AddOrderBy_Id_Desc() { regOBD("id");return this; }
-
-        protected ConditionValue _職位code;
-        public ConditionValue 職位code {
-            get { if (_職位code == null) { _職位code = new ConditionValue(); } return _職位code; }
-        }
-        protected override ConditionValue getCValue職位code() { return this.職位code; }
-
-
-        protected Map<String, Kbn職位区分CQ> _職位code_InScopeSubQuery_Kbn職位区分Map;
-        public Map<String, Kbn職位区分CQ> 職位code_InScopeSubQuery_Kbn職位区分 { get { return _職位code_InScopeSubQuery_Kbn職位区分Map; }}
-        public override String keep職位code_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
-            if (_職位code_InScopeSubQuery_Kbn職位区分Map == null) { _職位code_InScopeSubQuery_Kbn職位区分Map = new LinkedHashMap<String, Kbn職位区分CQ>(); }
-            String key = "subQueryMapKey" + (_職位code_InScopeSubQuery_Kbn職位区分Map.size() + 1);
-            _職位code_InScopeSubQuery_Kbn職位区分Map.put(key, subQuery); return "職位code_InScopeSubQuery_Kbn職位区分." + key;
+        protected Map<String, Kbn職位区分CQ> _職位コード_InScopeSubQuery_Kbn職位区分Map;
+        public Map<String, Kbn職位区分CQ> 職位コード_InScopeSubQuery_Kbn職位区分 { get { return _職位コード_InScopeSubQuery_Kbn職位区分Map; }}
+        public override String keep職位コード_InScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
+            if (_職位コード_InScopeSubQuery_Kbn職位区分Map == null) { _職位コード_InScopeSubQuery_Kbn職位区分Map = new LinkedHashMap<String, Kbn職位区分CQ>(); }
+            String key = "subQueryMapKey" + (_職位コード_InScopeSubQuery_Kbn職位区分Map.size() + 1);
+            _職位コード_InScopeSubQuery_Kbn職位区分Map.put(key, subQuery); return "職位コード_InScopeSubQuery_Kbn職位区分." + key;
         }
 
-        protected Map<String, Kbn職位区分CQ> _職位code_NotInScopeSubQuery_Kbn職位区分Map;
-        public Map<String, Kbn職位区分CQ> 職位code_NotInScopeSubQuery_Kbn職位区分 { get { return _職位code_NotInScopeSubQuery_Kbn職位区分Map; }}
-        public override String keep職位code_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
-            if (_職位code_NotInScopeSubQuery_Kbn職位区分Map == null) { _職位code_NotInScopeSubQuery_Kbn職位区分Map = new LinkedHashMap<String, Kbn職位区分CQ>(); }
-            String key = "subQueryMapKey" + (_職位code_NotInScopeSubQuery_Kbn職位区分Map.size() + 1);
-            _職位code_NotInScopeSubQuery_Kbn職位区分Map.put(key, subQuery); return "職位code_NotInScopeSubQuery_Kbn職位区分." + key;
+        protected Map<String, Kbn職位区分CQ> _職位コード_NotInScopeSubQuery_Kbn職位区分Map;
+        public Map<String, Kbn職位区分CQ> 職位コード_NotInScopeSubQuery_Kbn職位区分 { get { return _職位コード_NotInScopeSubQuery_Kbn職位区分Map; }}
+        public override String keep職位コード_NotInScopeSubQuery_Kbn職位区分(Kbn職位区分CQ subQuery) {
+            if (_職位コード_NotInScopeSubQuery_Kbn職位区分Map == null) { _職位コード_NotInScopeSubQuery_Kbn職位区分Map = new LinkedHashMap<String, Kbn職位区分CQ>(); }
+            String key = "subQueryMapKey" + (_職位コード_NotInScopeSubQuery_Kbn職位区分Map.size() + 1);
+            _職位コード_NotInScopeSubQuery_Kbn職位区分Map.put(key, subQuery); return "職位コード_NotInScopeSubQuery_Kbn職位区分." + key;
         }
 
-        public BsMst権限マスタCQ AddOrderBy_職位code_Asc() { regOBA("職位code");return this; }
-        public BsMst権限マスタCQ AddOrderBy_職位code_Desc() { regOBD("職位code");return this; }
+        public BsMst権限マスタCQ AddOrderBy_職位コード_Asc() { regOBA("職位コード");return this; }
+        public BsMst権限マスタCQ AddOrderBy_職位コード_Desc() { regOBD("職位コード");return this; }
 
-        protected ConditionValue _制御画面id;
-        public ConditionValue 制御画面id {
-            get { if (_制御画面id == null) { _制御画面id = new ConditionValue(); } return _制御画面id; }
+        protected ConditionValue _画面コード;
+        public ConditionValue 画面コード {
+            get { if (_画面コード == null) { _画面コード = new ConditionValue(); } return _画面コード; }
         }
-        protected override ConditionValue getCValue制御画面id() { return this.制御画面id; }
+        protected override ConditionValue getCValue画面コード() { return this.画面コード; }
 
 
-        protected Map<String, Mst制御画面マスタCQ> _制御画面id_InScopeSubQuery_Mst制御画面マスタMap;
-        public Map<String, Mst制御画面マスタCQ> 制御画面id_InScopeSubQuery_Mst制御画面マスタ { get { return _制御画面id_InScopeSubQuery_Mst制御画面マスタMap; }}
-        public override String keep制御画面id_InScopeSubQuery_Mst制御画面マスタ(Mst制御画面マスタCQ subQuery) {
-            if (_制御画面id_InScopeSubQuery_Mst制御画面マスタMap == null) { _制御画面id_InScopeSubQuery_Mst制御画面マスタMap = new LinkedHashMap<String, Mst制御画面マスタCQ>(); }
-            String key = "subQueryMapKey" + (_制御画面id_InScopeSubQuery_Mst制御画面マスタMap.size() + 1);
-            _制御画面id_InScopeSubQuery_Mst制御画面マスタMap.put(key, subQuery); return "制御画面id_InScopeSubQuery_Mst制御画面マスタ." + key;
-        }
-
-        protected Map<String, Mst制御画面マスタCQ> _制御画面id_NotInScopeSubQuery_Mst制御画面マスタMap;
-        public Map<String, Mst制御画面マスタCQ> 制御画面id_NotInScopeSubQuery_Mst制御画面マスタ { get { return _制御画面id_NotInScopeSubQuery_Mst制御画面マスタMap; }}
-        public override String keep制御画面id_NotInScopeSubQuery_Mst制御画面マスタ(Mst制御画面マスタCQ subQuery) {
-            if (_制御画面id_NotInScopeSubQuery_Mst制御画面マスタMap == null) { _制御画面id_NotInScopeSubQuery_Mst制御画面マスタMap = new LinkedHashMap<String, Mst制御画面マスタCQ>(); }
-            String key = "subQueryMapKey" + (_制御画面id_NotInScopeSubQuery_Mst制御画面マスタMap.size() + 1);
-            _制御画面id_NotInScopeSubQuery_Mst制御画面マスタMap.put(key, subQuery); return "制御画面id_NotInScopeSubQuery_Mst制御画面マスタ." + key;
+        protected Map<String, Mst画面マスタCQ> _画面コード_InScopeSubQuery_Mst画面マスタMap;
+        public Map<String, Mst画面マスタCQ> 画面コード_InScopeSubQuery_Mst画面マスタ { get { return _画面コード_InScopeSubQuery_Mst画面マスタMap; }}
+        public override String keep画面コード_InScopeSubQuery_Mst画面マスタ(Mst画面マスタCQ subQuery) {
+            if (_画面コード_InScopeSubQuery_Mst画面マスタMap == null) { _画面コード_InScopeSubQuery_Mst画面マスタMap = new LinkedHashMap<String, Mst画面マスタCQ>(); }
+            String key = "subQueryMapKey" + (_画面コード_InScopeSubQuery_Mst画面マスタMap.size() + 1);
+            _画面コード_InScopeSubQuery_Mst画面マスタMap.put(key, subQuery); return "画面コード_InScopeSubQuery_Mst画面マスタ." + key;
         }
 
-        public BsMst権限マスタCQ AddOrderBy_制御画面id_Asc() { regOBA("制御画面id");return this; }
-        public BsMst権限マスタCQ AddOrderBy_制御画面id_Desc() { regOBD("制御画面id");return this; }
+        protected Map<String, Mst画面マスタCQ> _画面コード_NotInScopeSubQuery_Mst画面マスタMap;
+        public Map<String, Mst画面マスタCQ> 画面コード_NotInScopeSubQuery_Mst画面マスタ { get { return _画面コード_NotInScopeSubQuery_Mst画面マスタMap; }}
+        public override String keep画面コード_NotInScopeSubQuery_Mst画面マスタ(Mst画面マスタCQ subQuery) {
+            if (_画面コード_NotInScopeSubQuery_Mst画面マスタMap == null) { _画面コード_NotInScopeSubQuery_Mst画面マスタMap = new LinkedHashMap<String, Mst画面マスタCQ>(); }
+            String key = "subQueryMapKey" + (_画面コード_NotInScopeSubQuery_Mst画面マスタMap.size() + 1);
+            _画面コード_NotInScopeSubQuery_Mst画面マスタMap.put(key, subQuery); return "画面コード_NotInScopeSubQuery_Mst画面マスタ." + key;
+        }
+
+        public BsMst権限マスタCQ AddOrderBy_画面コード_Asc() { regOBA("画面コード");return this; }
+        public BsMst権限マスタCQ AddOrderBy_画面コード_Desc() { regOBD("画面コード");return this; }
 
         public BsMst権限マスタCQ AddSpecifiedDerivedOrderBy_Asc(String aliasName) { registerSpecifiedDerivedOrderBy_Asc(aliasName); return this; }
         public BsMst権限マスタCQ AddSpecifiedDerivedOrderBy_Desc(String aliasName) { registerSpecifiedDerivedOrderBy_Desc(aliasName); return this; }
@@ -102,8 +92,8 @@ namespace Dbflute.CBean.CQ.BS {
         public override void reflectRelationOnUnionQuery(ConditionQuery baseQueryAsSuper, ConditionQuery unionQueryAsSuper) {
             Mst権限マスタCQ baseQuery = (Mst権限マスタCQ)baseQueryAsSuper;
             Mst権限マスタCQ unionQuery = (Mst権限マスタCQ)unionQueryAsSuper;
-            if (baseQuery.hasConditionQueryMst制御画面マスタ()) {
-                unionQuery.QueryMst制御画面マスタ().reflectRelationOnUnionQuery(baseQuery.QueryMst制御画面マスタ(), unionQuery.QueryMst制御画面マスタ());
+            if (baseQuery.hasConditionQueryMst画面マスタ()) {
+                unionQuery.QueryMst画面マスタ().reflectRelationOnUnionQuery(baseQuery.QueryMst画面マスタ(), unionQuery.QueryMst画面マスタ());
             }
             if (baseQuery.hasConditionQueryKbn職位区分()) {
                 unionQuery.QueryKbn職位区分().reflectRelationOnUnionQuery(baseQuery.QueryKbn職位区分(), unionQuery.QueryKbn職位区分());
@@ -111,36 +101,36 @@ namespace Dbflute.CBean.CQ.BS {
 
         }
     
-        protected Mst制御画面マスタCQ _conditionQueryMst制御画面マスタ;
-        public Mst制御画面マスタCQ QueryMst制御画面マスタ() {
-            return this.ConditionQueryMst制御画面マスタ;
+        protected Mst画面マスタCQ _conditionQueryMst画面マスタ;
+        public Mst画面マスタCQ QueryMst画面マスタ() {
+            return this.ConditionQueryMst画面マスタ;
         }
-        public Mst制御画面マスタCQ ConditionQueryMst制御画面マスタ {
+        public Mst画面マスタCQ ConditionQueryMst画面マスタ {
             get {
-                if (_conditionQueryMst制御画面マスタ == null) {
-                    _conditionQueryMst制御画面マスタ = xcreateQueryMst制御画面マスタ();
-                    xsetupOuterJoin_Mst制御画面マスタ();
+                if (_conditionQueryMst画面マスタ == null) {
+                    _conditionQueryMst画面マスタ = xcreateQueryMst画面マスタ();
+                    xsetupOuterJoin_Mst画面マスタ();
                 }
-                return _conditionQueryMst制御画面マスタ;
+                return _conditionQueryMst画面マスタ;
             }
         }
-        protected Mst制御画面マスタCQ xcreateQueryMst制御画面マスタ() {
-            String nrp = resolveNextRelationPathMst制御画面マスタ();
+        protected Mst画面マスタCQ xcreateQueryMst画面マスタ() {
+            String nrp = resolveNextRelationPathMst画面マスタ();
             String jan = resolveJoinAliasName(nrp, xgetNextNestLevel());
-            Mst制御画面マスタCQ cq = new Mst制御画面マスタCQ(this, xgetSqlClause(), jan, xgetNextNestLevel());
-            cq.xsetForeignPropertyName("mst制御画面マスタ"); cq.xsetRelationPath(nrp); return cq;
+            Mst画面マスタCQ cq = new Mst画面マスタCQ(this, xgetSqlClause(), jan, xgetNextNestLevel());
+            cq.xsetForeignPropertyName("mst画面マスタ"); cq.xsetRelationPath(nrp); return cq;
         }
-        public void xsetupOuterJoin_Mst制御画面マスタ() {
-            Mst制御画面マスタCQ cq = ConditionQueryMst制御画面マスタ;
+        public void xsetupOuterJoin_Mst画面マスタ() {
+            Mst画面マスタCQ cq = ConditionQueryMst画面マスタ;
             Map<String, String> joinOnMap = new LinkedHashMap<String, String>();
-            joinOnMap.put("制御画面id", "id");
+            joinOnMap.put("画面コード", "画面コード");
             registerOuterJoin(cq, joinOnMap);
         }
-        protected String resolveNextRelationPathMst制御画面マスタ() {
-            return resolveNextRelationPath("mst権限マスタ", "mst制御画面マスタ");
+        protected String resolveNextRelationPathMst画面マスタ() {
+            return resolveNextRelationPath("mst権限マスタ", "mst画面マスタ");
         }
-        public bool hasConditionQueryMst制御画面マスタ() {
-            return _conditionQueryMst制御画面マスタ != null;
+        public bool hasConditionQueryMst画面マスタ() {
+            return _conditionQueryMst画面マスタ != null;
         }
         protected Kbn職位区分CQ _conditionQueryKbn職位区分;
         public Kbn職位区分CQ QueryKbn職位区分() {
@@ -164,7 +154,7 @@ namespace Dbflute.CBean.CQ.BS {
         public void xsetupOuterJoin_Kbn職位区分() {
             Kbn職位区分CQ cq = ConditionQueryKbn職位区分;
             Map<String, String> joinOnMap = new LinkedHashMap<String, String>();
-            joinOnMap.put("職位code", "code");
+            joinOnMap.put("職位コード", "職位コード");
             registerOuterJoin(cq, joinOnMap);
         }
         protected String resolveNextRelationPathKbn職位区分() {
@@ -174,27 +164,5 @@ namespace Dbflute.CBean.CQ.BS {
             return _conditionQueryKbn職位区分 != null;
         }
 
-
-	    // ===============================================================================
-	    //                                                                 Scalar SubQuery
-	    //                                                                 ===============
-	    protected Map<String, Mst権限マスタCQ> _scalarSubQueryMap;
-	    public Map<String, Mst権限マスタCQ> ScalarSubQuery { get { return _scalarSubQueryMap; } }
-	    public override String keepScalarSubQuery(Mst権限マスタCQ subQuery) {
-	        if (_scalarSubQueryMap == null) { _scalarSubQueryMap = new LinkedHashMap<String, Mst権限マスタCQ>(); }
-	        String key = "subQueryMapKey" + (_scalarSubQueryMap.size() + 1);
-	        _scalarSubQueryMap.put(key, subQuery); return "ScalarSubQuery." + key;
-	    }
-
-        // ===============================================================================
-        //                                                         Myself InScope SubQuery
-        //                                                         =======================
-        protected Map<String, Mst権限マスタCQ> _myselfInScopeSubQueryMap;
-        public Map<String, Mst権限マスタCQ> MyselfInScopeSubQuery { get { return _myselfInScopeSubQueryMap; } }
-        public override String keepMyselfInScopeSubQuery(Mst権限マスタCQ subQuery) {
-            if (_myselfInScopeSubQueryMap == null) { _myselfInScopeSubQueryMap = new LinkedHashMap<String, Mst権限マスタCQ>(); }
-            String key = "subQueryMapKey" + (_myselfInScopeSubQueryMap.size() + 1);
-            _myselfInScopeSubQueryMap.put(key, subQuery); return "MyselfInScopeSubQuery." + key;
-        }
     }
 }

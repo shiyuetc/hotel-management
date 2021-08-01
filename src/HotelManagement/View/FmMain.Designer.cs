@@ -145,9 +145,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 661);
-            this.Controls.Add(this.MenuBar);
             this.Controls.Add(this.UcPanel);
             this.Controls.Add(this.MenuTab);
+            this.Controls.Add(this.MenuBar);
             this.Controls.Add(this.tickDate1);
             this.Controls.Add(this.DisplayNameLabel);
             this.Controls.Add(this.statusStrip1);

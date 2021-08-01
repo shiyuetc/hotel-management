@@ -34,80 +34,80 @@ namespace Dbflute.CBean.CQ.BS {
         }
 
 
-        protected ConditionValue _id;
-        public ConditionValue Id {
-            get { if (_id == null) { _id = new ConditionValue(); } return _id; }
+        protected ConditionValue _客室タイプコード;
+        public ConditionValue 客室タイプコード {
+            get { if (_客室タイプコード == null) { _客室タイプコード = new ConditionValue(); } return _客室タイプコード; }
         }
-        protected override ConditionValue getCValueId() { return this.Id; }
+        protected override ConditionValue getCValue客室タイプコード() { return this.客室タイプコード; }
 
 
-        protected Map<String, Mst客室マスタCQ> _id_ExistsSubQuery_Mst客室マスタListMap;
-        public Map<String, Mst客室マスタCQ> Id_ExistsSubQuery_Mst客室マスタList { get { return _id_ExistsSubQuery_Mst客室マスタListMap; }}
-        public override String keepId_ExistsSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery) {
-            if (_id_ExistsSubQuery_Mst客室マスタListMap == null) { _id_ExistsSubQuery_Mst客室マスタListMap = new LinkedHashMap<String, Mst客室マスタCQ>(); }
-            String key = "subQueryMapKey" + (_id_ExistsSubQuery_Mst客室マスタListMap.size() + 1);
-            _id_ExistsSubQuery_Mst客室マスタListMap.put(key, subQuery); return "Id_ExistsSubQuery_Mst客室マスタList." + key;
-        }
-
-        protected Map<String, Mst客室マスタCQ> _id_NotExistsSubQuery_Mst客室マスタListMap;
-        public Map<String, Mst客室マスタCQ> Id_NotExistsSubQuery_Mst客室マスタList { get { return _id_NotExistsSubQuery_Mst客室マスタListMap; }}
-        public override String keepId_NotExistsSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery) {
-            if (_id_NotExistsSubQuery_Mst客室マスタListMap == null) { _id_NotExistsSubQuery_Mst客室マスタListMap = new LinkedHashMap<String, Mst客室マスタCQ>(); }
-            String key = "subQueryMapKey" + (_id_NotExistsSubQuery_Mst客室マスタListMap.size() + 1);
-            _id_NotExistsSubQuery_Mst客室マスタListMap.put(key, subQuery); return "Id_NotExistsSubQuery_Mst客室マスタList." + key;
+        protected Map<String, Mst客室マスタCQ> _客室タイプコード_ExistsSubQuery_Mst客室マスタListMap;
+        public Map<String, Mst客室マスタCQ> 客室タイプコード_ExistsSubQuery_Mst客室マスタList { get { return _客室タイプコード_ExistsSubQuery_Mst客室マスタListMap; }}
+        public override String keep客室タイプコード_ExistsSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery) {
+            if (_客室タイプコード_ExistsSubQuery_Mst客室マスタListMap == null) { _客室タイプコード_ExistsSubQuery_Mst客室マスタListMap = new LinkedHashMap<String, Mst客室マスタCQ>(); }
+            String key = "subQueryMapKey" + (_客室タイプコード_ExistsSubQuery_Mst客室マスタListMap.size() + 1);
+            _客室タイプコード_ExistsSubQuery_Mst客室マスタListMap.put(key, subQuery); return "客室タイプコード_ExistsSubQuery_Mst客室マスタList." + key;
         }
 
-        protected Map<String, Mst客室マスタCQ> _id_InScopeSubQuery_Mst客室マスタListMap;
-        public Map<String, Mst客室マスタCQ> Id_InScopeSubQuery_Mst客室マスタList { get { return _id_InScopeSubQuery_Mst客室マスタListMap; }}
-        public override String keepId_InScopeSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery) {
-            if (_id_InScopeSubQuery_Mst客室マスタListMap == null) { _id_InScopeSubQuery_Mst客室マスタListMap = new LinkedHashMap<String, Mst客室マスタCQ>(); }
-            String key = "subQueryMapKey" + (_id_InScopeSubQuery_Mst客室マスタListMap.size() + 1);
-            _id_InScopeSubQuery_Mst客室マスタListMap.put(key, subQuery); return "Id_InScopeSubQuery_Mst客室マスタList." + key;
+        protected Map<String, Mst客室マスタCQ> _客室タイプコード_NotExistsSubQuery_Mst客室マスタListMap;
+        public Map<String, Mst客室マスタCQ> 客室タイプコード_NotExistsSubQuery_Mst客室マスタList { get { return _客室タイプコード_NotExistsSubQuery_Mst客室マスタListMap; }}
+        public override String keep客室タイプコード_NotExistsSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery) {
+            if (_客室タイプコード_NotExistsSubQuery_Mst客室マスタListMap == null) { _客室タイプコード_NotExistsSubQuery_Mst客室マスタListMap = new LinkedHashMap<String, Mst客室マスタCQ>(); }
+            String key = "subQueryMapKey" + (_客室タイプコード_NotExistsSubQuery_Mst客室マスタListMap.size() + 1);
+            _客室タイプコード_NotExistsSubQuery_Mst客室マスタListMap.put(key, subQuery); return "客室タイプコード_NotExistsSubQuery_Mst客室マスタList." + key;
         }
 
-        protected Map<String, Mst客室マスタCQ> _id_NotInScopeSubQuery_Mst客室マスタListMap;
-        public Map<String, Mst客室マスタCQ> Id_NotInScopeSubQuery_Mst客室マスタList { get { return _id_NotInScopeSubQuery_Mst客室マスタListMap; }}
-        public override String keepId_NotInScopeSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery) {
-            if (_id_NotInScopeSubQuery_Mst客室マスタListMap == null) { _id_NotInScopeSubQuery_Mst客室マスタListMap = new LinkedHashMap<String, Mst客室マスタCQ>(); }
-            String key = "subQueryMapKey" + (_id_NotInScopeSubQuery_Mst客室マスタListMap.size() + 1);
-            _id_NotInScopeSubQuery_Mst客室マスタListMap.put(key, subQuery); return "Id_NotInScopeSubQuery_Mst客室マスタList." + key;
+        protected Map<String, Mst客室マスタCQ> _客室タイプコード_InScopeSubQuery_Mst客室マスタListMap;
+        public Map<String, Mst客室マスタCQ> 客室タイプコード_InScopeSubQuery_Mst客室マスタList { get { return _客室タイプコード_InScopeSubQuery_Mst客室マスタListMap; }}
+        public override String keep客室タイプコード_InScopeSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery) {
+            if (_客室タイプコード_InScopeSubQuery_Mst客室マスタListMap == null) { _客室タイプコード_InScopeSubQuery_Mst客室マスタListMap = new LinkedHashMap<String, Mst客室マスタCQ>(); }
+            String key = "subQueryMapKey" + (_客室タイプコード_InScopeSubQuery_Mst客室マスタListMap.size() + 1);
+            _客室タイプコード_InScopeSubQuery_Mst客室マスタListMap.put(key, subQuery); return "客室タイプコード_InScopeSubQuery_Mst客室マスタList." + key;
         }
 
-        protected Map<String, Mst客室マスタCQ> _id_SpecifyDerivedReferrer_Mst客室マスタListMap;
-        public Map<String, Mst客室マスタCQ> Id_SpecifyDerivedReferrer_Mst客室マスタList { get { return _id_SpecifyDerivedReferrer_Mst客室マスタListMap; }}
-        public override String keepId_SpecifyDerivedReferrer_Mst客室マスタList(Mst客室マスタCQ subQuery) {
-            if (_id_SpecifyDerivedReferrer_Mst客室マスタListMap == null) { _id_SpecifyDerivedReferrer_Mst客室マスタListMap = new LinkedHashMap<String, Mst客室マスタCQ>(); }
-            String key = "subQueryMapKey" + (_id_SpecifyDerivedReferrer_Mst客室マスタListMap.size() + 1);
-            _id_SpecifyDerivedReferrer_Mst客室マスタListMap.put(key, subQuery); return "Id_SpecifyDerivedReferrer_Mst客室マスタList." + key;
+        protected Map<String, Mst客室マスタCQ> _客室タイプコード_NotInScopeSubQuery_Mst客室マスタListMap;
+        public Map<String, Mst客室マスタCQ> 客室タイプコード_NotInScopeSubQuery_Mst客室マスタList { get { return _客室タイプコード_NotInScopeSubQuery_Mst客室マスタListMap; }}
+        public override String keep客室タイプコード_NotInScopeSubQuery_Mst客室マスタList(Mst客室マスタCQ subQuery) {
+            if (_客室タイプコード_NotInScopeSubQuery_Mst客室マスタListMap == null) { _客室タイプコード_NotInScopeSubQuery_Mst客室マスタListMap = new LinkedHashMap<String, Mst客室マスタCQ>(); }
+            String key = "subQueryMapKey" + (_客室タイプコード_NotInScopeSubQuery_Mst客室マスタListMap.size() + 1);
+            _客室タイプコード_NotInScopeSubQuery_Mst客室マスタListMap.put(key, subQuery); return "客室タイプコード_NotInScopeSubQuery_Mst客室マスタList." + key;
         }
 
-        protected Map<String, Mst客室マスタCQ> _id_QueryDerivedReferrer_Mst客室マスタListMap;
-        public Map<String, Mst客室マスタCQ> Id_QueryDerivedReferrer_Mst客室マスタList { get { return _id_QueryDerivedReferrer_Mst客室マスタListMap; } }
-        public override String keepId_QueryDerivedReferrer_Mst客室マスタList(Mst客室マスタCQ subQuery) {
-            if (_id_QueryDerivedReferrer_Mst客室マスタListMap == null) { _id_QueryDerivedReferrer_Mst客室マスタListMap = new LinkedHashMap<String, Mst客室マスタCQ>(); }
-            String key = "subQueryMapKey" + (_id_QueryDerivedReferrer_Mst客室マスタListMap.size() + 1);
-            _id_QueryDerivedReferrer_Mst客室マスタListMap.put(key, subQuery); return "Id_QueryDerivedReferrer_Mst客室マスタList." + key;
-        }
-        protected Map<String, Object> _id_QueryDerivedReferrer_Mst客室マスタListParameterMap;
-        public Map<String, Object> Id_QueryDerivedReferrer_Mst客室マスタListParameter { get { return _id_QueryDerivedReferrer_Mst客室マスタListParameterMap; } }
-        public override String keepId_QueryDerivedReferrer_Mst客室マスタListParameter(Object parameterValue) {
-            if (_id_QueryDerivedReferrer_Mst客室マスタListParameterMap == null) { _id_QueryDerivedReferrer_Mst客室マスタListParameterMap = new LinkedHashMap<String, Object>(); }
-            String key = "subQueryParameterKey" + (_id_QueryDerivedReferrer_Mst客室マスタListParameterMap.size() + 1);
-            _id_QueryDerivedReferrer_Mst客室マスタListParameterMap.put(key, parameterValue); return "Id_QueryDerivedReferrer_Mst客室マスタListParameter." + key;
+        protected Map<String, Mst客室マスタCQ> _客室タイプコード_SpecifyDerivedReferrer_Mst客室マスタListMap;
+        public Map<String, Mst客室マスタCQ> 客室タイプコード_SpecifyDerivedReferrer_Mst客室マスタList { get { return _客室タイプコード_SpecifyDerivedReferrer_Mst客室マスタListMap; }}
+        public override String keep客室タイプコード_SpecifyDerivedReferrer_Mst客室マスタList(Mst客室マスタCQ subQuery) {
+            if (_客室タイプコード_SpecifyDerivedReferrer_Mst客室マスタListMap == null) { _客室タイプコード_SpecifyDerivedReferrer_Mst客室マスタListMap = new LinkedHashMap<String, Mst客室マスタCQ>(); }
+            String key = "subQueryMapKey" + (_客室タイプコード_SpecifyDerivedReferrer_Mst客室マスタListMap.size() + 1);
+           _客室タイプコード_SpecifyDerivedReferrer_Mst客室マスタListMap.put(key, subQuery); return "客室タイプコード_SpecifyDerivedReferrer_Mst客室マスタList." + key;
         }
 
-        public BsMst客室タイプマスタCQ AddOrderBy_Id_Asc() { regOBA("id");return this; }
-        public BsMst客室タイプマスタCQ AddOrderBy_Id_Desc() { regOBD("id");return this; }
-
-        protected ConditionValue _名称;
-        public ConditionValue 名称 {
-            get { if (_名称 == null) { _名称 = new ConditionValue(); } return _名称; }
+        protected Map<String, Mst客室マスタCQ> _客室タイプコード_QueryDerivedReferrer_Mst客室マスタListMap;
+        public Map<String, Mst客室マスタCQ> 客室タイプコード_QueryDerivedReferrer_Mst客室マスタList { get { return _客室タイプコード_QueryDerivedReferrer_Mst客室マスタListMap; } }
+        public override String keep客室タイプコード_QueryDerivedReferrer_Mst客室マスタList(Mst客室マスタCQ subQuery) {
+            if (_客室タイプコード_QueryDerivedReferrer_Mst客室マスタListMap == null) { _客室タイプコード_QueryDerivedReferrer_Mst客室マスタListMap = new LinkedHashMap<String, Mst客室マスタCQ>(); }
+            String key = "subQueryMapKey" + (_客室タイプコード_QueryDerivedReferrer_Mst客室マスタListMap.size() + 1);
+            _客室タイプコード_QueryDerivedReferrer_Mst客室マスタListMap.put(key, subQuery); return "客室タイプコード_QueryDerivedReferrer_Mst客室マスタList." + key;
         }
-        protected override ConditionValue getCValue名称() { return this.名称; }
+        protected Map<String, Object> _客室タイプコード_QueryDerivedReferrer_Mst客室マスタListParameterMap;
+        public Map<String, Object> 客室タイプコード_QueryDerivedReferrer_Mst客室マスタListParameter { get { return _客室タイプコード_QueryDerivedReferrer_Mst客室マスタListParameterMap; } }
+        public override String keep客室タイプコード_QueryDerivedReferrer_Mst客室マスタListParameter(Object parameterValue) {
+            if (_客室タイプコード_QueryDerivedReferrer_Mst客室マスタListParameterMap == null) { _客室タイプコード_QueryDerivedReferrer_Mst客室マスタListParameterMap = new LinkedHashMap<String, Object>(); }
+            String key = "subQueryParameterKey" + (_客室タイプコード_QueryDerivedReferrer_Mst客室マスタListParameterMap.size() + 1);
+            _客室タイプコード_QueryDerivedReferrer_Mst客室マスタListParameterMap.put(key, parameterValue); return "客室タイプコード_QueryDerivedReferrer_Mst客室マスタListParameter." + key;
+        }
+
+        public BsMst客室タイプマスタCQ AddOrderBy_客室タイプコード_Asc() { regOBA("客室タイプコード");return this; }
+        public BsMst客室タイプマスタCQ AddOrderBy_客室タイプコード_Desc() { regOBD("客室タイプコード");return this; }
+
+        protected ConditionValue _客室タイプ名称;
+        public ConditionValue 客室タイプ名称 {
+            get { if (_客室タイプ名称 == null) { _客室タイプ名称 = new ConditionValue(); } return _客室タイプ名称; }
+        }
+        protected override ConditionValue getCValue客室タイプ名称() { return this.客室タイプ名称; }
 
 
-        public BsMst客室タイプマスタCQ AddOrderBy_名称_Asc() { regOBA("名称");return this; }
-        public BsMst客室タイプマスタCQ AddOrderBy_名称_Desc() { regOBD("名称");return this; }
+        public BsMst客室タイプマスタCQ AddOrderBy_客室タイプ名称_Asc() { regOBA("客室タイプ名称");return this; }
+        public BsMst客室タイプマスタCQ AddOrderBy_客室タイプ名称_Desc() { regOBD("客室タイプ名称");return this; }
 
         protected ConditionValue _料金;
         public ConditionValue 料金 {

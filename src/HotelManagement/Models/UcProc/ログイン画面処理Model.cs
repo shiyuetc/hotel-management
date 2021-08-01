@@ -31,7 +31,6 @@ namespace HotelManagement.Models
             var 従業員マスタcb = new Mst従業員マスタCB();
             従業員マスタcb.SetupSelect_Kbn職位区分();
             従業員マスタcb.Query().Set従業員番号_Equal(従業員番号);
-            
             var 従業員マスタ = 従業員マスタBhv.SelectEntity(従業員マスタcb);
 
             if(従業員マスタ != null && BcryptUtil.Verify(パスワード, 従業員マスタ.パスワード))

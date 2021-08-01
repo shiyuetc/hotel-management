@@ -1,4 +1,535 @@
 map:{
+    ; 2021/08/01 20:42:00 = map:{
+        ; diffDate = 2021/08/01 20:42:00
+        ; tableCount = map:{
+            ; next = 14
+            ; previous = 16
+        }
+        ; tableDiff = map:{
+            ; dch客室利用台帳 = map:{
+                ; tableName = dch客室利用台帳
+                ; diffType = ADD
+            }
+            ; dch宿泊利用台帳 = map:{
+                ; tableName = dch宿泊利用台帳
+                ; diffType = ADD
+            }
+            ; mst画面マスタ = map:{
+                ; tableName = mst画面マスタ
+                ; diffType = ADD
+            }
+            ; dch従業員職位履歴台帳 = map:{
+                ; tableName = dch従業員職位履歴台帳
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 従業員コード = map:{
+                        ; columnName = 従業員コード
+                        ; diffType = ADD
+                    }
+                    ; 職位コード = map:{
+                        ; columnName = 職位コード
+                        ; diffType = ADD
+                    }
+                    ; 従業員id = map:{
+                        ; columnName = 従業員id
+                        ; diffType = DELETE
+                    }
+                    ; 職位code = map:{
+                        ; columnName = 職位code
+                        ; diffType = DELETE
+                    }
+                }
+                ; foreignKeyDiff = map:{
+                    ; dch従業員職位履歴台帳_従業員コード_fkey = map:{
+                        ; constraintName = dch従業員職位履歴台帳_従業員コード_fkey
+                        ; diffType = ADD
+                    }
+                    ; dch従業員職位履歴台帳_職位コード_fkey = map:{
+                        ; constraintName = dch従業員職位履歴台帳_職位コード_fkey
+                        ; diffType = ADD
+                    }
+                    ; dch従業員職位履歴台帳_従業員id_fkey = map:{
+                        ; constraintName = dch従業員職位履歴台帳_従業員id_fkey
+                        ; diffType = DELETE
+                    }
+                    ; dch従業員職位履歴台帳_職位code_fkey = map:{
+                        ; constraintName = dch従業員職位履歴台帳_職位code_fkey
+                        ; diffType = DELETE
+                    }
+                }
+            }
+            ; dch月締確定台帳 = map:{
+                ; tableName = dch月締確定台帳
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 対象年月 = map:{
+                        ; columnName = 対象年月
+                        ; diffType = CHANGE
+                        ; dbTypeDiff = map:{
+                            ; next = bpchar
+                            ; previous = timestamp
+                        }
+                        ; columnSizeDiff = map:{
+                            ; next = 6
+                            ; previous = 26, 3
+                        }
+                    }
+                    ; id = map:{
+                        ; columnName = id
+                        ; diffType = DELETE
+                    }
+                }
+                ; primaryKeyDiff = map:{
+                    ; dch月締確定台帳_pkey = map:{
+                        ; constraintName = dch月締確定台帳_pkey
+                        ; diffType = CHANGE
+                        ; columnDiff = map:{
+                            ; next = 対象年月
+                            ; previous = id
+                        }
+                    }
+                }
+                ; uniqueKeyDiff = map:{
+                    ; dch月締確定台帳_対象年月_key = map:{
+                        ; constraintName = dch月締確定台帳_対象年月_key
+                        ; diffType = DELETE
+                    }
+                }
+            }
+            ; kbnメニュー区分 = map:{
+                ; tableName = kbnメニュー区分
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; メニューコード = map:{
+                        ; columnName = メニューコード
+                        ; diffType = ADD
+                    }
+                    ; メニュー名称 = map:{
+                        ; columnName = メニュー名称
+                        ; diffType = ADD
+                    }
+                    ; code = map:{
+                        ; columnName = code
+                        ; diffType = DELETE
+                    }
+                    ; メニュー名 = map:{
+                        ; columnName = メニュー名
+                        ; diffType = DELETE
+                    }
+                }
+                ; primaryKeyDiff = map:{
+                    ; kbnメニュー区分_pkey = map:{
+                        ; constraintName = kbnメニュー区分_pkey
+                        ; diffType = CHANGE
+                        ; columnDiff = map:{
+                            ; next = メニューコード
+                            ; previous = code
+                        }
+                    }
+                }
+            }
+            ; kbn客室利用区分 = map:{
+                ; tableName = kbn客室利用区分
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 客室利用コード = map:{
+                        ; columnName = 客室利用コード
+                        ; diffType = ADD
+                    }
+                    ; 客室利用名称 = map:{
+                        ; columnName = 客室利用名称
+                        ; diffType = ADD
+                    }
+                    ; code = map:{
+                        ; columnName = code
+                        ; diffType = DELETE
+                    }
+                    ; 名称 = map:{
+                        ; columnName = 名称
+                        ; diffType = DELETE
+                    }
+                }
+                ; primaryKeyDiff = map:{
+                    ; kbn客室利用区分_pkey = map:{
+                        ; constraintName = kbn客室利用区分_pkey
+                        ; diffType = CHANGE
+                        ; columnDiff = map:{
+                            ; next = 客室利用コード
+                            ; previous = code
+                        }
+                    }
+                }
+            }
+            ; kbn職位区分 = map:{
+                ; tableName = kbn職位区分
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 職位コード = map:{
+                        ; columnName = 職位コード
+                        ; diffType = ADD
+                    }
+                    ; 職位名称 = map:{
+                        ; columnName = 職位名称
+                        ; diffType = ADD
+                    }
+                    ; 職位英字名称 = map:{
+                        ; columnName = 職位英字名称
+                        ; diffType = ADD
+                    }
+                    ; code = map:{
+                        ; columnName = code
+                        ; diffType = DELETE
+                    }
+                    ; 名称 = map:{
+                        ; columnName = 名称
+                        ; diffType = DELETE
+                    }
+                    ; 名称_英字 = map:{
+                        ; columnName = 名称_英字
+                        ; diffType = DELETE
+                    }
+                }
+                ; primaryKeyDiff = map:{
+                    ; kbn職位区分_pkey = map:{
+                        ; constraintName = kbn職位区分_pkey
+                        ; diffType = CHANGE
+                        ; columnDiff = map:{
+                            ; next = 職位コード
+                            ; previous = code
+                        }
+                    }
+                }
+            }
+            ; mst会員マスタ = map:{
+                ; tableName = mst会員マスタ
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 会員コード = map:{
+                        ; columnName = 会員コード
+                        ; diffType = ADD
+                    }
+                    ; 名字 = map:{
+                        ; columnName = 名字
+                        ; diffType = ADD
+                    }
+                    ; 名前 = map:{
+                        ; columnName = 名前
+                        ; diffType = ADD
+                    }
+                    ; 氏名カナ = map:{
+                        ; columnName = 氏名カナ
+                        ; diffType = ADD
+                    }
+                    ; 会社名カナ = map:{
+                        ; columnName = 会社名カナ
+                        ; diffType = ADD
+                    }
+                    ; 会員番号 = map:{
+                        ; columnName = 会員番号
+                        ; diffType = CHANGE
+                        ; columnSizeDiff = map:{
+                            ; next = 12
+                            ; previous = 9
+                        }
+                    }
+                    ; id = map:{
+                        ; columnName = id
+                        ; diffType = DELETE
+                    }
+                    ; 氏名_姓 = map:{
+                        ; columnName = 氏名_姓
+                        ; diffType = DELETE
+                    }
+                    ; 氏名_名 = map:{
+                        ; columnName = 氏名_名
+                        ; diffType = DELETE
+                    }
+                    ; 氏名_カナ = map:{
+                        ; columnName = 氏名_カナ
+                        ; diffType = DELETE
+                    }
+                    ; 会社名_カナ = map:{
+                        ; columnName = 会社名_カナ
+                        ; diffType = DELETE
+                    }
+                }
+                ; primaryKeyDiff = map:{
+                    ; mst会員マスタ_pkey = map:{
+                        ; constraintName = mst会員マスタ_pkey
+                        ; diffType = CHANGE
+                        ; columnDiff = map:{
+                            ; next = 会員コード
+                            ; previous = id
+                        }
+                    }
+                }
+            }
+            ; mst客室タイプマスタ = map:{
+                ; tableName = mst客室タイプマスタ
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 客室タイプコード = map:{
+                        ; columnName = 客室タイプコード
+                        ; diffType = ADD
+                    }
+                    ; 客室タイプ名称 = map:{
+                        ; columnName = 客室タイプ名称
+                        ; diffType = ADD
+                    }
+                    ; id = map:{
+                        ; columnName = id
+                        ; diffType = DELETE
+                    }
+                    ; 名称 = map:{
+                        ; columnName = 名称
+                        ; diffType = DELETE
+                    }
+                }
+                ; primaryKeyDiff = map:{
+                    ; mst客室タイプマスタ_pkey = map:{
+                        ; constraintName = mst客室タイプマスタ_pkey
+                        ; diffType = CHANGE
+                        ; columnDiff = map:{
+                            ; next = 客室タイプコード
+                            ; previous = id
+                        }
+                    }
+                }
+            }
+            ; mst客室マスタ = map:{
+                ; tableName = mst客室マスタ
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 客室コード = map:{
+                        ; columnName = 客室コード
+                        ; diffType = ADD
+                    }
+                    ; 客室タイプコード = map:{
+                        ; columnName = 客室タイプコード
+                        ; diffType = ADD
+                    }
+                    ; 客室番号 = map:{
+                        ; columnName = 客室番号
+                        ; diffType = CHANGE
+                        ; dbTypeDiff = map:{
+                            ; next = varchar
+                            ; previous = bpchar
+                        }
+                    }
+                    ; id = map:{
+                        ; columnName = id
+                        ; diffType = DELETE
+                    }
+                    ; 客室タイプid = map:{
+                        ; columnName = 客室タイプid
+                        ; diffType = DELETE
+                    }
+                }
+                ; primaryKeyDiff = map:{
+                    ; mst客室マスタ_pkey = map:{
+                        ; constraintName = mst客室マスタ_pkey
+                        ; diffType = CHANGE
+                        ; columnDiff = map:{
+                            ; next = 客室コード
+                            ; previous = id
+                        }
+                    }
+                }
+                ; foreignKeyDiff = map:{
+                    ; mst客室マスタ_客室タイプコード_fkey = map:{
+                        ; constraintName = mst客室マスタ_客室タイプコード_fkey
+                        ; diffType = ADD
+                    }
+                    ; mst客室マスタ_客室タイプid_fkey = map:{
+                        ; constraintName = mst客室マスタ_客室タイプid_fkey
+                        ; diffType = DELETE
+                    }
+                }
+            }
+            ; mst従業員マスタ = map:{
+                ; tableName = mst従業員マスタ
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 従業員コード = map:{
+                        ; columnName = 従業員コード
+                        ; diffType = ADD
+                    }
+                    ; 名字 = map:{
+                        ; columnName = 名字
+                        ; diffType = ADD
+                    }
+                    ; 名前 = map:{
+                        ; columnName = 名前
+                        ; diffType = ADD
+                    }
+                    ; 氏名カナ = map:{
+                        ; columnName = 氏名カナ
+                        ; diffType = ADD
+                    }
+                    ; 職位コード = map:{
+                        ; columnName = 職位コード
+                        ; diffType = ADD
+                    }
+                    ; id = map:{
+                        ; columnName = id
+                        ; diffType = DELETE
+                    }
+                    ; 氏名_姓 = map:{
+                        ; columnName = 氏名_姓
+                        ; diffType = DELETE
+                    }
+                    ; 氏名_名 = map:{
+                        ; columnName = 氏名_名
+                        ; diffType = DELETE
+                    }
+                    ; 氏名_カナ = map:{
+                        ; columnName = 氏名_カナ
+                        ; diffType = DELETE
+                    }
+                    ; 職位code = map:{
+                        ; columnName = 職位code
+                        ; diffType = DELETE
+                    }
+                }
+                ; primaryKeyDiff = map:{
+                    ; mst従業員マスタ_pkey = map:{
+                        ; constraintName = mst従業員マスタ_pkey
+                        ; diffType = CHANGE
+                        ; columnDiff = map:{
+                            ; next = 従業員コード
+                            ; previous = id
+                        }
+                    }
+                }
+                ; foreignKeyDiff = map:{
+                    ; mst従業員マスタ_職位コード_fkey = map:{
+                        ; constraintName = mst従業員マスタ_職位コード_fkey
+                        ; diffType = ADD
+                    }
+                    ; mst従業員マスタ_職位code_fkey = map:{
+                        ; constraintName = mst従業員マスタ_職位code_fkey
+                        ; diffType = DELETE
+                    }
+                }
+            }
+            ; mst権限マスタ = map:{
+                ; tableName = mst権限マスタ
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; 職位コード = map:{
+                        ; columnName = 職位コード
+                        ; diffType = ADD
+                    }
+                    ; 画面コード = map:{
+                        ; columnName = 画面コード
+                        ; diffType = ADD
+                    }
+                    ; id = map:{
+                        ; columnName = id
+                        ; diffType = DELETE
+                    }
+                    ; 職位code = map:{
+                        ; columnName = 職位code
+                        ; diffType = DELETE
+                    }
+                    ; 制御画面id = map:{
+                        ; columnName = 制御画面id
+                        ; diffType = DELETE
+                    }
+                }
+                ; primaryKeyDiff = map:{
+                    ; mst権限マスタ_pkey = map:{
+                        ; constraintName = mst権限マスタ_pkey
+                        ; diffType = CHANGE
+                        ; columnDiff = map:{
+                            ; next = 職位コード, 画面コード
+                            ; previous = id
+                        }
+                    }
+                }
+                ; foreignKeyDiff = map:{
+                    ; mst権限マスタ_画面コード_fkey = map:{
+                        ; constraintName = mst権限マスタ_画面コード_fkey
+                        ; diffType = ADD
+                    }
+                    ; mst権限マスタ_職位コード_fkey = map:{
+                        ; constraintName = mst権限マスタ_職位コード_fkey
+                        ; diffType = ADD
+                    }
+                    ; mst権限マスタ_制御画面id_fkey = map:{
+                        ; constraintName = mst権限マスタ_制御画面id_fkey
+                        ; diffType = DELETE
+                    }
+                    ; mst権限マスタ_職位code_fkey = map:{
+                        ; constraintName = mst権限マスタ_職位code_fkey
+                        ; diffType = DELETE
+                    }
+                }
+            }
+            ; dch客室利用予定台帳 = map:{
+                ; tableName = dch客室利用予定台帳
+                ; diffType = DELETE
+            }
+            ; dch客室利用実績台帳 = map:{
+                ; tableName = dch客室利用実績台帳
+                ; diffType = DELETE
+            }
+            ; dch宿泊予定台帳 = map:{
+                ; tableName = dch宿泊予定台帳
+                ; diffType = DELETE
+            }
+            ; dch宿泊実績台帳 = map:{
+                ; tableName = dch宿泊実績台帳
+                ; diffType = DELETE
+            }
+            ; mst制御画面マスタ = map:{
+                ; tableName = mst制御画面マスタ
+                ; diffType = DELETE
+            }
+        }
+        ; sequenceDiff = map:{
+            ; hotel_management.public.mst001_id_seq = map:{
+                ; sequenceName = hotel_management.public.mst001_id_seq
+                ; diffType = DELETE
+            }
+            ; hotel_management.public.mst002_id_seq = map:{
+                ; sequenceName = hotel_management.public.mst002_id_seq
+                ; diffType = DELETE
+            }
+            ; hotel_management.public.mst003_id_seq = map:{
+                ; sequenceName = hotel_management.public.mst003_id_seq
+                ; diffType = DELETE
+            }
+            ; hotel_management.public.mst004_id_seq = map:{
+                ; sequenceName = hotel_management.public.mst004_id_seq
+                ; diffType = DELETE
+            }
+            ; hotel_management.public.mst005_id_seq = map:{
+                ; sequenceName = hotel_management.public.mst005_id_seq
+                ; diffType = DELETE
+            }
+            ; hotel_management.public.mst006_id_seq = map:{
+                ; sequenceName = hotel_management.public.mst006_id_seq
+                ; diffType = DELETE
+            }
+            ; hotel_management.public.dch003_id_seq = map:{
+                ; sequenceName = hotel_management.public.dch003_id_seq
+                ; diffType = DELETE
+            }
+            ; hotel_management.public.dch004_id_seq = map:{
+                ; sequenceName = hotel_management.public.dch004_id_seq
+                ; diffType = DELETE
+            }
+            ; hotel_management.public.dch005_id_seq = map:{
+                ; sequenceName = hotel_management.public.dch005_id_seq
+                ; diffType = DELETE
+            }
+            ; hotel_management.public.dch006_id_seq = map:{
+                ; sequenceName = hotel_management.public.dch006_id_seq
+                ; diffType = DELETE
+            }
+        }
+    }
     ; 2021/07/25 21:54:04 = map:{
         ; diffDate = 2021/07/25 21:54:04
         ; tableCount = map:{
