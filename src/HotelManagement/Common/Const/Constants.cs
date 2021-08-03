@@ -22,9 +22,12 @@ namespace HotelManagement.Common
         /// </summary>
         public static readonly char[] WeekNames = { '日', '月', '火', '水', '木', '金', '土' };
 
+        /// <summary>
+        /// システム上での日付
+        /// </summary>
         public struct システム日付
         {
-            public static DateTime 現在値 = DateTime.Now;
+            public static DateTime 現在値 = new DateTime(2021, 6, 1, 10, 0, 0); //DateTime.Now;
 
             public static DateTime 最小値 = new DateTime(2000, 1, 1);
 

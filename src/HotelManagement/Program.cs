@@ -7,21 +7,38 @@ using System.Windows.Forms;
 
 namespace HotelManagement
 {
-    static class Program
+    public static class Program
     {
         /// <summary>
         /// アプリケーションのメイン エントリ ポイントです。
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
+            // タイマーを設定(毎秒)
+            var tickTimer = new System.Timers.Timer(1000);
+
+            // タイマーの処理
+            tickTimer.Elapsed += (sender, e) =>
+            {
+                Constants.システム日付.現在値 = Constants.システム日付.現在値.AddSeconds(1);
+            };
+
+            // タイマーを開始する
+            tickTimer.Start();
+
             Application.ThreadException += new ThreadExceptionEventHandler(Application_ThreadException);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FmMain());
         }
 
-        static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
+        /// <summary>
+        /// 画面でキャッチしなかった例外が発生時のイベントハンドラ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
             string message;
             var type = e.Exception.GetType();

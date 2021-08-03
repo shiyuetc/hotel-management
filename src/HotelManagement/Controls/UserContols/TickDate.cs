@@ -18,7 +18,7 @@ namespace HotelManagement.Controls.UserControls
             InitializeComponent();
 
             // 時刻を更新
-            this.UpdateDateTime(DateTime.Now);
+            this.UpdateDateTime(Constants.システム日付.現在値);
         }
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace HotelManagement.Controls.UserControls
         /// <param name="e"></param>
         private void TickTimer_Tick(object sender, EventArgs e)
         {
-            this.UpdateDateTime(DateTime.Now);
+            this.UpdateDateTime(Constants.システム日付.現在値);
         }
         
         /// <summary>
