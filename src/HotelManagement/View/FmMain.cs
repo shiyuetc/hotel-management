@@ -88,11 +88,11 @@ namespace HotelManagement.View
             // 表示画面を破棄
             this.UcPanel.Controls.Clear();
 
-            var uc = (UcBase)Activator.CreateInstance(Type.GetType($"{this.GetType().Namespace}.{menuPage.画面マスタ.画面名称}画面"), this);
+            var uc = (UcBase)Activator.CreateInstance(Type.GetType($"{this.GetType().Namespace}.{menuPage.画面マスタ.表示名称}"), this);
             this.UcPanel.Controls.Add(uc);
 
             // 表示画面名を設定
-            this.DisplayNameLabel.Text = $"{menuPage.画面マスタ.画面名称}";
+            this.DisplayNameLabel.Text = $"{menuPage.画面マスタ.表示名称}";
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace HotelManagement.View
         {
             // ログイン情報を設定
             AppState.ログイン従業員 = 従業員マスタ;
-            this.LoginInfoLabel.Text = $"ユーザー情報：{従業員マスタ.名字} {従業員マスタ.名前}｜職位：{従業員マスタ.Kbn職位区分.職位名称}({従業員マスタ.Kbn職位区分.職位英字名称})";
+            this.LoginInfoLabel.Text = $"ユーザー情報：{従業員マスタ.氏名}｜職位：{従業員マスタ.Kbn職位区分.職位名称}({従業員マスタ.Kbn職位区分.職位英字名称})";
 
             // 取得した権限を設定
             var vm = new ModelQuillInjector<ベース画面処理Model>();
