@@ -64,7 +64,7 @@ namespace HotelManagement.View
             {
                 if (Messages.ShowConfirm("ログアウトしますか？"))
                 {
-                    this.Setログアウト情報();
+                    this.Setログイン情報(null);
                 }
                 else
                 {
@@ -85,9 +85,10 @@ namespace HotelManagement.View
         /// <param name="menuPage">選択したメニューページ</param>
         private void MenuPage_Select(MenuPage menuPage)
         {
-            // 表示画面を破棄
+            // 表示中の画面を破棄
             this.UcPanel.Controls.Clear();
 
+            // 次の画面を作成
             var uc = (UcBase)Activator.CreateInstance(Type.GetType($"{this.GetType().Namespace}.{menuPage.画面マスタ.表示名称}"), this);
             this.UcPanel.Controls.Add(uc);
 
@@ -103,27 +104,27 @@ namespace HotelManagement.View
         {
             // ログイン情報を設定
             AppState.ログイン従業員 = 従業員マスタ;
-            this.LoginInfoLabel.Text = $"ユーザー情報：{従業員マスタ.氏名}｜職位：{従業員マスタ.Kbn職位区分.職位名称}({従業員マスタ.Kbn職位区分.職位英字名称})";
 
-            // 取得した権限を設定
-            var vm = new ModelQuillInjector<ベース画面処理Model>();
-            var 画面マスタList = vm.Model.Get画面マスタListt(従業員マスタ.Kbn職位区分).ToList();
+            if(従業員マスタ != null)
+            {
+                // ログインラベルを更新
+                this.LoginInfoLabel.Text = $"ユーザー情報：{従業員マスタ.氏名}｜職位：{従業員マスタ.Kbn職位区分.職位名称}({従業員マスタ.Kbn職位区分.職位英字名称})";
 
-            // メニューバーを設定
-            this.MenuBar.SetMenu(画面マスタList);
-        }
+                // 取得した権限を設定
+                var vm = new ModelQuillInjector<ベース画面処理Model>();
+                var 画面マスタList = vm.Model.Get画面マスタListt(従業員マスタ.Kbn職位区分).ToList();
 
-        /// <summary>
-        /// ログイン情報を破棄します。
-        /// </summary>
-        public void Setログアウト情報()
-        {
-            // ログイン情報を破棄
-            AppState.ログイン従業員 = null;
-            this.LoginInfoLabel.Text = "ユーザー情報：ログインなし";
+                // メニューバーを設定
+                this.MenuBar.SetMenu(画面マスタList);
+            }
+            else
+            {
+                // ログインラベルを更新
+                this.LoginInfoLabel.Text = "ユーザー情報：ログインなし";
 
-            // メニューバーを初期化
-            this.MenuBar.SetMenu(new List<Mst画面マスタ>());
+                // メニューバーを初期化
+                this.MenuBar.SetMenu(new List<Mst画面マスタ>());
+            }
         }
 
         #endregion
