@@ -15,8 +15,11 @@ data-directory: playsql/data/common/xls
   mst画面マスタ (6)
   mst権限マスタ (16)
   mst従業員マスタ (4)
+  mst会員マスタ (8)
   mst客室タイプマスタ (10)
   mst客室マスタ (23)
 
 [30-dch.xls]
   dch従業員職位履歴台帳 (4)
+  dch客室利用台帳 (6)
+  dch宿泊利用台帳 (1)
