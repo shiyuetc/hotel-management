@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagement.Extensions;
+using System;
 
 namespace HotelManagement.Common.Functions
 {
@@ -15,13 +16,13 @@ namespace HotelManagement.Common.Functions
         public static bool Is入力可能日付(DateTime 入力日付)
         {
             // 最小値より小さい場合
-            if(Constants.システム日付.最小値 > 入力日付)
+            if(Constants.システム日付.最小値.GreaterThan(入力日付))
             {
                 return false;
             }
 
             // 最大値より大きい場合
-            if(Constants.システム日付.最大値 < 入力日付)
+            if(Constants.システム日付.最大値.LessThan(入力日付))
             {
                 return false;
             }
