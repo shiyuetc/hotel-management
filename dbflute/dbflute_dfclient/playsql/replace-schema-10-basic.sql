@@ -171,7 +171,7 @@ COMMENT ON COLUMN dch月締確定台帳.対象年月 IS '対象年月';
 
 CREATE TABLE "dch客室利用台帳" (
   "id" BIGINT PRIMARY KEY,
-  "客室利用コード" CHAR(3) NOT NULL,
+  "客室利用コード" CHAR(2) NOT NULL,
   "客室コード" CHAR(6) NOT NULL,
   "開始予定日時" TIMESTAMP(3) NOT NULL,
   "終了予定日時" TIMESTAMP(3) NOT NULL,
