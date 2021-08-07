@@ -44,9 +44,9 @@
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.Location = new System.Drawing.Point(310, 209);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 21);
+            this.label1.Size = new System.Drawing.Size(126, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "従業員ID：";
+            this.label1.Text = "従業員番号：";
             // 
             // EmployeeIDTextBox
             // 
