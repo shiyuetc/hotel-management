@@ -24,7 +24,7 @@ namespace HotelManagement.Extensions
         /// <param name="dt1">日付1</param>
         /// <param name="dt2">日付2</param>
         /// <returns></returns>
-        public static bool GreaterThanEqual(this DateTime dt1, DateTime dt2)
+        public static bool GreaterThanEquals(this DateTime dt1, DateTime dt2)
         {
             return dt1 >= dt2;
         }
@@ -46,7 +46,7 @@ namespace HotelManagement.Extensions
         /// <param name="dt1">日付1</param>
         /// <param name="dt2">日付2</param>
         /// <returns></returns>
-        public static bool LessThanEqual(this DateTime dt1, DateTime dt2)
+        public static bool LessThanEquals(this DateTime dt1, DateTime dt2)
         {
             return dt1 <= dt2;
         }
