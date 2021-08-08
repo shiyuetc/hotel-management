@@ -73,7 +73,7 @@ namespace HotelManagement.Extensions
                 return string.Empty;
             }
 
-            return ((DateTime)dt).ToYYYYMMDD();
+            return dt.Value.ToYYYYMMDD();
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace HotelManagement.Extensions
                 return string.Empty;
             }
 
-            return ((DateTime)dt).ToSlashYYYYMMDD();
+            return dt.Value.ToSlashYYYYMMDD();
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace HotelManagement.Extensions
                 return string.Empty;
             }
 
-            return ((DateTime)dt).ToHHMM();
+            return dt.Value.ToHHMM();
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace HotelManagement.Extensions
                 return string.Empty;
             }
 
-            return ((DateTime)dt).ToColonHHMM();
+            return dt.Value.ToColonHHMM();
         }
     
     }
