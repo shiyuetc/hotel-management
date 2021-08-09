@@ -25,6 +25,8 @@ namespace HotelManagement.View
 
         #endregion
 
+        #region イベントハンドラ
+
         private void Uc会員一覧画面_Load(object sender, System.EventArgs e)
         {
             var vm = new ModelQuillInjector<会員マスタModel>();
@@ -35,6 +37,8 @@ namespace HotelManagement.View
             // 取得した会員マスタリストで初期化
             this.Set会員List(会員マスタLst);
         }
+
+        #endregion
 
         #region DataGridView操作イベント
 
