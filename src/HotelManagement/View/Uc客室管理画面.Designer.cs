@@ -1,6 +1,6 @@
 ﻿namespace HotelManagement.View
 {
-    partial class 顧客管理画面
+    partial class Uc客室管理画面
     {
         /// <summary> 
         /// 必要なデザイナー変数です。
@@ -30,11 +30,11 @@
         {
             this.SuspendLayout();
             // 
-            // 顧客管理画面
+            // 客室管理画面
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "顧客管理画面";
+            this.Name = "客室管理画面";
             this.Size = new System.Drawing.Size(929, 531);
             this.ResumeLayout(false);
 

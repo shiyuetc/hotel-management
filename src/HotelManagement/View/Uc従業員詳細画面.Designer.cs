@@ -1,6 +1,6 @@
 ﻿namespace HotelManagement.View
 {
-    partial class 従業員一覧画面
+    partial class Uc従業員詳細画面
     {
         /// <summary> 
         /// 必要なデザイナー変数です。

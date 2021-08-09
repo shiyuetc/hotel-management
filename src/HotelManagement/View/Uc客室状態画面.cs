@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace HotelManagement.View
 {
-    public partial class 客室状態画面 : UcBase
+    public partial class Uc客室状態画面 : UcBase
     {
-        public 客室状態画面(FmMain main) : base(main)
+        public Uc客室状態画面(FmMain main) : base(main)
         {
             InitializeComponent();
         }
@@ -15,8 +15,9 @@ namespace HotelManagement.View
         {
             var vm = new ModelQuillInjector<客室状態画面処理Model>();
             var 客室マスタList = vm.Model.Get客室マスタList();
+            var 客室利用台帳List = vm.Model.Get未終了客室利用台帳();
 
-            this.roomGrid1.Init(客室マスタList);
+            this.roomGrid1.Init(客室マスタList, 客室利用台帳List);
         }
     }
 }

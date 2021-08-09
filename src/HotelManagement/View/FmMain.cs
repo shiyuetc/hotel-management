@@ -89,7 +89,7 @@ namespace HotelManagement.View
             this.UcPanel.Controls.Clear();
 
             // 次の画面を作成
-            var uc = (UcBase)Activator.CreateInstance(Type.GetType($"{this.GetType().Namespace}.{menuPage.画面マスタ.表示名称}"), this);
+            var uc = (UcBase)Activator.CreateInstance(Type.GetType($"{this.GetType().Namespace}.Uc{menuPage.画面マスタ.表示名称}"), this);
             this.UcPanel.Controls.Add(uc);
 
             // 表示画面名を設定

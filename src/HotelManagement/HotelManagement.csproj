@@ -135,6 +135,9 @@
     <Compile Include="Controls\CustomControls\MenuBar\MenuBar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\CustomControls\客室Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\UserContols\ColorBlockLabel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -176,6 +179,7 @@
     </Compile>
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Models\UcProc\客室状態画面処理Model.cs" />
+    <Compile Include="Models\会員マスタModel.cs" />
     <Compile Include="Models\従業員マスタModel.cs" />
     <Compile Include="Models\UcProc\ログイン画面処理Model.cs" />
     <Compile Include="Models\UcProc\ベース画面処理Model.cs" />
@@ -187,35 +191,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\宿泊履歴画面.cs">
+    <Compile Include="View\Uc宿泊履歴画面.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\宿泊履歴画面.Designer.cs">
-      <DependentUpon>宿泊履歴画面.cs</DependentUpon>
+    <Compile Include="View\Uc宿泊履歴画面.Designer.cs">
+      <DependentUpon>Uc宿泊履歴画面.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\客室管理画面.cs">
+    <Compile Include="View\Uc客室管理画面.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\客室管理画面.Designer.cs">
-      <DependentUpon>客室管理画面.cs</DependentUpon>
+    <Compile Include="View\Uc客室管理画面.Designer.cs">
+      <DependentUpon>Uc客室管理画面.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\顧客管理画面.cs">
+    <Compile Include="View\Uc会員一覧画面.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\顧客管理画面.Designer.cs">
-      <DependentUpon>顧客管理画面.cs</DependentUpon>
+    <Compile Include="View\Uc会員一覧画面.Designer.cs">
+      <DependentUpon>Uc会員一覧画面.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\従業員管理画面.cs">
+    <Compile Include="View\Uc従業員詳細画面.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\従業員管理画面.Designer.cs">
-      <DependentUpon>従業員管理画面.cs</DependentUpon>
+    <Compile Include="View\Uc従業員詳細画面.Designer.cs">
+      <DependentUpon>Uc従業員詳細画面.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\客室状態画面.cs">
+    <Compile Include="View\Uc従業員一覧画面.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\客室状態画面.Designer.cs">
-      <DependentUpon>客室状態画面.cs</DependentUpon>
+    <Compile Include="View\Uc従業員一覧画面.Designer.cs">
+      <DependentUpon>Uc従業員一覧画面.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Uc客室状態画面.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Uc客室状態画面.Designer.cs">
+      <DependentUpon>Uc客室状態画面.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UcBase.cs">
       <SubType>UserControl</SubType>
@@ -223,11 +233,11 @@
     <Compile Include="View\UcBase.Designer.cs">
       <DependentUpon>UcBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ログイン画面.cs">
+    <Compile Include="View\Ucログイン画面.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\ログイン画面.Designer.cs">
-      <DependentUpon>ログイン画面.cs</DependentUpon>
+    <Compile Include="View\Ucログイン画面.Designer.cs">
+      <DependentUpon>Ucログイン画面.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Controls\UserContols\ColorBlockLabel.resx">
       <DependentUpon>ColorBlockLabel.cs</DependentUpon>
@@ -251,26 +261,29 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\宿泊履歴画面.resx">
-      <DependentUpon>宿泊履歴画面.cs</DependentUpon>
+    <EmbeddedResource Include="View\Uc宿泊履歴画面.resx">
+      <DependentUpon>Uc宿泊履歴画面.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\客室管理画面.resx">
-      <DependentUpon>客室管理画面.cs</DependentUpon>
+    <EmbeddedResource Include="View\Uc客室管理画面.resx">
+      <DependentUpon>Uc客室管理画面.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\顧客管理画面.resx">
-      <DependentUpon>顧客管理画面.cs</DependentUpon>
+    <EmbeddedResource Include="View\Uc会員一覧画面.resx">
+      <DependentUpon>Uc会員一覧画面.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\従業員管理画面.resx">
-      <DependentUpon>従業員管理画面.cs</DependentUpon>
+    <EmbeddedResource Include="View\Uc従業員詳細画面.resx">
+      <DependentUpon>Uc従業員詳細画面.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\客室状態画面.resx">
-      <DependentUpon>客室状態画面.cs</DependentUpon>
+    <EmbeddedResource Include="View\Uc従業員一覧画面.resx">
+      <DependentUpon>Uc従業員一覧画面.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Uc客室状態画面.resx">
+      <DependentUpon>Uc客室状態画面.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UcBase.resx">
       <DependentUpon>UcBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ログイン画面.resx">
-      <DependentUpon>ログイン画面.cs</DependentUpon>
+    <EmbeddedResource Include="View\Ucログイン画面.resx">
+      <DependentUpon>Ucログイン画面.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -295,7 +308,7 @@
     <EmbeddedResource Include="Resources\Images\icon_ログアウト.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Images\icon_顧客管理.png" />
+    <EmbeddedResource Include="Resources\Images\icon_会員管理.png" />
     <EmbeddedResource Include="Resources\Images\icon_従業員管理.png" />
     <EmbeddedResource Include="Resources\Images\icon_宿泊履歴.png" />
     <EmbeddedResource Include="Resources\Images\icon_予約管理.png" />

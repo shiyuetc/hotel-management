@@ -8,17 +8,17 @@ using System.Windows.Forms;
 namespace HotelManagement.View
 {
     /// <summary>
-    /// 従業員管理画面を表すフォームクラス
+    /// 従業員一覧画面を表すフォームクラス
     /// </summary>
-    public partial class 従業員一覧画面 : UcBase
+    public partial class Uc従業員一覧画面 : UcBase
     {
         #region コンストラクタ
 
         /// <summary>
-        /// UcEmployeeクラスを初期化します。
+        /// Uc従業員一覧画面クラスを初期化します。
         /// </summary>
         /// <param name="main"></param>
-        public 従業員一覧画面(FmMain main) : base(main)
+        public Uc従業員一覧画面(FmMain main) : base(main)
         {
             InitializeComponent();
         }
@@ -28,11 +28,11 @@ namespace HotelManagement.View
         #region イベントハンドラ
 
         /// <summary>
-        /// UcEmployeeのLoadイベント
+        /// Uc従業員一覧画面のLoadイベント
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void UcEmployee_Load(object sender, System.EventArgs e)
+        private void Uc従業員一覧画面_Load(object sender, System.EventArgs e)
         {
             var vm = new ModelQuillInjector<従業員マスタModel>();
 
@@ -40,7 +40,7 @@ namespace HotelManagement.View
             var 従業員マスタLst = vm.Model.Get従業員マスタList();
 
             // 取得した従業員マスタリストで初期化
-            this.SetEmployeeList(従業員マスタLst);
+            this.Set従業員List(従業員マスタLst);
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace HotelManagement.View
         /// 従業員リストを初期化します。
         /// </summary>
         /// <param name="従業員マスタList">従業員マスタList</param>
-        private void SetEmployeeList(List<Mst従業員マスタ> 従業員マスタList)
+        private void Set従業員List(List<Mst従業員マスタ> 従業員マスタList)
         {
             // データをクリア
             this.従業員ListDataGridView.Rows.Clear();

@@ -7,14 +7,14 @@ namespace HotelManagement.View
     /// <summary>
     /// ログイン画面のクラス
     /// </summary>
-    public partial class ログイン画面 : UcBase
+    public partial class Ucログイン画面 : UcBase
     {
         #region コンストラクタ
 
         /// <summary>
         /// UcLoginを初期化します。
         /// </summary>
-        public ログイン画面(FmMain main) : base(main)
+        public Ucログイン画面(FmMain main) : base(main)
         {
             InitializeComponent();
 

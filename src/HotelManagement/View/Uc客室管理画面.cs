@@ -2,9 +2,9 @@
 
 namespace HotelManagement.View
 {
-    public partial class 顧客管理画面 : UcBase
+    public partial class Uc客室管理画面 : UcBase
     {
-        public 顧客管理画面(FmMain main) : base(main)
+        public Uc客室管理画面(FmMain main) : base(main)
         {
             InitializeComponent();
         }
