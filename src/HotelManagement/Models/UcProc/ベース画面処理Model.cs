@@ -41,7 +41,7 @@ namespace HotelManagement.Models
         /// </summary>
         /// <param name="職位区分">職位区分</param>
         /// <returns>画面マスタのリスト</returns>
-        public List<Mst画面マスタ> Get画面マスタListt(Kbn職位区分 職位区分)
+        public List<Mst画面マスタ> Get画面マスタList(Kbn職位区分 職位区分)
         {
             var 権限マスタcb = new Mst権限マスタCB();
             権限マスタcb.SetupSelect_Mst画面マスタ().WithKbnメニュー区分();
